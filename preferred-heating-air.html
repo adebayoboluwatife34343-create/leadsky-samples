@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Preferred Heating & Air Concept</title>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout concept: a thermostat dial hero that flips between heat and cool, then calm service sections on a warm paper ground. */
+:root{
+  --bg:#f7f4ef; --surface:#ffffff; --ink:#14232e; --muted:#566772; --line:#e1dbd0;
+  --deep:#0e1f2b; --on-deep:#eef3f5; --on-deep-muted:#a9bac4;
+  --ember:#e8590c; --ember-soft:#fde8da; --ice:#2b8fc4; --ice-soft:#dcedf7;
+  --mode:var(--ember);
+  --f-display:'Bricolage Grotesque','Trebuchet MS',sans-serif; --f-body:'Figtree','Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0b1720; --surface:#13242f; --ink:#eaf0f3; --muted:#9db0bb; --line:#223643;
+  --deep:#08121a; --ember-soft:#3a2216; --ice-soft:#142c3b; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0b1720; --surface:#13242f; --ink:#eaf0f3; --muted:#9db0bb; --line:#223643;
+  --deep:#08121a; --ember-soft:#3a2216; --ice-soft:#142c3b; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--f-body);padding-bottom:72px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.08;margin:0;text-wrap:balance;letter-spacing:-.02em}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.eyebrow{font:600 12.5px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+:focus-visible{outline:3px solid var(--ice);outline-offset:3px;border-radius:6px}
+
+/* concept banner + top bar */
+.concept{background:#fff3bf;color:#4a3b00;font-size:13.5px;text-align:center;padding:8px 0}
+.concept b{font-weight:600}
+.topbar{background:var(--deep);color:var(--on-deep);font-size:14.5px}
+.topbar .wrap{display:flex;gap:8px 24px;flex-wrap:wrap;justify-content:space-between;padding-block:10px}
+.topbar span{color:var(--on-deep-muted)}
+.topbar strong{font-weight:600;white-space:nowrap}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#3ddc84;margin-right:8px;animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,132,.6)}70%{box-shadow:0 0 0 9px rgba(61,220,132,0)}100%{box-shadow:0 0 0 0 rgba(61,220,132,0)}}
+
+/* nav */
+nav{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);z-index:20}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{font:800 21px/1 var(--f-display);letter-spacing:-.03em;display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand svg{width:30px;height:30px}
+.brand small{display:block;font:500 11px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+nav ul{display:flex;gap:26px;list-style:none;margin:0;padding:0;font-weight:500;font-size:15.5px}
+nav ul a{text-decoration:none;color:var(--muted)}
+nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;font:600 16px/1 var(--f-body);padding:15px 22px;border-radius:12px;border:2px solid transparent;text-decoration:none;cursor:pointer;transition:transform .15s,background .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--ember);color:#fff}
+.btn-primary:hover{background:#cf4e07}
+.btn-ghost{border-color:var(--line);background:transparent;color:var(--ink)}
+.btn-ghost-deep{border-color:rgba(255,255,255,.25);color:var(--on-deep)}
+@media(max-width:820px){nav ul{display:none}}
+
+/* hero */
+.hero{background:var(--deep);color:var(--on-deep);position:relative;overflow:hidden;--mode:var(--ember)}
+.hero[data-mode="cool"]{--mode:var(--ice)}
+#fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding-block:72px 80px}
+.hero h1{font-size:clamp(40px,6.2vw,76px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--mode);transition:color .5s}
+.hero p.lead{color:var(--on-deep-muted);font-size:19px;max-width:34em;margin-top:22px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero .cta .btn-primary{background:var(--mode);transition:background .5s}
+.hero .num{font-variant-numeric:tabular-nums}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:34px;padding:0;list-style:none}
+.chips li{font-size:14px;padding:7px 13px;border:1px solid rgba(255,255,255,.18);border-radius:99px;color:var(--on-deep-muted)}
+
+.dial-card{justify-self:center;width:min(100%,380px);text-align:center}
+.seg{display:inline-flex;background:rgba(255,255,255,.08);border-radius:99px;padding:5px;margin-bottom:20px}
+.seg button{font:600 14.5px var(--f-body);color:var(--on-deep-muted);background:none;border:0;padding:9px 20px;border-radius:99px;cursor:pointer;transition:all .3s}
+.seg button[aria-pressed="true"]{background:var(--mode);color:#fff}
+.dial{position:relative;width:100%;aspect-ratio:1}
+.dial svg{width:100%;height:100%;display:block}
+.dial .arc{stroke:var(--mode);transition:stroke .5s,stroke-dashoffset .6s cubic-bezier(.3,.8,.3,1)}
+.dial .read{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.dial .read b{font:800 84px/1 var(--f-display);letter-spacing:-.04em}
+.dial .read b sup{font-size:34px;vertical-align:top;position:relative;top:10px}
+.dial .read span{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-deep-muted);margin-top:6px}
+.adj{display:flex;justify-content:center;gap:14px;margin-top:6px}
+.adj button{width:48px;height:48px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:none;color:var(--on-deep);font-size:24px;cursor:pointer;transition:background .2s}
+.adj button:hover{background:rgba(255,255,255,.1)}
+.dial-note{font-size:13px;color:var(--on-deep-muted);margin-top:16px}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:48px 56px}}
+
+/* trust strip */
+.trust{background:var(--surface);border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px 28px;padding-block:26px}
+.trust div{display:flex;gap:12px;align-items:center;font-size:15px;line-height:1.35}
+.trust svg{flex:none;width:34px;height:34px}
+.trust b{display:block;font-weight:600}
+.trust span{color:var(--muted);font-size:13.5px}
+
+section{padding-block:88px}
+.head{max-width:640px;margin-bottom:44px}
+.head h2{font-size:clamp(30px,4vw,48px);font-weight:800;margin-top:14px}
+.head p{color:var(--muted);margin-top:16px}
+
+/* services */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);border-color:var(--mode)}
+.card .ico{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;margin-bottom:18px}
+.card .ico.h{background:var(--ember-soft)} .card .ico.c{background:var(--ice-soft)}
+.card .ico svg{width:34px;height:34px;overflow:visible}
+.card h3{font-size:21px;font-weight:700}
+.card p{color:var(--muted);font-size:15.5px;margin-top:10px}
+
+/* icon animations */
+.flame{transform-origin:50% 100%;animation:flick 1.6s ease-in-out infinite}
+@keyframes flick{0%,100%{transform:scale(1,1) rotate(0)}30%{transform:scale(.94,1.08) rotate(-3deg)}60%{transform:scale(1.04,.96) rotate(2deg)}}
+.spin{transform-origin:50% 50%;animation:spin 8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bob{animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+.drip{animation:drip 2s ease-in infinite}
+@keyframes drip{0%{transform:translateY(-4px);opacity:0}30%{opacity:1}100%{transform:translateY(8px);opacity:0}}
+.flow{stroke-dasharray:6 6;animation:flow 1.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-12}}
+.blink{animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+/* safety band */
+.safety{background:var(--deep);color:var(--on-deep);position:relative;overflow:hidden}
+.safety .wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.safety h2{font-size:clamp(30px,4vw,48px);font-weight:800}
+.safety p{color:var(--on-deep-muted);margin-top:18px;max-width:32em}
+.safety .btn{margin-top:28px}
+.detector{justify-self:center;width:min(100%,320px)}
+.detector svg{width:100%;display:block;overflow:visible}
+.ring{transform-origin:160px 150px;animation:ring 2.8s ease-out infinite;opacity:0}
+.ring:nth-of-type(2){animation-delay:.9s}.ring:nth-of-type(3){animation-delay:1.8s}
+@keyframes ring{0%{transform:scale(.55);opacity:.7}100%{transform:scale(1.35);opacity:0}}
+@media(max-width:820px){.safety .wrap{grid-template-columns:1fr}}
+
+/* plan + financing */
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:36px}
+.panel h3{font-size:28px;font-weight:800;margin-bottom:14px}
+.panel p{color:var(--muted)}
+.panel.tint{background:var(--ember-soft);border-color:transparent}
+.cal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:26px}
+.cal div{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center;font-size:13px;color:var(--muted)}
+.cal b{display:block;font:700 15px var(--f-display);color:var(--ink);margin-bottom:2px}
+.cal div.on{border-color:var(--ember);animation:glow 3s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 5px rgba(232,89,12,.15)}}
+@media(max-width:820px){.two{grid-template-columns:1fr}}
+
+/* area */
+.towns{display:flex;flex-wrap:wrap;gap:10px}
+.towns span{padding:9px 16px;background:var(--surface);border:1px solid var(--line);border-radius:99px;font-size:15px;font-weight:500;transition:all .2s}
+.towns span:hover{background:var(--mode);color:#fff;border-color:var(--mode)}
+.brands{overflow:hidden;margin-top:48px;border-block:1px solid var(--line);padding-block:20px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.brands .track{display:flex;gap:56px;width:max-content;animation:marq 32s linear infinite;font:700 22px var(--f-display);color:var(--muted);letter-spacing:-.01em}
+@keyframes marq{to{transform:translateX(-50%)}}
+.brands small{display:block;margin-bottom:14px}
+
+/* contact */
+.contact{background:var(--surface);border-top:1px solid var(--line)}
+.contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.contact h2{font-size:clamp(30px,4vw,48px);font-weight:800;margin-top:14px}
+.info{display:grid;gap:18px;margin-top:30px}
+.info div{display:flex;gap:14px;align-items:flex-start}
+.info svg{flex:none;width:24px;height:24px;margin-top:3px;color:var(--ember)}
+.info b{display:block;font-weight:600}
+.info span{color:var(--muted);word-break:break-word;user-select:all}
+.copy{font:500 12.5px var(--f-body);border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:3px 10px;border-radius:99px;margin-left:8px;cursor:pointer}
+form{display:grid;gap:14px;background:var(--bg);padding:30px;border-radius:20px;border:1px solid var(--line);align-self:start}
+label{font-weight:600;font-size:14.5px;display:grid;gap:6px}
+input,select,textarea{font:400 16px var(--f-body);padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);width:100%}
+textarea{min-height:92px;resize:vertical}
+.ok{display:none;background:var(--ice-soft);padding:12px 14px;border-radius:10px;font-size:14.5px}
+.ok.show{display:block}
+@media(max-width:820px){.contact .wrap{grid-template-columns:1fr;gap:36px}}
+
+footer{background:var(--deep);color:var(--on-deep-muted);font-size:14px}
+footer .wrap{padding-block:34px;display:grid;gap:10px}
+footer b{color:var(--on-deep)}
+
+/* mobile call bar */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;gap:8px;background:var(--surface);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.callbar .btn{flex:1;justify-content:center;padding:14px 10px}
+@media(max-width:820px){.callbar{display:flex}}
+
+/* motion */
+.rise{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.rise.d1{animation-delay:.1s}.rise.d2{animation-delay:.2s}.rise.d3{animation-delay:.3s}
+@keyframes rise{from{transform:translateY(22px)}to{transform:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+
+<div class="concept"><div class="wrap"><b>Design concept</b> prepared for Preferred Heating &amp; Air, Inc. It is a preview, not their live website. All business details come from their current public site.</div></div>
+
+<div class="topbar"><div class="wrap">
+  <div><span class="dot"></span><strong>Available 24 hours a day</strong> <span>for heating and cooling emergencies</span></div>
+  <div><span>Emergency:</span> <strong class="num">(937) 422-0088</strong> &nbsp; <span>Office:</span> <strong class="num">(937) 938-7420</strong></div>
+</div></div>
+
+<nav><div class="wrap">
+  <a class="brand" href="#top">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="15" fill="#0e1f2b"/><path d="M16 5c1 4 6 6 6 11a6 6 0 0 1-12 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4 0-6 2-10z" fill="#e8590c"/><path d="M16 16v9M12 20l8 0" stroke="#2b8fc4" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <span>Preferred Heating &amp; Air<small>Dayton, Ohio</small></span>
+  </a>
+  <ul><li><a href="#services">Services</a></li><li><a href="#plan">Service plan</a></li><li><a href="#area">Areas</a></li><li><a href="#contact">Contact</a></li></ul>
+  <a class="btn btn-primary" href="tel:19379387420">Call (937) 938-7420</a>
+</div></nav>
+
+<header class="hero" id="top" data-mode="heat">
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow rise" style="color:var(--on-deep-muted)">Heating, ventilation and air conditioning</p>
+      <h1 class="rise d1" style="margin-top:18px">Dayton stays <em id="word">warm</em> when we answer the phone.</h1>
+      <p class="lead rise d2">Preferred Heating &amp; Air keeps homes and businesses across the Miami Valley comfortable. Service calls, installations, and yearly tune-ups, with a technician available 24 hours a day.</p>
+      <div class="cta rise d3">
+        <a class="btn btn-primary" href="tel:19379387420">Call (937) 938-7420</a>
+        <a class="btn btn-ghost btn-ghost-deep" href="#contact">Request an estimate</a>
+      </div>
+      <ul class="chips rise d3"><li>Residential and commercial</li><li>Financing available</li><li>Ohio License #46396</li></ul>
+    </div>
+    <div class="dial-card rise d2">
+      <div class="seg" role="group" aria-label="Mode">
+        <button id="bHeat" aria-pressed="true">Heat</button><button id="bCool" aria-pressed="false">Cool</button>
+      </div>
+      <div class="dial">
+        <svg viewBox="0 0 300 300" aria-hidden="true">
+          <circle cx="150" cy="150" r="128" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.1)" stroke-width="2"/>
+          <circle cx="150" cy="150" r="108" fill="none" stroke="rgba(255,255,255,.1)" stroke-width="12" stroke-linecap="round" stroke-dasharray="509 679" transform="rotate(135 150 150)"/>
+          <circle id="arc" class="arc" cx="150" cy="150" r="108" fill="none" stroke-width="12" stroke-linecap="round" stroke-dasharray="509 679" stroke-dashoffset="200" transform="rotate(135 150 150)"/>
+        </svg>
+        <div class="read"><b id="temp">70<sup>°</sup></b><span id="state">Heating to set point</span></div>
+      </div>
+      <div class="adj"><button id="dn" aria-label="Lower temperature">−</button><button id="up" aria-label="Raise temperature">+</button></div>
+      <p class="dial-note">Try the thermostat. Switch between heat and cool.</p>
+    </div>
+  </div>
+</header>
+
+<div class="trust"><div class="wrap">
+  <div><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="var(--ice-soft)"/><path d="M10 17.5l5 5 9-10" fill="none" stroke="var(--ice)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>BBB Rated A+</b><span>As shown on their current site</span></p></div>
+  <div><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="var(--ember-soft)"/><path d="M17 8v9l6 4" fill="none" stroke="var(--ember)" stroke-width="3" stroke-linecap="round"/></svg><p><b>24-hour service</b><span>Cold nights and hot days</span></p></div>
+  <div><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="var(--ice-soft)"/><path d="M11 10h12v14H11zM14 14h6M14 18h6" fill="none" stroke="var(--ice)" stroke-width="2.4" stroke-linecap="round"/></svg><p><b>Ohio License #46396</b><span>Licensed HVAC contractor</span></p></div>
+  <div><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="15" fill="var(--ember-soft)"/><path d="M9 21l8-9 8 9M12 21v4h10v-4" fill="none" stroke="var(--ember)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Homes and businesses</b><span>No job too large or too small</span></p></div>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <div class="head"><p class="eyebrow">What we do</p><h2>Everything your heating and cooling needs, in one call.</h2><p>From a no-heat emergency to a new system, the same local team handles it.</p></div>
+  <div class="grid">
+    <article class="card"><div class="ico h"><svg viewBox="0 0 34 34"><path class="flame" d="M17 3c1 6 9 9 9 18a9 9 0 0 1-18 0c0-3 1-5 3-7 0 3 2 5 3 5 0-6-1-9 3-16z" fill="#e8590c"/><path class="flame" d="M17 17c1 3 4 4 4 8a4 4 0 0 1-8 0c0-2 1-3 2-4 1 1 1 2 2 2 0-2 0-4 0-6z" fill="#ffd166"/></svg></div><h3>Service calls</h3><p>Furnace or air conditioner down? We are available 24 hours a day to keep you warm on cold nights and cool during hot days.</p></article>
+    <article class="card"><div class="ico c"><svg viewBox="0 0 34 34"><g class="spin"><path d="M17 17V4M17 17l11 6.5M17 17L6 23.5" stroke="#2b8fc4" stroke-width="3.4" stroke-linecap="round"/></g><circle cx="17" cy="17" r="3" fill="#2b8fc4"/></svg></div><h3>Installation</h3><p>New heating and cooling systems sized for your home or building, installed with courteous, efficient work.</p></article>
+    <article class="card"><div class="ico h"><svg viewBox="0 0 34 34"><rect x="5" y="6" width="24" height="23" rx="4" fill="none" stroke="#e8590c" stroke-width="2.6"/><path d="M5 13h24M11 3v6M23 3v6" stroke="#e8590c" stroke-width="2.6" stroke-linecap="round"/><path class="bob" d="M12 21l4 4 7-7" fill="none" stroke="#e8590c" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Preferred Service Plan</h3><p>Yearly tune-ups and filter changes keep your equipment running at maximum efficiency.</p></article>
+    <article class="card"><div class="ico c"><svg viewBox="0 0 34 34"><path d="M17 4c5 7 8 11 8 15a8 8 0 0 1-16 0c0-4 3-8 8-15z" fill="none" stroke="#2b8fc4" stroke-width="2.6" stroke-linejoin="round"/><circle class="drip" cx="17" cy="19" r="2.4" fill="#2b8fc4"/></svg></div><h3>Whole house humidifiers</h3><p>Using a humidifier reduces the chance of catching a cold. Time to retire the sore throat in the morning.</p></article>
+    <article class="card"><div class="ico c"><svg viewBox="0 0 34 34"><path class="flow" d="M4 12h18a4 4 0 1 0-4-4M4 18h24a4 4 0 1 1-4 4M4 24h12" fill="none" stroke="#2b8fc4" stroke-width="2.6" stroke-linecap="round"/></svg></div><h3>Duct cleaning</h3><p>Duct cleaning for your home or business. Request a quote any time.</p></article>
+    <article class="card"><div class="ico h"><svg viewBox="0 0 34 34"><circle cx="17" cy="17" r="12" fill="none" stroke="#e8590c" stroke-width="2.6"/><circle class="blink" cx="17" cy="17" r="4" fill="#e8590c"/></svg></div><h3>Carbon monoxide testing</h3><p>Protect your family with a furnace inspection and a working carbon monoxide detector.</p></article>
+    <article class="card"><div class="ico c"><svg viewBox="0 0 34 34"><rect x="6" y="6" width="22" height="22" rx="5" fill="none" stroke="#2b8fc4" stroke-width="2.6"/><path class="bob" d="M12 22l4-6 3 3 4-7" fill="none" stroke="#2b8fc4" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Thermostats</h3><p>Thermostat repair and replacement so every room holds the temperature you set.</p></article>
+    <article class="card"><div class="ico h"><svg viewBox="0 0 34 34"><path d="M17 4v26M4 17h26M8 8l18 18M26 8L8 26" stroke="#e8590c" stroke-width="2.2" stroke-linecap="round" class="blink"/></svg></div><h3>Air cleaners and UV light</h3><p>Whole house air cleaners and Blue-Tube UV light for cleaner air inside.</p></article>
+  </div>
+</div></section>
+
+<section class="safety"><div class="wrap">
+  <div>
+    <p class="eyebrow" style="color:var(--on-deep-muted)">Before winter settles in</p>
+    <h2 style="margin-top:14px">Have your furnace inspected. Install a carbon monoxide detector.</h2>
+    <p>A yearly inspection catches problems early. It is the simplest way to protect your family. Call to schedule yours, or request an estimate online.</p>
+    <a class="btn btn-primary" style="background:var(--ember)" href="#contact">Schedule a service call</a>
+  </div>
+  <div class="detector">
+    <svg viewBox="0 0 320 300" aria-hidden="true">
+      <circle class="ring" cx="160" cy="150" r="120" fill="none" stroke="#e8590c" stroke-width="3"/>
+      <circle class="ring" cx="160" cy="150" r="120" fill="none" stroke="#e8590c" stroke-width="3"/>
+      <circle class="ring" cx="160" cy="150" r="120" fill="none" stroke="#e8590c" stroke-width="3"/>
+      <circle cx="160" cy="150" r="88" fill="#16303f" stroke="#2c4a5c" stroke-width="3"/>
+      <circle cx="160" cy="150" r="58" fill="#0e1f2b" stroke="#2c4a5c" stroke-width="2"/>
+      <g stroke="#2c4a5c" stroke-width="3" stroke-linecap="round"><path d="M138 130h44M134 144h52M134 158h52M138 172h44"/></g>
+      <circle class="blink" cx="160" cy="218" r="6" fill="#3ddc84"/>
+      <text x="160" y="248" text-anchor="middle" fill="#a9bac4" font-family="Figtree,sans-serif" font-size="13" letter-spacing="2">CO ALARM</text>
+    </svg>
+  </div>
+</div></section>
+
+<section id="plan"><div class="wrap">
+  <div class="head"><p class="eyebrow">Keep it running</p><h2>You would not skip the oil change. Do not skip the tune-up.</h2></div>
+  <div class="two">
+    <div class="panel">
+      <h3>Preferred Service Plan</h3>
+      <p>Joining the plan means your heating and cooling equipment gets maintained for maximum efficiency. Regular filter changes and tune-ups help avoid breakdowns when you need the system most.</p>
+      <div class="cal" aria-label="Typical service visits">
+        <div class="on"><b>Fall</b>Heating tune-up</div><div><b>Winter</b>On call 24 hours</div><div class="on"><b>Spring</b>Cooling tune-up</div><div><b>Summer</b>On call 24 hours</div>
+      </div>
+      <p style="font-size:13px;margin-top:14px">Illustrative schedule. Call for plan details.</p>
+    </div>
+    <div class="panel tint">
+      <h3 style="color:#14232e">Easy financing</h3>
+      <p style="color:#3b4a53">Need a new system but not the budget today? Preferred now offers financing. Call (937) 938-7420 to ask how it works.</p>
+      <a class="btn btn-primary" style="margin-top:26px" href="tel:19379387420">Ask about financing</a>
+    </div>
+  </div>
+</div></section>
+
+<section id="area" style="padding-top:0"><div class="wrap">
+  <div class="head"><p class="eyebrow">Where we work</p><h2>Serving Dayton and the Miami Valley.</h2></div>
+  <div class="towns"><span>Beavercreek</span><span>Bellbrook</span><span>Centerville</span><span>Dayton</span><span>Englewood</span><span>Franklin</span><span>Huber Heights</span><span>Kettering</span><span>Miamisburg</span><span>Moraine</span><span>Oakwood</span><span>Riverside</span><span>Springboro</span><span>Tipp City</span><span>Vandalia</span><span>West Carrollton</span><span>Xenia</span></div>
+  <div class="brands"><small class="eyebrow" style="padding-left:4px">Brands we service</small>
+    <div class="track"><span>Amana</span><span>American Standard</span><span>Bryant</span><span>Carrier</span><span>Ducane</span><span>Goodman</span><span>Lennox</span><span>Rheem</span><span>Ruud</span><span>Trane</span><span>Westinghouse</span><span>York</span>
+    <span>Amana</span><span>American Standard</span><span>Bryant</span><span>Carrier</span><span>Ducane</span><span>Goodman</span><span>Lennox</span><span>Rheem</span><span>Ruud</span><span>Trane</span><span>Westinghouse</span><span>York</span></div></div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <div>
+    <p class="eyebrow">Get in touch</p><h2>Call, or tell us what you need.</h2>
+    <div class="info">
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><p><b>Office</b><span>(937) 938-7420</span><button class="copy" data-c="(937) 938-7420">Copy</button></p></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l9 17H3z"/><path d="M12 10v4M12 17h.01"/></svg><p><b>Emergency</b><span>(937) 422-0088</span><button class="copy" data-c="(937) 422-0088">Copy</button></p></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><p><b>Email</b><span>info@preferredheatingandairinc.com</span></p></div>
+      <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><p><b>Address</b><span>420 Fame Road, Dayton, Ohio 45449</span></p></div>
+    </div>
+  </div>
+  <form id="f" novalidate>
+    <h3 style="font-size:24px;font-weight:800">Request an estimate or service call</h3>
+    <label for="n">Name<input id="n" autocomplete="name" placeholder="Your name"></label>
+    <label for="e">Email<input id="e" type="email" autocomplete="email" placeholder="you@example.com"></label>
+    <label for="p">Phone<input id="p" type="tel" autocomplete="tel" placeholder="(937) 000-0000"></label>
+    <label for="s">What do you need?<select id="s"><option>Service call</option><option>New installation</option><option>Preferred Service Plan</option><option>Duct cleaning</option><option>Commercial quote</option></select></label>
+    <button class="btn btn-primary" type="submit" style="justify-content:center">Send request</button>
+    <p class="ok" id="ok" role="status">Concept preview: this form is not connected yet. On the finished site, requests go straight to the Preferred team.</p>
+  </form>
+</div></section>
+
+<footer><div class="wrap">
+  <p><b>Preferred Heating &amp; Air, Inc.</b> · 420 Fame Road, Dayton, Ohio 45449 · Ohio License #46396</p>
+  <p>Design concept prepared as a proposal. Business name, contact details, services and service areas are taken from the company's current public website. This preview is not affiliated with or approved by the company.</p>
+</div></footer>
+
+<div class="callbar"><a class="btn btn-primary" href="tel:19379387420">Call now</a><a class="btn btn-ghost" href="#contact">Get an estimate</a></div>
+
+<script>
+(function(){
+  var hero=document.getElementById('top'), word=document.getElementById('word'), temp=document.getElementById('temp'),
+      state=document.getElementById('state'), arc=document.getElementById('arc'),
+      bHeat=document.getElementById('bHeat'), bCool=document.getElementById('bCool');
+  var mode='heat', val=70;
+  function render(){
+    var min=60,max=80,pct=(val-min)/(max-min);
+    arc.style.strokeDashoffset=String(509*(1-pct));
+    temp.innerHTML=val+'<sup>°</sup>';
+    state.textContent=mode==='heat'?'Heating to set point':'Cooling to set point';
+    word.textContent=mode==='heat'?'warm':'cool';
+    hero.setAttribute('data-mode',mode);
+    bHeat.setAttribute('aria-pressed',mode==='heat');bCool.setAttribute('aria-pressed',mode==='cool');
+    seed();
+  }
+  bHeat.onclick=function(){mode='heat';val=70;render()};
+  bCool.onclick=function(){mode='cool';val=72;render()};
+  document.getElementById('up').onclick=function(){val=Math.min(80,val+1);render()};
+  document.getElementById('dn').onclick=function(){val=Math.max(60,val-1);render()};
+
+  /* background particles: embers rise in heat mode, snow falls in cool mode */
+  var cv=document.getElementById('fx'), cx=cv.getContext('2d'), W,H,P=[],reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function size(){var r=hero.getBoundingClientRect();W=cv.width=r.width;H=cv.height=r.height}
+  function seed(){P=[];var n=Math.round(W/16);for(var i=0;i<n;i++)P.push(mk(true))}
+  function mk(init){return{x:Math.random()*W,y:init?Math.random()*H:(mode==='heat'?H+10:-10),r:1+Math.random()*2.6,v:.25+Math.random()*.8,s:Math.random()*6.28}}
+  function tick(t){
+    cx.clearRect(0,0,W,H);
+    var col=mode==='heat'?'255,140,60':'160,215,245';
+    for(var i=0;i<P.length;i++){var p=P[i];
+      p.y+=mode==='heat'?-p.v:p.v; p.x+=Math.sin(t/900+p.s)*.35;
+      if(p.y<-12||p.y>H+12){P[i]=mk(false);continue}
+      cx.beginPath();cx.fillStyle='rgba('+col+','+(.18+p.r/9)+')';cx.arc(p.x,p.y,p.r,0,6.283);cx.fill();
+    }
+    if(!reduce)requestAnimationFrame(tick);
+  }
+  size();render();requestAnimationFrame(tick);
+  addEventListener('resize',function(){size();seed()});
+
+  var f=document.getElementById('f'),ok=document.getElementById('ok');
+  f.addEventListener('submit',function(e){e.preventDefault();ok.classList.add('show')});
+  document.querySelectorAll('.copy').forEach(function(b){b.onclick=function(){
+    var t=b.getAttribute('data-c');
+    try{navigator.clipboard.writeText(t).then(function(){b.textContent='Copied'},function(){b.textContent='Select text'})}catch(x){b.textContent='Select text'}
+    setTimeout(function(){b.textContent='Copy'},1600)}});
+})();
+</script>
+
+</body>
+</html>
