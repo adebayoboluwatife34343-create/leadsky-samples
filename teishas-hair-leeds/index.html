@@ -1,0 +1,813 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Teisha's Hair and Cosmetics · Afro-Caribbean Hair Care, Merrion Centre Leeds (Concept)</title>
+<meta name="description" content="Website concept for Teisha's, an Afro-Caribbean hair salon and hair care shop at the Merrion Centre, Leeds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500;1,6..96,700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --cocoa:#24130d; --cocoa-2:#341d14; --copper:#c0673a; --copper-2:#d98a5c; --gold:#d9a441;
+  --cream:#f7efe5; --cream-2:#efe2d2; --plum:#5a2738; --ink:#1d1410; --muted:#6f5e53; --line:rgba(36,19,13,.14);
+  --fd:'Bodoni Moda', 'Didot', Georgia, serif; --fb:'Manrope', system-ui, -apple-system, sans-serif;
+  --ease:cubic-bezier(.22,.8,.24,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font:400 17px/1.65 var(--fb);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--fd);font-weight:500;line-height:1.02;margin:0;letter-spacing:-.015em}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding-inline:max(18px,env(safe-area-inset-left))}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.eyebrow{font:700 12px/1 var(--fb);letter-spacing:.22em;text-transform:uppercase;color:var(--copper)}
+
+/* concept banner */
+.concept{background:var(--gold);color:#2b1a05;font-size:13px;line-height:1.4;text-align:center;padding:8px 16px;position:relative;z-index:60}
+
+/* intro curtain */
+.intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;pointer-events:auto}
+.intro .panel{position:absolute;top:0;bottom:0;width:50.5%;background:var(--cocoa)}
+.intro .panel.l{left:0}.intro .panel.r{right:0;background:var(--cocoa-2)}
+.intro .mark{position:relative;text-align:center;color:var(--cream)}
+.intro .mark h2{font-size:clamp(56px,11vw,150px);font-style:italic;font-weight:500;display:flex;justify-content:center;overflow:hidden;padding:.05em .1em}
+.intro .mark h2 span{display:inline-block;transform:translateY(110%)}
+.intro .mark p{font:600 12px/1 var(--fb);letter-spacing:.32em;text-transform:uppercase;color:var(--copper-2);margin-top:18px;opacity:0}
+.intro .skip{position:absolute;right:20px;bottom:calc(20px + env(safe-area-inset-bottom));background:transparent;color:var(--cream);border:1px solid rgba(247,239,229,.45);border-radius:999px;padding:10px 18px;font:600 13px var(--fb);cursor:pointer}
+.intro .skip:hover{background:rgba(247,239,229,.12)}
+html.no-intro .intro{display:none}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:50;background:rgba(247,239,229,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.brand{text-decoration:none;display:flex;align-items:baseline;gap:10px}
+.brand b{font:italic 700 28px/1 var(--fd);color:var(--cocoa)}
+.brand small{font:600 10.5px/1.2 var(--fb);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.links{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-weight:600;font-size:14.5px}
+.links a{text-decoration:none;color:var(--muted);transition:color .2s}
+.links a:hover{color:var(--cocoa)}
+.btn{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:15px 24px;font:700 15px/1 var(--fb);text-decoration:none;cursor:pointer;transition:transform .25s var(--ease),background .25s,color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+.btn-copper{background:var(--copper);color:#fff}.btn-copper:hover{background:#ab5629}
+.btn-cocoa{background:var(--cocoa);color:var(--cream)}
+.btn-line{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1.5px rgba(247,239,229,.5)}
+.menu-btn{display:none;background:none;border:0;padding:8px;cursor:pointer;color:var(--cocoa)}
+.menu-btn svg{width:28px;height:28px}
+
+/* hero */
+.hero{position:relative;background:var(--cocoa);color:var(--cream);overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:min(88vh,860px)}
+.hero-copy{padding:clamp(48px,8vw,110px) clamp(18px,4vw,64px) clamp(48px,6vw,80px) max(18px,calc((100vw - 1240px)/2 + 18px));display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+.hero h1{font-size:clamp(38px,5.6vw,92px);margin:18px 0 0;hyphens:none}
+.hero h1 .line:first-child{white-space:nowrap}
+.hero h1 em{color:var(--copper-2)}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .line>span{display:inline-block}
+.hero .lede{max-width:46ch;font-size:clamp(17px,1.4vw,19px);color:rgba(247,239,229,.82);margin-top:26px}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero .facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:42px}
+.chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border-radius:999px;background:rgba(247,239,229,.08);border:1px solid rgba(247,239,229,.16);font-size:13.5px;color:rgba(247,239,229,.9)}
+.chip svg{width:16px;height:16px;color:var(--gold)}
+.chip .dot{width:8px;height:8px;border-radius:50%;background:#7fd18b}
+.chip .dot.closed{background:#e08b7a}
+.hero-media{position:relative;overflow:hidden;min-height:420px}
+.hero-media img{position:absolute;inset:-6% 0 0 0;width:100%;height:112%;object-fit:cover;object-position:60% 30%}
+.hero-media::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,var(--cocoa) 0%,rgba(36,19,13,.35) 28%,rgba(36,19,13,0) 55%)}
+.hero-media figcaption{position:absolute;right:16px;bottom:14px;z-index:2;font-size:11.5px;color:rgba(247,239,229,.7)}
+.hero-stamp{position:absolute;left:-60px;bottom:48px;z-index:3;width:150px;height:150px;border-radius:50%;background:var(--copper);display:grid;place-items:center;text-align:center;font:italic 600 17px/1.15 var(--fd);color:#fff;box-shadow:0 18px 40px rgba(0,0,0,.3)}
+
+/* services: editorial rows */
+.section{padding-block:clamp(72px,10vw,140px)}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(40px,6vw,80px)}
+.section-head h2{font-size:clamp(40px,5.4vw,76px)}
+.section-head p{color:var(--muted);max-width:48ch;justify-self:end}
+.svc{display:grid;grid-template-columns:90px 1.1fr 1fr;gap:clamp(20px,4vw,56px);align-items:center;padding-block:clamp(28px,4vw,46px);border-top:1px solid var(--line)}
+.svc:last-child{border-bottom:1px solid var(--line)}
+.svc .num{font:italic 500 44px/1 var(--fd);color:var(--copper)}
+.svc h3{font-size:clamp(30px,3.4vw,48px)}
+.svc p{color:var(--muted);margin-top:12px;max-width:44ch}
+.svc .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.svc .tags span{font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--cream-2);color:var(--cocoa)}
+.svc .pic{position:relative;border-radius:200px 200px 22px 22px;overflow:hidden;aspect-ratio:4/3.2}
+.svc:nth-child(even) .pic{border-radius:22px 200px 22px 200px}
+.svc .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.svc:hover .pic img{transform:scale(1.05)}
+.svc .pic .cap{position:absolute;left:12px;bottom:10px;font-size:11px;color:#fff;background:rgba(0,0,0,.35);padding:3px 8px;border-radius:999px}
+.svc .book-link{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-weight:700;color:var(--copper);text-decoration:none}
+.svc .book-link svg{width:18px;height:18px;transition:transform .25s}
+.svc .book-link:hover svg{transform:translateX(4px)}
+.note{margin-top:28px;font-size:14px;color:var(--muted)}
+
+/* story */
+.story{background:var(--cocoa);color:var(--cream);position:relative;overflow:hidden}
+.story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.collage{position:relative;height:clamp(420px,52vw,640px)}
+.collage figure{position:absolute;margin:0;overflow:hidden;border-radius:18px;box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.collage figure img{width:100%;height:100%;object-fit:cover}
+.collage .a{left:0;top:0;width:62%;height:78%}
+.collage .b{right:0;bottom:0;width:52%;height:56%;border:8px solid var(--cocoa)}
+.collage figcaption{position:absolute;left:10px;bottom:8px;font-size:11px;color:#fff;background:rgba(0,0,0,.4);padding:3px 8px;border-radius:999px}
+.story h2{font-size:clamp(38px,5vw,68px)}
+.story h2 em{color:var(--copper-2)}
+.story p{color:rgba(247,239,229,.8);margin-top:22px;max-width:52ch}
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.pillar{border-top:1px solid rgba(247,239,229,.2);padding-top:16px}
+.pillar svg{width:30px;height:30px;color:var(--gold)}
+.pillar b{display:block;margin-top:10px;font-size:15px}
+.pillar span{display:block;font-size:14px;color:rgba(247,239,229,.65);margin-top:4px}
+
+/* shop 3D */
+.shop{background:radial-gradient(120% 90% at 70% 40%,#3b2117 0%,#1a0d08 70%);color:var(--cream);position:relative}
+.shop-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(24px,5vw,70px);align-items:center}
+.shop h2{font-size:clamp(38px,5vw,68px)}
+.shop p{color:rgba(247,239,229,.78);margin-top:20px;max-width:46ch}
+.stage{position:relative;aspect-ratio:1/1;max-height:640px;width:100%;border-radius:28px;overflow:hidden;background:radial-gradient(70% 60% at 50% 40%,#5a3424 0%,#24130d 75%);touch-action:pan-y;cursor:grab}
+.stage:active{cursor:grabbing}
+.stage canvas{display:block;width:100%!important;height:100%!important}
+.stage .fallback{position:absolute;inset:0;display:none}
+.stage .fallback img{width:100%;height:100%;object-fit:cover;opacity:.85}
+.stage.no-webgl .fallback{display:block}
+.stage .hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);font-size:12.5px;padding:8px 14px;border-radius:999px;background:rgba(0,0,0,.35);color:rgba(247,239,229,.85);white-space:nowrap;pointer-events:none}
+.stage .label3d{position:absolute;left:16px;top:16px;font-size:11.5px;color:rgba(247,239,229,.7)}
+.shop-list{list-style:none;padding:0;margin:30px 0 0;display:grid;gap:12px}
+.shop-list li{display:flex;gap:12px;align-items:flex-start}
+.shop-list svg{flex:none;width:22px;height:22px;color:var(--gold);margin-top:2px}
+
+/* inspiration strip */
+.strip{display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:16px}
+.strip figure{margin:0;position:relative;overflow:hidden;border-radius:20px;aspect-ratio:3/4}
+.strip figure:nth-child(2){aspect-ratio:auto;margin-top:60px}
+.strip img{width:100%;height:100%;object-fit:cover}
+.strip figcaption{position:absolute;left:12px;bottom:12px;right:12px;color:#fff;font:italic 600 22px/1.1 var(--fd);text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.strip figcaption small{display:block;font:500 11px/1.3 var(--fb);font-style:normal;opacity:.85;margin-top:6px}
+
+/* booking */
+.booking{background:var(--cream-2)}
+.book-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(28px,5vw,70px);align-items:start}
+.book-aside{position:sticky;top:100px}
+.book-aside h2{font-size:clamp(38px,5vw,68px)}
+.book-aside p{color:var(--muted);margin-top:18px;max-width:42ch}
+.book-aside figure{margin:28px 0 0;border-radius:22px;overflow:hidden;aspect-ratio:4/3}
+.book-aside figure img{width:100%;height:100%;object-fit:cover}
+.book-card{background:#fff;border-radius:26px;padding:clamp(20px,3vw,36px);box-shadow:0 30px 70px rgba(36,19,13,.12)}
+.steps{display:flex;gap:6px;margin-bottom:24px}
+.steps span{flex:1;height:4px;border-radius:4px;background:var(--cream-2);transition:background .4s}
+.steps span.on{background:var(--copper)}
+.step{display:none}.step.on{display:block;animation:fade .5s var(--ease)}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.step h3{font-size:28px;margin-bottom:16px}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.opt{position:relative;display:flex;gap:12px;align-items:center;text-align:left;border:1.5px solid var(--line);border-radius:16px;padding:10px;background:#fff;cursor:pointer;font:600 15px var(--fb);color:var(--ink);transition:border-color .2s,background .2s}
+.opt img{width:52px;height:52px;border-radius:12px;object-fit:cover;flex:none}
+.opt[aria-pressed="true"]{border-color:var(--copper);background:#fdf3ec}
+.days{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px}
+.day,.time{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:10px 6px;text-align:center;cursor:pointer;font:600 14px/1.3 var(--fb);color:var(--ink)}
+.day small{display:block;font-weight:500;color:var(--muted);font-size:12px}
+.day[aria-pressed="true"],.time[aria-pressed="true"]{border-color:var(--copper);background:var(--copper);color:#fff}
+.day[aria-pressed="true"] small{color:#ffe7d8}
+.times{display:grid;grid-template-columns:repeat(auto-fill,minmax(84px,1fr));gap:8px;margin-top:18px}
+.field{display:grid;gap:6px;margin-bottom:14px}
+.field label{font-weight:700;font-size:14px}
+.field input,.field textarea{font:inherit;padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fffaf5;color:var(--ink)}
+.field input:focus,.field textarea:focus{border-color:var(--copper);outline:none}
+.field .err{color:#b3261e;font-size:13px;min-height:1em}
+.step-nav{display:flex;justify-content:space-between;gap:10px;margin-top:22px}
+.btn-ghost{background:var(--cream-2);color:var(--cocoa)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+.summary{background:var(--cream);border-radius:16px;padding:14px 16px;font-size:14.5px;margin-bottom:16px}
+.done{text-align:center;padding:20px 0}
+.done svg{width:56px;height:56px;color:var(--copper)}
+.demo-note{margin-top:14px;font-size:13px;color:var(--muted);background:#fff6e5;border:1px solid #f0d9a8;border-radius:12px;padding:10px 12px}
+
+/* visit */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,70px)}
+.visit h2{font-size:clamp(38px,5vw,68px)}
+.hours{width:100%;border-collapse:collapse;margin-top:26px;font-size:16px}
+.hours td{padding:12px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;font-weight:600}
+.hours tr.today td{color:var(--copper);font-weight:700}
+.contact-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:16px}
+.contact-list li{display:flex;gap:14px;align-items:flex-start}
+.contact-list svg{flex:none;width:24px;height:24px;color:var(--copper);margin-top:2px}
+.contact-list a{font-weight:700;text-decoration:none}
+.map-card{position:relative;border-radius:26px;overflow:hidden;min-height:380px;background:var(--cocoa);color:var(--cream);display:flex;flex-direction:column;justify-content:flex-end;padding:28px}
+.map-card svg.map{position:absolute;inset:0;width:100%;height:100%}
+.map-card .inner{position:relative}
+.map-card h3{font-size:34px}
+.map-card p{color:rgba(247,239,229,.8);margin:8px 0 18px}
+
+/* footer */
+footer{background:var(--cocoa);color:rgba(247,239,229,.7);padding:56px 0 calc(90px + env(safe-area-inset-bottom));font-size:13.5px}
+footer .big{font:italic 500 clamp(44px,8vw,110px)/1 var(--fd);color:var(--cream)}
+footer .cols{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;margin-top:40px}
+footer h4{font:700 12px var(--fb);letter-spacing:.18em;text-transform:uppercase;color:var(--copper-2);margin:0 0 12px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+footer a{color:rgba(247,239,229,.85)}
+.callbar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:40;display:none;gap:8px}
+.callbar .btn{flex:1;justify-content:center;box-shadow:0 14px 30px rgba(0,0,0,.25)}
+
+/* reveal helpers (set by JS only when motion is allowed) */
+.js-motion [data-reveal]{opacity:0;transform:translateY(28px)}
+.js-motion .mask{clip-path:inset(100% 0 0 0)}
+
+@media (max-width:980px){
+  .hero-grid,.story-grid,.shop-grid,.book-grid,.visit-grid,.section-head{grid-template-columns:1fr}
+  .section-head p{justify-self:start}
+  .hero-media{min-height:56vh;order:-1}
+  .hero-media::before{background:linear-gradient(0deg,var(--cocoa) 0%,rgba(36,19,13,0) 45%)}
+  .hero-copy{padding:36px 18px 56px}
+  .hero-stamp{left:auto;right:18px;bottom:-40px;width:110px;height:110px;font-size:14px}
+  .svc{grid-template-columns:1fr;gap:16px}
+  .svc .num{font-size:34px}
+  .svc .pic{order:-1}
+  .book-aside{position:static}
+  .strip{grid-template-columns:1fr 1fr}
+  .strip figure:nth-child(2){margin-top:0;aspect-ratio:3/4}
+  .strip figure:nth-child(3){grid-column:1/-1;aspect-ratio:16/10}
+  footer .cols{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .links,.nav .btn-book{display:none}
+  .menu-btn{display:block}
+  .links.open{display:flex;position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid var(--line);padding:8px 18px 18px}
+  .links.open a{display:block;padding:14px 0;border-bottom:1px solid var(--line);font-size:17px;color:var(--cocoa)}
+  .pillars{grid-template-columns:1fr}
+  .callbar{display:flex}
+  .stage{aspect-ratio:4/5}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .intro{display:none!important}
+}
+</style>
+<script>
+  // Decide before paint: skip the intro for reduced motion, and only hide reveal targets when JS animations will run.
+  (function(){var d=document.documentElement,rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(rm){d.classList.add('no-intro')}else{d.classList.add('js-motion')}})();
+</script>
+</head>
+<body>
+<a class="sr" href="#main">Skip to content</a>
+<div class="concept" role="note">Independent website concept by LeadSky for Teisha's Hair and Cosmetics. Not their official website.</div>
+
+<!-- cinematic intro: curtain + wordmark, skippable, never shown with reduced motion -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="panel l"></div><div class="panel r"></div>
+  <div class="mark"><h2 id="introWord"></h2><p>Afro-Caribbean hair · Leeds</p></div>
+  <button class="skip" id="skipIntro" type="button">Skip intro</button>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Teisha's, home"><b>Teisha's</b><small>Hair &amp; Cosmetics</small></a>
+    <ul class="links" id="links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#story">The salon</a></li>
+      <li><a href="#shop">Hair care shop</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+    <a class="btn btn-copper btn-book" href="#book">Book an appointment</a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="links" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h10"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Merrion Centre · Leeds city centre</span>
+      <h1><span class="line"><span>Afro-Caribbean</span></span><span class="line"><span>hair, cared for</span></span><span class="line"><span><em>beautifully.</em></span></span></h1>
+      <p class="lede">Teisha's specialises in Afro-Caribbean hair care and products: braids, weaves and extensions, curly and natural hair, and colour. Book your appointment and we'll take it from there.</p>
+      <div class="ctas">
+        <a class="btn btn-copper" href="#book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Book an appointment</a>
+        <a class="btn btn-line" href="tel:+441133070077"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>0113 307 0077</a>
+      </div>
+      <div class="facts">
+        <span class="chip"><span class="dot" id="openDot"></span><span id="openText">Mon–Sat 10:30–19:00</span></span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Unit 82, Merrion Centre</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="5" r="2"/><path d="M12 8v6h5l2 5M12 11H8"/><path d="M9 14a5 5 0 1 0 6 6"/></svg>Step-free entrance</span>
+      </div>
+    </div>
+    <figure class="hero-media" style="margin:0">
+      <img id="heroImg" src="img/hero-curls.jpg" alt="Woman with long defined curls looking towards the camera" fetchpriority="high">
+      <figcaption>Illustrative photo</figcaption>
+    </figure>
+  </div>
+  <div class="hero-stamp" aria-hidden="true">Booking<br>recommended</div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">What we do</span><h2 data-reveal>Every texture,<br><em>expertly</em> handled.</h2></div>
+      <p data-reveal>From protective styles to colour, Teisha's is built around Afro-Caribbean and curly hair. Tell us what you'd like when you book and we'll confirm the time and price with you.</p>
+    </div>
+
+    <article class="svc">
+      <div class="num">01</div>
+      <div data-reveal>
+        <h3>Braids &amp; cornrows</h3>
+        <p>Protective styles plaited with care, from neat cornrows to braided updos.</p>
+        <div class="tags"><span>Cornrows</span><span>Braids</span><span>Protective styles</span></div>
+        <a class="book-link" href="#book" data-service="Braids & cornrows">Book braids <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <figure class="pic mask" style="margin:0"><img src="img/cornrows.jpg" alt="Close-up of neat cornrow braids" loading="lazy"><span class="cap">Illustrative photo</span></figure>
+    </article>
+
+    <article class="svc">
+      <div class="num">02</div>
+      <div data-reveal>
+        <h3>Weaves &amp; extensions</h3>
+        <p>Length and volume that blend with your own hair, fitted in the salon chair.</p>
+        <div class="tags"><span>Weaves</span><span>Extensions</span></div>
+        <a class="book-link" href="#book" data-service="Weaves & extensions">Book extensions <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <figure class="pic mask" style="margin:0"><img src="img/stylist-extensions.jpg" alt="Stylist fitting long hair extensions for a client" loading="lazy"><span class="cap">Illustrative photo</span></figure>
+    </article>
+
+    <article class="svc">
+      <div class="num">03</div>
+      <div data-reveal>
+        <h3>Curly &amp; natural hair</h3>
+        <p>Care for curls, coils and natural hair, from definition to everyday styling.</p>
+        <div class="tags"><span>Curly hair</span><span>Natural hair</span><span>Hair care</span></div>
+        <a class="book-link" href="#book" data-service="Curly & natural hair">Book curly hair care <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <figure class="pic mask" style="margin:0"><img src="img/curly-smile.jpg" alt="Smiling woman with voluminous natural curls" loading="lazy"><span class="cap">Illustrative photo</span></figure>
+    </article>
+
+    <article class="svc">
+      <div class="num">04</div>
+      <div data-reveal>
+        <h3>Colour &amp; balayage</h3>
+        <p>Hair colouring and balayage for a fresh tone or a soft, lived-in blend.</p>
+        <div class="tags"><span>Colouring</span><span>Balayage</span></div>
+        <a class="book-link" href="#book" data-service="Colour & balayage">Book colour <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <figure class="pic mask" style="margin:0"><img src="img/curly-colour.jpg" alt="Woman with curly hair coloured in deep violet tones" loading="lazy"><span class="cap">Illustrative photo</span></figure>
+    </article>
+    <p class="note">Services listed from Teisha's public booking profile. Prices are confirmed when you book.</p>
+  </div>
+</section>
+
+<section class="section story" id="story">
+  <div class="wrap story-grid">
+    <div class="collage">
+      <figure class="a mask"><img src="img/stylist-at-work.jpg" alt="Stylist working on a client's hair beside a bright window" loading="lazy"><figcaption>Illustrative photo</figcaption></figure>
+      <figure class="b mask"><img src="img/afro-puff.jpg" alt="Woman with a high natural afro puff, in black and white" loading="lazy"><figcaption>Illustrative photo</figcaption></figure>
+    </div>
+    <div>
+      <span class="eyebrow" style="color:var(--copper-2)">The salon</span>
+      <h2 data-reveal>A flagship salon in the <em>heart</em> of Leeds.</h2>
+      <p data-reveal>Teisha's was founded by professional stylist Nateisha Dewdney and opened its flagship salon at the Merrion Centre in 2020, in Unit 82 facing the Arena Way mall.</p>
+      <p data-reveal>It's a place for Afro-Caribbean hair: styled in the chair, with the products to look after it at home.</p>
+      <div class="pillars">
+        <div class="pillar" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 20s-7-4.4-9-9a4.8 4.8 0 0 1 9-3 4.8 4.8 0 0 1 9 3c-2 4.6-9 9-9 9z"/></svg><b>Specialists</b><span>Afro-Caribbean hair care is what we do.</span></div>
+        <div class="pillar" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><b>Book ahead</b><span>Appointments are recommended.</span></div>
+        <div class="pillar" data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="6" width="20" height="13" rx="2"/><path d="M2 10h20M6 15h4"/></svg><b>Easy to pay</b><span>Cards and contactless accepted.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section shop" id="shop">
+  <div class="wrap shop-grid">
+    <div>
+      <span class="eyebrow" style="color:var(--copper-2)">Hair care shop</span>
+      <h2 data-reveal>The products to keep it <em>looking good</em>.</h2>
+      <p data-reveal>Alongside the salon, Teisha's stocks Afro-Caribbean hair care products. Ask your stylist what suits your hair, or pick up your favourites in store.</p>
+      <ul class="shop-list">
+        <li data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 12 5 5 9-10"/></svg><span>Products chosen for Afro-Caribbean and curly hair</span></li>
+        <li data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 12 5 5 9-10"/></svg><span>Advice from the people who style your hair</span></li>
+        <li data-reveal><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m5 12 5 5 9-10"/></svg><span>On the live site: browse the range online before you visit</span></li>
+      </ul>
+    </div>
+    <div class="stage" id="stage" role="img" aria-label="Interactive 3D display of hair care bottles and jars on a pedestal. Drag to turn it.">
+      <div class="fallback"><img src="img/natural-afro.jpg" alt="" loading="lazy"></div>
+      <span class="label3d">Illustrative 3D display, not the actual product range</span>
+      <span class="hint" id="hint">Drag to turn the display</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-label="Style inspiration">
+  <div class="wrap">
+    <div class="section-head"><div><span class="eyebrow">Inspiration</span><h2 data-reveal>Bring a look,<br>leave <em>with it.</em></h2></div>
+      <p data-reveal>Not sure what to ask for? Save a few photos you love and bring them to your appointment.</p></div>
+    <div class="strip">
+      <figure class="mask"><img src="img/braided-updo.jpg" alt="Woman with a braided updo and gold hoop earrings against a graffiti wall" loading="lazy"><figcaption>Braided updos<small>Illustrative photo, not salon work</small></figcaption></figure>
+      <figure class="mask"><img src="img/pink-smile.jpg" alt="Smiling woman with short natural hair" loading="lazy"><figcaption>Short natural styles<small>Illustrative photo, not salon work</small></figcaption></figure>
+      <figure class="mask"><img src="img/natural-afro.jpg" alt="Close portrait of a woman with a full natural afro, black and white" loading="lazy"><figcaption>Full natural volume<small>Illustrative photo, not salon work</small></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section booking" id="book">
+  <div class="wrap book-grid">
+    <aside class="book-aside">
+      <span class="eyebrow">Appointments</span>
+      <h2 data-reveal>Book your <em>chair.</em></h2>
+      <p data-reveal>Pick a service, a day and a time within opening hours. On the live website this connects to Teisha's booking system.</p>
+      <figure class="mask"><img src="img/stylist-extensions.jpg" alt="Stylist sectioning a client's hair for extensions" loading="lazy" style="object-position:30% 40%"></figure>
+    </aside>
+
+    <div class="book-card" id="bookCard">
+      <div class="steps" aria-hidden="true"><span class="on"></span><span></span><span></span><span></span></div>
+      <form id="bookForm" novalidate>
+        <div class="step on" data-step="1">
+          <h3>1. Choose a service</h3>
+          <div class="opts" role="group" aria-label="Services">
+            <button type="button" class="opt" data-value="Braids & cornrows" aria-pressed="false"><img src="img/cornrows.jpg" alt="">Braids &amp; cornrows</button>
+            <button type="button" class="opt" data-value="Weaves & extensions" aria-pressed="false"><img src="img/stylist-extensions.jpg" alt="">Weaves &amp; extensions</button>
+            <button type="button" class="opt" data-value="Curly & natural hair" aria-pressed="false"><img src="img/curly-smile.jpg" alt="">Curly &amp; natural hair</button>
+            <button type="button" class="opt" data-value="Colour & balayage" aria-pressed="false"><img src="img/curly-colour.jpg" alt="">Colour &amp; balayage</button>
+          </div>
+        </div>
+        <div class="step" data-step="2">
+          <h3>2. Pick a day and time</h3>
+          <div class="days" id="days" role="group" aria-label="Days"></div>
+          <div class="times" id="times" role="group" aria-label="Times"></div>
+        </div>
+        <div class="step" data-step="3">
+          <h3>3. Your details</h3>
+          <div class="field"><label for="fname">Name</label><input id="fname" autocomplete="name" required><span class="err" id="e-fname"></span></div>
+          <div class="field"><label for="fphone">Mobile number</label><input id="fphone" type="tel" autocomplete="tel" inputmode="tel" required><span class="err" id="e-fphone"></span></div>
+          <div class="field"><label for="fnote">Anything we should know? (optional)</label><textarea id="fnote" rows="3" placeholder="e.g. length, colour, a photo you'll bring"></textarea></div>
+        </div>
+        <div class="step" data-step="4">
+          <div class="done">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-7"/></svg>
+            <h3 style="margin-top:10px">Request ready</h3>
+          </div>
+          <div class="summary" id="summary"></div>
+          <p class="demo-note" role="status"><b>This is a demo form, nothing was sent and no appointment was booked.</b> On the live website, this step would send the request to Teisha's booking system and confirm it by text.</p>
+        </div>
+        <div class="step-nav">
+          <button type="button" class="btn btn-ghost" id="back" hidden>Back</button>
+          <button type="button" class="btn btn-copper" id="next" disabled style="margin-left:auto">Continue</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section visit" id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Visit</span>
+      <h2 data-reveal>Find us at the <em>Merrion Centre.</em></h2>
+      <table class="hours" aria-label="Opening hours">
+        <tbody id="hoursBody"></tbody>
+      </table>
+      <ul class="contact-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Unit 82, Merrion Centre, Leeds LS2 8NG<br><small style="color:var(--muted)">Facing the Arena Way mall</small></span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+441133070077">0113 307 0077</a></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="5" r="2"/><path d="M12 8v6h5l2 5M12 11H8"/><path d="M9 14a5 5 0 1 0 6 6"/></svg><span>Wheelchair-accessible entrance</span></li>
+      </ul>
+    </div>
+    <div class="map-card">
+      <svg class="map" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <defs><pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0v40" fill="none" stroke="rgba(247,239,229,.06)"/></pattern></defs>
+        <rect width="400" height="400" fill="url(#g)"/>
+        <path d="M-10 120 C80 110 160 150 230 130 S360 90 420 110" stroke="rgba(192,103,58,.55)" stroke-width="14" fill="none"/>
+        <path d="M140 -10 C150 90 120 200 160 260 S190 380 180 420" stroke="rgba(247,239,229,.14)" stroke-width="10" fill="none"/>
+        <path d="M-10 300 L420 250" stroke="rgba(247,239,229,.1)" stroke-width="8"/>
+        <rect x="170" y="150" width="130" height="80" rx="10" fill="rgba(217,164,65,.18)" stroke="rgba(217,164,65,.6)"/>
+        <circle cx="236" cy="190" r="10" fill="#c0673a"><animate attributeName="r" values="10;16;10" dur="2.4s" repeatCount="indefinite"/></circle>
+        <circle cx="236" cy="190" r="5" fill="#fff"/>
+        <text x="180" y="245" fill="rgba(247,239,229,.75)" font-family="Manrope" font-size="12">Merrion Centre</text>
+      </svg>
+      <div class="inner">
+        <h3>Unit 82</h3>
+        <p>Merrion Centre, Leeds city centre</p>
+        <a class="btn btn-copper" href="https://www.openstreetmap.org/node/4314526119" target="_blank" rel="noopener">Open in maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Teisha's</div>
+    <div class="cols">
+      <div>
+        <h4>Teisha's Hair and Cosmetics</h4>
+        <ul><li>Unit 82, Merrion Centre, Leeds</li><li><a href="tel:+441133070077">0113 307 0077</a></li><li>Mon–Sat 10:30–19:00</li></ul>
+        <p style="margin-top:20px">Concept by LeadSky. An independent design concept, not affiliated with or endorsed by Teisha's.</p>
+      </div>
+      <div>
+        <h4>Photo credits</h4>
+        <ul>
+          <li>Curls hero, curly colour: Unsplash contributors via <a href="https://commons.wikimedia.org/wiki/File:Confident_Eye_Contact_(Unsplash).jpg">Wikimedia Commons</a>, CC0</li>
+          <li>Cornrows: Clem Onojeghuo via <a href="https://commons.wikimedia.org/wiki/File:Cornrow_style_(Unsplash).jpg">Wikimedia Commons</a>, CC0</li>
+          <li>Extensions and stylist photos: Michael Kalimukwa, Wikimedia Commons (<a href="https://commons.wikimedia.org/wiki/File:Woman_Weaves_Hair_in_Salon_03.jpg">1</a>, <a href="https://commons.wikimedia.org/wiki/File:Woman_Weaves_Hair_in_Salon_01.jpg">2</a>), <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> (resized)</li>
+          <li>Natural curls: @photosbyphab via <a href="https://commons.wikimedia.org/wiki/File:Natural_hair.jpg">Wikimedia Commons</a>, CC0</li>
+          <li>Natural afro, afro puff, braided updo, twists: Unsplash and Pexels contributors via Wikimedia Commons, CC0</li>
+          <li>All photos are illustrative and do not show Teisha's staff, clients or work.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="callbar"><a class="btn" style="background:var(--cream);color:var(--cocoa)" href="tel:+441133070077">Call</a><a class="btn btn-copper" href="#book">Book</a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var hasGsap = !!window.gsap;
+  if (!hasGsap) document.documentElement.classList.remove('js-motion');
+
+  /* ── Opening hours, using UK time ───────────────────────── */
+  var DAYS = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+  var ukParts = new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',weekday:'long',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date());
+  var ukDay = ukParts.find(function(p){return p.type==='weekday'}).value;
+  var ukMin = (+ukParts.find(function(p){return p.type==='hour'}).value)*60 + (+ukParts.find(function(p){return p.type==='minute'}).value);
+  var openNow = ukDay !== 'Sunday' && ukMin >= 630 && ukMin < 1140;
+  document.getElementById('openDot').classList.toggle('closed', !openNow);
+  document.getElementById('openText').textContent = openNow ? 'Open now · until 19:00' : (ukDay==='Sunday' ? 'Closed today · open Mon–Sat' : 'Closed now · Mon–Sat 10:30–19:00');
+  document.getElementById('hoursBody').innerHTML = DAYS.map(function(d){
+    return '<tr class="'+(d===ukDay?'today':'')+'"><td>'+d+(d===ukDay?' (today)':'')+'</td><td>'+(d==='Sunday'?'Closed':'10:30 – 19:00')+'</td></tr>';
+  }).join('');
+
+  /* ── Mobile menu ─────────────────────────────────────────── */
+  var menuBtn = document.getElementById('menuBtn'), links = document.getElementById('links');
+  menuBtn.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', open);
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  links.addEventListener('click', function(e){ if(e.target.tagName==='A'){ links.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); } });
+
+  /* ── Intro sequence ──────────────────────────────────────── */
+  var intro = document.getElementById('intro');
+  function endIntro(){ if(!intro) return; intro.remove(); intro=null; heroIn(); }
+  if (reduce || !hasGsap) { if(intro){intro.remove(); intro=null;} }
+  else {
+    var word = document.getElementById('introWord');
+    word.innerHTML = "Teisha's".split('').map(function(c){return '<span>'+c+'</span>'}).join('');
+    document.getElementById('skipIntro').addEventListener('click', function(){ tl.progress(1); });
+    var tl = gsap.timeline({onComplete:endIntro});
+    tl.to('#introWord span',{y:0,duration:.9,ease:'power4.out',stagger:.06})
+      .to('.intro .mark p',{opacity:1,duration:.6},'-=.4')
+      .to('.intro .mark',{opacity:0,y:-20,duration:.5,ease:'power2.in'},'+=.5')
+      .to('.intro .panel.l',{xPercent:-101,duration:1,ease:'power4.inOut'},'-=.1')
+      .to('.intro .panel.r',{xPercent:101,duration:1,ease:'power4.inOut'},'<')
+      .set('.intro',{pointerEvents:'none'},'<');
+    setTimeout(function(){ if (intro) tl.progress(1); }, 6000);   // never hold slow devices on the intro
+  }
+
+  /* ── Hero entrance + scroll motion ───────────────────────── */
+  function heroIn(){
+    if (!hasGsap || reduce) return;
+    gsap.from('.hero h1 .line > span',{yPercent:110,duration:1.1,ease:'power4.out',stagger:.09});
+    gsap.from('.hero .lede, .hero .ctas, .hero .facts',{opacity:0,y:20,duration:.9,stagger:.1,delay:.35,ease:'power3.out'});
+    gsap.from('#heroImg',{scale:1.18,duration:1.8,ease:'power3.out'});
+    gsap.from('.hero-stamp',{scale:0,rotate:-40,duration:1,delay:.6,ease:'back.out(1.6)'});
+  }
+  if (hasGsap && !reduce) {
+    gsap.registerPlugin(ScrollTrigger);
+    if (!intro) heroIn();
+    gsap.to('#heroImg',{yPercent:8,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+    gsap.utils.toArray('[data-reveal]').forEach(function(el){
+      gsap.to(el,{opacity:1,y:0,duration:1,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%'}});
+    });
+    gsap.utils.toArray('.mask').forEach(function(el){
+      gsap.to(el,{clipPath:'inset(0% 0 0 0)',duration:1.3,ease:'power4.inOut',scrollTrigger:{trigger:el,start:'top 85%'}});
+      var img = el.querySelector('img');
+      if (img) gsap.fromTo(img,{scale:1.2},{scale:1,duration:1.6,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%'}});
+    });
+    gsap.to('.collage .b',{yPercent:-12,ease:'none',scrollTrigger:{trigger:'.story',start:'top bottom',end:'bottom top',scrub:true}});
+  }
+
+  /* ── 3D hair care display (Three.js) ─────────────────────── */
+  var stage = document.getElementById('stage');
+  (function initThree(){
+    var ok = false;
+    try { var c = document.createElement('canvas'); ok = !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl'))); } catch(e){}
+    if (!ok || !window.THREE) { stage.classList.add('no-webgl'); document.getElementById('hint').textContent = 'Photo shown: 3D not supported on this device'; return; }
+    var T = THREE;
+    var renderer = new T.WebGLRenderer({antialias:true,alpha:true});
+    renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+    renderer.outputEncoding = T.sRGBEncoding;
+    renderer.toneMapping = T.ACESFilmicToneMapping; renderer.toneMappingExposure = .9;
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = T.PCFSoftShadowMap;
+    stage.insertBefore(renderer.domElement, stage.firstChild);
+
+    var scene = new T.Scene();
+    var camera = new T.PerspectiveCamera(32,1,.1,100);
+    camera.position.set(0,2.6,10.6);
+
+    // studio lighting: warm key, cool rim, soft fill, bounce from below
+    scene.add(new T.HemisphereLight(0xffe6cf,0x2a140c,.55));
+    var key = new T.SpotLight(0xffd2a8,2.2,30,Math.PI/6,.45,1.2); key.position.set(5,8,6); key.castShadow = true;
+    key.shadow.mapSize.set(1024,1024); key.shadow.bias = -.0004; scene.add(key);
+    var rim = new T.DirectionalLight(0xa9c4ff,.9); rim.position.set(-6,4,-5); scene.add(rim);
+    var fill = new T.PointLight(0xc0673a,.8,12); fill.position.set(-3,1,4); scene.add(fill);
+
+    // simple reflection environment so glossy materials pick up highlights
+    var envScene = new T.Scene();
+    var envGeo = new T.SphereGeometry(20,32,16);
+    var envMat = new T.MeshBasicMaterial({side:T.BackSide,vertexColors:true});
+    var colors = []; var pos = envGeo.attributes.position;
+    for (var i=0;i<pos.count;i++){ var y = pos.getY(i)/20; var col = new T.Color().setHSL(.07,.4,.08 + Math.max(0,y)*.5); colors.push(col.r,col.g,col.b); }
+    envGeo.setAttribute('color', new T.Float32BufferAttribute(colors,3));
+    envScene.add(new T.Mesh(envGeo,envMat));
+    var pmrem = new T.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(envScene,.04).texture;
+
+    var display = new T.Group(); scene.add(display);
+
+    // pedestal: stone plinth with a gold ring
+    var plinth = new T.Mesh(new T.CylinderGeometry(2.6,2.75,.7,96), new T.MeshStandardMaterial({color:0xe9dccb,roughness:.55,metalness:0}));
+    plinth.position.y = -.35; plinth.receiveShadow = true; plinth.castShadow = true; display.add(plinth);
+    var ring = new T.Mesh(new T.TorusGeometry(2.66,.035,16,160), new T.MeshStandardMaterial({color:0xd9a441,metalness:1,roughness:.25}));
+    ring.rotation.x = Math.PI/2; ring.position.y = -.02; display.add(ring);
+    var floor = new T.Mesh(new T.PlaneGeometry(30,30), new T.ShadowMaterial({opacity:.35}));
+    floor.rotation.x = -Math.PI/2; floor.position.y = -.71; floor.receiveShadow = true; scene.add(floor);
+
+    // label texture painted on a canvas
+    function labelTex(top, bottom, bg, fg){
+      var cv = document.createElement('canvas'); cv.width = 1024; cv.height = 512; var g = cv.getContext('2d');
+      g.fillStyle = bg; g.fillRect(0,0,1024,512);
+      g.strokeStyle = fg; g.globalAlpha = .5; g.lineWidth = 3; g.strokeRect(330,90,364,332); g.globalAlpha = 1;
+      g.fillStyle = fg; g.textAlign = 'center';
+      g.font = 'italic 700 74px "Bodoni Moda", Georgia, serif'; g.fillText(top,512,250);
+      g.font = '600 30px Manrope, sans-serif'; g.fillText(bottom.toUpperCase(),512,320);
+      var t = new T.CanvasTexture(cv); t.encoding = T.sRGBEncoding; t.anisotropy = 8; return t;
+    }
+    function lathe(points, mat){
+      var g = new T.LatheGeometry(points.map(function(p){return new T.Vector2(p[0],p[1])}),96);
+      var m = new T.Mesh(g, mat); m.castShadow = true; m.receiveShadow = true; return m;
+    }
+
+    // 1. tall amber bottle with gold cap
+    var amber = new T.MeshPhysicalMaterial({color:0x6a240a,roughness:.12,metalness:0,clearcoat:1,clearcoatRoughness:.05,transparent:true,opacity:.93});
+    var bottle = new T.Group();
+    bottle.add(lathe([[0,0],[.52,0],[.56,.06],[.56,1.9],[.5,2.15],[.24,2.4],[.2,2.55],[0,2.55]], amber));
+    var cap = new T.Mesh(new T.CylinderGeometry(.23,.23,.5,48), new T.MeshStandardMaterial({color:0xd9a441,metalness:1,roughness:.28}));
+    cap.position.y = 2.78; cap.castShadow = true; bottle.add(cap);
+    var lbl1 = new T.Mesh(new T.CylinderGeometry(.565,.565,1.1,96,1,true,-Math.PI*.55,Math.PI*1.1), new T.MeshStandardMaterial({map:labelTex('Curl','defining cream','#f3e6d6','#5a2738'),roughness:.6}));
+    lbl1.position.y = 1.05; bottle.add(lbl1);
+    bottle.position.set(-1.25,0,.2); display.add(bottle);
+
+    // 2. squat cream jar with brushed-gold lid
+    var jar = new T.Group();
+    jar.add(lathe([[0,0],[.88,0],[.95,.08],[.95,.82],[.9,.9],[0,.9]], new T.MeshPhysicalMaterial({color:0xf4ece2,roughness:.35,clearcoat:.6,clearcoatRoughness:.2})));
+    var lid = lathe([[0,.9],[.97,.9],[1,.95],[1,1.28],[.95,1.33],[0,1.33]], new T.MeshStandardMaterial({color:0xc9933b,metalness:1,roughness:.38}));
+    jar.add(lid);
+    var lbl2 = new T.Mesh(new T.CylinderGeometry(.955,.955,.5,96,1,true,-Math.PI*.45,Math.PI*.9), new T.MeshStandardMaterial({map:labelTex('Butter','for natural hair','#5a2738','#f7efe5'),roughness:.6}));
+    lbl2.position.y = .42; jar.add(lbl2);
+    jar.position.set(.95,0,.85); display.add(jar);
+
+    // 3. pump bottle in deep plum
+    var pump = new T.Group();
+    var plum = new T.MeshPhysicalMaterial({color:0x34101c,roughness:.22,clearcoat:1,clearcoatRoughness:.1});
+    pump.add(lathe([[0,0],[.6,0],[.66,.1],[.66,2.4],[.55,2.62],[.18,2.72],[0,2.72]], plum));
+    var neck = new T.Mesh(new T.CylinderGeometry(.13,.13,.45,32), new T.MeshStandardMaterial({color:0xd9a441,metalness:1,roughness:.3}));
+    neck.position.y = 2.95; pump.add(neck);
+    var head = new T.Mesh(new T.BoxGeometry(.7,.16,.26), new T.MeshStandardMaterial({color:0xd9a441,metalness:1,roughness:.3}));
+    head.position.set(.22,3.2,0); head.castShadow = true; pump.add(head);
+    var lbl3 = new T.Mesh(new T.CylinderGeometry(.665,.665,1.3,96,1,true,-Math.PI*.5,Math.PI), new T.MeshStandardMaterial({map:labelTex('Moisture','leave-in conditioner','#f3e6d6','#24130d'),roughness:.6}));
+    lbl3.position.y = 1.2; pump.add(lbl3);
+    pump.position.set(.55,0,-1.15); pump.rotation.y = -.5; display.add(pump);
+
+    // 4. afro pick (wide-tooth comb) leaning on the plinth: extruded shape
+    var pickShape = new T.Shape();
+    pickShape.moveTo(-.55,0); pickShape.lineTo(.55,0); pickShape.lineTo(.55,.35); pickShape.lineTo(-.55,.35); pickShape.lineTo(-.55,0);
+    var pick = new T.Group();
+    var pickMat = new T.MeshStandardMaterial({color:0x24130d,roughness:.4,metalness:.2});
+    var handle = new T.Mesh(new T.ExtrudeGeometry(pickShape,{depth:.12,bevelEnabled:true,bevelSize:.04,bevelThickness:.04,bevelSegments:4}), pickMat);
+    handle.castShadow = true; pick.add(handle);
+    for (var k=0;k<6;k++){ var tooth = new T.Mesh(new T.CylinderGeometry(.035,.05,1.4,12), pickMat); tooth.position.set(-.45+k*.18,1.05,.06); tooth.castShadow = true; pick.add(tooth); }
+    var fist = new T.Mesh(new T.SphereGeometry(.16,24,16), new T.MeshStandardMaterial({color:0xd9a441,metalness:1,roughness:.3}));
+    fist.position.set(0,.17,.2); pick.add(fist);
+    pick.position.set(-2.05,0,1.15); pick.rotation.set(-.2,.7,0); display.add(pick);
+
+    display.position.y = -.6;
+
+    // interaction: drag to rotate with inertia; slow idle turn; gentle scroll-linked tilt
+    var rotY = .4, vel = 0, dragging = false, lastX = 0, tilt = 0, idle = reduce ? 0 : .0025;
+    function down(e){ dragging = true; lastX = (e.touches?e.touches[0]:e).clientX; document.getElementById('hint').style.opacity = 0; }
+    function move(e){ if(!dragging) return; var x = (e.touches?e.touches[0]:e).clientX; vel = (x-lastX)*.008; rotY += vel; lastX = x; }
+    function up(){ dragging = false; }
+    stage.addEventListener('pointerdown', down); addEventListener('pointermove', move); addEventListener('pointerup', up);
+    stage.tabIndex = 0;
+    stage.addEventListener('keydown', function(e){ if(e.key==='ArrowLeft'){rotY-=.25} if(e.key==='ArrowRight'){rotY+=.25} });
+    if (hasGsap && !reduce) {
+      ScrollTrigger.create({trigger:'#shop',start:'top bottom',end:'bottom top',scrub:true,onUpdate:function(s){ tilt = (s.progress-.5)*.5; }});
+    }
+
+    function resize(){ var w = stage.clientWidth, h = stage.clientHeight; renderer.setSize(w,h,false); camera.aspect = w/h; camera.updateProjectionMatrix(); }
+    addEventListener('resize', resize); resize();
+
+    var visible = false;
+    new IntersectionObserver(function(es){ visible = es[0].isIntersecting; if(visible) loop(); }, {threshold:.05}).observe(stage);
+    var raf = 0;
+    function loop(){
+      cancelAnimationFrame(raf);
+      if (!visible) return;
+      if (!dragging) { vel *= .94; rotY += vel + idle; }
+      display.rotation.y = rotY;
+      camera.position.y = 2.6 + tilt*2; camera.lookAt(0,.75,0);
+      renderer.render(scene,camera);
+      raf = requestAnimationFrame(loop);
+    }
+    // Fonts may arrive after first paint: repaint labels once loaded
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){
+      lbl1.material.map = labelTex('Curl','defining cream','#f3e6d6','#5a2738');
+      lbl2.material.map = labelTex('Butter','for natural hair','#5a2738','#f7efe5');
+      lbl3.material.map = labelTex('Moisture','leave-in conditioner','#f3e6d6','#24130d');
+      [lbl1,lbl2,lbl3].forEach(function(m){ m.material.needsUpdate = true; });
+    });
+  })();
+
+  /* ── Booking demo ────────────────────────────────────────── */
+  var state = {service:null, day:null, time:null}, step = 1;
+  var nextBtn = document.getElementById('next'), backBtn = document.getElementById('back');
+  var bars = document.querySelectorAll('.steps span');
+  function show(n){
+    step = n;
+    document.querySelectorAll('.step').forEach(function(s){ s.classList.toggle('on', +s.dataset.step === n); });
+    bars.forEach(function(b,i){ b.classList.toggle('on', i < n); });
+    backBtn.hidden = n === 1 || n === 4;
+    nextBtn.hidden = n === 4;
+    nextBtn.textContent = n === 3 ? 'Request appointment' : 'Continue';
+    validate();
+    var h = document.querySelector('.step.on h3'); if (h) { h.setAttribute('tabindex','-1'); h.focus({preventScroll:true}); }
+  }
+  function validate(){
+    nextBtn.disabled = (step===1 && !state.service) || (step===2 && !(state.day && state.time));
+  }
+  function press(group, btn){ group.querySelectorAll('[aria-pressed]').forEach(function(b){ b.setAttribute('aria-pressed', b===btn); }); }
+
+  document.querySelectorAll('.opt').forEach(function(b){
+    b.addEventListener('click', function(){ state.service = b.dataset.value; press(b.parentNode,b); validate(); });
+  });
+  document.querySelectorAll('[data-service]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var b = document.querySelector('.opt[data-value="'+a.dataset.service+'"]');
+      if (b) { b.click(); }
+      show(1);
+    });
+  });
+
+  // next 12 opening days (Mon–Sat), times 10:30–17:30 so appointments end by closing
+  var daysEl = document.getElementById('days'), timesEl = document.getElementById('times');
+  var d = new Date(), made = 0, fmt = new Intl.DateTimeFormat('en-GB',{weekday:'short',day:'numeric',month:'short'});
+  while (made < 12) {
+    d.setDate(d.getDate()+1);
+    if (d.getDay() === 0) continue;
+    var parts = fmt.format(d).split(' ');
+    var b = document.createElement('button'); b.type = 'button'; b.className = 'day'; b.setAttribute('aria-pressed','false');
+    b.dataset.value = fmt.format(d);
+    b.innerHTML = parts[0].replace(',','') + '<small>' + parts.slice(1).join(' ') + '</small>';
+    daysEl.appendChild(b); made++;
+  }
+  daysEl.addEventListener('click', function(e){
+    var b = e.target.closest('.day'); if (!b) return;
+    state.day = b.dataset.value; state.time = null; press(daysEl,b);
+    timesEl.innerHTML = ['10:30','11:30','12:30','13:30','14:30','15:30','16:30','17:30'].map(function(t){
+      return '<button type="button" class="time" aria-pressed="false" data-value="'+t+'">'+t+'</button>'; }).join('');
+    validate();
+  });
+  timesEl.addEventListener('click', function(e){ var b = e.target.closest('.time'); if (!b) return; state.time = b.dataset.value; press(timesEl,b); validate(); });
+
+  function checkDetails(){
+    var ok = true, name = document.getElementById('fname'), phone = document.getElementById('fphone');
+    var en = document.getElementById('e-fname'), ep = document.getElementById('e-fphone');
+    en.textContent = name.value.trim().length < 2 ? 'Please enter your name.' : '';
+    var digits = phone.value.replace(/[^\d+]/g,'');
+    ep.textContent = /^(\+44|0)7\d{9}$/.test(digits) ? '' : 'Please enter a UK mobile number, e.g. 07123 456789.';
+    if (en.textContent) { ok = false; name.setAttribute('aria-invalid','true'); } else name.removeAttribute('aria-invalid');
+    if (ep.textContent) { ok = false; phone.setAttribute('aria-invalid','true'); } else phone.removeAttribute('aria-invalid');
+    return ok;
+  }
+  nextBtn.addEventListener('click', function(){
+    if (step === 3) {
+      if (!checkDetails()) return;
+      var esc = function(s){ return s.replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]}); };
+      document.getElementById('summary').innerHTML = '<b>'+esc(state.service)+'</b><br>'+esc(state.day)+' at '+esc(state.time)+'<br>'+esc(document.getElementById('fname').value.trim());
+      show(4); return;
+    }
+    show(step+1);
+  });
+  backBtn.addEventListener('click', function(){ show(step-1); });
+})();
+</script>
+</body>
+</html>
