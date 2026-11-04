@@ -1,0 +1,1427 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Yugen Nail Spa | Burrard Street, Vancouver | Botanical Gel Artistry & Spa Care</title>
+  
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- External Libraries: Three.js r128, GSAP 3.12.5, GSAP ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    :root {
+      --bg-main: #fbf9f6;
+      --bg-alt: #f0ede6;
+      --text-main: #282c27;
+      --sage: #526e5d;
+      --cocoa: #b89768;
+      --rose: #e3d2c3;
+      --white: #ffffff;
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .serif-font {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 500;
+    }
+
+    /* Concept Banner */
+    .concept-banner {
+      background: var(--text-main);
+      color: var(--white);
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 33px;
+      z-index: 999;
+      background: rgba(251, 249, 246, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(82, 110, 93, 0.12);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      color: var(--text-main);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-logo span {
+      font-size: 0.75rem;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+      border-left: 1px solid var(--sage);
+      padding-left: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--sage);
+    }
+
+    .nav-cta {
+      background: var(--sage);
+      color: var(--white);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: var(--transition-smooth);
+      border: 1px solid var(--sage);
+    }
+
+    .nav-cta:hover {
+      background: transparent;
+      color: var(--sage);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--text-main);
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 6rem 2rem 5rem 2rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sage);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.75rem, 5vw, 4.25rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: #555853;
+      max-width: 540px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+
+    .btn-primary {
+      background: var(--text-main);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      transition: var(--transition-smooth);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--text-main);
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--sage);
+      border-color: var(--sage);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-main);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      transition: var(--transition-smooth);
+      border: 1px solid rgba(40, 44, 39, 0.2);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--text-main);
+      background: rgba(40, 44, 39, 0.03);
+    }
+
+    .hero-visual {
+      position: relative;
+      height: 540px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(40,44,39,0.08);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hero-visual:hover img {
+      transform: scale(1.03);
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      background: #ffffff;
+      padding: 1.25rem 1.75rem;
+      border-radius: 12px;
+      border: 1px solid rgba(82, 110, 93, 0.15);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    .hero-badge .number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--sage);
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-badge .label {
+      font-size: 0.8rem;
+      color: var(--text-main);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* 3D Showcase Section */
+    .sanctuary-3d-section {
+      background: var(--bg-alt);
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sanctuary-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .canvas-container {
+      width: 100%;
+      height: 450px;
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: inset 0 0 30px rgba(0,0,0,0.03), 0 15px 30px rgba(40,44,39,0.05);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #webgl-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: grab;
+    }
+    #webgl-canvas:active {
+      cursor: grabbing;
+    }
+
+    .canvas-fallback {
+      display: none;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sanctuary-info h2 {
+      font-size: clamp(2.25rem, 3.5vw, 3rem);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .sanctuary-info p {
+      color: #555853;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .sanctuary-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .feature-item h4 {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .feature-item p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      color: #666;
+    }
+
+    /* Treatments / Services Section */
+    .treatments-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 7rem 2rem;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 5rem auto;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: #555853;
+      font-size: 1.05rem;
+    }
+
+    .treatments-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .treatment-card {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(40,44,39,0.04);
+      border: 1px solid rgba(82, 110, 93, 0.08);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition-smooth);
+    }
+
+    .treatment-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(40,44,39,0.08);
+    }
+
+    .treatment-img-wrap {
+      height: 240px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .treatment-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s ease;
+    }
+
+    .treatment-card:hover .treatment-img-wrap img {
+      transform: scale(1.05);
+    }
+
+    .treatment-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: #ffffff;
+      padding: 0.4rem 0.95rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--sage);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border: 1px solid rgba(82, 110, 93, 0.15);
+    }
+
+    .treatment-body {
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .treatment-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .treatment-title {
+      font-size: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .treatment-price {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--cocoa);
+    }
+
+    .treatment-duration {
+      font-size: 0.8rem;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .treatment-desc {
+      color: #555853;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+    }
+
+    .treatment-action {
+      background: none;
+      border: none;
+      color: var(--sage);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: gap 0.3s ease;
+      align-self: flex-start;
+    }
+
+    .treatment-action:hover {
+      gap: 14px;
+    }
+
+    /* Booking Widget Section */
+    .booking-section {
+      background: var(--bg-alt);
+      padding: 7rem 2rem;
+      position: relative;
+    }
+
+    .booking-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 24px;
+      padding: 4rem;
+      box-shadow: 0 20px 50px rgba(40,44,39,0.06);
+      border: 1px solid rgba(82, 110, 93, 0.1);
+    }
+
+    .booking-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--text-main);
+      text-transform: uppercase;
+    }
+
+    .form-group input,
+    .form-group select {
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+      border: 1px solid #dcd6ce;
+      background: var(--bg-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      transition: var(--transition-smooth);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--sage);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(82, 110, 93, 0.1);
+    }
+
+    .booking-submit-wrap {
+      grid-column: span 2;
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    .booking-submit-wrap .btn-primary {
+      width: 100%;
+      padding: 1.25rem;
+      font-size: 1.05rem;
+    }
+
+    /* Gallery Section */
+    .gallery-section {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 7rem 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      border-radius: 16px;
+      overflow: hidden;
+      height: 320px;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(40,44,39,0.04);
+    }
+
+    .gallery-item:nth-child(1) { grid-column: span 7; height: 420px; }
+    .gallery-item:nth-child(2) { grid-column: span 5; height: 420px; }
+    .gallery-item:nth-child(3) { grid-column: span 4; }
+    .gallery-item:nth-child(4) { grid-column: span 4; }
+    .gallery-item:nth-child(5) { grid-column: span 4; }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.04);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 12, 10, 0.9) 0%, rgba(10, 12, 10, 0.4) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 2rem;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay span {
+      color: var(--white);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    }
+
+    /* Location & Hours Section */
+    .location-section {
+      background: var(--bg-alt);
+      padding: 7rem 2rem;
+      border-top: 1px solid rgba(82, 110, 93, 0.1);
+    }
+
+    .location-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .location-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .location-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(40,44,39,0.03);
+      border: 1px solid rgba(82, 110, 93, 0.08);
+    }
+
+    .location-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .location-card p {
+      color: #555853;
+      margin-bottom: 0.75rem;
+      font-size: 1.05rem;
+    }
+
+    .hours-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #f0ede6;
+      font-size: 0.95rem;
+    }
+
+    .hours-row span:first-child {
+      color: #666;
+    }
+
+    .hours-row span:last-child {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .map-frame-wrap {
+      width: 100%;
+      height: 480px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(40,44,39,0.06);
+      position: relative;
+    }
+
+    .map-frame-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .map-overlay-badge {
+      position: absolute;
+      bottom: 2rem;
+      left: 2rem;
+      background: #ffffff;
+      padding: 1.5rem 2rem;
+      border-radius: 14px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+      border: 1px solid rgba(82, 110, 93, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .map-overlay-badge strong {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      color: var(--text-main);
+    }
+
+    .map-overlay-badge span {
+      font-size: 0.85rem;
+      color: var(--sage);
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--text-main);
+      color: var(--white);
+      padding: 5rem 2rem 3rem 2rem;
+    }
+
+    .footer-content {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .footer-brand h2 {
+      font-size: 2rem;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      color: rgba(255,255,255,0.7);
+      max-width: 360px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .footer-col h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+
+    .footer-col a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 3rem auto 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-bottom a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: underline;
+    }
+
+    /* Modal Notice */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(40, 44, 39, 0.6);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-backdrop.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--white);
+      padding: 3rem;
+      border-radius: 20px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+      transform: translateY(20px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-backdrop.active .modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-card h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .modal-card p {
+      color: #555;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    /* Responsive Design */
+    @media(max-width: 992px) {
+      .hero, .sanctuary-grid, .location-grid, .footer-content {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .gallery-item {
+        grid-column: span 12 !important;
+        height: 280px !important;
+      }
+      .booking-form {
+        grid-template-columns: 1fr;
+      }
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+      .booking-container {
+        padding: 2.5rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Concept Banner -->
+  <div class="concept-banner">
+    Independent website concept by LeadSky for Yugen. Not their official website.
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        YUGEN <span>Vancouver</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#treatments">Treatments</a></li>
+        <li><a href="#sanctuary">Sanctuary</a></li>
+        <li><a href="#booking">Book Appointment</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#location">Burrard St</a></li>
+      </ul>
+      <a href="#booking" class="nav-cta">Book Online</a>
+      <button class="mobile-menu-btn" aria-label="Toggle Navigation">&#9776;</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Bespoke Nail Art & Botanical Spa Care on Burrard St // Vancouver</span>
+      <h1>Immaculate gel manicures, relaxing organic pedicures, and custom nail artistry crafted in a tranquil sanctuary in downtown Vancouver.</h1>
+      <p>Experience Vancouver's newest premier destination for mindful, meticulous nail care. Using non-toxic formulas and organic botanicals for natural nail health and long-lasting perfection.</p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn-primary">Book Appointment Online</a>
+        <a href="#treatments" class="btn-secondary">Explore Treatment Menu</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <!-- Use of stock-3: professional nail technician applying gel manicure closeup -->
+      <img src="img/stock-3.jpg" alt="Professional nail technician applying gel manicure in Vancouver studio" loading="eager">
+      <div class="hero-badge">
+        <span class="number">1236</span>
+        <span class="label">Burrard Street, Vancouver</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3D Interactive Showcase Section -->
+  <section class="sanctuary-3d-section" id="sanctuary">
+    <div class="sanctuary-grid">
+      <div class="canvas-container" id="canvas-wrapper">
+        <canvas id="webgl-canvas"></canvas>
+        <!-- Fallback image in case WebGL is missing / reduced motion -->
+        <!-- Use of stock-9: bottles of premium gel polish on white marble display -->
+        <img src="img/stock-9.jpg" class="canvas-fallback" alt="Bottles of premium botanical gel polish on white marble display">
+      </div>
+      <div class="sanctuary-info">
+        <span class="hero-eyebrow">Interactive Botanical 3D Object</span>
+        <h2>The Art of Botanical Nail Care</h2>
+        <p>Rotate our signature organic cuticle oil dropper above, rendered in real-time 3D with polished brass and frosted glass. At Yugen, every detail is considered to curate an atmosphere of deep relaxation and refined aesthetic precision.</p>
+        <div class="sanctuary-features">
+          <div class="feature-item">
+            <h4>Non-Toxic Formulas</h4>
+            <p>10-free polishes and strengthening rubber bases that protect natural nail integrity.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Bespoke Artistry</h4>
+            <p>Custom hand-painted designs tailored to your unique personal aesthetic.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Signature Treatments Section -->
+  <section class="treatments-section" id="treatments">
+    <div class="section-header">
+      <span class="hero-eyebrow">Transparent Pricing & Menu</span>
+      <h2>Signature Treatments & Gel Artistry</h2>
+      <p>Meticulously performed nail care using premium, non-toxic products designed for long-lasting wear and natural nail health.</p>
+    </div>
+    <div class="treatments-grid">
+      
+      <!-- Treatment 1 -->
+      <div class="treatment-card">
+        <div class="treatment-img-wrap">
+          <!-- Use of stock-2: luxury nail salon minimalist interior Vancouver / nail art -->
+          <img src="img/stock-2.jpg" alt="Yugen Botanical Gel Manicure close up" loading="lazy">
+          <span class="treatment-badge">Popular</span>
+        </div>
+        <div class="treatment-body">
+          <div class="treatment-meta">
+            <h3 class="treatment-title">Yugen Botanical Gel Manicure</h3>
+            <span class="treatment-price">$75</span>
+          </div>
+          <span class="treatment-duration">Duration: 60 mins</span>
+          <p class="treatment-desc">Complete nail shaping, cuticle care, botanical hand soak, strengthening rubber base gel application, and custom gel colour or minimalist art.</p>
+          <a href="#booking" class="treatment-action">Reserve Treatment &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Treatment 2 -->
+      <div class="treatment-card">
+        <div class="treatment-img-wrap">
+          <!-- Use of stock-8: pedicure spa chairs with eucalyptus decor -->
+          <img src="img/stock-8.jpg" alt="Organic Spa Pedicure & Massage treatment" loading="lazy">
+          <span class="treatment-badge">Relaxing</span>
+        </div>
+        <div class="treatment-body">
+          <div class="treatment-meta">
+            <h3 class="treatment-title">Organic Spa Pedicure & Massage</h3>
+            <span class="treatment-price">$95</span>
+          </div>
+          <span class="treatment-duration">Duration: 75 mins</span>
+          <p class="treatment-desc">Exfoliating eucalyptus scrub, hydrating mud mask, hot stone lower leg massage, meticulous nail grooming, and pristine polish finish.</p>
+          <a href="#booking" class="treatment-action">Reserve Treatment &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Treatment 3 -->
+      <div class="treatment-card">
+        <div class="treatment-img-wrap">
+          <!-- Use of stock-5: elegant minimalist french manicure on marble table -->
+          <img src="img/stock-5.jpg" alt="Bespoke Nail Art Design on marble table" loading="lazy">
+          <span class="treatment-badge">Custom</span>
+        </div>
+        <div class="treatment-body">
+          <div class="treatment-meta">
+            <h3 class="treatment-title">Bespoke Nail Art Design</h3>
+            <span class="treatment-price">From $25</span>
+          </div>
+          <span class="treatment-duration">Duration: +30 mins</span>
+          <p class="treatment-desc">Hand-painted chrome accents, minimalist line work, encapsulation, and custom stone placement tailored to your personal aesthetic.</p>
+          <a href="#booking" class="treatment-action">Reserve Treatment &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Booking Widget Section -->
+  <section class="booking-section" id="booking">
+    <div class="booking-container">
+      <div class="section-header" style="margin-bottom: 2rem;">
+        <span class="hero-eyebrow">Instant 24/7 Booking</span>
+        <h2>Reserve Your Appointment</h2>
+        <p>Select your preferred treatment, date, and technician at our Burrard Street studio in Vancouver.</p>
+      </div>
+      <form class="booking-form" id="demo-booking-form">
+        <div class="form-group">
+          <label for="client-name">Full Name</label>
+          <input type="text" id="client-name" placeholder="e.g. Sarah Jenkins" required>
+        </div>
+        <div class="form-group">
+          <label for="client-email">Email Address</label>
+          <input type="email" id="client-email" placeholder="sarah@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="client-phone">Phone Number</label>
+          <input type="tel" id="client-phone" placeholder="+1 (604) 555-0199" required>
+        </div>
+        <div class="form-group">
+          <label for="treatment-select">Select Treatment</label>
+          <select id="treatment-select" required>
+            <option value="" disabled selected>Choose a service...</option>
+            <option value="manicure">Yugen Botanical Gel Manicure ($75)</option>
+            <option value="pedicure">Organic Spa Pedicure & Massage ($95)</option>
+            <option value="art">Bespoke Nail Art Design (From $25)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="booking-date">Preferred Date</label>
+          <input type="date" id="booking-date" required>
+        </div>
+        <div class="form-group">
+          <label for="booking-time">Preferred Time</label>
+          <select id="booking-time" required>
+            <option value="" disabled selected>Choose time slot...</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="14:00">2:00 PM</option>
+            <option value="16:00">4:00 PM</option>
+            <option value="18:00">6:00 PM</option>
+          </select>
+        </div>
+        <div class="booking-submit-wrap">
+          <button type="submit" class="btn-primary">Confirm Appointment Request</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery-section" id="gallery">
+    <div class="section-header">
+      <span class="hero-eyebrow">Studio & Artistry</span>
+      <h2>Recent Work & Studio Atmosphere</h2>
+      <p>A glimpse inside our tranquil Vancouver sanctuary and recent client manicures.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <!-- Use of stock-1: luxury nail salon minimalist interior Vancouver -->
+        <img src="img/stock-1.jpg" alt="Minimalist interior of Yugen Nail Spa in Vancouver" loading="lazy">
+        <div class="gallery-overlay">
+          <span>Burrard Street Sanctuary</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <!-- Use of stock-4: professional nail technician applying gel manicure closeup -->
+        <img src="img/stock-4.jpg" alt="Close up of custom botanical nail artistry" loading="lazy">
+        <div class="gallery-overlay">
+          <span>Bespoke Gel Artistry</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <!-- Use of stock-7: pedicure spa chairs with eucalyptus decor -->
+        <img src="img/stock-7.jpg" alt="Pedicure spa seating with eucalyptus decor" loading="lazy">
+        <div class="gallery-overlay">
+          <span>Organic Pedicure Lounge</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <!-- Use of stock-10: bottles of premium gel polish on white marble display -->
+        <img src="img/stock-10.jpg" alt="Premium non-toxic gel polish collection" loading="lazy">
+        <div class="gallery-overlay">
+          <span>Non-Toxic Formulations</span>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <!-- Use of stock-6: elegant minimalist french manicure -->
+        <img src="img/stock-6.jpg" alt="Elegant minimalist manicure on white marble" loading="lazy">
+        <div class="gallery-overlay">
+          <span>Immaculate Finishes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Hours Section -->
+  <section class="location-section" id="location">
+    <div class="location-grid">
+      <div class="location-details">
+        <div class="section-header" style="text-align: left; margin: 0;">
+          <span class="hero-eyebrow">Downtown Vancouver</span>
+          <h2>Visit Our Burrard Street Sanctuary</h2>
+          <p>Conveniently located at 1236 Burrard Street in the heart of downtown Vancouver, BC. Step off the bustling street and into our calming botanical haven.</p>
+        </div>
+        <div class="location-card">
+          <h3>Studio Information</h3>
+          <p><strong>Address:</strong> 1236 Burrard Street, Vancouver, BC</p>
+          <p><strong>Phone:</strong> +1 (604) 655-6582</p>
+          <p><strong>Email:</strong> hello@yugennailspa.com</p>
+          
+          <div class="hours-list">
+            <div class="hours-row">
+              <span>Monday – Friday</span>
+              <span>10:00 AM – 7:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span>Saturday</span>
+              <span>10:00 AM – 7:00 PM</span>
+            </div>
+            <div class="hours-row">
+              <span>Sunday</span>
+              <span>11:00 AM – 6:00 PM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="map-frame-wrap">
+        <!-- Use of stock-1 as a photographic Vancouver street/interior reference context -->
+        <img src="img/stock-1.jpg" alt="Map and location preview for Yugen Nail Spa on Burrard Street Vancouver">
+        <div class="map-overlay-badge">
+          <strong>1236 Burrard Street</strong>
+          <span>Vancouver, BC V6Z 1Z8</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h2>YUGEN</h2>
+        <p>A tranquil Vancouver sanctuary dedicated to immaculate gel manicures, organic pedicure spa care, and custom nail artistry on Burrard Street.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#treatments">Treatments</a></li>
+          <li><a href="#sanctuary">Sanctuary</a></li>
+          <li><a href="#booking">Book Appointment</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#location">Location & Hours</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>1236 Burrard Street</li>
+          <li>Vancouver, BC</li>
+          <li>+1 (604) 655-6582</li>
+          <li>hello@yugennailspa.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        &copy; Yugen Nail Spa. Concept by LeadSky. Independent website proposal.
+      </div>
+      <div>
+        Stock photo credits: 
+        <a href="https://pixabay.com/photos/beauty-salon-barber-nail-salon-4043096/" target="_blank" rel="noopener">Sunriseforever</a>, 
+        <a href="https://pixabay.com/photos/nail-art-manicure-nails-nail-polish-5653459/" target="_blank" rel="noopener">Mounthive</a>, 
+        <a href="https://pixabay.com/photos/people-hands-manicure-cuticle-2583493/" target="_blank" rel="noopener">StockSnap</a>, 
+        <a href="https://pixabay.com/photos/paint-makeup-girl-cosmetics-2985569/" target="_blank" rel="noopener">whitedaemon</a>, 
+        <a href="https://pixabay.com/photos/table-table-setting-event-dining-4397860/" target="_blank" rel="noopener">AmirHanna</a>, 
+        <a href="https://pixabay.com/photos/drink-woman-toast-bar-restaurant-7933279/" target="_blank" rel="noopener">OurWhiskyFoundation</a>, 
+        <a href="https://pixabay.com/photos/bathroom-furniture-interior-design-6686057/" target="_blank" rel="noopener">tonlonkhu</a>, 
+        <a href="https://pixabay.com/photos/pedicure-massage-therapist-spa-1462138/" target="_blank" rel="noopener">Stuchy</a>, 
+        <a href="https://pixabay.com/photos/beers-bottles-pack-beer-bottles-414914/" target="_blank" rel="noopener">stevepb</a>, 
+        <a href="https://pixabay.com/photos/manicure-pedicure-cosmetics-care-870857/" target="_blank" rel="noopener">Bru-nO</a> (Pixabay)
+      </div>
+    </div>
+  </footer>
+
+  <!-- Demo Notice Modal -->
+  <div class="modal-backdrop" id="demo-modal">
+    <div class="modal-card">
+      <h3>Appointment Received</h3>
+      <p id="modal-msg">This is a demo form, nothing was sent.</p>
+      <button class="btn-primary" id="modal-close" style="width: 100%;">Close Window</button>
+    </div>
+  </div>
+
+  <script>
+    // Three.js Interactive 3D Object (Polished brass & frosted glass dropper bottle)
+    let scene, camera, renderer, bottleGroup;
+    let isDragging = false;
+    let previousMousePosition = { x: 0, y: 0 };
+    let targetRotation = { x: 0.2, y: 0 };
+
+    function init3D() {
+      const container = document.getElementById('canvas-wrapper');
+      const canvas = document.getElementById('webgl-canvas');
+      
+      // Check reduced motion or WebGL support
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        canvas.style.display = 'none';
+        document.querySelector('.canvas-fallback').style.display = 'block';
+        return;
+      }
+
+      try {
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+        
+        renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.shadowMap.enabled = true;
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0xb89768, 2, 50);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 1.2);
+        directionalLight.position.set(-5, 8, 5);
+        scene.add(directionalLight);
+
+        // Build Bottle Group
+        bottleGroup = new THREE.Group();
+
+        // Marble Pedestal Cylinder
+        const pedestalGeo = new THREE.CylinderGeometry(1.6, 1.8, 0.4, 32);
+        const pedestalMat = new THREE.MeshStandardMaterial({ color: 0xf4f1ea, roughness: 0.3 });
+        const pedestal = new THREE.Mesh(pedestalGeo, pedestalMat);
+        pedestal.position.y = -1.4;
+        bottleGroup.add(pedestal);
+
+        // Glass Bottle Body (Frosted Sage Tint)
+        const bodyGeo = new THREE.CylinderGeometry(0.8, 0.85, 2.2, 32);
+        const bodyMat = new THREE.MeshPhysicalMaterial({
+          color: 0x526e5d,
+          roughness: 0.2,
+          transmission: 0.6,
+          thickness: 1.2,
+          transparent: true,
+          opacity: 0.85
+        });
+        const body = new THREE.Mesh(bodyGeo, bodyMat);
+        body.position.y = -0.1;
+        bottleGroup.add(body);
+
+        // Polished Brass Cap & Dropper
+        const capGeo = new THREE.CylinderGeometry(0.5, 0.5, 0.8, 32);
+        const brassMat = new THREE.MeshStandardMaterial({
+          color: 0xb89768,
+          metalness: 0.9,
+          roughness: 0.2
+        });
+        const cap = new THREE.Mesh(capGeo, brassMat);
+        cap.position.y = 1.2;
+        bottleGroup.add(cap);
+
+        // Dropper Neck
+        const neckGeo = new THREE.CylinderGeometry(0.3, 0.5, 0.3, 32);
+        const neck = new THREE.Mesh(neckGeo, brassMat);
+        neck.position.y = 0.75;
+        bottleGroup.add(neck);
+
+        scene.add(bottleGroup);
+        camera.position.z = 5.5;
+
+        // Mouse / Touch Interaction for rotation
+        container.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          previousMousePosition = { x: e.clientX, y: e.clientY };
+        });
+
+        window.addEventListener('mousemove', (e) => {
+          if (!isDragging) return;
+          const deltaX = e.clientX - previousMousePosition.x;
+          const deltaY = e.clientY - previousMousePosition.y;
+
+          targetRotation.y += deltaX * 0.008;
+          targetRotation.x += deltaY * 0.008;
+
+          previousMousePosition = { x: e.clientX, y: e.clientY };
+        });
+
+        window.addEventListener('mouseup', () => {
+          isDragging = false;
+        });
+
+        // Touch support
+        container.addEventListener('touchstart', (e) => {
+          isDragging = true;
+          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }, { passive: true });
+
+        window.addEventListener('touchmove', (e) => {
+          if (!isDragging) return;
+          const deltaX = e.touches[0].clientX - previousMousePosition.x;
+          const deltaY = e.touches[0].clientY - previousMousePosition.y;
+
+          targetRotation.y += deltaX * 0.008;
+          targetRotation.x += deltaY * 0.008;
+
+          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+          isDragging = false;
+        });
+
+        window.addEventListener('resize', () => {
+          camera.aspect = container.clientWidth / container.clientHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+
+        animate3D();
+
+      } catch (err) {
+        console.warn('WebGL initialization failed, showing fallback image', err);
+        canvas.style.display = 'none';
+        document.querySelector('.canvas-fallback').style.display = 'block';
+      }
+    }
+
+    function animate3D() {
+      requestAnimationFrame(animate3D);
+      
+      // Smooth interpolation (damping) towards target rotation, plus gentle idle rotation
+      if (!isDragging) {
+        targetRotation.y += 0.004;
+      }
+
+      bottleGroup.rotation.y += (targetRotation.y - bottleGroup.rotation.y) * 0.05;
+      bottleGroup.rotation.x += (targetRotation.x - bottleGroup.rotation.x) * 0.05;
+      
+      // Clamp x rotation
+      bottleGroup.rotation.x = Math.max(-0.5, Math.min(0.5, bottleGroup.rotation.x));
+
+      renderer.render(scene, camera);
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      init3D();
+
+      // Form Handling & Modal
+      const form = document.getElementById('demo-booking-form');
+      const modal = document.getElementById('demo-modal');
+      const modalClose = document.getElementById('modal-close');
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        modal.classList.add('active');
+      });
+
+      modalClose.addEventListener('click', () => {
+        modal.classList.remove('active');
+        form.reset();
+      });
+
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.classList.remove('active');
+          form.reset();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
