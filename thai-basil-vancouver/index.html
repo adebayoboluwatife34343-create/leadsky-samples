@@ -1,0 +1,1220 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Thai Basil Vancouver | Cornwall Ave | Modern Thai Dining Concept</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --bg-dark: #0f1715;
+            --bg-card: #1e2d27;
+            --accent-green: #2e6f40;
+            --accent-green-hover: #245832;
+            --sand: #e2dcd6;
+            --sand-light: #fbfbfa;
+            --text-muted: #9aa8a2;
+            --border-color: rgba(226, 220, 214, 0.15);
+            --transition-smooth: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--sand);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6, .brand-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* Top Demo Banner */
+        .demo-banner {
+            background-color: #16221d;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--sand-light);
+            font-size: 0.825rem;
+            text-align: center;
+            padding: 8px 16px;
+            position: relative;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .demo-banner span {
+            background: var(--accent-green);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Intro Sequence */
+        #intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: var(--bg-dark);
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        .intro-content {
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .intro-logo-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 24px auto;
+            border: 2px solid var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-green);
+        }
+
+        .intro-title {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--sand-light);
+            margin-bottom: 8px;
+            letter-spacing: -0.03em;
+        }
+
+        .intro-subtitle {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 32px;
+        }
+
+        .skip-intro-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--sand);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .skip-intro-btn:hover {
+            border-color: var(--accent-green);
+            color: var(--sand-light);
+            background: rgba(46, 111, 64, 0.1);
+        }
+
+        /* Announcement Bar */
+        .announcement-bar {
+            background: linear-gradient(90deg, #16221d, #1e2d27, #16221d);
+            border-bottom: 1px solid var(--border-color);
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--sand);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .ssl-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(46, 111, 64, 0.2);
+            color: #4ade80;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 0.75rem;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            background: rgba(15, 23, 21, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-logo-img {
+            height: 38px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .brand-text {
+            color: var(--sand-light);
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--sand);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--sand-light);
+        }
+
+        .nav-cta-btn {
+            background-color: var(--accent-green);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-cta-btn:hover {
+            background-color: var(--accent-green-hover);
+            transform: translateY(-1px);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--sand);
+            cursor: pointer;
+            padding: 4px;
+        }
+
+        /* Mobile Drawer */
+        .mobile-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 320px;
+            height: 100vh;
+            background: var(--bg-dark);
+            z-index: 1100;
+            padding: 80px 32px 32px 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            border-left: 1px solid var(--border-color);
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .mobile-drawer.active {
+            right: 0;
+        }
+
+        .mobile-drawer-close {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: none;
+            border: none;
+            color: var(--sand);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .mobile-drawer a {
+            color: var(--sand);
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 80px 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .hero-badge-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .location-badge {
+            background: rgba(226, 220, 214, 0.08);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--sand);
+            border: 1px solid var(--border-color);
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 4.5vw, 4rem);
+            line-height: 1.1;
+            color: var(--sand-light);
+        }
+
+        .hero-description {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 520px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-green);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-green-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--sand-light);
+            padding: 14px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--sand);
+            background: rgba(226, 220, 214, 0.05);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-color);
+        }
+
+        .hero-image-wrapper img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .hero-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        /* Story Section */
+        .story-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 100px 24px;
+        }
+
+        .story-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .story-grid-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .story-img {
+            border-radius: 12px;
+            overflow: hidden;
+            height: 260px;
+            border: 1px solid var(--border-color);
+        }
+
+        .story-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .story-img:nth-child(2) {
+            margin-top: 30px;
+        }
+
+        .story-content h2 {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            color: var(--sand-light);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .story-content p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+
+        /* Menu Showcase */
+        .menu-section {
+            padding: 100px 24px;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px auto;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.2rem, 4vw, 3.2rem);
+            color: var(--sand-light);
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .menu-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .menu-tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--sand);
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .menu-tab-btn.active, .menu-tab-btn:hover {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            color: white;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(46, 111, 64, 0.5);
+        }
+
+        .menu-card-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .menu-card-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .menu-item-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .menu-item-title {
+            font-size: 1.2rem;
+            color: var(--sand-light);
+        }
+
+        .menu-item-price {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 700;
+            color: var(--accent-green);
+            font-size: 1.1rem;
+        }
+
+        .menu-item-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 16px;
+        }
+
+        .menu-item-meta {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-size: 0.75rem;
+            padding: 3px 10px;
+            border-radius: 4px;
+            background: rgba(226, 220, 214, 0.08);
+            color: var(--sand);
+        }
+
+        .tag.spicy {
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+        }
+
+        .tag.vegan {
+            background: rgba(74, 222, 128, 0.15);
+            color: #4ade80;
+        }
+
+        /* Location & Hours Section */
+        .location-section {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            padding: 100px 24px;
+        }
+
+        .location-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .location-details h2 {
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            color: var(--sand-light);
+            margin-bottom: 24px;
+        }
+
+        .info-group {
+            margin-bottom: 24px;
+        }
+
+        .info-group h4 {
+            color: var(--sand-light);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-group p {
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        .location-img-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            height: 400px;
+        }
+
+        .location-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Reservation Modal Section / Booking */
+        .reservation-section {
+            padding: 100px 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .reservation-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 48px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--sand);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            background: var(--bg-dark);
+            border: 1px solid var(--border-color);
+            padding: 12px 16px;
+            border-radius: 8px;
+            color: var(--sand-light);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-green);
+        }
+
+        .form-submit-btn {
+            grid-column: span 2;
+            background: var(--accent-green);
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            margin-top: 12px;
+        }
+
+        .form-submit-btn:hover {
+            background: var(--accent-green-hover);
+        }
+
+        .form-notice {
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #090e0c;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 24px 30px 24px;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--sand-light);
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--sand-light);
+        }
+
+        .footer-bottom {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding-top: 30px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .photo-credits {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        /* Reduced Motion Support */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            #intro-overlay {
+                display: none !important;
+            }
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 968px) {
+            .hero-section, .story-container, .location-container, .footer-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .nav-links, .nav-cta-btn {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full, .form-submit-btn {
+                grid-column: span 1;
+            }
+
+            .hero-image-wrapper img {
+                height: 360px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Demo Banner -->
+    <div class="demo-banner">
+        <span>Private Concept</span> Independent website concept by LeadSky for Thai Basil. Not their official website.
+    </div>
+
+    <!-- Intro Sequence Overlay -->
+    <div id="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-logo-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 7.54 16.6l-3.54-3.54a5 5 0 0 0-7.08 0l-3.54 3.54A10 10 0 0 1 12 2z"></path></svg>
+            </div>
+            <h1 class="intro-title">Thai Basil Vancouver</h1>
+            <p class="intro-subtitle">Cornwall Avenue • Modern Dining & Authentic Spice</p>
+            <button class="skip-intro-btn" id="skip-intro">Enter Experience</button>
+        </div>
+    </div>
+
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="ssl-badge">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+            Secure HTTPS Active
+        </div>
+        <span>Online table reservations & takeout orders now open for Cornwall Ave</span>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-logo-area">
+                <img src="img/business-logo-1.png" alt="Thai Basil Logo" class="brand-logo-img">
+                <span class="brand-text">Thai Basil</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#story">Our Story</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#location">Cornwall Location</a></li>
+                <li><a href="#reserve">Reservations</a></li>
+            </ul>
+            <a href="#reserve" class="nav-cta-btn">Reserve a Table</a>
+            <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Open mobile menu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer">
+        <button class="mobile-drawer-close" id="drawer-close" aria-label="Close menu">&times;</button>
+        <a href="#story" class="mobile-nav-link">Our Story</a>
+        <a href="#menu" class="mobile-nav-link">Menu</a>
+        <a href="#location" class="mobile-nav-link">Cornwall Location</a>
+        <a href="#reserve" class="mobile-nav-link">Reservations</a>
+        <a href="tel:+16046776767" class="mobile-nav-link" style="color: var(--accent-green); font-size: 1rem;">Call: +1 604-677-6767</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-badge-group">
+                <span class="location-badge">2184 Cornwall Avenue, Vancouver</span>
+                <span class="location-badge">Authentic Thai Cuisine</span>
+            </div>
+            <h1 class="hero-title">Authentic Thai Spice & Modern Vancouver Dining</h1>
+            <p class="hero-description">Experience fragrant herbs, vibrant curries, and signature wok dishes prepared fresh daily on Vancouver's West Side.</p>
+            <div class="hero-actions">
+                <a href="#reserve" class="btn-primary">Reserve a Table</a>
+                <a href="#menu" class="btn-secondary">View Full Menu</a>
+            </div>
+        </div>
+        <div class="hero-image-wrapper">
+            <img src="img/stock-2.jpg" alt="Fragrant steaming Thai green curry bowl with fresh basil leaves">
+        </div>
+    </section>
+
+    <!-- Story & Heritage Section -->
+    <section class="story-section" id="story">
+        <div class="story-container">
+            <div class="story-grid-images">
+                <div class="story-img">
+                    <img src="img/stock-9.jpg" alt="Thai chef preparing fresh ingredients with precision">
+                </div>
+                <div class="story-img">
+                    <img src="img/stock-7.jpg" alt="Warm minimalist restaurant interior lighting">
+                </div>
+            </div>
+            <div class="story-content">
+                <h2>Rooted in Tradition, Crafted for Vancouver</h2>
+                <p>Located right on Cornwall Avenue, Thai Basil brings together time-honored Thai culinary traditions and the fresh ingredients of the West Coast.</p>
+                <p>Every dish is balanced with care—blending aromatic lemongrass, fiery bird's eye chilies, sweet Thai basil, and rich coconut milk to create memorable flavors for neighborhood diners and visitors alike.</p>
+                <a href="#menu" class="btn-primary" style="margin-top: 12px;">Explore Our Dishes</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Menu Showcase -->
+    <section class="menu-section" id="menu">
+        <div class="section-header">
+            <h2>Our Culinary Offerings</h2>
+            <p>From aromatic curries to sizzling noodle stir-fries, discover our thoughtfully curated menu.</p>
+        </div>
+
+        <div class="menu-tabs">
+            <button class="menu-tab-btn active" data-filter="all">All Dishes</button>
+            <button class="menu-tab-btn" data-filter="starters">Starters</button>
+            <button class="menu-tab-btn" data-filter="curries">Curries</button>
+            <button class="menu-tab-btn" data-filter="noodles">Noodles & Stir-Flies</button>
+        </div>
+
+        <div class="menu-grid">
+            <!-- Item 1 -->
+            <div class="menu-card" data-category="curries">
+                <img src="img/stock-1.jpg" alt="Fresh Thai Green Curry" class="menu-card-img">
+                <div class="menu-card-body">
+                    <div>
+                        <div class="menu-item-top">
+                            <h3 class="menu-item-title">Green Curry (Gaeng Keow Wan)</h3>
+                            <span class="menu-item-price">$18.50</span>
+                        </div>
+                        <p class="menu-item-desc">Vibrant green curry paste with coconut milk, bamboo shoots, bell peppers, zucchini, and fresh Thai basil leaves.</p>
+                    </div>
+                    <div class="menu-item-meta">
+                        <span class="tag spicy">Spicy</span>
+                        <span class="tag vegan">Gluten-Free Option</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="menu-card" data-category="noodles">
+                <img src="img/stock-3.jpg" alt="Pad Thai Noodles" class="menu-card-img">
+                <div class="menu-card-body">
+                    <div>
+                        <div class="menu-item-top">
+                            <h3 class="menu-item-title">Classic Pad Thai</h3>
+                            <span class="menu-item-price">$17.00</span>
+                        </div>
+                        <p class="menu-item-desc">Wok-tossed rice noodles with eggs, bean sprouts, chives, crushed peanuts, and house tamarind sauce.</p>
+                    </div>
+                    <div class="menu-item-meta">
+                        <span class="tag">Signature</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="menu-card" data-category="starters">
+                <img src="img/stock-5.jpg" alt="Papaya Salad Ingredients" class="menu-card-img">
+                <div class="menu-card-body">
+                    <div>
+                        <div class="menu-item-top">
+                            <h3 class="menu-item-title">Green Papaya Salad (Som Tam)</h3>
+                            <span class="menu-item-price">$15.50</span>
+                        </div>
+                        <p class="menu-item-desc">Shredded green papaya, cherry tomatoes, green beans, roasted peanuts, tossed in spicy lime and garlic dressing.</p>
+                    </div>
+                    <div class="menu-item-meta">
+                        <span class="tag spicy">Medium Spice</span>
+                        <span class="tag vegan">Vegan Option</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="menu-card" data-category="noodles">
+                <img src="img/stock-4.jpg" alt="Special Noodle Dish" class="menu-card-img">
+                <div class="menu-card-body">
+                    <div>
+                        <div class="menu-item-top">
+                            <h3 class="menu-item-title">Pad See Ew</h3>
+                            <span class="menu-item-price">$17.50</span>
+                        </div>
+                        <p class="menu-item-desc">Wide rice noodles stir-fried with Chinese broccoli, eggs, and sweet dark soy sauce in high wok heat.</p>
+                    </div>
+                    <div class="menu-item-meta">
+                        <span class="tag">Popular</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cornwall Ave Location & Hours -->
+    <section class="location-section" id="location">
+        <div class="location-container">
+            <div class="location-details">
+                <h2>Cornwall Ave Location</h2>
+                <div class="info-group">
+                    <h4>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Address
+                    </h4>
+                    <p>2184 Cornwall Avenue, Vancouver, BC</p>
+                </div>
+                <div class="info-group">
+                    <h4>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        Operating Hours
+                    </h4>
+                    <p>Monday – Thursday: 11:30 – 21:30</p>
+                    <p>Friday – Saturday: 11:30 – 22:00</p>
+                    <p>Sunday: 12:00 – 21:00</p>
+                </div>
+                <div class="info-group">
+                    <h4>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        Direct Phone
+                    </h4>
+                    <p><a href="tel:+16046776767" style="color: var(--sand); text-decoration: none;">+1 604-677-6767</a></p>
+                </div>
+            </div>
+            <div class="location-img-wrapper">
+                <img src="img/stock-8.jpg" alt="Interior ambiance of Thai Basil on Cornwall Ave">
+            </div>
+        </div>
+    </section>
+
+    <!-- Online Reservation & Takeout Inquiry Section -->
+    <section class="reservation-section" id="reserve">
+        <div class="reservation-card">
+            <div class="section-header" style="margin-bottom: 30px;">
+                <h2>Table Reservation & Inquiries</h2>
+                <p>Secure your table at our Cornwall Avenue location or submit a takeout inquiry.</p>
+            </div>
+            <form id="reservation-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required placeholder="+1 (604) 000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <input type="time" id="time" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Number of Guests</label>
+                        <select id="guests">
+                            <option value="1">1 Person</option>
+                            <option value="2" selected>2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5+">5+ People (Large Party)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="service-type">Type</label>
+                        <select id="service-type">
+                            <option value="dine-in">Dine-In Reservation</option>
+                            <option value="takeout">Takeout Order Inquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group full">
+                        <label for="notes">Special Requests or Dietary Notes</label>
+                        <textarea id="notes" rows="3" placeholder="Allergies or seating preferences..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit-btn">Submit Reservation Request</button>
+                </div>
+                <div id="form-message" class="form-notice" style="display: none; color: #4ade80; margin-top: 16px;"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="brand-logo-area" style="margin-bottom: 16px;">
+                    <img src="img/business-logo-1.png" alt="Thai Basil Logo" class="brand-logo-img">
+                    <span class="brand-text">Thai Basil Vancouver</span>
+                </div>
+                <p>Authentic Thai dining situated on Cornwall Avenue in Vancouver, British Columbia.</p>
+                <div style="margin-top: 16px;">
+                    <span class="ssl-badge">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        Secure SSL Connection
+                    </span>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="#story">Our Story</a>
+                <a href="#menu">Menu</a>
+                <a href="#location">Cornwall Location</a>
+                <a href="#reserve">Reservations</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact & Hours</h4>
+                <p>2184 Cornwall Avenue, Vancouver</p>
+                <p>Phone: +1 604-677-6767</p>
+                <p style="margin-top: 12px; color: var(--sand); font-size: 0.85rem;">Concept by LeadSky</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div>&copy; Thai Basil Vancouver. All rights reserved. Private concept demo by LeadSky.</div>
+            <div class="photo-credits">
+                <span>Stock photo credits (Pixabay):</span>
+                <span>Photo 1 & 2 by Couleur & thepassenger (<a href="https://pixabay.com" target="_blank" style="color: var(--text-muted); text-decoration: underline;">Pixabay</a>)</span>
+                <span>Photos 3-10 by Huahom, falovelykids, eak_kkk, zppfkllfkg, xegxef, congerdesign, stevepb</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions -->
+    <script>
+        // Check for reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Intro Sequence Logic
+        const introOverlay = document.getElementById('intro-overlay');
+        const skipIntroBtn = document.getElementById('skip-intro');
+
+        function dismissIntro() {
+            if (introOverlay) {
+                introOverlay.style.opacity = '0';
+                introOverlay.style.visibility = 'hidden';
+                setTimeout(() => introOverlay.remove(), 600);
+            }
+        }
+
+        if (prefersReducedMotion) {
+            if (introOverlay) {
+                introOverlay.remove();
+            }
+        } else {
+            skipIntroBtn.addEventListener('click', dismissIntro);
+            setTimeout(dismissIntro, 2000); // Auto dismiss after 2s
+        }
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        const drawerClose = document.getElementById('drawer-close');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        menuToggle.addEventListener('click', () => {
+            mobileDrawer.classList.add('active');
+        });
+
+        drawerClose.addEventListener('click', () => {
+            mobileDrawer.classList.remove('active');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileDrawer.classList.remove('active');
+            });
+        });
+
+        // Menu Tab Filtering
+        const tabButtons = document.querySelectorAll('.menu-tab-btn');
+        const menuCards = document.querySelectorAll('.menu-card');
+
+        tabButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+
+                menuCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Form Submission Demo Handler
+        const reservationForm = document.getElementById('reservation-form');
+        const formMessage = document.getElementById('form-message');
+
+        reservationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            formMessage.style.display = 'block';
+            formMessage.textContent = "This is a demo form, nothing was sent.";
+            reservationForm.reset();
+        });
+    </script>
+</body>
+</html>
