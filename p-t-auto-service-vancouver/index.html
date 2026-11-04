@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>P&T Auto Service | Vancouver Car Repair & Maintenance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <style>
+    :root {
+      --navy: #0f172a;
+      --navy-light: #1e293b;
+      --amber: #f59e0b;
+      --amber-hover: #d97706;
+      --sky: #38bdf8;
+      --slate-light: #f8fafc;
+      --slate-text: #64748b;
+      --border: #334155;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--navy);
+      color: var(--slate-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .brand-font {
+      font-family: 'Rajdhani', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Top Banner */
+    .demo-banner {
+      background: #020617;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      z-index: 1000;
+    }
+
+    .demo-banner span {
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    /* Intro Sequence Overlay */
+    #intro-sequence {
+      position: fixed;
+      inset: 0;
+      background: var(--navy);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    #intro-sequence.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .intro-content {
+      text-align: center;
+      max-width: 600px;
+      padding: 2rem;
+    }
+
+    .intro-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 1.5rem auto;
+      stroke: var(--amber);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .intro-title {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+    }
+
+    .intro-subtitle {
+      color: var(--slate-text);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .skip-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--slate-light);
+      padding: 0.75rem 2rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: var(--transition);
+      letter-spacing: 0.05s;
+    }
+
+    .skip-btn:hover {
+      background: var(--amber);
+      border-color: var(--amber);
+      color: var(--navy);
+    }
+
+    /* Header & Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      z-index: 900;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo span {
+      color: var(--amber);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    nav a {
+      color: var(--slate-light);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    nav a:hover {
+      color: var(--amber);
+    }
+
+    .nav-cta {
+      background: var(--amber);
+      color: var(--navy) !important;
+      padding: 0.6rem 1.25rem;
+      border-radius: 4px;
+      font-weight: 700 !important;
+      font-family: 'Rajdhani', sans-serif;
+      letter-spacing: 0.05em;
+      transition: var(--transition);
+    }
+
+    .nav-cta:hover {
+      background: var(--amber-hover);
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 5rem 5%;
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.8)), url('img/stock-1.jpg') center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hours-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid var(--amber);
+      color: var(--amber);
+      padding: 0.4rem 1rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hours-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--amber);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--amber);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      margin-bottom: 2.5rem;
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.9rem 2rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: var(--transition);
+      cursor: pointer;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-primary {
+      background: var(--amber);
+      color: var(--navy);
+      border: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--amber-hover);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+
+    /* Section Global */
+    section {
+      padding: 6rem 5%;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem auto;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: var(--slate-text);
+      font-size: 1.05rem;
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card:hover {
+      border-color: var(--amber);
+      transform: translateY(-5px);
+    }
+
+    .service-img-wrapper {
+      height: 200px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .service-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .service-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .service-content h3 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-content p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .service-link {
+      color: var(--amber);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.1rem;
+    }
+
+    .service-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Trust & Why Us Section */
+    .why-us-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .why-us-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      border-radius: 8px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .why-us-card:hover {
+      background: var(--navy-light);
+      border-color: var(--sky);
+    }
+
+    .why-us-icon {
+      font-size: 2.5rem;
+      color: var(--amber);
+      margin-bottom: 1.5rem;
+    }
+
+    .why-us-card h3 {
+      font-size: 1.3rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .why-us-card p {
+      color: #94a3b8;
+      font-size: 0.95rem;
+    }
+
+    /* Interactive 3D Scanner Section */
+    .diagnostic-section {
+      background: linear-gradient(to bottom, var(--navy), var(--navy-light));
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .diagnostic-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .diagnostic-info h2 {
+      font-size: 2.5rem;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+
+    .diagnostic-info p {
+      color: #94a3b8;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    .scanner-container {
+      width: 100%;
+      height: 400px;
+      background: #020617;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      position: relative;
+      cursor: grab;
+    }
+
+    .scanner-container:active {
+      cursor: grabbing;
+    }
+
+    .scanner-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .scanner-instruction {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--slate-text);
+      margin-top: 0.75rem;
+    }
+
+    /* Hours & Location Section */
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .location-card {
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      padding: 3rem;
+      border-radius: 8px;
+    }
+
+    .location-card h3 {
+      font-size: 1.8rem;
+      color: #fff;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .info-group label {
+      display: block;
+      color: var(--amber);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .info-group p {
+      color: #cbd5e1;
+      font-size: 1.1rem;
+    }
+
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    .hours-table tr {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hours-table td {
+      padding: 0.75rem 0;
+      color: #cbd5e1;
+    }
+
+    .hours-table td:last-child {
+      text-align: right;
+      color: var(--amber);
+      font-weight: 600;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 350px;
+      background: #1e293b;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .map-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.7;
+    }
+
+    .map-overlay-text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, 0.7);
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .map-overlay-text h4 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .map-overlay-text p {
+      color: var(--slate-text);
+      margin-bottom: 1.5rem;
+    }
+
+    /* Quote Request Form Section */
+    .quote-section {
+      background: linear-gradient(180deg, var(--navy), #0b1120);
+    }
+
+    .quote-form-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--navy-light);
+      border: 1px solid var(--border);
+      padding: 3rem;
+      border-radius: 8px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 700px) {
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 700px) {
+      .form-group.full-width {
+        grid-column: span 1;
+      }
+    }
+
+    .form-group label {
+      display: block;
+      color: #fff;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.9rem 1rem;
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--amber);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-message {
+      display: none;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 4px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid var(--sky);
+      color: var(--sky);
+      text-align: center;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    footer {
+      background: #020617;
+      padding: 4rem 5% 2rem 5%;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 1.2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-col p, .footer-col ul {
+      color: var(--slate-text);
+      font-size: 0.95rem;
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-col ul a {
+      color: var(--slate-text);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .footer-col ul a:hover {
+      color: var(--amber);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      color: var(--slate-text);
+      font-size: 0.85rem;
+    }
+
+    .credits a {
+      color: var(--sky);
+      text-decoration: none;
+    }
+
+    .credits a:hover {
+      text-decoration: underline;
+    }
+
+    /* Mobile Nav Drawer */
+    .mobile-drawer {
+      position: fixed;
+      inset: 0;
+      background: var(--navy);
+      z-index: 950;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-drawer.active {
+      transform: translateX(0);
+    }
+
+    .mobile-drawer a {
+      font-size: 1.5rem;
+      font-family: 'Rajdhani', sans-serif;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .mobile-drawer a:hover {
+      color: var(--amber);
+    }
+
+    .close-drawer {
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Banner -->
+  <div class="demo-banner">
+    Independent website concept by <span>LeadSky</span> for P&T Auto Service. Not their official website.
+  </div>
+
+  <!-- Intro Sequence Overlay -->
+  <div id="intro-sequence">
+    <div class="intro-content">
+      <svg class="intro-icon" viewBox="0 0 24 24">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+      </svg>
+      <h2 class="intro-title">P&T Auto Service</h2>
+      <p class="intro-subtitle">Vancouver Mechanical Repair & Maintenance</p>
+      <button class="skip-btn" id="skip-intro">Enter Workshop</button>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="logo">P&T <span>Auto Service</span></a>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#diagnostics">Diagnostics</a></li>
+        <li><a href="#location">Hours & Location</a></li>
+        <li><a href="#quote" class="nav-cta">Request Quote</a></li>
+      </ul>
+    </nav>
+    <button class="mobile-menu-btn" id="menu-btn" aria-label="Open menu">&#9776;</button>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer">
+    <button class="close-drawer" id="close-drawer">&times;</button>
+    <a href="#services" class="mobile-link">Services</a>
+    <a href="#why-us" class="mobile-link">Why Us</a>
+    <a href="#diagnostics" class="mobile-link">Diagnostics</a>
+    <a href="#location" class="mobile-link">Hours & Location</a>
+    <a href="#quote" class="mobile-link">Request Quote</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hours-badge">Open Mon-Fri: 8:00 AM – 5:00 PM</div>
+      <h1>Honest Auto Repair & Expert Maintenance in Vancouver</h1>
+      <p>Providing reliable mechanical service, transparent inspections, and dedicated automotive care for Vancouver drivers without dealership markups.</p>
+      <div class="hero-buttons">
+        <a href="#quote" class="btn btn-primary">Request Service Quote</a>
+        <a href="tel:+16048745535" class="btn btn-secondary">Call Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <div class="section-header">
+      <h2>Comprehensive Automotive Services</h2>
+      <p>From routine seasonal maintenance to advanced mechanical troubleshooting, our shop delivers dependable workmanship for all vehicle makes.</p>
+    </div>
+    <div class="services-grid">
+      <!-- Service 1 -->
+      <div class="service-card">
+        <div class="service-img-wrapper">
+          <img src="img/stock-2.jpg" alt="Brake repair and disc service" loading="lazy">
+        </div>
+        <div class="service-content">
+          <h3>Brake Repair & Service</h3>
+          <p>Complete inspection, brake pad replacement, rotor machining, and hydraulic fluid checks to ensure absolute stopping safety.</p>
+          <a href="#quote" class="service-link">Book Brake Service &rarr;</a>
+        </div>
+      </div>
+      <!-- Service 2 -->
+      <div class="service-card">
+        <div class="service-img-wrapper">
+          <img src="img/stock-4.jpg" alt="Computerized car engine diagnostic test" loading="lazy">
+        </div>
+        <div class="service-content">
+          <h3>Engine Diagnostics</h3>
+          <p>Advanced OBD-II scanner testing and pinpoint troubleshooting to resolve check-engine lights and performance issues accurately.</p>
+          <a href="#quote" class="service-link">Schedule Diagnostic &rarr;</a>
+        </div>
+      </div>
+      <!-- Service 3 -->
+      <div class="service-card">
+        <div class="service-img-wrapper">
+          <img src="img/stock-5.jpg" alt="Professional mechanic changing car oil on hydraulic lift" loading="lazy">
+        </div>
+        <div class="service-content">
+          <h3>Oil Changes & Tune-Ups</h3>
+          <p>High-grade synthetic oil replacement, filter changes, fluid top-ups, and preventative multi-point engine inspections.</p>
+          <a href="#quote" class="service-link">Get Oil Change &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us Section -->
+  <section id="why-us">
+    <div class="section-header">
+      <h2>The P&T Commitment</h2>
+      <p>We believe in straightforward communication, quality parts, and treating every customer's vehicle with professional respect.</p>
+    </div>
+    <div class="why-us-grid">
+      <div class="why-us-card">
+        <div class="why-us-icon">&#x2695;</div>
+        <h3>Honest Upfront Pricing</h3>
+        <p>Clear explanations of recommended repairs and transparent cost estimates before any wrench touches your car.</p>
+      </div>
+      <div class="why-us-card">
+        <div class="why-us-icon">&#x2699;</div>
+        <h3>Experienced Mechanics</h3>
+        <p>Skilled technical expertise handling complex mechanical repairs and everyday vehicle maintenance efficiently.</p>
+      </div>
+      <div class="why-us-card">
+        <div class="why-us-icon">&#x2714;</div>
+        <h3>Quality OEM Parts</h3>
+        <p>Using dependable replacement components engineered to fit and perform reliably under Vancouver driving conditions.</p>
+      </div>
+      <div class="why-us-card">
+        <div class="why-us-icon">&#x231A;</div>
+        <h3>Fast Turnaround</h3>
+        <p>Respecting your schedule with prompt diagnostics, efficient repair execution, and clear communication.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive 3D Diagnostic Scanner Section -->
+  <section id="diagnostics" class="diagnostic-section">
+    <div class="diagnostic-info">
+      <h2>Precision OBD-II Diagnostics</h2>
+      <p>Modern vehicles require precise electronic troubleshooting. Our diagnostic equipment interfaces directly with your car's computer network to isolate faults quickly, saving you time and guesswork.</p>
+      <a href="#quote" class="btn btn-primary">Book Diagnostic Scan</a>
+    </div>
+    <div>
+      <div class="scanner-container" id="scanner-canvas-container">
+        <img src="img/stock-3.jpg" alt="Car engine diagnostic tool" class="scanner-fallback" id="scanner-fallback">
+      </div>
+      <p class="scanner-instruction">Interactive 3D OBD-II Scanner Model — Click and drag to rotate</p>
+    </div>
+  </section>
+
+  <!-- Hours & Location Section -->
+  <section id="location">
+    <div class="section-header">
+      <h2>Visit Our Vancouver Workshop</h2>
+      <p>Conveniently located on East 12th Avenue. Drop by during operating hours or contact us directly.</p>
+    </div>
+    <div class="location-grid">
+      <div class="location-card">
+        <h3>Shop Information</h3>
+        <div class="info-group">
+          <label>Address</label>
+          <p>2105 East 12th Avenue<br>Vancouver, BC, Canada</p>
+        </div>
+        <div class="info-group">
+          <label>Direct Phone</label>
+          <p><a href="tel:+16048745535" style="color: var(--amber); text-decoration: none;">+1 604-874-5535</a></p>
+        </div>
+        <div class="info-group">
+          <label>Operating Hours</label>
+          <table class="hours-table">
+            <tr><td>Monday – Friday</td><td>08:00 – 17:00</td></tr>
+            <tr><td>Saturday – Sunday</td><td>Closed</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="map-placeholder">
+        <img src="img/stock-7.jpg" alt="Vancouver auto repair shop interior" loading="lazy">
+        <div class="map-overlay-text">
+          <h4>P&T Auto Service</h4>
+          <p>2105 East 12th Avenue, Vancouver, BC</p>
+          <a href="https://maps.google.com/?q=2105+East+12th+Avenue+Vancouver" target="_blank" rel="noopener" class="btn btn-primary" style="padding: 0.6rem 1.25rem; font-size: 0.95rem;">Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Request Form Section -->
+  <section id="quote" class="quote-section">
+    <div class="section-header">
+      <h2>Request a Service Quote</h2>
+      <p>Fill out the form below with your vehicle details and required service. We will review your request promptly.</p>
+    </div>
+    <div class="quote-form-wrapper">
+      <div class="form-message" id="form-message">This is a demo form, nothing was sent.</div>
+      <form id="service-quote-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="client-name">Your Name</label>
+            <input type="text" id="client-name" class="form-control" required placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label for="client-phone">Phone Number</label>
+            <input type="tel" id="client-phone" class="form-control" required placeholder="+1 (604) 000-0000">
+          </div>
+          <div class="form-group">
+            <label for="vehicle-info">Vehicle Year / Make / Model</label>
+            <input type="text" id="vehicle-info" class="form-control" required placeholder="e.g. 2018 Honda Civic">
+          </div>
+          <div class="form-group">
+            <label for="service-needed">Service Required</label>
+            <select id="service-needed" class="form-control" required>
+              <option value="">Select a service...</option>
+              <option value="brake">Brake Repair & Service</option>
+              <option value="diagnostic">Engine Diagnostics</option>
+              <option value="oil">Oil Change & Tune-Up</option>
+              <option value="transmission">Transmission Service</option>
+              <option value="suspension">Suspension & Steering</option>
+              <option value="general">General Maintenance</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label for="message">Details / Symptoms</label>
+            <textarea id="message" class="form-control" placeholder="Describe any noises, warning lights, or specific maintenance needed..."></textarea>
+          </div>
+          <div class="form-group full-width">
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Quote Request</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>P&T Auto Service</h4>
+        <p>Honest, dependable mechanical repair and vehicle maintenance located in the heart of Vancouver, BC.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#diagnostics">Diagnostics</a></li>
+          <li><a href="#location">Hours & Location</a></li>
+          <li><a href="#quote">Request Quote</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Vancouver Shop</h4>
+        <p>2105 East 12th Avenue<br>Vancouver, BC<br>Phone: +1 604-874-5535<br>Mon-Fr 08:00-17:00</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; P&T Auto Service. All rights reserved.</p>
+      <div class="credits">
+        Photo credits: <a href="https://pixabay.com/photos/auto-car-garage-auto-shop-vintage-1868726/" target="_blank" rel="noopener">Pexels</a>, <a href="https://pixabay.com/photos/auto-repair-shop-workshop-brake-disc-1954643/" target="_blank" rel="noopener">pixel2013</a>, <a href="https://pixabay.com/photos/covid-testing-corona-test-covid-19-6517476/" target="_blank" rel="noopener">analogicus</a>, <a href="https://pixabay.com/photos/car-service-auto-cars-hundred-2191184/" target="_blank" rel="noopener">autotop_service</a>, <a href="https://pixabay.com/photos/boutique-clothing-store-fashion-6796399/" target="_blank" rel="noopener">boutiquegirlish21</a> on Pixabay. | Concept by <a href="#">LeadSky</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts & Functionality -->
+  <script>
+    // Check prefers-reduced-motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Intro sequence handling
+    const introSequence = document.getElementById('intro-sequence');
+    const skipIntroBtn = document.getElementById('skip-intro');
+
+    function dismissIntro() {
+      introSequence.classList.add('hidden');
+      setTimeout(() => introSequence.remove(), 500);
+    }
+
+    skipIntroBtn.addEventListener('click', dismissIntro);
+
+    if (prefersReducedMotion) {
+      // Instantly remove intro sequence if reduced motion is preferred
+      introSequence.remove();
+    } else {
+      setTimeout(dismissIntro, 2500);
+    }
+
+    // Mobile navigation drawer
+    const menuBtn = document.getElementById('menu-btn');
+    const closeDrawerBtn = document.getElementById('close-drawer');
+    const mobileDrawer = document.getElementById('mobile-drawer');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    menuBtn.addEventListener('click', () => {
+      mobileDrawer.classList.add('active');
+    });
+
+    closeDrawerBtn.addEventListener('click', () => {
+      mobileDrawer.classList.remove('active');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileDrawer.classList.remove('active');
+      });
+    });
+
+    // Form submission demo behavior
+    const quoteForm = document.getElementById('service-quote-form');
+    const formMessage = document.getElementById('form-message');
+
+    quoteForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      formMessage.style.display = 'block';
+      quoteForm.reset();
+      formMessage.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'nearest' });
+    });
+
+    // Three.js 3D OBD-II Scanner Model
+    const container = document.getElementById('scanner-canvas-container');
+    const fallbackImg = document.getElementById('scanner-fallback');
+
+    if (prefersReducedMotion) {
+      // Skip 3D initialization and show fallback directly
+      container.style.display = 'none';
+      fallbackImg.style.display = 'block';
+    } else {
+      try {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+        scene.add(ambientLight);
+
+        const directionalLight = new THREE.DirectionalLight(0x38bdf8, 1.5);
+        directionalLight.position.set(5, 5, 5);
+        scene.add(directionalLight);
+
+        const pointLight = new THREE.PointLight(0xf59e0b, 2, 10);
+        pointLight.position.set(-2, 1, 2);
+        scene.add(pointLight);
+
+        // Create Scanner Body Group
+        const scannerGroup = new THREE.Group();
+
+        // Main body casing
+        const bodyGeo = new THREE.BoxGeometry(2.2, 3.2, 0.8);
+        const bodyMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, roughness: 0.3, metalness: 0.2 });
+        const bodyMesh = new THREE.Mesh(bodyGeo, bodyMat);
+        scannerGroup.add(bodyMesh);
+
+        // Screen bezel
+        const screenGeo = new THREE.BoxGeometry(1.6, 1.2, 0.1);
+        const screenMat = new THREE.MeshStandardMaterial({ color: 0x020617, roughness: 0.1 });
+        const screenMesh = new THREE.Mesh(screenGeo, screenMat);
+        screenMesh.position.set(0, 0.8, 0.41);
+        scannerGroup.add(screenMesh);
+
+        // Screen LCD glowing element
+        const lcdGeo = new THREE.PlaneGeometry(1.4, 1.0);
+        const lcdMat = new THREE.MeshBasicMaterial({ color: 0x38bdf8 });
+        const lcdMesh = new THREE.Mesh(lcdGeo, lcdMat);
+        lcdMesh.position.set(0, 0.8, 0.47);
+        scannerGroup.add(lcdMesh);
+
+        // Keypad buttons
+        for (let i = 0; i < 6; i++) {
+          const btnGeo = new THREE.BoxGeometry(0.4, 0.25, 0.1);
+          const btnMat = new THREE.MeshStandardMaterial({ color: 0xf59e0b, roughness: 0.4 });
+          const btn = new THREE.Mesh(btnGeo, btnMat);
+          const row = Math.floor(i / 2);
+          const col = i % 2;
+          btn.position.set((col - 0.5) * 0.6, -0.2 - (row * 0.4), 0.45);
+          scannerGroup.add(btn);
+        }
+
+        scene.add(scannerGroup);
+        camera.position.z = 6;
+
+        // Interaction variables
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+
+        container.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          previousMousePosition = { x: e.clientX, y: e.clientY };
+        });
+
+        window.addEventListener('mousemove', (e) => {
+          if (!isDragging) return;
+          const deltaX = e.clientX - previousMousePosition.x;
+          const deltaY = e.clientY - previousMousePosition.y;
+
+          scannerGroup.rotation.y += deltaX * 0.01;
+          scannerGroup.rotation.x += deltaY * 0.01;
+
+          previousMousePosition = { x: e.clientX, y: e.clientY };
+        });
+
+        window.addEventListener('mouseup', () => {
+          isDragging = false;
+        });
+
+        // Touch support
+        container.addEventListener('touchstart', (e) => {
+          isDragging = true;
+          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        });
+
+        window.addEventListener('touchmove', (e) => {
+          if (!isDragging) return;
+          const deltaX = e.touches[0].clientX - previousMousePosition.x;
+          const deltaY = e.touches[0].clientY - previousMousePosition.y;
+
+          scannerGroup.rotation.y += deltaX * 0.01;
+          scannerGroup.rotation.x += deltaY * 0.01;
+
+          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        });
+
+        window.addEventListener('touchend', () => {
+          isDragging = false;
+        });
+
+        // Animation loop with visibility check
+        let animationFrameId;
+        function animate() {
+          animationFrameId = requestAnimationFrame(animate);
+          if (!isDragging) {
+            scannerGroup.rotation.y += 0.005;
+          }
+          renderer.render(scene, camera);
+        }
+
+        // Pause rendering when off-screen using IntersectionObserver
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              if (!animationFrameId) animate();
+            } else {
+              cancelAnimationFrame(animationFrameId);
+              animationFrameId = null;
+            }
+          });
+        }, { threshold: 0.1 });
+
+        observer.observe(container);
+
+        // Window resize handling
+        window.addEventListener('resize', () => {
+          const width = container.clientWidth;
+          const height = container.clientHeight;
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+          renderer.setSize(width, height);
+        });
+
+      } catch (e) {
+        // Fallback if WebGL fails
+        container.style.display = 'none';
+        fallbackImg.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
