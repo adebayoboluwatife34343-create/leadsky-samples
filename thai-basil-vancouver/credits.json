@@ -1,5 +1,6 @@
 [
   {
+<<<<<<< HEAD
     "file": "img/business-logo-1.png",
     "kind": "business logo",
     "source": "http://www.thaibasilvancouver.ca/restaurants/thai-basil/website/images/header-logo.png?1673843520",
@@ -20,12 +21,21 @@
     "description": "tomatoes, rosemary, basil, salt, pepper, spices, olive wood, wooden block, tablecloth, herb drying, kitchen table, scandinavian style, rustic kitchen, eco cooking, food preservation, modern kitchen, table setting, vegetarian cuisine, home cooking, natural ingredients",
     "source": "https://pixabay.com/photos/tomatoes-rosemary-basil-salt-10368988/",
     "photographer": "Couleur",
+=======
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "fresh pad thai plate with lime and peanuts",
+    "description": "pad thai, thai food, thailand, asian food, asia, food, thai, rice, bangkok, restaurant, papaya, tasty, delicious, fresh, organic, healthy, eat, vegetable, green, asian, noodles, nature, nutrition, natural, cooking, pad thai, pad thai, pad thai, pad thai, pad thai, thai food, thai food",
+    "source": "https://pixabay.com/photos/pad-thai-thai-food-thailand-4034040/",
+    "photographer": "ctwtn",
+>>>>>>> 5314ebe (Publish sample concept: thai-basil-vancouver)
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-2.jpg",
     "kind": "stock photo",
+<<<<<<< HEAD
     "query": "fresh thai green curry bowl with basil leaves",
     "description": "green curry, thai food, spices, herbs, cuisine, curry, dish, food, lunch, dinner, meal, spicy, delicious, masala, vegetables, pepper, thai, green curry, thai food, thai food, thai food, thai food, thai food, curry, curry, curry, curry",
     "source": "https://pixabay.com/photos/green-curry-thai-food-spices-herbs-6386360/",
@@ -37,6 +47,9 @@
     "file": "img/stock-3.jpg",
     "kind": "stock photo",
     "query": "spicy thai pad thai noodles with lime and peanuts",
+=======
+    "query": "fresh pad thai plate with lime and peanuts",
+>>>>>>> 5314ebe (Publish sample concept: thai-basil-vancouver)
     "description": "pad thai, pad thai prawn, thai food, thai noodle, stir fried, chilli, prawn, thai ingredient, thailand, huahom design, delicious, noodles, asia, pad thai, pad thai, pad thai, pad thai, thai food, thai food, thai food, thai food, thai food",
     "source": "https://pixabay.com/photos/pad-thai-pad-thai-prawn-thai-food-4705276/",
     "photographer": "Huahom",
@@ -44,11 +57,29 @@
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
+<<<<<<< HEAD
     "file": "img/stock-4.jpg",
     "kind": "stock photo",
     "query": "spicy thai pad thai noodles with lime and peanuts",
     "description": "egg net, thai food, ingredient, huahom design, kinn thai, pad thai, thai food, thai food, thai food, thai food, thai food",
     "source": "https://pixabay.com/photos/egg-net-thai-food-ingredient-3545650/",
+=======
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "thai green curry bowl with basil and coconut milk",
+    "description": "green curry, thai food, spices, herbs, cuisine, curry, dish, food, lunch, dinner, meal, spicy, delicious, masala, vegetables, pepper, thai, green curry, thai food, thai food, thai food, thai food, thai food, curry, curry, curry, curry",
+    "source": "https://pixabay.com/photos/green-curry-thai-food-spices-herbs-6386360/",
+    "photographer": "thepassenger",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "thai green curry bowl with basil and coconut milk",
+    "description": "green curry, thai food, thai ingredient, green curry, green curry, thai food, thai food, thai food, thai food, thai food",
+    "source": "https://pixabay.com/photos/green-curry-thai-food-2457236/",
+>>>>>>> 5314ebe (Publish sample concept: thai-basil-vancouver)
     "photographer": "Huahom",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
@@ -56,60 +87,102 @@
   {
     "file": "img/stock-5.jpg",
     "kind": "stock photo",
+<<<<<<< HEAD
     "query": "fresh thai papaya salad ingredients lime chili",
     "description": "papaya salad, spicy, food, thailand, somtam, papaya salad, papaya salad, papaya salad, papaya salad, papaya salad, somtam",
     "source": "https://pixabay.com/photos/papaya-salad-spicy-food-thailand-710613/",
     "photographer": "falovelykids",
+=======
+    "query": "crispy spring rolls with sweet chili sauce",
+    "description": "spring rolls, chinese cuisine, chinese food, chinese, cuisine, food, restaurant, roll, asian, nature, spring, vegetable, china, dish, plate, dim, fry, rice",
+    "source": "https://pixabay.com/photos/spring-rolls-chinese-cuisine-2097978/",
+    "photographer": "jonathanvalencia5",
+>>>>>>> 5314ebe (Publish sample concept: thai-basil-vancouver)
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-6.jpg",
     "kind": "stock photo",
+<<<<<<< HEAD
     "query": "fresh thai papaya salad ingredients lime chili",
     "description": "papaya salad, isaan food, thai food, dining table, eat, papaya salad, thai food, thai food, thai food, thai food, thai food",
     "source": "https://pixabay.com/photos/papaya-salad-isaan-food-thai-food-1768888/",
     "photographer": "eak_kkk",
+=======
+    "query": "crispy spring rolls with sweet chili sauce",
+    "description": "spring rolls, crispy, fried, appetizer, roll, lunch, food, asian, chinese, spring rolls, spring rolls, spring rolls, spring rolls, spring rolls",
+    "source": "https://pixabay.com/photos/spring-rolls-crispy-fried-appetizer-2536526/",
+    "photographer": "jonathanvalencia5",
+>>>>>>> 5314ebe (Publish sample concept: thai-basil-vancouver)
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-7.jpg",
     "kind": "stock photo",
+<<<<<<< HEAD
     "query": "modern minimalist restaurant interior warm lighting",
     "description": "lamp, light, table, warm color, lamp, lamp, lamp, lamp, lamp",
     "source": "https://pixabay.com/photos/lamp-light-table-warm-color-1122095/",
     "photographer": "zppfkllfkg",
+=======
+    "query": "mango sticky rice dessert with coconut cream",
+    "description": "mango sticky rice, mango, thai dessert, coconut milk, banana leave, green rice, green dessert, green leaves, green banana, mango, mango, mango, mango, mango, thai dessert",
+    "source": "https://pixabay.com/photos/mango-sticky-rice-mango-thai-dessert-3604851/",
+    "photographer": "Huahom",
+>>>>>>> 5314ebe (Publish sample concept: thai-basil-vancouver)
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-8.jpg",
     "kind": "stock photo",
+<<<<<<< HEAD
     "query": "modern minimalist restaurant interior warm lighting",
     "description": "light bulbs, lights, lamps, electricity, power, design, electric, bright, glass, night, lantern, electricity, electricity, electricity, electricity, electricity, power, power, design, electric, lantern",
     "source": "https://pixabay.com/photos/light-bulbs-lights-lamps-1603766/",
     "photographer": "xegxef",
+=======
+    "query": "mango sticky rice dessert with coconut cream",
+    "description": "cake, torte, dessert, sweet, fruit, pastry, cream, gourmet, fresh, food, confectionery, confections, baked, cake, cake, cake, cake, cake",
+    "source": "https://pixabay.com/photos/cake-torte-dessert-sweet-fruit-1284548/",
+    "photographer": "Pexels",
+>>>>>>> 5314ebe (Publish sample concept: thai-basil-vancouver)
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-9.jpg",
     "kind": "stock photo",
+<<<<<<< HEAD
     "query": "thai chef cooking with wok fire and fresh herbs",
     "description": "vegetables, slice, knife, chef's knife, bell peppers, leeks, carrots, onion, garlic, food, eat, red peppers, peppers, capsicums, healthy, cut, cook, preparation, food preparation, ingredients, vegetables, vegetables, vegetables, knife, knife, knife, knife, knife, bell peppers, onion, onion, food, peppers, cook, cook",
     "source": "https://pixabay.com/photos/vegetables-slice-knife-chefs-knife-573958/",
     "photographer": "congerdesign",
+=======
+    "query": "bright modern restaurant interior with wooden tables",
+    "description": "cafe, coffee, table, chair, indoor, restaurant, cappuccino, beverage, espresso, drinks, drink, milk, fresh, window, view, gray coffee, gray restaurant, gray window, gray table, cafe, cafe, cafe, cafe, cafe, table, indoor, restaurant, window, window",
+    "source": "https://pixabay.com/photos/cafe-coffee-table-chair-indoor-4148821/",
+    "photographer": "tianya1223",
+>>>>>>> 5314ebe (Publish sample concept: thai-basil-vancouver)
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-10.jpg",
     "kind": "stock photo",
+<<<<<<< HEAD
     "query": "thai chef cooking with wok fire and fresh herbs",
     "description": "garlic, ingredient, flavoring, seasoning, garlic cloves, cooking, culinary, garlic, garlic, garlic, garlic, garlic",
     "source": "https://pixabay.com/photos/garlic-ingredient-flavoring-3419544/",
     "photographer": "stevepb",
+=======
+    "query": "bright modern restaurant interior with wooden tables",
+    "description": "kitchen, home, interior, modern, room, floor, furniture, counter, wood, living, kitchen interior, residential, table, brown home, brown kitchen, brown wood, brown room, brown table, brown interior, kitchen, kitchen, kitchen, kitchen, kitchen, home",
+    "source": "https://pixabay.com/photos/kitchen-home-interior-modern-room-2165756/",
+    "photographer": "ClickerHappy",
+>>>>>>> 5314ebe (Publish sample concept: thai-basil-vancouver)
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }

@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex">
@@ -1216,5 +1217,1343 @@
             reservationForm.reset();
         });
     </script>
+=======
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Thai Basil | Authentic Thai Cuisine on Cornwall Ave, Vancouver</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- External Libraries: Three.js & GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #faf8f5;
+      --surface: #f0ebe1;
+      --surface-white: #ffffff;
+      --primary: #2d332b;
+      --accent: #d97736;
+      --green: #5e8a60;
+      --text-main: #2d332b;
+      --text-muted: #62695f;
+      --border: #e2dbcd;
+      --font-display: 'Cinzel', serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Independent Concept Banner */
+    .concept-banner {
+      background: var(--primary);
+      color: #fff;
+      text-align: center;
+      padding: 0.6rem 1rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.03em;
+      position: relative;
+      z-index: 1000;
+      font-weight: 400;
+    }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(250, 248, 245, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .nav-actions {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: var(--transition);
+      border: 2px solid transparent;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--green);
+      width: fit-content;
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      line-height: 1.15;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      border-radius: 2rem;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(45, 51, 43, 0.15);
+      aspect-ratio: 4/3;
+    }
+
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-image-wrapper:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Section Shared */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .section-header h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      color: var(--primary);
+    }
+
+    .section-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+    }
+
+    /* Featured Signature Dishes */
+    .dishes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .dish-card {
+      background: var(--surface-white);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dish-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px -10px rgba(45, 51, 43, 0.1);
+    }
+
+    .dish-img-box {
+      height: 260px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dish-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dish-price {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(250, 248, 245, 0.9);
+      backdrop-filter: blur(8px);
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    .dish-content {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      flex-grow: 1;
+    }
+
+    .dish-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--primary);
+    }
+
+    .dish-content p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Interactive Menu Explorer */
+    .menu-section {
+      background: var(--surface);
+      border-radius: 2.5rem;
+      margin: 4rem auto;
+      padding: 5rem 3rem;
+      max-width: 1200px;
+    }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .menu-tab {
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+
+    .menu-tab.active, .menu-tab:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .menu-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .menu-item-card {
+      background: var(--surface-white);
+      padding: 1.75rem;
+      border-radius: 1.25rem;
+      border: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      transition: var(--transition);
+    }
+
+    .menu-item-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .menu-item-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .menu-item-info h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--primary);
+    }
+
+    .menu-item-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .menu-item-price {
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
+
+    .order-cta-container {
+      margin-top: 3.5rem;
+      text-align: center;
+    }
+
+    /* 3D Mortar & Pestle Interactive Section */
+    .sanctuary-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .sanctuary-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .sanctuary-text h2 {
+      font-family: var(--font-display);
+      font-size: 2.75rem;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .sanctuary-text p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .canvas-container {
+      width: 100%;
+      height: 450px;
+      background: radial-gradient(circle, #f7f4ee 0%, #ede6d8 100%);
+      border-radius: 2rem;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: inset 0 0 40px rgba(0,0,0,0.03);
+    }
+
+    .canvas-hint {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.85);
+      backdrop-filter: blur(4px);
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    /* Hours & Location Section */
+    .location-section {
+      background: var(--primary);
+      color: #fff;
+      border-radius: 2.5rem;
+      margin: 4rem auto;
+      padding: 5rem 3rem;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .location-info h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .location-details {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .detail-block h4 {
+      color: var(--accent);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .detail-block p {
+      font-size: 1.1rem;
+      color: #e5e7eb;
+    }
+
+    .hours-table {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .hours-row {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .location-actions {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2rem;
+      background: rgba(255,255,255,0.05);
+      padding: 3rem;
+      border-radius: 2rem;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .location-actions h3 {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+    }
+
+    .location-actions p {
+      color: #d1d5db;
+    }
+
+    /* Footer */
+    footer {
+      background: #232721;
+      color: #9ca3af;
+      padding: 4rem 2rem 2rem;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 3rem;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-col a {
+      color: #9ca3af;
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.95rem;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.85rem;
+    }
+
+    .photo-credits {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .photo-credits a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .photo-credits a:hover {
+      text-decoration: underline;
+    }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      padding: 1rem;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-card {
+      background: var(--surface-white);
+      border-radius: 2rem;
+      width: 100%;
+      max-width: 550px;
+      padding: 2.5rem;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+    }
+
+    .modal-overlay.active .modal-card {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: var(--surface);
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.25rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .modal-card h3 {
+      font-family: var(--font-display);
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .modal-card p {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 0.95rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .form-group label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--primary);
+    }
+
+    .form-control {
+      padding: 0.85rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      transition: var(--transition);
+      background: var(--bg);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: #fff;
+    }
+
+    .demo-notice {
+      background: #eef5ee;
+      border: 1px solid var(--green);
+      color: var(--green);
+      padding: 1rem;
+      border-radius: 0.75rem;
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-align: center;
+      display: none;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 968px) {
+      .hero, .sanctuary-section, .location-section {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .menu-section {
+        padding: 3rem 1.5rem;
+      }
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 350px;
+      height: 100%;
+      background: var(--surface-white);
+      z-index: 2500;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      padding: 3rem 2rem;
+      gap: 2rem;
+    }
+
+    .mobile-drawer.active {
+      right: 0;
+    }
+
+    .mobile-drawer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .mobile-drawer-links a {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Concept Banner -->
+  <div class="concept-banner">
+    Independent website concept by LeadSky for Thai Basil. Not their official website.
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">Thai Basil <span>// Vancouver</span></a>
+      <ul class="nav-links">
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#location">Location & Hours</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="btn btn-outline" id="openReserveBtn">Reserve Table</button>
+        <button class="btn btn-primary" id="openOrderBtn">Order Takeout</button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">&#9776;</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <button class="modal-close" id="closeDrawerBtn" aria-label="Close menu">&times;</button>
+    <a href="#" class="brand-logo" style="margin-bottom: 1rem;">Thai Basil <span>// Vancouver</span></a>
+    <ul class="mobile-drawer-links">
+      <li><a href="#menu" class="mobile-link">Menu</a></li>
+      <li><a href="#story" class="mobile-link">Our Story</a></li>
+      <li><a href="#location" class="mobile-link">Location & Hours</a></li>
+    </ul>
+    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: auto;">
+      <button class="btn btn-outline" id="drawerReserveBtn" style="width: 100%;">Reserve Table</button>
+      <button class="btn btn-primary" id="drawerOrderBtn" style="width: 100%;">Order Takeout</button>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>📍</span> Cornwall Ave, Kitsilano, Vancouver
+      </div>
+      <h1>Authentic Thai Flavours Crafted with Passion</h1>
+      <p>Fresh herbs, traditional spices, and modern culinary art on Cornwall Ave. Experience the vibrant tastes of Thailand right by the Vancouver waterfront.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">Explore Full Menu</button>
+        <button class="btn btn-outline" onclick="openModal('reserveModal')">Reserve a Table</button>
+      </div>
+    </div>
+    <div class="hero-image-wrapper">
+      <img src="img/stock-1.jpg" alt="Fresh pad thai plate with lime and peanuts garnished with herbs">
+    </div>
+  </section>
+
+  <!-- Featured Signature Dishes -->
+  <section id="featured">
+    <div class="section-header">
+      <h2>Signature Creations</h2>
+      <p>Prepared daily using authentic Thai techniques, aromatic herbs, and top-quality local ingredients.</p>
+    </div>
+    <div class="dishes-grid">
+      <div class="dish-card">
+        <div class="dish-img-box">
+          <img src="img/stock-3.jpg" alt="Thai green curry bowl with basil and coconut milk">
+          <div class="dish-price">$21.50</div>
+        </div>
+        <div class="dish-content">
+          <h3>Traditional Green Curry</h3>
+          <p>Aromatic green chili paste simmered in rich coconut milk with Thai basil, bamboo shoots, bell peppers, and your choice of protein.</p>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-img-box">
+          <img src="img/stock-5.jpg" alt="Crispy spring rolls with sweet chili sauce">
+          <div class="dish-price">$12.00</div>
+        </div>
+        <div class="dish-content">
+          <h3>Golden Crispy Spring Rolls</h3>
+          <p>Hand-rolled crisp pastry filled with glass noodles, shredded vegetables, and fragrant spices, served with homemade sweet chili dipping sauce.</p>
+        </div>
+      </div>
+      <div class="dish-card">
+        <div class="dish-img-box">
+          <img src="img/stock-7.jpg" alt="Mango sticky rice dessert with coconut cream">
+          <div class="dish-price">$13.50</div>
+        </div>
+        <div class="dish-content">
+          <h3>Classic Mango Sticky Rice</h3>
+          <p>Sweet sticky rice infused with rich coconut cream, paired with fresh ripe mango slices and toasted golden mung beans.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Menu Explorer -->
+  <div class="menu-section" id="menu">
+    <div class="section-header">
+      <h2>Explore Our Menu</h2>
+      <p>Select a category below to browse our culinary offerings available for dine-in or convenient takeout.</p>
+    </div>
+    <div class="menu-tabs">
+      <button class="menu-tab active" onclick="filterMenu('all')">All Items</button>
+      <button class="menu-tab" onclick="filterMenu('appetizers')">Appetizers</button>
+      <button class="menu-tab" onclick="filterMenu('mains')">Mains & Noodles</button>
+      <button class="menu-tab" onclick="filterMenu('curries')">Curries</button>
+      <button class="menu-tab" onclick="filterMenu('desserts')">Desserts & Drinks</button>
+    </div>
+    <div class="menu-items-grid" id="menuGrid">
+      <!-- Populated via JavaScript -->
+    </div>
+    <div class="order-cta-container">
+      <button class="btn btn-primary" onclick="openModal('orderModal')" style="padding: 1rem 2.5rem; font-size: 1.05rem;">Start Takeout Order</button>
+    </div>
+  </div>
+
+  <!-- Our Story & Heritage / 3D Sanctuary -->
+  <section id="story">
+    <div class="sanctuary-section">
+      <div class="sanctuary-text">
+        <div class="hero-badge">Artisanal Heritage</div>
+        <h2>The Art of Thai Spice & Herb Harmony</h2>
+        <p>At Thai Basil on Cornwall Ave, every dish tells a story of heritage and precision. We combine time-honoured culinary traditions from Thailand with Vancouver's vibrant West Coast energy.</p>
+        <p>From pounding fresh lemongrass and galangal in traditional brass mortars to balancing the five core tastes of sweet, spicy, sour, salty, and bitter, our kitchen honours authentic craftsmanship.</p>
+        <div>
+          <button class="btn btn-outline" onclick="openModal('reserveModal')">Dine With Us</button>
+        </div>
+      </div>
+      <div>
+        <div class="canvas-container" id="canvas3dContainer">
+          <div class="canvas-hint" id="canvasHintText">Interactive 3D Brass Mortar & Pestle</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Hours Section -->
+  <div style="background: var(--bg); padding: 2rem 0;">
+    <section class="location-section" id="location">
+      <div class="location-info">
+        <h2>Visit Us on Cornwall Ave</h2>
+        <p>Located right in the heart of Vancouver's scenic waterfront district. Join us for a memorable lunch or cozy evening dinner.</p>
+        <div class="location-details">
+          <div class="detail-block">
+            <h4>Address</h4>
+            <p>2184 Cornwall Avenue, Vancouver, BC</p>
+          </div>
+          <div class="detail-block">
+            <h4>Phone</h4>
+            <p><a href="tel:+16046776767" style="color: inherit; text-decoration: none;">+1 (604) 677-6767</a></p>
+          </div>
+          <div class="detail-block">
+            <h4>Hours of Operation</h4>
+            <div class="hours-table">
+              <div class="hours-row"><span>Monday - Thursday</span><span>11:30 - 21:30</span></div>
+              <div class="hours-row"><span>Friday - Saturday</span><span>11:30 - 22:00</span></div>
+              <div class="hours-row"><span>Sunday</span><span>12:00 - 21:00</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="location-actions">
+        <h3>Ready for an Authentic Meal?</h3>
+        <p>Whether you are planning a relaxed evening with friends or ordering a gourmet feast for home, we are here to serve you.</p>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="openModal('reserveModal')" style="background: var(--accent); color: #fff;">Book a Table</button>
+          <a href="tel:+16046776767" class="btn btn-outline" style="border-color: #fff; color: #fff;">Tap to Call</a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Thai Basil // Vancouver</h3>
+          <p>Authentic Thai Cuisine on Cornwall Ave.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="#menu">Menu</a>
+            <a href="#story">Our Story</a>
+            <a href="#location">Location</a>
+          </div>
+          <div class="footer-col">
+            <h4>Contact & Service</h4>
+            <a href="tel:+16046776767">+1 (604) 677-6767</a>
+            <a href="#" onclick="openModal('reserveModal'); return false;">Reservations</a>
+            <a href="#" onclick="openModal('orderModal'); return false;">Takeout Ordering</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> Thai Basil Vancouver. Independent concept by LeadSky.</p>
+        <div class="photo-credits">
+          <span>Photography Credits:</span>
+          <div>
+            <a href="https://pixabay.com/photos/pad-thai-thai-food-thailand-4034040/" target="_blank" rel="noopener">Pad Thai photo by ctwtn (Pixabay)</a> | 
+            <a href="https://pixabay.com/photos/green-curry-thai-food-spices-herbs-6386360/" target="_blank" rel="noopener">Green Curry photo by thepassenger (Pixabay)</a> | 
+            <a href="https://pixabay.com/photos/spring-rolls-chinese-cuisine-2097978/" target="_blank" rel="noopener">Spring Rolls by jonathanvalencia5 (Pixabay)</a> | 
+            <a href="https://pixabay.com/photos/mango-sticky-rice-mango-thai-dessert-3604851/" target="_blank" rel="noopener">Mango Sticky Rice by Huahom (Pixabay)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Reserve Modal -->
+  <div class="modal-overlay" id="reserveModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('reserveModal')">&times;</button>
+      <h3>Reserve a Table</h3>
+      <p>Secure your table at our Cornwall Ave restaurant location.</p>
+      <form id="reserveForm" onsubmit="handleDemoForm(event, 'reserveNotice')">
+        <div class="form-group">
+          <label for="resName">Full Name</label>
+          <input type="text" id="resName" class="form-control" required placeholder="Jane Doe">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label for="resDate">Date</label>
+            <input type="date" id="resDate" class="form-control" required>
+          </div>
+          <div class="form-group">
+            <label for="resTime">Time</label>
+            <input type="time" id="resTime" class="form-control" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="resGuests">Number of Guests</label>
+          <select id="resGuests" class="form-control">
+            <option>1 Guest</option>
+            <option>2 Guests</option>
+            <option>3 Guests</option>
+            <option>4 Guests</option>
+            <option>5+ Guests</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Confirm Reservation Request</button>
+        <div class="demo-notice" id="reserveNotice">This is a demo form, nothing was sent.</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Modal -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal('orderModal')">&times;</button>
+      <h3>Online Takeout Order</h3>
+      <p>Select your favorite dishes for rapid pickup on Cornwall Ave.</p>
+      <form id="orderForm" onsubmit="handleDemoForm(event, 'orderNotice')">
+        <div class="form-group">
+          <label for="orderDish">Select Dish</label>
+          <select id="orderDish" class="form-control">
+            <option>Traditional Green Curry - $21.50</option>
+            <option>Golden Crispy Spring Rolls - $12.00</option>
+            <option>Classic Pad Thai - $19.50</option>
+            <option>Mango Sticky Rice - $13.50</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="orderQty">Quantity</label>
+          <input type="number" id="orderQty" class="form-control" value="1" min="1" max="10" required>
+        </div>
+        <div class="form-group">
+          <label for="orderPhone">Phone Number</label>
+          <input type="tel" id="orderPhone" class="form-control" placeholder="+1 (604) 555-0199" required>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Place Takeout Order</button>
+        <div class="demo-notice" id="orderNotice">This is a demo form, nothing was sent.</div>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript Implementation -->
+  <script>
+    // Footer current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+    // Menu Data
+    const menuData = [
+      { id: 1, category: 'appetizers', name: 'Golden Crispy Spring Rolls', desc: 'Crisp pastry filled with glass noodles, vegetables, sweet chili dip.', price: '$12.00', img: 'img/stock-5.jpg' },
+      { id: 2, category: 'appetizers', name: 'Fresh Basil Salad Rolls', desc: 'Rice paper rolls with tofu, fresh herbs, crisp greens, peanut sauce.', price: '$11.50', img: 'img/stock-6.jpg' },
+      { id: 3, category: 'mains', name: 'Authentic Pad Thai', desc: 'Stir-fried rice noodles with tofu, egg, bean sprouts, crushed peanuts, lime.', price: '$19.50', img: 'img/stock-1.jpg' },
+      { id: 4, category: 'mains', name: 'Spicy Basil Stir-Fry (Pad Krapow)', desc: 'Sautéed minced chicken or tofu with fresh holy basil, chilies, garlic.', price: '$18.50', img: 'img/stock-2.jpg' },
+      { id: 5, category: 'curries', name: 'Traditional Green Curry', desc: 'Rich coconut milk, Thai basil, bamboo shoots, bell peppers, aromatic herbs.', price: '$21.50', img: 'img/stock-3.jpg' },
+      { id: 6, category: 'curries', name: 'Massaman Beef Curry', desc: 'Slow-simmered tender beef in warm spiced coconut curry with potatoes and peanuts.', price: '$23.00', img: 'img/stock-4.jpg' },
+      { id: 7, category: 'desserts', name: 'Classic Mango Sticky Rice', desc: 'Sweet sticky rice with coconut cream and fresh ripe mango slices.', price: '$13.50', img: 'img/stock-7.jpg' },
+      { id: 8, category: 'desserts', name: 'Thai Iced Milk Tea', desc: 'Brewed black tea spiced with star anise, cardamom, sweetened condensed milk.', price: '$5.50', img: 'img/stock-8.jpg' }
+    ];
+
+    function renderMenu(category) {
+      const grid = document.getElementById('menuGrid');
+      grid.innerHTML = '';
+      
+      const filtered = category === 'all' ? menuData : menuData.filter(item => item.category === category);
+      
+      filtered.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'menu-item-card';
+        card.innerHTML = `
+          <div class="menu-item-info">
+            <h4>${item.name}</h4>
+            <p>${item.desc}</p>
+          </div>
+          <div class="menu-item-price">${item.price}</div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterMenu(category) {
+      document.querySelectorAll('.menu-tab').forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+      renderMenu(category);
+    }
+
+    renderMenu('all');
+
+    // Modals
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+      const notice = document.getElementById(id === 'reserveModal' ? 'reserveNotice' : 'orderNotice');
+      if(notice) notice.style.display = 'none';
+    }
+
+    document.getElementById('openReserveBtn').addEventListener('click', () => openModal('reserveModal'));
+    document.getElementById('openOrderBtn').addEventListener('click', () => openModal('orderModal'));
+    document.getElementById('drawerReserveBtn').addEventListener('click', () => { closeDrawer(); openModal('reserveModal'); });
+    document.getElementById('drawerOrderBtn').addEventListener('click', () => { closeDrawer(); openModal('orderModal'); });
+
+    // Mobile Drawer
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => mobileDrawer.classList.add('active'));
+    document.getElementById('closeDrawerBtn').addEventListener('click', () => mobileDrawer.classList.remove('active'));
+    
+    function closeDrawer() {
+      mobileDrawer.classList.remove('active');
+    }
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', closeDrawer);
+    });
+
+    // Form Demo Handler
+    function handleDemoForm(e, noticeId) {
+      e.preventDefault();
+      const notice = document.getElementById(noticeId);
+      notice.style.display = 'block';
+    }
+
+    // Prefers Reduced Motion Check
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Three.js 3D Brass Mortar & Pestle Scene (Respects prefers-reduced-motion)
+    const container = document.getElementById('canvas3dContainer');
+    if (container && window.THREE) {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 4, 8);
+      camera.lookAt(0, 0, 0);
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      container.appendChild(renderer.domElement);
+
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0xfff5e6, 1.2);
+      scene.add(ambientLight);
+
+      const pointLight = new THREE.PointLight(0xffb03b, 2, 50);
+      pointLight.position.set(5, 5, 5);
+      pointLight.castShadow = true;
+      scene.add(pointLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
+      directionalLight.position.set(-5, 8, 3);
+      scene.add(directionalLight);
+
+      // Mortar & Pestle Group
+      const group = new THREE.Group();
+
+      // Brass Material
+      const brassMaterial = new THREE.MeshStandardMaterial({
+        color: 0xd4af37,
+        metalness: 0.85,
+        roughness: 0.25,
+      });
+
+      // Wooden Cutting Board Base
+      const boardGeo = new THREE.CylinderGeometry(3.2, 3.2, 0.2, 32);
+      const woodMaterial = new THREE.MeshStandardMaterial({
+        color: 0x8b5a2b,
+        roughness: 0.6,
+      });
+      const board = new THREE.Mesh(boardGeo, woodMaterial);
+      board.position.y = -0.6;
+      group.add(board);
+
+      // Mortar Bowl
+      const mortarPoints = [];
+      for (let i = 0; i <= 10; i++) {
+        let t = i / 10;
+        let x = Math.sin(t * Math.PI * 0.8) * 1.5 + 0.5;
+        if(t === 0) x = 1.2;
+        if(t === 1) x = 1.8;
+        let y = t * 2 - 1;
+        mortarPoints.push(new THREE.Vector2(x, y));
+      }
+      const mortarGeo = new THREE.LatheGeometry(mortarPoints, 32);
+      const mortar = new THREE.Mesh(mortarGeo, brassMaterial);
+      mortar.position.y = 0.4;
+      group.add(mortar);
+
+      // Pestle
+      const pestleGeo = new THREE.CylinderGeometry(0.2, 0.35, 2.8, 32);
+      const pestle = new THREE.Mesh(pestleGeo, brassMaterial);
+      pestle.position.set(0.4, 0.8, 0.4);
+      pestle.rotation.z = -0.3;
+      pestle.rotation.x = 0.2;
+      group.add(pestle);
+
+      scene.add(group);
+
+      if (prefersReducedMotion) {
+        // Static fallback presentation for reduced motion
+        group.rotation.y = 0.5;
+        group.rotation.x = 0.2;
+        renderer.render(scene, camera);
+        const hintEl = document.getElementById('canvasHintText');
+        if (hintEl) hintEl.textContent = '3D Brass Mortar & Pestle (Static view)';
+      } else {
+        // Interactive & Animated
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+
+        container.addEventListener('mousedown', (e) => {
+          isDragging = true;
+          previousMousePosition = { x: e.clientX, y: e.clientY };
+        });
+
+        window.addEventListener('mousemove', (e) => {
+          if (!isDragging) return;
+          const deltaX = e.clientX - previousMousePosition.x;
+          const deltaY = e.clientY - previousMousePosition.y;
+
+          group.rotation.y += deltaX * 0.008;
+          group.rotation.x += deltaY * 0.008;
+
+          previousMousePosition = { x: e.clientX, y: e.clientY };
+        });
+
+        window.addEventListener('mouseup', () => { isDragging = false; });
+
+        // Touch support
+        container.addEventListener('touchstart', (e) => {
+          isDragging = true;
+          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        });
+
+        window.addEventListener('touchmove', (e) => {
+          if (!isDragging) return;
+          const deltaX = e.touches[0].clientX - previousMousePosition.x;
+          const deltaY = e.touches[0].clientY - previousMousePosition.y;
+
+          group.rotation.y += deltaX * 0.008;
+          group.rotation.x += deltaY * 0.008;
+
+          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        });
+
+        window.addEventListener('touchend', () => { isDragging = false; });
+
+        // Animation Loop
+        function animate() {
+          requestAnimationFrame(animate);
+          if (!isDragging) {
+            group.rotation.y += 0.004;
+          }
+          renderer.render(scene, camera);
+        }
+        animate();
+      }
+
+      // Resize handler
+      window.addEventListener('resize', () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        if (prefersReducedMotion) {
+          renderer.render(scene, camera);
+        }
+      });
+    }
+
+    // GSAP Scroll Animations (Only initialized if user does not prefer reduced motion)
+    if (window.gsap && window.ScrollTrigger && !prefersReducedMotion) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      gsap.from('.hero-content > *', {
+        opacity: 0,
+        y: 30,
+        duration: 0.8,
+        stagger: 0.15,
+        ease: 'power3.out'
+      });
+
+      gsap.from('.dish-card', {
+        scrollTrigger: {
+          trigger: '#featured',
+          start: 'top 80%'
+        },
+        opacity: 0,
+        y: 40,
+        duration: 0.8,
+        stagger: 0.2,
+        ease: 'power3.out'
+      });
+    }
+  </script>
+>>>>>>> 5314ebe (Publish sample concept: thai-basil-vancouver)
 </body>
 </html>
