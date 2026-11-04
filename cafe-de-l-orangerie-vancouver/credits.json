@@ -1,0 +1,116 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://cafedelorangerie.ca/wp-content/uploads/2021/01/logo_new.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "https://cafedelorangerie.ca/wp-content/uploads/2021/01/header_image201508.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "matcha green tea cake patisserie dessert",
+    "description": "food, sweet, cream, tea, affogato, green, coffee, food, food, food, food, food, tea",
+    "source": "https://pixabay.com/photos/food-sweet-cream-tea-affogato-7862820/",
+    "photographer": "thaoantran0101",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "matcha green tea cake patisserie dessert",
+    "description": "tea, wallpaper 4k, tea set, tradition, wallpaper hd, zen, desktop backgrounds, 4k wallpaper 1920x1080, free wallpaper, culture, beautiful wallpaper, 4k wallpaper, full hd wallpaper, peaceful, free background, green, background, windows wallpaper, hd wallpaper, cool backgrounds, mac wallpaper, laptop wallpaper, chinese style",
+    "source": "https://pixabay.com/photos/tea-tea-set-tradition-zen-culture-8664063/",
+    "photographer": "ymyphoto",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "french croissants and pastries on marble table",
+    "description": "bread, croissant, morning, puff paste, puff pastry, flaky pastry, bakery, breakfast, dessert, sweet, snack, homemade, delicious, cuisine, tasty, pie, bake, pastry, bun, nutrition, delicacy, assortment, puff, brown bread, brown dessert, brown nutrition, brown breakfast, brown morning, bread, bread, bread, bread, bread, croissant, croissant, croissant, croissant, bakery, bakery, breakfast, pastry",
+    "source": "https://pixabay.com/photos/bread-croissant-morning-puff-paste-1284438/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "french croissants and pastries on marble table",
+    "description": "bread, croissants, food, bakery, roast, eating, morning, powder, cafe, flour, bake, dessert, sweet, fresh, delicious, bread, bread, croissants, bakery, bakery, bakery, cafe, cafe, cafe, cafe, cafe",
+    "source": "https://pixabay.com/photos/bread-croissants-food-bakery-roast-4077812/",
+    "photographer": "Photowill",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "afternoon tea set with porcelain teapot and macarons",
+    "description": "tea cup, vintage tea cup, tea, cup, vintage, drink, teacup, hot, english, afternoon, spoon, table, home, cozy, morning, breakfast, lifestyle, beverage, mug, ritual, tea, tea, tea, tea, tea",
+    "source": "https://pixabay.com/photos/tea-cup-vintage-tea-cup-tea-cup-2107599/",
+    "photographer": "TerriC",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "afternoon tea set with porcelain teapot and macarons",
+    "description": "tea, lemons, tea pot, teacup, tea time, afternoon tea, drink, hot tea, hot drink, beverage, still life, tea, tea, tea, tea, tea, still life, still life",
+    "source": "https://pixabay.com/photos/tea-lemons-tea-pot-teacup-tea-time-783352/",
+    "photographer": "JillWellington",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "artisan fruit tart with glazed berries",
+    "description": "cupcakes, fruits, dessert, food, pastry, cakes, berry, sweet, delicious, baked, bakery, cupcakes, dessert, dessert, dessert, dessert, food, pastry, cakes, cakes, bakery, bakery, bakery, bakery, bakery",
+    "source": "https://pixabay.com/photos/cupcakes-fruits-dessert-food-1283821/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "artisan fruit tart with glazed berries",
+    "description": "dessert, food, tart, pie, raspberries, pastry, baked, dish, sweet, treat, tasty, delicious, plate, dessert, food, food, tart, pie, pie, pie, pie, pie",
+    "source": "https://pixabay.com/photos/dessert-food-tart-pie-raspberries-5712284/",
+    "photographer": "Pat_Photographies",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "warm cozy caf\u00e9 interior with wooden tables",
+    "description": "table, deco, fall, decoration, meal, flower background, quitting time, flower wallpaper, decor, to sit, relax, flower, still life, nature, decorative, break, dinner, beer, drink, beer garden, restaurant, mood, street cafe, candle, light, tea light, gastronomy, beautiful flowers, lights, eve, the atmosphere, bistro, lighting, seating",
+    "source": "https://pixabay.com/photos/table-deco-fall-decoration-meal-514102/",
+    "photographer": "Torfi007",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "warm cozy caf\u00e9 interior with wooden tables",
+    "description": "cafe, coffee, literature and art, fresh, cafe, cafe, cafe, cafe, cafe, coffee",
+    "source": "https://pixabay.com/photos/cafe-coffee-literature-and-art-2322672/",
+    "photographer": "Smiling_Vivian",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
