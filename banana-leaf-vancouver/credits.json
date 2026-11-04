@@ -1,0 +1,116 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://images.squarespace-cdn.com/content/v1/5f52e04a2e088c3ddebe1739/af605649-f133-4e11-b9a1-811242137ffe/BANANA_LEAF_WEBSITE_LOGO-removebg-preview.png?format=1500w",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.png",
+    "kind": "business featured image",
+    "source": "http://static1.squarespace.com/static/5f52e04a2e088c3ddebe1739/t/659874215fb2113e42c12ed6/1704490017942/BANANA_LEAF_WEBSITE_LOGO-removebg-preview.png?format=1500w",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Malaysian Nasi Lemak on banana leaf",
+    "description": "wrapped, food, dish, cuisine, malaysian food, rice, anchovies, spicy, breakfast, meal, malaysian, closeup, malaysian food, malaysian food, malaysian food, malaysian food, malaysian food, malaysian, malaysian, malaysian",
+    "source": "https://pixabay.com/photos/wrapped-food-dish-cuisine-5827274/",
+    "photographer": "Azza_Hafizah",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Malaysian Nasi Lemak on banana leaf",
+    "description": "nasi liwet, indonesian food, banana leaf, tradition, tofu, tempeh, fried chicken, sambal paste, water spinach, food gathering, culture, family dinner, hands, shared meal, traditional cuisine, indonesian culture, fresh food, simplicity, indonesian cooking, communal dining",
+    "source": "https://pixabay.com/photos/nasi-liwet-indonesian-food-10443298/",
+    "photographer": "IqbalStock",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Southeast Asian green curry bowl with basil",
+    "description": "curry, food, dish, meal, cuisine, delicious, tasty, dinner, lunch, vegetables, meat, asian, curry, curry, curry, curry, curry, food, dinner",
+    "source": "https://pixabay.com/photos/curry-food-dish-meal-cuisine-7249247/",
+    "photographer": "joannawielgosz",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Southeast Asian green curry bowl with basil",
+    "description": "green curry, thai food, spices, herbs, cuisine, curry, dish, food, lunch, dinner, meal, spicy, delicious, masala, vegetables, pepper, thai, green curry, thai food, thai food, thai food, thai food, thai food, curry, curry, curry, curry",
+    "source": "https://pixabay.com/photos/green-curry-thai-food-spices-herbs-6386360/",
+    "photographer": "thepassenger",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "chicken satay skewers with peanut sauce",
+    "description": "satay chicken, peanut sauce, thai food, thai snack, thai food, thai food, thai food, thai food, thai food",
+    "source": "https://pixabay.com/photos/satay-chicken-peanut-sauce-thai-food-3604856/",
+    "photographer": "Huahom",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "chicken satay skewers with peanut sauce",
+    "description": "satay, chicken satay, indonesian, sate, spicy, food, delicious, chicken, cuisine, satay, satay, satay, satay, satay, chicken satay, chicken satay, chicken satay, chicken satay, sate, sate, sate, sate, sate",
+    "source": "https://pixabay.com/photos/satay-chicken-satay-indonesian-sate-4692718/",
+    "photographer": "nadiguunid",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "tropical restaurant interior with bamboo and plants",
+    "description": "bamboo, green bamboo, forest, trees, nature, green forest, green plants, bamboo, bamboo, bamboo, bamboo, bamboo",
+    "source": "https://pixabay.com/photos/bamboo-green-bamboo-forest-trees-3028709/",
+    "photographer": "fietzfotos",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "tropical restaurant interior with bamboo and plants",
+    "description": "bamboo, plant, nature, flora, woods, forest, closeup, bamboo, bamboo, bamboo, bamboo, bamboo",
+    "source": "https://pixabay.com/photos/bamboo-plant-nature-flora-woods-142635/",
+    "photographer": "raedon",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "modern Vancouver restaurant dining room",
+    "description": "chairs, floor, furniture, indoors, interior design, lamp, parquet, room, tables, windows, rug, interiors, home interior, home furniture, interior decoration, home, house, floor, interior design, room, room, home, home, home, house, house, house, house, house",
+    "source": "https://pixabay.com/photos/chairs-floor-furniture-indoors-2181947/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "modern Vancouver restaurant dining room",
+    "description": "table, food, lunch, breakfast, fresh, dish, family, house, family house, cooking, taste, meal, cutlery, glasses, plates, tablecloth, napkins, lunch, lunch, lunch, lunch, lunch, family, family, family, cooking, cooking, meal",
+    "source": "https://pixabay.com/photos/table-food-lunch-breakfast-fresh-710040/",
+    "photographer": "RealAKP",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
