@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Chance Cafe | Specialty Coffee & Artisanal Pastries on Commercial St, Vancouver</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- External Libraries: Three.js and GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- Tailwind CSS compiled via inline utility rules & custom styles to replace external CDN -->
+  <style>
+    /* Reset & Base variables */
+    :root {
+      --bg-almond: #faf7f2;
+      --bg-oat: #f0eae1;
+      --text-espresso: #261c14;
+      --accent-rust: #a6522c;
+      --accent-sage: #4a6b5d;
+      --border-sand: #e6ded3;
+    }
+
+    *, ::before, ::after {
+      box-sizing: border-box;
+      border-width: 0;
+      border-style: solid;
+      border-color: var(--border-sand);
+    }
+
+    html {
+      line-height: 1.5;
+      -webkit-text-size-adjust: 100%;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg-almond);
+      color: var(--text-espresso);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Typography helpers */
+    .font-serif { font-family: 'Instrument Serif', serif; }
+    .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg-almond); }
+    ::-webkit-scrollbar-thumb { background: var(--border-sand); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--accent-rust); }
+
+    /* Layout & Utility classes matching design system */
+    .max-w-7xl { max-width: 80rem; margin-left: auto; margin-right: auto; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+    .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+    .h-20 { height: 5rem; }
+    .flex { display: flex; }
+    .grid { display: grid; }
+    .hidden { display: none; }
+    .block { display: block; }
+    .items-center { align-items: center; }
+    .justify-between { justify-content: space-between; }
+    .justify-center { justify-content: center; }
+    .space-y-4 > * + * { margin-top: 1rem; }
+    .space-y-6 > * + * { margin-top: 1.5rem; }
+    .space-y-8 > * + * { margin-top: 2rem; }
+    .space-x-4 > * + * { margin-left: 1rem; }
+    .space-x-8 > * + * { margin-left: 2rem; }
+    .gap-4 { gap: 1rem; }
+    .gap-6 { gap: 1.5rem; }
+    .gap-8 { gap: 2rem; }
+    .gap-12 { gap: 3rem; }
+    .w-full { width: 100%; }
+    .h-full { height: 100%; }
+    .relative { position: relative; }
+    .absolute { position: absolute; }
+    .sticky { position: sticky; }
+    .top-0 { top: 0px; }
+    .z-40 { z-index: 40; }
+    .z-50 { z-index: 50; }
+    .overflow-hidden { overflow: hidden; }
+    .object-cover { object-fit: cover; }
+    .rounded-full { border-radius: 9999px; }
+    .rounded-2xl { border-radius: 1rem; }
+    .rounded-3xl { border-radius: 1.5rem; }
+    .text-xs { font-size: 0.75rem; line-height: 1rem; }
+    .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+    .text-base { font-size: 1rem; line-height: 1.5rem; }
+    .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+    .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+    .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+    .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+    .text-5xl { font-size: 3rem; line-height: 1; }
+    .font-medium { font-weight: 500; }
+    .font-semibold { font-weight: 600; }
+    .uppercase { text-transform: uppercase; }
+    .italic { font-style: italic; }
+    .tracking-wide { letter-spacing: 0.025em; }
+    .tracking-wider { letter-spacing: 0.05em; }
+    .tracking-widest { letter-spacing: 0.1em; }
+    .text-center { text-align: center; }
+    .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+    .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+    .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+    .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+    .transition-colors { transition-property: color, background-color, border-color; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+    .transition-transform { transition-property: transform; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 500ms; }
+    
+    /* Background and text color utility classes */
+    .bg-espresso { background-color: var(--text-espresso); }
+    .bg-almond { background-color: var(--bg-almond); }
+    .bg-oat { background-color: var(--bg-oat); }
+    .bg-white { background-color: #ffffff; }
+    .text-espresso { color: var(--text-espresso); }
+    .text-almond { color: var(--bg-almond); }
+    .text-rust { color: var(--accent-rust); }
+    .text-sage { color: var(--accent-sage); }
+    .border-oat { border-color: var(--bg-oat); }
+    .border-sand { border-color: var(--border-sand); }
+
+    /* Responsive grid classes */
+    @media (min-width: 768px) {
+      .md\:flex { display: flex; }
+      .md\:hidden { display: none; }
+      .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+      .md\:text-left { text-align: left; }
+      .md\:flex-row { flex-direction: row; }
+    }
+    @media (min-width: 1024px) {
+      .lg\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+      .lg\:col-span-5 { grid-column: span 5 / span 5; }
+      .lg\:col-span-6 { grid-column: span 6 / span 6; }
+      .lg\:col-span-7 { grid-column: span 7 / span 7; }
+    }
+
+    /* Hover effects */
+    .group:hover .group-hover\:scale-105 { transform: scale(1.05); }
+
+    /* Accessibility / Focus States */
+    a:focus-visible, button:focus-visible, input:focus-visible {
+      outline: 2px solid var(--accent-rust);
+      outline-offset: 2px;
+    }
+  </style>
+</head>
+<body class="bg-almond text-espresso antialiased">
+
+  <!-- Concept Banner -->
+  <div class="bg-espresso text-almond text-xs py-2 px-4 text-center tracking-wide font-medium relative z-50">
+    <span>Independent website concept by LeadSky for Chance Cafe. Not their official website.</span>
+  </div>
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 bg-almond backdrop-blur-md border-b border-oat transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <a href="#" class="font-serif text-3xl tracking-wide text-espresso hover:text-rust transition-colors" aria-label="Chance Cafe Vancouver Home">
+        CHANCE CAFE <span class="text-sm font-sans font-normal tracking-widest text-rust uppercase ml-1">// Vancouver</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-espresso" style="opacity: 0.8;">
+        <a href="#menu" class="hover:text-rust transition-colors">Menu</a>
+        <a href="#bakery" class="hover:text-rust transition-colors">Bakery</a>
+        <a href="#story" class="hover:text-rust transition-colors">Our Story</a>
+        <a href="#location" class="hover:text-rust transition-colors">Location & Hours</a>
+      </nav>
+
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="tel:6045001235" class="text-sm font-medium text-espresso hover:text-rust transition-colors flex items-center gap-2">
+          <svg class="w-4 h-4 text-rust" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          604-500-1235
+        </a>
+        <a href="#menu" class="bg-espresso text-almond px-5 py-2.5 rounded-full text-sm font-medium hover:bg-rust transition-colors shadow-sm">
+          View Menu
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-espresso focus:outline-none p-2" aria-label="Toggle Navigation Menu" aria-expanded="false">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-almond border-b border-oat px-6 py-4 space-y-4">
+      <a href="#menu" class="block text-base font-medium text-espresso hover:text-rust">Menu</a>
+      <a href="#bakery" class="block text-base font-medium text-espresso hover:text-rust">Bakery</a>
+      <a href="#story" class="block text-base font-medium text-espresso hover:text-rust">Our Story</a>
+      <a href="#location" class="block text-base font-medium text-espresso hover:text-rust">Location & Hours</a>
+      <div class="pt-4 border-t border-oat flex flex-col space-y-3">
+        <a href="tel:6045001235" class="text-sm font-medium text-espresso flex items-center gap-2">
+          <svg class="w-4 h-4 text-rust" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+          604-500-1235
+        </a>
+        <a href="#menu" class="bg-espresso text-almond text-center py-2.5 rounded-full text-sm font-medium">View Menu</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden bg-almond py-16 lg:py-24">
+    <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+      
+      <!-- Left Content -->
+      <div class="lg:col-span-6 space-y-8 z-10">
+        <div class="inline-flex items-center gap-2 bg-oat px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider text-rust uppercase">
+          <span>Commercial Street // Vancouver</span>
+        </div>
+        
+        <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl leading-[1.05] tracking-tight text-espresso">
+          Specialty Coffee & Artisanal Pastries on <span class="italic text-rust">Commercial St</span>
+        </h1>
+        
+        <p class="text-lg text-espresso max-w-xl font-normal leading-relaxed" style="opacity: 0.8;">
+          Single-origin espresso, freshly baked sourdough pastries, and a sunlit community sanctuary crafted daily in East Van.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+          <a href="#menu" class="bg-espresso text-almond px-8 py-4 rounded-full text-base font-medium text-center hover:bg-rust transition-all shadow-lg">
+            Explore Cafe Menu
+          </a>
+          <a href="#location" class="border border-espresso text-espresso px-8 py-4 rounded-full text-base font-medium text-center hover:bg-espresso hover:text-almond transition-all" style="border-color: rgba(38,28,20,0.2);">
+            Visit Our Location
+          </a>
+        </div>
+
+        <div class="flex items-center gap-6 pt-6 border-t border-oat">
+          <div>
+            <span class="block text-2xl font-serif text-espresso">Open Daily</span>
+            <span class="text-xs text-espresso uppercase tracking-wider" style="opacity: 0.6;">10:00 AM – 5:00 PM</span>
+          </div>
+          <div class="h-8 w-px bg-oat"></div>
+          <div>
+            <span class="block text-2xl font-serif text-espresso">3424 Commercial St</span>
+            <span class="text-xs text-espresso uppercase tracking-wider" style="opacity: 0.6;">East Vancouver, BC</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Imagery & 3D Stage -->
+      <div class="lg:col-span-6 relative">
+        <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-oat aspect-[4/3] group">
+          <img src="img/stock-1.jpg" alt="Latte art flat white coffee cup on a wooden table at Chance Cafe" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700">
+          <!-- WCAG compliant dark overlay for text readability -->
+          <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.1) 60%, transparent);"></div>
+          
+          <!-- Floating badge with solid high-contrast panel -->
+          <div class="absolute bottom-6 left-6 bg-almond p-4 rounded-2xl shadow-lg border border-oat max-w-xs">
+            <div class="flex items-center gap-3">
+              <div class="w-3 h-3 rounded-full bg-sage"></div>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-wider text-espresso">Brewing Now</p>
+                <p class="text-serif text-lg text-espresso" style="font-family: 'Instrument Serif', serif;">Single-Origin Ethiopian Roast</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Canvas Container Overlay (Static Fallback / Interactive 3D for WebGL) -->
+        <div id="canvas-container" class="absolute -top-10 -right-10 w-48 h-48 hidden sm:block pointer-events-auto cursor-grab" title="Interactive 3D Ceramic Mug Concept"></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Status Bar / Highlights -->
+  <section class="bg-oat py-8 border-y border-sand">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+      <div class="flex items-center justify-center md:justify-start gap-4">
+        <div class="w-12 h-12 rounded-full bg-almond flex items-center justify-center text-rust shadow-sm">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl text-espresso">Daily Hours</h3>
+          <p class="text-sm text-espresso" style="opacity: 0.7;">Monday – Sunday: 10:00 AM – 5:00 PM</p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center md:justify-start gap-4">
+        <div class="w-12 h-12 rounded-full bg-almond flex items-center justify-center text-rust shadow-sm">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl text-espresso">Location</h3>
+          <p class="text-sm text-espresso" style="opacity: 0.7;">3424 Commercial Street, Vancouver, BC</p>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-center md:justify-start gap-4">
+        <div class="w-12 h-12 rounded-full bg-almond flex items-center justify-center text-rust shadow-sm">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <div>
+          <h3 class="font-serif text-xl text-espresso">Freshly Baked</h3>
+          <p class="text-sm text-espresso" style="opacity: 0.7;">Sourdough & pastries baked fresh every morning</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Seasonal Menu & Specialty Drinks Showcase -->
+  <section id="menu" class="py-24 bg-almond">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-xs font-semibold uppercase tracking-widest text-rust">Artisanal Offerings</span>
+        <h2 class="font-serif text-4xl sm:text-5xl text-espresso">The Cafe Menu</h2>
+        <p class="text-espresso text-base" style="opacity: 0.7;">Thoughtfully sourced coffee beans roasted locally in British Columbia, paired with house-made syrups and organic dairy & oat milks.</p>
+        
+        <!-- Menu Category Tabs -->
+        <div class="flex flex-wrap justify-center gap-2 pt-6">
+          <button onclick="filterMenu('all', event)" class="menu-tab active px-6 py-2 rounded-full text-sm font-medium transition-colors bg-espresso text-almond">All Items</button>
+          <button onclick="filterMenu('coffee', event)" class="menu-tab px-6 py-2 rounded-full text-sm font-medium transition-colors bg-oat text-espresso">Espresso & Coffee</button>
+          <button onclick="filterMenu('tea', event)" class="menu-tab px-6 py-2 rounded-full text-sm font-medium transition-colors bg-oat text-espresso">Teas & Botanicals</button>
+          <button onclick="filterMenu('seasonal', event)" class="menu-tab px-6 py-2 rounded-full text-sm font-medium transition-colors bg-oat text-espresso">Seasonal Specials</button>
+        </div>
+      </div>
+
+      <!-- Menu Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Menu Item 1 -->
+        <div class="menu-card coffee bg-white p-6 rounded-3xl shadow-sm border border-oat flex flex-col justify-between group hover:shadow-md transition-all">
+          <div>
+            <div class="h-48 rounded-2xl overflow-hidden mb-6 relative">
+              <img src="img/stock-2.jpg" alt="Signature Flat White with latte art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 right-4 bg-almond px-3 py-1 rounded-full text-xs font-semibold text-rust shadow-sm">Popular</div>
+            </div>
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl text-espresso">Signature Flat White</h3>
+              <span class="font-serif text-xl text-rust">$5.25</span>
+            </div>
+            <p class="text-sm text-espresso" style="opacity: 0.7;">Double ristretto shot paired with velvety microfoam poured over local organic whole milk or barista oat milk.</p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-oat flex items-center justify-between text-xs font-semibold text-sage uppercase tracking-wider">
+            <span>House Blend / Single Origin</span>
+            <span>Hot / Iced</span>
+          </div>
+        </div>
+
+        <!-- Menu Item 2 -->
+        <div class="menu-card coffee bg-white p-6 rounded-3xl shadow-sm border border-oat flex flex-col justify-between group hover:shadow-md transition-all">
+          <div>
+            <div class="h-48 rounded-2xl overflow-hidden mb-6 relative">
+              <img src="img/stock-7.jpg" alt="Barista pouring espresso shot" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl text-espresso">Single-Origin Pour Over</h3>
+              <span class="font-serif text-xl text-rust">$6.00</span>
+            </div>
+            <p class="text-sm text-espresso" style="opacity: 0.7;">Hand-poured filter coffee highlighting distinct fruit and floral tasting notes from rotating micro-lot roasters.</p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-oat flex items-center justify-between text-xs font-semibold text-sage uppercase tracking-wider">
+            <span>Rotating Origins</span>
+            <span>Made to Order</span>
+          </div>
+        </div>
+
+        <!-- Menu Item 3 -->
+        <div class="menu-card seasonal bg-white p-6 rounded-3xl shadow-sm border border-oat flex flex-col justify-between group hover:shadow-md transition-all">
+          <div>
+            <div class="h-48 rounded-2xl overflow-hidden mb-6 relative">
+              <img src="img/stock-8.jpg" alt="Vanilla cardamom latte" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-4 right-4 bg-almond px-3 py-1 rounded-full text-xs font-semibold text-rust shadow-sm">Seasonal</div>
+            </div>
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl text-espresso">Cardamom Vanilla Latte</h3>
+              <span class="font-serif text-xl text-rust">$6.50</span>
+            </div>
+            <p class="text-sm text-espresso" style="opacity: 0.7;">House-infused organic Madagascar vanilla bean syrup spiced with freshly ground green cardamom pods.</p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-oat flex items-center justify-between text-xs font-semibold text-sage uppercase tracking-wider">
+            <span>House-Made Syrup</span>
+            <span>Limited Batch</span>
+          </div>
+        </div>
+
+        <!-- Menu Item 4 -->
+        <div class="menu-card tea bg-white p-6 rounded-3xl shadow-sm border border-oat flex flex-col justify-between group hover:shadow-md transition-all">
+          <div>
+            <div class="h-48 rounded-2xl overflow-hidden mb-6 relative">
+              <img src="img/stock-6.jpg" alt="Ceremonial grade matcha latte" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl text-espresso">Ceremonial Uji Matcha</h3>
+              <span class="font-serif text-xl text-rust">$6.25</span>
+            </div>
+            <p class="text-sm text-espresso" style="opacity: 0.7;">Stone-ground green tea imported directly from Kyoto, whisked to vibrant emerald perfection.</p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-oat flex items-center justify-between text-xs font-semibold text-sage uppercase tracking-wider">
+            <span>Uji, Japan</span>
+            <span>Organic Oat Milk</span>
+          </div>
+        </div>
+
+        <!-- Menu Item 5 -->
+        <div class="menu-card coffee bg-white p-6 rounded-3xl shadow-sm border border-oat flex flex-col justify-between group hover:shadow-md transition-all">
+          <div>
+            <div class="h-48 rounded-2xl overflow-hidden mb-6 relative">
+              <img src="img/stock-1.jpg" alt="Rich velvety mocha" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl text-espresso">Artisanal Dark Mocha</h3>
+              <span class="font-serif text-xl text-rust">$6.75</span>
+            </div>
+            <p class="text-sm text-espresso" style="opacity: 0.7;">Crafted with melted 70% single-origin dark chocolate ganache and double espresso.</p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-oat flex items-center justify-between text-xs font-semibold text-sage uppercase tracking-wider">
+            <span>Craft Chocolate</span>
+            <span>Rich & Velvety</span>
+          </div>
+        </div>
+
+        <!-- Menu Item 6 -->
+        <div class="menu-card tea bg-white p-6 rounded-3xl shadow-sm border border-oat flex flex-col justify-between group hover:shadow-md transition-all">
+          <div>
+            <div class="h-48 rounded-2xl overflow-hidden mb-6 relative">
+              <img src="img/stock-5.jpg" alt="Loose leaf herbal tea" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            </div>
+            <div class="flex justify-between items-baseline mb-2">
+              <h3 class="font-serif text-2xl text-espresso">Pacific Northwest Herbal</h3>
+              <span class="font-serif text-xl text-rust">$4.75</span>
+            </div>
+            <p class="text-sm text-espresso" style="opacity: 0.7;">A calming botanical blend of peppermint, lavender blossoms, and locally foraged chamomile.</p>
+          </div>
+          <div class="pt-6 mt-6 border-t border-oat flex items-center justify-between text-xs font-semibold text-sage uppercase tracking-wider">
+            <span>Caffeine Free</span>
+            <span>Loose Leaf</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Fresh Bakery & Artisanal Pastries Grid -->
+  <section id="bakery" class="py-24 bg-oat">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+        <div class="lg:col-span-7 space-y-4">
+          <span class="text-xs font-semibold uppercase tracking-widest text-rust">Baked Fresh Daily</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-espresso">Sourdough & Artisanal Pastries</h2>
+          <p class="text-espresso text-base leading-relaxed" style="opacity: 0.8;">
+            Every morning before sunrise, our ovens come alive with the aroma of fermenting wild yeast sourdoughs, buttery laminated croissants, and seasonal fruit Danishes. Baked in small batches to ensure absolute freshness.
+          </p>
+        </div>
+        <div class="lg:col-span-5 flex justify-lg-end">
+          <div class="inline-flex items-center gap-3 bg-almond px-6 py-3 rounded-full shadow-sm border border-sand">
+            <span class="w-2.5 h-2.5 rounded-full bg-rust"></span>
+            <span class="text-sm font-medium text-espresso">Fresh batches out by 10:00 AM daily</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bakery Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Bakery 1 -->
+        <div class="bg-almond rounded-3xl overflow-hidden shadow-sm border border-sand group flex flex-col justify-between">
+          <div>
+            <div class="h-64 overflow-hidden relative">
+              <img src="img/stock-4.jpg" alt="Golden flaky almond croissant" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <!-- Dark overlay for WCAG compliance over image text -->
+              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-almond">
+                <span class="text-xs font-semibold uppercase tracking-wider" style="opacity: 0.9;">Viennoiserie</span>
+                <h3 class="font-serif text-2xl">Almond Frangipane Croissant</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-sm text-espresso" style="opacity: 0.7;">Double-baked butter croissant filled with rich almond frangipane cream, topped with toasted sliced almonds and powdered sugar.</p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0 flex items-center justify-between">
+            <span class="font-serif text-xl text-rust">$5.50</span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-sage">Baked Fresh</span>
+          </div>
+        </div>
+
+        <!-- Bakery 2 -->
+        <div class="bg-almond rounded-3xl overflow-hidden shadow-sm border border-sand group flex flex-col justify-between">
+          <div>
+            <div class="h-64 overflow-hidden relative">
+              <img src="img/stock-9.jpg" alt="Artisanal sourdough bread loaf" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-almond">
+                <span class="text-xs font-semibold uppercase tracking-wider" style="opacity: 0.9;">Wild Yeast</span>
+                <h3 class="font-serif text-2xl">Country Sourdough Loaf</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-sm text-espresso" style="opacity: 0.7;">Natural 36-hour fermented sourdough with a blistered dark crust, open moist crumb, and subtle nutty undertones.</p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0 flex items-center justify-between">
+            <span class="font-serif text-xl text-rust">$9.00</span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-sage">Whole Loaf</span>
+          </div>
+        </div>
+
+        <!-- Bakery 3 -->
+        <div class="bg-almond rounded-3xl overflow-hidden shadow-sm border border-sand group flex flex-col justify-between">
+          <div>
+            <div class="h-64 overflow-hidden relative">
+              <img src="img/stock-3.jpg" alt="Assorted artisanal pastries in display case" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-almond">
+                <span class="text-xs font-semibold uppercase tracking-wider" style="opacity: 0.9;">Seasonal Pastry</span>
+                <h3 class="font-serif text-2xl">Berry Vanilla Danish</h3>
+              </div>
+            </div>
+            <div class="p-6">
+              <p class="text-sm text-espresso" style="opacity: 0.7;">Flaky laminated puff pastry layered with Madagascar vanilla bean custard and locally sourced seasonal berries.</p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0 flex items-center justify-between">
+            <span class="font-serif text-xl text-rust">$5.75</span>
+            <span class="text-xs font-semibold uppercase tracking-wider text-sage">Limited Supply</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Our Story: Community & Craftsmanship in East Vancouver -->
+  <section id="story" class="py-24 bg-almond overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <div class="lg:col-span-6 relative">
+          <div class="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5]">
+            <img src="img/stock-5.jpg" alt="Cozy sunlit neighborhood cafe interior with wood and plants" class="w-full h-full object-cover">
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,0.4), transparent);"></div>
+          </div>
+          
+          <!-- Floating accent box -->
+          <div class="absolute -bottom-8 -right-8 bg-espresso text-almond p-8 rounded-3xl shadow-xl hidden sm:block max-w-xs">
+            <p class="font-serif text-3xl mb-2 text-rust">Commercial St</p>
+            <p class="text-sm text-almond leading-relaxed" style="opacity: 0.8;">A sunlit community sanctuary welcoming neighbors, creatives, and coffee enthusiasts every single day.</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-semibold uppercase tracking-widest text-rust">Our Neighborhood Sanctuary</span>
+          <h2 class="font-serif text-4xl sm:text-5xl text-espresso">Crafted for Connection in East Vancouver</h2>
+          
+          <p class="text-lg text-espresso leading-relaxed" style="opacity: 0.8;">
+            Nestled right on Commercial Street, Chance Cafe was created to be a warm gathering place for the neighborhood. Whether you are dropping in for a quick morning flat white on your way to transit, settling in with a book by the sunny window, or grabbing a fresh loaf of sourdough bread for dinner, we are here for you.
+          </p>
+
+          <p class="text-base text-espresso leading-relaxed" style="opacity: 0.7;">
+            We partner with independent coffee roasters who prioritize ethical farming practices and exceptional flavor profiles. Every cup is brewed with care, precision, and genuine hospitality.
+          </p>
+
+          <div class="grid grid-cols-2 gap-6 pt-6 border-t border-oat">
+            <div>
+              <span class="block font-serif text-3xl text-rust mb-1">100%</span>
+              <span class="text-sm text-espresso" style="opacity: 0.7;">Organic & ethically sourced coffee beans</span>
+            </div>
+            <div>
+              <span class="block font-serif text-3xl text-rust mb-1">Daily</span>
+              <span class="text-sm text-espresso" style="opacity: 0.7;">Fresh artisanal baking from sunrise</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Location, Hours & Tap-to-Call Contact Bar -->
+  <section id="location" class="py-24 bg-oat border-t border-sand">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Info Column -->
+        <div class="lg:col-span-6 space-y-8">
+          <div class="space-y-4">
+            <span class="text-xs font-semibold uppercase tracking-widest text-rust">Visit & Connect</span>
+            <h2 class="font-serif text-4xl sm:text-5xl text-espresso">Find Us on Commercial Street</h2>
+            <p class="text-espresso text-base" style="opacity: 0.8;">
+              Drop by for your daily brew or reach out with any questions. We love meeting neighbors and coffee lovers alike.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-almond flex items-center justify-center text-rust shadow-sm shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-serif text-xl text-espresso">Address</h3>
+                <p class="text-sm text-espresso mt-1" style="opacity: 0.7;">3424 Commercial Street<br>Vancouver, BC V5N 4E9</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-almond flex items-center justify-center text-rust shadow-sm shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-serif text-xl text-espresso">Operating Hours</h3>
+                <p class="text-sm text-espresso mt-1" style="opacity: 0.7;">Monday – Sunday<br>10:00 AM – 5:00 PM</p>
+                <div class="inline-flex items-center gap-2 mt-2 px-3 py-1 rounded-full text-xs font-semibold text-sage" style="background-color: rgba(74, 107, 93, 0.1);">
+                  <span class="w-2 h-2 rounded-full bg-sage"></span>
+                  Open Daily 10:00 - 17:00
+                </div>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-almond flex items-center justify-center text-rust shadow-sm shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <h3 class="font-serif text-xl text-espresso">Direct Contact</h3>
+                <p class="text-sm text-espresso mt-1" style="opacity: 0.7;">
+                  Phone: <a href="tel:6045001235" class="text-rust font-medium hover:underline">604-500-1235</a><br>
+                  Email: <a href="mailto:CHANCECAFEVANCOUVER@GMAIL.COM" class="text-rust font-medium hover:underline">CHANCECAFEVANCOUVER@GMAIL.COM</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-4 flex flex-wrap gap-4">
+            <a href="tel:6045001235" class="bg-espresso text-almond px-8 py-4 rounded-full text-base font-medium hover:bg-rust transition-colors shadow-md flex items-center gap-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              Tap to Call Cafe
+            </a>
+            <a href="mailto:CHANCECAFEVANCOUVER@GMAIL.COM" class="border border-espresso text-espresso px-8 py-4 rounded-full text-base font-medium hover:bg-espresso hover:text-almond transition-colors" style="border-color: rgba(38,28,20,0.2);">
+              Send Email Enquiry
+            </a>
+          </div>
+        </div>
+
+        <!-- Interactive Form / Newsletter Column -->
+        <div class="lg:col-span-6 bg-almond p-8 sm:p-10 rounded-3xl shadow-sm border border-sand">
+          <h3 class="font-serif text-3xl text-espresso mb-2">Stay Connected with Chance</h3>
+          <p class="text-sm text-espresso mb-8" style="opacity: 0.7;">Sign up for seasonal menu drops, fresh single-origin roasts arrival updates, and community events.</p>
+
+          <form id="newsletter-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+            <div>
+              <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-espresso mb-2">Your Name</label>
+              <input type="text" id="name" required class="w-full bg-oat border border-sand rounded-2xl px-4 py-3.5 text-sm text-espresso focus:outline-none focus:border-rust transition-colors" placeholder="Jane Doe">
+            </div>
+
+            <div>
+              <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-espresso mb-2">Email Address</label>
+              <input type="email" id="email" required class="w-full bg-oat border border-sand rounded-2xl px-4 py-3.5 text-sm text-espresso focus:outline-none focus:border-rust transition-colors" placeholder="jane@example.com">
+            </div>
+
+            <button type="submit" class="w-full bg-espresso text-almond py-4 rounded-2xl font-medium text-sm hover:bg-rust transition-colors shadow-md">
+              Subscribe to Updates
+            </button>
+
+            <div id="form-success" class="hidden p-4 rounded-2xl text-sage text-sm font-medium text-center" style="background-color: rgba(74, 107, 93, 0.1);">
+              This is a demo form, nothing was sent.
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-espresso text-almond py-16">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+      
+      <div class="md:col-span-2 space-y-4">
+        <span class="font-serif text-3xl tracking-wide block">CHANCE CAFE <span class="text-xs font-sans font-normal tracking-widest text-rust uppercase ml-1">// Vancouver</span></span>
+        <p class="text-sm text-almond max-w-sm leading-relaxed" style="opacity: 0.7;">
+          Your sunlit neighborhood sanctuary on Commercial Street. Specializing in single-origin specialty espresso, freshly baked sourdoughs, and warm community connection.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="font-serif text-xl mb-4 text-almond">Quick Links</h4>
+        <ul class="space-y-2.5 text-sm text-almond" style="opacity: 0.7;">
+          <li><a href="#menu" class="hover:text-almond transition-colors">Cafe Menu</a></li>
+          <li><a href="#bakery" class="hover:text-almond transition-colors">Fresh Bakery</a></li>
+          <li><a href="#story" class="hover:text-almond transition-colors">Our Story</a></li>
+          <li><a href="#location" class="hover:text-almond transition-colors">Location & Hours</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-serif text-xl mb-4 text-almond">Contact</h4>
+        <ul class="space-y-2.5 text-sm text-almond" style="opacity: 0.7;">
+          <li>3424 Commercial Street</li>
+          <li>Vancouver, BC V5N 4E9</li>
+          <li><a href="tel:6045001235" class="hover:text-almond transition-colors">604-500-1235</a></li>
+          <li><a href="mailto:CHANCECAFEVANCOUVER@GMAIL.COM" class="hover:text-almond transition-colors break-all">CHANCECAFEVANCOUVER@GMAIL.COM</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 pt-8 border-t border-almond flex flex-col md:flex-row items-center justify-between text-xs text-almond gap-4" style="border-color: rgba(250,247,242,0.1); opacity: 0.6;">
+      <p>&copy; <span id="current-year">2026</span> Chance Cafe. All rights reserved. Concept by LeadSky.</p>
+      <div class="flex flex-wrap items-center gap-4 text-center">
+        <span>Stock photos via <a href="https://pixabay.com" target="_blank" rel="noopener" class="underline hover:text-almond">Pixabay</a></span>
+        <span>•</span>
+        <span>Independent concept for review</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Implementation -->
+  <script>
+    // Set current year
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileMenuBtn.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.contains('hidden');
+      if (isHidden) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+      } else {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close mobile menu on link click
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Menu Category Filtering
+    function filterMenu(category, event) {
+      const buttons = document.querySelectorAll('.menu-tab');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-espresso', 'text-almond');
+        btn.classList.add('bg-oat', 'text-espresso');
+      });
+      event.target.classList.remove('bg-oat', 'text-espresso');
+      event.target.classList.add('bg-espresso', 'text-almond');
+
+      const cards = document.querySelectorAll('.menu-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.classList.contains(category)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Demo Form Submission Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const successMsg = document.getElementById('form-success');
+      successMsg.classList.remove('hidden');
+      e.target.reset();
+      setTimeout(() => {
+        successMsg.classList.add('hidden');
+      }, 5000);
+    }
+
+    // Reduced-Motion Check
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Three.js Interactive 3D Coffee Mug Concept with Reduced-Motion and Off-Screen pausing
+    const container = document.getElementById('canvas-container');
+    if (container && window.THREE) {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
+
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+      scene.add(ambientLight);
+
+      const pointLight = new THREE.PointLight(0xa6522c, 2, 50);
+      pointLight.position.set(5, 5, 5);
+      scene.add(pointLight);
+
+      // Create a stylized ceramic coffee cup
+      const cupGroup = new THREE.Group();
+
+      const cupGeo = new THREE.CylinderGeometry(1.2, 0.9, 2.2, 32);
+      const cupMat = new THREE.MeshStandardMaterial({ 
+        color: 0xfaf7f2, 
+        roughness: 0.3,
+        metalness: 0.1
+      });
+      const cupMesh = new THREE.Mesh(cupGeo, cupMat);
+      cupGroup.add(cupMesh);
+
+      const coffeeGeo = new THREE.CylinderGeometry(1.15, 1.15, 0.1, 32);
+      const coffeeMat = new THREE.MeshStandardMaterial({ 
+        color: 0x261c14, 
+        roughness: 0.2 
+      });
+      const coffeeMesh = new THREE.Mesh(coffeeGeo, coffeeMat);
+      coffeeMesh.position.y = 0.95;
+      cupGroup.add(coffeeMesh);
+
+      const handleGeo = new THREE.TorusGeometry(0.6, 0.15, 16, 32, Math.PI);
+      const handleMat = new THREE.MeshStandardMaterial({ 
+        color: 0xfaf7f2, 
+        roughness: 0.3 
+      });
+      const handleMesh = new THREE.Mesh(handleGeo, handleMat);
+      handleMesh.rotation.z = Math.PI / 2;
+      handleMesh.position.set(1.3, 0, 0);
+      cupGroup.add(handleMesh);
+
+      scene.add(cupGroup);
+      camera.position.z = 6;
+
+      let isDragging = false;
+      let previousMousePosition = { x: 0, y: 0 };
+
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        previousMousePosition = { x: e.clientX, y: e.clientY };
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.clientX - previousMousePosition.x;
+        const deltaY = e.clientY - previousMousePosition.y;
+
+        cupGroup.rotation.y += deltaX * 0.01;
+        cupGroup.rotation.x += deltaY * 0.01;
+
+        previousMousePosition = { x: e.clientX, y: e.clientY };
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      container.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      });
+
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.touches[0].clientX - previousMousePosition.x;
+        const deltaY = e.touches[0].clientY - previousMousePosition.y;
+
+        cupGroup.rotation.y += deltaX * 0.01;
+        cupGroup.rotation.x += deltaY * 0.01;
+
+        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      });
+
+      window.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+
+      // Pause rendering when off-screen or if reduced motion is preferred
+      let isVisible = true;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isVisible = entry.isIntersecting;
+        });
+      }, { threshold: 0.1 });
+      observer.observe(container);
+
+      let clock = new THREE.Clock();
+      function animate() {
+        requestAnimationFrame(animate);
+        if (!isVisible) return;
+        
+        if (!isDragging && !prefersReducedMotion) {
+          cupGroup.rotation.y += 0.005;
+          cupGroup.position.y = Math.sin(clock.getElapsedTime() * 2) * 0.1;
+        } else if (prefersReducedMotion) {
+          cupGroup.rotation.y = 0.5; // static pose
+        }
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      window.addEventListener('resize', () => {
+        if (!container) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+    }
+  </script>
+</body>
+</html>
