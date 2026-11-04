@@ -1,1289 +1,1443 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex">
-    <title>Caffè Artigiano — Hornby Street, Vancouver | Independent Website Concept</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- External Libraries: Three.js r128, GSAP 3.12.5, ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-    <style>
-        :root {
-            --bg-primary: #faf8f5;
-            --bg-secondary: #f0ebe1;
-            --text-main: #3b2f2f;
-            --accent-terracotta: #c85a32;
-            --accent-sage: #7c8c73;
-            --font-display: 'Cormorant Garamond', serif;
-            --font-body: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Top Concept Notice Banner */
-        .concept-banner {
-            background-color: var(--text-main);
-            color: var(--bg-primary);
-            text-align: center;
-            padding: 8px 16px;
-            font-size: 0.8125rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            position: relative;
-            z-index: 1000;
-        }
-
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 999;
-            background: rgba(250, 248, 245, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(59, 47, 47, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .brand-logo {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            color: var(--text-main);
-            text-decoration: none;
-        }
-
-        .brand-logo span {
-            color: var(--accent-terracotta);
-            font-weight: 400;
-            font-size: 0.9rem;
-            display: block;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-size: 0.9375rem;
-            font-weight: 500;
-            transition: color 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-terracotta);
-        }
-
-        .btn-primary {
-            background-color: var(--accent-terracotta);
-            color: #fff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background-color 0.2s ease, transform 0.2s ease;
-            display: inline-block;
-        }
-
-        .btn-primary:hover {
-            background-color: #b04b25;
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1.5px solid var(--text-main);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.2s ease;
-            display: inline-block;
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--text-main);
-            color: var(--bg-primary);
-        }
-
-        /* Mobile Menu Toggle */
-        .mobile-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .mobile-toggle span {
-            display: block;
-            width: 24px;
-            height: 2px;
-            background: var(--text-main);
-            margin: 5px 0;
-            transition: 0.3s;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 5rem 2rem 7rem 2rem;
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-family: var(--font-display);
-            font-size: clamp(3rem, 5vw, 4.5rem);
-            line-height: 1.05;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-        }
-
-        .hero-content h1 span {
-            font-style: italic;
-            color: var(--accent-terracotta);
-        }
-
-        .hero-content p {
-            font-size: 1.125rem;
-            line-height: 1.6;
-            color: #5a4a4a;
-            margin-bottom: 2.5rem;
-            max-width: 540px;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .hero-image-wrapper {
-            position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(59, 47, 47, 0.12);
-            aspect-ratio: 4 / 5;
-        }
-
-        .hero-image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.6s ease;
-        }
-
-        .hero-image-wrapper:hover img {
-            transform: scale(1.03);
-        }
-
-        /* Status & Live Banner */
-        .status-section {
-            background-color: var(--bg-secondary);
-            border-top: 1px solid rgba(59, 47, 47, 0.06);
-            border-bottom: 1px solid rgba(59, 47, 47, 0.06);
-            padding: 1.5rem 2rem;
-        }
-
-        .status-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .status-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 0.9375rem;
-            font-weight: 500;
-        }
-
-        .status-indicator {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: #2e7d32;
-            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4); }
-            70% { box-shadow: 0 0 0 8px rgba(46, 125, 50, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(46, 125, 50, 0); }
-        }
-
-        /* 3D Showcase Section */
-        .showcase-3d-section {
-            padding: 6rem 2rem;
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .canvas-container {
-            width: 100%;
-            height: 450px;
-            background: var(--bg-secondary);
-            border-radius: 20px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: inset 0 0 30px rgba(0,0,0,0.03);
-        }
-
-        #tamper-canvas {
-            width: 100%;
-            height: 100%;
-            display: block;
-            cursor: grab;
-        }
-        #tamper-canvas:active {
-            cursor: grabbing;
-        }
-
-        .section-tag {
-            font-size: 0.8125rem;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: var(--accent-terracotta);
-            font-weight: 700;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .section-title {
-            font-family: var(--font-display);
-            font-size: clamp(2.25rem, 3.5vw, 3.25rem);
-            line-height: 1.15;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: var(--text-main);
-        }
-
-        .section-desc {
-            font-size: 1.0625rem;
-            line-height: 1.7;
-            color: #5a4a4a;
-            margin-bottom: 2rem;
-        }
-
-        /* Menu Section */
-        .menu-section {
-            padding: 7rem 2rem;
-            background-color: var(--bg-secondary);
-        }
-
-        .menu-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 4rem auto;
-        }
-
-        .menu-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-
-        .tab-btn {
-            background: transparent;
-            border: 1px solid rgba(59, 47, 47, 0.2);
-            padding: 0.75rem 1.75rem;
-            border-radius: 50px;
-            font-family: var(--font-body);
-            font-size: 0.9375rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            color: var(--text-main);
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            background: var(--text-main);
-            color: var(--bg-primary);
-            border-color: var(--text-main);
-        }
-
-        .menu-grid {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .menu-card {
-            background: var(--bg-primary);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(59, 47, 47, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .menu-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(59, 47, 47, 0.08);
-        }
-
-        .menu-card-img {
-            height: 220px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .menu-card-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .menu-card:hover .menu-card-img img {
-            transform: scale(1.05);
-        }
-
-        .menu-card-content {
-            padding: 1.75rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .menu-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 0.75rem;
-        }
-
-        .menu-card-title {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-main);
-        }
-
-        .menu-card-price {
-            font-weight: 600;
-            color: var(--accent-terracotta);
-            font-size: 1.125rem;
-        }
-
-        .menu-card-desc {
-            font-size: 0.9375rem;
-            color: #6c5d5d;
-            line-height: 1.6;
-            margin-bottom: 1.25rem;
-            flex-grow: 1;
-        }
-
-        .badge-list {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            font-size: 0.75rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            background: rgba(124, 140, 115, 0.15);
-            color: #3b5233;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-        }
-
-        /* Story & Heritage */
-        .story-section {
-            padding: 8rem 2rem;
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        .story-images {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 1.5rem;
-            position: relative;
-        }
-
-        .story-img-main {
-            border-radius: 16px;
-            overflow: hidden;
-            aspect-ratio: 3 / 4;
-            box-shadow: 0 15px 35px rgba(59, 47, 47, 0.1);
-        }
-
-        .story-img-secondary {
-            border-radius: 16px;
-            overflow: hidden;
-            aspect-ratio: 3 / 4;
-            transform: translateY(3rem);
-            box-shadow: 0 15px 35px rgba(59, 47, 47, 0.1);
-        }
-
-        .story-img-main img, .story-img-secondary img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Atmosphere / Gallery Strip */
-        .atmosphere-section {
-            padding: 6rem 0;
-            background-color: var(--text-main);
-            color: var(--bg-primary);
-            overflow: hidden;
-        }
-
-        .atmosphere-header {
-            max-width: 1280px;
-            margin: 0 auto 3rem auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .atmosphere-header h2 {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 600;
-            color: var(--bg-primary);
-        }
-
-        .atmosphere-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .atmosphere-card {
-            border-radius: 12px;
-            overflow: hidden;
-            aspect-ratio: 1 / 1;
-            position: relative;
-        }
-
-        .atmosphere-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .atmosphere-card:hover img {
-            transform: scale(1.08);
-        }
-
-        /* Location & Directions Section */
-        .location-section {
-            padding: 8rem 2rem;
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .location-card {
-            background: var(--bg-secondary);
-            padding: 3rem;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(59,47,47,0.06);
-        }
-
-        .location-detail-list {
-            list-style: none;
-            margin: 2rem 0;
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .location-detail-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            font-size: 1.0625rem;
-            color: var(--text-main);
-        }
-
-        .location-detail-item svg {
-            width: 24px;
-            height: 24px;
-            flex-shrink: 0;
-            stroke: var(--accent-terracotta);
-            stroke-width: 2;
-            fill: none;
-        }
-
-        .map-mockup {
-            width: 100%;
-            height: 480px;
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 20px 40px rgba(59,47,47,0.1);
-        }
-
-        .map-mockup img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .map-pin-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--text-main);
-            color: var(--bg-primary);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        .map-pin-overlay h4 {
-            font-family: var(--font-display);
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .map-pin-overlay p {
-            font-size: 0.8125rem;
-            color: #d1c7bc;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #2b2121;
-            color: #d1c7bc;
-            padding: 5rem 2rem 3rem 2rem;
-        }
-
-        .footer-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-brand h3 {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            color: #faf8f5;
-            margin-bottom: 1rem;
-        }
-
-        .footer-brand p {
-            font-size: 0.9375rem;
-            line-height: 1.6;
-            max-width: 380px;
-            color: #a89f95;
-        }
-
-        .footer-column h4 {
-            font-size: 1rem;
-            color: #faf8f5;
-            margin-bottom: 1.25rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-        }
-
-        .footer-column ul {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .footer-column a {
-            color: #a89f95;
-            text-decoration: none;
-            font-size: 0.9375rem;
-            transition: color 0.2s ease;
-        }
-
-        .footer-column a:hover {
-            color: #faf8f5;
-        }
-
-        .footer-bottom {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.8125rem;
-            color: #8c8178;
-        }
-
-        .footer-credits {
-            display: flex;
-            flex-direction: column;
-            gap: 0.25rem;
-        }
-
-        .footer-credits a {
-            color: #a89f95;
-            text-decoration: underline;
-        }
-
-        /* Demo Notice Modal / Toast */
-        .demo-toast {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: var(--text-main);
-            color: var(--bg-primary);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transform: translateY(150%);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .demo-toast.show {
-            transform: translateY(0);
-        }
-
-        .demo-toast button {
-            background: none;
-            border: none;
-            color: #d1c7bc;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 1024px) {
-            .hero, .showcase-3d-section, .story-section, .location-section {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            .hero-image-wrapper {
-                max-height: 450px;
-            }
-            .atmosphere-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            .mobile-toggle {
-                display: block;
-            }
-            .atmosphere-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero-content h1 {
-                font-size: 2.75rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Caffè Artigiano — Hornby St, Vancouver | Independent Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root {
+  --bg-primary: #fcfbfa;
+  --bg-secondary: #f2ece4;
+  --text-primary: #2c231e;
+  --brand-accent: #b86b43;
+  --sage-green: #5d6d56;
+  --white: #ffffff;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .serif-font {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Concept Banner */
+.concept-banner {
+  background: var(--text-primary);
+  color: #f2ece4;
+  text-align: center;
+  padding: 0.65rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.concept-banner span {
+  color: var(--brand-accent);
+  font-weight: 600;
+}
+
+/* Navigation */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  background: rgba(252, 251, 250, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(44, 35, 30, 0.08);
+  transition: var(--transition-smooth);
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-logo small {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--brand-accent);
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.nav-links a:hover {
+  color: var(--brand-accent);
+}
+
+.nav-cta {
+  background: var(--brand-accent);
+  color: var(--white) !important;
+  padding: 0.6rem 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(184, 107, 67, 0.25);
+  transition: var(--transition-smooth);
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 107, 67, 0.35);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  margin: 5px 0;
+  transition: var(--transition-smooth);
+}
+
+/* Status Banner */
+.status-bar {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid rgba(44, 35, 30, 0.06);
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #2e7d32;
+  border-radius: 50%;
+  margin-right: 6px;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 125, 50, 0.4); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(46, 125, 50, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(46, 125, 50, 0); }
+}
+
+/* Hero Section */
+.hero {
+  padding: 5rem 2rem 6rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.hero-content h1 span {
+  color: var(--brand-accent);
+  font-style: italic;
+}
+
+.hero-content p {
+  font-size: 1.15rem;
+  color: #5a4e48;
+  margin-bottom: 2.5rem;
+  max-width: 540px;
+  line-height: 1.7;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: var(--brand-accent);
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 6px 20px rgba(184, 107, 67, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(184, 107, 67, 0.4);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid rgba(44, 35, 30, 0.2);
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-secondary:hover {
+  border-color: var(--text-primary);
+  background: rgba(44, 35, 30, 0.03);
+}
+
+.hero-image-wrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(44, 35, 30, 0.12);
+  aspect-ratio: 4/3;
+}
+
+.hero-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: -2rem;
+  background: var(--white);
+  padding: 1.2rem 1.75rem;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(44, 35, 30, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  animation: floatBadge 4s ease-in-out infinite;
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.hero-badge strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+}
+
+.hero-badge span {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Menu Highlights */
+.menu-section {
+  padding: 6rem 2rem;
+  background: var(--bg-secondary);
+}
+
+.section-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem;
+}
+
+.section-header span {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--brand-accent);
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.section-header h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+/* Tabs */
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.menu-tab-btn {
+  background: transparent;
+  border: none;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: var(--transition-smooth);
+}
+
+.menu-tab-btn.active, .menu-tab-btn:hover {
+  background: var(--text-primary);
+  color: var(--white);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.menu-item-card {
+  background: var(--white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(44, 35, 30, 0.05);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(44, 35, 30, 0.1);
+}
+
+.menu-item-img {
+  height: 220px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.menu-item-card:hover .menu-item-img img {
+  transform: scale(1.05);
+}
+
+.menu-item-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.75rem;
+}
+
+.menu-item-header h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.menu-item-price {
+  font-weight: 700;
+  color: var(--brand-accent);
+  font-size: 1.1rem;
+}
+
+.menu-item-content p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 3D Showcase Section */
+.showcase-3d-section {
+  padding: 6rem 2rem;
+  background: var(--text-primary);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.showcase-text h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 1.5rem;
+  color: var(--white);
+}
+
+.showcase-text h2 span {
+  color: var(--brand-accent);
+  font-style: italic;
+}
+
+.showcase-text p {
+  color: #d1c7bc;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 450px;
+  background: radial-gradient(circle at center, #3d312a 0%, #201915 100%);
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+#canvas-3d {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.canvas-hint {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(44, 35, 30, 0.85);
+  backdrop-filter: blur(8px);
+  color: var(--white);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Story & Atmosphere */
+.story-section {
+  padding: 7rem 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.story-images {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.story-img-main {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 400px;
+  box-shadow: 0 20px 40px rgba(44, 35, 30, 0.1);
+}
+
+.story-img-sub {
+  border-radius: 20px;
+  overflow: hidden;
+  height: 300px;
+  margin-top: 50px;
+  box-shadow: 0 20px 40px rgba(44, 35, 30, 0.1);
+}
+
+.story-img-main img, .story-img-sub img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.story-img-main:hover img, .story-img-sub:hover img {
+  transform: scale(1.04);
+}
+
+.story-content h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.story-content h2 span {
+  color: var(--brand-accent);
+  font-style: italic;
+}
+
+.story-content p {
+  color: #5a4e48;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.story-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.story-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.story-feature-icon {
+  background: var(--bg-secondary);
+  color: var(--brand-accent);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.story-feature-item h4 {
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.story-feature-item p {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+  color: #666;
+}
+
+/* Location & Hours Section */
+.location-section {
+  padding: 6rem 2rem;
+  background: var(--bg-secondary);
+}
+
+.location-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  background: var(--white);
+  border-radius: 30px;
+  padding: 4rem;
+  box-shadow: 0 20px 50px rgba(44, 35, 30, 0.08);
+}
+
+.location-details h2 {
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.location-details p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.info-group {
+  margin-bottom: 2rem;
+}
+
+.info-group h4 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.info-group p {
+  margin-bottom: 0.25rem;
+  color: #555;
+}
+
+.map-card-container {
+  border-radius: 20px;
+  overflow: hidden;
+  background: #e9e2db;
+  height: 100%;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.map-card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+.map-card-overlay {
+  position: relative;
+  background: linear-gradient(to top, rgba(44,35,30,0.9), rgba(44,35,30,0.4));
+  padding: 2.5rem;
+  color: var(--white);
+}
+
+.map-card-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.map-card-overlay p {
+  color: #d1c7bc;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.map-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--brand-accent);
+  color: var(--white);
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+}
+
+.map-action-btn:hover {
+  background: #a35b37;
+  transform: translateY(-2px);
+}
+
+/* Demo Modal Form */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(44, 35, 30, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: var(--transition-smooth);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-card {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: 24px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  transform: translateY(20px);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.modal-overlay.active .modal-card {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: var(--bg-secondary);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: var(--text-primary);
+  transition: var(--transition-smooth);
+}
+
+.modal-close:hover {
+  background: var(--brand-accent);
+  color: var(--white);
+}
+
+.modal-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.modal-card p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.95rem;
+  transition: var(--transition-smooth);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--brand-accent);
+  box-shadow: 0 0 0 3px rgba(184, 107, 67, 0.15);
+}
+
+.form-feedback {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #2e7d32;
+  font-weight: 600;
+  display: none;
+}
+
+/* Footer */
+footer {
+  background: var(--text-primary);
+  color: #d1c7bc;
+  padding: 5rem 2rem 3rem;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.footer-brand h3 {
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer-brand p {
+  color: #a89c94;
+  max-width: 350px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-col h4 {
+  color: var(--white);
+  font-size: 1.1rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-col ul a {
+  color: #a89c94;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.footer-col ul a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #8c7f76;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.credits-list a {
+  color: #a89c94;
+  text-decoration: underline;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-badge {
+    animation: none !important;
+  }
+
+  .status-indicator {
+    animation: none !important;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .hero, .showcase-grid, .story-section, .location-grid, .footer-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .hero-image-wrapper {
+    order: -1;
+  }
+
+  .location-grid {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-btns {
+    flex-direction: column;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
 </head>
 <body>
 
-    <!-- Independent Concept Banner -->
-    <div class="concept-banner">
-        Independent website concept by LeadSky for Cafe Artigiano (Hornby St, Vancouver). Not their official website.
+<!-- Independent Concept Banner -->
+<div class="concept-banner">
+  Independent website concept by <span>LeadSky</span> for Caffè Artigiano (Hornby St). Not their official website.
+</div>
+
+<!-- Navigation Bar -->
+<header>
+  <div class="nav-container">
+    <a href="#" class="brand-logo">
+      Caffè Artigiano
+      <small>Hornby St // Vancouver</small>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#craft">Our Craft</a></li>
+      <li><a href="#location">Location & Hours</a></li>
+      <li><a href="#" class="nav-cta" id="orderModalBtn">Takeaway Order</a></li>
+    </ul>
+    <button class="mobile-menu-btn" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Status & Hours Banner -->
+<div class="status-bar">
+  <span class="status-indicator"></span><strong>Hornby Street Location Open Today:</strong> 06:30 - 19:00 (Mon-Fr) | 07:30 - 18:00 (Sa-Su) — 763 Hornby Street, Vancouver
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Artisanal Espresso & Fresh Panini on <span>Hornby St</span></h1>
+    <p>Craft coffee, house-baked pastries, and gourmet Italian paninis in the heart of downtown Vancouver. Experience genuine Italian coffee culture combined with West Coast artisan warmth.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-primary">
+        Explore Menu & Hours
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="https://maps.google.com/?q=763+Hornby+Street+Vancouver" target="_blank" rel="noopener" class="btn-secondary">Get Directions</a>
+    </div>
+  </div>
+  <div class="hero-image-wrapper">
+    <img src="img/stock-10.jpg" alt="Barista pouring artisanal latte art in a sunlit Vancouver cafe counter" loading="eager">
+    <div class="hero-badge">
+      <div>
+        <strong>763 Hornby St</strong>
+        <span>Downtown Vancouver</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Menu Section -->
+<section class="menu-section" id="menu">
+  <div class="section-container">
+    <div class="section-header">
+      <span>Daily Artisan Offerings</span>
+      <h2>Freshly Roasted & Prepared</h2>
     </div>
 
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-container">
-            <a href="#" class="brand-logo">
-                CAFFÈ ARTIGIANO
-                <span>Hornby St • Vancouver</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#menu">Daily Menu</a></li>
-                <li><a href="#story">Our Heritage</a></li>
-                <li><a href="#atmosphere">Atmosphere</a></li>
-                <li><a href="#location">Location & Hours</a></li>
-            </ul>
-            <a href="#location" class="btn-primary">Get Directions</a>
-            <button class="mobile-toggle" aria-label="Toggle navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <header class="hero">
-        <div class="hero-content">
-            <span class="section-tag">Italian Espresso Bar & Panini Lounge</span>
-            <h1>Artisanal Italian Coffee & Fresh Panini on <span>Hornby St</span></h1>
-            <p>Craft espresso, house-baked pastries, and authentic Italian paninis in the heart of downtown Vancouver. Experience authentic Italian roasting traditions delivered with West Coast warmth.</p>
-            <div class="hero-actions">
-                <a href="#menu" class="btn-primary">Explore Daily Menu</a>
-                <a href="#location" class="btn-secondary">Check Live Hours</a>
-            </div>
-        </div>
-        <div class="hero-image-wrapper">
-            <img src="img/stock-9.jpg" alt="Rich espresso pulling into a porcelain cup" loading="eager">
-        </div>
-    </header>
-
-    <!-- Live Status Banner -->
-    <section class="status-section">
-        <div class="status-container">
-            <div class="status-item">
-                <div class="status-indicator" id="statusDot"></div>
-                <span id="statusText">Checking open status...</span>
-            </div>
-            <div class="status-item">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                <span>Mon–Fri: 06:30 – 19:00 | Sat–Sun: 07:30 – 18:00</span>
-            </div>
-            <div class="status-item">
-                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                <span>763 Hornby Street, Vancouver</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3D Interactive Tamper Section -->
-    <section class="showcase-3d-section">
-        <div>
-            <span class="section-tag">Precision Craftsmanship</span>
-            <h2 class="section-title">The Art of the Perfect Espresso Extraction</h2>
-            <p class="section-desc">Every cup poured at our Hornby Street bar begins with precise tamping, premium roasted beans, and Italian espresso expertise. Interact with our 3D espresso tamper model to inspect our commitment to artisanal detail.</p>
-            <a href="#menu" class="btn-primary">View Coffee Offerings</a>
-        </div>
-        <div class="canvas-container">
-            <canvas id="tamper-canvas"></canvas>
-        </div>
-    </section>
-
-    <!-- Menu Section -->
-    <section id="menu" class="menu-section">
-        <div class="menu-header">
-            <span class="section-tag">Handcrafted Offerings</span>
-            <h2 class="section-title">Daily Menu on Hornby Street</h2>
-            <p class="section-desc">From our signature double-shot lattes pressed fresh paninis to golden house-baked pastries.</p>
-        </div>
-
-        <div class="menu-tabs">
-            <button class="tab-btn active" data-category="all">All Specialties</button>
-            <button class="tab-btn" data-category="espresso">Espresso Bar</button>
-            <button class="tab-btn" data-category="panini">Artisanal Panini</button>
-            <button class="tab-btn" data-category="bakery">Pastries & Sweets</button>
-        </div>
-
-        <div class="menu-grid">
-            <!-- Item 1 -->
-            <div class="menu-card" data-category="espresso">
-                <div class="menu-card-img">
-                    <img src="img/stock-1.jpg" alt="Barista pouring latte art into ceramic cup in sunny cafe" loading="lazy">
-                </div>
-                <div class="menu-card-content">
-                    <div class="menu-card-header">
-                        <h3 class="menu-card-title">Artisan Caffè Latte</h3>
-                        <span class="menu-card-price">$5.25</span>
-                    </div>
-                    <p class="menu-card-desc">Double shot of our signature roasted espresso paired with velvety microfoam poured by expert baristas.</p>
-                    <div class="badge-list">
-                        <span class="badge">Signature</span>
-                        <span class="badge">Hot / Iced</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item 2 -->
-            <div class="menu-card" data-category="panini">
-                <div class="menu-card-img">
-                    <img src="img/stock-3.jpg" alt="Freshly pressed Italian prosciutto panini on rustic wooden board" loading="lazy">
-                </div>
-                <div class="menu-card-content">
-                    <div class="menu-card-header">
-                        <h3 class="menu-card-title">Prosciutto & Mozzarella Panini</h3>
-                        <span class="menu-card-price">$12.50</span>
-                    </div>
-                    <p class="menu-card-desc">Aged Italian prosciutto, fresh fior di latte mozzarella, vine-ripened tomatoes, and fresh basil pressed in rustic ciabatta.</p>
-                    <div class="badge-list">
-                        <span class="badge">Freshly Pressed</span>
-                        <span class="badge">Popular</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item 3 -->
-            <div class="menu-card" data-category="bakery">
-                <div class="menu-card-img">
-                    <img src="img/stock-7.jpg" alt="Crispy golden Italian cannoli dusted with powdered sugar" loading="lazy">
-                </div>
-                <div class="menu-card-content">
-                    <div class="menu-card-header">
-                        <h3 class="menu-card-title">Sicilian Cannoli</h3>
-                        <span class="menu-card-price">$4.75</span>
-                    </div>
-                    <p class="menu-card-desc">Crispy golden pastry shell filled with sweet artisanal ricotta cream and dusted lightly with powdered sugar.</p>
-                    <div class="badge-list">
-                        <span class="badge">House Baked</span>
-                        <span class="badge">Sweet</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Item 4 -->
-            <div class="menu-card" data-category="espresso">
-                <div class="menu-card-img">
-                    <img src="img/stock-10.jpg" alt="Shot of rich espresso pulling into a porcelain cup" loading="lazy">
-                </div>
-                <div class="menu-card-content">
-                    <div class="menu-card-header">
-                        <h3 class="menu-card-title">Traditional Double Espresso</h3>
-                        <span class="menu-card-price">$3.95</span>
-                    </div>
-                    <p class="menu-card-desc">Rich, full-bodied espresso extraction featuring thick golden crema and vibrant aromatic notes.</p>
-                    <div class="badge-list">
-                        <span class="badge">Pure Espresso</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Story & Heritage Section -->
-    <section id="story" class="story-section">
-        <div class="story-images">
-            <div class="story-img-main">
-                <img src="img/stock-5.jpg" alt="Modern bright downtown Vancouver cafe interior with oak tables" loading="lazy">
-            </div>
-            <div class="story-img-secondary">
-                <img src="img/stock-2.jpg" alt="Barista preparing specialty coffee drinks" loading="lazy">
-            </div>
-        </div>
-        <div>
-            <span class="section-tag">Our Downtown Vancouver Home</span>
-            <h2 class="section-title">An Italian Espresso Bar Rooted in Vancouver</h2>
-            <p class="section-desc">Located at 763 Hornby Street, Caffè Artigiano has long been a neighborhood gathering place for downtown professionals, students, and morning commuters seeking a moment of genuine Italian coffee craftsmanship.</p>
-            <p class="section-desc">We combine traditional Italian roasting standards with friendly West Coast hospitality, creating an inviting atmosphere to start your morning or pause during a busy workday.</p>
-            <a href="#location" class="btn-primary">Visit Hornby St Location</a>
-        </div>
-    </section>
-
-    <!-- Atmosphere / Gallery Section -->
-    <section id="atmosphere" class="atmosphere-section">
-        <div class="atmosphere-header">
-            <div>
-                <span class="section-tag" style="color: #c85a32;">Atmosphere</span>
-                <h2>Inside Hornby Street</h2>
-            </div>
-            <p style="color: #a89f95; max-width: 350px; font-size: 0.9375rem;">Natural oak tables, sunlit glass windows, and the rich aroma of freshly roasted espresso beans in downtown Vancouver.</p>
-        </div>
-        <div class="atmosphere-grid">
-            <div class="atmosphere-card">
-                <img src="img/stock-5.jpg" alt="Modern bright downtown Vancouver cafe interior" loading="lazy">
-            </div>
-            <div class="atmosphere-card">
-                <img src="img/stock-1.jpg" alt="Barista pouring latte art" loading="lazy">
-            </div>
-            <div class="atmosphere-card">
-                <img src="img/stock-3.jpg" alt="Fresh Italian panini" loading="lazy">
-            </div>
-            <div class="atmosphere-card">
-                <img src="img/stock-6.jpg" alt="Clean modern cafe seating" loading="lazy">
-            </div>
-        </div>
-    </section>
-
-    <!-- Location & Directions Section -->
-    <section id="location" class="location-section">
-        <div class="location-card">
-            <span class="section-tag">Visit Us</span>
-            <h2 class="section-title">Hornby Street Cafe</h2>
-            <p class="section-desc">Stop by our downtown Vancouver location for your morning espresso, artisanal panini, or afternoon socializing spot.</p>
-            
-            <ul class="location-detail-list">
-                <li class="location-detail-item">
-                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                    <span>763 Hornby Street, Vancouver, BC V6Z 2V6</span>
-                </li>
-                <li class="location-detail-item">
-                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <div>
-                        <strong>Monday – Friday:</strong> 06:30 – 19:00<br>
-                        <strong>Saturday – Sunday:</strong> 07:30 – 18:00
-                    </div>
-                </li>
-                <li class="location-detail-item">
-                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                    <span><a href="tel:+16046947737" style="color: var(--text-main); text-decoration: underline; font-weight: 600;">+1 604-694-7737</a></span>
-                </li>
-            </ul>
-
-            <a href="https://maps.google.com/?q=763+Hornby+Street+Vancouver" target="_blank" rel="noopener" class="btn-primary">Open in Google Maps</a>
-        </div>
-
-        <div class="map-mockup">
-            <img src="img/stock-5.jpg" alt="Vancouver cafe neighborhood location view" loading="lazy">
-            <div class="map-pin-overlay">
-                <h4>Caffè Artigiano</h4>
-                <p>763 Hornby Street, Vancouver</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-brand">
-                <h3>CAFFÈ ARTIGIANO</h3>
-                <p>Independent website concept created to restore a reliable online presence for the Hornby Street location in Vancouver.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Navigation</h4>
-                <ul>
-                    <li><a href="#menu">Daily Menu</a></li>
-                    <li><a href="#story">Our Heritage</a></li>
-                    <li><a href="#atmosphere">Atmosphere</a></li>
-                    <li><a href="#location">Location & Hours</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contact</h4>
-                <ul>
-                    <li>763 Hornby Street, Vancouver</li>
-                    <li><a href="tel:+16046947737">+1 604-694-7737</a></li>
-                    <li><a href="#location">Get Directions</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="footer-credits">
-                <span>Independent concept by <strong>LeadSky</strong>. Not affiliated with or endorsed by Caffè Artigiano.</span>
-                <span>Stock photography credits: 
-                    <a href="https://pixabay.com/photos/coffee-cup-caffeine-espresso-4618705/" target="_blank" rel="noopener">13758299</a>, 
-                    <a href="https://pixabay.com/photos/caffeine-cappuccino-coffee-cup-1845314/" target="_blank" rel="noopener">Pexels</a>, 
-                    <a href="https://pixabay.com/photos/gourmet-food-bread-dish-bruschetta-5619887/" target="_blank" rel="noopener">amiraxgelcola</a>, 
-                    <a href="https://pixabay.com/photos/tomatoes-pizza-food-meal-cheese-8278168/" target="_blank" rel="noopener">guvo59</a>, 
-                    <a href="https://pixabay.com/photos/cats-cafe-cat-interior-table-rest-4697753/" target="_blank" rel="noopener">ALEXNEWWORLD</a>, 
-                    <a href="https://pixabay.com/photos/ikea-table-dining-chair-lamp-4048225/" target="_blank" rel="noopener">tianya1223</a>, 
-                    <a href="https://pixabay.com/photos/churros-dessert-confectionery-2188871/" target="_blank" rel="noopener">Daria-Yakovleva</a>, 
-                    <a href="https://pixabay.com/photos/new-year-background-spoon-fork-2426623/" target="_blank" rel="noopener">congerdesign</a>, 
-                    <a href="https://pixabay.com/photos/coffee-coffee-cup-porcelain-1576552/" target="_blank" rel="noopener">Couleur</a> (Via Pixabay Content License).
-                </span>
-            </div>
-            <div>
-                <span>&copy; <span id="currentYear"></span> LeadSky. All rights reserved.</span>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Demo Toast Notification -->
-    <div class="demo-toast" id="demoToast">
-        <span>📍 Hornby St location hours active. Independent concept demo.</span>
-        <button onclick="document.getElementById('demoToast').classList.remove('show')">&times;</button>
+    <!-- Menu Tabs -->
+    <div class="menu-tabs">
+      <button class="menu-tab-btn active" data-filter="all">All Specialties</button>
+      <button class="menu-tab-btn" data-filter="espresso">Espresso & Coffee</button>
+      <button class="menu-tab-btn" data-filter="panini">Gourmet Paninis</button>
+      <button class="menu-tab-btn" data-filter="pastry">Bakery & Pastries</button>
     </div>
 
-    <!-- JavaScript Implementation -->
-    <script>
-        // Set current year
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    <!-- Menu Grid -->
+    <div class="menu-grid">
+      <!-- Item 1 -->
+      <div class="menu-item-card" data-category="espresso">
+        <div class="menu-item-img">
+          <img src="img/stock-4.jpg" alt="Artisan cappuccino with fine latte art" loading="lazy">
+        </div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Signature Caffè Latte</h3>
+            <span class="menu-item-price">$5.25</span>
+          </div>
+          <p>Double-shot artisanal espresso pulled fresh with velvety textured microfoam milk and delicate free-pour art.</p>
+        </div>
+      </div>
 
-        // Menu Filtering
-        const tabBtns = document.querySelectorAll('.tab-btn');
-        const menuCards = document.querySelectorAll('.menu-card');
+      <!-- Item 2 -->
+      <div class="menu-item-card" data-category="panini">
+        <div class="menu-item-img">
+          <img src="img/stock-5.jpg" alt="Fresh grilled chicken and melted fontina cheese panini" loading="lazy">
+        </div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Grilled Chicken & Fontina Panini</h3>
+            <span class="menu-item-price">$12.50</span>
+          </div>
+          <p>Tender grilled chicken breast, melted fontina cheese, savory sun-dried tomato spread, and fresh arugula on toasted ciabatta.</p>
+        </div>
+      </div>
 
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                tabBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                const category = btn.getAttribute('data-category');
+      <!-- Item 3 -->
+      <div class="menu-item-card" data-category="pastry">
+        <div class="menu-item-img">
+          <img src="img/stock-7.jpg" alt="Freshly baked golden French butter croissants" loading="lazy">
+        </div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>All-Butter French Croissant</h3>
+            <span class="menu-item-price">$4.50</span>
+          </div>
+          <p>Flaky, golden-brown layers baked fresh daily using authentic European butter for a delicate, airy crumb.</p>
+        </div>
+      </div>
 
-                menuCards.forEach(card => {
-                    if (category === 'all' || card.getAttribute('data-category') === category) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
+      <!-- Item 4 -->
+      <div class="menu-item-card" data-category="espresso">
+        <div class="menu-item-img">
+          <img src="img/stock-3.jpg" alt="Rich hot espresso mug in warm cafe setting" loading="lazy">
+        </div>
+        <div class="menu-item-content">
+          <div class="menu-item-header">
+            <h3>Traditional Macchiato</h3>
+            <span class="menu-item-price">$4.35</span>
+          </div>
+          <p>Robust, richly aromatic espresso shot “stained” with a dollop of velvety foamed milk.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Real-Time Open/Closed Status Calculator (Hornby St Hours: Mo-Fr 06:30-19:00; Sa-Su 07:30-18:00 Vancouver time PST/PDT approximation)
-        function updateCafeStatus() {
-            const now = new Date();
-            // Convert to Vancouver time (approx using Intl)
-            const vancouverTimeStr = now.toLocaleString("en-US", {timeZone: "America/Vancouver"});
-            const vancouverDate = new Date(vancouverTimeStr);
-            const day = vancouverDate.getDay(); // 0 = Sun, 1 = Mon ... 6 = Sat
-            const hours = vancouverDate.getHours();
-            const minutes = vancouverDate.getMinutes();
-            const timeVal = hours * 60 + minutes;
+<!-- Interactive 3D Showcase Section -->
+<section class="showcase-3d-section" id="craft">
+  <div class="showcase-grid">
+    <div class="showcase-text">
+      <span>Master Barista Craftsmanship</span>
+      <h2>Precision in Every <span>Extraction</span></h2>
+      <p>At our Hornby Street sanctuary, every detail matters. From ethically sourced single-origin coffee beans to calibrated tamper pressure, we elevate your daily morning ritual into an artisanal art form.</p>
+      <a href="#location" class="btn-primary">Visit Hornby St Location</a>
+    </div>
+    <div class="canvas-container">
+      <canvas id="canvas-3d" aria-label="Interactive 3D model of espresso tamper and coffee beans"></canvas>
+      <div class="canvas-hint">Drag to rotate 3D view</div>
+    </div>
+  </div>
+</section>
 
-            let isOpen = false;
-            // Mon-Fri (1-5): 06:30 (390 min) to 19:00 (1140 min)
-            // Sat-Sun (6, 0): 07:30 (450 min) to 18:00 (1080 min)
+<!-- Our Story Section -->
+<section class="story-section">
+  <div class="story-images">
+    <div class="story-img-main">
+      <img src="img/stock-2.jpg" alt="Warm interior view of Vancouver downtown cafe wooden counter" loading="lazy">
+    </div>
+    <div class="story-img-sub">
+      <img src="img/stock-9.jpg" alt="Fresh roasted coffee beans and grinds aroma" loading="lazy">
+    </div>
+  </div>
+  <div class="story-content">
+    <span>Rooted in Vancouver</span>
+    <h2>A Warm Gathering Place on <span>Hornby Street</span></h2>
+    <p>Located right in downtown Vancouver, Caffè Artigiano has long been a destination for commuters, professionals, and coffee purists alike. We combine Italian roasting traditions with the welcoming spirit of the West Coast.</p>
+    <div class="story-features">
+      <div class="story-feature-item">
+        <div class="story-feature-icon">01</div>
+        <div>
+          <h4>Artisan Roasts</h4>
+          <p>Carefully sourced beans roasted to absolute perfection.</p>
+        </div>
+      </div>
+      <div class="story-feature-item">
+        <div class="story-feature-icon">02</div>
+        <div>
+          <h4>Fresh Daily</h4>
+          <p>Savory paninis and pastries baked and prepared fresh.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            if (day >= 1 && day <= 5) {
-                if (timeVal >= 390 && timeVal < 1140) isOpen = true;
-            } else {
-                if (timeVal >= 450 && timeVal < 1080) isOpen = true;
-            }
+<!-- Location & Hours Section -->
+<section class="location-section" id="location">
+  <div class="location-grid">
+    <div class="location-details">
+      <span>Find Us Downtown</span>
+      <h2>Hornby Street Sanctuary</h2>
+      <p>Drop by for your morning espresso or grab a satisfying midday panini during your downtown commute. We are right in the heart of Vancouver.</p>
+      
+      <div class="info-group">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Address
+        </h4>
+        <p>763 Hornby Street</p>
+        <p>Vancouver, BC V6Z 2R4, Canada</p>
+      </div>
 
-            const dot = document.getElementById('statusDot');
-            const text = document.getElementById('statusText');
+      <div class="info-group">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Operating Hours
+        </h4>
+        <p>Monday – Friday: 06:30 – 19:00</p>
+        <p>Saturday – Sunday: 07:30 – 18:00</p>
+      </div>
 
-            if (isOpen) {
-                dot.style.backgroundColor = '#2e7d32';
-                dot.style.boxShadow = '0 0 0 3px rgba(46, 125, 50, 0.2)';
-                text.textContent = 'Open Now on Hornby Street';
-            } else {
-                dot.style.backgroundColor = '#c85a32';
-                dot.style.boxShadow = '0 0 0 3px rgba(200, 90, 50, 0.2)';
-                text.textContent = 'Currently Closed (Opens next at 06:30)';
-            }
+      <div class="info-group">
+        <h4>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Telephone
+        </h4>
+        <p><a href="tel:+16046947737" style="color: var(--brand-accent); text-decoration: none; font-weight: 600;">+1 604-694-7737</a></p>
+      </div>
+    </div>
+
+    <div class="map-card-container">
+      <img src="img/stock-1.jpg" alt="Vancouver downtown bakery storefront interior" class="map-card-bg">
+      <div class="map-card-overlay">
+        <h3>Ready to Visit Hornby St?</h3>
+        <p>Get instant turn-by-turn directions right to our door in downtown Vancouver.</p>
+        <a href="https://maps.google.com/?q=763+Hornby+Street+Vancouver" target="_blank" rel="noopener" class="map-action-btn">
+          Open in Google Maps
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Demo Order Modal -->
+<div class="modal-overlay" id="orderModal">
+  <div class="modal-card">
+    <button class="modal-close" id="closeModalBtn">&times;</button>
+    <h3>Takeaway Order Inquiry</h3>
+    <p>Place a quick takeaway query for pickup at our Hornby Street store.</p>
+    <form id="demoOrderForm">
+      <div class="form-group">
+        <label for="orderName">Your Name</label>
+        <input type="text" id="orderName" required placeholder="Jane Doe">
+      </div>
+      <div class="form-group">
+        <label for="orderPhone">Phone Number</label>
+        <input type="tel" id="orderPhone" required placeholder="+1 (604) 000-0000">
+      </div>
+      <div class="form-group">
+        <label for="orderDetails">Order Details / Pickup Time</label>
+        <textarea id="orderDetails" rows="3" required placeholder="2x Latte, 1x Croissant for 8:30 AM pickup"></textarea>
+      </div>
+      <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">Submit Order Request</button>
+      <div class="form-feedback" id="formFeedback">This is a demo form, nothing was sent.</div>
+    </form>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3>Caffè Artigiano</h3>
+      <p>Dedicated to delivering exceptional artisan coffee, freshly baked morning pastries, and gourmet paninis on Hornby Street in downtown Vancouver.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#menu">Artisan Menu</a></li>
+        <li><a href="#craft">Our Craft</a></li>
+        <li><a href="#location">Location & Hours</a></li>
+        <li><a href="tel:+16046947737">Call Hornby St</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Location</h4>
+      <ul>
+        <li>763 Hornby Street</li>
+        <li>Vancouver, BC V6Z 2R4</li>
+        <li>Canada</li>
+        <li>+1 (604) 694-7737</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>&copy; Caffè Artigiano Hornby St Concept. Independent showcase design.</div>
+    <div class="credits-list">
+      Stock photography via <a href="https://pixabay.com" target="_blank" rel="noopener">Pixabay</a> (Pexels, Engin_Akyurt, StockSnap, tehzeebkazmii, carmusic777, eliasfalla, picturexphotobnb). Concept by <strong style="color:var(--white);">LeadSky</strong>.
+    </div>
+  </div>
+</footer>
+
+<script>
+// Menu Tab Filtering
+document.addEventListener('DOMContentLoaded', () => {
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const tabBtns = document.querySelectorAll('.menu-tab-btn');
+  const menuCards = document.querySelectorAll('.menu-item-card');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.getAttribute('data-filter');
+
+      menuCards.forEach(card => {
+        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          card.style.display = 'flex';
+          setTimeout(() => card.style.opacity = '1', 50);
+        } else {
+          card.style.opacity = '0';
+          setTimeout(() => card.style.display = 'none', 300);
         }
-        updateCafeStatus();
+      });
+    });
+  });
 
-        // Show demo toast on load
-        setTimeout(() => {
-            document.getElementById('demoToast').classList.add('show');
-        }, 1500);
+  // Modal Functionality
+  const modal = document.getElementById('orderModal');
+  const orderModalBtn = document.getElementById('orderModalBtn');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const orderForm = document.getElementById('demoOrderForm');
+  const formFeedback = document.getElementById('formFeedback');
 
-        // Three.js Interactive Tamper Model
-        const canvasContainer = document.querySelector('.canvas-container');
-        const canvas = document.getElementById('tamper-canvas');
+  orderModalBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.add('active');
+  });
 
-        if (canvas && typeof THREE !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(45, canvasContainer.clientWidth / canvasContainer.clientHeight, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-            
-            renderer.setSize(canvasContainer.clientWidth, canvasContainer.clientHeight);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  closeModalBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+    formFeedback.style.display = 'none';
+    orderForm.reset();
+  });
 
-            // Lighting
-            const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
-            scene.add(ambientLight);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active');
+      formFeedback.style.display = 'none';
+      orderForm.reset();
+    }
+  });
 
-            const directionalLight = new THREE.DirectionalLight(0xfffaf0, 2.5);
-            directionalLight.position.set(5, 8, 5);
-            scene.add(directionalLight);
+  orderForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    formFeedback.style.display = 'block';
+    setTimeout(() => {
+      modal.classList.remove('active');
+      formFeedback.style.display = 'none';
+      orderForm.reset();
+    }, 2500);
+  });
 
-            const pointLight = new THREE.PointLight(0xc85a32, 2, 10);
-            pointLight.position.set(-3, -2, 3);
-            scene.add(pointLight);
+  // Three.js 3D Showcase (Espresso Tamper & Bean concept)
+  const container = document.getElementById('canvas-3d');
+  if (container && typeof THREE !== 'undefined') {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.set(0, 3, 6);
 
-            // Group for Tamper + Coffee Beans
-            const coffeeGroup = new THREE.Group();
+    const renderer = new THREE.WebGLRenderer({ canvas: container, antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-            // Tamper Handle (Wood texture appearance using rich brown material)
-            const handleGeo = new THREE.CylinderGeometry(0.6, 0.8, 2.2, 32);
-            const handleMat = new THREE.MeshStandardMaterial({ color: 0x3b2f2f, roughness: 0.3, metalness: 0.1 });
-            const handle = new THREE.Mesh(handleGeo, handleMat);
-            handle.position.y = 1.1;
-            coffeeGroup.add(handle);
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+    scene.add(ambientLight);
 
-            // Stainless Steel Base
-            const baseGeo = new THREE.CylinderGeometry(1.2, 1.2, 0.5, 32);
-            const baseMat = new THREE.MeshStandardMaterial({ color: 0xe0e0e0, roughness: 0.1, metalness: 0.95 });
-            const base = new THREE.Mesh(baseGeo, baseMat);
-            base.position.y = -0.15;
-            coffeeGroup.add(base);
+    const pointLight = new THREE.PointLight(0xb86b43, 2, 50);
+    pointLight.position.set(3, 5, 3);
+    scene.add(pointLight);
 
-            // Coffee Slab Base
-            const slabGeo = new THREE.CylinderGeometry(2.2, 2.2, 0.3, 32);
-            const slabMat = new THREE.MeshStandardMaterial({ color: 0xf5f0eb, roughness: 0.4 });
-            const slab = new THREE.Mesh(slabGeo, slabMat);
-            slab.position.y = -0.45;
-            coffeeGroup.add(slab);
+    const pointLight2 = new THREE.PointLight(0xffffff, 1, 50);
+    pointLight2.position.set(-3, -2, -3);
+    scene.add(pointLight2);
 
-            // Add scattered roasted coffee beans (small ellipsoids)
-            const beanGeo = new THREE.SphereGeometry(0.2, 16, 16);
-            beanGeo.scale(1, 0.7, 1.4);
-            const beanMat = new THREE.MeshStandardMaterial({ color: 0x2b1d1a, roughness: 0.5 });
+    // Group for objects
+    const group = new THREE.Group();
+    scene.add(group);
 
-            for (let i = 0; i < 12; i++) {
-                const bean = new THREE.Mesh(beanGeo, beanMat);
-                const angle = Math.random() * Math.PI * 2;
-                const radius = 1.4 + Math.random() * 0.6;
-                bean.position.x = Math.cos(angle) * radius;
-                bean.position.z = Math.sin(angle) * radius;
-                bean.position.y = -0.4;
-                bean.rotation.x = Math.random() * Math.PI;
-                bean.rotation.y = Math.random() * Math.PI;
-                coffeeGroup.add(bean);
-            }
+    // Marble Base Slab
+    const slabGeo = new THREE.BoxGeometry(4, 0.2, 4);
+    const slabMat = new THREE.MeshStandardMaterial({ color: 0x2c231e, roughness: 0.3, metalness: 0.1 });
+    const slab = new THREE.Mesh(slabGeo, slabMat);
+    slab.position.y = -1;
+    group.add(slab);
 
-            scene.add(coffeeGroup);
-            camera.position.z = 6;
+    // Espresso Tamper (Horn/Stainless Steel + Wood handle)
+    const handleGeo = new THREE.CylinderGeometry(0.3, 0.4, 1.8, 32);
+    const handleMat = new THREE.MeshStandardMaterial({ color: 0x5d4037, roughness: 0.4 });
+    const handle = new THREE.Mesh(handleGeo, handleMat);
+    handle.position.y = 0.2;
+    group.add(handle);
 
-            // Mouse interaction & inertia
-            let isDragging = false;
-            let previousMousePosition = { x: 0, y: 0 };
-            let targetRotationX = 0;
-            let targetRotationY = 0;
+    const baseGeo = new THREE.CylinderGeometry(0.6, 0.6, 0.4, 32);
+    const baseMat = new THREE.MeshStandardMaterial({ color: 0xcccccc, metalness: 0.9, roughness: 0.1 });
+    const tamperBase = new THREE.Mesh(baseGeo, baseMat);
+    tamperBase.position.y = -0.6;
+    group.add(tamperBase);
 
-            canvas.addEventListener('mousedown', (e) => {
-                isDragging = true;
-                previousMousePosition = { x: e.clientX, y: e.clientY };
-            });
+    // Coffee Beans scattering
+    const beanGeo = new THREE.SphereGeometry(0.15, 16, 16);
+    beanGeo.scale(1, 0.7, 1.3);
+    const beanMat = new THREE.MeshStandardMaterial({ color: 0x3e2723, roughness: 0.6 });
 
-            window.addEventListener('mousemove', (e) => {
-                if (!isDragging) return;
-                const deltaX = e.clientX - previousMousePosition.x;
-                const deltaY = e.clientY - previousMousePosition.y;
+    for (let i = 0; i < 12; i++) {
+      const bean = new THREE.Mesh(beanGeo, beanMat);
+      const angle = Math.random() * Math.PI * 2;
+      const radius = 1.2 + Math.random() * 0.8;
+      bean.position.x = Math.cos(angle) * radius;
+      bean.position.z = Math.sin(angle) * radius;
+      bean.position.y = -0.85;
+      bean.rotation.x = Math.random() * Math.PI;
+      bean.rotation.y = Math.random() * Math.PI;
+      group.add(bean);
+    }
 
-                coffeeGroup.rotation.y += deltaX * 0.008;
-                coffeeGroup.rotation.x += deltaY * 0.008;
+    // Interaction (Mouse rotate)
+    let isDragging = false;
+    let previousMousePosition = { x: 0, y: 0 };
 
-                previousMousePosition = { x: e.clientX, y: e.clientY };
-            });
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      previousMousePosition = { x: e.clientX, y: e.clientY };
+    });
 
-            window.addEventListener('mouseup', () => {
-                isDragging = false;
-            });
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const deltaX = e.clientX - previousMousePosition.x;
+      const deltaY = e.clientY - previousMousePosition.y;
 
-            // Touch support
-            canvas.addEventListener('touchstart', (e) => {
-                if (e.touches.length === 1) {
-                    isDragging = true;
-                    previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-                }
-            });
+      group.rotation.y += deltaX * 0.008;
+      group.rotation.x += deltaY * 0.008;
 
-            window.addEventListener('touchmove', (e) => {
-                if (!isDragging || e.touches.length !== 1) return;
-                const deltaX = e.touches[0].clientX - previousMousePosition.x;
-                const deltaY = e.touches[0].clientY - previousMousePosition.y;
+      previousMousePosition = { x: e.clientX, y: e.clientY };
+    });
 
-                coffeeGroup.rotation.y += deltaX * 0.008;
-                coffeeGroup.rotation.x += deltaY * 0.008;
+    window.addEventListener('mouseup', () => { isDragging = false; });
 
-                previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-            });
+    // Touch support
+    container.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    });
 
-            window.addEventListener('touchend', () => {
-                isDragging = false;
-            });
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      const deltaX = e.touches[0].clientX - previousMousePosition.x;
+      const deltaY = e.touches[0].clientY - previousMousePosition.y;
 
-            // Animation loop
-            let clock = new THREE.Clock();
-            function animate() {
-                requestAnimationFrame(animate);
+      group.rotation.y += deltaX * 0.008;
+      group.rotation.x += deltaY * 0.008;
 
-                if (!isDragging) {
-                    coffeeGroup.rotation.y += 0.005; // gentle idle rotation
-                }
+      previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    });
 
-                renderer.render(scene, camera);
-            }
-            animate();
+    window.addEventListener('touchend', () => { isDragging = false; });
 
-            // Resize handler
-            window.addEventListener('resize', () => {
-                const width = canvasContainer.clientWidth;
-                const height = canvasContainer.clientHeight;
-                camera.aspect = width / height;
-                camera.updateProjectionMatrix();
-                renderer.setSize(width, height);
-            });
-        } else if (canvas) {
-            // Reduced motion fallback or WebGL missing fallback
-            const ctx = canvas.getContext('2d');
-            canvas.width = canvasContainer.clientWidth;
-            canvas.height = canvasContainer.clientHeight;
-            ctx.fillStyle = '#f0ebe1';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#3b2f2f';
-            ctx.font = '18px Plus Jakarta Sans';
-            ctx.textAlign = 'center';
-            ctx.fillText('Caffè Artigiano - Hornby St Espresso Bar', canvas.width / 2, canvas.height / 2);
-        }
-    </script>
+    // Animation Loop (Respects reduced motion)
+    const animate = () => {
+      requestAnimationFrame(animate);
+      if (!isDragging && !prefersReducedMotion) {
+        group.rotation.y += 0.003;
+      }
+      renderer.render(scene, camera);
+    };
+
+    animate();
+
+    // Window Resize
+    window.addEventListener('resize', () => {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+  }
+});
+</script>
 </body>
 </html>
