@@ -2,7 +2,7 @@
   {
     "file": "img/stock-1.jpg",
     "kind": "stock photo",
-    "query": "mechanic repairing car brakes in professional auto shop",
+    "query": "mechanic inspecting car engine bay with diagnostic tablet",
     "description": "auto, car, garage, auto shop, car wallpapers, vintage, vehicle, antique, automobile, automotive, classic, equipment, fix, mechanic, nostalgia, repair, retro, sepia, service, repair shop, tools, transportation, workshop",
     "source": "https://pixabay.com/photos/auto-car-garage-auto-shop-vintage-1868726/",
     "photographer": "Pexels",
@@ -12,7 +12,47 @@
   {
     "file": "img/stock-2.jpg",
     "kind": "stock photo",
-    "query": "mechanic repairing car brakes in professional auto shop",
+    "query": "mechanic inspecting car engine bay with diagnostic tablet",
+    "description": "auto repair, oil change, oil, auto, shop, repair, work, motor, service, person, automobile, fix, car wallpapers, maintenance, vehicle, engine, automotive, change, garage, mechanic, man, car, worker, gray work, gray shopping, gray change, gray shop, gray garage, gray service",
+    "source": "https://pixabay.com/photos/auto-repair-oil-change-oil-auto-3691963/",
+    "photographer": "DokaRyan",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "clean modern automotive repair shop interior with vehicle on lift",
+    "description": "auto, car service, cars, hundred, car service, car service, car service, car service, car service",
+    "source": "https://pixabay.com/photos/auto-car-service-cars-hundred-2191185/",
+    "photographer": "autotop_service",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "clean modern automotive repair shop interior with vehicle on lift",
+    "description": "motorbike, garage, repairs, workshop, hobby, automotive, build, mechanic, motor, motorcycle, big bike, vehicle, garage, garage, garage, garage, garage, mechanic, motorcycle, motorcycle",
+    "source": "https://pixabay.com/photos/motorbike-garage-repairs-workshop-407186/",
+    "photographer": "SplitShire",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "professional mechanic changing brake pads in bright garage",
+    "description": "auto repair shop, workshop, brake disc, brake, change, brake change, automobile, car mechanic, specialist, lifting platform, repair, check, professional, vehicle, tool, work, lamp, work lamp, exchange, workshop, brake, brake, change, car mechanic, car mechanic, car mechanic, car mechanic, car mechanic, repair, repair",
+    "source": "https://pixabay.com/photos/auto-repair-shop-workshop-brake-disc-1954636/",
+    "photographer": "pixel2013",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "professional mechanic changing brake pads in bright garage",
     "description": "auto repair shop, workshop, brake disc, brake, change, brake change, automobile, car mechanic, specialist, lifting platform, repair, check, professional, vehicle, tool, work, lamp, work lamp, exchange, auto repair shop, brake, brake, brake, brake, brake, car mechanic",
     "source": "https://pixabay.com/photos/auto-repair-shop-workshop-brake-disc-1954643/",
     "photographer": "pixel2013",
@@ -20,82 +60,42 @@
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
-    "file": "img/stock-3.jpg",
-    "kind": "stock photo",
-    "query": "car engine diagnostic test with modern computer tool",
-    "description": "covid, testing, corona test, covid-19, corona, coronavirus, sars-cov-2, concept, quick test, pcr, pcr-test, covid test, covid, covid, covid, covid, covid, corona, corona, covid test, covid test, covid test",
-    "source": "https://pixabay.com/photos/covid-testing-corona-test-covid-19-6517476/",
-    "photographer": "analogicus",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-4.jpg",
-    "kind": "stock photo",
-    "query": "car engine diagnostic test with modern computer tool",
-    "description": "test, virus, coronavirus, self-test, covid-19, infection, lock down, hygiene, transmission, shutdown, pandemic, test, test, test, test, test, virus, virus, virus, virus, coronavirus, coronavirus, coronavirus, coronavirus, covid-19, covid-19, covid-19, covid-19, pandemic, pandemic",
-    "source": "https://pixabay.com/photos/test-virus-coronavirus-self-test-6128573/",
-    "photographer": "Alexandra_Koch",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-5.jpg",
-    "kind": "stock photo",
-    "query": "professional mechanic changing car oil on hydraulic lift",
-    "description": "car service, auto, cars, hundred, car service, car service, car service, car service, car service",
-    "source": "https://pixabay.com/photos/car-service-auto-cars-hundred-2191184/",
-    "photographer": "autotop_service",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-6.jpg",
-    "kind": "stock photo",
-    "query": "professional mechanic changing car oil on hydraulic lift",
-    "description": "man, car, repair, car repair, car workshop, repair shop, repairs, garage, mechanic, vw beetle, volkswagen, beetle, automotive, workshop, tools, supplies, car wallpapers, monochrome, black and white",
-    "source": "https://pixabay.com/photos/man-car-repair-car-repair-362150/",
-    "photographer": "RyanMcGuire",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
     "file": "img/stock-7.jpg",
     "kind": "stock photo",
-    "query": "clean auto repair shop interior in Vancouver",
-    "description": "boutique, clothing store, fashion, clothing, boutique, boutique, boutique, clothing store, clothing store, clothing store, clothing store, clothing, clothing, clothing, clothing, clothing",
-    "source": "https://pixabay.com/photos/boutique-clothing-store-fashion-6796399/",
-    "photographer": "boutiquegirlish21",
+    "query": "close up of digital OBD2 car diagnostic scanner screen",
+    "description": "security, protection, antivirus, software, cms, wordpress, content management system, editorial staff, contents, backup, hack, web, internet, blog, upload, post office, media, comments, screen, content, create, write, publish, publication, security, security, security, security, security",
+    "source": "https://pixabay.com/photos/security-protection-antivirus-265130/",
+    "photographer": "pixelcreatures",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-8.jpg",
     "kind": "stock photo",
-    "query": "clean auto repair shop interior in Vancouver",
-    "description": "apparel, boutique, bags, shoes, shop, store, shopping, retail, fashion, luxury, shelves, showcase, shop, shop, store, store, shopping, shopping, shopping, shopping, shopping, retail, fashion, fashion, fashion",
-    "source": "https://pixabay.com/photos/apparel-boutique-bags-shoes-shop-1850804/",
-    "photographer": "Pexels",
+    "query": "close up of digital OBD2 car diagnostic scanner screen",
+    "description": "smartphone, face, woman, eyes, view, double, third eye, philosophy, hand, reality, virtual, illusion, imagination, self-deception, pretense, desired image, wishful imagination, fiction, mirage, unreality, wish, wrong hope, dream, wore, phone, mobile, camera, portrait, lifestyle, photography, technology, screen, taking photos, cell, samsung, picture, digital, girl, photographer, media, advertisement, smartphone, eyes, double, double, third eye, reality, reality, reality, reality, reality, virtual, virtual, illusion, illusion, imagination, imagination, imagination, phone, mobile, camera, camera, cell, samsung, samsung, samsung, media",
+    "source": "https://pixabay.com/photos/smartphone-face-woman-eyes-view-1445448/",
+    "photographer": "geralt",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-9.jpg",
     "kind": "stock photo",
-    "query": "friendly auto mechanic shaking hands with customer",
-    "description": "run, motorsport, automobile, pit lane, n\u00fcrburgring, sports, vln, racing team, pit crew, team, run, motorsport, motorsport, team, team, team, team, team",
-    "source": "https://pixabay.com/photos/run-motorsport-automobile-pit-lane-4462878/",
-    "photographer": "mibro",
+    "query": "friendly auto repair technician talking to customer in Vancouver shop",
+    "description": "electrician, repair, electricity, socket, professional, electric, worker, builder, man, male, helmet, work, electrician, electrician, electrician, electrician, electrician, repair, electricity, electricity, worker, work",
+    "source": "https://pixabay.com/photos/electrician-repair-electricity-1080554/",
+    "photographer": "jarmoluk",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-10.jpg",
     "kind": "stock photo",
-    "query": "friendly auto mechanic shaking hands with customer",
-    "description": "apples, farmer's market, buy, buying, consumer, customer, sell, business, deal, fruits, give, hands, sale, produce, fresh produce, fruit stand, buy, buy, buying, consumer, consumer, consumer, customer, customer, customer, customer, customer, sell, sell, business, business, business, business, deal, give, give, sale",
-    "source": "https://pixabay.com/photos/apples-farmers-market-buy-buying-1841132/",
-    "photographer": "Pexels",
+    "query": "friendly auto repair technician talking to customer in Vancouver shop",
+    "description": "woman, engineer, tech, electronics, wires, technology, lab, science, tech, technology, technology, technology, technology, technology, science",
+    "source": "https://pixabay.com/photos/woman-engineer-tech-electronics-8499928/",
+    "photographer": "This_is_Engineering",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }
