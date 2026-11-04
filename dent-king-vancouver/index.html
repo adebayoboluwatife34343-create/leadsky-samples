@@ -2,33 +2,30 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
-  <title>Dent King | Master Paintless Dent Removal in Vancouver</title>
-  
-  <!-- Google Fonts -->
+  <title>Dent King | Vancouver Paintless Dent Removal Sanctuary</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- External Libraries -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
   <style>
     :root {
-      --bg-primary: #f8f9fa;
-      --bg-secondary: #edf2f7;
-      --text-main: #2d3748;
-      --text-muted: #4a5568;
-      --brand-blue: #1a365d;
-      --accent-blue: #2b6cb0;
-      --accent-glow: rgba(43, 108, 176, 0.25);
-      --card-bg: #ffffff;
-      --border-color: #cbd5e0;
-      --font-display: 'Rajdhani', sans-serif;
-      --font-body: 'Inter', sans-serif;
+      --bg: #faf9f6;
+      --surface: #f0ebe1;
+      --pine: #1b3022;
+      --pine-dark: #122117;
+      --pine-light: #284733;
+      --text: #2d3748;
+      --text-light: #4a5568;
+      --gold: #c59b27;
+      --gold-dark: #a67f1b;
+      --white: #ffffff;
+      --border: rgba(27, 48, 34, 0.12);
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'Plus Jakarta Sans', sans-serif;
     }
 
     * {
@@ -38,24 +35,35 @@
     }
 
     body {
-      background-color: var(--bg-primary);
-      color: var(--text-main);
       font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    /* Top Demo Notice Banner */
-    .demo-banner {
-      background: #1a202c;
-      color: #fff;
-      font-size: 0.85rem;
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--pine-dark);
+      letter-spacing: -0.02em;
+    }
+
+    /* Top Notice Banner */
+    .top-banner {
+      background-color: var(--pine-dark);
+      color: #e2e8f0;
+      font-size: 0.825rem;
       text-align: center;
-      padding: 0.5rem 1rem;
+      padding: 8px 16px;
+      font-family: var(--font-body);
       position: relative;
       z-index: 1000;
-      font-weight: 500;
-      letter-spacing: 0.025em;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .top-banner span {
+      color: var(--gold);
+      font-weight: 600;
     }
 
     /* Navigation */
@@ -63,10 +71,11 @@
       position: sticky;
       top: 0;
       z-index: 999;
-      background: rgba(248, 249, 250, 0.85);
+      background: rgba(250, 249, 246, 0.85);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(203, 213, 224, 0.6);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
     }
 
     .nav-container {
@@ -78,20 +87,42 @@
       justify-content: space-between;
     }
 
-    .logo {
-      font-family: var(--font-display);
-      font-size: 1.75rem;
-      font-weight: 700;
-      color: var(--brand-blue);
-      text-decoration: none;
-      letter-spacing: 0.05em;
+    .brand {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
+      gap: 0.75rem;
+      text-decoration: none;
     }
 
-    .logo span {
-      color: var(--accent-blue);
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--pine);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .brand-text {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--pine-dark);
+      letter-spacing: -0.01em;
+    }
+
+    .brand-text span {
+      color: var(--gold-dark);
+      font-weight: 400;
+      font-size: 0.85rem;
+      display: block;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
 
     .nav-links {
@@ -102,246 +133,411 @@
     }
 
     .nav-links a {
-      color: var(--text-muted);
       text-decoration: none;
+      color: var(--text);
       font-weight: 500;
       font-size: 0.95rem;
-      transition: color 0.2s ease;
+      transition: color 0.2s;
     }
 
     .nav-links a:hover {
-      color: var(--brand-blue);
+      color: var(--pine);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 0.5rem;
       padding: 0.75rem 1.5rem;
-      border-radius: 4px;
+      border-radius: 6px;
+      font-family: var(--font-body);
       font-weight: 600;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      cursor: pointer;
       font-size: 0.95rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
       border: none;
     }
 
     .btn-primary {
-      background-color: var(--brand-blue);
-      color: #fff;
-      box-shadow: 0 4px 14px var(--accent-glow);
+      background-color: var(--pine);
+      color: var(--white);
     }
 
     .btn-primary:hover {
-      background-color: var(--accent-blue);
+      background-color: var(--pine-light);
       transform: translateY(-1px);
     }
 
     .btn-outline {
       background-color: transparent;
-      color: var(--brand-blue);
-      border: 2px solid var(--brand-blue);
+      color: var(--pine);
+      border: 1px solid var(--pine);
     }
 
     .btn-outline:hover {
-      background-color: var(--brand-blue);
-      color: #fff;
+      background-color: rgba(27, 48, 34, 0.05);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--pine);
     }
 
     /* Hero Section */
     .hero {
+      padding: 5rem 2rem 6rem;
       max-width: 1280px;
       margin: 0 auto;
-      padding: 5rem 2rem;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .hero-content h1 {
-      font-family: var(--font-display);
-      font-size: 3.5rem;
-      line-height: 1.1;
-      font-weight: 700;
-      color: var(--brand-blue);
-      margin-bottom: 1.5rem;
-      letter-spacing: -0.01em;
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
     }
 
-    .hero-content p {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      margin-bottom: 2rem;
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--surface);
+      padding: 0.35rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--pine);
+      width: fit-content;
+      border: 1px solid var(--border);
+    }
+
+    .hero-badge svg {
+      width: 14px;
+      height: 14px;
+      fill: var(--gold);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 4vw, 3.75rem);
+      line-height: 1.1;
+      color: var(--pine-dark);
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-light);
+      max-width: 540px;
       line-height: 1.7;
     }
 
-    .hero-buttons {
+    .hero-cta-group {
       display: flex;
       gap: 1rem;
       flex-wrap: wrap;
+      margin-top: 0.5rem;
     }
 
     .hero-visual {
       position: relative;
-      border-radius: 8px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-      height: 480px;
-      background: #000;
+      box-shadow: 0 20px 40px rgba(27, 48, 34, 0.12);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      min-height: 480px;
     }
 
     .hero-visual img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      opacity: 0.85;
+      display: block;
+      min-height: 480px;
     }
 
-    .hero-visual .overlay-caption {
+    .hero-overlay-card {
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 2.5rem 2rem 2rem 2rem;
-      background: linear-gradient(to top, rgba(0,0,0,0.98) 0%, rgba(0,0,0,0.92) 50%, rgba(0,0,0,0.75) 100%);
-      color: #fff;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      background: #0f1d14; /* Fully opaque backing panel for guaranteed WCAG AA contrast */
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    .hero-visual .overlay-caption h3 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 0.35rem;
-      color: #ffffff;
+    .hero-overlay-card h4 {
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
     }
 
-    .hero-visual .overlay-caption p {
-      font-size: 0.95rem;
-      color: #f7fafc;
+    .hero-overlay-card p {
+      color: #ffffff; /* Pure white for maximum contrast on dark opaque backing */
+      font-size: 0.875rem;
       margin: 0;
+    }
+
+    /* Trust / Stats Bar */
+    .trust-bar {
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+    }
+
+    .trust-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .trust-item h3 {
+      font-size: 2rem;
+      color: var(--pine);
+      margin-bottom: 0.25rem;
+    }
+
+    .trust-item p {
+      font-size: 0.9rem;
+      color: var(--text-light);
       font-weight: 500;
     }
 
-    /* Section Headings */
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 4rem auto;
-    }
-
-    .section-header h2 {
-      font-family: var(--font-display);
-      font-size: 2.75rem;
-      font-weight: 700;
-      color: var(--brand-blue);
-      margin-bottom: 1rem;
-      letter-spacing: -0.01em;
-    }
-
-    .section-header p {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-    }
-
     /* Services Section */
-    .services {
+    .section {
       padding: 6rem 2rem;
-      background: var(--bg-secondary);
-    }
-
-    .services-container {
       max-width: 1280px;
       margin: 0 auto;
     }
 
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-header span {
+      color: var(--gold-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+    }
+
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
     }
 
     .service-card {
-      background: var(--card-bg);
-      border-radius: 8px;
+      background: var(--white);
+      border-radius: 12px;
       overflow: hidden;
-      border: 1px solid var(--border-color);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
       display: flex;
       flex-direction: column;
     }
 
     .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      transform: translateY(-6px);
+      box-shadow: 0 16px 32px rgba(27, 48, 34, 0.08);
     }
 
-    .service-img-wrapper {
-      height: 200px;
-      overflow: hidden;
+    .service-img {
+      height: 220px;
       position: relative;
+      overflow: hidden;
     }
 
-    .service-img-wrapper img {
+    .service-img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
 
-    .service-card:hover .service-img-wrapper img {
+    .service-card:hover .service-img img {
       transform: scale(1.05);
     }
 
-    .service-content {
+    .service-body {
       padding: 2rem;
-      flex: 1;
       display: flex;
       flex-direction: column;
+      flex-grow: 1;
     }
 
-    .service-content h3 {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--brand-blue);
+    .service-body h3 {
+      font-size: 1.25rem;
       margin-bottom: 0.75rem;
     }
 
-    .service-content p {
-      color: var(--text-muted);
+    .service-body p {
+      color: var(--text-light);
       font-size: 0.95rem;
-      line-height: 1.6;
       margin-bottom: 1.5rem;
-      flex: 1;
+      flex-grow: 1;
     }
 
-    .service-link {
-      color: var(--accent-blue);
-      text-decoration: none;
+    .service-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
       font-weight: 600;
       font-size: 0.9rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      color: var(--pine);
     }
 
-    /* Before & After Interactive Showcase */
-    .showcase {
+    /* Interactive 3D / PDR Light Section */
+    .pdr-showcase {
+      background: var(--pine-dark);
+      color: var(--white);
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pdr-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .pdr-content h2 {
+      color: var(--white);
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      margin-bottom: 1.5rem;
+    }
+
+    .pdr-content p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .pdr-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .pdr-feature-item h4 {
+      color: var(--gold);
+      font-size: 1.05rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .pdr-feature-item p {
+      font-size: 0.9rem;
+      color: #ffffff; /* Brightened to pure white over #0d1711 background for robust WCAG AA compliance */
+      margin: 0;
+    }
+
+    .pdr-canvas-wrapper {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      background: #0d1711;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      overflow: hidden;
+    }
+
+    #webgl-container {
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+    }
+    #webgl-container:active {
+      cursor: grabbing;
+    }
+
+    .canvas-instruction {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      color: #cbd5e1;
+      pointer-events: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Static Fallback for Reduced Motion */
+    .reduced-motion-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      color: #cbd5e1;
+      background: #0d1711;
+    }
+
+    /* Interactive Before & After Slider */
+    .comparison-section {
       padding: 6rem 2rem;
       max-width: 1280px;
       margin: 0 auto;
     }
 
-    .comparison-container {
+    .comparison-wrapper {
       position: relative;
+      width: 100%;
       max-width: 900px;
-      height: 480px;
+      height: 500px;
       margin: 0 auto;
-      border-radius: 8px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      box-shadow: 0 20px 40px rgba(27, 48, 34, 0.15);
+      border: 1px solid var(--border);
       user-select: none;
     }
 
@@ -358,11 +554,29 @@
       height: 100%;
       object-fit: cover;
       display: block;
+      width: 900px;
+      max-width: none;
+    }
+
+    .comparison-before {
+      z-index: 1;
     }
 
     .comparison-after {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 50%;
+      height: 100%;
       z-index: 2;
+      overflow: hidden;
+      border-right: 3px solid var(--gold);
+    }
+
+    .comparison-after img {
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .comparison-slider-handle {
@@ -370,246 +584,267 @@
       top: 0;
       bottom: 0;
       left: 50%;
-      width: 4px;
-      background: #fff;
+      width: 40px;
+      transform: translateX(-50%);
       z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       cursor: ew-resize;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
     }
 
-    .handle-circle {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 44px;
-      height: 44px;
-      background: var(--brand-blue);
-      border: 3px solid #fff;
+    .comparison-slider-button {
+      width: 40px;
+      height: 40px;
+      background: var(--gold);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
-      font-weight: bold;
-      font-size: 0.8rem;
-    }
-
-    .badge-label {
-      position: absolute;
-      top: 20px;
-      padding: 0.45rem 1rem;
-      background: rgba(15, 23, 42, 0.98);
-      color: #ffffff;
-      font-family: var(--font-display);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      color: var(--pine-dark);
       font-weight: 700;
-      font-size: 0.9rem;
-      border-radius: 4px;
-      letter-spacing: 0.05em;
-      z-index: 5;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
-    .badge-before { right: 20px; }
-    .badge-after { left: 20px; }
+    .comparison-label {
+      position: absolute;
+      bottom: 1.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px);
+      color: var(--white);
+      font-size: 0.85rem;
+      font-weight: 600;
+      border-radius: 6px;
+      z-index: 20;
+    }
+    .label-before { right: 1.5rem; }
+    .label-after { left: 1.5rem; }
 
-    /* Interactive 3D Workshop Section */
-    .studio-3d-section {
+    /* Process Section */
+    .process-section {
+      background: var(--surface);
       padding: 6rem 2rem;
-      background: #111827;
-      color: #fff;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
-    .studio-container {
+    .process-grid {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .process-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .process-step-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.6;
+      margin-bottom: 1rem;
+      display: block;
+      line-height: 1;
+    }
+
+    .process-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .process-card p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* Estimate / Contact Form Section */
+    .estimate-section {
+      padding: 6rem 2rem;
       max-width: 1280px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
-      align-items: center;
+      align-items: start;
     }
 
-    .studio-text h2 {
-      font-family: var(--font-display);
-      font-size: 2.75rem;
-      font-weight: 700;
-      color: #fff;
+    .estimate-info h2 {
+      font-size: clamp(2rem, 3vw, 2.75rem);
       margin-bottom: 1.5rem;
     }
 
-    .studio-text p {
-      color: #cbd5e0;
-      font-size: 1.1rem;
-      line-height: 1.7;
+    .estimate-info p {
+      color: var(--text-light);
+      font-size: 1.05rem;
       margin-bottom: 2rem;
+      line-height: 1.7;
     }
 
-    .canvas-container {
-      width: 100%;
-      height: 420px;
-      background: #1f2937;
+    .contact-details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--surface);
       border-radius: 8px;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid #374151;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--pine);
+      flex-shrink: 0;
+      border: 1px solid var(--border);
     }
 
-    #three-canvas {
-      width: 100%;
-      height: 100%;
-      display: block;
+    .contact-item h4 {
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
     }
 
-    .canvas-hint {
-      position: absolute;
-      bottom: 15px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #0f172a;
-      padding: 0.5rem 1.25rem;
-      border-radius: 20px;
-      font-size: 0.9rem;
-      color: #ffffff;
-      font-weight: 600;
-      pointer-events: none;
-      letter-spacing: 0.025em;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-    }
-
-    /* Process Section */
-    .process {
-      padding: 6rem 2rem;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 2rem;
-      position: relative;
-    }
-
-    .process-step {
-      background: var(--card-bg);
-      padding: 2.5rem 2rem;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
-      position: relative;
-    }
-
-    .step-number {
-      font-family: var(--font-display);
-      font-size: 3rem;
-      font-weight: 700;
-      color: var(--accent-blue);
-      opacity: 0.2;
-      line-height: 1;
-      margin-bottom: 1rem;
-    }
-
-    .process-step h3 {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: var(--brand-blue);
-      margin-bottom: 0.75rem;
-    }
-
-    .process-step p {
-      color: var(--text-muted);
+    .contact-item p, .contact-item a {
+      color: var(--text-light);
       font-size: 0.95rem;
-      line-height: 1.6;
+      text-decoration: none;
     }
 
-    /* Instant Estimator / Contact Section */
-    .estimator-section {
-      padding: 6rem 2rem;
-      background: var(--bg-secondary);
+    .contact-item a:hover {
+      color: var(--pine);
+      text-decoration: underline;
     }
 
-    .estimator-container {
-      max-width: 800px;
-      margin: 0 auto;
-      background: var(--card-bg);
-      padding: 3rem;
-      border-radius: 12px;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+    .estimate-form-card {
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: 0 20px 40px rgba(27, 48, 34, 0.06);
     }
 
     .form-group {
       margin-bottom: 1.5rem;
     }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    label {
+    .form-group label {
       display: block;
-      font-weight: 600;
       font-size: 0.9rem;
-      color: var(--brand-blue);
+      font-weight: 600;
+      color: var(--pine-dark);
       margin-bottom: 0.5rem;
     }
 
-    input, select, textarea {
+    .form-control {
       width: 100%;
       padding: 0.85rem 1rem;
-      border: 1px solid var(--border-color);
-      border-radius: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
       font-family: var(--font-body);
-      font-size: 1rem;
-      background: #fff;
-      color: var(--text-main);
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      font-size: 0.95rem;
+      color: var(--text);
+      transition: all 0.2s;
     }
 
-    input:focus, select:focus, textarea:focus {
+    .form-control:focus {
       outline: none;
-      border-color: var(--accent-blue);
-      box-shadow: 0 0 0 3px var(--accent-glow);
+      border-color: var(--pine);
+      background: var(--white);
+      box-shadow: 0 0 0 3px rgba(27, 48, 34, 0.1);
     }
 
-    .file-dropzone {
-      border: 2px dashed var(--border-color);
-      padding: 2rem;
-      text-align: center;
-      border-radius: 4px;
-      background: var(--bg-primary);
-      cursor: pointer;
-      transition: border-color 0.2s ease;
+    textarea.form-control {
+      resize: vertical;
+      min-height: 120px;
     }
 
-    .file-dropzone:hover {
-      border-color: var(--accent-blue);
-    }
-
-    .form-alert {
-      padding: 1rem;
-      border-radius: 4px;
+    .form-notice {
+      font-size: 0.825rem;
+      color: var(--text-light);
       margin-top: 1rem;
-      font-weight: 500;
-      display: none;
+      text-align: center;
     }
 
-    .form-alert.success {
-      background: #c6f6d5;
-      color: #22543d;
-      border: 1px solid #9ae6b4;
-      display: block;
+    /* FAQ Section */
+    .faq-section {
+      background: var(--surface);
+      padding: 6rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      padding: 1.25rem 1.5rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: var(--pine-dark);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+    }
+
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      color: var(--pine);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      padding: 0 1.5rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+      padding-bottom: 1.5rem;
     }
 
     /* Footer */
     footer {
-      background: #0f172a;
-      color: #94a3b8;
-      padding: 5rem 2rem 2rem 2rem;
+      background: var(--pine-dark);
+      color: #cbd5e1;
+      padding: 5rem 2rem 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .footer-container {
@@ -618,367 +853,492 @@
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       gap: 4rem;
-      margin-bottom: 3rem;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid #1e293b;
+      margin-bottom: 4rem;
     }
 
-    .footer-brand .logo {
-      color: #fff;
+    .footer-brand h3 {
+      color: var(--white);
+      font-size: 1.5rem;
       margin-bottom: 1rem;
     }
 
     .footer-brand p {
+      color: #94a3b8;
       font-size: 0.95rem;
+      max-width: 400px;
       line-height: 1.6;
-      max-width: 350px;
-      margin-bottom: 1.5rem;
     }
 
     .footer-col h4 {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #fff;
+      color: var(--white);
+      font-size: 1.1rem;
       margin-bottom: 1.25rem;
-      letter-spacing: 0.05em;
     }
 
     .footer-col ul {
       list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
     }
 
-    .footer-col ul li {
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-col ul li a {
+    .footer-col ul a {
       color: #94a3b8;
       text-decoration: none;
-      transition: color 0.2s ease;
+      font-size: 0.95rem;
+      transition: color 0.2s;
     }
 
-    .footer-col ul li a:hover {
-      color: #fff;
+    .footer-col ul a:hover {
+      color: var(--white);
     }
 
     .footer-bottom {
       max-width: 1280px;
       margin: 0 auto;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 0.85rem;
-      color: #64748b;
+      color: #94a3b8;
       flex-wrap: wrap;
       gap: 1rem;
     }
 
+    .photo-credits {
+      font-size: 0.75rem;
+      color: #cbd5e1; /* Lightened to #cbd5e1 against the #122117 footer background for WCAG AA compliance on small text */
+      max-width: 800px;
+      line-height: 1.5;
+    }
+
     .photo-credits a {
-      color: #94a3b8;
+      color: #ffffff;
       text-decoration: underline;
     }
 
-    .photo-credits a:hover {
-      color: #fff;
+    /* Reduced Motion Styles */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .service-card:hover {
+        transform: none !important;
+      }
+      .service-card:hover .service-img img {
+        transform: none !important;
+      }
+      #webgl-container {
+        display: none !important;
+      }
+      .reduced-motion-fallback {
+        display: flex !important;
+      }
+      .canvas-instruction {
+        display: none !important;
+      }
     }
 
-    /* Responsive Design */
-    @media (max-width: 968px) {
-      .hero {
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero, .pdr-container, .estimate-section {
         grid-template-columns: 1fr;
         gap: 3rem;
-        padding: 3rem 1.5rem;
       }
-      .hero-content h1 {
-        font-size: 2.75rem;
-      }
-      .studio-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
+      .services-grid, .process-grid, .trust-container {
+        grid-template-columns: repeat(2, 1fr);
       }
       .footer-container {
         grid-template-columns: 1fr;
-        gap: 2.5rem;
+        gap: 2rem;
       }
-      .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
-      }
-      .nav-links {
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-actions .btn-outline {
         display: none;
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+      .services-grid, .process-grid, .trust-container, .pdr-features {
+        grid-template-columns: 1fr;
+      }
+      .comparison-wrapper {
+        height: 350px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Demo Notice Banner -->
-  <div class="demo-banner">
-    Independent website concept by LeadSky for Dent King. Not their official website.
+  <!-- Top Banner -->
+  <div class="top-banner">
+    Independent website concept by <span>LeadSky</span> for Dent King. Not their official website.
   </div>
 
-  <!-- Header & Navigation -->
+  <!-- Navigation -->
   <header>
     <div class="nav-container">
-      <a href="#" class="logo">DENT KING<span>//</span>VANCOUVER</a>
+      <a href="#" class="brand">
+        <div class="brand-icon">DK</div>
+        <div class="brand-text">
+          Dent King
+          <span>Vancouver, BC</span>
+        </div>
+      </a>
       <ul class="nav-links">
         <li><a href="#services">Services</a></li>
-        <li><a href="#showcase">Before & After</a></li>
-        <li><a href="#studio">Studio Inspection</a></li>
         <li><a href="#process">Process</a></li>
-        <li><a href="#estimator">Get Estimate</a></li>
+        <li><a href="#work">Before & After</a></li>
+        <li><a href="#estimate">Get Estimate</a></li>
+        <li><a href="#contact">Location</a></li>
       </ul>
-      <a href="tel:+16046873368" class="btn btn-primary">+1 (604) 687-3368</a>
+      <div class="nav-actions">
+        <a href="tel:+16046873368" class="btn btn-outline">+1 (604) 687-3368</a>
+        <a href="#estimate" class="btn btn-primary">Free Quote</a>
+        <button class="mobile-menu-btn" aria-label="Toggle menu">&#9776;</button>
+      </div>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Master Paintless Dent Removal in Vancouver</h1>
-      <p>Restore your vehicle's factory finish in hours, not weeks. No fillers, no repainting, and specialized craftsmanship for every dent, door ding, and crease.</p>
-      <div class="hero-buttons">
-        <a href="#estimator" class="btn btn-primary">Get Free Instant Estimate</a>
-        <a href="tel:+16046873368" class="btn btn-outline">Call Shop Now</a>
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+        Master Paintless Dent Removal in Vancouver
+      </div>
+      <h1>Erase Dings & Dents While Preserving Factory Paint</h1>
+      <p>Specialized paintless dent repair for vehicle owners across Vancouver, BC. We remove door dings, parking lot creases, and hail damage without traditional body fillers or repainting.</p>
+      <div class="hero-cta-group">
+        <a href="#estimate" class="btn btn-primary">Get Instant Estimate</a>
+        <a href="tel:+16046873368" class="btn btn-outline">Call Shop: +1-604-687-3368</a>
       </div>
     </div>
     <div class="hero-visual">
-      <img src="img/stock-1.jpg" alt="Expert automotive technician using paintless dent repair rods on car door">
-      <div class="overlay-caption">
-        <h3>Precision Factory Finish Preservation</h3>
-        <p>Vancouver, BC Workshop • Professional PDR Technicians</p>
+      <img src="img/stock-1.jpg" alt="Expert technician examining car body with LED alignment lines">
+      <div class="hero-overlay-card">
+        <h4>Vancouver Workshop Studio</h4>
+        <p>Precision optical alignment tools & specialized metal rods for flawless restoration.</p>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <div class="services-container">
-      <div class="section-header">
-        <h2>Specialized PDR Services</h2>
-        <p>Advanced techniques tailored for door dings, minor creases, and body panel restoration without disturbing original paint.</p>
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="trust-container">
+      <div class="trust-item">
+        <h3>100%</h3>
+        <p>Factory Paint Preserved</p>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-img-wrapper">
-            <img src="img/stock-5.jpg" alt="Close up of dent repair reflection board grid on shiny black car body">
-          </div>
-          <div class="service-content">
-            <h3>Door Ding & Minor Dent Removal</h3>
-            <p>Fast, clean removal of parking lot dings and shallow body dents using specialized stainless steel rods and precision tapping tools.</p>
-            <a href="#estimator" class="service-link">Request Estimate &rarr;</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-img-wrapper">
-            <img src="img/stock-7.jpg" alt="Professional mechanic inspecting car side panel with specialized LED light">
-          </div>
-          <div class="service-content">
-            <h3>Crease & Body Line Repair</h3>
-            <p>Expert manipulation of complex body lines and sharp creases back to strict manufacturer specifications without bondo or fillers.</p>
-            <a href="#estimator" class="service-link">Request Estimate &rarr;</a>
-          </div>
-        </div>
-        <div class="service-card">
-          <div class="service-img-wrapper">
-            <img src="img/stock-3.jpg" alt="Bright clean automotive repair workshop with polished floors and luxury cars">
-          </div>
-          <div class="service-content">
-            <h3>Lease Return & Insurance Inspections</h3>
-            <p>Avoid expensive end-of-lease penalty fees by eliminating minor body damage quickly before official dealership vehicle inspection.</p>
-            <a href="#estimator" class="service-link">Request Estimate &rarr;</a>
-          </div>
-        </div>
+      <div class="trust-item">
+        <h3>OEM</h3>
+        <p>Finish Retained</p>
+      </div>
+      <div class="trust-item">
+        <h3>Same-Day</h3>
+        <p>Most Repairs Completed</p>
+      </div>
+      <div class="trust-item">
+        <h3>Vancouver</h3>
+        <p>Local Expert Service</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- Before & After Showcase -->
-  <section id="showcase" class="showcase">
+  <!-- Services & Pricing Guide -->
+  <section id="services" class="section">
     <div class="section-header">
-      <h2>The Dent King Difference</h2>
-      <p>Drag the slider across the panel to reveal severe door dings and body damage completely erased while preserving factory paint.</p>
+      <span>Our Services</span>
+      <h2>Specialized Paintless Dent Repair</h2>
+      <p>Advanced metal restoration techniques tailored for modern aluminum and steel vehicle bodies.</p>
     </div>
-    <div class="comparison-container" id="comparisonContainer">
-      <div class="comparison-img comparison-after">
-        <img src="img/stock-6.jpg" alt="Flawless polished car body after paintless dent removal">
-        <span class="badge-label badge-after">After Repair</span>
-      </div>
-      <div class="comparison-img comparison-before" style="position:absolute; top:0; left:0; width:50%; overflow:hidden;">
-        <div style="width: 900px; height: 100%; position: relative;" id="beforeImageWrapper">
-          <img src="img/stock-2.jpg" alt="Damaged vehicle panel before dent repair" style="width: 900px; height: 100%; object-fit: cover; display: block;" id="beforeImgTag">
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-img">
+          <img src="img/stock-3.jpg" alt="Clean automotive workshop environment in Vancouver">
         </div>
-        <span class="badge-label badge-before">Before Damage</span>
+        <div class="service-body">
+          <h3>Door Dings & Creases</h3>
+          <p>Remove unsightly shopping cart bumps and parking lot door impacts cleanly from side panels and doors.</p>
+          <div class="service-footer">
+            <span>Paint Preserved</span>
+            <span>Fast Turnaround</span>
+          </div>
+        </div>
       </div>
-      <div class="comparison-slider-handle" id="sliderHandle" style="left: 50%;">
-        <div class="handle-circle">&harr;</div>
+      <div class="service-card">
+        <div class="service-img">
+          <img src="img/stock-5.jpg" alt="Luxury car side view under professional lighting">
+        </div>
+        <div class="service-body">
+          <h3>Hail & Storm Damage</h3>
+          <p>Comprehensive panel massage to restore roof, hood, and trunk surfaces affected by severe weather.</p>
+          <div class="service-footer">
+            <span>No Fillers</span>
+            <span>Original Finish</span>
+          </div>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-img">
+          <img src="img/stock-9.jpg" alt="Professional stainless steel PDR rods and tools">
+        </div>
+        <div class="service-body">
+          <h3>Minor Body Creases</h3>
+          <p>Precise manipulation of structural metal lines and body contours using specialized stainless steel rods.</p>
+          <div class="service-footer">
+            <span>Precision LED</span>
+            <span>Expert Hands</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Interactive 3D Inspection Section -->
-  <section id="studio" class="studio-3d-section">
-    <div class="studio-container">
-      <div class="studio-text">
-        <h2>Precision Lighting & Inspection</h2>
-        <p>Paintless Dent Removal requires absolute optical accuracy. Our technicians utilize high-intensity LED reflection boards and specialized shadow grids to map metal distortion down to the sub-millimeter level, ensuring 100% factory finish retention.</p>
-        <a href="#estimator" class="btn btn-primary">Book Assessment</a>
+  <!-- Interactive 3D / PDR Light Section -->
+  <section class="pdr-showcase">
+    <div class="pdr-container">
+      <div class="pdr-content">
+        <span>Precision Engineering</span>
+        <h2>The Science of Paintless Dent Removal</h2>
+        <p>PDR is an art form combining specialized lighting, metallurgy, and meticulous pressure application. By accessing the backside of the metal panel, our technicians massage the ding back to its original factory memory.</p>
+        <div class="pdr-features">
+          <div class="pdr-feature-item">
+            <h4>LED Grid Boards</h4>
+            <p>Reflective lines highlight micro-distortions for exact tool placement.</p>
+          </div>
+          <div class="pdr-feature-item">
+            <h4>No Carfax Value Loss</h4>
+            <p>Keeping original paint preserves vehicle resale value.</p>
+          </div>
+        </div>
       </div>
-      <div class="canvas-container">
-        <canvas id="three-canvas"></canvas>
-        <div class="canvas-hint">Interactive 3D Inspection Light & Panel Model</div>
+      <div class="pdr-canvas-wrapper">
+        <div id="webgl-container"></div>
+        <div class="reduced-motion-fallback">
+          <p>Interactive 3D view disabled due to reduced-motion preference.</p>
+        </div>
+        <div class="canvas-instruction">Interactive 3D PDR Inspection Light (Drag to rotate)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Before & After Slider -->
+  <section id="work" class="section">
+    <div class="section-header">
+      <span>Visual Results</span>
+      <h2>See The PDR Difference</h2>
+      <p>Drag the slider below to reveal the flawless restoration of a damaged vehicle body panel.</p>
+    </div>
+    <div class="comparison-wrapper" id="comparisonSlider">
+      <div class="comparison-img comparison-before">
+        <img src="img/stock-6.jpg" alt="Vehicle body showing dent reflection distortion">
+        <div class="comparison-label label-before">Before Repair</div>
+      </div>
+      <div class="comparison-after" id="comparisonAfter">
+        <img src="img/stock-5.jpg" alt="Vehicle body completely restored with perfect reflection lines" id="afterImg">
+        <div class="comparison-label label-after">After PDR</div>
+      </div>
+      <div class="comparison-slider-handle" id="sliderHandle">
+        <div class="comparison-slider-button">&harr;</div>
       </div>
     </div>
   </section>
 
   <!-- Process Section -->
-  <section id="process" class="process">
+  <section id="process" class="process-section">
     <div class="section-header">
-      <h2>Our 4-Step Precision Process</h2>
-      <p>A streamlined, transparent approach to restoring your vehicle's pristine body lines.</p>
+      <span>Step-by-Step</span>
+      <h2>How Our Repair Process Works</h2>
+      <p>Simple, transparent, and efficient vehicle restoration from start to finish.</p>
     </div>
     <div class="process-grid">
-      <div class="process-step">
-        <div class="step-number">01</div>
-        <h3>Damage Evaluation</h3>
-        <p>We analyze the depth, location, and paint condition of the dent under specialized LED inspection lighting.</p>
+      <div class="process-card">
+        <span class="process-step-num">01</span>
+        <h3>Photo Assessment</h3>
+        <p>Send us a clear photo of your vehicle dent via our online form or text for a prompt evaluation.</p>
       </div>
-      <div class="process-step">
-        <div class="step-number">02</div>
-        <h3>Access Setup</h3>
-        <p>Careful gaining of access behind the damaged panel by removing trim or interior liners safely.</p>
+      <div class="process-card">
+        <span class="process-step-num">02</span>
+        <h3>Quote & Booking</h3>
+        <p>Receive an honest estimate and schedule a convenient appointment at our Vancouver workshop.</p>
       </div>
-      <div class="process-step">
-        <div class="step-number">03</div>
-        <h3>Precision Massage</h3>
-        <p>Controlled, incremental pressure applied with stainless steel rods to push metal back into exact alignment.</p>
+      <div class="process-card">
+        <span class="process-step-num">03</span>
+        <h3>Precision Repair</h3>
+        <p>Our technician uses LED boards and specialized rods to massage the metal back into place.</p>
       </div>
-      <div class="process-step">
-        <div class="step-number">04</div>
-        <h3>Optical Finish Check</h3>
-        <p>Final reflection board inspection to verify surface perfection and factory paint integrity.</p>
+      <div class="process-card">
+        <span class="process-step-num">04</span>
+        <h3>Ready For Delivery</h3>
+        <p>Inspect your restored vehicle with factory paint intact, ready for the Vancouver roads.</p>
       </div>
     </div>
   </section>
 
-  <!-- Instant Estimate Section -->
-  <section id="estimator" class="estimator-section">
-    <div class="section-header">
-      <h2>Get an Instant Photo Quote</h2>
-      <p>Upload a clear photo of your vehicle's dent for a fast estimation from our Vancouver workshop team.</p>
-    </div>
-    <div class="estimator-container">
-      <form id="estimateForm">
-        <div class="form-row">
-          <div class="form-group">
-            <label for="fullName">Full Name</label>
-            <input type="text" id="fullName" required placeholder="John Doe">
+  <!-- Estimate & Contact Section -->
+  <section id="estimate" class="estimate-section">
+    <div class="estimate-info">
+      <span>Get In Touch</span>
+      <h2>Request Your Free Dent Estimate in Vancouver</h2>
+      <p>Have a door ding, crease, or parking lot dent? Send us the details or reach out directly. We are ready to restore your vehicle's pristine finish.</p>
+      
+      <div class="contact-details-list">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" required placeholder="(604) 555-0199">
+          <div>
+            <h4>Phone</h4>
+            <p><a href="tel:+16046873368">+1 (604) 687-3368</a></p>
           </div>
         </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label for="vehicleInfo">Vehicle Year, Make & Model</label>
-            <input type="text" id="vehicleInfo" required placeholder="e.g. 2023 Tesla Model 3">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <div class="form-group">
-            <label for="damageLocation">Damage Location on Vehicle</label>
-            <select id="damageLocation" required>
-              <option value="">Select panel location...</option>
-              <option value="driver-door">Driver Side Door</option>
-              <option value="passenger-door">Passenger Side Door</option>
-              <option value="quarter-panel">Quarter Panel</option>
-              <option value="fender">Fender</option>
-              <option value="hood">Hood / Trunk</option>
-              <option value="roof">Roof</option>
-            </select>
+          <div>
+            <h4>Location</h4>
+            <p>Vancouver, BC, Canada</p>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="estimate-form-card">
+      <form id="demoEstimateForm">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" class="form-control" required placeholder="John Doe">
         </div>
         <div class="form-group">
-          <label>Upload Damage Photo</label>
-          <div class="file-dropzone" onclick="document.getElementById('fileInput').click()">
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Drag & drop damage photo here, or <span style="color: var(--accent-blue); font-weight:600;">browse files</span></p>
-            <input type="file" id="fileInput" accept="image/*" style="display: none;">
-          </div>
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" class="form-control" required placeholder="+1 (604) 555-0199">
         </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">Submit Estimate Request</button>
-        <div id="formAlert" class="form-alert"></div>
+        <div class="form-group">
+          <label for="vehicle">Vehicle Make & Model</label>
+          <input type="text" id="vehicle" class="form-control" required placeholder="e.g. 2022 Tesla Model 3">
+        </div>
+        <div class="form-group">
+          <label for="details">Dent Description & Location</label>
+          <textarea id="details" class="form-control" required placeholder="Describe size and location of the dent (e.g. driver side door ding)"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit For Estimate</button>
+        <div id="formSuccessMessage" style="display:none; margin-top:1rem; padding:0.75rem; background:#e6f4ea; color:#137333; border-radius:6px; font-size:0.9rem; text-align:center; font-weight:600;">
+          This is a demo form, nothing was sent.
+        </div>
       </form>
+      <div class="form-notice">Fast response guaranteed during business hours.</div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="faq-container">
+      <div class="section-header" style="margin-bottom: 2.5rem;">
+        <span>Common Questions</span>
+        <h2>Paintless Dent Repair FAQ</h2>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What is Paintless Dent Repair (PDR)?</div>
+        <div class="faq-answer">PDR is the art of meticulously massaging sheet metal back to its original contour from behind the panel using specialized rods and lights, eliminating the need for body filler or repainting.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Will PDR damage my factory paint?</div>
+        <div class="faq-answer">No. Because we retain 100% of your original factory paint finish, your vehicle maintains its original UV protection and resale value.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can all dents be fixed with PDR?</div>
+        <div class="faq-answer">Most door dings, parking lot creases, and hail damage can be successfully repaired as long as the paint is not chipped and the metal is not excessively stretched or torn.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Where are you located in Vancouver?</div>
+        <div class="faq-answer">We operate in Vancouver, BC. Call us at +1-604-687-3368 to schedule your visit or get directions to our workshop.</div>
+      </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer id="contact">
     <div class="footer-container">
       <div class="footer-brand">
-        <a href="#" class="logo">DENT KING<span>//</span>VANCOUVER</a>
-        <p>Professional Paintless Dent Removal serving Vancouver vehicle owners with precision craftsmanship, transparent pricing, and factory finish preservation.</p>
-        <p style="font-size: 0.9rem; color: #94a3b8;">Phone: +1-604-687-3368<br>Location: Vancouver, BC</p>
+        <h3>Dent King</h3>
+        <p>Vancouver's trusted specialists in Paintless Dent Removal. Erasing dings, creases, and hail damage while preserving factory paint finish.</p>
       </div>
       <div class="footer-col">
         <h4>Navigation</h4>
         <ul>
           <li><a href="#services">Services</a></li>
-          <li><a href="#showcase">Before & After</a></li>
-          <li><a href="#studio">Studio Inspection</a></li>
           <li><a href="#process">Process</a></li>
-          <li><a href="#estimator">Get Estimate</a></li>
+          <li><a href="#work">Before & After</a></li>
+          <li><a href="#estimate">Get Estimate</a></li>
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
+        <h4>Contact</h4>
         <ul>
-          <li><a href="#services">Door Dings</a></li>
-          <li><a href="#services">Crease Removal</a></li>
-          <li><a href="#services">Lease Returns</a></li>
-          <li><a href="#estimator">Photo Quotes</a></li>
+          <li><a href="tel:+16046873368">+1 (604) 687-3368</a></li>
+          <li>Vancouver, BC, Canada</li>
+          <li>Mon - Sat: 8:00 AM - 6:00 PM</li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <div>&copy; <span id="currentYear"></span> Dent King Vancouver. All rights reserved.</div>
+      <div>&copy; <span id="currentYear">2026</span> Dent King. Independent concept by LeadSky.</div>
       <div class="photo-credits">
-        Stock photography licensed via Pixabay: 
+        Stock photos licensed via Pixabay: 
         <a href="https://pixabay.com/photos/car-vehicle-man-7232127/" target="_blank" rel="noopener">Dewesoft</a>, 
-        <a href="https://pixabay.com/photos/car-accident-totalled-car-crash-1660670/" target="_blank" rel="noopener">Akent879</a>, 
         <a href="https://pixabay.com/photos/man-car-repair-car-repair-362150/" target="_blank" rel="noopener">RyanMcGuire</a>, 
-        <a href="https://pixabay.com/photos/auto-car-garage-auto-shop-vintage-1868726/" target="_blank" rel="noopener">Pexels</a>, 
-        <a href="https://pixabay.com/photos/car-wing-hind-wing-american-waxed-7385281/" target="_blank" rel="noopener">Olavi-a</a>, 
-        <a href="https://pixabay.com/photos/water-droplets-effervescence-7565462/" target="_blank" rel="noopener">It_was_a_pleasure</a>, 
-        <a href="https://pixabay.com/photos/door-door-handle-auto-air-intake-4833820/" target="_blank" rel="noopener">Zotx</a>, 
-        <a href="https://pixabay.com/photos/car-dashboard-speedometer-speed-2667434/" target="_blank" rel="noopener">Fotorech</a>. 
-        | Concept by LeadSky.
+        <a href="https://pixabay.com/photos/coupe-limousine-car-auto-vehicle-1374448/" target="_blank" rel="noopener">pgottschalk</a>, 
+        <a href="https://pixabay.com/photos/sports-car-auto-automobile-hdr-116949/" target="_blank" rel="noopener">12019</a>, 
+        <a href="https://pixabay.com/photos/grid-wire-mesh-stainless-rods-metal-826831/" target="_blank" rel="noopener">cocoparisienne</a>.
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script>
+    // Update year automatically
     document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-    // Before / After Slider Interaction
-    const container = document.getElementById('comparisonContainer');
-    const afterEl = document.querySelector('.comparison-after');
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!isActive) {
+          item.classList.add('active');
+        }
+      });
+    });
+
+    // Before / After Slider Logic
+    const slider = document.getElementById('comparisonSlider');
+    const afterEl = document.getElementById('comparisonAfter');
     const handle = document.getElementById('sliderHandle');
-    const beforeImgWrapper = document.getElementById('beforeImageWrapper');
+    let isDragging = false;
 
     function updateSlider(clientX) {
-      const rect = container.getBoundingClientRect();
-      let offsetX = clientX - rect.left;
-      if (offsetX < 0) offsetX = 0;
-      if (offsetX > rect.width) offsetX = rect.width;
-      const percentage = (offsetX / rect.width) * 100;
-      
-      afterEl.style.width = percentage + '%';
-      handle.style.left = percentage + '%';
-      beforeImgWrapper.style.transform = `translateX(-${offsetX}px)`;
+      const rect = slider.getBoundingClientRect();
+      let x = clientX - rect.left;
+      if (x < 0) x = 0;
+      if (x > rect.width) x = rect.width;
+      const percent = (x / rect.width) * 100;
+      afterEl.style.width = percent + '%';
+      handle.style.left = percent + '%';
     }
 
-    let isDragging = false;
     handle.addEventListener('mousedown', () => isDragging = true);
     window.addEventListener('mouseup', () => isDragging = false);
     window.addEventListener('mousemove', (e) => {
@@ -986,11 +1346,11 @@
       updateSlider(e.clientX);
     });
 
-    container.addEventListener('click', (e) => {
+    slider.addEventListener('click', (e) => {
       updateSlider(e.clientX);
     });
 
-    // Touch support for slider
+    // Touch support for comparison slider
     handle.addEventListener('touchstart', () => isDragging = true);
     window.addEventListener('touchend', () => isDragging = false);
     window.addEventListener('touchmove', (e) => {
@@ -998,110 +1358,122 @@
       updateSlider(e.touches[0].clientX);
     });
 
-    // Synchronize before image position on resize
-    window.addEventListener('resize', () => {
-      const rect = container.getBoundingClientRect();
-      beforeImgWrapper.style.width = rect.width + 'px';
-    });
-    // Initial setup
-    window.addEventListener('load', () => {
-      const rect = container.getBoundingClientRect();
-      beforeImgWrapper.style.width = rect.width + 'px';
+    // Form demo handling
+    document.getElementById('demoEstimateForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formSuccessMessage').style.display = 'block';
+      this.reset();
+      setTimeout(() => {
+        document.getElementById('formSuccessMessage').style.display = 'none';
+      }, 5000);
     });
 
-    // Three.js Interactive 3D Workshop Scene
-    const canvas = document.getElementById('three-canvas');
-    if (canvas && typeof THREE !== 'undefined') {
+    // Three.js Interactive PDR Light Stand & Car Panel (Skipped if reduced-motion is preferred)
+    const container = document.getElementById('webgl-container');
+    if (container && typeof THREE !== 'undefined' && !prefersReducedMotion) {
       const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
-      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 0, 5);
+
+      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      container.appendChild(renderer.domElement);
 
       // Lighting
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
       scene.add(ambientLight);
 
-      const directionalLight = new THREE.DirectionalLight(0x2b6cb0, 2);
-      directionalLight.position.set(5, 5, 5);
-      scene.add(directionalLight);
-
-      const pointLight = new THREE.PointLight(0xffffff, 3, 50);
-      pointLight.position.set(-3, 2, 2);
+      const pointLight = new THREE.PointLight(0xc59b27, 2, 50);
+      pointLight.position.set(3, 3, 3);
       scene.add(pointLight);
 
-      // Car Panel (Glossy curved surface)
-      const panelGeo = new THREE.CylinderGeometry(2, 2, 3.5, 32, 32, true, 0, Math.PI);
-      const panelMat = new THREE.MeshStandardMaterial({
-        color: 0x1a365d,
+      // Car Body Panel (Curved Mesh)
+      const geometry = new THREE.CylinderGeometry(1.5, 1.5, 2.5, 32, 32, true);
+      const material = new THREE.MeshStandardMaterial({
+        color: 0x1b3022,
+        roughness: 0.15,
         metalness: 0.9,
-        roughness: 0.1,
         side: THREE.DoubleSide
       });
-      const panel = new THREE.Mesh(panelGeo, panelMat);
-      panel.rotation.y = Math.PI / 2;
+      const panel = new THREE.Mesh(geometry, material);
+      panel.rotation.z = Math.PI / 2;
       scene.add(panel);
 
-      // Inspection LED Stand representation
-      const standGeo = new THREE.BoxGeometry(0.1, 3, 0.1);
-      const standMat = new THREE.MeshStandardMaterial({ color: 0xcbafb0, metalness: 0.8, roughness: 0.2 });
-      const stand = new THREE.Mesh(standGeo, standMat);
-      stand.position.set(-2, 0, 1);
-      scene.add(stand);
-
-      // LED Light Strip
-      const lightGeo = new THREE.BoxGeometry(1.5, 0.4, 0.05);
-      const lightMat = new THREE.MeshBasicMaterial({ color: 0x63b3ed });
+      // LED Light Bar (Simulated PDR Reflection Board)
+      const lightGeo = new THREE.PlaneGeometry(0.8, 0.2);
+      const lightMat = new THREE.MeshBasicMaterial({ color: 0xffffff });
       const ledBar = new THREE.Mesh(lightGeo, lightMat);
-      ledBar.position.set(-1.5, 1.2, 1);
+      ledBar.position.set(0, 0, 1.6);
       scene.add(ledBar);
 
-      camera.position.set(0, 0, 6);
+      // Mouse interactivity for rotation
+      let isPointerDown = false;
+      let previousMousePosition = { x: 0, y: 0 };
 
-      // Mouse move inertia interaction
-      let mouseX = 0;
-      let mouseY = 0;
-      let targetRotationX = 0;
-      let targetRotationY = 0;
-
-      canvas.addEventListener('mousemove', (e) => {
-        const rect = canvas.getBoundingClientRect();
-        mouseX = ((e.clientX - rect.left) / canvas.clientWidth) * 2 - 1;
-        mouseY = -(((e.clientY - rect.top) / canvas.clientHeight) * 2 - 1);
+      container.addEventListener('mousedown', (e) => {
+        isPointerDown = true;
+        previousMousePosition = { x: e.clientX, y: e.clientY };
       });
 
-      // Reduced motion check
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.addEventListener('mouseup', () => { isPointerDown = false; });
 
+      window.addEventListener('mousemove', (e) => {
+        if (!isPointerDown) return;
+        const deltaX = e.clientX - previousMousePosition.x;
+        const deltaY = e.clientY - previousMousePosition.y;
+
+        panel.rotation.y += deltaX * 0.005;
+        panel.rotation.x += deltaY * 0.005;
+
+        previousMousePosition = { x: e.clientX, y: e.clientY };
+      });
+
+      // Touch interactivity
+      container.addEventListener('touchstart', (e) => {
+        isPointerDown = true;
+        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      });
+
+      window.addEventListener('touchend', () => { isPointerDown = false; });
+
+      window.addEventListener('touchmove', (e) => {
+        if (!isPointerDown) return;
+        const deltaX = e.touches[0].clientX - previousMousePosition.x;
+        const deltaY = e.touches[0].clientY - previousMousePosition.y;
+
+        panel.rotation.y += deltaX * 0.005;
+        panel.rotation.x += deltaY * 0.005;
+
+        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      });
+
+      // Animation loop
+      let clock = new THREE.Clock();
       function animate() {
         requestAnimationFrame(animate);
-        if (!prefersReducedMotion) {
-          targetRotationY = mouseX * 0.5;
-          targetRotationX = mouseY * 0.3;
-          panel.rotation.y += (targetRotationY - panel.rotation.y + Math.PI/2) * 0.05;
-          panel.rotation.x += (targetRotationX - panel.rotation.x) * 0.05;
+        const elapsedTime = clock.getElapsedTime();
+
+        // Gentle idle rotation if not interacting
+        if (!isPointerDown) {
+          panel.rotation.y += 0.003;
         }
+
+        // Move LED reflection bar slightly
+        ledBar.position.x = Math.sin(elapsedTime * 1.5) * 0.8;
+
         renderer.render(scene, camera);
       }
       animate();
 
+      // Resize handler
       window.addEventListener('resize', () => {
-        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        if (!container) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
-        renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+        renderer.setSize(container.clientWidth, container.clientHeight);
       });
     }
-
-    // Form Handling
-    const estimateForm = document.getElementById('estimateForm');
-    const formAlert = document.getElementById('formAlert');
-
-    estimateForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      formAlert.textContent = "This is a demo form, nothing was sent.";
-      formAlert.className = "form-alert success";
-      estimateForm.reset();
-    });
   </script>
 </body>
 </html>
