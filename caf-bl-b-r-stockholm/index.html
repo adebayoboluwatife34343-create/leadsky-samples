@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Café Blåbär | Stockholm Specialty Coffee & Organic Bakery</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..800;1,400..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Local CSS / Tailwind Styling (Zero External CSS CDN) -->
+  <style>
+    /* Tailwind Reset & Core Utilities Inline */
+    *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e5e7eb; }
+    html { line-height: 1.5; -webkit-text-size-adjust: 100%; -moz-tab-size: 4; tab-size: 4; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body { margin: 0; background-color: #fcfaf7; color: #222624; }
+    h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; font-family: 'Playfair Display', serif; }
+    a { color: inherit; text-decoration: inherit; }
+    button, input, select, textarea { font-family: inherit; font-size: 100%; font-weight: inherit; line-height: inherit; color: inherit; margin: 0; padding: 0; }
+    button, select { text-transform: none; }
+    button, [type="button"], [type="reset"], [type="submit"] { -webkit-appearance: button; background-color: transparent; background-image: none; cursor: pointer; }
+    img, svg { display: block; vertical-align: middle; max-width: 100%; height: auto; }
+
+    /* Custom Design System Classes */
+    .bg-oatmeal { background-color: #fcfaf7; }
+    .bg-cream { background-color: #f2ede4; }
+    .bg-charcoal { background-color: #222624; }
+    .bg-moss { background-color: #4a5d4e; }
+    .bg-berry { background-color: #9e3a35; }
+    .bg-stone-custom { background-color: #e6dfd1; }
+    
+    .text-oatmeal { color: #fcfaf7; }
+    .text-cream { color: #f2ede4; }
+    .text-charcoal { color: #222624; }
+    .text-moss { color: #4a5d4e; }
+    .text-berry { color: #9e3a35; }
+    
+    .border-stone-custom { border-color: #e6dfd1; }
+
+    .font-serif { font-family: 'Playfair Display', serif; }
+    .font-sans { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    .glass-nav {
+      background: rgba(252, 250, 247, 0.88);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: #f2ede4; }
+    ::-webkit-scrollbar-thumb { background: #4a5d4e; border-radius: 4px; }
+
+    /* Reduced Motion Support */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+
+  <!-- External Libraries: Three.js and GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-oatmeal text-charcoal antialiased selection:bg-moss selection:text-white">
+
+  <!-- Independent Concept Banner -->
+  <aside aria-label="Concept Notice" class="bg-charcoal text-oatmeal text-xs sm:text-sm py-2 px-4 text-center tracking-wide font-medium relative z-50">
+    <span>Independent website concept by <strong class="text-white font-semibold">LeadSky</strong> for Café Blåbär (Stockholm, SE). Not their official website.</span>
+  </aside>
+
+  <!-- Navigation Bar -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-stone-custom/60 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo Replacement (Text-based emblem using real business typography since logo image file was invalid/removed per quality check) -->
+      <a href="#" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-moss rounded-lg p-1">
+        <div class="w-10 h-10 rounded-full bg-moss text-white flex items-center justify-center font-serif font-bold text-lg shadow-sm">
+          CB
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl font-bold tracking-tight text-charcoal">Café Blåbär</span>
+          <span class="text-[10px] uppercase tracking-widest text-moss font-semibold">Stockholm</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-charcoal/80">
+        <a href="#menu" class="hover:text-moss transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-moss rounded">Menu</a>
+        <a href="#bakery" class="hover:text-moss transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-moss rounded">Nordic Bakery</a>
+        <a href="#story" class="hover:text-moss transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-moss rounded">Our Sanctuary</a>
+        <a href="#location" class="hover:text-moss transition-colors py-1 focus:outline-none focus:ring-2 focus:ring-moss rounded">Hours & Location</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="hidden sm:flex items-center gap-4">
+        <a href="#reserve" class="bg-moss hover:bg-moss/90 text-white font-medium text-sm px-6 py-2.5 rounded-full shadow-sm hover:shadow transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-moss">
+          Book a Table
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-charcoal hover:bg-cream transition-colors focus:outline-none focus:ring-2 focus:ring-moss" aria-label="Toggle mobile menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-oatmeal border-b border-stone-custom px-6 py-6 space-y-4 shadow-lg">
+      <a href="#menu" class="block font-medium text-lg text-charcoal hover:text-moss py-1">Menu</a>
+      <a href="#bakery" class="block font-medium text-lg text-charcoal hover:text-moss py-1">Nordic Bakery</a>
+      <a href="#story" class="block font-medium text-lg text-charcoal hover:text-moss py-1">Our Sanctuary</a>
+      <a href="#location" class="block font-medium text-lg text-charcoal hover:text-moss py-1">Hours & Location</a>
+      <div class="pt-4 border-t border-stone-custom">
+        <a href="#reserve" class="block text-center bg-moss text-white font-medium py-3 rounded-full shadow">
+          Book a Table
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SSL / Security Notice Banner -->
+    <section class="bg-cream border-b border-stone-custom/80 py-3 px-4">
+      <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs sm:text-sm">
+        <div class="flex items-center gap-2 text-moss font-semibold">
+          <svg class="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+          </svg>
+          <span>SSL Secured Connection Upgrade Active (Replacing previous browser warnings)</span>
+        </div>
+        <div class="text-charcoal/70 font-medium">
+          Stockholm, Sweden • Mo-Fr 08:00-17:00
+        </div>
+      </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="relative pt-12 pb-20 lg:pt-20 lg:pb-32 overflow-hidden bg-oatmeal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Left Text Column -->
+          <div class="lg:col-span-7 space-y-8 z-10">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cream border border-stone-custom text-xs font-semibold uppercase tracking-wider text-moss">
+              <span class="w-2 h-2 rounded-full bg-berry animate-pulse"></span>
+              Stockholm Specialty Coffee & Organic Bakery
+            </div>
+            
+            <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-charcoal leading-[1.12]">
+              Artisanal Coffee & <span class="italic font-normal text-moss">Nordic Sanctuary</span> in Stockholm
+            </h1>
+            
+            <p class="text-lg text-charcoal/80 max-w-xl font-normal leading-relaxed">
+              Single-origin pour-overs, freshly baked cardamom buns, and a tranquil Swedish sanctuary crafted daily in the heart of the city.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
+              <a href="#menu" class="inline-flex items-center justify-center bg-charcoal hover:bg-charcoal/90 text-oatmeal font-medium px-8 py-4 rounded-full shadow-md hover:shadow-lg transition-all text-center">
+                Explore Daily Menu
+              </a>
+              <a href="#location" class="inline-flex items-center justify-center bg-cream hover:bg-stone-custom/50 text-charcoal border border-stone-custom font-medium px-8 py-4 rounded-full transition-all text-center">
+                Find Us in Stockholm
+              </a>
+            </div>
+
+            <div class="pt-6 border-t border-stone-custom/80 grid grid-cols-3 gap-4 max-w-lg">
+              <div>
+                <span class="block font-serif text-2xl font-bold text-charcoal">08:00</span>
+                <span class="text-xs text-charcoal/70 uppercase tracking-wider">Morning Opening</span>
+              </div>
+              <div>
+                <span class="block font-serif text-2xl font-bold text-charcoal">100%</span>
+                <span class="text-xs text-charcoal/70 uppercase tracking-wider">Organic Flour</span>
+              </div>
+              <div>
+                <span class="block font-serif text-2xl font-bold text-charcoal">Fresh</span>
+                <span class="text-xs text-charcoal/70 uppercase tracking-wider">Cardamom Buns</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Visual / Interactive 3D Column -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-stone-custom bg-cream aspect-[4/5] group">
+              <!-- Background Photography (Fallback & Atmosphere with high contrast dark gradient overlay) -->
+              <img src="img/stock-1.jpg" alt="Swedish cardamom bun and specialty coffee in Stockholm" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              
+              <!-- Dark gradient overlay for guaranteed text contrast (at least rgba(0,0,0,.55) behind white text) -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/10"></div>
+
+              <!-- Interactive Three.js Container -->
+              <div id="canvas-container" class="absolute inset-0 z-10 cursor-grab active:cursor-grabbing" title="Interactive 3D Ceramic Cup - Drag to rotate"></div>
+
+              <!-- Foreground Badge on Image with solid light panel for perfect contrast -->
+              <div class="absolute bottom-6 left-6 right-6 z-20 bg-oatmeal/95 backdrop-blur-md p-5 rounded-2xl border border-stone-custom shadow-lg">
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] uppercase font-semibold text-moss tracking-widest block">Signature Treat</span>
+                    <h3 class="font-serif text-lg font-bold text-charcoal">Cardamom Bun & Filter Coffee</h3>
+                  </div>
+                  <span class="bg-berry text-white text-xs px-3 py-1 rounded-full font-medium">Daily Baked</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Decorative background blob -->
+            <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-stone-custom/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily Menu Highlights Section -->
+    <section id="menu" class="py-20 bg-cream/60 border-y border-stone-custom/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <span class="text-xs font-semibold uppercase tracking-widest text-moss">Handcrafted Offerings</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">The Daily Menu</h2>
+          <p class="text-charcoal/70">From morning pour-overs to warm artisan sourdough and freshly spiced cardamom buns, baked with care in Stockholm.</p>
+        </div>
+
+        <!-- Menu Category Tabs -->
+        <div class="flex justify-center gap-2 sm:gap-4 mb-12 flex-wrap" role="tablist">
+          <button role="tab" aria-selected="true" data-tab="coffee" class="menu-tab px-6 py-2.5 rounded-full text-sm font-medium transition-all bg-moss text-white shadow-sm">Specialty Coffee</button>
+          <button role="tab" aria-selected="false" data-tab="bakery" class="menu-tab px-6 py-2.5 rounded-full text-sm font-medium transition-all bg-oatmeal text-charcoal border border-stone-custom hover:border-moss">Bakery & Pastries</button>
+          <button role="tab" aria-selected="false" data-tab="breakfast" class="menu-tab px-6 py-2.5 rounded-full text-sm font-medium transition-all bg-oatmeal text-charcoal border border-stone-custom hover:border-moss">Morning Toast & Bowls</button>
+        </div>
+
+        <!-- Menu Panels -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          
+          <!-- Coffee Panel -->
+          <div id="panel-coffee" class="menu-panel grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-oatmeal p-6 rounded-2xl border border-stone-custom/80 shadow-sm flex flex-col justify-between hover:border-moss/50 transition-all">
+              <div>
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="font-serif font-bold text-lg text-charcoal">Pour-Over Single Origin</h3>
+                  <span class="font-serif font-semibold text-moss">SEK 52</span>
+                </div>
+                <p class="text-xs text-charcoal/70 mb-4">Clean, delicate roast brewed to order with seasonal micro-lot beans.</p>
+              </div>
+              <div class="h-32 rounded-xl overflow-hidden mt-2 relative">
+                <img src="img/stock-5.jpg" alt="Pour over specialty coffee" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <div class="bg-oatmeal p-6 rounded-2xl border border-stone-custom/80 shadow-sm flex flex-col justify-between hover:border-moss/50 transition-all">
+              <div>
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="font-serif font-bold text-lg text-charcoal">Classic Flat White</h3>
+                  <span class="font-serif font-semibold text-moss">SEK 46</span>
+                </div>
+                <p class="text-xs text-charcoal/70 mb-4">Double ristretto shot paired with silky textured organic Swedish milk.</p>
+              </div>
+              <div class="h-32 rounded-xl overflow-hidden mt-2 relative">
+                <img src="img/stock-6.jpg" alt="Filter coffee ceramic cup" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <div class="bg-oatmeal p-6 rounded-2xl border border-stone-custom/80 shadow-sm flex flex-col justify-between hover:border-moss/50 transition-all">
+              <div>
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="font-serif font-bold text-lg text-charcoal">Swedish Filter Coffee</h3>
+                  <span class="font-serif font-semibold text-moss">SEK 38</span>
+                </div>
+                <p class="text-xs text-charcoal/70 mb-4">Classic Swedish bryggkaffe with free refills during morning hours.</p>
+              </div>
+              <div class="h-32 rounded-xl overflow-hidden mt-2 relative">
+                <img src="img/stock-2.jpg" alt="Fresh coffee beans and cup" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <div class="bg-oatmeal p-6 rounded-2xl border border-stone-custom/80 shadow-sm flex flex-col justify-between hover:border-moss/50 transition-all">
+              <div>
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="font-serif font-bold text-lg text-charcoal">Caffè Latte</h3>
+                  <span class="font-serif font-semibold text-moss">SEK 48</span>
+                </div>
+                <p class="text-xs text-charcoal/70 mb-4">Smooth espresso with steamed organic whole milk or oat milk option.</p>
+              </div>
+              <div class="h-32 rounded-xl overflow-hidden mt-2 relative">
+                <img src="img/stock-9.jpg" alt="Barista preparing coffee" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+
+          <!-- Bakery Panel (Hidden by default) -->
+          <div id="panel-bakery" class="menu-panel hidden grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-oatmeal p-6 rounded-2xl border border-stone-custom/80 shadow-sm flex flex-col justify-between hover:border-moss/50 transition-all">
+              <div>
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="font-serif font-bold text-lg text-charcoal">Cardamom Bun (Kardemummabulle)</h3>
+                  <span class="font-serif font-semibold text-moss">SEK 44</span>
+                </div>
+                <p class="text-xs text-charcoal/70 mb-4">Freshly ground green cardamom, butter, and pearl sugar baked golden.</p>
+              </div>
+              <div class="h-32 rounded-xl overflow-hidden mt-2 relative">
+                <img src="img/stock-1.jpg" alt="Swedish cardamom bun" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <div class="bg-oatmeal p-6 rounded-2xl border border-stone-custom/80 shadow-sm flex flex-col justify-between hover:border-moss/50 transition-all">
+              <div>
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="font-serif font-bold text-lg text-charcoal">Cinnamon Bun (Kanelbulle)</h3>
+                  <span class="font-serif font-semibold text-moss">SEK 42</span>
+                </div>
+                <p class="text-xs text-charcoal/70 mb-4">Traditional Swedish cinnamon swirl with rich butter filling and pearl sugar.</p>
+              </div>
+              <div class="h-32 rounded-xl overflow-hidden mt-2 relative">
+                <img src="img/stock-8.jpg" alt="Assorted bakery pastries" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <div class="bg-oatmeal p-6 rounded-2xl border border-stone-custom/80 shadow-sm flex flex-col justify-between hover:border-moss/50 transition-all">
+              <div>
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="font-serif font-bold text-lg text-charcoal">Artisan Sourdough Loaf</h3>
+                  <span class="font-serif font-semibold text-moss">SEK 65</span>
+                </div>
+                <p class="text-xs text-charcoal/70 mb-4">Organic Swedish stone-ground wheat and rye, fermented for 36 hours.</p>
+              </div>
+              <div class="h-32 rounded-xl overflow-hidden mt-2 relative">
+                <img src="img/stock-7.jpg" alt="Fresh artisan sourdough bread" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <div class="bg-oatmeal p-6 rounded-2xl border border-stone-custom/80 shadow-sm flex flex-col justify-between hover:border-moss/50 transition-all">
+              <div>
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="font-serif font-bold text-lg text-charcoal">Swedish Berry Tart</h3>
+                  <span class="font-serif font-semibold text-moss">SEK 58</span>
+                </div>
+                <p class="text-xs text-charcoal/70 mb-4">Seasonal wild Nordic berries in a crisp shortcrust pastry shell with vanilla cream.</p>
+              </div>
+              <div class="h-32 rounded-xl overflow-hidden mt-2 relative">
+                <img src="img/stock-4.jpg" alt="Nordic cafe interior detail" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+
+          <!-- Breakfast Panel (Hidden by default) -->
+          <div id="panel-breakfast" class="menu-panel hidden grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-oatmeal p-6 rounded-2xl border border-stone-custom/80 shadow-sm flex flex-col justify-between hover:border-moss/50 transition-all">
+              <div>
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="font-serif font-bold text-lg text-charcoal">Avocado & Seed Sourdough Toast</h3>
+                  <span class="font-serif font-semibold text-moss">SEK 95</span>
+                </div>
+                <p class="text-xs text-charcoal/70 mb-4">Smashed avocado, toasted hemp seeds, lemon oil, and microgreens on house sourdough.</p>
+              </div>
+              <div class="h-32 rounded-xl overflow-hidden mt-2 relative">
+                <img src="img/stock-7.jpg" alt="Sourdough bread toast" class="w-full h-full object-cover">
+              </div>
+            </div>
+
+            <div class="bg-oatmeal p-6 rounded-2xl border border-stone-custom/80 shadow-sm flex flex-col justify-between hover:border-moss/50 transition-all">
+              <div>
+                <div class="flex justify-between items-start mb-2">
+                  <h3 class="font-serif font-bold text-lg text-charcoal">Nordic Breakfast Bowl</h3>
+                  <span class="font-serif font-semibold text-moss">SEK 85</span>
+                </div>
+                <p class="text-xs text-charcoal/70 mb-4">Organic skyr yogurt, house-toasted oat granola, lingonberries, and runny honey.</p>
+              </div>
+              <div class="h-32 rounded-xl overflow-hidden mt-2 relative">
+                <img src="img/stock-3.jpg" alt="Minimalist cafe setting" class="w-full h-full object-cover">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Nordic Bakery & Kitchen Section -->
+    <section id="bakery" class="py-24 bg-oatmeal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-5 space-y-6">
+            <span class="text-xs font-semibold uppercase tracking-widest text-moss">Swedish Craftsmanship</span>
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">Baking with Pride in Stockholm</h2>
+            <p class="text-charcoal/80 leading-relaxed">
+              Every morning before sunrise, our ovens are warmed to bake traditional Swedish pastries and sourdough loaves using locally milled, organic flours. We believe in unhurried craftsmanship, simple wholesome ingredients, and the comforting ritual of fika.
+            </p>
+            <div class="space-y-3 pt-2">
+              <div class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-moss/10 text-moss flex items-center justify-center font-bold text-xs">✓</div>
+                <span class="text-sm font-medium text-charcoal">Locally sourced organic wheat & rye from Swedish farms</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-moss/10 text-moss flex items-center justify-center font-bold text-xs">✓</div>
+                <span class="text-sm font-medium text-charcoal">Freshly ground green cardamom pods for signature buns</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-moss/10 text-moss flex items-center justify-center font-bold text-xs">✓</div>
+                <span class="text-sm font-medium text-charcoal">Fair-trade specialty coffee beans roasted in Scandinavia</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7 grid grid-cols-2 gap-4">
+            <div class="space-y-4">
+              <div class="rounded-2xl overflow-hidden shadow-md aspect-[4/3]">
+                <img src="img/stock-7.jpg" alt="Artisan bakery sourdough display" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="rounded-2xl overflow-hidden shadow-md aspect-[1/1]">
+                <img src="img/stock-9.jpg" alt="Friendly barista behind counter" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+            </div>
+            <div class="space-y-4 pt-8">
+              <div class="rounded-2xl overflow-hidden shadow-md aspect-[1/1]">
+                <img src="img/stock-1.jpg" alt="Fresh Swedish cardamom bun" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+              <div class="rounded-2xl overflow-hidden shadow-md aspect-[4/3]">
+                <img src="img/stock-3.jpg" alt="Nordic minimalist cafe interior" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Sanctuary / Story Section -->
+    <section id="story" class="py-24 bg-cream/80 border-t border-stone-custom/60">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+        <span class="text-xs font-semibold uppercase tracking-widest text-moss">The Atmosphere</span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-bold text-charcoal">A Peaceful Corner in Stockholm</h2>
+        <p class="text-lg text-charcoal/80 leading-relaxed font-normal">
+          Café Blåbär was created as a quiet retreat from the rhythm of the city. With warm blonde birch wood, natural morning light filtering through large glass windows, and the comforting aroma of freshly ground cardamom and artisan coffee, our space welcomes remote workers, students, and neighbors alike.
+        </p>
+        <div class="pt-4 flex justify-center gap-4">
+          <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-stone-custom shadow-md">
+            <img src="img/stock-4.jpg" alt="Cafe interior detail" class="w-full h-full object-cover">
+          </div>
+          <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-stone-custom shadow-md">
+            <img src="img/stock-5.jpg" alt="Specialty pour over coffee" class="w-full h-full object-cover">
+          </div>
+          <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-stone-custom shadow-md">
+            <img src="img/stock-8.jpg" alt="Fresh bakery display" class="w-full h-full object-cover">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Hours & Location Section -->
+    <section id="location" class="py-24 bg-oatmeal">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+          <span class="text-xs font-semibold uppercase tracking-widest text-moss">Visit Us</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-charcoal">Hours & Location</h2>
+          <p class="text-charcoal/70">Drop by our Stockholm sanctuary for your morning coffee and warm bakery treats.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Hours & Contact Info Card -->
+          <div class="lg:col-span-5 bg-cream p-8 sm:p-10 rounded-3xl border border-stone-custom shadow-sm flex flex-col justify-between space-y-8">
+            <div class="space-y-6">
+              <h3 class="font-serif text-2xl font-bold text-charcoal">Café Blåbär Stockholm</h3>
+              
+              <div class="space-y-4 pt-2 border-t border-stone-custom/80">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-oatmeal border border-stone-custom flex items-center justify-center flex-shrink-0 text-moss">
+                    📍
+                  </div>
+                  <div>
+                    <span class="block text-xs uppercase font-semibold text-charcoal/60 tracking-wider">Address</span>
+                    <span class="text-base font-medium text-charcoal">Stockholm, Sweden</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-oatmeal border border-stone-custom flex items-center justify-center flex-shrink-0 text-moss">
+                    🕒
+                  </div>
+                  <div>
+                    <span class="block text-xs uppercase font-semibold text-charcoal/60 tracking-wider">Opening Hours</span>
+                    <span class="text-base font-medium text-charcoal">Monday – Friday: 08:00 – 17:00</span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-oatmeal border border-stone-custom flex items-center justify-center flex-shrink-0 text-moss">
+                    📞
+                  </div>
+                  <div>
+                    <span class="block text-xs uppercase font-semibold text-charcoal/60 tracking-wider">Phone</span>
+                    <a href="tel:+4686538358" class="text-base font-medium text-charcoal hover:text-moss transition-colors">+46 8 653 83 58</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-xl bg-oatmeal border border-stone-custom flex items-center justify-center flex-shrink-0 text-moss">
+                    ✉️
+                  </div>
+                  <div>
+                    <span class="block text-xs uppercase font-semibold text-charcoal/60 tracking-wider">Email</span>
+                    <a href="mailto:info@cafeblabar.se" class="text-base font-medium text-charcoal hover:text-moss transition-colors">info@cafeblabar.se</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6 border-t border-stone-custom/80">
+              <a href="tel:+4686538358" class="block w-full text-center bg-charcoal hover:bg-charcoal/90 text-oatmeal font-medium py-3.5 rounded-full shadow transition-all">
+                Call the Café (+46 8 653 83 58)
+              </a>
+            </div>
+          </div>
+
+          <!-- Interactive Map / Location Preview -->
+          <div class="lg:col-span-7 bg-cream rounded-3xl border border-stone-custom overflow-hidden shadow-sm relative min-h-[400px] flex items-center justify-center">
+            <!-- Atmospheric Stockholm Map Representation -->
+            <div class="absolute inset-0 bg-[#e8e2d5] opacity-90"></div>
+            
+            <!-- Stylized Map Grid Lines -->
+            <div class="absolute inset-0" style="background-image: radial-gradient(#c7bfae 1px, transparent 1px); background-size: 24px 24px; opacity: 0.6;"></div>
+
+            <!-- Map Pin Card -->
+            <div class="relative z-10 bg-oatmeal/95 backdrop-blur-md p-6 rounded-2xl border border-stone-custom shadow-xl max-w-sm mx-4 text-center space-y-3">
+              <div class="w-12 h-12 bg-moss text-white rounded-full flex items-center justify-center mx-auto text-xl shadow-md">
+                ☕
+              </div>
+              <h4 class="font-serif font-bold text-lg text-charcoal">Café Blåbär</h4>
+              <p class="text-xs text-charcoal/70">Stockholm, Sweden. Centrally located and easily accessible by Stockholm public transit.</p>
+              <div class="pt-2">
+                <a href="https://maps.google.com/?q=Stockholm+Café+Blåbär" target="_blank" rel="noopener noreferrer" class="inline-block text-xs font-semibold bg-moss text-white px-4 py-2 rounded-full hover:bg-moss/90 transition-colors">
+                  Open in Google Maps →
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Table Reservation / Inquiry Section -->
+    <section id="reserve" class="py-24 bg-cream/70 border-t border-stone-custom/60">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-oatmeal p-8 sm:p-12 rounded-3xl border border-stone-custom shadow-lg space-y-8">
+          
+          <div class="text-center space-y-3">
+            <span class="text-xs font-semibold uppercase tracking-widest text-moss">Plan Your Visit</span>
+            <h2 class="font-serif text-3xl font-bold text-charcoal">Request a Table Reservation</h2>
+            <p class="text-sm text-charcoal/70">Reserve a cozy corner for your morning coffee or afternoon meeting in Stockholm. (Open Mo-Fr 08:00–17:00)</p>
+          </div>
+
+          <form id="reservation-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div class="space-y-2">
+                <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-charcoal/80">Your Name *</label>
+                <input type="text" id="name" required class="w-full bg-cream border border-stone-custom rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-moss text-charcoal" placeholder="Astrid Lindström">
+              </div>
+
+              <div class="space-y-2">
+                <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-charcoal/80">Email Address *</label>
+                <input type="email" id="email" required class="w-full bg-cream border border-stone-custom rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-moss text-charcoal" placeholder="astrid@example.se">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div class="space-y-2">
+                <label for="date" class="block text-xs font-semibold uppercase tracking-wider text-charcoal/80">Date (Mo-Fr) *</label>
+                <input type="date" id="date" required class="w-full bg-cream border border-stone-custom rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-moss text-charcoal">
+              </div>
+
+              <div class="space-y-2">
+                <label for="time" class="block text-xs font-semibold uppercase tracking-wider text-charcoal/80">Time (08:00–17:00) *</label>
+                <select id="time" required class="w-full bg-cream border border-stone-custom rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-moss text-charcoal">
+                  <option value="">Select time</option>
+                  <option value="08:00">08:00 AM</option>
+                  <option value="09:00">09:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:00">01:00 PM</option>
+                  <option value="14:00">02:00 PM</option>
+                  <option value="15:00">03:00 PM</option>
+                  <option value="16:00">04:00 PM</option>
+                </select>
+              </div>
+
+              <div class="space-y-2">
+                <label for="guests" class="block text-xs font-semibold uppercase tracking-wider text-charcoal/80">Guests *</label>
+                <select id="guests" required class="w-full bg-cream border border-stone-custom rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-moss text-charcoal">
+                  <option value="1">1 Person</option>
+                  <option value="2" selected>2 People</option>
+                  <option value="3">3 People</option>
+                  <option value="4">4 People</option>
+                  <option value="5+">5+ People</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label for="notes" class="block text-xs font-semibold uppercase tracking-wider text-charcoal/80">Special Requests (Optional)</label>
+              <textarea id="notes" rows="3" class="w-full bg-cream border border-stone-custom rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-moss text-charcoal" placeholder="Quiet corner table or dietary preferences..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-moss hover:bg-moss/90 text-white font-medium py-4 rounded-full shadow-md hover:shadow-lg transition-all text-base">
+              Submit Reservation Request
+            </button>
+
+            <!-- Form Demo Status Notification -->
+            <div id="form-message" class="hidden p-4 rounded-2xl bg-stone-custom/40 border border-stone-custom text-center text-sm font-medium text-charcoal">
+              This is a demo form, nothing was sent.
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal text-oatmeal py-16 border-t border-stone-custom/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        
+        <div class="space-y-4 md:col-span-2">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-moss text-white flex items-center justify-center font-serif font-bold text-sm">
+              CB
+            </div>
+            <span class="font-serif text-xl font-bold tracking-tight text-white">Café Blåbär</span>
+          </div>
+          <p class="text-sm text-oatmeal/70 max-w-sm leading-relaxed">
+            Stockholm's tranquil neighborhood sanctuary for single-origin specialty coffee, fresh organic cardamom buns, and daily artisan sourdough.
+          </p>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="font-serif font-bold text-base text-white">Quick Links</h4>
+          <ul class="space-y-2 text-sm text-oatmeal/70">
+            <li><a href="#menu" class="hover:text-white transition-colors">Daily Menu</a></li>
+            <li><a href="#bakery" class="hover:text-white transition-colors">Nordic Bakery</a></li>
+            <li><a href="#story" class="hover:text-white transition-colors">Our Sanctuary</a></li>
+            <li><a href="#location" class="hover:text-white transition-colors">Hours & Location</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-3">
+          <h4 class="font-serif font-bold text-base text-white">Contact & Hours</h4>
+          <p class="text-sm text-oatmeal/70">Stockholm, Sweden</p>
+          <p class="text-sm text-oatmeal/70">Mo-Fr 08:00 – 17:00</p>
+          <p class="text-sm text-oatmeal/70"><a href="tel:+4686538358" class="hover:text-white">+46 8 653 83 58</a></p>
+          <p class="text-sm text-oatmeal/70"><a href="mailto:info@cafeblabar.se" class="hover:text-white">info@cafeblabar.se</a></p>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-oatmeal/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-oatmeal/60">
+        <div>
+          <span>Independent website concept by <strong class="text-white font-medium">LeadSky</strong>. Not affiliated with Café Blåbär official.</span>
+        </div>
+        <div class="flex flex-wrap gap-x-6 gap-y-2">
+          <span>Stock Photos via Pixabay: 
+            <a href="https://pixabay.com/photos/coffee-coffee-grinds-cafe-206142/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">eliasfalla</a>,
+            <a href="https://pixabay.com/photos/coffee-coffee-beans-cup-coffee-cup-171653/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">Christoph</a>,
+            <a href="https://pixabay.com/photos/furniture-living-room-modern-998265/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">newhouse</a>,
+            <a href="https://pixabay.com/photos/real-estate-sofa-living-room-table-9053405/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">23555986</a>,
+            <a href="https://pixabay.com/photos/coffee-drinking-drinking-coffee-hot-2397277/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">FabianoAdvertising</a>,
+            <a href="https://pixabay.com/photos/coffee-cup-filter-coffee-filter-2139592/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">pixel2013</a>,
+            <a href="https://pixabay.com/photos/bread-loaves-food-bakery-craft-8128550/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">wal_172619</a>,
+            <a href="https://pixabay.com/photos/bakery-breads-assorted-assortment-1868925/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">Pexels</a>,
+            <a href="https://pixabay.com/photos/coffee-cappuccino-latte-espresso-4334647/" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">13027327</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Implementation -->
+  <script>
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+      });
+    }
+
+    // Menu Tabs Functionality
+    const tabButtons = document.querySelectorAll('.menu-tab');
+    const menuPanels = document.querySelectorAll('.menu-panel');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetTab = btn.getAttribute('data-tab');
+
+        // Update button active states
+        tabButtons.forEach(b => {
+          b.setAttribute('aria-selected', 'false');
+          b.classList.remove('bg-moss', 'text-white', 'shadow-sm');
+          b.classList.add('bg-oatmeal', 'text-charcoal', 'border', 'border-stone-custom');
+        });
+        btn.setAttribute('aria-selected', 'true');
+        btn.classList.remove('bg-oatmeal', 'text-charcoal', 'border', 'border-stone-custom');
+        btn.classList.add('bg-moss', 'text-white', 'shadow-sm');
+
+        // Update panel visibility
+        menuPanels.forEach(panel => {
+          if (panel.id === `panel-${targetTab}`) {
+            panel.classList.remove('hidden');
+          } else {
+            panel.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Form Submission Handler
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      const formMessage = document.getElementById('form-message');
+      if (formMessage) {
+        formMessage.classList.remove('hidden');
+        formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+
+    // Three.js Interactive Ceramic Coffee Cup 3D Scene (with reduced-motion compliance and IntersectionObserver pause)
+    const container = document.getElementById('canvas-container');
+    if (container && typeof THREE !== 'undefined' && !prefersReducedMotion) {
+      const scene = new THREE.Scene();
+      
+      const camera = new THREE.PerspectiveCamera(42, container.clientWidth / container.clientHeight, 0.1, 1000);
+      camera.position.set(0, 1.8, 5.2);
+      camera.lookAt(0, 0.2, 0);
+
+      const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.shadowMap.enabled = true;
+      container.appendChild(renderer.domElement);
+
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+      scene.add(ambientLight);
+
+      const dirLight = new THREE.DirectionalLight(0xfffaf0, 2.0);
+      dirLight.position.set(4, 6, 4);
+      dirLight.castShadow = true;
+      scene.add(dirLight);
+
+      const pointLight = new THREE.PointLight(0xd4af37, 1.5, 10);
+      pointLight.position.set(-3, 2, -2);
+      scene.add(pointLight);
+
+      // Group for cup assembly
+      const cupGroup = new THREE.Group();
+      scene.add(cupGroup);
+
+      // Ceramic Cup Body (Cream Glaze)
+      const cupGeo = new THREE.CylinderGeometry(0.9, 0.7, 1.3, 32);
+      const cupMat = new THREE.MeshStandardMaterial({
+        color: 0xf5f0ea,
+        roughness: 0.25,
+        metalness: 0.05
+      });
+      const cupMesh = new THREE.Mesh(cupGeo, cupMat);
+      cupMesh.position.y = 0.65;
+      cupGroup.add(cupMesh);
+
+      // Coffee Liquid inside
+      const coffeeGeo = new THREE.CylinderGeometry(0.86, 0.66, 0.1, 32);
+      const coffeeMat = new THREE.MeshStandardMaterial({
+        color: 0x3d2314,
+        roughness: 0.4,
+        metalness: 0.1
+      });
+      const coffeeMesh = new THREE.Mesh(coffeeGeo, coffeeMat);
+      coffeeMesh.position.y = 1.15;
+      cupGroup.add(coffeeMesh);
+
+      // Saucer
+      const saucerGeo = new THREE.CylinderGeometry(1.6, 1.3, 0.15, 32);
+      const saucerMat = new THREE.MeshStandardMaterial({
+        color: 0xf9f6f0,
+        roughness: 0.3,
+        metalness: 0.05
+      });
+      const saucerMesh = new THREE.Mesh(saucerGeo, saucerMat);
+      saucerMesh.position.y = 0.075;
+      cupGroup.add(saucerMesh);
+
+      // Cup Handle (Torus)
+      const handleGeo = new THREE.TorusGeometry(0.4, 0.1, 16, 32, Math.PI);
+      const handleMat = new THREE.MeshStandardMaterial({
+        color: 0xf5f0ea,
+        roughness: 0.25,
+        metalness: 0.05
+      });
+      const handleMesh = new THREE.Mesh(handleGeo, handleMat);
+      handleMesh.rotation.z = Math.PI / 2;
+      handleMesh.position.set(-0.95, 0.7, 0);
+      cupGroup.add(handleMesh);
+
+      // Interaction State & Mouse Rotation
+      let isDragging = false;
+      let previousMousePosition = { x: 0, y: 0 };
+      let targetRotation = { x: 0.2, y: -0.6 };
+
+      container.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        previousMousePosition = { x: e.clientX, y: e.clientY };
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.clientX - previousMousePosition.x;
+        const deltaY = e.clientY - previousMousePosition.y;
+
+        targetRotation.y += deltaX * 0.008;
+        targetRotation.x += deltaY * 0.008;
+        
+        targetRotation.x = Math.max(-0.2, Math.min(0.8, targetRotation.x));
+        previousMousePosition = { x: e.clientX, y: e.clientY };
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      // Touch support for mobile
+      container.addEventListener('touchstart', (e) => {
+        if (e.touches.length === 1) {
+          isDragging = true;
+          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+      });
+
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging || e.touches.length !== 1) return;
+        const deltaX = e.touches[0].clientX - previousMousePosition.x;
+        const deltaY = e.touches[0].clientY - previousMousePosition.y;
+
+        targetRotation.y += deltaX * 0.008;
+        targetRotation.x += deltaY * 0.008;
+        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      });
+
+      window.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+
+      // Animation Loop with Visibility Pause (IntersectionObserver)
+      let animationFrameId;
+      let isVisible = true;
+      let clock = new THREE.Clock();
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          isVisible = entry.isIntersecting;
+        });
+      }, { threshold: 0.1 });
+      observer.observe(container);
+
+      function animate() {
+        if (isVisible) {
+          if (!isDragging) {
+            targetRotation.y += 0.004;
+          }
+
+          cupGroup.rotation.y += (targetRotation.y - cupGroup.rotation.y) * 0.08;
+          cupGroup.rotation.x += (targetRotation.x - cupGroup.rotation.x) * 0.08;
+
+          const elapsedTime = clock.getElapsedTime();
+          cupGroup.position.y = Math.sin(elapsedTime * 1.5) * 0.04;
+
+          renderer.render(scene, camera);
+        }
+        animationFrameId = requestAnimationFrame(animate);
+      }
+      animate();
+
+      // Responsive Resize
+      window.addEventListener('resize', () => {
+        if (!container) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      });
+    } else if (container && prefersReducedMotion) {
+      // Static fallback for reduced motion
+      container.innerHTML = '<div class="absolute inset-0 flex items-center justify-center text-xs text-charcoal/60 bg-cream/50">3D animation paused per user accessibility settings</div>';
+    }
+  </script>
+</body>
+</html>
