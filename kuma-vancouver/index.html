@@ -1,1367 +1,1672 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>Kuma Japanese | Authentic Japanese Dining in Vancouver</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Kuma Japanese | Authentic Japanese Culinary Craftsmanship in Vancouver</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root {
+  --bg: #faf9f6;
+  --surface: #f0ebe1;
+  --primary: #1a365d;
+  --text: #2b2b2b;
+  --accent: #556b2f;
+  --white: #ffffff;
+  --border: rgba(26, 54, 93, 0.12);
+  --font-serif: 'Noto Serif JP', serif;
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Slim Demo Banner */
+.demo-banner {
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Navigation */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(250, 249, 246, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand span {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-top: -2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-cta {
+  background: var(--primary);
+  color: var(--white) !important;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: #112540;
+  transform: translateY(-1px);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--primary);
+  margin: 5px 0;
+  transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  min-height: calc(100vh - 75px);
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 4rem 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  line-height: 1.15;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  max-width: 520px;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  border: 2px solid var(--primary);
+}
+
+.btn-primary:hover {
+  background: #112540;
+  border-color: #112540;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary);
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--border);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary);
+  background: rgba(26, 54, 93, 0.03);
+}
+
+.hero-media {
+  position: relative;
+  height: 520px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* Semi-transparent dark gradient overlay for hero media to ensure WCAG AA contrast */
+.hero-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0.1) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-media:hover img {
+  transform: scale(1);
+}
+
+/* About / Heritage */
+.about {
+  padding: 7rem 2rem;
+  background: var(--surface);
+  position: relative;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem auto;
+}
+
+.section-header h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: #555;
+  font-size: 1.05rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-images {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.about-img-box {
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+}
+
+.about-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-img-box.tall {
+  height: 420px;
+}
+
+.about-img-box.short {
+  height: 300px;
+  margin-top: 60px;
+}
+
+.about-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.about-content p {
+  color: #4a4a4a;
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+.feature-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-item h4 {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: 0.3rem;
+  font-family: var(--font-serif);
+}
+
+.feature-item p {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* 3D Interactive Showcase */
+.interactive-showcase {
+  padding: 6rem 2rem;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.canvas-container {
+  width: 100%;
+  height: 450px;
+  background: radial-gradient(circle, rgba(240,235,225,1) 0%, rgba(250,249,246,1) 100%);
+  border-radius: 12px;
+  position: relative;
+  cursor: grab;
+  border: 1px solid var(--border);
+}
+
+.canvas-container:active {
+  cursor: grabbing;
+}
+
+.canvas-hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.85);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: var(--primary);
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Interactive Menu Showcase */
+.menu-section {
+  padding: 7rem 2rem;
+  background: var(--white);
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+
+.menu-tab {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1.75rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--text);
+  transition: all 0.2s ease;
+  font-family: var(--font-sans);
+}
+
+.menu-tab.active, .menu-tab:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.menu-card {
+  background: var(--bg);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+}
+
+.menu-card-img {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.menu-card:hover .menu-card-img img {
+  transform: scale(1.06);
+}
+
+.menu-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(26, 54, 93, 0.95);
+  backdrop-filter: blur(4px);
+  color: var(--white);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.menu-card-body {
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: space-between;
+}
+
+.menu-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.8rem;
+}
+
+.menu-card-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: var(--primary);
+}
+
+.menu-price {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.menu-card-body p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Omakase Experience Spotlight */
+.omakase {
+  padding: 7rem 2rem;
+  background: var(--surface);
+  position: relative;
+}
+
+.omakase-banner {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: var(--primary);
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: var(--white);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.omakase-content {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.omakase-content .eyebrow {
+  color: #a3b899;
+}
+
+.omakase-content .eyebrow::before {
+  background: #a3b899;
+}
+
+.omakase-content h2 {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+.omakase-content p {
+  color: #e2e8f0;
+  line-height: 1.7;
+}
+
+.omakase-img {
+  position: relative;
+  min-height: 400px;
+}
+
+.omakase-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Location & Hours Section */
+.location-section {
+  padding: 7rem 2rem;
+  background: var(--bg);
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.location-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 3rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.location-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.info-group {
+  margin-bottom: 1.8rem;
+}
+
+.info-group label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.info-group p {
+  color: #4a4a4a;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.info-group a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.info-group a:hover {
+  color: var(--accent);
+}
+
+.map-placeholder {
+  background: var(--surface);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  min-height: 450px;
+  border: 1px solid var(--border);
+}
+
+.map-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.map-overlay-card {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border);
+}
+
+.map-overlay-card h4 {
+  font-family: var(--font-serif);
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.map-overlay-card p {
+  font-size: 0.85rem;
+  color: #333333;
+  font-weight: 500;
+}
+
+/* Reservation Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-container {
+  background: var(--white);
+  width: 100%;
+  max-width: 550px;
+  border-radius: 8px;
+  padding: 3rem;
+  position: relative;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-container {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--primary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  transition: background 0.2s;
+}
+
+.modal-close:hover {
+  background: var(--surface);
+}
+
+.modal-title {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.modal-subtitle {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: var(--white);
+}
+
+.form-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  display: none;
+}
+
+.form-message.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+  display: block;
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: var(--white);
+  padding: 5rem 2rem 2rem 2rem;
+}
+
+.footer-grid {
+  max-width: 1280px;
+  margin: 0 auto 4rem auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+}
+
+.footer-brand .brand {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer-brand .brand span {
+  color: #a3b899;
+}
+
+.footer-brand p {
+  color: #cbd5e1;
+  max-width: 350px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-links h4 {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s;
+  font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+.footer-bottom {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.photo-credits {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.photo-credits a {
+  color: #cbd5e1;
+  text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 968px) {
+  .hero-grid, .about-grid, .showcase-grid, .location-grid, .omakase-banner, .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
   
-  <!-- Google Fonts: Shippori Mincho & Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- External Libraries: Three.js r128, GSAP 3.12.5, ScrollTrigger -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <style>
-    :root {
-      --bg: #fbf9f6;
-      --bg-alt: #f3ede2;
-      --accent-red: #c44536;
-      --text-main: #2b2b2b;
-      --text-muted: #6b6b6b;
-      --sage: #7c8c73;
-      --card-bg: #ffffff;
-      --border-color: #e5ded2;
-      --font-serif: 'Shippori Mincho', serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
-      --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text-main);
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Top Concept Banner */
-    .concept-banner {
-      background: var(--text-main);
-      color: var(--bg);
-      text-align: center;
-      padding: 0.65rem 1rem;
-      font-size: 0.825rem;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      position: relative;
-      z-index: 1000;
-    }
-
-    /* Navigation */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 900;
-      background: rgba(251, 249, 246, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-      transition: var(--transition);
-    }
-
-    .nav-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 1.25rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand-logo {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--text-main);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .brand-logo span {
-      color: var(--accent-red);
-      font-size: 0.75rem;
-      font-family: var(--font-sans);
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      border-left: 1px solid var(--border-color);
-      padding-left: 0.5rem;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-main);
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: var(--transition);
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--accent-red);
-      transition: width 0.3s ease;
-    }
-
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.85rem 1.75rem;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      cursor: pointer;
-      transition: var(--transition);
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--accent-red);
-      color: #ffffff;
-    }
-
-    .btn-primary:hover {
-      background: #a93a2d;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border-color: var(--text-main);
-      color: var(--text-main);
-    }
-
-    .btn-outline:hover {
-      background: var(--text-main);
-      color: var(--bg);
-      transform: translateY(-2px);
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      font-size: 1.5rem;
-      color: var(--text-main);
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 5rem 2rem 6rem;
-      max-width: 1300px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.75rem;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--accent-red);
-    }
-
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 24px;
-      height: 1px;
-      background: var(--accent-red);
-    }
-
-    .hero h1 {
-      font-family: var(--font-serif);
-      font-size: 3.5rem;
-      line-height: 1.15;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .hero p {
-      font-size: 1.125rem;
-      color: var(--text-muted);
-      max-width: 520px;
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      margin-top: 0.5rem;
-    }
-
-    .hero-image-wrapper {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-      aspect-ratio: 4/3;
-    }
-
-    .hero-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s ease;
-    }
-
-    .hero-image-wrapper:hover img {
-      transform: scale(1.03);
-    }
-
-    /* 3D Showcase Section */
-    .showcase-3d-section {
-      background: var(--bg-alt);
-      padding: 6rem 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .showcase-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .canvas-container {
-      width: 100%;
-      height: 450px;
-      position: relative;
-      background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(243,237,226,1) 100%);
-      border-radius: 12px;
-      box-shadow: inset 0 2px 10px rgba(0,0,0,0.04);
-      cursor: grab;
-    }
-
-    .canvas-container:active {
-      cursor: grabbing;
-    }
-
-    .canvas-fallback {
-      position: absolute;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-      line-height: 1.2;
-    }
-
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-
-    /* Menu Section */
-    .menu-section {
-      padding: 7rem 2rem;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .section-header-center {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 4rem;
-    }
-
-    .menu-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .menu-tab-btn {
-      padding: 0.75rem 1.75rem;
-      background: var(--bg-alt);
-      border: 1px solid var(--border-color);
-      border-radius: 30px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: var(--transition);
-      color: var(--text-main);
-    }
-
-    .menu-tab-btn.active, .menu-tab-btn:hover {
-      background: var(--text-main);
-      color: var(--bg);
-      border-color: var(--text-main);
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-
-    .menu-item {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 1.75rem;
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-      transition: var(--transition);
-    }
-
-    .menu-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.05);
-    }
-
-    .menu-item-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 6px;
-      object-fit: cover;
-      flex-shrink: 0;
-    }
-
-    .menu-item-info {
-      flex: 1;
-    }
-
-    .menu-item-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.5rem;
-    }
-
-    .menu-item-name {
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      font-weight: 600;
-    }
-
-    .menu-item-price {
-      font-weight: 700;
-      color: var(--accent-red);
-      font-size: 1.1rem;
-    }
-
-    .menu-item-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* Philosophy Section */
-    .philosophy-section {
-      background: var(--bg-alt);
-      padding: 7rem 2rem;
-    }
-
-    .philosophy-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .philosophy-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .philosophy-img {
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-    }
-
-    .philosophy-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-    }
-
-    .philosophy-img:hover img {
-      transform: scale(1.05);
-    }
-
-    .philosophy-img:nth-child(2) {
-      margin-top: 3rem;
-    }
-
-    /* Info & Location Section */
-    .info-section {
-      padding: 7rem 2rem;
-      max-width: 1300px;
-      margin: 0 auto;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-    }
-
-    .info-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 3rem;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    }
-
-    .info-card h3 {
-      font-family: var(--font-serif);
-      font-size: 1.75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .info-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-
-    .info-list li {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid var(--border-color);
-      font-size: 1.05rem;
-    }
-
-    .info-list li span:first-child {
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .info-list li span:last-child {
-      color: var(--text-muted);
-    }
-
-    .map-placeholder {
-      width: 100%;
-      height: 320px;
-      border-radius: 8px;
-      background: var(--bg-alt);
-      border: 1px solid var(--border-color);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
-      gap: 1rem;
-    }
-
-    .map-placeholder svg {
-      width: 48px;
-      height: 48px;
-      color: var(--accent-red);
-    }
-
-    /* Reservation Modal */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      z-index: 2000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transition: var(--transition);
-      padding: 1rem;
-    }
-
-    .modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    .modal-container {
-      background: var(--card-bg);
-      border-radius: 12px;
-      width: 100%;
-      max-width: 560px;
-      padding: 2.5rem;
-      position: relative;
-      transform: translateY(20px);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-    }
-
-    .modal-overlay.active .modal-container {
-      transform: translateY(0);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--text-muted);
-      transition: var(--transition);
-    }
-
-    .modal-close:hover {
-      color: var(--text-main);
-    }
-
-    .modal-header {
-      margin-bottom: 2rem;
-    }
-
-    .modal-header h2 {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .modal-header p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    .form-label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .form-input {
-      width: 100%;
-      padding: 0.85rem 1rem;
-      background: var(--bg);
-      border: 1px solid var(--border-color);
-      border-radius: 6px;
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      color: var(--text-main);
-      transition: var(--transition);
-    }
-
-    .form-input:focus {
-      outline: none;
-      border-color: var(--accent-red);
-      background: #ffffff;
-    }
-
-    .form-submit {
-      width: 100%;
-      margin-top: 1rem;
-      padding: 1rem;
-      font-size: 1rem;
-    }
-
-    .form-notice {
-      margin-top: 1rem;
-      font-size: 0.85rem;
-      text-align: center;
-      color: var(--sage);
-      font-weight: 500;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--text-main);
-      color: var(--bg);
-      padding: 5rem 2rem 3rem;
-    }
-
-    .footer-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 4rem;
-      padding-bottom: 4rem;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .footer-brand h2 {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .footer-brand p {
-      color: #a0a0a0;
-      max-width: 380px;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .footer-links h4 {
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 1.5rem;
-      color: #ffffff;
-    }
-
-    .footer-links ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .footer-links a {
-      color: #a0a0a0;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .footer-links a:hover {
-      color: #ffffff;
-    }
-
-    .footer-bottom {
-      max-width: 1300px;
-      margin: 3rem auto 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      color: #888888;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .footer-credits a {
-      color: #a0a0a0;
-      text-decoration: underline;
-    }
-
-    /* Mobile Drawer */
-    .mobile-drawer {
-      position: fixed;
-      top: 0;
-      right: -100%;
-      width: 100%;
-      max-width: 360px;
-      height: 100vh;
-      background: var(--card-bg);
-      z-index: 2500;
-      padding: 3rem 2rem;
-      box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-      transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .mobile-drawer.active {
-      right: 0;
-    }
-
-    .mobile-drawer-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .mobile-nav-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .mobile-nav-links a {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      text-decoration: none;
-      color: var(--text-main);
-      font-weight: 600;
-    }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .hero, .showcase-container, .philosophy-container, .info-grid, .footer-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .hero {
-        padding-top: 3rem;
-      }
-      .hero h1 {
-        font-size: 2.75rem;
-      }
-      .menu-grid {
-        grid-template-columns: 1fr;
-      }
-      .nav-links, header .btn-primary {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero h1 {
-        font-size: 2.25rem;
-      }
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-      .menu-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .menu-item-img {
-        width: 100%;
-        height: 160px;
-      }
-    }
-  </style>
+  .hero {
+    min-height: auto;
+    padding: 3rem 1.5rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .omakase-img {
+    min-height: 300px;
+  }
+}
+
+/* Mobile Nav Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 400px;
+  height: 100%;
+  background: var(--white);
+  z-index: 2000;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mobile-drawer.active {
+  right: 0;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.drawer-links a {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.drawer-links a:hover {
+  color: var(--accent);
+}
+
+/* Reduced motion accessibility fallback styles */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
 </head>
 <body>
 
-  <!-- Top Banner -->
-  <div class="concept-banner">
-    Independent website concept by LeadSky for Kuma. Not their official website.
-  </div>
+<div class="demo-banner">
+  Independent website concept by LeadSky for Kuma. Not their official website.
+</div>
 
-  <!-- Navigation -->
-  <header>
-    <div class="nav-container">
-      <a href="#" class="brand-logo">
-        KUMA <span>Vancouver</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#philosophy">Our Story</a></li>
-        <li><a href="#location">Location & Hours</a></li>
-        <li><a href="tel:+16047390170">+1 (604) 739-0170</a></li>
-      </ul>
-      <button class="btn btn-primary" onclick="openModal()">Reserve a Table</button>
-      <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Open navigation menu">☰</button>
-    </div>
-  </header>
-
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <div class="mobile-drawer-header">
-      <span style="font-family: var(--font-serif); font-size: 1.25rem; font-weight: bold;">KUMA</span>
-      <button class="modal-close" onclick="toggleMobileMenu()">✕</button>
-    </div>
-    <ul class="mobile-nav-links">
-      <li><a href="#menu" onclick="toggleMobileMenu()">Menu</a></li>
-      <li><a href="#philosophy" onclick="toggleMobileMenu()">Our Story</a></li>
-      <li><a href="#location" onclick="toggleMobileMenu()">Location & Hours</a></li>
+<header>
+  <div class="nav-container">
+    <a href="#" class="brand">
+      KUMA
+      <span>Japanese &middot; Vancouver</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#omakase">Omakase</a></li>
+      <li><a href="#location">Location</a></li>
+      <li><a href="tel:+16047390170">+1 (604) 739-0170</a></li>
+      <li><a href="#" class="nav-cta open-reservation-modal">Reserve Table</a></li>
     </ul>
-    <button class="btn btn-primary" onclick="toggleMobileMenu(); openModal();">Reserve a Table</button>
+    <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero">
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div>
+    <div class="drawer-header">
+      <a href="#" class="brand">
+        KUMA
+        <span>Japanese &middot; Vancouver</span>
+      </a>
+      <button class="modal-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <ul class="drawer-links">
+      <li><a href="#about" class="drawer-link">Our Story</a></li>
+      <li><a href="#menu" class="drawer-link">Menu</a></li>
+      <li><a href="#omakase" class="drawer-link">Omakase</a></li>
+      <li><a href="#location" class="drawer-link">Location</a></li>
+      <li><a href="tel:+16047390170" class="drawer-link">+1 (604) 739-0170</a></li>
+    </ul>
+  </div>
+  <div style="margin-bottom: 2rem;">
+    <a href="#" class="btn-primary open-reservation-modal" style="width: 100%; text-align: center;">Reserve a Table</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-grid">
     <div class="hero-content">
-      <div class="hero-eyebrow">Authentic Japanese Culinary Craftsmanship in Vancouver</div>
-      <h1>Handcrafted Sushi, Fresh Sashimi & Artisanal Ramen</h1>
-      <p>Located on Dunbar Street in Vancouver, Kuma delivers a deeply authentic Japanese dining experience crafted daily with exceptional ingredients and traditional culinary devotion.</p>
+      <div class="eyebrow">Dunbar Street, Vancouver</div>
+      <h1>Authentic Japanese Culinary Craftsmanship</h1>
+      <p>Masterfully handcrafted sushi, fresh sashimi, and artisanal ramen crafted daily on Dunbar St. Experience the tranquil dedication of traditional Japanese dining in the heart of Vancouver.</p>
       <div class="hero-actions">
-        <button class="btn btn-primary" onclick="openModal()">Reserve a Table</button>
-        <a href="#menu" class="btn btn-outline">Explore Menu</a>
+        <a href="#" class="btn-primary open-reservation-modal">Reserve a Table</a>
+        <a href="#menu" class="btn-secondary">Explore Menu</a>
       </div>
     </div>
-    <div class="hero-image-wrapper">
-      <img src="img/stock-1.jpg" alt="Fresh sushi sashimi platter on slate board served at Kuma Japanese in Vancouver" loading="eager">
+    <div class="hero-media">
+      <img src="img/stock-1.jpg" alt="Master sushi chef delicately plating fresh nigiri on a sleek slate board" />
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- 3D Showcase Section -->
-  <section class="showcase-3d-section">
-    <div class="showcase-container">
-      <div class="canvas-container" id="canvasContainer">
-        <div class="canvas-fallback" id="canvasFallback">
-          <p style="font-family: var(--font-serif); font-size: 1.2rem; color: var(--text-main);">Experience Artisanal Craftsmanship at Kuma</p>
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-images">
+        <div class="about-img-box tall">
+          <img src="img/stock-7.jpg" alt="Warm minimalist Japanese restaurant interior with soft lighting" />
+        </div>
+        <div class="about-img-box short">
+          <img src="img/stock-3.jpg" alt="Fresh tuna and salmon sashimi slices on slate board" />
         </div>
       </div>
-      <div>
-        <div class="hero-eyebrow" style="margin-bottom: 1rem;">Artisanal Excellence</div>
-        <h2 class="section-title">Crafted with Precision & Tradition</h2>
-        <p class="section-desc">Every dish at Kuma reflects a dedication to authentic Japanese culinary heritage. From meticulously sliced sashimi to rich, slow-simmered ramen broths, our kitchen honors the purity of each ingredient.</p>
-        <div style="display: flex; gap: 2rem; align-items: center;">
+      <div class="about-content">
+        <div class="eyebrow">Our Philosophy</div>
+        <h3>Honoring Time-Tested Culinary Traditions</h3>
+        <p>At Kuma Japanese, every dish reflects a deep respect for seasonal ingredients, knife skills, and authentic flavor profiles. Located at 3446 Dunbar Street, our kitchen combines classic Japanese culinary techniques with the finest local Pacific seafood.</p>
+        <p>Whether you are joining us for a quiet weeknight dinner or an immersive weekend omakase experience, our dining room provides a warm, inviting atmosphere designed for genuine culinary appreciation.</p>
+        
+        <div class="feature-list">
+          <div class="feature-item">
+            <h4>Fresh Daily Sourcing</h4>
+            <p>Pristine seafood delivered daily to ensure exceptional flavor and texture.</p>
+          </div>
+          <div class="feature-item">
+            <h4>Artisanal Broths</h4>
+            <p>Ramen broths simmered for hours to achieve profound depth and richness.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="interactive-showcase" id="craft">
+  <div class="showcase-grid">
+    <div class="about-content">
+      <div class="eyebrow">Interactive 3D Experience</div>
+      <h3>The Art of the Bowl</h3>
+      <p>Explore our signature ceramic craftsmanship in interactive 3D. Every element of our dining experience—from the texture of our handmade ceramics to the precision of our knife work—is curated to honor authentic Japanese culinary traditions.</p>
+      <p>Rotate the model to experience the minimalist harmony that defines Kuma Japanese.</p>
+      <div style="margin-top: 2rem;">
+        <a href="#menu" class="btn-primary">View Full Menu</a>
+      </div>
+    </div>
+    <div class="canvas-container" id="canvasContainer">
+      <div class="canvas-hint" id="canvasHint">Drag to rotate 3D view</div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-section" id="menu">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow" style="justify-content: center;">Culinary Offerings</div>
+      <h2>Our Artisanal Menu</h2>
+      <p>Prepared fresh to order using traditional methods and premium ingredients.</p>
+    </div>
+
+    <div class="menu-tabs">
+      <button class="menu-tab active" data-filter="all">All Items</button>
+      <button class="menu-tab" data-filter="sashimi">Sashimi &amp; Nigiri</button>
+      <button class="menu-tab" data-filter="ramen">Artisanal Ramen</button>
+      <button class="menu-tab" data-filter="dessert">Desserts</button>
+    </div>
+
+    <div class="menu-grid">
+      <!-- Item 1 -->
+      <div class="menu-card" data-category="sashimi">
+        <div class="menu-card-img">
+          <span class="menu-tag">Signature</span>
+          <img src="img/stock-3.jpg" alt="Fresh salmon and tuna sashimi slices on slate board" />
+        </div>
+        <div class="menu-card-body">
           <div>
-            <h4 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--accent-red);">Daily</h4>
-            <p style="font-size: 0.9rem; color: var(--text-muted);">Fresh Seafood Delivery</p>
+            <div class="menu-card-header">
+              <h3>Assorted Sashimi Platter</h3>
+              <span class="menu-price">$32</span>
+            </div>
+            <p>Chef's selection of pristine Atlantic salmon, Pacific bluefin tuna, and yellowtail, expertly sliced.</p>
           </div>
-          <div style="width: 1px; height: 40px; background: var(--border-color);"></div>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="menu-card" data-category="sashimi">
+        <div class="menu-card-img">
+          <span class="menu-tag">Popular</span>
+          <img src="img/stock-2.jpg" alt="Artisanal sushi rolls beautifully plated" />
+        </div>
+        <div class="menu-card-body">
           <div>
-            <h4 style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--accent-red);">Handmade</h4>
-            <p style="font-size: 0.9rem; color: var(--text-muted);">Authentic Broths & Noodles</p>
+            <div class="menu-card-header">
+              <h3>Aburi Nigiri Selection</h3>
+              <span class="menu-price">$26</span>
+            </div>
+            <p>Flame-seared premium nigiri brushed with house-crafted sweet soy reduction and delicate sea salt.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="menu-card" data-category="ramen">
+        <div class="menu-card-img">
+          <span class="menu-tag">Comfort</span>
+          <img src="img/stock-6.jpg" alt="Steaming ramen bowl with soft boiled egg and nori" />
+        </div>
+        <div class="menu-card-body">
+          <div>
+            <div class="menu-card-header">
+              <h3>Kuma Tonkotsu Ramen</h3>
+              <span class="menu-price">$21</span>
+            </div>
+            <p>Rich 18-hour pork bone broth served with springy artisanal noodles, chashu pork, menma, and ajitsuke tamago.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="menu-card" data-category="dessert">
+        <div class="menu-card-img">
+          <span class="menu-tag">Sweet</span>
+          <img src="img/stock-10.jpg" alt="Matcha green tea crepe cake with delicate plating" />
+        </div>
+        <div class="menu-card-body">
+          <div>
+            <div class="menu-card-header">
+              <h3>Matcha Mille Crepe Cake</h3>
+              <span class="menu-price">$12</span>
+            </div>
+            <p>Delicate handmade paper-thin crepes layered with premium ceremonial Uji matcha pastry cream.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Menu Section -->
-  <section class="menu-section" id="menu">
-    <div class="section-header-center">
-      <div class="hero-eyebrow" style="justify-content: center; margin-bottom: 1rem;">Our Offerings</div>
-      <h2 class="section-title">Explore the Kuma Menu</h2>
-      <p class="section-desc">Sample selections from our kitchen, prepared fresh upon order.</p>
-      
-      <div class="menu-tabs">
-        <button class="menu-tab-btn active" onclick="filterMenu('all', this)">All Selections</button>
-        <button class="menu-tab-btn" onclick="filterMenu('sushi', this)">Sushi & Sashimi</button>
-        <button class="menu-tab-btn" onclick="filterMenu('ramen', this)">Ramen & Hot Dishes</button>
-        <button class="menu-tab-btn" onclick="filterMenu('dessert', this)">Desserts & Drinks</button>
-      </div>
-    </div>
-
-    <div class="menu-grid" id="menuGrid">
-      <!-- Sushi item 1 -->
-      <div class="menu-item" data-category="sushi">
-        <img src="img/stock-2.jpg" alt="Deluxe Sashimi Platter" class="menu-item-img" loading="lazy">
-        <div class="menu-item-info">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Deluxe Sashimi Platter</span>
-            <span class="menu-item-price">$28.50</span>
-          </div>
-          <p class="menu-item-desc">Chef's daily selection of pristine salmon, tuna, and seasonal white fish, masterfully sliced.</p>
-        </div>
-      </div>
-
-      <!-- Sushi item 2 -->
-      <div class="menu-item" data-category="sushi">
-        <img src="img/stock-7.jpg" alt="Aburi Nigiri Selection" class="menu-item-img" loading="lazy">
-        <div class="menu-item-info">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Aburi Nigiri Selection</span>
-            <span class="menu-item-price">$24.00</span>
-          </div>
-          <p class="menu-item-desc">Flame-seared salmon and ebi nigiri brushed with house-crafted sweet soy glaze.</p>
-        </div>
-      </div>
-
-      <!-- Ramen item 1 -->
-      <div class="menu-item" data-category="ramen">
-        <img src="img/stock-3.jpg" alt="Tonkotsu Artisanal Ramen" class="menu-item-img" loading="lazy">
-        <div class="menu-item-info">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Tonkotsu Artisanal Ramen</span>
-            <span class="menu-item-price">$19.50</span>
-          </div>
-          <p class="menu-item-desc">Rich 18-hour pork bone broth served with handmade noodles, chashu pork, and ajitsuke tamago.</p>
-        </div>
-      </div>
-
-      <!-- Ramen item 2 -->
-      <div class="menu-item" data-category="ramen">
-        <img src="img/stock-4.jpg" alt="Shoyu Tsukemen" class="menu-item-img" loading="lazy">
-        <div class="menu-item-info">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Shoyu Tsukemen</span>
-            <span class="menu-item-price">$20.50</span>
-          </div>
-          <p class="menu-item-desc">Dipping ramen featuring concentrated soy broth paired with chilled, springy artisanal noodles.</p>
-        </div>
-      </div>
-
-      <!-- Dessert item 1 -->
-      <div class="menu-item" data-category="dessert">
-        <img src="img/stock-9.jpg" alt="Matcha Green Tea Parfait" class="menu-item-img" loading="lazy">
-        <div class="menu-item-info">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Matcha Green Tea Parfait</span>
-            <span class="menu-item-price">$11.00</span>
-          </div>
-          <p class="menu-item-desc">Ceremonial grade Uji matcha gelato layered with sweet red bean paste and matcha sponge cake.</p>
-        </div>
-      </div>
-
-      <!-- Dessert item 2 -->
-      <div class="menu-item" data-category="dessert">
-        <img src="img/stock-10.jpg" alt="Traditional Japanese Tea Set" class="menu-item-img" loading="lazy">
-        <div class="menu-item-info">
-          <div class="menu-item-header">
-            <span class="menu-item-name">Sencha & Wagashi Set</span>
-            <span class="menu-item-price">$9.50</span>
-          </div>
-          <p class="menu-item-desc">Steamed green tea served with seasonal artisanal wagashi confectionery.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Philosophy Section -->
-  <section class="philosophy-section" id="philosophy">
-    <div class="philosophy-container">
+<section class="omakase" id="omakase">
+  <div class="omakase-banner">
+    <div class="omakase-content">
+      <div class="eyebrow">Exclusive Experience</div>
+      <h2>The Omakase Journey</h2>
+      <p>Entrust your evening to our master chef. Our seasonal omakase features a personalized multi-course progression highlighting the absolute highest quality seafood and seasonal delicacies available in Vancouver.</p>
+      <p>Limited seating available nightly to ensure an intimate and attentive dining experience.</p>
       <div>
-        <div class="hero-eyebrow" style="margin-bottom: 1rem;">Our Philosophy</div>
-        <h2 class="section-title">Rooted in Authenticity & Warmth</h2>
-        <p class="section-desc">At Kuma, we believe dining should be an immersive sensory experience. Inspired by traditional Japanese aesthetics, our Vancouver dining room combines warm cedar wood textures with minimalist design to create an inviting atmosphere for gathering with friends and family.</p>
-        <p class="section-desc" style="margin-top: -1rem;">Whether you are joining us for a quiet bowl of steaming ramen or celebrating an evening with our fresh sashimi platters, our team is dedicated to genuine hospitality.</p>
+        <a href="#" class="btn-primary open-reservation-modal" style="background: var(--white); color: var(--primary); border-color: var(--white);">Inquire for Omakase</a>
       </div>
-      <div class="philosophy-images">
-        <div class="philosophy-img">
-          <img src="img/stock-5.jpg" alt="Modern minimalist Japanese restaurant interior cedar wood" loading="lazy">
+    </div>
+    <div class="omakase-img">
+      <img src="img/stock-4.jpg" alt="Exquisite Japanese sashimi and sushi presentation" />
+    </div>
+  </div>
+</section>
+
+<section class="location-section" id="location">
+  <div class="container">
+    <div class="section-header">
+      <div class="eyebrow" style="justify-content: center;">Visit Us</div>
+      <h2>Location &amp; Contact</h2>
+      <p>Join us on Dunbar Street in Vancouver for lunch and dinner service.</p>
+    </div>
+
+    <div class="location-grid">
+      <div class="location-card">
+        <div class="location-info">
+          <h3>Kuma Japanese</h3>
+          
+          <div class="info-group">
+            <label>Address</label>
+            <p>3446 Dunbar Street<br>Vancouver, BC, Canada</p>
+          </div>
+
+          <div class="info-group">
+            <label>Phone Inquiries &amp; Reservations</label>
+            <p><a href="tel:+16047390170">+1 (604) 739-0170</a></p>
+          </div>
+
+          <div class="info-group">
+            <label>Neighborhood</label>
+            <p>Conveniently located in Vancouver's Dunbar-Southlands neighbourhood with street parking available.</p>
+          </div>
         </div>
-        <div class="philosophy-img">
-          <img src="img/stock-6.jpg" alt="Minimalist wooden interior architecture detail" loading="lazy">
+
+        <div style="margin-top: 2rem;">
+          <a href="#" class="btn-primary open-reservation-modal" style="width: 100%; text-align: center;">Book a Table Online</a>
+        </div>
+      </div>
+
+      <div class="map-placeholder">
+        <img src="img/stock-8.jpg" alt="Warm Japanese restaurant atmosphere" />
+        <div class="map-overlay-card">
+          <div>
+            <h4>3446 Dunbar St, Vancouver</h4>
+            <p>Open for Dine-In &amp; Takeout</p>
+          </div>
+          <a href="https://maps.google.com/?q=3446+Dunbar+Street+Vancouver" target="_blank" rel="noopener" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Get Directions</a>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Location & Hours Section -->
-  <section class="info-section" id="location">
-    <div class="section-header-center">
-      <div class="hero-eyebrow" style="justify-content: center; margin-bottom: 1rem;">Visit Us</div>
-      <h2 class="section-title">Location & Hours</h2>
-      <p class="section-desc">We look forward to welcoming you to Dunbar Street.</p>
-    </div>
-
-    <div class="info-grid">
-      <div class="info-card">
-        <h3>Hours & Contact</h3>
-        <ul class="info-list">
-          <li>
-            <span>Tuesday – Thursday</span>
-            <span>11:30 AM – 9:30 PM</span>
-          </li>
-          <li>
-            <span>Friday – Saturday</span>
-            <span>11:30 AM – 10:00 PM</span>
-          </li>
-          <li>
-            <span>Sunday</span>
-            <span>12:00 PM – 9:00 PM</span>
-          </li>
-          <li>
-            <span>Monday</span>
-            <span>Closed</span>
-          </li>
-        </ul>
-        <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1.5rem;">
-          <p style="font-weight: 600;">Phone Inquiries & Reservations:</p>
-          <a href="tel:+16047390170" style="color: var(--accent-red); font-size: 1.25rem; font-weight: 700; text-decoration: none;">+1 (604) 739-0170</a>
-        </div>
-      </div>
-
-      <div class="info-card" style="display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <h3>Find Us in Vancouver</h3>
-          <p class="section-desc" style="margin-bottom: 1.5rem;">3446 Dunbar Street<br>Vancouver, BC, Canada</p>
-        </div>
-        <div class="map-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-          </svg>
-          <p style="font-weight: 600; font-size: 0.95rem;">3446 Dunbar Street, Vancouver</p>
-          <a href="https://maps.google.com/?q=3446+Dunbar+Street+Vancouver" target="_blank" rel="noopener" class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Open in Google Maps</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Reservation Modal -->
-  <div class="modal-overlay" id="reservationModal">
-    <div class="modal-container">
-      <button class="modal-close" onclick="closeModal()">✕</button>
-      <div class="modal-header">
-        <h2>Reserve a Table</h2>
-        <p>Book your dining experience at Kuma Japanese on Dunbar Street.</p>
-      </div>
-      <form id="reservationForm" onsubmit="handleReservation(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="resName">Full Name</label>
-            <input type="text" id="resName" class="form-input" required placeholder="Jane Doe">
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="resPhone">Phone Number</label>
-            <input type="tel" id="resPhone" class="form-input" required placeholder="+1 (604) 000-0000">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label class="form-label" for="resDate">Date</label>
-            <input type="date" id="resDate" class="form-input" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="resTime">Time</label>
-            <select id="resTime" class="form-input" required>
-              <option value="">Select Time</option>
-              <option value="17:00">5:00 PM</option>
-              <option value="17:30">5:30 PM</option>
-              <option value="18:00">6:00 PM</option>
-              <option value="18:30">6:30 PM</option>
-              <option value="19:00">7:00 PM</option>
-              <option value="19:30">7:30 PM</option>
-              <option value="20:00">8:00 PM</option>
-            </select>
-          </div>
+<!-- Reservation Modal -->
+<div class="modal-overlay" id="reservationModal">
+  <div class="modal-container">
+    <button class="modal-close" id="modalClose">&times;</button>
+    <h3 class="modal-title">Reserve a Table</h3>
+    <p class="modal-subtitle">Secure your dining experience at Kuma Japanese.</p>
+    
+    <form id="reservationForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="resName">Full Name</label>
+          <input type="text" id="resName" class="form-control" placeholder="Jane Doe" required>
         </div>
         <div class="form-group">
-          <label class="form-label" for="resGuests">Number of Guests</label>
-          <select id="resGuests" class="form-input" required>
-            <option value="1">1 Person</option>
-            <option value="2" selected>2 People</option>
-            <option value="3">3 People</option>
-            <option value="4">4 People</option>
-            <option value="5">5+ People (Large Party)</option>
+          <label for="resPhone">Phone Number</label>
+          <input type="tel" id="resPhone" class="form-control" placeholder="+1 (604) ..." required>
+        </div>
+      </div>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label for="resDate">Date</label>
+          <input type="date" id="resDate" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label for="resTime">Time</label>
+          <select id="resTime" class="form-control" required>
+            <option value="">Select time</option>
+            <option value="17:00">5:00 PM</option>
+            <option value="17:30">5:30 PM</option>
+            <option value="18:00">6:00 PM</option>
+            <option value="18:30">6:30 PM</option>
+            <option value="19:00">7:00 PM</option>
+            <option value="19:30">7:30 PM</option>
+            <option value="20:00">8:00 PM</option>
+            <option value="20:30">8:30 PM</option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary form-submit">Confirm Reservation Request</button>
-        <div class="form-notice" id="formNotice" style="display: none;"></div>
-      </form>
+      </div>
+
+      <div class="form-group">
+        <label for="resGuests">Number of Guests</label>
+        <select id="resGuests" class="form-control" required>
+          <option value="1">1 Guest</option>
+          <option value="2" selected>2 Guests</option>
+          <option value="3">3 Guests</option>
+          <option value="4">4 Guests</option>
+          <option value="5">5 Guests</option>
+          <option value="6">6+ Guests (Large Party)</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">Confirm Reservation Request</button>
+      <div class="form-message" id="reservationMessage">This is a demo form, nothing was sent.</div>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="brand">
+        KUMA
+        <span>Japanese &middot; Vancouver</span>
+      </a>
+      <p>Authentic Japanese culinary craftsmanship located at 3446 Dunbar Street in Vancouver, BC. Dedicated to fresh ingredients and traditional preparation.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#omakase">Omakase</a></li>
+        <li><a href="#location">Location &amp; Hours</a></li>
+        <li><a href="#" class="open-reservation-modal">Reserve Table</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:+16047390170">+1 (604) 739-0170</a></li>
+        <li><a href="#location">3446 Dunbar St, Vancouver</a></li>
+      </ul>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2>KUMA JAPANESE</h2>
-        <p>Authentic Japanese culinary craftsmanship located in the heart of Vancouver, BC. Dedicated to fresh seafood, handmade broths, and warm hospitality.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#philosophy">Our Story</a></li>
-          <li><a href="#location">Location & Hours</a></li>
-          <li><a href="#" onclick="openModal(); return false;">Reservations</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+16047390170">+1 (604) 739-0170</a></li>
-          <li><span>3446 Dunbar Street</span></li>
-          <li><span>Vancouver, BC, Canada</span></li>
-        </ul>
+  <div class="footer-bottom">
+    <p>&copy; Kuma Japanese. All rights reserved.</p>
+    <div class="photo-credits">
+      <span>Photography credits (Pixabay):</span>
+      <div>
+        <a href="https://pixabay.com/photos/sushi-japanese-meal-japanese-food-5241271/" target="_blank" rel="noopener">takedahrs</a>, 
+        <a href="https://pixabay.com/photos/sushi-sushi-rolls-japanese-cuisine-4956246/" target="_blank" rel="noopener">Mayorga-Photo</a>, 
+        <a href="https://pixabay.com/photos/tuna-salmon-japan-seafood-fish-1957234/" target="_blank" rel="noopener">papas12</a>, 
+        <a href="https://pixabay.com/photos/sushi-japanese-asian-food-raw-354628/" target="_blank" rel="noopener">DesignNPrint</a>, 
+        <a href="https://pixabay.com/photos/ramen-soup-dinner-noodles-egg-7187812/" target="_blank" rel="noopener">joannawielgosz</a>, 
+        <a href="https://pixabay.com/photos/japan-osaka-city-urban-neon-night-9826328/" target="_blank" rel="noopener">strohmi</a>, 
+        <a href="https://pixabay.com/photos/chinese-lanterns-restaurant-lamps-7591296/" target="_blank" rel="noopener">wal_172619</a>, 
+        <a href="https://pixabay.com/photos/matcha-mille-crepe-matcha-cake-10543968/" target="_blank" rel="noopener">MutiaraAryani</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <div>&copy; <span id="currentYear"></span> Kuma Japanese. All rights reserved.</div>
-      <div class="footer-credits">
-        Photos via <a href="https://pixabay.com" target="_blank" rel="noopener">Pixabay</a> | Independent concept by <a href="https://leadsky.com" target="_blank" rel="noopener">LeadSky</a>
-      </div>
-    </div>
-  </footer>
+    <p>Concept by LeadSky</p>
+  </div>
+</footer>
 
-  <!-- Scripts -->
-  <script>
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+<script>
+// Check for reduced motion preference
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    // Mobile Drawer toggle
-    function toggleMobileMenu() {
-      const drawer = document.getElementById('mobileDrawer');
-      drawer.classList.toggle('active');
-    }
+// Mobile Navigation Drawer Toggle
+const mobileToggle = document.getElementById('mobileMenuToggle');
+const mobileDrawer = document.getElementById('mobileDrawer');
+const mobileDrawerClose = document.getElementById('mobileDrawerClose');
+const drawerLinks = document.querySelectorAll('.drawer-link');
 
-    // Modal Control
-    function openModal() {
-      const modal = document.getElementById('reservationModal');
-      modal.classList.add('active');
-    }
+mobileToggle.addEventListener('click', () => {
+  mobileDrawer.classList.add('active');
+});
 
-    function closeModal() {
-      const modal = document.getElementById('reservationModal');
-      modal.classList.remove('active');
-      document.getElementById('formNotice').style.display = 'none';
-      document.getElementById('reservationForm').reset();
-    }
+mobileDrawerClose.addEventListener('click', () => {
+  mobileDrawer.classList.remove('active');
+});
 
-    window.onclick = function(event) {
-      const modal = document.getElementById('reservationModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    }
+drawerLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mobileDrawer.classList.remove('active');
+  });
+});
 
-    function handleReservation(e) {
-      e.preventDefault();
-      const notice = document.getElementById('formNotice');
-      notice.style.display = 'block';
-      notice.style.color = 'var(--accent-red)';
-      notice.textContent = 'This is a demo form, nothing was sent.';
-    }
+// Reservation Modal Logic
+const modalOverlay = document.getElementById('reservationModal');
+const openModalBtns = document.querySelectorAll('.open-reservation-modal');
+const modalCloseBtn = document.getElementById('modalClose');
+const reservationForm = document.getElementById('reservationForm');
+const reservationMessage = document.getElementById('reservationMessage');
 
-    // Menu Filtering
-    function filterMenu(category, btn) {
-      const buttons = document.querySelectorAll('.menu-tab-btn');
-      buttons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+openModalBtns.forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalOverlay.classList.add('active');
+  });
+});
 
-      const items = document.querySelectorAll('.menu-item');
-      items.forEach(item => {
-        if (category === 'all' || item.dataset.category === category) {
-          item.style.display = 'flex';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
+modalCloseBtn.addEventListener('click', () => {
+  modalOverlay.classList.remove('active');
+});
 
-    // Three.js 3D Interactive Ceramic Ramen Bowl Simulation
-    const container = document.getElementById('canvasContainer');
-    const fallback = document.getElementById('canvasFallback');
+modalOverlay.addEventListener('click', (e) => {
+  if (e.target === modalOverlay) {
+    modalOverlay.classList.remove('active');
+  }
+});
+
+reservationForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  reservationMessage.textContent = "This is a demo form, nothing was sent.";
+  reservationMessage.classList.add('success');
+  reservationForm.reset();
+});
+
+// Menu Filter Logic
+const menuTabs = document.querySelectorAll('.menu-tab');
+const menuCards = document.querySelectorAll('.menu-card');
+
+menuTabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    menuTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
     
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (typeof THREE !== 'undefined' && !prefersReducedMotion) {
-      try {
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        container.appendChild(renderer.domElement);
-
-        // Lighting
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
-        scene.add(ambientLight);
-
-        const pointLight = new THREE.DirectionalLight(0xfff5e6, 2.0);
-        pointLight.position.set(5, 10, 7);
-        scene.add(pointLight);
-
-        const backLight = new THREE.DirectionalLight(0x7c8c73, 1.0);
-        backLight.position.set(-5, -5, -5);
-        scene.add(backLight);
-
-        // Group for Bowl & Chopsticks
-        const bowlGroup = new THREE.Group();
-
-        // Ceramic Bowl Body
-        const bowlGeometry = new THREE.CylinderGeometry(2.2, 1.2, 1.8, 32, 1, true);
-        const bowlMaterial = new THREE.MeshStandardMaterial({
-          color: 0xf5f2eb,
-          roughness: 0.3,
-          metalness: 0.1,
-          side: THREE.DoubleSide
-        });
-        const bowl = new THREE.Mesh(bowlGeometry, bowlMaterial);
-        bowl.position.y = -0.2;
-        bowlGroup.add(bowl);
-
-        // Bowl Rim
-        const rimGeometry = new THREE.TorusGeometry(2.2, 0.08, 16, 64);
-        const rimMaterial = new THREE.MeshStandardMaterial({ color: 0xc44536, roughness: 0.2 });
-        const rim = new THREE.Mesh(rimGeometry, rimMaterial);
-        rim.rotation.x = Math.PI / 2;
-        rim.position.y = 0.7;
-        bowlGroup.add(rim);
-
-        // Broth Surface inside bowl
-        const brothGeometry = new THREE.CylinderGeometry(2.1, 2.1, 0.1, 32);
-        const brothMaterial = new THREE.MeshStandardMaterial({ color: 0x8b4513, roughness: 0.1, metalness: 0.3 });
-        const broth = new THREE.Mesh(brothGeometry, brothMaterial);
-        broth.position.y = 0.5;
-        bowlGroup.add(broth);
-
-        // Chashu Slice
-        const chashuGeo = new THREE.CylinderGeometry(0.8, 0.8, 0.15, 16);
-        const chashuMat = new THREE.MeshStandardMaterial({ color: 0xd2691e, roughness: 0.6 });
-        const chashu = new THREE.Mesh(chashuGeo, chashuMat);
-        chashu.position.set(0.6, 0.55, 0.3);
-        chashu.rotation.x = 0.2;
-        bowlGroup.add(chashu);
-
-        // Soft-boiled egg halves
-        const eggGeo = new THREE.SphereGeometry(0.4, 16, 16);
-        const eggMat = new THREE.MeshStandardMaterial({ color: 0xfffaf0, roughness: 0.4 });
-        const egg = new THREE.Mesh(eggGeo, eggMat);
-        egg.scale.set(1, 0.6, 1);
-        egg.position.set(-0.7, 0.55, -0.4);
-        bowlGroup.add(egg);
-
-        // Chopsticks
-        const chopstickGeo = new THREE.CylinderGeometry(0.04, 0.02, 4.5, 16);
-        const chopstickMat = new THREE.MeshStandardMaterial({ color: 0xa0522d, roughness: 0.5 });
-        
-        const chopstick1 = new THREE.Mesh(chopstickGeo, chopstickMat);
-        chopstick1.position.set(1.2, 1.5, 0.5);
-        chopstick1.rotation.z = -0.5;
-        chopstick1.rotation.x = 0.4;
-        bowlGroup.add(chopstick1);
-
-        const chopstick2 = new THREE.Mesh(chopstickGeo, chopstickMat);
-        chopstick2.position.set(1.4, 1.5, 0.8);
-        chopstick2.rotation.z = -0.52;
-        chopstick2.rotation.x = 0.38;
-        bowlGroup.add(chopstick2);
-
-        scene.add(bowlGroup);
-        camera.position.z = 6;
-
-        // Mouse & Touch Interaction with Inertia
-        let isDragging = false;
-        let previousMousePosition = { x: 0, y: 0 };
-        let targetRotation = { x: 0.3, y: 0 };
-        let currentRotation = { x: 0.3, y: 0 };
-
-        container.addEventListener('mousedown', (e) => {
-          isDragging = true;
-          previousMousePosition = { x: e.clientX, y: e.clientY };
-        });
-
-        window.addEventListener('mousemove', (e) => {
-          if (!isDragging) return;
-          const deltaX = e.clientX - previousMousePosition.x;
-          const deltaY = e.clientY - previousMousePosition.y;
-
-          targetRotation.y += deltaX * 0.008;
-          targetRotation.x += deltaY * 0.008;
-
-          previousMousePosition = { x: e.clientX, y: e.clientY };
-        });
-
-        window.addEventListener('mouseup', () => { isDragging = false; });
-
-        // Touch support
-        container.addEventListener('touchstart', (e) => {
-          isDragging = true;
-          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        });
-
-        window.addEventListener('touchmove', (e) => {
-          if (!isDragging) return;
-          const deltaX = e.touches[0].clientX - previousMousePosition.x;
-          const deltaY = e.touches[0].clientY - previousMousePosition.y;
-
-          targetRotation.y += deltaX * 0.008;
-          targetRotation.x += deltaY * 0.008;
-
-          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        });
-
-        window.addEventListener('touchend', () => { isDragging = false; });
-
-        // Animation Loop
-        let animationFrameId;
-        const clock = new THREE.Clock();
-
-        function animate() {
-          animationFrameId = requestAnimationFrame(animate);
-          
-          if (!isDragging) {
-            targetRotation.y += 0.005; // Gentle continuous auto-rotation
-          }
-
-          currentRotation.x += (targetRotation.x - currentRotation.x) * 0.05;
-          currentRotation.y += (targetRotation.y - currentRotation.y) * 0.05;
-
-          bowlGroup.rotation.x = currentRotation.x;
-          bowlGroup.rotation.y = currentRotation.y;
-
-          renderer.render(scene, camera);
+    const filter = tab.getAttribute('data-filter');
+    
+    menuCards.forEach(card => {
+      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        card.style.display = 'flex';
+        if (!prefersReducedMotion && typeof gsap !== 'undefined') {
+          gsap.fromTo(card, { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.4 });
+        } else {
+          card.style.opacity = '1';
         }
-
-        animate();
-
-        // Resize handler
-        window.addEventListener('resize', () => {
-          camera.aspect = container.clientWidth / container.clientHeight;
-          camera.updateProjectionMatrix();
-          renderer.setSize(container.clientWidth, container.clientHeight);
-        });
-
-      } catch (err) {
-        console.warn('WebGL initialization failed, showing fallback.', err);
-        fallback.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
       }
-    } else {
-      fallback.style.display = 'flex';
+    });
+  });
+});
+
+// Three.js Interactive Ceramic Ramen Bowl & Chopsticks (Respects Reduced Motion)
+const container = document.getElementById('canvasContainer');
+const canvasHint = document.getElementById('canvasHint');
+
+if (container && typeof THREE !== 'undefined') {
+  if (prefersReducedMotion) {
+    // Static fallback for reduced motion preference
+    canvasHint.textContent = "Interactive 3D view disabled (reduced motion preference)";
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.set(0, 3, 6);
+    camera.lookAt(0, 0, 0);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    container.appendChild(renderer.domElement);
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    scene.add(ambientLight);
+    const dirLight = new THREE.DirectionalLight(0xfff5e6, 1.2);
+    dirLight.position.set(5, 8, 5);
+    scene.add(dirLight);
+
+    const bowlGroup = new THREE.Group();
+    const bowlGeo = new THREE.CylinderGeometry(1.6, 0.9, 1.2, 32, 1, true);
+    const bowlMat = new THREE.MeshStandardMaterial({ color: 0x1a365d, roughness: 0.3, metalness: 0.1, side: THREE.DoubleSide });
+    const bowlMesh = new THREE.Mesh(bowlGeo, bowlMat);
+    bowlMesh.position.y = 0.6;
+    bowlGroup.add(bowlMesh);
+
+    const rimGeo = new THREE.TorusGeometry(1.6, 0.08, 16, 32);
+    const rimMat = new THREE.MeshStandardMaterial({ color: 0x2b2b2b, roughness: 0.2 });
+    const rimMesh = new THREE.Mesh(rimGeo, rimMat);
+    rimMesh.rotation.x = Math.PI / 2;
+    rimMesh.position.y = 1.2;
+    bowlGroup.add(rimMesh);
+
+    const brothGeo = new THREE.CircleGeometry(1.55, 32);
+    const brothMat = new THREE.MeshStandardMaterial({ color: 0x8c6239, roughness: 0.1 });
+    const brothMesh = new THREE.Mesh(brothGeo, brothMat);
+    brothMesh.rotation.x = -Math.PI / 2;
+    brothMesh.position.y = 1.0;
+    bowlGroup.add(brothMesh);
+
+    scene.add(bowlGroup);
+    bowlGroup.rotation.y = 0.5;
+    renderer.render(scene, camera);
+  } else {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+    camera.position.set(0, 3, 6);
+    camera.lookAt(0, 0, 0);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    container.appendChild(renderer.domElement);
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    scene.add(ambientLight);
+
+    const dirLight = new THREE.DirectionalLight(0xfff5e6, 1.2);
+    dirLight.position.set(5, 8, 5);
+    dirLight.castShadow = true;
+    scene.add(dirLight);
+
+    const pointLight = new THREE.PointLight(0xd4af37, 1, 10);
+    pointLight.position.set(-3, 2, -2);
+    scene.add(pointLight);
+
+    // Create Ceramic Bowl Group
+    const bowlGroup = new THREE.Group();
+
+    // Bowl Body
+    const bowlGeo = new THREE.CylinderGeometry(1.6, 0.9, 1.2, 32, 1, true);
+    const bowlMat = new THREE.MeshStandardMaterial({
+      color: 0x1a365d,
+      roughness: 0.3,
+      metalness: 0.1,
+      side: THREE.DoubleSide
+    });
+    const bowlMesh = new THREE.Mesh(bowlGeo, bowlMat);
+    bowlMesh.position.y = 0.6;
+    bowlGroup.add(bowlMesh);
+
+    // Bowl Rim
+    const rimGeo = new THREE.TorusGeometry(1.6, 0.08, 16, 32);
+    const rimMat = new THREE.MeshStandardMaterial({ color: 0x2b2b2b, roughness: 0.2 });
+    const rimMesh = new THREE.Mesh(rimGeo, rimMat);
+    rimMesh.rotation.x = Math.PI / 2;
+    rimMesh.position.y = 1.2;
+    bowlGroup.add(rimMesh);
+
+    // Inside Broth
+    const brothGeo = new THREE.CircleGeometry(1.55, 32);
+    const brothMat = new THREE.MeshStandardMaterial({ color: 0x8c6239, roughness: 0.1 });
+    const brothMesh = new THREE.Mesh(brothGeo, brothMat);
+    brothMesh.rotation.x = -Math.PI / 2;
+    brothMesh.position.y = 1.0;
+    bowlGroup.add(brothMesh);
+
+    // Ingredients
+    const eggGeo = new THREE.SphereGeometry(0.35, 16, 16);
+    const eggMat = new THREE.MeshStandardMaterial({ color: 0xfffdd0, roughness: 0.4 });
+    const egg1 = new THREE.Mesh(eggGeo, eggMat);
+    egg1.scale.set(1, 0.6, 1);
+    egg1.position.set(0.6, 1.05, 0.3);
+    bowlGroup.add(egg1);
+
+    // Chopsticks
+    const chopstickGeo = new THREE.CylinderGeometry(0.03, 0.015, 3.5, 16);
+    const chopstickMat = new THREE.MeshStandardMaterial({ color: 0x5c4033, roughness: 0.5 });
+    
+    const chopstick1 = new THREE.Mesh(chopstickGeo, chopstickMat);
+    chopstick1.rotation.z = Math.PI / 6;
+    chopstick1.rotation.x = Math.PI / 12;
+    chopstick1.position.set(0.8, 1.8, 0.5);
+    bowlGroup.add(chopstick1);
+
+    const chopstick2 = new THREE.Mesh(chopstickGeo, chopstickMat);
+    chopstick2.rotation.z = Math.PI / 5.5;
+    chopstick2.rotation.x = -Math.PI / 12;
+    chopstick2.position.set(1.0, 1.8, 0.7);
+    bowlGroup.add(chopstick2);
+
+    scene.add(bowlGroup);
+
+    // Mouse & Touch Interaction
+    let isDragging = false;
+    let previousMousePosition = { x: 0, y: 0 };
+    let targetRotationY = 0;
+    let targetRotationX = 0;
+
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      previousMousePosition = { x: e.clientX, y: e.clientY };
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      const deltaX = e.clientX - previousMousePosition.x;
+      const deltaY = e.clientY - previousMousePosition.y;
+
+      targetRotationY += deltaX * 0.008;
+      targetRotationX += deltaY * 0.008;
+
+      previousMousePosition = { x: e.clientX, y: e.clientY };
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    container.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        isDragging = true;
+        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      }
+    });
+
+    window.addEventListener('touchmove', (e) => {
+      if (!isDragging || e.touches.length !== 1) return;
+      const deltaX = e.touches[0].clientX - previousMousePosition.x;
+      const deltaY = e.touches[0].clientY - previousMousePosition.y;
+
+      targetRotationY += deltaX * 0.008;
+      targetRotationX += deltaY * 0.008;
+
+      previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    });
+
+    window.addEventListener('touchend', () => {
+      isDragging = false;
+    });
+
+    const clock = new THREE.Clock();
+
+    function animate() {
+      requestAnimationFrame(animate);
+
+      const elapsedTime = clock.getElapsedTime();
+
+      if (!isDragging) {
+        targetRotationY += 0.005;
+      }
+
+      bowlGroup.rotation.y += (targetRotationY - bowlGroup.rotation.y) * 0.05;
+      bowlGroup.rotation.x += (targetRotationX - bowlGroup.rotation.x) * 0.05;
+      bowlGroup.position.y = Math.sin(elapsedTime * 1.5) * 0.08;
+
+      renderer.render(scene, camera);
     }
-  </script>
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+  }
+}
+</script>
+
 </body>
 </html>
