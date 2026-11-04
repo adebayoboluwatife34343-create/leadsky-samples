@@ -1,0 +1,1320 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>The Tamale Store | Phoenix, Arizona | Handcrafted Gourmet Tamales</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Russo+One&display=swap" rel="stylesheet">
+
+  <!-- External Libraries: Three.js r128, GSAP 3.12.5, ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <style>
+    :root {
+      --bg-main: #faf6ef;
+      --bg-alt: #f0e7d8;
+      --text-main: #2d1f18;
+      --terracotta: #b84a39;
+      --agave: #1e5f54;
+      --cream: #ffffff;
+      --border-color: #e2d3be;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Russo One', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    /* Top banner */
+    .concept-banner {
+      background: #2d1f18;
+      color: #faf6ef;
+      font-size: 0.825rem;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      position: relative;
+      z-index: 1000;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(250, 246, 239, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .nav-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .brand-logo img {
+      height: 42px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .brand-text {
+      font-size: 1.25rem;
+      color: var(--terracotta);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-main);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--terracotta);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.75rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background-color: var(--terracotta);
+      color: white;
+      box-shadow: 0 4px 14px rgba(184, 74, 57, 0.3);
+    }
+
+    .btn-primary:hover {
+      background-color: #a03e30;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(184, 74, 57, 0.4);
+    }
+
+    .btn-secondary {
+      background-color: var(--agave);
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background-color: #174c43;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background-color: transparent;
+      border: 2px solid var(--text-main);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background-color: var(--text-main);
+      color: var(--bg-main);
+    }
+
+    /* Mobile Menu Toggle */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--text-main);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 5rem 2rem 6rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 4.5vw, 4rem);
+      line-height: 1.1;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content h1 span {
+      color: var(--terracotta);
+    }
+
+    .hero-content p {
+      font-size: 1.15rem;
+      color: #5c473c;
+      margin-bottom: 2.5rem;
+      max-width: 36rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(45, 31, 24, 0.15);
+      aspect-ratio: 4/3;
+    }
+
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.02);
+      transition: transform 0.6s ease;
+    }
+
+    .hero-image-wrapper:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Features / Highlights */
+    .section-pad {
+      padding: 6rem 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 42rem;
+      margin: 0 auto 4rem;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 3vw, 2.75rem);
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .section-header p {
+      color: #6b5346;
+      font-size: 1.05rem;
+    }
+
+    /* Menu Grid & Interactive Selector */
+    .menu-filter-bar {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.6rem 1.25rem;
+      border-radius: 99px;
+      border: 1px solid var(--border-color);
+      background: var(--cream);
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+      color: var(--text-main);
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--terracotta);
+      color: white;
+      border-color: var(--terracotta);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .menu-card {
+      background: var(--cream);
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 30px rgba(45, 31, 24, 0.04);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(45, 31, 24, 0.1);
+    }
+
+    .menu-card-img {
+      height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .menu-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .menu-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--terracotta);
+      color: white;
+      padding: 0.3rem 0.85rem;
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    }
+
+    .menu-card-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .menu-card-body h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .menu-card-body p {
+      font-size: 0.925rem;
+      color: #6b5346;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .menu-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #f0e7d8;
+      padding-top: 1rem;
+    }
+
+    .price {
+      font-family: 'Russo One', sans-serif;
+      font-size: 1.15rem;
+      color: var(--agave);
+    }
+
+    /* 3D Interactive Bowl Section */
+    .bowl-section {
+      background-color: var(--bg-alt);
+      border-top: 1px solid var(--border-color);
+      border-bottom: 1px solid var(--border-color);
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .bowl-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .bowl-canvas-box {
+      width: 100%;
+      height: 420px;
+      position: relative;
+      border-radius: 20px;
+      background: radial-gradient(circle at center, #faf6ef 0%, #e2d3be 100%);
+      box-shadow: inset 0 10px 25px rgba(45,31,24,0.1);
+      overflow: hidden;
+    }
+
+    #bowl-canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      cursor: grab;
+    }
+    #bowl-canvas:active {
+      cursor: grabbing;
+    }
+
+    .bowl-info h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .bowl-info p {
+      color: #6b5346;
+      margin-bottom: 2rem;
+      font-size: 1.05rem;
+    }
+
+    /* Catering Section */
+    .catering-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      background: var(--cream);
+      border-radius: 24px;
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(45,31,24,0.05);
+    }
+
+    .catering-content {
+      padding: 3rem;
+    }
+
+    .catering-content h2 {
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .catering-content p {
+      color: #6b5346;
+      margin-bottom: 1.5rem;
+    }
+
+    .catering-img {
+      height: 100%;
+      min-height: 400px;
+    }
+
+    .catering-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Form Styles */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 0.95rem;
+      background: var(--bg-main);
+      color: var(--text-main);
+      transition: all 0.2s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--terracotta);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(184, 74, 57, 0.15);
+    }
+
+    /* Story Section */
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .story-img-stack {
+      position: relative;
+      height: 460px;
+    }
+
+    .story-img-main {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%;
+      height: 380px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(45,31,24,0.12);
+    }
+
+    .story-img-secondary {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 65%;
+      height: 280px;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 6px solid var(--bg-main);
+      box-shadow: 0 15px 35px rgba(45,31,24,0.12);
+    }
+
+    .story-img-main img, .story-img-secondary img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Location & Hours */
+    .location-box {
+      background: var(--cream);
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      box-shadow: 0 15px 35px rgba(45,31,24,0.05);
+    }
+
+    .location-details h3 {
+      font-size: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+    }
+
+    .info-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .info-icon {
+      background: var(--bg-alt);
+      padding: 0.75rem;
+      border-radius: 12px;
+      color: var(--terracotta);
+      font-weight: bold;
+    }
+
+    .map-box {
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bg-alt);
+      border: 1px solid var(--border-color);
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .map-box img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.65;
+    }
+
+    .map-content-overlay {
+      position: relative;
+      z-index: 2;
+      background: var(--cream);
+      padding: 1.5rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Footer */
+    footer {
+      background: #2d1f18;
+      color: #faf6ef;
+      padding: 4rem 2rem 2rem;
+    }
+
+    .footer-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding-bottom: 3rem;
+    }
+
+    .footer-brand p {
+      color: #bfaea2;
+      margin-top: 1rem;
+      max-width: 24rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-links h4 {
+      font-size: 1.1rem;
+      margin-bottom: 1.25rem;
+      color: white;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .footer-links a {
+      color: #bfaea2;
+      text-decoration: none;
+      transition: color 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: #9a8477;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .photo-credits {
+      font-size: 0.8rem;
+    }
+
+    .photo-credits a {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* Modal / Demo notification banner */
+    .demo-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(45,31,24,0.6);
+      backdrop-filter: blur(5px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .demo-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .demo-modal-content {
+      background: var(--cream);
+      padding: 2.5rem;
+      border-radius: 24px;
+      max-width: 460px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+
+    .demo-modal.active .demo-modal-content {
+      transform: translateY(0);
+    }
+
+    .demo-modal-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-main);
+    }
+
+    .demo-modal-content p {
+      color: #6b5346;
+      margin-bottom: 1.75rem;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 968px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 3rem;
+      }
+      .bowl-container, .catering-grid, .story-grid, .location-box {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+      .nav-links {
+        display: none;
+      }
+      .mobile-toggle {
+        display: block;
+      }
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Mobile Nav Drawer */
+    .mobile-drawer {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 360px;
+      height: 100vh;
+      background: var(--cream);
+      z-index: 2000;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .mobile-drawer.active {
+      right: 0;
+    }
+
+    .mobile-drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mobile-drawer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .mobile-drawer-links a {
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Slim Banner -->
+  <div class="concept-banner">
+    Independent website concept by LeadSky for The Tamale Store. Not their official website.
+  </div>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <img src="img/business-logo-1.jpg" alt="The Tamale Store Logo">
+        <span class="brand-display font-display">THE TAMALE STORE</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#menu">Tamale Menu</a></li>
+        <li><a href="#salsa-experience">Salsa Bowl</a></li>
+        <li><a href="#catering">Catering</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#location">Hours & Location</a></li>
+      </ul>
+      <div>
+        <a href="#menu" class="btn btn-primary" onclick="openDemoModal('Order Online', 'Online ordering is simulated in this concept demo.')">Order Online</a>
+        <button class="mobile-toggle" aria-label="Open mobile menu" id="mobileMenuBtn">&#9776;</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <span class="font-display" style="font-size: 1.1rem; color: var(--terracotta);">MENU</span>
+      <button class="mobile-toggle" id="closeDrawerBtn" style="font-size: 1.5rem;">&times;</button>
+    </div>
+    <ul class="mobile-drawer-links">
+      <li><a href="#menu" onclick="closeDrawer()">Tamale Menu</a></li>
+      <li><a href="#salsa-experience" onclick="closeDrawer()">Salsa Bowl 3D</a></li>
+      <li><a href="#catering" onclick="closeDrawer()">Catering</a></li>
+      <li><a href="#story" onclick="closeDrawer()">Our Story</a></li>
+      <li><a href="#location" onclick="closeDrawer()">Hours & Location</a></li>
+    </ul>
+    <a href="#menu" class="btn btn-primary" onclick="closeDrawer(); openDemoModal('Order Online', 'Online ordering is simulated in this concept demo.')">Order Online Now</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="font-display">Handcrafted Authentic Tamales & <span>Southwestern Kitchen</span> in Phoenix</h1>
+      <p>Steamed-to-perfection gourmet tamales, fiery house salsas, and legendary family recipes crafted fresh daily in the Valley.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary">Order Online Now</a>
+        <a href="#menu" class="btn btn-outline">Explore Tamale Menu</a>
+      </div>
+    </div>
+    <div class="hero-image-wrapper">
+      <img src="img/stock-1.jpg" alt="Fresh gourmet tamales unwrapped on traditional corn husks">
+    </div>
+  </section>
+
+  <!-- Menu Highlights Section -->
+  <section id="menu" class="section-pad">
+    <div class="section-header">
+      <h2 class="font-display">Our Signature Gourmet Tamales</h2>
+      <p>Explore our handmade varieties, steamed fresh every morning using traditional ingredients and authentic Southwestern flavors.</p>
+    </div>
+
+    <!-- Menu Filter Bar -->
+    <div class="menu-filter-bar" id="menuFilters">
+      <button class="filter-btn active" data-filter="all">All Tamales</button>
+      <button class="filter-btn" data-filter="pork">Pork & Beef</button>
+      <button class="filter-btn" data-filter="vegetarian">Vegetarian & Cheese</button>
+      <button class="filter-btn" data-filter="vegan">Vegan</button>
+      <button class="filter-btn" data-filter="sweet">Sweet & Specialty</button>
+    </div>
+
+    <!-- Menu Cards Grid -->
+    <div class="menu-grid" id="menuGrid">
+      
+      <div class="menu-card" data-category="pork">
+        <div class="menu-card-img">
+          <img src="img/stock-5.jpg" alt="Green Chile Pork Tamale">
+          <span class="menu-badge">Signature</span>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="font-display">Green Chile Pork</h3>
+          <p>Tender slow-roasted pork shoulder simmered in smoky house-made green chile sauce, wrapped in savory corn masa.</p>
+          <div class="menu-card-footer">
+            <span class="price">$4.25 ea</span>
+            <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="openDemoModal('Add to Order', 'Green Chile Pork added to your simulated order.')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="sweet">
+        <div class="menu-card-img">
+          <img src="img/stock-2.jpg" alt="Sweet Corn Tamale">
+          <span class="menu-badge">Popular</span>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="font-display">Sweet Corn (Tamal de Elote)</h3>
+          <p>Fresh sweet yellow corn kernels blended with butter, cream, and gentle spices for a delightfully sweet traditional favorite.</p>
+          <div class="menu-card-footer">
+            <span class="price">$3.95 ea</span>
+            <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="openDemoModal('Add to Order', 'Sweet Corn Tamale added to your simulated order.')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="pork">
+        <div class="menu-card-img">
+          <img src="img/stock-6.jpg" alt="Red Chile Beef Tamale">
+          <span class="menu-badge">Spicy</span>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="font-display">Red Chile Beef</h3>
+          <p>Shredded tender beef braised in a rich, robust red chile and roasted garlic broth wrapped in seasoned golden masa.</p>
+          <div class="menu-card-footer">
+            <span class="price">$4.25 ea</span>
+            <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="openDemoModal('Add to Order', 'Red Chile Beef added to your simulated order.')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="vegetarian">
+        <div class="menu-card-img">
+          <img src="img/stock-4.jpg" alt="Black Bean and Cheese Tamale">
+          <span class="menu-badge">Vegetarian</span>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="font-display">Black Bean & Cheese</h3>
+          <p>Savory black beans combined with melted monetary jack cheese and roasted poblano pepper strips.</p>
+          <div class="menu-card-footer">
+            <span class="price">$4.10 ea</span>
+            <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="openDemoModal('Add to Order', 'Black Bean & Cheese added to your simulated order.')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="vegan">
+        <div class="menu-card-img">
+          <img src="img/stock-3.jpg" alt="Roasted Veggie Vegan Tamale">
+          <span class="menu-badge">Plant-Based</span>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="font-display">Roasted Vegetable Vegan</h3>
+          <p>A wholesome blend of fire-roasted zucchini, corn, bell peppers, and black beans seasoned with Mexican herbs in olive oil masa.</p>
+          <div class="menu-card-footer">
+            <span class="price">$4.10 ea</span>
+            <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="openDemoModal('Add to Order', 'Roasted Vegetable Vegan added to your simulated order.')">Add</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-card" data-category="vegetarian">
+        <div class="menu-card-img">
+          <img src="img/stock-8.jpg" alt="Green Chile and Cheese Tamale">
+          <span class="menu-badge">Classic</span>
+        </div>
+        <div class="menu-card-body">
+          <h3 class="font-display">Green Chile & Cheese</h3>
+          <p>Mild green Anaheim chiles paired with rich melted cheese for an exceptionally comforting vegetarian classic.</p>
+          <div class="menu-card-footer">
+            <span class="price">$4.10 ea</span>
+            <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="openDemoModal('Add to Order', 'Green Chile & Cheese added to your simulated order.')">Add</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3D Interactive Salsa Bowl Section -->
+  <section id="salsa-experience" class="bowl-section">
+    <div class="bowl-container">
+      <div class="bowl-info">
+        <h2 class="font-display">Fresh Salsas & Handcrafted Guacamole</h2>
+        <p>Every tamale order deserves our fiery house-made salsas. Prepared fresh daily with ripe tomatoes, crisp cilantro, lime juice, and roasted Arizona chiles. Drag to explore our interactive serving bowl.</p>
+        <a href="#menu" class="btn btn-primary" onclick="openDemoModal('Salsa Menu', 'Explore our full salsa and accompaniment lineup in the main ordering portal.')">Explore Salsas & Sides</a>
+      </div>
+      <div class="bowl-canvas-box">
+        <canvas id="bowl-canvas" aria-label="Interactive 3D representation of a salsa serving bowl" role="img"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catering Section -->
+  <section id="catering" class="section-pad">
+    <div class="catering-grid">
+      <div class="catering-content">
+        <h2 class="font-display">Phoenix Tamale Bar Catering</h2>
+        <p>Make your next office lunch, wedding, or family celebration unforgettable with authentic custom tamale bar catering. Complete with house salsas, chips, and traditional sides.</p>
+        
+        <form onsubmit="event.preventDefault(); openDemoModal('Catering Inquiry Sent', 'This is a demo form, nothing was sent.');">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-group">
+              <label for="c-name">Your Name</label>
+              <input type="text" id="c-name" class="form-control" placeholder="Maria Garcia" required>
+            </div>
+            <div class="form-group">
+              <label for="c-phone">Phone Number</label>
+              <input type="tel" id="c-phone" class="form-control" placeholder="(602) 555-0192" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-date">Estimated Event Date</label>
+            <input type="date" id="c-date" class="form-control" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Request Catering Details</button>
+        </form>
+      </div>
+      <div class="catering-img">
+        <img src="img/stock-7.jpg" alt="Vibrant southwestern restaurant dining environment">
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section id="story" class="section-pad" style="background-color: var(--bg-alt); border-top: 1px solid var(--border-color);">
+    <div class="story-grid">
+      <div class="story-img-stack">
+        <div class="story-img-main">
+          <img src="img/stock-9.jpg" alt="Chef preparing tamales in kitchen">
+        </div>
+        <div class="story-img-secondary">
+          <img src="img/stock-10.jpg" alt="Fresh culinary ingredients and preparation tools">
+        </div>
+      </div>
+      <div>
+        <h2 class="font-display" style="font-size: 2.25rem; margin-bottom: 1.5rem;">Rooted in Tradition in Phoenix, Arizona</h2>
+        <p style="color: #6b5346; margin-bottom: 1.25rem; font-size: 1.05rem;">At The Tamale Store, located right on North Cave Creek Road in Phoenix, we take pride in honoring time-tested culinary traditions. Every morning, our kitchen comes alive with the aroma of simmering chiles, fresh corn masa, and slow-roasted meats.</p>
+        <p style="color: #6b5346; margin-bottom: 2rem; font-size: 1.05rem;">We believe in keeping things authentic, wholesome, and delicious for our local Phoenix community. Whether you are grabbing a quick lunch or picking up family packs for the weekend, every batch is prepared with genuine care.</p>
+        <a href="#location" class="btn btn-outline">Visit Our Phoenix Location</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location & Hours Section -->
+  <section id="location" class="section-pad">
+    <div class="section-header">
+      <h2 class="font-display">Visit Our Phoenix Kitchen</h2>
+      <p>Stop by to pick up fresh hot tamales or grab frozen packs to steam at home.</p>
+    </div>
+
+    <div class="location-box">
+      <div class="location-details">
+        <h3 class="font-display">Store Information</h3>
+        
+        <div class="info-item">
+          <div class="info-icon">📍</div>
+          <div>
+            <strong>Address</strong>
+            <p style="color: #6b5346; font-size: 0.95rem;">15842 North Cave Creek Road<br>Phoenix, AZ 85032</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">🕒</div>
+          <div>
+            <strong>Opening Hours</strong>
+            <p style="color: #6b5346; font-size: 0.95rem;">Monday – Saturday<br>11:00 AM – 8:00 PM</p>
+          </div>
+        </div>
+
+        <div class="info-item">
+          <div class="info-icon">📞</div>
+          <div>
+            <strong>Phone</strong>
+            <p style="color: #6b5346; font-size: 0.95rem;"><a href="tel:+16024352604" style="color: var(--terracotta); text-decoration: none; font-weight: 700;">+1 602-435-2604</a></p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem;">
+          <a href="https://www.google.com/maps/search/?api=1&query=15842+North+Cave+ Creek+Road+Phoenix+85032" target="_blank" rel="noopener" class="btn btn-primary">Get Directions in Google Maps</a>
+        </div>
+      </div>
+
+      <div class="map-box">
+        <img src="img/stock-8.jpg" alt="Phoenix restaurant location atmosphere">
+        <div class="map-content-overlay">
+          <h4 class="font-display" style="margin-bottom: 0.5rem; color: var(--text-main);">North Cave Creek Road</h4>
+          <p style="font-size: 0.9rem; color: #6b5346; margin-bottom: 1rem;">Convenient parking and quick pickup available for all online orders.</p>
+          <a href="#menu" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.5rem 1.25rem;">Order For Pickup</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <span class="font-display" style="font-size: 1.25rem; color: white;">THE TAMALE STORE</span>
+        <p>Handcrafted gourmet tamales and authentic Southwestern comfort food in Phoenix, Arizona.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#menu">Tamale Menu</a></li>
+          <li><a href="#salsa-experience">Salsa Bowl</a></li>
+          <li><a href="#catering">Catering</a></li>
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#location">Hours & Location</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+16024352604">+1 602-435-2604</a></li>
+          <li><a href="mailto:info@thetamalestore.com">info@thetamalestore.com</a></li>
+          <li><a href="#location">15842 North Cave Creek Road, Phoenix 85032</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; <span id="year">2026</span> The Tamale Store. Independent concept by LeadSky.</div>
+      <div class="photo-credits">
+        Stock photography credits: <a href="https://pixabay.com/photos/corn-harvest-healthy-sweet-corn-3705687/" target="_blank" rel="noopener">Couleur</a>, <a href="https://pixabay.com/photos/corn-sweet-corn-vegetable-food-8028831/" target="_blank" rel="noopener">ignartonosbg</a>, <a href="https://pixabay.com/photos/green-paste-spice-garlic-bowl-8667981/" target="_blank" rel="noopener">niamhoshea</a>, <a href="https://pixabay.com/photos/cream-cheese-tomato-souse-chips-1503526/" target="_blank" rel="noopener">hamomdomingues</a>, <a href="https://pixabay.com/photos/meat-food-protein-shish-kebab-1155132/" target="_blank" rel="noopener">vika-imperia550</a>, <a href="https://pixabay.com/photos/meat-skewer-grilling-food-dish-1440105/" target="_blank" rel="noopener">RitaE</a>, <a href="https://pixabay.com/photos/brick-wall-chairs-furniture-1834784/" target="_blank" rel="noopener">Pexels</a>, <a href="https://pixabay.com/photos/cafe-interior-furniture-tables-5635015/" target="_blank" rel="noopener">tianya1223</a>, <a href="https://pixabay.com/photos/restaurant-cooking-chef-kitchen-1284351/" target="_blank" rel="noopener">Pexels</a>, <a href="https://pixabay.com/photos/knives-set-chopping-board-slice-1839061/" target="_blank" rel="noopener">Pexels</a> via Pixabay.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Demo Modal -->
+  <div class="demo-modal" id="demoModal">
+    <div class="demo-modal-content">
+      <h3 class="font-display" id="modalTitle">Notice</h3>
+      <p id="modalDesc">This is a demo action in the concept presentation.</p>
+      <button class="btn btn-primary" onclick="closeDemoModal()">Got It</button>
+    </div>
+  </div>
+
+  <!-- JavaScript Implementation -->
+  <script>
+    // Copyright Year update
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Drawer Control
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const closeDrawerBtn = document.getElementById('closeDrawerBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileDrawer.classList.add('active');
+    });
+
+    closeDrawerBtn.addEventListener('click', () => {
+      mobileDrawer.classList.remove('active');
+    });
+
+    function closeDrawer() {
+      mobileDrawer.classList.remove('active');
+    }
+
+    // Modal Control
+    function openDemoModal(title, desc) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalDesc').textContent = desc;
+      document.getElementById('demoModal').classList.add('active');
+    }
+
+    function closeDemoModal() {
+      document.getElementById('demoModal').classList.remove('active');
+    }
+
+    // Menu Category Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const menuCards = document.querySelectorAll('.menu-card');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+
+        menuCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Three.js Interactive Salsa Bowl Scene
+    const canvas = document.getElementById('bowl-canvas');
+    if (canvas && typeof THREE !== 'undefined') {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
+      camera.position.set(0, 4, 7);
+      camera.lookAt(0, 0, 0);
+
+      const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0xfff6ef, 1.2);
+      scene.add(ambientLight);
+
+      const dirLight = new THREE.DirectionalLight(0xfffae6, 1.8);
+      dirLight.position.set(5, 8, 5);
+      scene.add(dirLight);
+
+      const pointLight = new THREE.PointLight(0xb84a39, 2, 10);
+      pointLight.position.set(-3, 2, -2);
+      scene.add(pointLight);
+
+      // Group for the bowl and salsa
+      const bowlGroup = new THREE.Group();
+      scene.add(bowlGroup);
+
+      // Terracotta Bowl Mesh
+      const bowlGeo = new THREE.CylinderGeometry(2, 1.2, 1.2, 32, 1, true);
+      const bowlMat = new THREE.MeshStandardMaterial({
+        color: 0xb84a39,
+        roughness: 0.6,
+        metalness: 0.1,
+        side: THREE.DoubleSide
+      });
+      const bowlMesh = new THREE.Mesh(bowlGeo, bowlMat);
+      bowlMesh.position.y = -0.3;
+      bowlGroup.add(bowlMesh);
+
+      // Bowl Rim / Bottom Base
+      const baseGeo = new THREE.CylinderGeometry(1.2, 1.2, 0.1, 32);
+      const baseMesh = new THREE.Mesh(baseGeo, bowlMat);
+      baseMesh.position.y = -0.9;
+      bowlGroup.add(baseMesh);
+
+      // Salsa filling (Rich red/green salsa surface)
+      const salsaGeo = new THREE.CircleGeometry(1.9, 32);
+      const salsaMat = new THREE.MeshStandardMaterial({
+        color: 0x1e5f54,
+        roughness: 0.2,
+        metalness: 0.3
+      });
+      const salsaMesh = new THREE.Mesh(salsaGeo, salsaMat);
+      salsaMesh.rotation.x = -Math.PI / 2;
+      salsaMesh.position.y = 0.25;
+      bowlGroup.add(salsaMesh);
+
+      // Floating spice garnish spheres
+      const garnishGroup = new THREE.Group();
+      bowlGroup.add(garnishGroup);
+      const sphereGeo = new THREE.SphereGeometry(0.12, 16, 16);
+      const sphereMat = new THREE.MeshStandardMaterial({ color: 0x2d1f18, roughness: 0.5 });
+      
+      for (let i = 0; i < 6; i++) {
+        const mesh = new THREE.Mesh(sphereGeo, sphereMat);
+        const angle = (i / 6) * Math.PI * 2;
+        mesh.position.set(Math.cos(angle) * 1.1, 0.32, Math.sin(angle) * 1.1);
+        garnishGroup.add(mesh);
+      }
+
+      // Mouse drag rotation interaction
+      let isDragging = false;
+      let previousMousePosition = { x: 0, y: 0 };
+
+      canvas.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        previousMousePosition = { x: e.clientX, y: e.clientY };
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.clientX - previousMousePosition.x;
+        const deltaY = e.clientY - previousMousePosition.y;
+
+        bowlGroup.rotation.y += deltaX * 0.008;
+        bowlGroup.rotation.x += deltaY * 0.008;
+
+        previousMousePosition = { x: e.clientX, y: e.clientY };
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDragging = false;
+      });
+
+      // Touch events for mobile support
+      canvas.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      });
+
+      window.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.touches[0].clientX - previousMousePosition.x;
+        bowlGroup.rotation.y += deltaX * 0.008;
+        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      });
+
+      window.addEventListener('touchend', () => {
+        isDragging = false;
+      });
+
+      // Animation loop
+      let clock = new THREE.Clock();
+      function animate() {
+        requestAnimationFrame(animate);
+        const elapsedTime = clock.getElapsedTime();
+
+        // Gentle floating/idle rotation if not dragging
+        if (!isDragging) {
+          bowlGroup.rotation.y = elapsedTime * 0.3;
+          bowlGroup.rotation.x = Math.sin(elapsedTime * 0.5) * 0.1;
+        }
+
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Window resize handler
+      window.addEventListener('resize', () => {
+        const width = canvas.clientWidth;
+        const height = canvas.clientHeight;
+        camera.aspect = width / height;
+        camera.updateProjectionMatrix();
+        renderer.setSize(width, height);
+      });
+    }
+
+    // GSAP Scroll Animations (Respects prefers-reduced-motion)
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      
+      const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+      if (!mediaQuery.matches) {
+        gsap.utils.toArray('.menu-card').forEach((card, i) => {
+          gsap.from(card, {
+            scrollTrigger: {
+              trigger: card,
+              start: 'top 85%',
+              toggleActions: 'play none none none'
+            },
+            y: 40,
+            opacity: 0,
+            duration: 0.6,
+            delay: i * 0.1,
+            ease: 'power2.out'
+          });
+        });
+      }
+    }
+  </script>
+</body>
+</html>

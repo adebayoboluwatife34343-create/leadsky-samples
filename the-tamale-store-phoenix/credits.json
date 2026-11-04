@@ -1,0 +1,116 @@
+[
+  {
+    "file": "img/business-logo-1.jpg",
+    "kind": "business logo",
+    "source": "https://images.squarespace-cdn.com/content/v1/51cb292be4b0898df4c07737/1553815027567-CATM9M2MLCGCWH1II0PD/logo+for+website-page-001.jpg?format=1500w",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "http://static1.squarespace.com/static/51cb292be4b0898df4c07737/t/5c9d55f28165f55e35e76585/1553815028299/logo+for+website-page-001.jpg?format=1500w",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "gourmet tamales unwrapped on corn husks",
+    "description": "corn, harvest, healthy, sweet corn, vegetables, food, agriculture, corn, corn, corn, corn, corn",
+    "source": "https://pixabay.com/photos/corn-harvest-healthy-sweet-corn-3705687/",
+    "photographer": "Couleur",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "gourmet tamales unwrapped on corn husks",
+    "description": "corn, sweet corn, vegetable, food, fresh food, corn, corn, corn, corn, corn",
+    "source": "https://pixabay.com/photos/corn-sweet-corn-vegetable-food-8028831/",
+    "photographer": "ignartonosbg",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "fresh Mexican salsa and guacamole in terracotta bowls",
+    "description": "green, paste, spice, garlic, bowl, fresh, ingredients, homemade, condiment, cooking, food, culinary, herb, spicy, flavorful, close-up, organic, cooking, cooking, cooking, cooking, cooking, food, spicy, organic",
+    "source": "https://pixabay.com/photos/green-paste-spice-garlic-bowl-8667981/",
+    "photographer": "niamhoshea",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "fresh Mexican salsa and guacamole in terracotta bowls",
+    "description": "cream, cheese, tomato, souse, chips, food, mexican, avocado paste, tapas, snack, cheese, souse, chips, chips, chips, chips, chips, mexican, mexican, mexican, tapas, tapas, tapas",
+    "source": "https://pixabay.com/photos/cream-cheese-tomato-souse-chips-1503526/",
+    "photographer": "hamomdomingues",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "spicy pork tamales with roasted chiles",
+    "description": "meat, food, protein, shish kebab, grilled, steaks, mangal, dish, meat, meat, meat, meat, meat, food, food, food, protein",
+    "source": "https://pixabay.com/photos/meat-food-protein-shish-kebab-1155132/",
+    "photographer": "vika-imperia550",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "spicy pork tamales with roasted chiles",
+    "description": "meat skewer, grilling, food, dish, meat, vegetables, gemuesepiess, mushrooms, pork, barbecue, bbq, cooking, grilled meat, grill, tasty, delicious, food, food, meat, barbecue, barbecue, bbq, bbq, bbq, bbq, bbq, cooking, cooking, cooking, grill",
+    "source": "https://pixabay.com/photos/meat-skewer-grilling-food-dish-1440105/",
+    "photographer": "RitaE",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "vibrant southwestern restaurant interior with wooden tables",
+    "description": "brick wall, chairs, furniture, interior design, lights, restaurant, table, rustic, interior decoration, restaurant, restaurant, restaurant, restaurant, restaurant, table",
+    "source": "https://pixabay.com/photos/brick-wall-chairs-furniture-1834784/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "vibrant southwestern restaurant interior with wooden tables",
+    "description": "cafe, interior, furniture, tables, chairs, coffee shop, cafeteria, cafe, cafe, cafe, cafe, cafe, coffee shop, coffee shop, cafeteria",
+    "source": "https://pixabay.com/photos/cafe-interior-furniture-tables-5635015/",
+    "photographer": "tianya1223",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "chef preparing Mexican tamales in a kitchen",
+    "description": "restaurant, cooking, chef, kitchen, food, professional, preparation, meal, dish, appetizer, cook, lunch, plate, prepare, food preparation, restaurant, restaurant, restaurant, restaurant, cooking, cooking, cooking, cooking, cooking, chef, chef, chef, kitchen, food, cook",
+    "source": "https://pixabay.com/photos/restaurant-cooking-chef-kitchen-1284351/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "chef preparing Mexican tamales in a kitchen",
+    "description": "knives, set, chopping board, slice, sharp, sharpness, blades, knife set, kitchen tools, orange slices, kitchen, kitchen utensils, flat lay, knives, knives, knives, knife set, kitchen tools, kitchen, kitchen, kitchen, kitchen, kitchen, kitchen utensils",
+    "source": "https://pixabay.com/photos/knives-set-chopping-board-slice-1839061/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
