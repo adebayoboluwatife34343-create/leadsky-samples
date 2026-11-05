@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Raw, Stockholm: webbplatskoncept (oberoende förslag av LeadSky)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f0;--alt:#e2e9e1;--ink:#12201d;--verm:#c8402a;--vermd:#a9301d;--slate:#3e5c63;--rule:rgba(18,32,29,.28);--serif:"Instrument Serif",Georgia,serif;--sans:"Hanken Grotesk",system-ui,sans-serif;--pad:clamp(20px,5vw,72px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(2.6rem,6vw,5rem);line-height:.96}
+p{margin:0}
+:focus-visible{outline:3px solid var(--slate);outline-offset:3px}
+.dark :focus-visible,.band :focus-visible,.banner :focus-visible{outline-color:#fff}
+.skip{position:absolute;left:-999px;top:0;background:#fff;color:var(--ink);padding:10px 16px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.banner{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:7px 12px;line-height:1.3}
+nav.top{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px var(--pad)}
+.wm{font-family:var(--serif);font-size:2.1rem;line-height:1;text-decoration:none;letter-spacing:-.02em}
+.links{display:flex;gap:26px}
+.links a{text-decoration:none;font-weight:500;font-size:15px;padding:6px 0;background:linear-gradient(var(--verm),var(--verm)) 0 100%/0 2px no-repeat;transition:background-size .35s}
+.links a:hover{background-size:100% 2px}
+.navr{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1px solid var(--ink);border-radius:99px;overflow:hidden}
+.lang button{border:0;background:transparent;font:600 13px var(--sans);padding:6px 11px;cursor:pointer;color:var(--ink)}
+.lang button[aria-pressed=true]{background:var(--ink);color:#fff}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 16px var(--sans);text-decoration:none;border:2px solid var(--verm);background:var(--verm);color:#fff;padding:13px 24px;border-radius:2px;cursor:pointer;transition:background .25s,transform .25s,color .25s}
+.btn:hover{background:var(--vermd);border-color:var(--vermd);transform:translateY(-2px)}
+.btn.sec{background:transparent;color:var(--ink);border-color:var(--ink)}
+.btn.sec:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn.sm{padding:9px 16px;font-size:15px}
+.burger{display:none;border:1px solid var(--ink);background:transparent;width:44px;height:44px;border-radius:2px;cursor:pointer;padding:0}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);margin:5px auto;transition:transform .3s,opacity .3s}
+.burger[aria-expanded=true] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded=true] span:nth-child(2){opacity:0}
+.burger[aria-expanded=true] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+#drawer{display:none;position:fixed;inset:0;top:var(--navh,110px);background:var(--bg);z-index:49;padding:24px var(--pad);flex-direction:column;gap:6px;overflow:auto}
+#drawer.open{display:flex}
+#drawer a{font-family:var(--serif);font-size:2.4rem;text-decoration:none;padding:8px 0;border-bottom:1px solid var(--rule)}
+#drawer a.btn{font:600 17px var(--sans);margin-top:18px;border-bottom:2px solid var(--verm)}
+/* hero */
+.strips{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:8px;height:min(64vh,620px);min-height:380px;padding:8px 8px 0;overflow:hidden}
+.strip{position:relative;overflow:hidden;background:var(--alt)}
+.strip:nth-child(2){margin-top:34px}
+.strip img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;filter:saturate(.85) contrast(1.04)}
+.cap{position:absolute;left:10px;bottom:62px;background:#fff;color:var(--ink);font-size:12px;font-weight:600;padding:4px 9px;border-radius:2px}
+.label{position:relative;margin:-54px 8px 0;background:var(--bg);display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(20px,4vw,64px);padding:26px var(--pad) 40px;align-items:end}
+.label::before{content:"";position:absolute;left:var(--pad);right:var(--pad);top:0;height:3px;background:var(--verm);transform-origin:left}
+.bigwm{font-family:var(--serif);font-size:clamp(7.5rem,21vw,19rem);line-height:.78;letter-spacing:-.04em;padding-top:.08em;margin-left:-.03em}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:12px}
+.label h1{font-size:clamp(2.4rem,4.4vw,4rem);line-height:1}
+.label h1 em{color:var(--vermd)}
+.lead{margin-top:14px;max-width:34ch;font-size:1.08rem}
+.chip{display:inline-flex;align-items:center;gap:9px;background:var(--alt);border:1px solid var(--rule);padding:7px 14px;border-radius:99px;font-weight:600;font-size:14px;margin-top:18px}
+.dot{width:10px;height:10px;border-radius:50%;background:#2f7a4d;box-shadow:0 0 0 0 rgba(47,122,77,.5);animation:pulse 2.4s infinite}
+.closed .dot{background:var(--vermd);animation:none}
+@keyframes pulse{70%{box-shadow:0 0 0 8px rgba(47,122,77,0)}100%{box-shadow:0 0 0 0 rgba(47,122,77,0)}}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.fine{font-size:13px;color:var(--slate);margin-top:14px;max-width:46ch}
+/* facts */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);margin:0 var(--pad);border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.fact{padding:20px 22px 22px 0}
+.fact+.fact{border-left:1px solid var(--rule);padding-left:22px}
+.fact small{display:block;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.fact b{display:block;font-family:var(--serif);font-weight:400;font-size:1.9rem;line-height:1.15;margin:4px 0 2px}
+.fact span{font-size:14px;color:var(--slate)}
+/* sections */
+section{padding:clamp(64px,10vw,130px) var(--pad)}
+.sh{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;align-items:end;margin-bottom:34px}
+.idx{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--slate);grid-column:1/-1}
+.rule{height:1px;background:var(--ink);grid-column:1/-1}
+.sub{max-width:58ch;margin-top:14px;color:#2b3b38}
+.alt{background:var(--alt)}
+/* menu */
+.tabs{display:flex;flex-wrap:wrap;gap:0;border-bottom:1px solid var(--ink);margin-bottom:28px}
+.tabs button{font:600 15px var(--sans);background:transparent;border:0;padding:14px 22px;cursor:pointer;color:var(--ink);position:relative}
+.tabs button::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:4px;background:var(--verm);transform:scaleX(0);transition:transform .35s}
+.tabs button[aria-selected=true]::after{transform:scaleX(1)}
+.tabs button:hover{background:rgba(18,32,29,.06)}
+.mpanel{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:start}
+.mpanel.fade{animation:fade .55s ease-out}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}}
+.mfig{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--alt);margin:0}
+.mfig img,.mfig svg.ill{width:100%;height:100%;object-fit:cover;filter:saturate(.88) contrast(1.03)}
+.mfig figcaption{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--ink);font-size:12px;font-weight:600;padding:4px 9px}
+ol.rows{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.row{border-bottom:1px solid var(--rule)}
+.rowbtn{width:100%;display:grid;grid-template-columns:44px 1fr 28px auto;gap:6px 14px;align-items:center;text-align:left;background:transparent;border:0;color:var(--ink);font:inherit;padding:20px 4px;cursor:pointer;transition:background .25s,padding .25s}
+.rowbtn:hover{background:rgba(255,255,255,.55);padding-left:12px}
+.rowbtn .n{font-size:13px;font-weight:600;color:var(--slate)}
+.rowbtn .nm{font-family:var(--serif);font-size:1.9rem;line-height:1.05}
+.rowbtn .ds{grid-column:2;font-size:15px;color:#2b3b38}
+.rowbtn .ic{grid-column:3;grid-row:1/3;width:26px;height:26px;stroke:var(--slate);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.tag{grid-column:4;grid-row:1/3;font-size:11px;font-weight:700;letter-spacing:.1em;border:1px solid var(--slate);color:var(--slate);padding:3px 7px;border-radius:2px}
+.rd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease-out;visibility:hidden}
+.rd.open{grid-template-rows:1fr;visibility:visible}
+.rd>div{overflow:hidden}
+.rdi{display:flex;gap:18px;align-items:center;padding:4px 4px 22px 58px;font-size:14.5px;color:#2b3b38}
+.rdi svg{flex:none;width:64px;height:64px;padding:14px;background:var(--alt);stroke:var(--ink);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+/* band */
+.band{background:var(--verm);color:#fff}
+.band .idx{color:#fff}
+.band .rule{background:#fff}
+.band .sub{color:#fff}
+.bandg{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,4vw,64px);align-items:center}
+.sel{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 18px}
+.sel button{font:600 15px var(--sans);background:var(--ink);color:#fff;border:2px solid var(--ink);padding:10px 18px;border-radius:99px;cursor:pointer;transition:background .25s,color .25s}
+.sel button[aria-pressed=true]{background:#fff;color:var(--ink);border-color:#fff}
+.sel button:hover{border-color:#fff}
+.sum{background:#fff;color:var(--ink);padding:18px 20px;border-radius:2px}
+.sum small{font-size:11px;font-weight:700;letter-spacing:.1em;border:1px solid var(--slate);color:var(--slate);padding:2px 6px;margin-left:8px}
+.sum strong{display:block;font-family:var(--serif);font-weight:400;font-size:1.7rem;line-height:1.1;margin:6px 0 12px}
+.sum .btn{background:var(--ink);border-color:var(--ink)}
+.sum .btn:hover{background:var(--slate);border-color:var(--slate)}
+.addmsg{font-size:14px;margin-top:10px;min-height:1.4em}
+.addmsg a{color:var(--vermd);font-weight:600}
+.stage{position:relative;aspect-ratio:4/3;background:#16312c;overflow:hidden;border:2px solid #fff}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%;display:none;touch-action:pan-y;cursor:grab}
+.stage canvas:active{cursor:grabbing}
+.stage.gl canvas{display:block}
+.stage.gl .fb{display:none}
+.fb{position:absolute;inset:0;perspective:900px;margin:0}
+.fb img{width:100%;height:100%;object-fit:cover;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) scale(1.04);transition:transform .25s ease-out;filter:saturate(.8)}
+.fb figcaption{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--ink);font-size:12px;font-weight:600;padding:4px 9px}
+.gctl{position:absolute;right:10px;bottom:10px;display:none;gap:6px}
+.stage.gl .gctl{display:flex}
+.gctl button{width:44px;height:44px;border-radius:50%;border:2px solid #fff;background:var(--ink);color:#fff;font:600 18px var(--sans);cursor:pointer}
+.gctl button:hover{background:#fff;color:var(--ink)}
+.hint{font-size:14px;margin-top:10px}
+/* gallery */
+.gal{display:grid;grid-template-columns:1.35fr 1fr;grid-template-rows:repeat(2,minmax(0,280px));gap:10px}
+.gi{position:relative;overflow:hidden;border:0;padding:0;background:var(--alt);cursor:zoom-in}
+.gi:first-child{grid-row:1/3}
+.gi img{width:100%;height:100%;object-fit:cover;filter:saturate(.85) contrast(1.03);transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.gi:hover img{transform:scale(1.045)}
+.gi span{position:absolute;left:10px;bottom:10px;background:#fff;color:var(--ink);font:600 12px var(--sans);padding:4px 9px;text-align:left}
+dialog{border:0;padding:0;background:transparent;max-width:min(1100px,94vw);width:100%;color:#fff}
+dialog::backdrop{background:rgba(18,32,29,.88)}
+.lbbox{position:relative}
+.lbbox img{width:100%;max-height:78vh;object-fit:contain;background:#0d1715}
+.lbcap{background:#fff;color:var(--ink);padding:10px 14px;font-size:14px;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.lbbtn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:2px solid #fff;background:var(--ink);color:#fff;font-size:20px;cursor:pointer}
+.lbbtn.p{left:10px}.lbbtn.n{right:10px}
+.lbx{background:var(--ink);color:#fff;border:0;padding:8px 14px;font:600 14px var(--sans);cursor:pointer}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink)}
+.step{padding:28px 28px 30px 0}
+.step+.step{border-left:1px solid var(--rule);padding-left:28px}
+.step svg{width:100%;max-width:210px;height:auto;margin-bottom:18px;background:var(--alt);display:block}
+.step h3{font-size:2rem;line-height:1.05;margin-bottom:8px}
+.step small{font-size:13px;font-weight:600;color:var(--slate)}
+/* booking */
+.bk{display:grid;grid-template-columns:5fr 7fr;gap:clamp(24px,5vw,80px);align-items:start}
+form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.f{display:flex;flex-direction:column;gap:6px}
+.f.full{grid-column:1/-1}
+label{font-weight:600;font-size:14px}
+input,select,textarea{font:inherit;color:var(--ink);background:#fff;border:1.5px solid var(--ink);border-radius:2px;padding:12px 12px;width:100%;min-height:48px}
+textarea{min-height:84px;resize:vertical}
+input[aria-invalid=true],select[aria-invalid=true]{border-color:var(--vermd);border-width:2px}
+.err{color:#8f2415;font-size:13px;font-weight:600;min-height:1em}
+.demo{background:var(--bg);border-left:4px solid var(--verm);padding:12px 14px;font-size:14px}
+.fstatus{grid-column:1/-1;min-height:1.5em;font-weight:600}
+.fstatus.ok{background:#fff;border-left:4px solid #2f7a4d;padding:12px 14px}
+/* hours */
+.hm{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);align-items:start}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:14px 8px;border-bottom:1px solid var(--rule);font-size:17px}
+th{font-weight:600}
+tr.today{background:#fff;box-shadow:inset 4px 0 0 var(--verm)}
+tr.today td,tr.today th{font-weight:700}
+.mapc{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--alt)}
+.mapc img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+.mapp{position:absolute;left:12px;right:12px;bottom:12px;background:#fff;padding:18px 20px}
+.mapp b{display:block;font-family:var(--serif);font-weight:400;font-size:1.8rem;line-height:1.1;margin-bottom:6px}
+.mapp p{font-size:14.5px;margin-bottom:12px}
+.photo-note{position:absolute;left:12px;top:12px;background:#fff;font-size:12px;font-weight:600;padding:4px 9px}
+/* reviews */
+.revs{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
+.rev{padding:26px 28px 26px 0;margin:0}
+.rev+.rev{border-left:1px solid var(--rule);padding-left:28px}
+.rev svg{width:34px;height:34px;fill:var(--slate);margin-bottom:10px}
+.rev p{font-family:var(--serif);font-size:1.6rem;line-height:1.15}
+.rev small{display:block;margin-top:14px;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--slate)}
+/* faq */
+.faq{border-top:1px solid var(--ink);max-width:900px}
+.faq h3{font:inherit}
+.faq button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;background:transparent;border:0;border-bottom:1px solid var(--rule);padding:22px 4px;font-family:var(--serif);font-size:1.8rem;line-height:1.1;color:var(--ink);cursor:pointer}
+.faq button:hover{background:rgba(18,32,29,.05)}
+.faq .pm{font:400 28px var(--sans);transition:transform .3s;flex:none}
+.faq button[aria-expanded=true] .pm{transform:rotate(45deg)}
+.fa{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s ease-out;visibility:hidden}
+.fa.open{grid-template-rows:1fr;visibility:visible}
+.fa>div{overflow:hidden}
+.fa p{padding:14px 4px 24px;max-width:62ch}
+/* closing / footer */
+.close{background:var(--ink);color:#fff;text-align:center}
+.close h2{font-size:clamp(2.8rem,7vw,6rem);max-width:15ch;margin:0 auto 22px}
+.close p{max-width:46ch;margin:0 auto 26px}
+.close .ctas{justify-content:center}
+.close .btn.sec{color:#fff;border-color:#fff}
+.close .btn.sec:hover{background:#fff;color:var(--ink)}
+footer{background:var(--alt);padding:48px var(--pad) 40px;font-size:14.5px}
+.fg{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:34px}
+footer h3{font:700 12px var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--slate);margin-bottom:10px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:5px}
+.fwm{font-family:var(--serif);font-size:3rem;line-height:1;letter-spacing:-.02em;margin-bottom:12px}
+.disc{margin-top:30px;padding-top:18px;border-top:1px solid var(--rule);color:#2b3b38}
+.mbar{display:none}
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease-out,transform .7s ease-out;transition-delay:var(--d,0s)}
+.js .reveal.in{opacity:1;transform:none}
+.js .rule,.js .label::before{transform:scaleX(0);transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.js .rule.in{transform:scaleX(1)}
+@media (max-width:980px){
+ .links{display:none}.burger{display:block}.navr .btn{display:none}
+ .facts{grid-template-columns:1fr 1fr}.fact:nth-child(3){border-left:0;padding-left:0}.fact:nth-child(n+3){border-top:1px solid var(--rule)}
+ .mpanel,.bandg,.bk,.hm{grid-template-columns:1fr}
+ .mfig{aspect-ratio:16/10}
+ .fg{grid-template-columns:1fr 1fr}
+}
+@media (max-width:799px){
+ body{padding-bottom:78px}
+ .strips{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;height:46vh;min-height:300px;gap:8px;padding-bottom:0;scrollbar-width:none}
+ .strip{flex:0 0 78%;scroll-snap-align:center}.strip:nth-child(2){margin-top:0}
+ .label{grid-template-columns:1fr;margin-top:0;padding-top:30px}
+ .bigwm{font-size:clamp(7rem,38vw,12rem)}
+ .gal{grid-template-columns:1fr;grid-template-rows:none}.gi,.gi:first-child{grid-row:auto;aspect-ratio:4/3}
+ .steps,.revs{grid-template-columns:1fr}.step,.step+.step,.rev,.rev+.rev{border-left:0;padding-left:0;border-bottom:1px solid var(--rule)}
+ form{grid-template-columns:1fr}
+ .rowbtn{grid-template-columns:34px 1fr 24px;}.tag{grid-column:2;grid-row:3;justify-self:start}.rowbtn .ic{grid-row:1/3}
+ .rdi{padding-left:48px}
+ .mbar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:45;background:var(--bg);border-top:1px solid var(--ink);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+ .mbar .btn{padding:12px}
+ .fg{grid-template-columns:1fr}
+ .fact b{font-size:1.5rem}
+}
+@media (max-width:420px){.facts{grid-template-columns:1fr}.fact+.fact{border-left:0;padding-left:0;border-top:1px solid var(--rule)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .reveal,.js .rule{opacity:1!important;transform:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main" data-en="Skip to content">Hoppa till innehåll</a>
+<div class="banner" role="note">Independent website concept by LeadSky for Raw. Not their official website.</div>
+
+<nav class="top" id="topnav" aria-label="Main">
+ <a class="wm" href="#top" aria-label="Raw, start">Raw</a>
+ <div class="links">
+  <a href="#meny" data-en="Menu">Meny</a><a href="#skalet" data-en="The shell">Skalet</a><a href="#oppettider" data-en="Hours">Öppettider</a><a href="#hitta" data-en="Find us">Hitta hit</a><a href="#fragor" data-en="FAQ">Frågor</a>
+ </div>
+ <div class="navr">
+  <div class="lang" role="group" aria-label="Language"><button type="button" data-l="sv" aria-pressed="true">SV</button><button type="button" data-l="en" aria-pressed="false">EN</button></div>
+  <a class="btn sm" href="#boka" data-en="Book a table">Boka bord</a>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Menu"><span></span><span></span><span></span></button>
+ </div>
+</nav>
+<div id="drawer">
+ <a href="#meny" data-en="Menu">Meny</a><a href="#skalet" data-en="The shell">Skalet</a><a href="#oppettider" data-en="Hours">Öppettider</a><a href="#hitta" data-en="Find us">Hitta hit</a><a href="#fragor" data-en="FAQ">Frågor</a>
+ <a class="btn" href="#boka" data-en="Book a table">Boka bord</a>
+</div>
+
+<main id="main">
+<header class="hero" id="top">
+ <div class="strips">
+  <div class="strip"><img src="img/stock-3.jpg" width="900" height="1200" alt="Plate of fresh salmon with vegetables, illustrative stock photo" fetchpriority="high"><span class="cap" data-en="Sample image">Exempelbild</span></div>
+  <div class="strip"><img src="img/stock-1.jpg" width="900" height="1200" alt="Cold drink in a glass with ice and lemon, illustrative stock photo" fetchpriority="high"><span class="cap" data-en="Sample image">Exempelbild</span></div>
+  <div class="strip"><img src="img/stock-9.jpg" width="900" height="1200" alt="Set restaurant table seen from above, illustrative stock photo" fetchpriority="high"><span class="cap" data-en="Sample image">Exempelbild</span></div>
+ </div>
+ <div class="label">
+  <div class="bigwm" aria-hidden="true">Raw</div>
+  <div>
+   <p class="eyebrow" data-en="Raw · Restaurant · Stockholm">Raw · Restaurang · Stockholm</p>
+   <h1 data-en="Stockholm, served <em>raw</em> and simple.">Stockholm, serverat <em>rått</em> och enkelt.</h1>
+   <p class="lead" data-en="See the menu, check the hours and request a table in two minutes.">Se hela menyn, kolla öppettider och boka bord på två minuter.</p>
+   <div class="chip" id="chip" role="status"><i class="dot"></i><span id="chipText">…</span></div>
+   <div class="ctas"><a class="btn" href="#boka" data-en="Book a table">Boka bord</a><a class="btn sec" href="tel:+468309680" data-en="Call us">Ring oss</a></div>
+   <p class="fine" data-en="Sample copy. Dishes, phone number and address are to be confirmed by the restaurant.">Exempeltext. Rätter, telefonnummer och adress bekräftas av restaurangen.</p>
+  </div>
+ </div>
+</header>
+
+<div class="facts" style="margin-top:34px">
+ <div class="fact reveal"><small data-en="Today">Idag</small><b id="todayH">…</b><span id="todayS"></span></div>
+ <div class="fact reveal" style="--d:.07s"><small data-en="Area">Område</small><b>Stockholm</b><span data-en="Street address to be confirmed">Gatuadress bekräftas</span></div>
+ <div class="fact reveal" style="--d:.14s"><small data-en="Booking">Bokning</small><b data-en="Online (demo)">Online (demo)</b><span data-en="Needs a booking system">Kräver bokningssystem</span></div>
+ <div class="fact reveal" style="--d:.21s"><small data-en="Phone">Telefon</small><b><a href="tel:+468309680">+468309680</a></b><span data-en="To be confirmed">Bekräftas</span></div>
+</div>
+
+<section id="meny">
+ <div class="sh reveal"><span class="idx" data-en="01 · Menu">01 · Meny</span><h2 data-en="The menu at a glance">Menyn i korthet</h2><div class="rule"></div></div>
+ <p class="sub reveal" data-en="A sample menu. raw.se would not open when we looked, so the dishes below are suggestions that the restaurant confirms or replaces. Prices are not shown.">En exempelmeny. raw.se gick inte att öppna när vi tittade, så rätterna nedan är förslag som restaurangen bekräftar eller byter ut. Priser visas inte.</p>
+ <div style="height:28px"></div>
+ <div class="tabs" role="tablist" id="tabs" aria-label="Menu"></div>
+ <div class="mpanel" id="mpanel" role="tabpanel" tabindex="0"></div>
+</section>
+
+<section class="band dark" id="skalet">
+ <div class="sh reveal"><span class="idx" data-en="02 · The shell">02 · Skalet</span><h2 data-en="Turn an oyster in your hands.">Vrid på ett ostron.</h2><div class="rule"></div></div>
+ <div class="bandg">
+  <div class="reveal">
+   <p class="sub" style="margin-top:0" data-en="An interactive 3D sample. Drag to rotate, pick a garnish and add it as a note to your table request.">Ett interaktivt 3D-exempel. Dra för att vrida, välj tillbehör och lägg det som en notering i din bordsförfrågan.</p>
+   <div class="sel" id="sel" role="group" aria-label="Garnish">
+    <button type="button" data-g="citron" aria-pressed="true">Citron</button>
+    <button type="button" data-g="mignonette" aria-pressed="false">Mignonette</button>
+    <button type="button" data-g="pepparrot" aria-pressed="false" data-en="Horseradish">Pepparrot</button>
+    <button type="button" data-g="naturell" aria-pressed="false" data-en="Natural">Naturell</button>
+   </div>
+   <div class="sum"><span data-en="Sample serving">Exempelportion</span><small>SAMPLE</small><strong id="sumT">…</strong><button class="btn sm" id="addBk" type="button" data-en="Add to booking">Lägg till i bokningen</button><p class="addmsg" id="addMsg" role="status"></p></div>
+  </div>
+  <div class="reveal">
+   <div class="stage" id="stage">
+    <figure class="fb" id="fb"><img src="img/stock-8.jpg" width="1200" height="900" loading="lazy" alt="Fresh fish on ice at a market, illustrative stock photo"><figcaption data-en="Sample image (3D view loads when supported)">Exempelbild (3D-vyn laddas när den stöds)</figcaption></figure>
+    <canvas id="glc" tabindex="0" aria-label="3D oyster on ice. Drag or use arrow keys to rotate, plus and minus to zoom."></canvas>
+    <div class="gctl"><button type="button" id="rl" aria-label="Rotate left">←</button><button type="button" id="rr" aria-label="Rotate right">→</button><button type="button" id="zo" aria-label="Zoom out">−</button><button type="button" id="zi" aria-label="Zoom in">+</button></div>
+   </div>
+   <p class="hint" data-en="Drag or swipe sideways to rotate. Arrow keys and the buttons work too. A 3D model, not a photo of the restaurant's food.">Dra eller svep i sidled för att vrida. Piltangenter och knapparna fungerar också. En 3D-modell, inte ett foto av restaurangens mat.</p>
+  </div>
+ </div>
+</section>
+
+<section id="stamning">
+ <div class="sh reveal"><span class="idx" data-en="03 · Atmosphere">03 · Stämning</span><h2 data-en="Light, ice and water.">Ljus, is och vatten.</h2><div class="rule"></div></div>
+ <p class="sub reveal" data-en="Illustrative images, not the restaurant's own photos. Raw's real pictures would replace these, with permission.">Illustrativa bilder, inte restaurangens egna foton. Raws riktiga bilder ersätter dessa, med tillstånd.</p>
+ <div style="height:28px"></div>
+ <div class="gal">
+  <button class="gi reveal" type="button" data-i="0" aria-label="Enlarge image"><img src="img/stock-10.jpg" width="1200" height="1000" loading="lazy" alt="Bright dining table with chairs and a lamp, illustrative stock photo"><span data-en="Table in daylight">Bord i dagsljus</span></button>
+  <button class="gi reveal" type="button" data-i="1" style="--d:.1s" aria-label="Enlarge image"><img src="img/stock-7.jpg" width="1000" height="700" loading="lazy" alt="Seafood on display at a fish market, illustrative stock photo"><span data-en="Fresh from the market">Färskt från marknaden</span></button>
+  <button class="gi reveal" type="button" data-i="2" style="--d:.2s" aria-label="Enlarge image"><img src="img/stock-11.jpg" width="1000" height="700" loading="lazy" alt="Stockholm old town, Gamla Stan, illustrative stock photo"><span data-en="Stockholm, Gamla Stan">Stockholm, Gamla Stan</span></button>
+ </div>
+</section>
+<dialog id="lb" aria-label="Image viewer"><div class="lbbox"><img id="lbimg" src="img/stock-10.jpg" alt=""><button class="lbbtn p" type="button" id="lbp" aria-label="Previous">←</button><button class="lbbtn n" type="button" id="lbn" aria-label="Next">→</button><div class="lbcap"><span id="lbc"></span><button class="lbx" type="button" id="lbx" data-en="Close">Stäng</button></div></div></dialog>
+
+<section class="alt" id="besok">
+ <div class="sh reveal"><span class="idx" data-en="04 · Your visit">04 · Besök</span><h2 data-en="Three ways to a table.">Tre sätt att komma till bordet.</h2><div class="rule"></div></div>
+ <div class="steps">
+  <div class="step reveal">
+   <svg viewBox="0 0 210 130" role="img" aria-label="Door illustration"><rect width="210" height="130" fill="#e2e9e1"/><rect x="70" y="18" width="70" height="100" fill="#12201d"/><rect x="76" y="24" width="58" height="94" fill="#3e5c63"/><circle cx="124" cy="72" r="4" fill="#f3f5f0"/><rect x="40" y="116" width="130" height="4" fill="#12201d"/><path d="M84 40h42" stroke="#f3f5f0" stroke-width="2"/></svg>
+   <small>01</small><h3 data-en="Walk by">Kom förbi</h3><p data-en="Check today's hours above or in the table below, then come in.">Kolla dagens öppettider ovan eller i tabellen längre ner, och kom in.</p>
+  </div>
+  <div class="step reveal" style="--d:.1s">
+   <svg viewBox="0 0 210 130" role="img" aria-label="Calendar illustration"><rect width="210" height="130" fill="#e2e9e1"/><rect x="55" y="22" width="100" height="90" fill="#f3f5f0" stroke="#12201d" stroke-width="2"/><rect x="55" y="22" width="100" height="22" fill="#c8402a"/><g fill="#12201d"><rect x="70" y="56" width="12" height="10"/><rect x="94" y="56" width="12" height="10"/><rect x="118" y="56" width="12" height="10"/><rect x="70" y="80" width="12" height="10"/><rect x="94" y="80" width="12" height="10" fill="#c8402a"/><rect x="118" y="80" width="12" height="10"/></g></svg>
+   <small>02</small><h3 data-en="Request a table">Boka bord</h3><p data-en="Pick a date, time and party size. In this concept the form is a demo.">Välj datum, tid och antal gäster. I det här konceptet är formuläret en demo.</p>
+  </div>
+  <div class="step reveal" style="--d:.2s">
+   <svg viewBox="0 0 210 130" role="img" aria-label="Phone illustration"><rect width="210" height="130" fill="#e2e9e1"/><rect x="82" y="12" width="46" height="106" rx="8" fill="#12201d"/><rect x="88" y="24" width="34" height="78" fill="#f3f5f0"/><circle cx="105" cy="109" r="3.5" fill="#f3f5f0"/><path d="M95 52c0 10 8 18 18 18l3-6-6-3-3 2c-3-1-5-4-6-6l2-3-3-6z" fill="#c8402a"/></svg>
+   <small>03</small><h3 data-en="Call">Ring</h3><p data-en="Prefer to talk? Call or write to the booking address. Details are to be confirmed.">Föredrar du att prata? Ring eller skriv till bokningsadressen. Uppgifterna bekräftas.</p>
+  </div>
+ </div>
+</section>
+
+<section id="boka">
+ <div class="bk">
+  <div class="reveal">
+   <span class="idx" style="display:block;margin-bottom:14px;font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)" data-en="05 · Book">05 · Boka</span>
+   <h2 data-en="Book a table.">Boka bord.</h2>
+   <p class="sub" data-en="Fill in the form. This is a demo: nothing is sent. A real reservation needs a connection to a booking system, such as a third-party reservation provider.">Fyll i formuläret. Det här är en demo: ingenting skickas. Riktig bokning kräver koppling till ett bokningssystem, till exempel en reservationstjänst.</p>
+   <p class="demo" style="margin-top:20px" data-en="Prefer to ask directly? Phone +468309680 · boka@raw.se (both to be confirmed by the restaurant).">Vill du fråga direkt? Telefon <a href="tel:+468309680">+468309680</a> · <a href="mailto:boka@raw.se">boka@raw.se</a> (båda bekräftas av restaurangen).</p>
+  </div>
+  <form id="bform" novalidate class="reveal">
+   <div class="f"><label for="bdate" data-en="Date">Datum</label><input type="date" id="bdate" required aria-describedby="e-date"><span class="err" id="e-date"></span></div>
+   <div class="f"><label for="btime" data-en="Time">Tid</label><select id="btime" required aria-describedby="e-time"></select><span class="err" id="e-time"></span></div>
+   <div class="f"><label for="bguests" data-en="Guests">Antal gäster</label><select id="bguests" required></select></div>
+   <div class="f"><label for="bname" data-en="Name">Namn</label><input id="bname" autocomplete="name" required aria-describedby="e-name"><span class="err" id="e-name"></span></div>
+   <div class="f full"><label for="bphone" data-en="Phone">Telefon</label><input id="bphone" type="tel" autocomplete="tel" required inputmode="tel" aria-describedby="e-phone"><span class="err" id="e-phone"></span></div>
+   <div class="f full"><label for="bnote" data-en="Notes (optional)">Önskemål (valfritt)</label><textarea id="bnote"></textarea></div>
+   <div class="f full"><button class="btn" type="submit" data-en="Send request (demo)">Skicka förfrågan (demo)</button></div>
+   <div class="fstatus" id="fstatus" role="status" aria-live="polite"></div>
+  </form>
+ </div>
+</section>
+
+<section class="alt" id="oppettider">
+ <div class="hm">
+  <div>
+   <div class="sh reveal" style="margin-bottom:20px"><span class="idx" data-en="06 · Opening hours">06 · Öppettider</span><h2 data-en="When we're open.">När vi har öppet.</h2><div class="rule"></div></div>
+   <table class="reveal"><caption style="position:absolute;left:-999px">Opening hours</caption><tbody id="hrows"></tbody></table>
+   <p class="fine" data-en="Hours as published for the business. Public holidays may differ: confirm with the restaurant.">Tider enligt uppgifter för verksamheten. Helgdagar kan avvika: bekräfta med restaurangen.</p>
+  </div>
+  <div id="hitta">
+   <div class="sh reveal" style="margin-bottom:20px"><span class="idx" data-en="07 · Find us">07 · Hitta hit</span><h2 data-en="Find Raw.">Hitta Raw.</h2><div class="rule"></div></div>
+   <div class="mapc reveal">
+    <img src="img/stock-12.jpg" width="1000" height="1200" loading="lazy" alt="Stockholm waterfront and old town at sunset, illustrative stock photo"><span class="photo-note" data-en="Illustrative photo of Stockholm">Illustrativt foto av Stockholm</span>
+    <div class="mapp"><b>Stockholm</b><p data-en="Street address to be confirmed by the restaurant. The map link runs a search and may show several results.">Gatuadress bekräftas av restaurangen. Kartlänken gör en sökning och kan visa flera träffar.</p><a class="btn sm" href="https://www.google.com/maps/search/?api=1&query=Raw+restaurang+Stockholm" target="_blank" rel="noopener" data-en="Open in Google Maps">Öppna i Google Maps</a></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="omdomen">
+ <div class="sh reveal"><span class="idx" data-en="08 · Reviews (sample)">08 · Omdömen (exempel)</span><h2 data-en="Space for guest words.">Plats för gästernas ord.</h2><div class="rule"></div></div>
+ <p class="sub reveal" data-en="The three quotes below are layout samples written for this concept. They are not real reviews and do not come from real guests.">De tre citaten nedan är layoutexempel skrivna för det här konceptet. De är inte riktiga omdömen och kommer inte från riktiga gäster.</p>
+ <div style="height:28px"></div>
+ <div class="revs">
+  <figure class="rev reveal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18v-6c0-4 2-7 6-8l1 2c-2 1-3 2-3 4h3v8zm10 0v-6c0-4 2-7 6-8l1 2c-2 1-3 2-3 4h3v8z"/></svg><p data-en="“Sample quote about the food goes here.”">”Här står ett exempelcitat om maten.”</p><small data-en="SAMPLE · NOT A REAL REVIEW">EXEMPEL · INTE ETT RIKTIGT OMDÖME</small></figure>
+  <figure class="rev reveal" style="--d:.1s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18v-6c0-4 2-7 6-8l1 2c-2 1-3 2-3 4h3v8zm10 0v-6c0-4 2-7 6-8l1 2c-2 1-3 2-3 4h3v8z"/></svg><p data-en="“Sample quote about the service goes here.”">”Här står ett exempelcitat om servicen.”</p><small data-en="SAMPLE · NOT A REAL REVIEW">EXEMPEL · INTE ETT RIKTIGT OMDÖME</small></figure>
+  <figure class="rev reveal" style="--d:.2s"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18v-6c0-4 2-7 6-8l1 2c-2 1-3 2-3 4h3v8zm10 0v-6c0-4 2-7 6-8l1 2c-2 1-3 2-3 4h3v8z"/></svg><p data-en="“Sample quote about the room goes here.”">”Här står ett exempelcitat om lokalen.”</p><small data-en="SAMPLE · NOT A REAL REVIEW">EXEMPEL · INTE ETT RIKTIGT OMDÖME</small></figure>
+ </div>
+</section>
+
+<section class="alt" id="fragor">
+ <div class="sh reveal"><span class="idx" data-en="09 · Questions">09 · Frågor</span><h2 data-en="Good to know.">Bra att veta.</h2><div class="rule"></div></div>
+ <div class="faq reveal" id="faq"></div>
+</section>
+
+<section class="close dark">
+ <h2 class="reveal" data-en="Your table is two minutes away.">Ditt bord är två minuter bort.</h2>
+ <p class="reveal" data-en="Request a table in the demo form or call the number below. Details are to be confirmed by the restaurant.">Skicka en bordsförfrågan i demoformuläret eller ring numret nedan. Uppgifterna bekräftas av restaurangen.</p>
+ <div class="ctas reveal"><a class="btn" href="#boka" data-en="Book a table">Boka bord</a><a class="btn sec" href="tel:+468309680">+468309680</a></div>
+</section>
+</main>
+
+<footer>
+ <div class="fg">
+  <div>
+   <div class="fwm" aria-hidden="true">Raw</div>
+   <p data-en="Raw · Restaurant · Stockholm<br>Phone +468309680 · boka@raw.se (to be confirmed)">Raw · Restaurang · Stockholm<br>Telefon +468309680 · boka@raw.se (bekräftas)</p>
+  </div>
+  <div>
+   <h3 data-en="Photo credits">Bildkällor</h3>
+   <ul>
+    <li><a href="https://pixabay.com/photos/alcohol-beverage-cocktail-cold-1853327/" target="_blank" rel="noopener">Pexels, via Pixabay</a></li>
+    <li><a href="https://pixabay.com/photos/drink-glass-lime-mint-cold-fresh-1532300/" target="_blank" rel="noopener">AS_Photography, Pixabay</a></li>
+    <li><a href="https://pixabay.com/photos/food-salmon-teriyaki-fish-eat-712665/" target="_blank" rel="noopener">Wow_Pho, Pixabay</a></li>
+    <li><a href="https://pixabay.com/photos/new-years-eve-salmon-fish-seafood-518032/" target="_blank" rel="noopener">cattalin, Pixabay</a></li>
+    <li><a href="https://pixabay.com/photos/pasta-italian-cuisine-dish-3547078/" target="_blank" rel="noopener">RitaE, Pixabay</a></li>
+    <li><a href="https://pixabay.com/photos/fish-market-seafood-fish-man-food-428058/" target="_blank" rel="noopener">jarmoluk, Pixabay</a></li>
+   </ul>
+  </div>
+  <div>
+   <h3>&nbsp;</h3>
+   <ul>
+    <li><a href="https://pixabay.com/photos/fish-fish-food-fish-market-animal-7910906/" target="_blank" rel="noopener">akbarnemati, Pixabay</a></li>
+    <li><a href="https://pixabay.com/photos/table-table-setting-event-dining-4397860/" target="_blank" rel="noopener">AmirHanna, Pixabay</a></li>
+    <li><a href="https://pixabay.com/photos/ikea-table-dining-chair-lamp-4048225/" target="_blank" rel="noopener">tianya1223, Pixabay</a></li>
+    <li><a href="https://pixabay.com/photos/stockholm-old-town-sweden-718879/" target="_blank" rel="noopener">clorichs, Pixabay</a></li>
+    <li><a href="https://pixabay.com/photos/stockholm-sweden-historic-center-2416489/" target="_blank" rel="noopener">Frank_P_AJJ74, Pixabay</a></li>
+   </ul>
+  </div>
+ </div>
+ <p class="disc" data-en="Independent website concept, private and not endorsed by Raw. All photos are illustrative stock images, not the restaurant's food, premises or staff. The “Raw” wordmark is set in plain type and is not the restaurant's logo. Menu, reviews and details marked SAMPLE or 'to be confirmed' are placeholders. Concept by LeadSky.">Oberoende webbplatskoncept, privat och inte godkänt av Raw. Alla foton är illustrativa stockbilder, inte restaurangens mat, lokaler eller personal. Ordmärket ”Raw” är satt i vanlig typografi och är inte restaurangens logotyp. Meny, omdömen och uppgifter markerade EXEMPEL eller ”bekräftas” är platshållare. Concept by LeadSky.</p>
+</footer>
+
+<div class="mbar"><a class="btn" href="#boka" data-en="Book">Boka</a><a class="btn sec" href="tel:+468309680" data-en="Call">Ring</a></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+ <symbol id="i-fish" viewBox="0 0 24 24"><path d="M3 12c4-6 10-6 14 0-4 6-10 6-14 0z"/><path d="M17 12l4-4v8z"/><circle cx="8" cy="11" r=".8"/></symbol>
+ <symbol id="i-shell" viewBox="0 0 24 24"><path d="M4 17c0-6 4-11 8-11s8 5 8 11z"/><path d="M12 6v11M8 8l1 9M16 8l-1 9"/></symbol>
+ <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c1 4 5 6 5 11a5 5 0 0 1-10 0c0-2 1-3 2-4 0 2 1 3 2 3 0-4-1-6 1-10z"/></symbol>
+ <symbol id="i-glass" viewBox="0 0 24 24"><path d="M7 3h10l-1 8a4 4 0 0 1-8 0zM12 15v6M8 21h8"/></symbol>
+ <symbol id="i-scoop" viewBox="0 0 24 24"><path d="M6 11a6 6 0 0 1 12 0zM8 11l4 10 4-10"/></symbol>
+</svg>
+
+<script>
+(function(){
+var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!RM)document.documentElement.classList.add('js');
+var $=function(s,r){return(r||document).querySelector(s)},$$=function(s,r){return[].slice.call((r||document).querySelectorAll(s))};
+var lang='sv',L=function(sv,en){return lang==='en'?en:sv};
+var p2=function(n){return String(n).padStart(2,'0')};
+var H={0:[12,22],1:[11,22],2:[11,22],3:[11,23],4:[11,23],5:[11,23],6:[12,23]};
+var DAYS=[['Söndag','Sunday'],['Måndag','Monday'],['Tisdag','Tuesday'],['Onsdag','Wednesday'],['Torsdag','Thursday'],['Fredag','Friday'],['Lördag','Saturday']];
+function nowSTO(){var f=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Stockholm',weekday:'short',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()),o={};f.forEach(function(x){o[x.type]=x.value});
+ var m={Sun:0,Mon:1,Tue:2,Wed:3,Thu:4,Fri:5,Sat:6};return{d:m[o.weekday],h:(+o.hour)%24,m:+o.minute,date:o.year+'-'+o.month+'-'+o.day}}
+function renderStatus(){var n=nowSTO(),h=H[n.d],mins=n.h*60+n.m,open=mins>=h[0]*60&&mins<h[1]*60,t;
+ if(open)t=L('Öppet nu · till '+p2(h[1])+':00','Open now · until '+p2(h[1])+':00');
+ else if(mins<h[0]*60)t=L('Stängt · öppnar idag '+p2(h[0])+':00','Closed · opens today '+p2(h[0])+':00');
+ else t=L('Stängt · öppnar imorgon '+p2(H[(n.d+1)%7][0])+':00','Closed · opens tomorrow '+p2(H[(n.d+1)%7][0])+':00');
+ $('#chip').classList.toggle('closed',!open);$('#chipText').textContent=t;
+ $('#todayH').textContent=p2(h[0])+':00–'+p2(h[1])+':00';$('#todayS').textContent=DAYS[n.d][lang==='en'?1:0]+' · '+(open?L('öppet nu','open now'):L('stängt just nu','closed right now'));
+ var rows=[1,2,3,4,5,6,0].map(function(d){return'<tr'+(d===n.d?' class="today" aria-current="date"':'')+'><th scope="row">'+DAYS[d][lang==='en'?1:0]+'</th><td>'+p2(H[d][0])+':00–'+p2(H[d][1])+':00</td></tr>'}).join('');
+ $('#hrows').innerHTML=rows}
+/* menu */
+var MENU={
+raw:{l:['Rått','Raw'],img:'img/stock-4.jpg',alt:'Salmon and seafood plate, illustrative stock photo',items:[
+ ['Laxcrudo','Salmon crudo','Dill, citron och olivolja.','Dill, lemon and olive oil.','fish'],
+ ['Tonfisktartar','Tuna tartare','Rödlök, soja och gurka.','Red onion, soy and cucumber.','fish'],
+ ['Ostron naturell','Oysters, natural','Med citron och mignonette.','With lemon and mignonette.','shell'],
+ ['Pilgrimsmusslor','Raw scallops','Lime, chili och örter.','Lime, chili and herbs.','shell']]},
+hot:{l:['Varmt','Hot'],img:'img/stock-5.jpg',alt:'Pasta with scampi, illustrative stock photo',items:[
+ ['Dagens fisk','Fish of the day','Smörsås och säsongens grönsaker.','Butter sauce and seasonal vegetables.','fish'],
+ ['Pasta med skaldjur','Seafood pasta','Vitlök, vitt vin och persilja.','Garlic, white wine and parsley.','flame'],
+ ['Grillad blomkål','Grilled cauliflower','Ett vegetariskt förslag med örtolja.','A vegetarian suggestion with herb oil.','flame'],
+ ['Fiskgryta','Fish stew','Tomat, saffran och bröd.','Tomato, saffron and bread.','flame']]},
+dessert:{l:['Dessert','Dessert'],img:null,alt:'',items:[
+ ['Citronkräm','Lemon cream','Kall och syrlig.','Cold and tart.','scoop'],
+ ['Chokladmousse','Chocolate mousse','Med havssalt.','With sea salt.','scoop'],
+ ['Sorbet','Sorbet','Dagens smak.','Flavour of the day.','scoop'],
+ ['Ostbricka','Cheese plate','Tre ostar och knäcke.','Three cheeses and crispbread.','scoop']]},
+drink:{l:['Dryck','Drinks'],img:'img/stock-2.jpg',alt:'Citrus drink with mint and ice, illustrative stock photo',items:[
+ ['Husets vita','House white','Torrt och friskt.','Dry and fresh.','glass'],
+ ['Mousserande','Sparkling','Till ostron och crudo.','For oysters and crudo.','glass'],
+ ['Alkoholfri citronad','Alcohol-free lemonade','Lime och mynta.','Lime and mint.','glass'],
+ ['Lokalt öl','Local beer','Sort bekräftas av restaurangen.','Brand confirmed by the restaurant.','glass']]}};
+var ILL='<svg class="ill" viewBox="0 0 400 500" role="img" aria-label="Illustration of a glass of lemon cream with a lemon slice"><rect width="400" height="500" fill="#e2e9e1"/><circle cx="300" cy="120" r="70" fill="#f3f5f0"/><path d="M130 190h140l-18 160a52 52 0 0 1-104 0z" fill="#f3f5f0" stroke="#12201d" stroke-width="3"/><path d="M142 250h116l-10 100a48 48 0 0 1-96 0z" fill="#f1dc7a"/><path d="M200 400v50M150 450h100" stroke="#12201d" stroke-width="3" stroke-linecap="round"/><g transform="translate(262 196) rotate(-20)"><circle r="42" fill="#e6c229"/><circle r="35" fill="#f6ecb4"/><g stroke="#e6c229" stroke-width="2"><path d="M0 0v-35M0 0l30-17M0 0l30 17M0 0v35M0 0l-30 17M0 0l-30-17"/></g></g></svg>';
+var cur='raw',openRow=null;
+function renderTabs(){$('#tabs').innerHTML=Object.keys(MENU).map(function(k){return'<button role="tab" id="t-'+k+'" aria-selected="'+(k===cur)+'" tabindex="'+(k===cur?0:-1)+'" data-k="'+k+'">'+MENU[k].l[lang==='en'?1:0]+'</button>'}).join('')}
+function renderMenu(anim){var t=MENU[cur],i=lang==='en'?1:0,pn=$('#mpanel');pn.setAttribute('aria-labelledby','t-'+cur);
+ var fig=t.img?'<img src="'+t.img+'" width="900" height="1125" loading="lazy" alt="'+t.alt+'">':ILL;
+ var rows=t.items.map(function(it,n){return'<li class="row"><button type="button" class="rowbtn" aria-expanded="false" aria-controls="d'+n+'"><span class="n">0'+(n+1)+'</span><span class="nm">'+it[i]+'</span><span class="ds">'+it[2+i]+'</span><svg class="ic" aria-hidden="true"><use href="#i-'+it[4]+'"/></svg><span class="tag">'+L('EXEMPEL','SAMPLE')+'</span></button><div class="rd" id="d'+n+'"><div><div class="rdi"><svg aria-hidden="true" viewBox="0 0 24 24"><use href="#i-'+it[4]+'"/></svg><span>'+L('Exempelrätt. Pris, allergener och tillgänglighet bekräftas av restaurangen.','Sample dish. Price, allergens and availability are confirmed by the restaurant.')+'</span></div></div></div></li>'}).join('');
+ pn.innerHTML='<figure class="mfig">'+fig+'<figcaption>'+L('Illustrativt exempel','Illustrative sample')+'</figcaption></figure><ol class="rows">'+rows+'</ol>';
+ if(anim&&!RM){pn.classList.remove('fade');void pn.offsetWidth;pn.classList.add('fade')}}
+function initMenu(){renderTabs();renderMenu();
+ $('#tabs').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;cur=b.dataset.k;renderTabs();renderMenu(true)});
+ $('#tabs').addEventListener('keydown',function(e){var ks=Object.keys(MENU),i=ks.indexOf(cur);if(e.key==='ArrowRight')i=(i+1)%ks.length;else if(e.key==='ArrowLeft')i=(i+ks.length-1)%ks.length;else return;e.preventDefault();cur=ks[i];renderTabs();renderMenu(true);$('#t-'+cur).focus()});
+ $('#mpanel').addEventListener('click',function(e){var b=e.target.closest('.rowbtn');if(!b)return;var d=$('#'+b.getAttribute('aria-controls')),o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);d.classList.toggle('open',!o)})}
+/* faq */
+var FAQ=[['Hur bokar jag?','How do I book?','Använd bokningsformuläret här när restaurangen har kopplat ett bokningssystem, eller ring respektive mejla boka@raw.se. Uppgifterna bekräftas av restaurangen.','Use the booking form here once the restaurant has connected a booking system, or call or email boka@raw.se. The details are to be confirmed by the restaurant.'],
+['Hur är det med allergier?','What about allergies?','Berätta om dina allergier när du bokar eller ringer. Restaurangen bekräftar vilka rätter som passar. Det här konceptet innehåller ingen verklig allergeninformation.','Tell the restaurant about your allergies when you book or call. They confirm which dishes suit you. This concept contains no real allergen information.'],
+['Finns det vegetariska rätter?','Are there vegetarian dishes?','Exempelmenyn visar ett vegetariskt förslag, men den riktiga menyn bekräftas av restaurangen.','The sample menu shows one vegetarian suggestion, but the real menu is confirmed by the restaurant.'],
+['Kan vi komma i grupp?','Can we come as a group?','Ring eller mejla för att höra om plats för större sällskap. Det är inte bekräftat i det här konceptet.','Call or email to ask about space for larger parties. This is not confirmed in this concept.'],
+['Kan jag komma utan bokning?','Can I come without a booking?','Öppettiderna finns i tabellen. Vill du ha ett bord en viss tid är det tryggast att boka eller ringa. Restaurangens regler för spontanbesök bekräftas av dem.','The hours are in the table. If you want a table at a set time, booking or calling is safest. The restaurant confirms its own walk-in rules.']];
+function renderFaq(){var i=lang==='en'?1:0,open=$$('#faq button[aria-expanded=true]').map(function(b){return b.id});
+ $('#faq').innerHTML=FAQ.map(function(f,n){return'<h3><button type="button" id="fq'+n+'" aria-expanded="'+(open.indexOf('fq'+n)>-1)+'" aria-controls="fa'+n+'"><span>'+f[i]+'</span><span class="pm" aria-hidden="true">+</span></button></h3><div class="fa'+(open.indexOf('fq'+n)>-1?' open':'')+'" id="fa'+n+'" role="region" aria-labelledby="fq'+n+'"><div><p>'+f[2+i]+'</p></div></div>'}).join('')}
+$('#faq').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;var o=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',!o);$('#'+b.getAttribute('aria-controls')).classList.toggle('open',!o)});
+/* language */
+function setLang(l){lang=l;document.documentElement.lang=l;
+ $$('[data-en]').forEach(function(el){if(el.dataset.sv===undefined)el.dataset.sv=el.innerHTML;el.innerHTML=l==='en'?el.dataset.en:el.dataset.sv});
+ $$('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+ renderStatus();renderTabs();renderMenu();renderFaq();fillTimes();fillGuests();updSum();$('#addMsg').textContent=''}
+$$('.lang button').forEach(function(b){b.addEventListener('click',function(){setLang(b.dataset.l)})});
+/* nav */
+var burger=$('#burger'),drawer=$('#drawer');
+function setNavH(){document.documentElement.style.setProperty('--navh',($('#topnav').getBoundingClientRect().bottom)+'px')}
+function closeD(){drawer.classList.remove('open');burger.setAttribute('aria-expanded','false')}
+burger.addEventListener('click',function(){setNavH();var o=!drawer.classList.contains('open');drawer.classList.toggle('open',o);burger.setAttribute('aria-expanded',o)});
+$$('#drawer a').forEach(function(a){a.addEventListener('click',closeD)});
+addEventListener('keydown',function(e){if(e.key==='Escape')closeD()});
+/* reveal */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+$$('.reveal,.rule').forEach(function(el){io.observe(el)});
+/* gallery */
+var GAL=[['img/stock-10.jpg','Bright dining table with chairs and a lamp, illustrative stock photo','Bord i dagsljus','Table in daylight'],['img/stock-7.jpg','Seafood on display at a fish market, illustrative stock photo','Färskt från marknaden','Fresh from the market'],['img/stock-11.jpg','Stockholm old town, Gamla Stan, illustrative stock photo','Stockholm, Gamla Stan','Stockholm, Gamla Stan']];
+var lb=$('#lb'),gi=0;
+function showLb(){var g=GAL[gi];$('#lbimg').src=g[0];$('#lbimg').alt=g[1];$('#lbc').textContent=L(g[2],g[3])+' · '+L('illustrativt foto','illustrative photo')}
+$$('.gi').forEach(function(b){b.addEventListener('click',function(){gi=+b.dataset.i;showLb();if(lb.showModal)lb.showModal();else lb.setAttribute('open','')})});
+$('#lbp').onclick=function(){gi=(gi+2)%3;showLb()};$('#lbn').onclick=function(){gi=(gi+1)%3;showLb()};
+$('#lbx').onclick=function(){lb.close?lb.close():lb.removeAttribute('open')};
+lb.addEventListener('keydown',function(e){if(e.key==='ArrowRight')$('#lbn').click();if(e.key==='ArrowLeft')$('#lbp').click()});
+lb.addEventListener('click',function(e){if(e.target===lb)$('#lbx').click()});
+/* booking */
+var bd=$('#bdate'),bt=$('#btime'),bg=$('#bguests');
+bd.min=nowSTO().date;
+function fillGuests(){var v=bg.value||'2',o='';for(var i=1;i<=8;i++)o+='<option value="'+i+'">'+i+' '+(i===1?L('gäst','guest'):L('gäster','guests'))+'</option>';o+='<option value="9">'+L('9 eller fler (ring oss)','9 or more (call us)')+'</option>';bg.innerHTML=o;bg.value=v}
+function fillTimes(){var v=bt.value,o='<option value="">'+L('Välj tid','Choose a time')+'</option>';
+ if(bd.value){var p=bd.value.split('-'),d=new Date(+p[0],+p[1]-1,+p[2]).getDay(),h=H[d],n=nowSTO();
+  for(var m=h[0]*60;m<=h[1]*60-30;m+=30){if(bd.value===n.date&&m<=n.h*60+n.m)continue;o+='<option value="'+p2(Math.floor(m/60))+':'+p2(m%60)+'">'+p2(Math.floor(m/60))+':'+p2(m%60)+'</option>'}}
+ bt.innerHTML=o;bt.value=v;if(bt.value!==v)bt.value=''}
+bd.addEventListener('change',fillTimes);
+function setErr(id,msg,el){$('#e-'+id).textContent=msg||'';if(el)el.setAttribute('aria-invalid',!!msg)}
+$('#bform').addEventListener('submit',function(e){e.preventDefault();var ok=true,st=$('#fstatus');st.className='fstatus';st.textContent='';
+ var n=$('#bname'),ph=$('#bphone');
+ if(!bd.value||bd.value<bd.min){setErr('date',L('Välj ett datum från idag och framåt.','Choose a date from today onwards.'),bd);ok=false}else setErr('date','',bd);
+ if(!bt.value){setErr('time',bd.value?L('Välj en tid.','Choose a time.'):L('Välj datum först, sedan tid.','Choose a date first, then a time.'),bt);ok=false}else setErr('time','',bt);
+ if(n.value.trim().length<2){setErr('name',L('Skriv ditt namn.','Enter your name.'),n);ok=false}else setErr('name','',n);
+ if(!/^[+0-9()\s-]{6,}$/.test(ph.value.trim())){setErr('phone',L('Skriv ett giltigt telefonnummer.','Enter a valid phone number.'),ph);ok=false}else setErr('phone','',ph);
+ if(!ok){st.textContent=L('Rätta fälten som är markerade.','Please fix the highlighted fields.');var f=$('#bform [aria-invalid=true]');if(f)f.focus();return}
+ st.className='fstatus ok';st.textContent=L('Det här är ett demoformulär, inget skickades. ','This is a demo form, nothing was sent. ')+L('Din förfrågan: ','Your request: ')+bd.value+' '+bt.value+', '+bg.value+' '+L('gäster','guests')+'.'});
+/* 3D */
+var GARN={citron:['Ostron med citron','Oysters with lemon'],mignonette:['Ostron med mignonette','Oysters with mignonette'],pepparrot:['Ostron med pepparrot','Oysters with horseradish'],naturell:['Ostron naturell','Oysters, natural']};
+var garn='citron',setGarn3D=function(){};
+function updSum(){$('#sumT').textContent=GARN[garn][lang==='en'?1:0]}
+$$('#sel button').forEach(function(b){b.addEventListener('click',function(){garn=b.dataset.g;$$('#sel button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});updSum();setGarn3D(garn);$('#addMsg').textContent=''})});
+$('#addBk').addEventListener('click',function(){var t=L('Önskemål (exempel): ','Request (sample): ')+GARN[garn][lang==='en'?1:0];var nb=$('#bnote');nb.value=nb.value.replace(/^(Önskemål \(exempel\)|Request \(sample\)): .*$/m,'').trim();nb.value=(t+(nb.value?'\n'+nb.value:''));
+ $('#addMsg').innerHTML=L('Tillagd som notering i bokningsförfrågan (demo, inget skickas). <a href="#boka">Gå till bokningen</a>','Added as a note to the booking request (demo, nothing is sent). <a href="#boka">Go to booking</a>')});
+var low=(navigator.hardwareConcurrency||4)<=4||matchMedia('(pointer:coarse)').matches;
+if(!RM){var fb=$('#fb'),stg=$('#stage');
+ if(!low)stg.addEventListener('pointermove',function(e){if(stg.classList.contains('gl'))return;var r=stg.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;fb.style.setProperty('--ry',(x*10)+'deg');fb.style.setProperty('--rx',(-y*8)+'deg')});
+ var loaded=false;var lio=new IntersectionObserver(function(es){if(es[0].isIntersecting&&!loaded){loaded=true;lio.disconnect();var s=document.createElement('script');s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';s.onload=function(){try{init3D()}catch(err){}};document.head.appendChild(s)}},{rootMargin:'300px'});lio.observe($('#skalet'))}
+function init3D(){
+ var canvas=$('#glc'),stg=$('#stage'),T=THREE,ren;
+ try{ren=new T.WebGLRenderer({canvas:canvas,antialias:!low,alpha:true,powerPreference:'low-power'})}catch(e){return}
+ if(!ren.getContext())return;
+ ren.setPixelRatio(Math.min(devicePixelRatio||1,low?1.5:2));ren.outputEncoding=T.sRGBEncoding;ren.toneMapping=T.ACESFilmicToneMapping;ren.toneMappingExposure=1.05;
+ if(!low){ren.shadowMap.enabled=true;ren.shadowMap.type=T.PCFSoftShadowMap}
+ var sc=new T.Scene(),cam=new T.PerspectiveCamera(32,4/3,.1,60);
+ /* environment */
+ var ec=document.createElement('canvas');ec.width=256;ec.height=128;var cx=ec.getContext('2d'),gr=cx.createLinearGradient(0,0,0,128);gr.addColorStop(0,'#dff0f7');gr.addColorStop(.5,'#9fb9bd');gr.addColorStop(1,'#1f2e30');cx.fillStyle=gr;cx.fillRect(0,0,256,128);cx.fillStyle='#fff';cx.fillRect(30,24,50,22);cx.fillRect(150,18,70,16);cx.fillStyle='#ffd7bd';cx.fillRect(110,50,20,10);
+ var et=new T.CanvasTexture(ec);et.mapping=T.EquirectangularReflectionMapping;et.encoding=T.sRGBEncoding;
+ var pm=new T.PMREMGenerator(ren);sc.environment=pm.fromEquirectangular(et).texture;pm.dispose();
+ sc.add(new T.HemisphereLight(0xdff0f5,0x2a3a3d,.5));
+ var key=new T.DirectionalLight(0xe4f2ff,2.1);key.position.set(4,8,3);if(!low){key.castShadow=true;key.shadow.mapSize.set(1024,1024);var sh=key.shadow.camera;sh.left=-4;sh.right=4;sh.top=4;sh.bottom=-4;sh.near=1;sh.far=20;key.shadow.bias=-.0005}
+ sc.add(key);var rim=new T.PointLight(0xffa070,1.6,24);rim.position.set(-5,3,-4);sc.add(rim);
+ /* board + ice */
+ var board=new T.Mesh(new T.CylinderGeometry(3.4,3.4,.18,64),new T.MeshStandardMaterial({color:0x2f3a3c,roughness:.75,metalness:.05}));board.position.y=-.7;board.receiveShadow=true;sc.add(board);
+ var cnt=low?60:160,ice=new T.InstancedMesh(new T.IcosahedronGeometry(1,0),new T.MeshPhysicalMaterial({color:0xdff1f7,roughness:.08,clearcoat:1,clearcoatRoughness:.05,transparent:true,opacity:.74,flatShading:true,envMapIntensity:1.4}),cnt);
+ var M=new T.Matrix4(),Q=new T.Quaternion(),E=new T.Euler(),P=new T.Vector3(),S=new T.Vector3(),seed=7;function rnd(){seed=(seed*16807)%2147483647;return(seed-1)/2147483646}
+ for(var i=0;i<cnt;i++){var r=Math.sqrt(rnd())*3,a=rnd()*6.283,sz=.16+rnd()*.2;P.set(Math.cos(a)*r,-.56+(1-r/3.2)*.28*rnd()+sz*.3,Math.sin(a)*r);E.set(rnd()*3,rnd()*3,rnd()*3);Q.setFromEuler(E);S.set(sz*(.8+rnd()*.6),sz*(.6+rnd()*.5),sz*(.8+rnd()*.6));M.compose(P,Q,S);ice.setMatrixAt(i,M)}
+ ice.castShadow=!low;ice.receiveShadow=!low;sc.add(ice);
+ /* shell */
+ var shellG=new T.Group();shellG.position.y=-.05;shellG.rotation.z=.05;sc.add(shellG);
+ var sg=new T.SphereGeometry(1,low?64:96,low?28:40,0,Math.PI*2,Math.PI/2,Math.PI/2),pp=sg.attributes.position,v=new T.Vector3(),cols=[];
+ for(var i=0;i<pp.count;i++){v.fromBufferAttribute(pp,i);var an=Math.atan2(v.z,v.x),h=v.y,rf=1+h;var k=1+.06*Math.sin(an*11+h*3)*rf+.08*Math.sin(an*3+1)+.03*Math.sin(an*7);v.x*=k;v.z*=k;v.y+=.035*Math.sin(h*30)*rf;pp.setXYZ(i,v.x,v.y,v.z);
+  var t=.5+.5*Math.sin(an*2+h*5);cols.push(.88+.08*t,.86+.1*(1-t),.92+.04*t)}
+ sg.computeVertexNormals();var sg2=sg.clone();sg2.setAttribute('color',new T.Float32BufferAttribute(cols,3));
+ var outer=new T.Mesh(sg,new T.MeshStandardMaterial({color:0x8b8d82,roughness:.88,metalness:0}));
+ var inner=new T.Mesh(sg2,new T.MeshPhysicalMaterial({vertexColors:true,side:T.BackSide,metalness:.15,roughness:.22,clearcoat:1,clearcoatRoughness:.15,envMapIntensity:1.3}));
+ [outer,inner].forEach(function(m){m.scale.set(1.35,.42,1);m.castShadow=!low;m.receiveShadow=!low;shellG.add(m)});
+ /* oyster body */
+ var bgm=new T.SphereGeometry(1,64,32),bp=bgm.attributes.position,bc=[];
+ for(var i=0;i<bp.count;i++){v.fromBufferAttribute(bp,i);var an=Math.atan2(v.z,v.x),rr=Math.hypot(v.x,v.z),f=1+.07*Math.sin(an*9)+.05*Math.sin(an*5+2);v.x*=f;v.z*=f;v.y+=.05*Math.sin(an*9)*rr*rr+.04*Math.sin(v.x*6)*Math.cos(v.z*5);if(v.y<0)v.y*=.5;bp.setXYZ(i,v.x,v.y,v.z);var e=Math.min(1,Math.pow(rr,3));bc.push(.8-.35*e,.78-.34*e,.7-.3*e)}
+ bgm.setAttribute('color',new T.Float32BufferAttribute(bc,3));bgm.computeVertexNormals();
+ var body=new T.Mesh(bgm,new T.MeshPhysicalMaterial({vertexColors:true,roughness:.18,clearcoat:1,clearcoatRoughness:.08,envMapIntensity:1.2}));body.scale.set(.88,.2,.62);body.position.set(0,-.25,0);body.castShadow=!low;shellG.add(body);
+ /* garnishes */
+ var G={citron:new T.Group(),mignonette:new T.Group(),pepparrot:new T.Group(),naturell:new T.Group(),dill:new T.Group()};
+ var lc=document.createElement('canvas');lc.width=lc.height=256;var lx=lc.getContext('2d');lx.fillStyle='#e6c229';lx.beginPath();lx.arc(128,128,126,0,7);lx.fill();lx.fillStyle='#fbf3c8';lx.beginPath();lx.arc(128,128,116,0,7);lx.fill();lx.strokeStyle='#e9d36a';lx.lineWidth=3;for(var i=0;i<8;i++){lx.beginPath();lx.moveTo(128,128);lx.lineTo(128+108*Math.cos(i*.785),128+108*Math.sin(i*.785));lx.stroke()}lx.fillStyle='#f6e48a';for(var i=0;i<8;i++){lx.beginPath();lx.arc(128+60*Math.cos(i*.785+.39),128+60*Math.sin(i*.785+.39),22,0,7);lx.fill()}
+ var ltex=new T.CanvasTexture(lc);ltex.encoding=T.sRGBEncoding;
+ var lem=new T.Group(),dome=new T.Mesh(new T.SphereGeometry(.4,32,16,0,Math.PI*2,Math.PI/2,Math.PI/2),new T.MeshStandardMaterial({color:0xe6c229,roughness:.45,side:T.DoubleSide})),face=new T.Mesh(new T.CircleGeometry(.4,48),new T.MeshStandardMaterial({map:ltex,roughness:.35}));face.rotation.x=-Math.PI/2;face.position.y=.002;lem.add(dome,face);lem.scale.set(1,1,1.45);dome.castShadow=true;
+ lem.position.set(1.05,.1,.25);lem.rotation.set(0,.5,-.3);G.citron.add(lem);
+ var dm=new T.MeshStandardMaterial({color:0x4f8a3a,roughness:.6});
+ for(var i=0;i<16;i++){var a=rnd()*6.283,bx=-.25+rnd()*.15,bz=(rnd()-.5)*.2,cv=new T.CatmullRomCurve3([new T.Vector3(bx,-.06,bz),new T.Vector3(bx+Math.cos(a)*.15,.02+rnd()*.05,bz+Math.sin(a)*.15),new T.Vector3(bx+Math.cos(a)*.34,-.02+rnd()*.06,bz+Math.sin(a)*.34)]);G.dill.add(new T.Mesh(new T.TubeGeometry(cv,8,.011,4),dm))}
+ var liq=new T.Mesh(new T.CylinderGeometry(.5,.5,.02,32),new T.MeshPhysicalMaterial({color:0x8a2d4a,roughness:.1,clearcoat:1,transparent:true,opacity:.85}));liq.scale.set(1.1,1,.78);liq.position.set(0,-.048,0);G.mignonette.add(liq);
+ var bm=new T.MeshStandardMaterial({color:0xb23a58,roughness:.4});for(var i=0;i<22;i++){var b=new T.Mesh(new T.BoxGeometry(.045,.04,.045),bm);b.position.set((rnd()-.5)*.9,-.035,(rnd()-.5)*.55);b.rotation.y=rnd()*3;G.mignonette.add(b)}
+ var hm=new T.MeshStandardMaterial({color:0xf4f2ea,roughness:.85});for(var i=0;i<26;i++){var q=new T.Mesh(new T.IcosahedronGeometry(.03+rnd()*.04,0),hm);q.position.set(-.2+(rnd()-.5)*.4,-.04+rnd()*.07,(rnd()-.5)*.3);G.pepparrot.add(q)}
+ [G.citron,G.mignonette,G.pepparrot,G.naturell,G.dill].forEach(function(g){shellG.add(g)});
+ setGarn3D=function(k){G.citron.visible=k==='citron';G.mignonette.visible=k==='mignonette';G.pepparrot.visible=k==='pepparrot';G.dill.visible=k==='citron'||k==='pepparrot'}
+ setGarn3D(garn);
+ /* orbit */
+ var az=.6,pol=.95,R=9,tAz=az,tPol=pol,tR=R,drag=false,lx0=0,ly0=0,vis=false,raf=0,last=0,idle=0;
+ function size(){var w=stg.clientWidth,h=stg.clientHeight;ren.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+ size();new ResizeObserver(size).observe(stg);
+ canvas.addEventListener('pointerdown',function(e){drag=true;lx0=e.clientX;ly0=e.clientY;try{canvas.setPointerCapture(e.pointerId)}catch(_){}});
+ canvas.addEventListener('pointermove',function(e){if(!drag)return;tAz-=(e.clientX-lx0)*.008;tPol=Math.max(.55,Math.min(1.35,tPol-(e.clientY-ly0)*.006));lx0=e.clientX;ly0=e.clientY;idle=performance.now()});
+ ['pointerup','pointercancel'].forEach(function(n){canvas.addEventListener(n,function(){drag=false;idle=performance.now()})});
+ function rot(d){tAz+=d;idle=performance.now()}function zoom(f){tR=Math.max(5.5,Math.min(11,tR*f))}
+ $('#rl').onclick=function(){rot(-.4)};$('#rr').onclick=function(){rot(.4)};$('#zi').onclick=function(){zoom(.86)};$('#zo').onclick=function(){zoom(1.16)};
+ canvas.addEventListener('keydown',function(e){var h=true;if(e.key==='ArrowLeft')rot(-.3);else if(e.key==='ArrowRight')rot(.3);else if(e.key==='ArrowUp')tPol=Math.max(.55,tPol-.1);else if(e.key==='ArrowDown')tPol=Math.min(1.35,tPol+.1);else if(e.key==='+'||e.key==='=')zoom(.9);else if(e.key==='-')zoom(1.1);else h=false;if(h)e.preventDefault()});
+ function frame(t){raf=requestAnimationFrame(frame);var dt=Math.min(.05,(t-last)/1000||0);last=t;
+  if(!drag&&t-idle>2500)tAz+=dt*.18;
+  az+=(tAz-az)*.1;pol+=(tPol-pol)*.1;R+=(tR-R)*.1;
+  cam.position.set(R*Math.sin(pol)*Math.sin(az),R*Math.cos(pol),R*Math.sin(pol)*Math.cos(az));cam.lookAt(0,-.25,0);
+  shellG.position.y=-.05+Math.sin(t/1400)*.012;ren.render(sc,cam)}
+ function start(){if(!raf&&vis&&!document.hidden){last=performance.now();raf=requestAnimationFrame(frame)}}function stop(){cancelAnimationFrame(raf);raf=0}
+ new IntersectionObserver(function(es){vis=es[0].isIntersecting;vis?start():stop()},{threshold:.05}).observe(stg);
+ document.addEventListener('visibilitychange',function(){document.hidden?stop():start()});
+ canvas.addEventListener('webglcontextlost',function(e){e.preventDefault();stop();stg.classList.remove('gl')});
+ stg.classList.add('gl');
+}
+requestAnimationFrame(function(){var l=document.querySelector('.label');if(l)l.classList.add('in')});
+renderStatus();initMenu();renderFaq();fillGuests();fillTimes();updSum();setNavH();addEventListener('resize',setNavH);
+setInterval(renderStatus,60000);
+})();
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+ var RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ /* hero entrance: blinds lift, wordmark settles, rule draws. Skippable, off under reduced motion. */
+ var rl=document.querySelector('.label');
+ if(rl&&!RM){var st=document.createElement('style');st.textContent='.js .label.in::before{transform:scaleX(1)}';document.head.appendChild(st)}
+ if(!window.gsap||RM)return;
+ if(window.ScrollTrigger)gsap.registerPlugin(ScrollTrigger);
+ var tl=gsap.timeline({defaults:{ease:'power3.out'}});
+ tl.fromTo('.strip',{clipPath:'inset(100% 0% 0% 0%)'},{clipPath:'inset(0% 0% 0% 0%)',duration:.8,stagger:.12,clearProps:'clipPath'},0)
+   .fromTo('.bigwm',{y:36,opacity:0},{y:0,opacity:1,duration:.7,clearProps:'transform,opacity'},.35);
+ ['pointerdown','keydown','wheel','touchstart'].forEach(function(e){addEventListener(e,function(){tl.progress(1)},{once:true,passive:true})});
+ if(window.ScrollTrigger&&matchMedia('(min-width:800px)').matches){
+  [].slice.call(document.querySelectorAll('.strip img')).forEach(function(im,i){
+   gsap.to(im,{yPercent:i===1?-3:-7,ease:'none',scrollTrigger:{trigger:'.strips',start:'top top',end:'bottom top',scrub:true}})})}
+})();
+</script>
+</body>
+</html>
