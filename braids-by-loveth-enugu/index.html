@@ -669,13 +669,14 @@ function money(n){return '₦'+String(n).replace(/\B(?=(\d{3})+(?!\d))/g,',')}
 
  /* braid geometry: three strands woven along y */
  var LEN=7.4,TURNS=5;
- function Strand(phase){THREE.Curve.call(this);this.phase=phase}
- Strand.prototype=Object.create(THREE.Curve.prototype);Strand.prototype.constructor=Strand;
- Strand.prototype.getPoint=function(t,target){
-  target=target||new THREE.Vector3();
-  var y=(t-.5)*LEN,th=t*TURNS*Math.PI*2+this.phase;
-  return target.set(.55*Math.sin(th)+.22*Math.sin(y*.9),y,-.5*Math.sin(2*th));
- };
+ class Strand extends THREE.Curve{
+  constructor(phase){super();this.phase=phase}
+  getPoint(t,target){
+   target=target||new THREE.Vector3();
+   var y=(t-.5)*LEN,th=t*TURNS*Math.PI*2+this.phase;
+   return target.set(.55*Math.sin(th)+.22*Math.sin(y*.9),y,-.5*Math.sin(2*th));
+  }
+ }
  var bc=document.createElement('canvas');bc.width=64;bc.height=256;var g=bc.getContext('2d');
  g.fillStyle='#808080';g.fillRect(0,0,64,256);
  for(var i=0;i<256;i+=2){var v=100+Math.random()*100;g.fillStyle='rgb('+v+','+v+','+v+')';g.fillRect(0,i,64,1+Math.random()*1.5)}
