@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script>document.documentElement.classList.add('js');</script>
 <noscript><style>.rv{opacity:1!important;transform:none!important}.vid-box iframe.tt{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit;background:#1a0f0a}.vid-box a.tt-link{position:absolute;left:12px;bottom:12px;z-index:3;background:rgba(20,12,8,.78);color:#fff;font-weight:700;font-size:.8rem;padding:7px 12px;border-radius:999px;text-decoration:none}.vid-box a.tt-link:focus-visible{outline:3px solid #C99A4B;outline-offset:2px}
+.vid-box .tt-play{position:absolute;inset:0;padding:0;border:0;cursor:pointer;background:#1a0f0a;border-radius:inherit;overflow:hidden}.vid-box .tt-play img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}.vid-box .tt-play:hover img{transform:scale(1.05)}.vid-box .tt-play::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 45%)}.vid-box .tt-btn{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:rgba(201,154,75,.92);box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:2;transition:transform .3s}.vid-box .tt-play:hover .tt-btn,.vid-box .tt-play:focus-visible .tt-btn{transform:translate(-50%,-50%) scale(1.1)}.vid-box .tt-play:focus-visible{outline:3px solid #C99A4B;outline-offset:3px}.hero-in{padding-left:clamp(16px,4vw,48px);padding-right:clamp(16px,4vw,48px)}
 </style></noscript>
 <style>
 :root{--cream:#FBF6EF;--esp:#2B1A12;--esp2:#190D08;--gold:#C99A4B;--gold2:#E3B765;--cocoa:#7A4B2A;--sand:#EADBC8;--mut:#5B4435;--line:rgba(43,26,18,.16);--focus:#7A4B2A;--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
@@ -381,7 +382,7 @@ legend{font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppe
   <div class="sec-head rv" style="margin-bottom:26px">
    <p class="eyebrow">Straight from TikTok</p>
    <h2 id="workH">Watch our work on TikTok</h2>
-   <p>Real installs from Loveth's own account. Swipe through, Her videos play right here.</p>
+   <p>Real installs from Loveth's own account. Tap any video to play it right here.</p>
   </div>
   <div class="arrows" aria-label="Scroll videos">
    <button class="arr" id="reelPrev" aria-label="Previous videos">←</button>
@@ -390,19 +391,19 @@ legend{font-weight:700;font-size:.85rem;letter-spacing:.06em;text-transform:uppe
  </div>
  <div class="reel" id="reel" tabindex="0" role="region" aria-label="TikTok videos, scroll sideways">
   <div class="vid"><div class="vid-box">
-   <iframe class="tt" src="https://www.tiktok.com/player/v1/7699403003136183560?autoplay=1&amp;muted=1&amp;loop=1&amp;controls=1&amp;description=0&amp;music_info=0&amp;rel=0" title="Braids by Loveth on TikTok, video 1" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+   <button class="tt-play" type="button" data-vid="7699403003136183560" aria-label="Play TikTok video 1 here"><img src="img/knotless-blonde.jpg" alt="Braids by Loveth TikTok video 1" loading="lazy"><span class="tt-btn" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M7 4.5v15l13-7.5z"/></svg></span></button>
    <a class="tt-link" href="https://www.tiktok.com/@braidsbyloveth/video/7699403003136183560" target="_blank" rel="noopener">Open on TikTok ↗</a>
   </div></div>
   <div class="vid"><div class="vid-box">
-   <iframe class="tt" src="https://www.tiktok.com/player/v1/7701430267474431250?autoplay=1&amp;muted=1&amp;loop=1&amp;controls=1&amp;description=0&amp;music_info=0&amp;rel=0" title="Braids by Loveth on TikTok, video 2" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+   <button class="tt-play" type="button" data-vid="7701430267474431250" aria-label="Play TikTok video 2 here"><img src="img/braids-long-curls.jpg" alt="Braids by Loveth TikTok video 2" loading="lazy"><span class="tt-btn" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M7 4.5v15l13-7.5z"/></svg></span></button>
    <a class="tt-link" href="https://www.tiktok.com/@braidsbyloveth/video/7701430267474431250" target="_blank" rel="noopener">Open on TikTok ↗</a>
   </div></div>
   <div class="vid"><div class="vid-box">
-   <iframe class="tt" src="https://www.tiktok.com/player/v1/7680663836105461010?autoplay=1&amp;muted=1&amp;loop=1&amp;controls=1&amp;description=0&amp;music_info=0&amp;rel=0" title="Braids by Loveth on TikTok, video 3" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+   <button class="tt-play" type="button" data-vid="7680663836105461010" aria-label="Play TikTok video 3 here"><img src="img/boho-braids.jpg" alt="Braids by Loveth TikTok video 3" loading="lazy"><span class="tt-btn" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M7 4.5v15l13-7.5z"/></svg></span></button>
    <a class="tt-link" href="https://www.tiktok.com/@braidsbyloveth/video/7680663836105461010" target="_blank" rel="noopener">Open on TikTok ↗</a>
   </div></div>
   <div class="vid"><div class="vid-box">
-   <iframe class="tt" src="https://www.tiktok.com/player/v1/7702202206665149714?autoplay=1&amp;muted=1&amp;loop=1&amp;controls=1&amp;description=0&amp;music_info=0&amp;rel=0" title="Braids by Loveth on TikTok, video 4" loading="lazy" allow="autoplay; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
+   <button class="tt-play" type="button" data-vid="7702202206665149714" aria-label="Play TikTok video 4 here"><img src="img/salon-team.jpg" alt="Braids by Loveth TikTok video 4" loading="lazy"><span class="tt-btn" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M7 4.5v15l13-7.5z"/></svg></span></button>
    <a class="tt-link" href="https://www.tiktok.com/@braidsbyloveth/video/7702202206665149714" target="_blank" rel="noopener">Open on TikTok ↗</a>
   </div></div>
  </div>
@@ -999,5 +1000,6 @@ var byId={};STY.forEach(function(s){byId[s.id]=s});
 })();
 })();
 </script>
+<script>document.querySelectorAll(".tt-play").forEach(function(b){b.addEventListener("click",function(){var f=document.createElement("iframe");f.className="tt";f.src="https://www.tiktok.com/player/v1/"+b.dataset.vid+"?autoplay=1&muted=0&loop=1&controls=1&description=0&music_info=0&rel=0";f.title="Braids by Loveth on TikTok";f.allow="autoplay; encrypted-media; fullscreen; picture-in-picture";f.allowFullscreen=true;b.replaceWith(f)})});</script>
 </body>
 </html>
