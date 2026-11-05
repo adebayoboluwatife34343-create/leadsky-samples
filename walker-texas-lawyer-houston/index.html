@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Claim Intake Assistant concept for Walker Texas Lawyer, Houston (independent demo)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--paper:#faf7f0;--lime:#ece6d8;--ink:#17231d;--green:#1f5a45;--deep:#143527;--red:#b5372a;--muted:#46564d;--line:rgba(23,35,29,.2);--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.55 'Source Sans 3',system-ui,sans-serif;-webkit-text-size-adjust:100%}
+h1,h2,h3,h4{font-family:'Roboto Slab',Georgia,serif;line-height:1.14;margin:0 0 .5em;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,42px);font-weight:700}
+h3{font-size:21px;font-weight:700}
+p{margin:0 0 1em}
+a{color:var(--green)}
+img{display:block;max-width:100%}
+:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.on-dark :focus-visible,.on-dark:focus-visible{outline-color:#ffd98a}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+section{padding:84px 0;scroll-margin-top:64px}
+.kicker{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:10px}
+.lead{font-size:19px;max-width:60ch;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:46px;padding:.6em 1.3em;border-radius:6px;font:700 17px/1.2 'Source Sans 3',sans-serif;border:2px solid transparent;cursor:pointer;text-decoration:none;transition:transform .2s var(--ease),background .2s,color .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px -8px rgba(0,0,0,.4)}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:#9a2d22}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:#174735}
+.btn-line{border-color:var(--green);color:var(--green);background:transparent}.btn-line:hover{background:var(--green);color:#fff}
+.btn-light{border-color:#fff;color:#fff;background:transparent}.btn-light:hover{background:#fff;color:var(--deep)}
+.btn-sm{min-height:38px;padding:.35em .9em;font-size:15px}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.linkbtn{background:none;border:0;padding:0;font:inherit;color:var(--green);text-decoration:underline;cursor:pointer}
+.banner{background:var(--ink);color:#f3efe4;text-align:center;font-size:14px;padding:7px 14px}
+/* nav */
+.nav{position:sticky;top:0;z-index:60;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:18px;min-height:62px}
+.mark{font:800 19px/1 'Roboto Slab',serif;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:9px;white-space:nowrap}
+.mark i{width:14px;height:18px;background:var(--red);border-radius:2px 5px 2px 2px;display:inline-block}
+.nav nav{margin-left:auto;display:flex;gap:20px;align-items:center}
+.nav nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:16px;padding:6px 0;border-bottom:2px solid transparent}
+.nav nav a:hover{border-color:var(--red)}
+.nav .call{margin-left:6px}
+.menu-btn{display:none;margin-left:auto;background:none;border:1.5px solid var(--ink);border-radius:6px;min-height:42px;padding:0 14px;font:700 15px 'Source Sans 3';cursor:pointer;color:var(--ink)}
+/* hero */
+.hero{color:#fff;position:relative}
+.hero-top{position:relative;padding:48px 0 150px;overflow:hidden}
+.hero-top>.wrap{position:relative;z-index:1}
+.hero-photo{position:absolute;inset:0;z-index:0}
+.hero-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform .3s ease-out;filter:saturate(.8) contrast(1.03)}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,28,21,.9) 0,rgba(11,28,21,.84) 68%,#faf7f0 100%)}
+.hero-head{position:relative;z-index:1;max-width:760px}
+.pill{display:inline-block;background:#0d241b;color:#fff;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:6px 12px;border-radius:4px;margin-bottom:16px}
+.hero h1{font-size:clamp(34px,5.6vw,60px);font-weight:800;margin-bottom:.35em;text-wrap:balance}
+.hero-head p{font-size:clamp(18px,2vw,21px);max-width:56ch;color:#f6f2e8}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 14px}
+.badge{display:inline-block;font-size:14px;background:#0d241b;color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:4px;padding:4px 10px}
+/* 3D scene */
+.scene3d{position:relative;height:260px;max-width:360px;margin:26px 0 0;z-index:1;border-radius:14px;background:radial-gradient(ellipse at 50% 40%,rgba(255,236,196,.16),rgba(8,22,16,.0) 70%)}
+.scene3d canvas{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y;cursor:grab}
+.scene3d canvas:active{cursor:grabbing}
+.scene3d .fbsvg{display:none;position:absolute;inset:0;width:100%;height:100%}
+.scene3d.fb canvas{display:none}
+.scene3d.fb .fbsvg{display:block}
+.scene-cap{position:absolute;left:50%;bottom:0;transform:translateX(-50%);background:#0d241b;color:#fff;font-size:13px;padding:4px 12px;border-radius:4px;border:1px solid rgba(255,255,255,.35);white-space:nowrap}
+@media(min-width:1100px){
+ .scene3d{position:absolute;right:20px;top:-6px;width:340px;height:430px;margin:0}
+}
+.stage-wrap{position:relative;z-index:2;margin-top:-100px;padding-bottom:10px}
+.stage{perspective:1400px}
+.frame{position:relative;transform-style:preserve-3d;transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .25s ease-out;background:var(--paper);border:1px solid var(--line);border-radius:4px 16px 16px 16px;box-shadow:0 34px 60px -24px rgba(8,22,16,.55);padding:20px;color:var(--ink);animation:rise .9s var(--ease) backwards}
+.frame::before{content:"";position:absolute;inset:-12px -12px 10px -12px;background:var(--lime);border-radius:6px 18px 18px 18px;transform:translateZ(-30px);z-index:-1;border:1px solid var(--line)}
+.frame-tab{position:absolute;top:-34px;left:0;height:34px;display:flex;align-items:center;gap:8px;padding:0 16px;background:var(--paper);border:1px solid var(--line);border-bottom:0;border-radius:10px 10px 0 0;font:700 12px 'Source Sans 3';letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+@keyframes rise{from{opacity:0;transform:translateY(46px) rotateX(9deg)}}
+.frame-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:20px;transform-style:preserve-3d}
+.tilt-on .chat{transform:translateZ(16px)}
+.tilt-on .summary{transform:translateZ(34px)}
+.chat{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:12px;min-height:540px;box-shadow:0 14px 28px -18px rgba(0,0,0,.4)}
+.chat-head{display:flex;align-items:center;gap:12px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.chat-head .av{width:40px;height:40px;border-radius:50%;background:var(--green);display:grid;place-items:center;flex:none}
+.chat-head strong{display:block;font:700 16px 'Roboto Slab',serif;line-height:1.2}
+.chat-head small{color:var(--muted);font-size:13px}
+.chat-tools{margin-left:auto;display:flex;gap:6px}
+.chat-tools button{min-height:36px;padding:0 12px;border:1.5px solid var(--line);border-radius:6px;background:#fff;color:var(--ink);font:600 14px 'Source Sans 3';cursor:pointer}
+.chat-tools button:hover:not([disabled]){border-color:var(--green);color:var(--green)}
+.chat-tools button[disabled]{opacity:.45;cursor:not-allowed}
+.log{flex:1;height:340px;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth}
+.msg{max-width:90%;animation:slideIn .26s ease-out}
+@keyframes slideIn{from{opacity:0;transform:translateY(10px)}}
+.msg p{margin:0;padding:.6em .9em;font-size:16.5px;line-height:1.45}
+.msg.bot p{background:var(--lime);border-radius:4px 14px 14px 14px}
+.msg.user{align-self:flex-end}
+.msg.user p{background:var(--green);color:#fff;border-radius:14px 4px 14px 14px}
+.acts{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.acts button{min-height:38px;padding:0 14px;border-radius:6px;border:1.5px solid var(--green);background:#fff;color:var(--green);font:700 15px 'Source Sans 3';cursor:pointer}
+.acts button.pri{background:var(--red);border-color:var(--red);color:#fff}
+.acts button:hover{filter:brightness(.94)}
+.typing p{display:flex;gap:5px;padding:.8em .9em}
+.typing span{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:dot 1s infinite}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,60%,100%{opacity:.3;transform:none}30%{opacity:1;transform:translateY(-4px)}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 16px 12px;min-height:8px}
+.chip{min-height:42px;padding:0 16px;border-radius:999px;border:1.5px solid var(--green);background:#fff;color:var(--green);font:600 16px 'Source Sans 3';cursor:pointer;transition:background .2s,color .2s,transform .2s;animation:slideIn .26s ease-out backwards}
+.chip:hover{background:var(--green);color:#fff;transform:translateY(-2px)}
+.sumtoggle{display:none;margin:0 16px 10px;min-height:44px;border:1.5px dashed var(--green);border-radius:8px;background:var(--paper);color:var(--green);font:700 15px 'Source Sans 3';cursor:pointer;justify-content:space-between;align-items:center;padding:0 14px}
+#chatForm{display:flex;gap:8px;padding:0 16px 10px}
+#chatForm input{flex:1;min-width:0;min-height:46px;border:1.5px solid var(--line);border-radius:6px;padding:0 12px;font:inherit;background:#fff;color:var(--ink)}
+#chatForm input:focus{border-color:var(--green)}
+.fine{font-size:13.5px;color:var(--muted);padding:0 16px 12px;margin:0}
+.summary{position:relative;background:#fffdf8;border:1px solid var(--line);border-radius:4px 12px 12px 12px;padding:22px 18px 16px;background-image:repeating-linear-gradient(transparent 0 43px,rgba(23,35,29,.06) 43px 44px);box-shadow:0 14px 28px -18px rgba(0,0,0,.4)}
+.summary h3{font-size:18px;margin-bottom:2px}
+.stamp{position:absolute;top:14px;right:14px;border:2.5px solid var(--red);color:var(--red);font:800 13px 'Roboto Slab',serif;letter-spacing:.14em;padding:3px 9px;border-radius:4px;transform:rotate(6deg);background:#fffdf8}
+.prog{height:6px;background:var(--lime);border-radius:3px;margin:10px 0 8px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--green);transition:width .4s var(--ease)}
+.summary dl{margin:0}
+.row{display:grid;grid-template-columns:112px 1fr;gap:8px;padding:8px 6px;border-bottom:1px dashed var(--line);margin:0 -6px}
+.row dt{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.row dd{margin:0;font-weight:600;font-size:16px}
+.row dd.pending{color:var(--muted);font-weight:400}
+.row.flash{animation:stampIn .9s ease-out}
+@keyframes stampIn{0%{background:#ffe9a8;transform:scale(1.03)}100%{background:transparent;transform:none}}
+.tag{display:inline-block;padding:2px 10px;border-radius:4px;font-weight:700;font-size:14px}
+.tag.High{background:var(--red);color:#fff}.tag.Priority{background:#fff0c9;color:#6b4300}.tag.Standard{background:#dcebe4;color:#154634}
+.sum-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+/* trust */
+.trust{padding:34px 0;background:var(--lime);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.trust ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.trust li{display:flex;gap:12px;align-items:flex-start}
+.trust svg{flex:none;width:34px;height:34px}
+.trust strong{display:block;font:700 17px 'Roboto Slab',serif}
+.trust span{font-size:15px;color:var(--muted);display:block;line-height:1.4}
+/* how */
+.tl{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;position:relative;margin-top:40px}
+.tl::before{content:"";position:absolute;left:5%;right:5%;top:0;height:3px;background:var(--red);transform-origin:left;transform:scaleX(0);transition:transform 1.4s var(--ease)}
+.tl.in::before{transform:scaleX(1)}
+.step{position:relative;padding:22px 18px 18px;margin-top:22px}
+.step .num{position:absolute;top:-34px;left:16px;width:30px;height:30px;border-radius:50%;background:var(--red);color:#fff;font:800 15px 'Roboto Slab',serif;display:grid;place-items:center;z-index:2}
+.step svg{width:100%;height:110px;margin-bottom:10px;background:var(--lime);border-radius:8px}
+.step h3{font-size:19px;margin-bottom:.3em}.step p{font-size:16px;color:var(--muted);margin:0}
+.folder{position:relative;background:#fff;border:1px solid var(--line);border-radius:0 12px 12px 12px;margin-top:24px;transition:transform .25s var(--ease),box-shadow .25s}
+.folder::before{content:attr(data-tab);position:absolute;top:-23px;left:-1px;height:23px;padding:0 14px;background:#fff;border:1px solid var(--line);border-bottom:0;border-radius:9px 9px 0 0;display:flex;align-items:center;font:700 11.5px 'Source Sans 3';letter-spacing:.09em;text-transform:uppercase;color:var(--green)}
+.folder:hover,.folder:focus-within{transform:translateY(-4px);box-shadow:0 18px 28px -18px rgba(0,0,0,.45)}
+.night{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;margin-top:70px}
+.ph{position:relative;overflow:hidden;border-radius:10px;background:var(--lime)}
+.ph img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.03)}
+.ph figcaption,.cap{font-size:13px;color:var(--muted)}
+figure{margin:0}
+.cap{margin-top:6px}
+.ticks{list-style:none;padding:0;margin:0 0 1em}
+.ticks li{padding-left:30px;position:relative;margin-bottom:.6em}
+.ticks li::before{content:"";position:absolute;left:0;top:.35em;width:16px;height:16px;border-radius:3px;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-6.5' fill='none' stroke='white' stroke-width='2'/%3E%3C/svg%3E")}
+/* reveal */
+html.js .rv{opacity:0;transform:translateY(16px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+html.js .rv.in{opacity:1;transform:none}
+html.js .wipe .ph,html.js .wipe.ph{clip-path:inset(100% 0 0 0);transition:clip-path 1s var(--ease)}
+html.js .in .ph,html.js .in.ph,html.js .ph.in{clip-path:inset(0)}
+/* booking */
+.band-lime{background:var(--lime)}
+.book{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:30px;align-items:start}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
+.stepper{display:flex;gap:6px;margin:0 0 18px;padding:0;list-style:none;font-size:14px;font-weight:700}
+.stepper li{flex:1;padding:6px 0;border-bottom:3px solid var(--line);color:var(--muted)}
+.stepper li.on{border-color:var(--red);color:var(--ink)}
+.stepper li.done{border-color:var(--green);color:var(--green)}
+.cal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.cal-h h3{margin:0;font-size:19px}
+.cal-h button{width:42px;height:42px;border-radius:6px;border:1.5px solid var(--line);background:#fff;font-size:20px;cursor:pointer;color:var(--ink)}
+.cal-h button:disabled{opacity:.35;cursor:not-allowed}
+.grid7{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.dow{text-align:center;font-size:12.5px;font-weight:700;color:var(--muted);padding:4px 0}
+.day{aspect-ratio:1;min-height:42px;border-radius:6px;border:1.5px solid var(--line);background:#fff;font:600 16px 'Source Sans 3';cursor:pointer;color:var(--ink);transition:background .15s,transform .15s}
+.day:hover:not(:disabled){border-color:var(--green);transform:translateY(-2px)}
+.day:disabled{background:transparent;border-color:transparent;color:#8a948e;cursor:not-allowed;text-decoration:line-through}
+.day[aria-pressed=true]{background:var(--green);color:#fff;border-color:var(--green)}
+.slots{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:12px 0}
+.slot{min-height:46px;border-radius:6px;border:1.5px solid var(--green);background:#fff;color:var(--green);font:700 16px 'Source Sans 3';cursor:pointer}
+.slot:disabled{border-color:var(--line);color:#7b857f;text-decoration:line-through;cursor:not-allowed}
+.slot[aria-pressed=true]{background:var(--green);color:#fff}
+.note{font-size:14.5px;color:var(--muted);border-left:3px solid var(--red);padding:2px 0 2px 12px;margin:14px 0 0}
+.field{margin-bottom:14px}
+.field label{display:block;font-weight:700;font-size:15px;margin-bottom:4px}
+.field input,.field textarea,.field select{width:100%;min-height:46px;border:1.5px solid var(--line);border-radius:6px;padding:9px 12px;font:inherit;background:#fff;color:var(--ink)}
+.field textarea{min-height:110px;resize:vertical}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--green)}
+.field [aria-invalid=true]{border-color:var(--red)}
+.err{color:#a02d21;font-size:14px;font-weight:600;min-height:0;margin-top:3px}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:15px}
+.check input{width:22px;height:22px;margin-top:2px;flex:none}
+.review{margin:0 0 14px}
+.review div{display:grid;grid-template-columns:110px 1fr;gap:8px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.review dt{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.review dd{margin:0;overflow-wrap:anywhere}
+.okbox{border:2px solid var(--green);background:#eef6f1;border-radius:10px;padding:18px}
+.okbox strong{font-family:'Roboto Slab',serif}
+/* green band */
+.deep{background:var(--deep);color:#f3efe4}
+.deep h2{color:#fff}
+.deep .kicker{color:#bfe3d0}
+.deep .lead{color:#d6e6dd}
+.saves{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.scen{list-style:none;padding:0;margin:22px 0}
+.scen li{padding:14px 0 14px 54px;border-top:1px solid rgba(255,255,255,.22);position:relative}
+.scen li b{display:block;font:700 18px 'Roboto Slab',serif;color:#fff}
+.scen li::before{content:attr(data-n);position:absolute;left:0;top:14px;width:36px;height:36px;border-radius:50%;background:#f3efe4;color:var(--deep);font:800 15px 'Roboto Slab';display:grid;place-items:center}
+.deep .ph{margin-top:18px;max-width:420px}
+.deep .cap{color:#c4d6cc}
+.fan-wrap{text-align:center}
+.fan{position:relative;height:310px;perspective:1100px;margin:22px 0 12px}
+.fo{position:absolute;left:50%;bottom:0;width:200px;height:250px;margin-left:-100px;background:#f3efe4;color:var(--ink);border:1px solid rgba(0,0,0,.25);border-radius:4px 12px 12px 12px;padding:30px 12px 12px;text-align:left;font:600 15px/1.3 'Source Sans 3';cursor:pointer;transform-origin:50% 100%;transition:transform .7s var(--ease);transform:translate(calc(var(--i)*7px),calc(var(--i)*-9px)) rotateX(8deg);box-shadow:0 10px 20px -10px rgba(0,0,0,.6)}
+.fo::before{content:attr(data-t);position:absolute;top:-1px;left:-1px;height:24px;padding:0 10px;background:#fff;border:1px solid rgba(0,0,0,.25);border-radius:4px 10px 0 0;font:800 12px/22px 'Source Sans 3';color:var(--deep);white-space:nowrap}
+.fan.open .fo{transform:translate(calc((var(--i) - 1.5)*62px),-6px) rotate(calc((var(--i) - 1.5)*11deg))}
+.fan.open .fo.sel{transform:translate(calc((var(--i) - 1.5)*62px),-30px) rotate(calc((var(--i) - 1.5)*11deg))}
+.fo .t{display:block;margin-top:14px;color:var(--muted);font-weight:400;font-size:14px}
+.fo[aria-pressed=true]{outline:3px solid #ffd98a}
+.fan:not(.open) .fo .t{display:none}
+.fodet{background:#f3efe4;color:var(--ink);border-radius:10px;padding:16px 18px;text-align:left;min-height:96px}
+.fodet h4{font-size:17px;margin-bottom:6px}
+.mini{margin:0;font-size:15px}
+.mini div{display:grid;grid-template-columns:104px 1fr;gap:6px;padding:3px 0;border-bottom:1px dashed var(--line)}
+.mini dt{font-weight:700;color:var(--muted);font-size:12.5px;text-transform:uppercase;letter-spacing:.05em;padding-top:2px}
+.mini dd{margin:0}
+/* staff */
+.staff{display:grid;grid-template-columns:1.9fr 1fr;gap:30px;margin-top:28px;align-items:start}
+.tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:14px}
+.tools .seg{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--green);background:#fff;color:var(--green);font:700 15px 'Source Sans 3';cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--green);color:#fff}
+.tools input,.tools select{min-height:42px;border:1.5px solid var(--line);border-radius:6px;padding:0 10px;font:inherit;background:#fff;color:var(--ink)}
+.tools input{flex:1;min-width:150px}
+table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:10px}
+th{text-align:left;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:2px solid var(--ink)}
+td{padding:10px 12px;border-bottom:1px solid var(--line);font-size:15.5px;vertical-align:middle}
+td .open-btn{background:none;border:0;font:700 16px 'Source Sans 3';color:var(--green);text-decoration:underline;cursor:pointer;padding:6px 0;text-align:left}
+.empty{padding:20px;text-align:center;color:var(--muted)}
+.st{font-weight:600;font-size:14px;border:1px solid var(--line);border-radius:4px;padding:2px 8px;background:var(--paper)}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--paper);z-index:90;padding:22px;overflow:auto;transform:translateX(104%);visibility:hidden;transition:transform .4s var(--ease),visibility .4s;box-shadow:-20px 0 40px -20px rgba(0,0,0,.5)}
+.drawer.open{transform:none;visibility:visible}
+.scrim{position:fixed;inset:0;background:rgba(10,20,15,.5);z-index:85;opacity:0;visibility:hidden;transition:opacity .3s}
+.scrim.open{opacity:1;visibility:visible}
+.drawer-h{display:flex;justify-content:space-between;align-items:start;gap:10px}
+.drawer .seg{margin-top:8px}
+/* areas */
+.areas{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:34px}
+.area .ph{aspect-ratio:4/3;border-radius:0 11px 0 0}
+.area .body{padding:16px 16px 18px}
+.area h3{font-size:19px}.area p{font-size:15.5px;color:var(--muted);margin:0}
+/* acc */
+.acc{border-top:1px solid var(--line)}
+.acc-i{border-bottom:1px solid var(--line)}
+.acc-q{width:100%;display:flex;justify-content:space-between;align-items:center;gap:14px;background:none;border:0;text-align:left;font:700 18px/1.3 'Roboto Slab',serif;color:var(--ink);padding:18px 4px;cursor:pointer;min-height:56px}
+.acc-q::after{content:"+";font-size:26px;color:var(--red);transition:transform .3s var(--ease);flex:none}
+.acc-i.open .acc-q::after{transform:rotate(45deg)}
+.acc-a{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .35s var(--ease),visibility .35s}
+.acc-i.open .acc-a{grid-template-rows:1fr;visibility:visible}
+.acc-a>div{overflow:hidden}
+.acc-a p{padding:0 4px 18px;color:var(--muted);margin:0;max-width:62ch}
+.two{display:grid;grid-template-columns:1.25fr 1fr;gap:50px;align-items:start}
+/* cta + contact */
+.cta-band{position:relative;color:#fff;padding:90px 0;overflow:hidden}
+.cta-band .bg{position:absolute;inset:0}
+.cta-band .bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.7)}
+.cta-band .bg::after{content:"";position:absolute;inset:0;background:rgba(10,26,19,.82)}
+.cta-band .wrap{position:relative;max-width:820px;text-align:center}
+.cta-band h2{color:#fff}
+.cta-band p{font-size:19px;color:#f3efe4}
+.cta-band .cta{justify-content:center}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:28px}
+.clist{list-style:none;margin:0 0 20px;padding:0}
+.clist li{padding:12px 0;border-bottom:1px dashed var(--line);display:grid;grid-template-columns:110px 1fr;gap:8px}
+.clist b{font-size:13px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.logo-tile{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px;display:flex;align-items:center;justify-content:center;height:130px;margin-bottom:16px}
+.logo-tile img{max-height:100%;max-width:100%;object-fit:contain}
+footer{background:var(--ink);color:#e9e5d9;padding:48px 0 90px;font-size:15px}
+footer a{color:#ffd98a}
+footer h4{color:#fff;font-size:16px}
+footer ul{columns:2;padding-left:18px;margin:0}
+.foot{display:grid;grid-template-columns:1.2fr 1fr;gap:36px}
+dialog{max-width:540px;width:calc(100% - 32px);border:0;border-radius:12px;padding:26px;background:var(--paper);color:var(--ink)}
+dialog::backdrop{background:rgba(10,20,15,.6)}
+.mbar{display:none}
+@media(max-width:1020px){
+ .nav nav a.hide-md{display:none}
+ .areas{grid-template-columns:repeat(2,1fr)}
+ .staff{grid-template-columns:1fr}
+}
+@media(max-width:860px){
+ section{padding:58px 0}
+ .menu-btn{display:block}
+ .nav nav{position:absolute;top:100%;left:0;right:0;background:var(--paper);flex-direction:column;align-items:stretch;gap:0;padding:6px 20px 16px;border-bottom:1px solid var(--line);display:none;margin:0}
+ .nav nav.open{display:flex}
+ .nav nav a,.nav nav a.hide-md{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+ .nav .call{margin:12px 0 0;text-align:center}
+ .hero-top{padding:32px 0 130px}
+ .frame{padding:14px}
+ .frame-grid{grid-template-columns:1fr}
+ .chat{min-height:0}
+ .log{height:320px}
+ .sumtoggle{display:flex}
+ .summary{display:none}
+ .summary.open{display:block}
+ .trust ul{grid-template-columns:1fr 1fr}
+ .tl{grid-template-columns:1fr 1fr}
+ .tl::before{display:none}
+ .night,.book,.saves,.two,.contact,.foot{grid-template-columns:1fr}
+ .night{gap:26px;margin-top:50px}
+ .saves{gap:36px}
+ .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:70;background:var(--paper);border-top:1px solid var(--line);padding:8px 12px calc(8px + env(safe-area-inset-bottom))}
+ body.typing .mbar{display:none}
+ .fo{width:150px;height:230px;margin-left:-75px}
+ .fan.open .fo{transform:translate(calc((var(--i) - 1.5)*44px),-6px) rotate(calc((var(--i) - 1.5)*10deg))}
+ .fan.open .fo.sel{transform:translate(calc((var(--i) - 1.5)*44px),-30px) rotate(calc((var(--i) - 1.5)*10deg))}
+ table,thead,tbody,tr,td{display:block}
+ thead{position:absolute;left:-9999px}
+ tr{background:#fff;border:1px solid var(--line);border-radius:10px;margin-bottom:10px;padding:6px 8px}
+ td{border:0;padding:4px 6px;display:flex;gap:10px}
+ td::before{content:attr(data-l);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);min-width:76px;padding-top:3px}
+ table{border:0;background:none}
+}
+@media(max-width:560px){
+ .wrap{padding:0 16px}
+ .trust ul,.tl,.areas{grid-template-columns:1fr}
+ .row{grid-template-columns:96px 1fr}
+ .slots{grid-template-columns:1fr 1fr}
+ .cta .btn{flex:1 1 100%}
+ footer ul{columns:1}
+ .clist li,.review div{grid-template-columns:90px 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ html.js .rv{opacity:1;transform:none}
+ html.js .wipe .ph,html.js .wipe.ph{clip-path:none}
+ .tl::before{transform:none}
+ .hero-photo img{transform:none}
+}
+</style>
+</head>
+<body>
+<div class="banner">Independent website concept by LeadSky for Walker Texas Lawyer. Not their official website.</div>
+
+<header class="nav" id="top">
+ <div class="wrap">
+  <a class="mark" href="#top"><i aria-hidden="true"></i>Walker Texas Lawyer</a>
+  <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menu</button>
+  <nav id="mainNav" aria-label="Main">
+   <a href="#claim">Claim check</a>
+   <a href="#how">How it works</a>
+   <a href="#saves" class="hide-md">What it saves</a>
+   <a href="#areas" class="hide-md">Practice areas</a>
+   <a href="#faq">FAQ</a>
+   <a href="#contact">Contact</a>
+   <a class="btn btn-red btn-sm call" href="tel:+17139032481">Call (713) 903-2481</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<div class="hero on-dark">
+ <div class="hero-top">
+  <div class="hero-photo"><img id="heroImg" src="img/stock-1.jpg" width="1600" height="1000" alt="Illustrative stock photo: downtown Houston skyline with tall buildings at dusk" fetchpriority="high"></div>
+  <div class="wrap">
+   <div class="hero-head">
+    <span class="pill">Houston, Texas · Working product sample</span>
+    <h1>Hurt in an accident? Get answers tonight, not Monday.</h1>
+    <p>Walker Texas Lawyer, Houston. Check your claim in about 2 minutes, then book a free consultation.</p>
+    <div class="cta">
+     <button class="btn btn-red" id="startBtn" type="button">Start my free claim check</button>
+     <a class="btn btn-light" href="tel:+17139032481">Call (713) 903-2481</a>
+    </div>
+    <span class="badge">Sample data · Nothing is sent or stored</span>
+   </div>
+   <div class="scene3d" id="scene3d">
+    <canvas id="sceneCv" role="img" aria-label="Interactive 3D model of the scales of justice. Drag to turn it."></canvas>
+    <svg class="fbsvg" viewBox="0 0 340 260" role="img" aria-label="Illustration of the scales of justice">
+     <g fill="none" stroke="#d9b45a" stroke-width="5" stroke-linecap="round">
+      <path d="M170 40v150"/><path d="M60 62h220"/>
+      <path d="M60 62L30 150M60 62l30 88M280 62l-30 88M280 62l30 88" stroke-width="2.5"/>
+      <path d="M22 150q38 36 76 0z" fill="#d9b45a"/><path d="M242 150q38 36 76 0z" fill="#d9b45a"/>
+      <path d="M120 206h100" stroke="#e8e1d0" stroke-width="10"/><path d="M140 190h60" stroke="#e8e1d0" stroke-width="8"/>
+     </g>
+     <circle cx="170" cy="36" r="9" fill="#d9b45a"/>
+    </svg>
+    <span class="scene-cap" id="sceneCap">Interactive 3D scales · drag to turn</span>
+   </div>
+  </div>
+ </div>
+
+ <div class="wrap stage-wrap">
+  <div class="stage" id="stage">
+   <div class="frame" id="frame">
+    <div class="frame-tab">Case file · Claim check · Sample</div>
+    <div class="frame-grid">
+     <section class="chat" id="claim" aria-label="Claim Intake Assistant (sample)">
+      <div class="chat-head">
+       <span class="av" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 10h8M8 13h5"/></svg></span>
+       <div><strong>Claim Intake Assistant</strong><small>Sample · scripted replies</small></div>
+       <div class="chat-tools"><button type="button" id="backBtn" disabled>Back</button><button type="button" id="restartBtn">Restart</button></div>
+      </div>
+      <div class="log" id="log" role="log" aria-label="Conversation with the sample assistant" tabindex="0"></div>
+      <div class="chips" id="chips" aria-label="Quick replies"></div>
+      <button class="sumtoggle" id="sumToggle" type="button" aria-expanded="false" aria-controls="summary"><span>Case summary (sample)</span><span id="sumCount">0 of 5</span></button>
+      <form id="chatForm" autocomplete="off">
+       <label class="sr" for="chatInput">Type your message</label>
+       <input id="chatInput" type="text" placeholder="Type here, or tap an option" maxlength="200">
+       <button class="btn btn-green" type="submit">Send</button>
+      </form>
+      <p class="fine">General information only, not legal advice. No attorney-client relationship is formed. <button class="linkbtn" id="privacyBtn" type="button">Privacy note</button></p>
+     </section>
+     <aside class="summary" id="summary" aria-label="Case summary (sample)">
+      <span class="stamp" aria-hidden="true">SAMPLE</span>
+      <h3>Case summary</h3>
+      <div class="prog" aria-hidden="true"><i id="prog"></i></div>
+      <dl>
+       <div class="row" id="r-type"><dt>Incident</dt><dd class="pending">Waiting</dd></div>
+       <div class="row" id="r-when"><dt>When</dt><dd class="pending">Waiting</dd></div>
+       <div class="row" id="r-injury"><dt>Injuries</dt><dd class="pending">Waiting</dd></div>
+       <div class="row" id="r-care"><dt>Treatment</dt><dd class="pending">Waiting</dd></div>
+       <div class="row" id="r-insurer"><dt>Insurer contact</dt><dd class="pending">Waiting</dd></div>
+       <div class="row" id="r-urgency"><dt>Urgency</dt><dd class="pending">Waiting</dd></div>
+       <div class="row" id="r-next"><dt>Next step</dt><dd class="pending">Waiting</dd></div>
+      </dl>
+      <div class="sum-actions">
+       <button class="btn btn-green btn-sm" type="button" id="copyBtn">Copy summary</button>
+       <button class="btn btn-red btn-sm" type="button" id="bookBtn">Book free consultation</button>
+      </div>
+      <p class="fine" style="padding:10px 0 0" id="copyMsg" role="status"></p>
+     </aside>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="trust">
+ <div class="wrap">
+  <ul>
+   <li><svg viewBox="0 0 34 34" fill="none" stroke="#1f5a45" stroke-width="2" aria-hidden="true"><rect x="5" y="7" width="24" height="20" rx="3"/><path d="M5 13h24M12 4v6M22 4v6"/></svg><div><strong>Free consultation</strong><span>As stated by the firm. Confirm the terms when you speak with the team.</span></div></li>
+   <li><svg viewBox="0 0 34 34" fill="none" stroke="#1f5a45" stroke-width="2" aria-hidden="true"><circle cx="17" cy="17" r="12"/><path d="M17 9v8l5 3"/></svg><div><strong>Answers at any hour</strong><span>The assistant is designed to reply day or night. The team follows up in office hours (to confirm).</span></div></li>
+   <li><svg viewBox="0 0 34 34" fill="none" stroke="#1f5a45" stroke-width="2" aria-hidden="true"><path d="M8 5h6l2 7-3 2c1.5 3 3.5 5 6 6l2-3 7 2v6c0 1-1 2-2 2C14 27 6 17 6 7c0-1 1-2 2-2z"/></svg><div><strong>The phone still works</strong><span>Prefer to talk? Call (713) 903-2481 whenever you like.</span></div></li>
+   <li><svg viewBox="0 0 34 34" fill="none" stroke="#1f5a45" stroke-width="2" aria-hidden="true"><path d="M17 4l11 4v8c0 7-5 11-11 14C11 27 6 23 6 16V8z"/><path d="M12 17l4 4 7-8"/></svg><div><strong>Independent concept</strong><span>Built by LeadSky to show what online intake could look like. Not the firm's official site.</span></div></li>
+  </ul>
+ </div>
+</div>
+
+<section id="how">
+ <div class="wrap">
+  <div class="rv"><span class="kicker">How it works</span>
+  <h2>From "what do I do now?" to a booked call.</h2>
+  <p class="lead">Four short steps. Each one answers a question an injured person is already asking.</p></div>
+  <div class="tl rv" id="tl">
+   <article class="folder step" data-tab="Step 1"><span class="num">1</span>
+    <svg viewBox="0 0 240 110" aria-hidden="true"><rect x="30" y="22" width="120" height="44" rx="10" fill="#fff" stroke="#1f5a45" stroke-width="2.5"/><path d="M60 66l-8 14 22-14" fill="#fff" stroke="#1f5a45" stroke-width="2.5"/><path d="M48 38h84M48 50h56" stroke="#b5372a" stroke-width="3" stroke-linecap="round"/><rect x="130" y="62" width="80" height="34" rx="9" fill="#1f5a45"/><path d="M146 79h48" stroke="#fff" stroke-width="3" stroke-linecap="round"/></svg>
+    <h3>Ask</h3><p>Say what happened in your own words, or tap a quick reply.</p></article>
+   <article class="folder step" data-tab="Step 2"><span class="num">2</span>
+    <svg viewBox="0 0 240 110" aria-hidden="true"><rect x="62" y="12" width="116" height="88" rx="8" fill="#fff" stroke="#1f5a45" stroke-width="2.5"/><g stroke="#1f5a45" stroke-width="2.5" fill="none" stroke-linecap="round"><path d="M76 34l6 6 11-12M76 56l6 6 11-12M76 78l6 6 11-12"/></g><path d="M106 34h56M106 56h56M106 78h40" stroke="#b5372a" stroke-width="3" stroke-linecap="round"/></svg>
+    <h3>Check your claim</h3><p>Five short questions: incident, timing, injuries, treatment and insurer contact.</p></article>
+   <article class="folder step" data-tab="Step 3"><span class="num">3</span>
+    <svg viewBox="0 0 240 110" aria-hidden="true"><path d="M70 10h70l30 30v60H70z" fill="#fff" stroke="#1f5a45" stroke-width="2.5"/><path d="M140 10v30h30" fill="none" stroke="#1f5a45" stroke-width="2.5"/><path d="M84 54h72M84 68h72M84 82h40" stroke="#1f5a45" stroke-width="2.5" stroke-linecap="round"/><rect x="128" y="74" width="54" height="22" rx="3" fill="none" stroke="#b5372a" stroke-width="2.5" transform="rotate(-8 155 85)"/><path d="M137 85h36" stroke="#b5372a" stroke-width="3" transform="rotate(-8 155 85)"/></svg>
+    <h3>Get your summary</h3><p>A plain-English summary and a suggested next step. Not legal advice.</p></article>
+   <article class="folder step" data-tab="Step 4"><span class="num">4</span>
+    <svg viewBox="0 0 240 110" aria-hidden="true"><rect x="60" y="14" width="120" height="84" rx="8" fill="#fff" stroke="#1f5a45" stroke-width="2.5"/><path d="M60 38h120" stroke="#1f5a45" stroke-width="2.5"/><path d="M88 8v14M152 8v14" stroke="#1f5a45" stroke-width="3" stroke-linecap="round"/><g fill="#1f5a45"><rect x="76" y="48" width="16" height="12" rx="2"/><rect x="102" y="48" width="16" height="12" rx="2"/><rect x="128" y="48" width="16" height="12" rx="2"/><rect x="76" y="70" width="16" height="12" rx="2"/><rect x="102" y="70" width="16" height="12" rx="2"/></g><rect x="128" y="70" width="16" height="12" rx="2" fill="#b5372a"/></svg>
+    <h3>Book a free consultation</h3><p>Pick a slot or call. The legal team can read your summary first.</p></article>
+  </div>
+
+  <div class="night">
+   <figure class="ph rv" style="aspect-ratio:4/3">
+    <img src="img/stock-5.jpg" width="1200" height="900" loading="lazy" alt="Illustrative stock photo: a hand holding a smartphone showing an app screen">
+   </figure>
+   <div class="rv">
+    <span class="kicker">Made for 11 pm, on a phone</span>
+    <h3 style="font-size:28px">Built for the phone you are holding when it hurts.</h3>
+    <ul class="ticks">
+     <li>Big tap targets and short questions, so you can answer one-handed.</li>
+     <li>Ask a private question without waiting for the office to open.</li>
+     <li>If you would rather talk, the call button is always one tap away.</li>
+    </ul>
+    <p class="cap">Photo is illustrative stock, not the firm's own image.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="book" class="band-lime">
+ <div class="wrap">
+  <div class="rv"><span class="kicker">Book a free consultation · demo</span>
+  <h2>Choose a time. See what a real booking flow feels like.</h2>
+  <p class="lead">The calendar shows sample availability so you can click through the whole flow. Nothing is sent or booked.</p></div>
+  <div class="book rv">
+   <div class="card">
+    <ol class="stepper" id="stepper" aria-label="Booking progress"><li class="on">1 Date and time</li><li>2 Your details</li><li>3 Review</li></ol>
+    <div id="p1">
+     <div class="cal-h"><button type="button" id="calPrev" aria-label="Previous month">&#8249;</button><h3 id="calLabel" aria-live="polite"></h3><button type="button" id="calNext" aria-label="Next month">&#8250;</button></div>
+     <div class="grid7" id="calGrid"></div>
+     <p class="note">Sample availability, weekdays only, Central Time. The firm's real hours are to be confirmed.</p>
+    </div>
+    <div id="p2" hidden>
+     <h3 tabindex="-1">Your details</h3>
+     <form id="bkForm" novalidate>
+      <div class="field"><label for="bk-name">Full name</label><input id="bk-name" autocomplete="name" aria-describedby="e-name"><div class="err" id="e-name"></div></div>
+      <div class="field"><label for="bk-phone">Mobile phone</label><input id="bk-phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(713) 555-0100" aria-describedby="e-phone"><div class="err" id="e-phone"></div></div>
+      <div class="field"><label for="bk-email">Email (optional)</label><input id="bk-email" type="email" autocomplete="email" aria-describedby="e-email"><div class="err" id="e-email"></div></div>
+      <div class="field"><label for="bk-note">Short note for the team</label><textarea id="bk-note" placeholder="Anything you want the team to know. Your claim-check summary is added automatically if you completed it."></textarea></div>
+      <div class="field"><label class="check"><input type="checkbox" id="bk-consent" aria-describedby="e-consent"><span>I understand this is a demo and that general information is not legal advice.</span></label><div class="err" id="e-consent"></div></div>
+      <div class="acts" style="margin:0"><button type="button" class="btn btn-line" id="to1">Back</button><button type="submit" class="btn btn-green">Review</button></div>
+     </form>
+    </div>
+    <div id="p3" hidden>
+     <h3 tabindex="-1">Review your request</h3>
+     <dl class="review" id="review"></dl>
+     <div class="acts" style="margin:0"><button class="btn btn-line" type="button" id="to2">Edit</button><button class="btn btn-red" type="button" id="confirmBtn">Confirm (demo)</button></div>
+    </div>
+    <div id="p4" hidden>
+     <div class="okbox" role="status">
+      <h3 tabindex="-1" style="margin-bottom:6px">Demo only: nothing was sent or booked.</h3>
+      <p>This is a demo form, nothing was sent. Your selected slot is shown below for illustration.</p>
+      <p><strong id="okWhen"></strong></p>
+      <button class="btn btn-line btn-sm" type="button" id="again">Start over</button>
+     </div>
+    </div>
+   </div>
+   <div class="card" id="slotCard">
+    <h3 id="slotH">Pick a day first</h3>
+    <p style="color:var(--muted)" id="slotP">Available days are enabled on the calendar. Then choose a time.</p>
+    <div class="slots" id="slots" role="group" aria-label="Available times"></div>
+    <button class="btn btn-green" id="slotNext" type="button" disabled>Continue</button>
+    <p class="note">A live version needs a real calendar integration (for example Google or Outlook), email or SMS confirmations and a conflict check by the firm.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="saves" class="deep on-dark">
+ <div class="wrap saves">
+  <div class="rv">
+   <span class="kicker">What it saves your team</span>
+   <h2>Fewer missed nights. Better-sorted mornings.</h2>
+   <p class="lead">Example scenarios from the sample data, not statistics. They show how an online intake could change a normal day.</p>
+   <ul class="scen">
+    <li data-n="1"><b>The 1 a.m. enquiry is not lost.</b>A person who cannot sleep after a crash leaves details in a structured summary instead of a voicemail.</li>
+    <li data-n="2"><b>Urgent cases rise to the top.</b>Recent, serious or time-sensitive enquiries are tagged so staff can call them first.</li>
+    <li data-n="3"><b>Common questions are answered up front.</b>Cost of the consultation, what to bring and general next steps do not need a call each time.</li>
+   </ul>
+   <p style="color:#d6e6dd">Still done by people: the legal assessment, conflict checks and deciding whether to take a case.</p>
+   <figure class="ph wipe" style="aspect-ratio:16/9"><img src="img/stock-6.jpg" width="1200" height="675" loading="lazy" alt="Illustrative stock photo: a hand holding a smartphone with messages on screen"></figure>
+   <p class="cap">Illustrative stock photo.</p>
+  </div>
+  <div class="fan-wrap rv">
+   <button class="btn btn-light" type="button" id="fanBtn" aria-expanded="false" aria-controls="fan">Show overnight enquiries</button>
+   <div class="fan" id="fan" role="group" aria-label="Sample overnight enquiry folders"></div>
+   <div class="fodet" id="foDet" aria-live="polite"><h4>Sample overnight folders</h4><p class="mini">Open the stack, then select a folder to read its sample intake summary. All records are made-up samples.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="staff">
+ <div class="wrap">
+  <div class="rv"><span class="kicker">Staff view · sample</span>
+  <h2>What the team sees in the morning.</h2>
+  <p class="lead">A sorted inbox of pre-qualified enquiries. Filter, search, open a record and change its status. All records are labelled samples.</p></div>
+  <div class="staff rv">
+   <div>
+    <div class="tools">
+     <div class="seg" id="stF" role="group" aria-label="Filter by status">
+      <button type="button" aria-pressed="true" data-f="All">All</button><button type="button" aria-pressed="false" data-f="New">New</button><button type="button" aria-pressed="false" data-f="Call back">Call back</button><button type="button" aria-pressed="false" data-f="Booked">Booked</button>
+     </div>
+     <label class="sr" for="stQ">Search sample enquiries</label>
+     <input id="stQ" type="search" placeholder="Search type or ID">
+     <label class="sr" for="stS">Sort</label>
+     <select id="stS"><option value="new">Newest first</option><option value="urg">Most urgent first</option></select>
+    </div>
+    <table>
+     <thead><tr><th>Contact</th><th>Received</th><th>Type</th><th>Urgency</th><th>Status</th></tr></thead>
+     <tbody id="stBody"></tbody>
+    </table>
+    <p class="note">Live use needs a secure backend, a CRM or case-management integration, staff logins, SMS or email alerts and the firm's compliance review.</p>
+   </div>
+   <div>
+    <figure class="ph wipe" style="aspect-ratio:4/5"><img src="img/stock-7.jpg" width="900" height="1125" loading="lazy" alt="Illustrative stock photo: a person at a desk with a computer and paperwork. Not the firm's staff."></figure>
+    <p class="cap">Illustrative stock photo. Not the firm's staff or premises.</p>
+   </div>
+  </div>
+ </div>
+</section>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+ <div class="drawer-h"><div><span class="tag Standard" style="margin-bottom:6px">Sample record</span><h3 id="dTitle" tabindex="-1">Record</h3></div><button class="btn btn-line btn-sm" type="button" id="dClose">Close</button></div>
+ <div id="dBody"></div>
+</aside>
+
+<section id="areas" class="band-lime">
+ <div class="wrap">
+  <div class="rv"><span class="kicker">Practice areas · to be confirmed with the firm</span>
+  <h2>Where the assistant can point people.</h2>
+  <p class="lead">The firm's site speaks about accident claims. These tiles are a starting list for the firm to confirm, edit or remove.</p></div>
+  <div class="areas">
+   <article class="folder area rv" data-tab="Car accidents"><figure class="ph wipe"><img src="img/stock-3.jpg" width="1000" height="750" loading="lazy" alt="Illustrative stock photo: light trails from cars on a highway at night"></figure><div class="body"><h3>Car accidents</h3><p>Collisions on Houston freeways and city streets. The assistant asks about injuries, treatment and insurer contact.</p></div></article>
+   <article class="folder area rv" data-tab="Truck accidents"><figure class="ph wipe"><img src="img/stock-4.jpg" width="1000" height="750" loading="lazy" alt="Illustrative stock photo: aerial night view of a lit freeway interchange"></figure><div class="body"><h3>Truck accidents</h3><p>Crashes involving large vehicles often need quick attention. Flagged as a priority type in the sample inbox.</p></div></article>
+   <article class="folder area rv" data-tab="Workplace injuries"><figure class="ph wipe"><img src="img/stock-8.jpg" width="1000" height="750" loading="lazy" alt="Illustrative stock photo: a desk with a computer and paperwork. Not the firm's office."></figure><div class="body"><h3>Workplace injuries</h3><p>Injuries on the job raise their own questions. The assistant records the basics for the team to review.</p></div></article>
+   <article class="folder area rv" data-tab="Wrongful death"><figure class="ph wipe"><img src="img/stock-11.jpg" width="1000" height="750" loading="lazy" alt="Illustrative stock photo: stone steps and columns of a courthouse-style building"></figure><div class="body"><h3>Loss of a loved one</h3><p>Handled with extra care: fewer questions, a gentler tone and a prompt to speak with a person.</p></div></article>
+  </div>
+ </div>
+</section>
+
+<section id="after">
+ <div class="wrap two">
+  <div class="rv">
+   <span class="kicker">General information</span>
+   <h2>What to do after an accident.</h2>
+   <p class="lead">Short, plain-English steps. General information only, not legal advice.</p>
+   <div class="acc" data-acc>
+    <div class="acc-i"><button class="acc-q" type="button">Right away: safety and health</button><div class="acc-a"><div><p>Move to a safe place if you can and call 911 if anyone is hurt. Get checked by a medical professional, even if you feel fine. Some injuries show up later.</p></div></div></div>
+    <div class="acc-i"><button class="acc-q" type="button">Record what you can</button><div class="acc-a"><div><p>Take photos of the vehicles, the road and any visible injuries. Note the time, place and weather. Collect names and contact details of other drivers and witnesses.</p></div></div></div>
+    <div class="acc-i"><button class="acc-q" type="button">Exchange the basics only</button><div class="acc-a"><div><p>Share your name, contact details and insurance information. Avoid guessing about fault or apologising at the scene.</p></div></div></div>
+    <div class="acc-i"><button class="acc-q" type="button">Think before talking to an insurer</button><div class="acc-a"><div><p>Insurers may ask for a recorded statement. Consider speaking with a lawyer first. You can ask for the Walker Texas Lawyer team on (713) 903-2481.</p></div></div></div>
+    <div class="acc-i"><button class="acc-q" type="button">Keep your records together</button><div class="acc-a"><div><p>Keep medical bills, repair estimates, the crash report number and messages with insurers in one place. The assistant's summary can be a starting point.</p></div></div></div>
+    <div class="acc-i"><button class="acc-q" type="button">Time limits exist</button><div class="acc-a"><div><p>Injury claims have deadlines that vary by situation. In Texas, many personal injury claims have a two-year limit, but exceptions exist. Please verify with an attorney as soon as you can.</p></div></div></div>
+   </div>
+  </div>
+  <div class="rv">
+   <figure class="ph wipe" style="aspect-ratio:4/5"><img src="img/stock-9.jpg" width="1000" height="1250" loading="lazy" alt="Illustrative stock photo: a quiet Texas back road in black and white"></figure>
+   <p class="cap">Illustrative stock photo.</p>
+  </div>
+ </div>
+</section>
+
+<section id="faq" class="band-lime">
+ <div class="wrap two">
+  <div class="rv">
+   <span class="kicker">FAQ</span>
+   <h2>Questions people ask before they start.</h2>
+   <div class="acc" data-acc>
+    <div class="acc-i"><button class="acc-q" type="button">Is my information stored?</button><div class="acc-a"><div><p>Not in this demo. Everything stays in your browser and nothing is sent. A live version would need the firm's own privacy and compliance review, and the firm would decide what is kept.</p></div></div></div>
+    <div class="acc-i"><button class="acc-q" type="button">How much is the consultation?</button><div class="acc-a"><div><p>The firm's website describes the consultation as free. Please confirm the terms with the team when you book.</p></div></div></div>
+    <div class="acc-i"><button class="acc-q" type="button">What happens after I book?</button><div class="acc-a"><div><p>In this demo, nothing. In a live version the request would reach the legal team through a calendar and email or CRM integration. They would read your summary and confirm by phone or email. Conflict checks and deciding to take a case stay with the firm.</p></div></div></div>
+    <div class="acc-i"><button class="acc-q" type="button">How does the assistant work?</button><div class="acc-a"><div><p>This sample uses scripted replies and keyword matching. A live version could use AI with answers approved by the firm and clear limits on what it may say.</p></div></div></div>
+    <div class="acc-i"><button class="acc-q" type="button">Does the assistant give legal advice?</button><div class="acc-a"><div><p>No. It gathers details and shares general information. Only a lawyer can assess your situation.</p></div></div></div>
+    <div class="acc-i"><button class="acc-q" type="button">Can I just call instead?</button><div class="acc-a"><div><p>Yes. Call (713) 903-2481 at any time. The chat is an extra way in, not a replacement.</p></div></div></div>
+   </div>
+  </div>
+  <div class="rv">
+   <figure class="ph wipe" style="aspect-ratio:4/5"><img src="img/stock-10.jpg" width="1000" height="1250" loading="lazy" alt="Illustrative stock photo: an empty country road under a wide sky"></figure>
+   <p class="cap">Illustrative stock photo.</p>
+  </div>
+ </div>
+</section>
+
+<div class="cta-band on-dark">
+ <div class="bg"><img src="img/stock-12.jpg" width="1600" height="900" loading="lazy" alt="Illustrative stock photo: massive stone columns of a historic building"></div>
+ <div class="wrap rv">
+  <h2>Prefer a person? Call now.</h2>
+  <p>Or run the two-minute claim check first and arrive at the call with your details in order.</p>
+  <div class="cta"><a class="btn btn-red" href="tel:+17139032481">Call (713) 903-2481</a><a class="btn btn-light" href="#claim">Start my free claim check</a></div>
+ </div>
+</div>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="rv"><span class="kicker">Contact</span><h2>Reach Walker Texas Lawyer.</h2></div>
+  <div class="contact rv">
+   <div>
+    <div class="logo-tile"><img src="img/business-logo-1.jpg" width="400" height="130" loading="lazy" alt="Walker Texas Lawyer logo, from the firm's own website"></div>
+    <ul class="clist">
+     <li><b>Phone</b><a href="tel:+17139032481">+1 713-903-2481</a></li>
+     <li><b>Email</b><a href="mailto:info@walkertexaslawyer.us">info@walkertexaslawyer.us</a></li>
+     <li><b>Website</b><a href="https://walkertexaslawyer.com/" rel="noopener">walkertexaslawyer.com</a></li>
+     <li><b>City</b>Houston, Texas</li>
+     <li><b>Address</b>To be confirmed with the firm</li>
+     <li><b>Hours</b>To be confirmed with the firm</li>
+     <li><b>Map</b><a href="https://www.google.com/maps/search/?api=1&amp;query=Houston%2C+TX" rel="noopener">Open Houston in Maps</a></li>
+    </ul>
+    <figure class="ph" style="aspect-ratio:16/8"><img src="img/stock-2.jpg" width="1200" height="600" loading="lazy" alt="Illustrative stock photo: Houston skyline with a Ferris wheel and tall buildings"></figure>
+   </div>
+   <div class="card">
+    <h3>Send a message (demo)</h3>
+    <form id="ctForm" novalidate>
+     <div class="field"><label for="ct-name">Your name</label><input id="ct-name" autocomplete="name" aria-describedby="e-cname"><div class="err" id="e-cname"></div></div>
+     <div class="field"><label for="ct-contact">Phone or email</label><input id="ct-contact" aria-describedby="e-ccontact"><div class="err" id="e-ccontact"></div></div>
+     <div class="field"><label for="ct-msg">How can the team help?</label><textarea id="ct-msg" aria-describedby="e-cmsg"></textarea><div class="err" id="e-cmsg"></div></div>
+     <button class="btn btn-green" type="submit">Send message</button>
+     <p id="ctOk" class="okbox" role="status" hidden style="margin-top:14px"><strong>This is a demo form, nothing was sent.</strong> A live version would deliver this to the firm's inbox.</p>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap foot">
+  <div>
+   <h4>Independent concept by LeadSky</h4>
+   <p>This page is a private demo made for Walker Texas Lawyer. It is not their official website and is not endorsed by or affiliated with the firm. Contact details come from the firm's public website. Address, hours, practice areas and credentials are to be confirmed. It gives general information only, not legal advice, and no attorney-client relationship is formed. Nothing is sent or stored. All records and availability are samples.</p>
+   <p>The firm's logo comes from its own website and is shown for this private concept. Reuse permission has not been confirmed. Concept by LeadSky.</p>
+  </div>
+  <div>
+   <h4>Photo credits (Pixabay Content License)</h4>
+   <ul>
+    <li><a href="https://pixabay.com/photos/architecture-buildings-city-1846657/" rel="noopener">Houston skyline, Pexels</a></li>
+    <li><a href="https://pixabay.com/photos/houston-big-city-usa-texas-1620802/" rel="noopener">Houston, Falkenpost</a></li>
+    <li><a href="https://pixabay.com/photos/traffic-highway-lights-night-speed-332857/" rel="noopener">Highway lights, jonbonsilver</a></li>
+    <li><a href="https://pixabay.com/photos/streets-night-lights-circle-2278471/" rel="noopener">Night interchange, csliaw</a></li>
+    <li><a href="https://pixabay.com/photos/iphone-hand-screen-smartphone-apps-410311/" rel="noopener">Phone in hand, JESHOOTS-com</a></li>
+    <li><a href="https://pixabay.com/photos/iphone-smartphone-apps-apple-inc-410324/" rel="noopener">Smartphone, JESHOOTS-com</a></li>
+    <li><a href="https://pixabay.com/photos/man-lawyer-office-desk-computer-5806012/" rel="noopener">Desk, advogadoaguilar</a></li>
+    <li><a href="https://pixabay.com/photos/man-lawyer-office-desk-computer-5806013/" rel="noopener">Paperwork, advogadoaguilar</a></li>
+    <li><a href="https://pixabay.com/photos/black-and-white-desert-texas-1283273/" rel="noopener">Texas road, Pexels</a></li>
+    <li><a href="https://pixabay.com/photos/road-pavement-landscape-roadway-220058/" rel="noopener">Country road, Larisa-K</a></li>
+    <li><a href="https://pixabay.com/photos/palace-justice-brussels-court-4781577/" rel="noopener">Court steps, LVER</a></li>
+    <li><a href="https://pixabay.com/photos/architecture-columns-stone-enormous-4012396/" rel="noopener">Stone columns, Tama66</a></li>
+   </ul>
+  </div>
+ </div>
+</footer>
+
+<div class="mbar" aria-label="Quick actions">
+ <button class="btn btn-green" type="button" id="mChat">Chat</button>
+ <a class="btn btn-red" href="tel:+17139032481">Call</a>
+</div>
+
+<dialog id="privacy" aria-labelledby="pvT">
+ <h3 id="pvT">Privacy note (demo)</h3>
+ <p>In this demo, everything you type stays in your browser. Nothing is sent, saved or shared, and there is no server behind it.</p>
+ <p>A live version would need the firm's privacy policy, secure storage, a compliance review and clear wording about when an attorney-client relationship begins. The chat gives general information only and is not legal advice.</p>
+ <button class="btn btn-green" type="button" id="pvClose">Close</button>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* 3D scales of justice (Three.js) */
+(function(){
+ const box=document.getElementById('scene3d'),cv=document.getElementById('sceneCv'),cap=document.getElementById('sceneCap');
+ const RM=matchMedia('(prefers-reduced-motion: reduce)');
+ function fallback(){box.classList.add('fb');cap.textContent='Illustration of the scales of justice'}
+ if(typeof THREE==='undefined'){fallback();return}
+ let renderer;
+ try{renderer=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});}catch(e){fallback();return}
+ if(!renderer||!renderer.getContext()){fallback();return}
+ renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+ renderer.outputEncoding=THREE.sRGBEncoding;
+ const scene=new THREE.Scene();
+ const cam=new THREE.PerspectiveCamera(35,1,.1,60);
+ cam.position.set(0,2.6,13.5);cam.lookAt(0,2.1,0);
+ scene.add(new THREE.HemisphereLight(0xfff1d6,0x1b2a22,.7));
+ const key=new THREE.DirectionalLight(0xffffff,1.15);key.position.set(4,7,6);scene.add(key);
+ const warm=new THREE.PointLight(0xffc27a,1.1,30);warm.position.set(-5,3,4);scene.add(warm);
+ const rim=new THREE.DirectionalLight(0x9fd3ff,.5);rim.position.set(-4,3,-6);scene.add(rim);
+ const brass=new THREE.MeshStandardMaterial({color:0xd4a94a,metalness:.65,roughness:.32});
+ const stone=new THREE.MeshStandardMaterial({color:0xe8e1d0,metalness:.05,roughness:.75});
+ const dark=new THREE.MeshStandardMaterial({color:0x9c7a2c,metalness:.7,roughness:.4,side:THREE.DoubleSide});
+ const g=new THREE.Group();scene.add(g);
+ function mesh(geo,mat,x,y,z){const m=new THREE.Mesh(geo,mat);m.position.set(x||0,y||0,z||0);return m}
+ g.add(mesh(new THREE.CylinderGeometry(1.5,1.7,.25,48),stone,0,.125,0));
+ g.add(mesh(new THREE.CylinderGeometry(1.1,1.3,.3,48),stone,0,.4,0));
+ g.add(mesh(new THREE.CylinderGeometry(.22,.3,3.4,24),brass,0,2.25,0));
+ g.add(mesh(new THREE.TorusGeometry(.3,.07,12,32),brass,0,.65,0)).rotation.x=Math.PI/2;
+ const pivot=new THREE.Group();pivot.position.y=3.95;g.add(pivot);
+ pivot.add(mesh(new THREE.SphereGeometry(.24,32,24),brass,0,0,0));
+ pivot.add(mesh(new THREE.BoxGeometry(4.4,.12,.14),brass,0,0,0));
+ const up=new THREE.Vector3(0,1,0);
+ function rod(a,b,r,mat){const d=new THREE.Vector3().subVectors(b,a);const m=new THREE.Mesh(new THREE.CylinderGeometry(r,r,d.length(),6),mat);m.position.copy(a).addScaledVector(d,.5);m.quaternion.setFromUnitVectors(up,d.clone().normalize());return m}
+ function makePan(x){
+  const p=new THREE.Group();p.position.set(x,0,0);
+  p.add(mesh(new THREE.SphereGeometry(.12,16,12),brass,0,0,0));
+  for(let i=0;i<3;i++){const a=i*Math.PI*2/3;p.add(rod(new THREE.Vector3(0,0,0),new THREE.Vector3(Math.cos(a)*.85,-1.55,Math.sin(a)*.85),.022,brass))}
+  const bowl=new THREE.Mesh(new THREE.SphereGeometry(.88,40,20,0,Math.PI*2,Math.PI/2,Math.PI/2),dark);
+  bowl.scale.y=.42;bowl.position.y=-1.55;p.add(bowl);
+  const rimM=new THREE.Mesh(new THREE.TorusGeometry(.88,.03,8,48),brass);rimM.rotation.x=Math.PI/2;rimM.position.y=-1.55;p.add(rimM);
+  pivot.add(p);return p;
+ }
+ const pl=makePan(-2.2),pr=makePan(2.2);
+ let yaw=0,vel=0,drag=false,lx=0,vis=true,raf=0,t0=performance.now();
+ function resize(){const w=box.clientWidth,h=box.clientHeight;if(!w||!h)return;renderer.setSize(w,h,false);cam.aspect=w/h;
+  cam.position.z=w/h<.9?15.5:13.5;cam.updateProjectionMatrix();draw(performance.now())}
+ function draw(now){
+  const t=(now-t0)/1000;
+  const tilt=RM.matches?0.05:Math.sin(t*.7)*.09;
+  pivot.rotation.z=tilt;pl.rotation.z=-tilt;pr.rotation.z=-tilt;
+  if(!RM.matches){if(!drag){vel*=.95;yaw+=vel;yaw+=Math.sin(t*.35)*.0025}}
+  g.rotation.y=(RM.matches?-.35:0)+yaw+(RM.matches?0:Math.sin(t*.35)*.35);
+  renderer.render(scene,cam);
+ }
+ function loop(now){raf=0;if(!vis||document.hidden||RM.matches)return;draw(now);raf=requestAnimationFrame(loop)}
+ function start(){if(!raf&&vis&&!document.hidden&&!RM.matches)raf=requestAnimationFrame(loop)}
+ function stop(){if(raf){cancelAnimationFrame(raf);raf=0}}
+ if('IntersectionObserver' in window)new IntersectionObserver(es=>{vis=es[0].isIntersecting;vis?start():stop()},{threshold:.05}).observe(box);
+ document.addEventListener('visibilitychange',()=>document.hidden?stop():start());
+ if('ResizeObserver' in window)new ResizeObserver(resize).observe(box);else addEventListener('resize',resize);
+ cv.addEventListener('webglcontextlost',e=>{e.preventDefault();stop();fallback()});
+ if(RM.matches){cap.textContent='3D scales (still view)'}
+ else{
+  cv.addEventListener('pointerdown',e=>{drag=true;lx=e.clientX;try{cv.setPointerCapture(e.pointerId)}catch(_){}});
+  cv.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-lx;lx=e.clientX;vel=dx*.012;yaw+=dx*.012});
+  const end=()=>{drag=false};
+  cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);
+ }
+ resize();start();
+})();
+</script>
+<script>
+(function(){
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)');
+const PH='(713) 903-2481';
+
+/* nav */
+const mb=$('#menuBtn'),mn=$('#mainNav');
+mb.addEventListener('click',()=>{const o=mn.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+mn.addEventListener('click',e=>{if(e.target.closest('a')){mn.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+
+/* reveal */
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12}):null;
+$$('.rv').forEach(el=>io?io.observe(el):el.classList.add('in'));
+$$('.wipe').forEach(el=>{const p=el.closest('.rv');if(!p&&io)io.observe(el);else if(!io)el.classList.add('in')});
+
+/* tilt */
+const stage=$('#stage'),frame=$('#frame'),himg=$('#heroImg');
+const fine=matchMedia('(hover:hover) and (pointer:fine)');
+if(!RM.matches&&fine.matches){
+ stage.classList.add('tilt-on');
+ stage.addEventListener('pointermove',e=>{const r=stage.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  frame.style.setProperty('--ry',(x*4).toFixed(2)+'deg');frame.style.setProperty('--rx',(-y*3).toFixed(2)+'deg');
+  himg.style.transform='scale(1.06) translate('+(x*-16).toFixed(1)+'px,'+(y*-8).toFixed(1)+'px)'});
+ stage.addEventListener('pointerleave',()=>{frame.style.setProperty('--ry','0deg');frame.style.setProperty('--rx','0deg');himg.style.transform=''});
+}else if(!RM.matches){
+ let tk=false;addEventListener('scroll',()=>{if(tk)return;tk=true;requestAnimationFrame(()=>{const r=stage.getBoundingClientRect();const v=Math.max(-1,Math.min(1,(r.top/innerHeight-.4)));frame.style.setProperty('--rx',(v*2).toFixed(2)+'deg');tk=false})},{passive:true});
+}
+
+/* assessment */
+function assess(a){
+ let s=0;
+ if(a.when==='In the last 48 hours')s+=2;else if(a.when==='Within the last month')s+=1;else if(a.when==='More than 6 months ago')s+=2;
+ if(a.injury==='Serious or hospitalised')s+=2;else if(a.injury==='Ongoing care needed')s+=1;
+ if(a.insurer==='Yes')s+=1;
+ const hurt=!['No injury','Loss of a family member'].includes(a.injury);
+ if(a.care==='Not yet'&&hurt)s+=1;
+ if(a.type==='Loss of a loved one')s+=2;
+ const key=s>=4?'High':s>=2?'Priority':'Standard';
+ const label=key==='High'?'High: contact soon':key;
+ const n=[];
+ if(key==='High')n.push('Choose the earliest free consultation slot, or call '+PH+'.');else n.push('Book a free consultation.');
+ if(a.when==='More than 6 months ago')n.push('Ask about time limits right away, as some claims have deadlines.');
+ if(a.care==='Not yet'&&hurt)n.push('Get checked by a medical professional (call 911 in an emergency).');
+ if(a.insurer==='Yes')n.push('Consider speaking with the legal team before giving an insurer a recorded statement.');
+ if(a.type==='Loss of a loved one')n.push('Consider a call with the team rather than only a form.');
+ return{key,label,next:n.join(' ')};
+}
+
+/* chat */
+const STEPS=[
+ {key:'type',q:'What kind of incident are you asking about?',chips:['Car accident','Truck accident','Workplace injury','Loss of a loved one','Something else'],m:[[/lost|died|death|passed|killed|fatal|loved one/,'Loss of a loved one'],[/truck|semi|18.?wheel|tractor|trailer/,'Truck accident'],[/car|crash|collision|vehicle|rear.?end|hit/,'Car accident'],[/work|job|employ|site|factory|warehouse/,'Workplace injury'],[/other|else|slip|fall|dog|bike|motorcycle/,'Something else']]},
+ {key:'when',q:'When did it happen?',chips:['In the last 48 hours','Within the last month','1 to 6 months ago','More than 6 months ago'],m:[[/today|tonight|yesterday|last night|this morning|hours?|2 days|two days|48/,'In the last 48 hours'],[/(\d+)\s*months?/,'#m'],[/year|long ago|more than|over (6|six)/,'More than 6 months ago'],[/week|month|recent/,'Within the last month']]},
+ {key:'injury',q:'How would you describe the injuries?',chips:['No injury','Minor','Ongoing care needed','Serious or hospitalised'],m:[[/serious|severe|hospital|surgery|broken|ambulance|icu|critical/,'Serious or hospitalised'],[/ongoing|physio|therapy|chronic|neck|back|pain|treatment/,'Ongoing care needed'],[/minor|sore|bruis|scratch|small/,'Minor'],[/no injur|none|not hurt|unhurt|fine|nothing/,'No injury']]},
+ {key:'care',q:'Have you seen a doctor or been treated?',chips:['Yes, emergency care','Yes, follow-up care','Not yet'],m:[[/not yet|haven.?t|no\b|nope|not been/,'Not yet'],[/er\b|emergency|ambulance|hospital|urgent/,'Yes, emergency care'],[/yes|doctor|follow|clinic|gp|physio|seen/,'Yes, follow-up care']]},
+ {key:'insurer',q:'Has an insurance company contacted you?',chips:['Yes','No','Not sure'],m:[[/not sure|maybe|unsure|think so|don.?t know/,'Not sure'],[/\bno\b|nope|nobody|not yet|haven.?t|none/,'No'],[/yes|yeah|called|adjuster|email|contacted/,'Yes']]}
+];
+const SIDE=[
+ [/cost|fee|price|how much|afford|charge|pay|free/,'The firm\'s website describes the consultation as free. Any fee arrangement for a case is for the legal team to explain, so please confirm the terms with them when you speak. This is a sample reply.'],
+ [/time limit|deadline|statute|too late|how long (do|have)|limitation/,'Time limits apply to injury claims and vary by situation. In Texas, many personal injury claims have a two-year limit, but exceptions exist. This is general information only. Please verify with an attorney as soon as you can.'],
+ [/what (should|do) i do|after (a|the) (crash|accident|collision)|first steps|next steps/,'General steps: get medical care, call 911 if anyone is hurt, take photos, collect other drivers\' and witnesses\' details, keep your records together, and think before giving an insurer a recorded statement. See the checklist further down the page. This is general information, not legal advice.'],
+ [/bring|documents|prepare|paperwork|need to have/,'Useful to have: photos, the crash report number if there is one, insurer names and claim numbers, medical records or bills, witness details and any messages from insurers. Don\'t worry if you don\'t have everything yet.'],
+ [/privacy|private|confidential|data|stored|saved|safe/,'In this demo nothing is sent or stored. A live version would need the firm\'s privacy policy, secure storage and compliance review. Tap "Privacy note" below for more.'],
+ [/how does this work|what is this|who are you|are you a (bot|robot|human)|ai\b/,'I\'m a sample assistant with scripted replies. I ask a few short questions, build a summary and help you book a free consultation. I can\'t give legal advice.'],
+ [/call|phone|speak|talk|human|person|lawyer|attorney|someone|office/,'You can call the team on '+PH+'. This sample assistant can\'t give legal advice, but it can organise your details first.'],
+ [/book|appointment|schedule|consult/,'You can book a free consultation slot in the sample calendar below. Finish the questions and I\'ll prefill your summary.'],
+ [/thank|thanks/,'You\'re welcome. Take care of yourself.']
+];
+const log=$('#log'),chips=$('#chips'),input=$('#chatInput');
+let ans={},idx=0,snaps=[],busy=false,done=false,run=0;
+const wait=ms=>new Promise(r=>setTimeout(r,RM.matches?Math.min(ms,80):ms));
+function scrollLog(){log.scrollTop=log.scrollHeight}
+function bubble(who,t){const d=document.createElement('div');d.className='msg '+who;const p=document.createElement('p');p.textContent=t;d.appendChild(p);log.appendChild(d);scrollLog();return d}
+function clearChips(){chips.innerHTML=''}
+function showChips(list){clearChips();list.forEach(v=>{const b=document.createElement('button');b.type='button';b.className='chip';b.textContent=v;b.dataset.v=v;chips.appendChild(b)})}
+async function bot(t,acts){
+ const my=run;busy=true;clearChips();
+ const ty=document.createElement('div');ty.className='msg bot typing';ty.setAttribute('aria-hidden','true');ty.innerHTML='<p><span></span><span></span><span></span></p>';log.appendChild(ty);scrollLog();
+ await wait(500+Math.min(t.length*5,500));
+ if(my!==run)return false;
+ ty.remove();const d=bubble('bot',t);
+ if(acts){const w=document.createElement('div');w.className='acts';acts.forEach(a=>{const b=document.createElement('button');b.type='button';b.dataset.act=a[0];b.textContent=a[1];if(a[2])b.className='pri';w.appendChild(b)});d.appendChild(w);scrollLog()}
+ busy=false;return true;
+}
+function setRow(k,html,isTag,animate){
+ const dd=$('#r-'+k+' dd');dd.className='';
+ if(isTag){dd.innerHTML='';const s=document.createElement('span');s.className='tag '+html[0];s.textContent=html[1];dd.appendChild(s)}else dd.textContent=html;
+ if(animate){const r=$('#r-'+k);r.classList.remove('flash');void r.offsetWidth;r.classList.add('flash')}
+}
+function clearRow(k){const dd=$('#r-'+k+' dd');dd.className='pending';dd.textContent='Waiting'}
+function renderSummary(){
+ STEPS.forEach(s=>ans[s.key]?setRow(s.key,ans[s.key]):clearRow(s.key));
+ const n=STEPS.filter(s=>ans[s.key]).length;
+ $('#sumCount').textContent=n+' of 5';$('#prog').style.width=(n/5*100)+'%';
+ if(done){const a=assess(ans);setRow('urgency',[a.key,a.label],true);setRow('next',a.next)}else{clearRow('urgency');clearRow('next')}
+ $('#backBtn').disabled=snaps.length===0;
+}
+async function ask(){
+ const my=run,s=STEPS[idx];
+ if(!s)return finish();
+ if(ans.type==='Loss of a loved one'&&(s.key==='injury'||s.key==='care')){ans[s.key]=s.key==='injury'?'Loss of a family member':'Not applicable';idx++;renderSummary();return ask()}
+ if(!(await bot(s.q)))return;
+ if(my===run)showChips(s.chips);
+}
+async function answer(v,shown){
+ if(busy||done)return;
+ const s=STEPS[idx];
+ snaps.push({log:log.innerHTML,ans:{...ans},idx});
+ bubble('user',shown||v);ans[s.key]=v;idx++;renderSummary();
+ const r=$('#r-'+s.key);r.classList.add('flash');
+ if(s.key==='type'&&v==='Loss of a loved one'){if(!(await bot('I\'m very sorry for your loss. I\'ll keep these questions short.')))return}
+ if(s.key==='injury'&&v==='Serious or hospitalised'){if(!(await bot('I\'m sorry you\'re dealing with that. A few more questions.')))return}
+ ask();
+}
+async function finish(){
+ done=true;renderSummary();
+ const a=assess(ans);
+ $('#r-urgency').classList.add('flash');$('#r-next').classList.add('flash');
+ await bot('Thank you. Your sample summary is filled in on the case-file panel. Suggested next step: '+a.next+' This is a general sample check, not legal advice or an assessment of your claim.',[['book','Book free consultation',1],['copy','Copy summary'],['call','Call '+PH]]);
+}
+function matchStep(s,t){
+ for(const [re,v] of s.m){const m=t.match(re);if(m){
+  if(v==='#m'){const n=+m[1];return n<=1?'Within the last month':n<=6?'1 to 6 months ago':'More than 6 months ago'}
+  return v}}
+ return null;
+}
+async function onText(raw){
+ const t=raw.trim();if(!t||busy)return;
+ const low=t.toLowerCase(),s=STEPS[idx];
+ const q=low.includes('?');
+ const side=()=>{for(const [re,txt] of SIDE)if(re.test(low))return txt;return null};
+ if(!done&&s&&!q){const m=matchStep(s,low);if(m)return answer(m,t)}
+ bubble('user',t);
+ const sd=side();
+ if(sd){if(!(await bot(sd)))return}
+ else if(!done&&s){
+  if(!(await bot('I didn\'t quite catch that. Please tap one of the options, or call '+PH+' to speak with the team.')))return}
+ else{if(!(await bot('I can answer questions about costs, time limits, what to bring and what to do next, or you can book a consultation or call '+PH+'.')))return}
+ if(!done&&s)showChips(s.chips);
+}
+$('#chatForm').addEventListener('submit',e=>{e.preventDefault();const v=input.value;input.value='';onText(v)});
+chips.addEventListener('click',e=>{const b=e.target.closest('.chip');if(b)answer(b.dataset.v)});
+function summaryText(){
+ const a=assess(ans);
+ return ['Claim check summary (SAMPLE, from a demo)','Incident: '+(ans.type||'-'),'When: '+(ans.when||'-'),'Injuries: '+(ans.injury||'-'),'Treatment: '+(ans.care||'-'),'Insurer contact: '+(ans.insurer||'-'),'Urgency: '+a.label,'Suggested next step: '+a.next,'Not legal advice.'].join('\n');
+}
+async function copySummary(){
+ const msg=$('#copyMsg');
+ if(!STEPS.every(s=>ans[s.key])){msg.textContent='Answer the questions first, then copy your summary.';return}
+ const t=summaryText();
+ try{await navigator.clipboard.writeText(t);msg.textContent='Summary copied.'}catch(e){
+  const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');msg.textContent='Summary copied.'}catch(_){msg.textContent='Copy is not available in this browser.'}ta.remove()}
+}
+function goBook(){
+ if(STEPS.every(s=>ans[s.key]))$('#bk-note').value=summaryText();
+ $('#book').scrollIntoView({behavior:RM.matches?'auto':'smooth'});
+}
+log.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act;if(a==='book')goBook();if(a==='copy')copySummary();if(a==='call')location.href='tel:+17139032481'});
+$('#copyBtn').addEventListener('click',copySummary);
+$('#bookBtn').addEventListener('click',goBook);
+$('#backBtn').addEventListener('click',()=>{
+ if(busy||!snaps.length)return;
+ const s=snaps.pop();log.innerHTML=s.log;ans=s.ans;idx=s.idx;done=false;renderSummary();showChips(STEPS[idx].chips);
+});
+function init(){
+ run++;busy=false;done=false;ans={};idx=0;snaps=[];log.innerHTML='';clearChips();renderSummary();
+ const my=run;
+ (async()=>{
+  if(!(await bot('Hi, I\'m the Claim Intake Assistant for Walker Texas Lawyer. This is a sample with scripted replies, so nothing you type is sent or stored.')))return;
+  if(!(await bot('I can\'t give legal advice, but I can organise your details into a summary for a free consultation. Let\'s start.')))return;
+  if(my===run)ask();
+ })();
+}
+$('#restartBtn').addEventListener('click',()=>{$('#copyMsg').textContent='';init()});
+$('#sumToggle').addEventListener('click',()=>{const o=$('#summary').classList.toggle('open');$('#sumToggle').setAttribute('aria-expanded',o);if(o)$('#summary').scrollIntoView({block:'nearest',behavior:RM.matches?'auto':'smooth'})});
+function focusChat(){$('#claim').scrollIntoView({behavior:RM.matches?'auto':'smooth',block:'center'});setTimeout(()=>input.focus({preventScroll:true}),RM.matches?0:500)}
+$('#startBtn').addEventListener('click',focusChat);
+$('#mChat').addEventListener('click',focusChat);
+input.addEventListener('focus',()=>document.body.classList.add('typing'));
+input.addEventListener('blur',()=>document.body.classList.remove('typing'));
+const pv=$('#privacy');
+$('#privacyBtn').addEventListener('click',()=>pv.showModal());
+$('#pvClose').addEventListener('click',()=>pv.close());
+pv.addEventListener('click',e=>{if(e.target===pv)pv.close()});
+init();
+
+/* accordions */
+$$('[data-acc]').forEach(ac=>{
+ $$('.acc-q',ac).forEach(q=>{const it=q.parentElement;q.setAttribute('aria-expanded','false');
+  q.addEventListener('click',()=>{const o=it.classList.toggle('open');q.setAttribute('aria-expanded',o)})});
+});
+
+/* booking */
+const today=new Date();today.setHours(0,0,0,0);
+const minD=new Date(today);minD.setDate(minD.getDate()+1);
+const maxD=new Date(today);maxD.setDate(maxD.getDate()+60);
+const SLOTS=['9:00 AM','10:30 AM','1:00 PM','2:30 PM','4:00 PM','5:30 PM'];
+let vm=new Date(minD.getFullYear(),minD.getMonth(),1),selD=null,selS=null;
+const isAvail=d=>{const w=d.getDay();return d>=minD&&d<=maxD&&w>0&&w<6&&((d.getDate()*3+d.getMonth())%7!==0)};
+const slotOk=(d,i)=>(d.getDate()+i*2)%4!==0;
+const fmt=d=>d.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+function renderCal(focusSel){
+ const y=vm.getFullYear(),m=vm.getMonth();
+ $('#calLabel').textContent=vm.toLocaleDateString('en-US',{month:'long',year:'numeric'});
+ const g=$('#calGrid');g.innerHTML='';
+ ['Su','Mo','Tu','We','Th','Fr','Sa'].forEach(n=>{const d=document.createElement('div');d.className='dow';d.setAttribute('aria-hidden','true');d.textContent=n;g.appendChild(d)});
+ for(let i=0;i<new Date(y,m,1).getDay();i++)g.appendChild(document.createElement('div'));
+ const days=new Date(y,m+1,0).getDate();let selBtn=null;
+ for(let d=1;d<=days;d++){
+  const dt=new Date(y,m,d),ok=isAvail(dt),b=document.createElement('button');
+  b.type='button';b.className='day';b.textContent=d;b.disabled=!ok;
+  b.setAttribute('aria-label',fmt(dt)+(ok?', available (sample)':', unavailable'));
+  const sel=selD&&+selD===+dt;b.setAttribute('aria-pressed',sel?'true':'false');if(sel)selBtn=b;
+  b.addEventListener('click',()=>{selD=dt;selS=null;renderCal(true);renderSlots()});
+  g.appendChild(b);
+ }
+ $('#calPrev').disabled=new Date(y,m,1)<=new Date(minD.getFullYear(),minD.getMonth(),1);
+ $('#calNext').disabled=new Date(y,m+1,1)>maxD;
+ if(focusSel&&selBtn)selBtn.focus();
+}
+function renderSlots(){
+ const w=$('#slots');w.innerHTML='';
+ if(!selD){$('#slotH').textContent='Pick a day first';$('#slotP').textContent='Available days are enabled on the calendar. Then choose a time.';$('#slotNext').disabled=true;return}
+ $('#slotH').textContent=fmt(selD);$('#slotP').textContent='Choose a time (Central Time, sample availability).';
+ SLOTS.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.className='slot';b.textContent=s;
+  const ok=slotOk(selD,i);b.disabled=!ok;b.setAttribute('aria-pressed',selS===s?'true':'false');
+  if(!ok)b.setAttribute('aria-label',s+', unavailable');
+  b.addEventListener('click',()=>{selS=s;renderSlots();$$('.slot',w).find(x=>x.textContent===s).focus()});w.appendChild(b)});
+ $('#slotNext').disabled=!selS;
+}
+$('#calPrev').addEventListener('click',()=>{vm=new Date(vm.getFullYear(),vm.getMonth()-1,1);renderCal()});
+$('#calNext').addEventListener('click',()=>{vm=new Date(vm.getFullYear(),vm.getMonth()+1,1);renderCal()});
+function goStep(n){
+ ['p1','p2','p3','p4'].forEach((id,i)=>$('#'+id).hidden=(i!==n-1));
+ $$('#stepper li').forEach((li,i)=>{li.className=i+1===n?'on':(i+1<n?'done':'')});
+ $('#slotCard').style.display=n===1?'':'none';
+ const h=$('#p'+n+' h3[tabindex]');if(h)h.focus({preventScroll:true});
+}
+$('#slotNext').addEventListener('click',()=>{if(selD&&selS)goStep(2)});
+$('#to1').addEventListener('click',()=>goStep(1));
+$('#to2').addEventListener('click',()=>goStep(2));
+function setErr(id,fid,msg){$('#'+id).textContent=msg||'';const f=$('#'+fid);if(f){if(msg)f.setAttribute('aria-invalid','true');else f.removeAttribute('aria-invalid')}return !msg}
+const emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+$('#bkForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const n=$('#bk-name').value.trim(),p=$('#bk-phone').value.trim(),em=$('#bk-email').value.trim();
+ let ok=true;
+ ok=setErr('e-name','bk-name',n.length<2?'Please enter your name.':'')&&ok;
+ ok=setErr('e-phone','bk-phone',p.replace(/\D/g,'').length<10?'Enter a phone number with at least 10 digits.':'')&&ok;
+ ok=setErr('e-email','bk-email',em&&!emailRe.test(em)?'Enter a valid email address or leave it blank.':'')&&ok;
+ ok=setErr('e-consent','bk-consent',$('#bk-consent').checked?'':'Please tick the box to continue.')&&ok;
+ if(!ok){const f=$('#bkForm [aria-invalid=true]');if(f)f.focus();return}
+ const r=$('#review');r.innerHTML='';
+ [['Date',fmt(selD)],['Time',selS+' (Central Time, sample)'],['Name',n],['Phone',p],['Email',em||'Not given'],['Note',$('#bk-note').value.trim()||'None']].forEach(x=>{const d=document.createElement('div'),a=document.createElement('dt'),b=document.createElement('dd');a.textContent=x[0];b.textContent=x[1];b.style.whiteSpace='pre-wrap';d.append(a,b);r.appendChild(d)});
+ goStep(3);
+});
+$('#confirmBtn').addEventListener('click',()=>{$('#okWhen').textContent='Sample slot: '+fmt(selD)+' at '+selS;goStep(4);$$('#stepper li').forEach(li=>li.className='done')});
+$('#again').addEventListener('click',()=>{selD=null;selS=null;$('#bkForm').reset();renderCal();renderSlots();goStep(1)});
+renderCal();renderSlots();
+
+/* sample records */
+const REC=[
+ {id:'S-1048',who:'Sample contact A',recv:'Wed, 1:12 am',over:1,type:'Car accident',when:'In the last 48 hours',injury:'Ongoing care needed',care:'Yes, emergency care',insurer:'Yes',status:'New'},
+ {id:'S-1047',who:'Sample contact B',recv:'Tue, 11:42 pm',over:1,type:'Truck accident',when:'In the last 48 hours',injury:'Serious or hospitalised',care:'Yes, emergency care',insurer:'Not sure',status:'Call back'},
+ {id:'S-1046',who:'Sample contact C',recv:'Tue, 4:30 pm',over:0,type:'Workplace injury',when:'Within the last month',injury:'Minor',care:'Yes, follow-up care',insurer:'No',status:'Booked'},
+ {id:'S-1045',who:'Sample contact D',recv:'Tue, 10:05 am',over:0,type:'Car accident',when:'More than 6 months ago',injury:'Ongoing care needed',care:'Yes, follow-up care',insurer:'Yes',status:'Call back'},
+ {id:'S-1044',who:'Sample contact E',recv:'Mon, 10:48 pm',over:1,type:'Loss of a loved one',when:'Within the last month',injury:'Loss of a family member',care:'Not applicable',insurer:'No',status:'New'},
+ {id:'S-1043',who:'Sample contact F',recv:'Mon, 3:15 pm',over:0,type:'Car accident',when:'1 to 6 months ago',injury:'Minor',care:'Yes, follow-up care',insurer:'Not sure',status:'Booked'},
+ {id:'S-1042',who:'Sample contact G',recv:'Sun, 8:20 pm',over:0,type:'Something else',when:'Within the last month',injury:'No injury',care:'Not yet',insurer:'No',status:'New'},
+ {id:'S-1041',who:'Sample contact H',recv:'Sun, 12:55 am',over:1,type:'Truck accident',when:'1 to 6 months ago',injury:'Ongoing care needed',care:'Yes, follow-up care',insurer:'Yes',status:'New'}
+];
+REC.forEach((r,i)=>{r.n=REC.length-i;const a=assess(r);r.level=a.key;r.next=a.next});
+function dlFor(r){
+ const dl=document.createElement('dl');dl.className='mini';
+ [['Received',r.recv+' (sample)'],['Incident',r.type],['When',r.when],['Injuries',r.injury],['Treatment',r.care],['Insurer contact',r.insurer],['Urgency',r.level],['Next step',r.next],['Status',r.status]].forEach(x=>{const d=document.createElement('div'),a=document.createElement('dt'),b=document.createElement('dd');a.textContent=x[0];b.textContent=x[1];d.append(a,b);dl.appendChild(d)});
+ return dl;
+}
+/* staff table */
+let flt='All',lastBtn=null;
+function renderStaff(){
+ const q=$('#stQ').value.trim().toLowerCase(),srt=$('#stS').value;
+ let list=REC.filter(r=>(flt==='All'||r.status===flt)&&(!q||(r.id+' '+r.type+' '+r.who).toLowerCase().includes(q)));
+ const o={High:0,Priority:1,Standard:2};
+ list.sort((a,b)=>srt==='urg'?(o[a.level]-o[b.level])||(b.n-a.n):b.n-a.n);
+ const tb=$('#stBody');tb.innerHTML='';
+ if(!list.length){tb.innerHTML='<tr><td class="empty" colspan="5">No sample enquiries match.</td></tr>';return}
+ list.forEach(r=>{
+  const tr=document.createElement('tr');
+  tr.innerHTML='<td data-l="Contact"><button class="open-btn" type="button"></button></td><td data-l="Received"></td><td data-l="Type"></td><td data-l="Urgency"><span class="tag"></span></td><td data-l="Status"><span class="st"></span></td>';
+  const c=tr.children;
+  c[0].firstChild.textContent=r.who+' · '+r.id;c[0].firstChild.addEventListener('click',e=>openDrawer(r,e.currentTarget));
+  c[1].textContent=r.recv;c[2].textContent=r.type;
+  const t=c[3].firstChild;t.textContent=r.level;t.classList.add(r.level);c[4].firstChild.textContent=r.status;
+  tb.appendChild(tr);
+ });
+}
+$('#stF').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;flt=b.dataset.f;$$('#stF button').forEach(x=>x.setAttribute('aria-pressed',x===b));renderStaff()});
+$('#stQ').addEventListener('input',renderStaff);$('#stS').addEventListener('change',renderStaff);
+const dr=$('#drawer'),sc=$('#scrim');
+function openDrawer(r,from){
+ lastBtn=from;$('#dTitle').textContent=r.who+' · '+r.id;
+ const b=$('#dBody');b.innerHTML='';
+ b.appendChild(dlFor(r));
+ const l=document.createElement('p');l.className='note';l.textContent='Sample record. Mark a status below to see the inbox update.';b.appendChild(l);
+ const seg=document.createElement('div');seg.className='seg';seg.setAttribute('role','group');seg.setAttribute('aria-label','Set status');
+ ['New','Call back','Booked'].forEach(s=>{const x=document.createElement('button');x.type='button';x.textContent=s;x.setAttribute('aria-pressed',r.status===s);
+  x.addEventListener('click',()=>{r.status=s;renderStaff();openDrawerContent(r)});seg.appendChild(x)});
+ b.appendChild(seg);
+ dr.classList.add('open');sc.classList.add('open');setTimeout(()=>$('#dTitle').focus(),50);
+}
+function openDrawerContent(r){const f=document.activeElement&&document.activeElement.textContent;openDrawer(r,lastBtn);setTimeout(()=>{const x=$$('#dBody .seg button').find(y=>y.textContent===f);if(x)x.focus()},60)}
+function closeDrawer(){dr.classList.remove('open');sc.classList.remove('open');if(lastBtn&&document.contains(lastBtn))lastBtn.focus();else{const f=$('#stBody .open-btn');if(f)f.focus()}}
+$('#dClose').addEventListener('click',closeDrawer);sc.addEventListener('click',closeDrawer);
+addEventListener('keydown',e=>{if(e.key==='Escape'&&dr.classList.contains('open'))closeDrawer()});
+renderStaff();
+
+/* folder fan */
+const fan=$('#fan'),fanBtn=$('#fanBtn');
+const over=REC.filter(r=>r.over).sort((a,b)=>a.n-b.n);
+over.forEach((r,i)=>{
+ const b=document.createElement('button');b.type='button';b.className='fo';b.style.setProperty('--i',i);b.dataset.t=r.recv.split(', ')[1];b.setAttribute('aria-pressed','false');
+ b.innerHTML='<span></span><span class="t"></span>';
+ b.firstChild.textContent=r.type;b.lastChild.textContent=r.id+' · '+r.level+' (sample)';
+ b.setAttribute('aria-label','Sample folder '+r.id+', '+r.type+', received '+r.recv);
+ b.addEventListener('click',()=>{
+  if(!fan.classList.contains('open'))setFan(true);
+  $$('.fo',fan).forEach(x=>{x.classList.remove('sel');x.setAttribute('aria-pressed','false')});
+  b.classList.add('sel');b.setAttribute('aria-pressed','true');
+  const d=$('#foDet');d.innerHTML='';const h=document.createElement('h4');h.textContent='Sample intake · '+r.id;d.appendChild(h);d.appendChild(dlFor(r));
+ });
+ fan.appendChild(b);
+});
+function setFan(o){fan.classList.toggle('open',o);fanBtn.setAttribute('aria-expanded',o);fanBtn.textContent=o?'Hide overnight enquiries':'Show overnight enquiries'}
+fanBtn.addEventListener('click',()=>setFan(!fan.classList.contains('open')));
+
+/* contact form */
+$('#ctForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const n=$('#ct-name').value.trim(),c=$('#ct-contact').value.trim(),m=$('#ct-msg').value.trim();
+ let ok=true;
+ ok=setErr('e-cname','ct-name',n.length<2?'Please enter your name.':'')&&ok;
+ const valid=emailRe.test(c)||c.replace(/\D/g,'').length>=10;
+ ok=setErr('e-ccontact','ct-contact',valid?'':'Enter a valid email or a phone number with at least 10 digits.')&&ok;
+ ok=setErr('e-cmsg','ct-msg',m.length<5?'Please write a short message.':'')&&ok;
+ const ob=$('#ctOk');
+ if(!ok){ob.hidden=true;const f=$('#ctForm [aria-invalid=true]');if(f)f.focus();return}
+ ob.hidden=false;
+});
+})();
+</script>
+</body>
+</html>
