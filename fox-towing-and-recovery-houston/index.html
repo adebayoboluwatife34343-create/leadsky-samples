@@ -1,0 +1,1214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Fox Towing and Recovery — 24-Hour Towing &amp; Roadside Help, Houston TX (website concept)</title>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&family=Source+Sans+Pro:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --bg:#fbf8f2;
+  --sand:#f0e6d2;
+  --slate:#1d272f;
+  --amber:#c84100;
+  --sand-light:#e8dcc0;
+  --text:#1d272f;
+  --muted:#6b7077;
+  --white:#fbf8f2;
+}
+*, *::before, *::after{ box-sizing:border-box; }
+html{ scroll-padding-top:96px; }
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Source Sans Pro', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  padding-bottom:80px;
+}
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  position:fixed;
+  left:50%;
+  transform:translateX(-50%);
+  top:12px;
+  z-index:10000;
+  width:auto;
+  height:auto;
+  padding:10px 16px;
+  background:#fff;
+  color:var(--text);
+  border-radius:4px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  text-decoration:none;
+}
+h1,h2,h3,.eyebrow{ font-family:'Teko', system-ui, sans-serif; margin:0 0 0.5rem; line-height:1.2; }
+h1{ font-size:clamp(2rem, 5.5vw, 3.2rem); font-weight:700; }
+h2{ font-size:clamp(1.6rem, 4vw, 2.1rem); font-weight:700; }
+h3{ font-size:clamp(1.2rem, 3vw, 1.45rem); font-weight:700; }
+p{ margin:0 0 1rem; }
+a{ color:var(--amber); text-decoration:underline; text-underline-offset:2px; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible{
+  outline:3px solid var(--amber);
+  outline-offset:2px;
+  border-radius:2px;
+}
+button{ font-family:inherit; cursor:pointer; background:none; border:none; }
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.5rem;
+  padding:0.75rem 1.4rem;
+  border:none;
+  border-radius:6px;
+  font-weight:800;
+  font-size:1rem;
+  text-decoration:none;
+}
+.btn--amber{ background:var(--amber); color:#fff; }
+.btn--amber:hover{ opacity:0.92; }
+.btn--ghost{
+  background:transparent;
+  border:2px solid var(--amber);
+  color:var(--amber);
+  padding:0.66rem 1.2rem;
+}
+.btn--small{ padding:0.5rem 0.9rem; font-size:0.9rem; }
+
+.concept-banner{
+  background:var(--slate);
+  color:var(--white);
+  font-size:0.82rem;
+  padding:5px 16px;
+  text-align:center;
+  letter-spacing:0.3px;
+}
+
+.site-header{
+  position:sticky;
+  top:0;
+  background:rgba(251,248,242,0.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid #e8e0cf;
+  z-index:50;
+}
+.site-header.scrolled{ box-shadow:0 2px 10px rgba(29,39,47,0.08); }
+.header-inner{
+  max-width:1180px;
+  margin:0 auto;
+  padding:10px 18px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+.wordmark{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:var(--text);
+  font-family:'Teko', sans-serif;
+  font-weight:800;
+  font-size:1.2rem;
+  letter-spacing:0.5px;
+}
+.wordmark img{ width:34px; height:34px; display:block; }
+.lang-tag{
+  font-size:0.8rem;
+  background:var(--amber);
+  color:#fff;
+  padding:2px 9px;
+  border-radius:4px;
+  font-weight:800;
+  white-space:nowrap;
+}
+.main-nav{ display:flex; gap:16px; align-items:center; margin-left:auto; }
+.main-nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:700;
+  font-size:0.92rem;
+  padding:6px 0;
+  border-bottom:2px solid transparent;
+}
+.main-nav a:hover{ border-bottom-color:var(--amber); color:var(--amber); }
+.nav-toggle{
+  display:none;
+  background:none;
+  border:1px solid #c9c0ae;
+  color:var(--text);
+  padding:6px 10px;
+  font-size:1.5rem;
+  line-height:1;
+}
+.nav-drawer{
+  position:fixed;
+  inset:0 0 0 0;
+  background:var(--sand);
+  padding:22px;
+  overflow-y:auto;
+  z-index:60;
+  display:none;
+  transform:translateX(100%);
+  transition:transform 0.3s ease;
+}
+@media (prefers-reduced-motion: reduce){ .nav-drawer{ transition:none; } }
+.nav-drawer:not([hidden]){ display:block; transform:translateX(0); }
+.nav-close{
+  position:absolute;
+  top:14px;
+  right:16px;
+  background:none;
+  border:none;
+  font-size:1.8rem;
+  color:var(--text);
+  padding:4px;
+  line-height:1;
+}
+.nav-drawer nav a{
+  display:block;
+  padding:10px 2px;
+  font-size:1.05rem;
+  text-decoration:none;
+  color:var(--text);
+  border-bottom:1px solid #e8e0cf;
+}
+.bottom-bar{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+  display:flex;
+  gap:10px;
+  padding:10px;
+  background:rgba(251,248,242,0.97);
+  border-top:1px solid #e8e0cf;
+  z-index:70;
+}
+.bottom-btn{
+  flex:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:0.72rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:800;
+  font-size:0.92rem;
+  color:#fff;
+}
+.bottom-btn--call{ background:var(--slate); }
+.bottom-btn--amber{ background:var(--amber); }
+.bottom-btn:hover{ opacity:0.92; }
+@media (min-width:769px){
+  .nav-toggle,.bottom-bar{ display:none !important; }
+  .nav-drawer{ display:none !important; }
+  .main-nav{ margin-left:16px; }
+}
+
+.hero{
+  position:relative;
+  min-height:60vh;
+  background:var(--bg);
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  padding:5vh 18px;
+}
+.hero__media{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+}
+.hero__img{ width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
+.hero::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg, rgba(29,39,47,0.5), rgba(29,39,47,0.22));
+  z-index:1;
+}
+.hero__panel{
+  position:relative;
+  z-index:2;
+  max-width:560px;
+  width:100%;
+  margin-right:auto;
+  background:rgba(251,248,242,0.95);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(29,39,47,0.12);
+  border-radius:14px;
+  padding:40px 32px 34px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.1);
+}
+.eyebrow{
+  font-family:'Teko', sans-serif;
+  font-size:0.9rem;
+  letter-spacing:2.4px;
+  text-transform:uppercase;
+  color:var(--amber);
+  font-weight:700;
+  margin-bottom:0.5rem;
+  display:block;
+}
+.hero__desc{ font-size:1.05rem; color:var(--text); margin-bottom:16px; }
+.hero__meta{
+  display:flex;
+  gap:10px;
+  margin:14px 0 18px;
+  flex-wrap:wrap;
+}
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 12px;
+  background:var(--slate);
+  color:#fff;
+  border-radius:999px;
+  font-size:0.82rem;
+  font-weight:800;
+}
+.request-form{ display:grid; gap:11px; }
+.request-form label{
+  font-size:0.86rem;
+  font-weight:800;
+  color:var(--slate);
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+.request-form input, .request-form select{
+  padding:0.68rem 0.85rem;
+  border:1px solid #c9c0ae;
+  border-radius:6px;
+  background:#fff;
+  font-size:1rem;
+  color:var(--text);
+}
+.request-form .row-full{ grid-column:1/-1; }
+.demo-note{ font-size:0.78rem; color:var(--muted); margin-top:8px; }
+@media (max-width:768px){
+  .hero{ min-height:auto; padding:24px 16px 0; flex-direction:column; }
+  .hero__panel{ max-width:none; width:100%; margin-right:0; padding:26px 20px 24px; }
+  .hero__media{
+    position:relative;
+    inset:auto;
+    height:250px;
+    width:100%;
+    margin-bottom:16px;
+  }
+}
+
+.steps{ padding:60px 18px; max-width:1100px; margin:0 auto; }
+.section-title{ font-size:clamp(1.5rem,4vw,2rem); margin-bottom:10px; }
+.steps__grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:22px; }
+.step{
+  padding:26px;
+  border-radius:12px;
+  background:#fff;
+  border:1px solid #e8e0cf;
+}
+.step__num{ font-family:'Teko', sans-serif; font-size:2.4rem; color:var(--sand); line-height:1; }
+.step h3{ margin:10px 0 7px; }
+
+.board{ padding:60px 18px; background:var(--sand); }
+.board__note{ color:var(--muted); font-size:0.9rem; margin-bottom:16px; }
+.board__track{
+  position:relative;
+  height:110px;
+  margin-bottom:24px;
+  border-radius:10px;
+  overflow:hidden;
+  background:#fff;
+  border:1px solid #d8d0be;
+}
+.truck-marker{
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  width:16px;
+  height:16px;
+  background:var(--amber);
+  border-radius:50%;
+  box-shadow:0 2px 6px rgba(200,65,0,0.45);
+  z-index:3;
+  pointer-events:none;
+}
+.board__list{ display:grid; gap:13px; max-width:720px; }
+.board__item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 18px;
+  background:#fff;
+  border:1px solid #e8e0cf;
+  border-radius:10px;
+}
+.board__item header{ flex:1; }
+.board__item h3{ font-size:0.98rem; margin-bottom:3px; }
+.board__item p{ margin:0; font-size:0.9rem; color:var(--muted); }
+.status{
+  font-size:0.76rem;
+  font-weight:800;
+  padding:3px 10px;
+  border-radius:6px;
+  letter-spacing:0.4px;
+}
+.status--pending{ background:#f0e6d2; color:#6d541f; }
+.status--assigned{ background:var(--slate); color:#fff; }
+.board__caption{ margin-top:14px; font-size:0.88rem; color:var(--muted); max-width:720px; }
+
+.services{ padding:60px 18px; max-width:1100px; margin:0 auto; }
+.services__grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+.service-card{
+  border:1px solid #e8e0cf;
+  border-radius:12px;
+  overflow:hidden;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+}
+.service-card__img{ width:100%; height:210px; overflow:hidden; }
+.service-card__img img{ width:100%; height:100%; object-fit:cover; display:block; }
+.service-card__body{ padding:18px; flex:1; display:flex; flex-direction:column; }
+
+.areas{ padding:60px 18px; background:var(--sand); }
+.area-block{
+  max-width:1020px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:28px;
+  align-items:center;
+}
+.area-img{ width:100%; height:300px; border-radius:12px; overflow:hidden; border:1px solid #d8d0be; }
+@media (max-width:768px){ .area-block{ grid-template-columns:1fr; } }
+
+.trust{
+  background:var(--slate);
+  color:#fbf8f2;
+  padding:56px 18px;
+}
+.trust__inner{
+  max-width:1120px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 430px;
+  gap:32px;
+  align-items:center;
+}
+@media (max-width:860px){ .trust__inner{ grid-template-columns:1fr; } }
+.trust__text h2{ color:#fff; margin-bottom:16px; }
+.benefits{ list-style:none; padding:0; margin:0; }
+.benefits li{
+  padding:9px 0;
+  border-bottom:1px solid rgba(251,248,242,0.18);
+  font-size:0.96rem;
+  color:#e8dcc0;
+}
+.benefits li::before{
+  content:'▸';
+  color:var(--amber);
+  margin-right:8px;
+  font-weight:800;
+}
+.trust__3d{
+  position:relative;
+  width:100%;
+  height:300px;
+  border-radius:12px;
+  overflow:hidden;
+  background:#0e141a;
+  border:1px solid rgba(251,248,242,0.15);
+}
+#truck3d{ width:100%; height:100%; display:block; cursor:grab; touch-action:none; }
+#truck3d:active{ cursor:grabbing; }
+.trust-3d-fallback{
+  width:100%;
+  height:100%;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  background:#0e141a;
+}
+.trust-3d-fallback img{ width:100%; height:100%; object-fit:cover; display:block; opacity:0.92; }
+.trust__caption{
+  margin-top:12px;
+  font-size:0.9rem;
+  color:#e8dcc0;
+  text-align:center;
+}
+.trust__hotspots{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:12px;
+}
+.trust__hotspots button{
+  background:transparent;
+  border:1px solid rgba(200,65,0,0.55);
+  color:var(--amber);
+  padding:6px 12px;
+  border-radius:6px;
+  font-size:0.84rem;
+  font-weight:800;
+}
+.trust__hotspots button:hover{ background:rgba(200,65,0,0.12); }
+
+.hours{ padding:60px 18px; max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
+.contact-card{
+  border:1px solid #e8e0cf;
+  border-radius:12px;
+  padding:24px;
+  background:#fff;
+}
+.contact-card h3{ margin-bottom:8px; }
+.contact-card p{ margin:6px 0; font-size:0.96rem; }
+.contact-card a{ color:var(--text); text-decoration:none; border-bottom:1px solid var(--amber); }
+.contact-card a:hover{ color:var(--amber); }
+
+.faq{ padding:60px 18px; background:var(--sand); }
+.faq__list{ max-width:720px; }
+details{
+  border:1px solid #d8d0be;
+  border-radius:8px;
+  margin-bottom:10px;
+  overflow:hidden;
+}
+summary{
+  padding:12px 16px;
+  font-weight:800;
+  cursor:pointer;
+  background:#fff;
+  list-style:none;
+  position:relative;
+  padding-right:30px;
+}
+summary::after{
+  content:'+';
+  position:absolute;
+  right:16px;
+  font-size:1.5rem;
+  line-height:1;
+  color:var(--amber);
+}
+details[open] summary::after{ content:'−'; }
+details p{ padding:12px 16px; margin:0; border-top:1px solid #d8d0be; }
+.faq__note{ margin-top:14px; font-size:0.82rem; color:var(--muted); max-width:720px; }
+
+.site-footer{
+  background:var(--slate);
+  color:#e8dcc0;
+  padding:48px 18px 34px;
+  border-top:1px solid rgba(251,248,242,0.12);
+}
+.footer__inner{
+  max-width:1120px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 280px;
+  gap:28px;
+}
+@media (max-width:768px){ .footer__inner{ grid-template-columns:1fr; gap:20px; } }
+.footer__brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  text-decoration:none;
+  font-family:'Teko', sans-serif;
+  font-weight:800;
+  font-size:1.25rem;
+  color:#fff;
+  margin-bottom:16px;
+}
+.footer__brand img{ width:28px; height:28px; display:block; }
+.footer__brand span{ color:#fff; text-decoration:none; }
+.footer__contact p{ margin:6px 0; font-size:0.94rem; }
+.footer__contact a{ color:#fbf8f2; text-decoration:none; border-bottom:1px solid rgba(200,65,0,0.5); }
+.footer__contact a:hover{ color:#fff; }
+.footer__credits{
+  font-size:0.78rem;
+  line-height:1.65;
+  color:#c9c0ae;
+  border-top:1px solid rgba(251,248,242,0.1);
+  padding-top:22px;
+  margin-top:24px;
+  grid-column:1/-1;
+}
+.footer__credits a{ color:#e8dcc0; text-decoration:underline; }
+
+.reveal{ opacity:1; }
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(29,39,47,0.62);
+  z-index:100;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.modal:not([hidden]){ display:flex; }
+.modal__panel{
+  background:#fbf8f2;
+  color:var(--slate);
+  padding:32px;
+  border-radius:12px;
+  width:100%;
+  max-width:430px;
+  box-shadow:0 25px 60px rgba(0,0,0,0.22);
+  text-align:center;
+}
+.modal h2{ margin-top:0; font-size:1.4rem; }
+.modal p{ margin:10px 0; }
+.modal strong{ color:var(--amber); }
+
+.img-wrap{
+  background-color:var(--wrap-bg,var(--sand));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.img-wrap img{ display:block; max-width:100%; height:auto; }
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+    scroll-behavior:auto !important;
+  }
+  .step{ opacity:1 !important; transform:none !important; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<div class="concept-banner" role="note">Independent website concept by LeadSky for Fox Towing and Recovery. Not their official website.</div>
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <a class="wordmark" href="#hero">
+      <span class="img-wrap" style="--wrap-bg:#fbf8f2;"><img src="img/business-logo-1.jpg" alt="Fox Towing and Recovery logo" width="34" height="34" onerror="this.style.display='none';var c=document.getElementById('imgFallback').cloneNode(true);c.style.display='block';this.parentElement.appendChild(c);"></span>
+      <span>Fox Towing and Recovery</span>
+    </a>
+    <span class="lang-tag">Se habla Español</span>
+    <nav class="main-nav" role="navigation">
+      <a href="#services">Services</a>
+      <a href="#areas">Service areas</a>
+      <a href="#hero">Request a tow</a>
+      <a href="#hours">Hours &amp; contact</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#hero" class="btn btn--amber">Request a tow</a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav-drawer" aria-label="Open menu">&#9776;</button>
+  </div>
+</header>
+
+<nav class="nav-drawer" id="nav-drawer" hidden>
+  <button class="nav-close" aria-label="Close menu">&#215;</button>
+  <nav role="navigation">
+    <a href="#hero">Request a tow</a>
+    <a href="#services">Services</a>
+    <a href="#areas">Service areas</a>
+    <a href="#hours">Hours &amp; contact</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</nav>
+
+<nav class="bottom-bar" id="bottom-bar" aria-label="Quick actions">
+  <a href="tel:+17134743228" class="bottom-btn bottom-btn--call">Call (713) 474-3228</a>
+  <a href="#hero" class="bottom-btn bottom-btn--amber">Request a tow</a>
+</nav>
+
+<main id="main-content">
+
+  <section class="hero" id="hero" aria-label="Fox Towing and Recovery — Houston towing and roadside assistance">
+    <div class="hero__media">
+      <span class="img-wrap" style="--wrap-bg:#1d272f;" style="position:absolute;inset:0;width:100%;height:100%;margin:0;">
+        <img src="img/stock-1.jpg" alt="Flatbed tow trucks on a highway — illustrative stock photo, not a Fox Towing and Recovery vehicle" width="1400" height="800" loading="eager" onerror="this.style.display='none';var c=document.getElementById('imgFallback').cloneNode(true);c.style.display='block';this.parentElement.appendChild(c);">
+      </span>
+    </div>
+    <div class="hero__panel">
+      <span class="eyebrow">Fox Towing &middot; Houston, TX</span>
+      <h1>24-hour towing and roadside help in Houston</h1>
+      <p class="hero__desc">Private property towing &middot; Local &amp; long-distance 24-hour towing &middot; Car lockout service</p>
+      <div class="hero__meta">
+        <span class="chip">Open 24 hours</span>
+        <span class="chip">Se habla Espa&ntilde;ol</span>
+      </div>
+      <form id="requestForm" class="request-form" novalidate>
+        <label>
+          Service
+          <select name="service" required>
+            <option value="">Select a service</option>
+            <option>Private property towing</option>
+            <option>Local &amp; long-distance towing</option>
+            <option>Car lockout</option>
+          </select>
+        </label>
+        <label>
+          Vehicle type
+          <select name="vehicle" required>
+            <option value="">Select vehicle type</option>
+            <option>Car</option>
+            <option>Van / SUV</option>
+            <option>Pickup</option>
+            <option>Small truck</option>
+            <option>Bus</option>
+            <option>Motorcycle / scooter</option>
+          </select>
+        </label>
+        <div class="row-full">
+          <label>
+            Location or ZIP (Houston, TX)
+            <input type="text" name="location" placeholder="e.g. 77002 or street name" required>
+          </label>
+        </div>
+        <div class="row-full">
+          <label>
+            Phone
+            <input type="tel" name="phone" placeholder="(713) 555-0100" required>
+          </label>
+          <button type="button" id="useLocation" class="btn btn--ghost" style="align-self:end;">Use my location (demo)</button>
+        </div>
+        <button type="submit" class="btn btn--amber">Request a tow (demo)</button>
+      </form>
+      <p class="demo-note">Sample request &mdash; nothing is sent or charged.</p>
+    </div>
+  </section>
+
+  <section class="steps" id="how-it-works">
+    <h2 class="section-title">How the demo dispatch works</h2>
+    <div class="steps__grid">
+      <div class="step reveal">
+        <div class="step__num">01</div>
+        <h3>Request</h3>
+        <p>Choose your service, vehicle type, and Houston location.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__num">02</div>
+        <h3>Track</h3>
+        <p>See your tow truck on the live dispatch board.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__num">03</div>
+        <h3>Assisted</h3>
+        <p>A driver arrives to tow or unlock your vehicle.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="board" id="dispatch-board">
+    <h2 class="section-title">Live dispatch board (sample)</h2>
+    <p class="board__note">Sample data only &mdash; no real jobs, drivers, or vehicles.</p>
+    <div class="board__track">
+      <svg width="100%" height="100" role="img" aria-label="Sample dispatch route">
+        <line x1="0" y1="55" x2="100%" y2="55" stroke="#d8d0be" stroke-width="5" stroke-dasharray="10 7"/>
+        <line x1="0" y1="55" x2="100%" y2="55" stroke="#f0e6d2" stroke-width="3" stroke-dasharray="6 4"/>
+      </svg>
+      <div class="truck-marker" id="truckMarker"></div>
+    </div>
+    <div class="board__list">
+      <article class="board__item reveal">
+        <header>
+          <h3>Private property towing</h3>
+          <p>Houston, TX &middot; Sample location</p>
+        </header>
+        <div>
+          <span class="status status--pending">Pending (sample)</span>
+          <button class="btn btn--amber btn--small assign-btn" data-service="Private property towing">Assign driver</button>
+        </div>
+      </article>
+      <article class="board__item reveal">
+        <header>
+          <h3>Car lockout</h3>
+          <p>Houston, TX &middot; Sample location</p>
+        </header>
+        <div>
+          <span class="status status--assigned">Assigned (sample)</span>
+          <button class="btn btn--amber btn--small assign-btn" data-service="Car lockout" disabled>Assigned</button>
+        </div>
+      </article>
+      <article class="board__item reveal">
+        <header>
+          <h3>Local &amp; long-distance towing</h3>
+          <p>Houston, TX &middot; Sample location</p>
+        </header>
+        <div>
+          <span class="status status--assigned">En route (sample)</span>
+          <button class="btn btn--amber btn--small assign-btn" data-service="Local &amp; long-distance towing" disabled>En route</button>
+        </div>
+      </article>
+    </div>
+    <p class="board__caption" id="boardCaption">Tap &ldquo;Assign driver&rdquo; to move the sample truck along the route &mdash; visual only.</p>
+  </section>
+
+  <section class="services" id="services">
+    <h2 class="section-title">Our services</h2>
+    <div class="services__grid">
+      <article class="service-card reveal">
+        <span class="img-wrap" style="--wrap-bg:#f0e6d2;">
+          <img src="img/stock-7.jpg" alt="Property and driveway context for private-property towing &mdash; illustrative stock photo, not a Fox Towing and Recovery property" width="700" height="450" loading="lazy" onerror="this.style.display='none';var c=document.getElementById('imgFallback').cloneNode(true);c.style.display='block';this.parentElement.appendChild(c);">
+        </span>
+        <div class="service-card__body">
+          <h3>Private property towing</h3>
+          <p>We tow unauthorized cars parked in your business parking lot. We also take care of cars illegally parked on your property or in your building&rsquo;s garage. We also tow motorcycles, scooters, and large vehicles.</p>
+        </div>
+      </article>
+      <article class="service-card reveal">
+        <span class="img-wrap" style="--wrap-bg:#f0e6d2;">
+          <img src="img/stock-3.jpg" alt="Vehicle on a flatbed tow truck &mdash; illustrative stock photo, not a Fox Towing and Recovery vehicle" width="700" height="450" loading="lazy" onerror="this.style.display='none';var c=document.getElementById('imgFallback').cloneNode(true);c.style.display='block';this.parentElement.appendChild(c);">
+        </span>
+        <div class="service-card__body">
+          <h3>Local &amp; long-distance 24-hour towing</h3>
+          <p>When your vehicle has broken down or you&rsquo;ve been left stranded along the side of the road, we provide immediate roadside assistance. We are on call 24 hours a day. We handle cars, vans, SUVs, pickups, small trucks, and buses.</p>
+        </div>
+      </article>
+      <article class="service-card reveal">
+        <span class="img-wrap" style="--wrap-bg:#f0e6d2;">
+          <img src="img/stock-5.jpg" alt="Mechanic working on a car in a workshop &mdash; illustrative stock photo, not a Fox Towing and Recovery employee" width="700" height="450" loading="lazy" onerror="this.style.display='none';var c=document.getElementById('imgFallback').cloneNode(true);c.style.display='block';this.parentElement.appendChild(c);">
+        </span>
+        <div class="service-card__body">
+          <h3>Car lockout</h3>
+          <p>We quickly solve lockout problems and keep your car in good condition. We have the best car lockout tools and the experience to open your car promptly at the best price. Don&rsquo;t call a locksmith service &mdash; contact us to get your keys out of the locked car right away.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="areas" id="areas">
+    <div class="area-block">
+      <span class="img-wrap" style="--wrap-bg:#1d272f;">
+        <img src="img/stock-11.jpg" alt="Houston Texas skyline at night &mdash; illustrative stock photo, not Fox Towing and Recovery premises" width="900" height="500" loading="lazy" onerror="this.style.display='none';var c=document.getElementById('imgFallback').cloneNode(true);c.style.display='block';this.parentElement.appendChild(c);">
+      </span>
+      <div>
+        <h2>Service area</h2>
+        <p>Fox Towing and Recovery serves Houston, TX and the surrounding area.</p>
+        <p>Local and long-distance towing, available 24 hours a day.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust" id="trust" aria-label="Why work with Fox Towing and Recovery">
+    <div class="trust__inner">
+      <div class="trust__text">
+        <h2>Why work with Fox Towing and Recovery</h2>
+        <ul class="benefits">
+          <li>Locally owned company &mdash; the business owner is directly involved in operations.</li>
+          <li>Quality service &mdash; professional work that clients use and recommend.</li>
+          <li>Honest and friendly service &mdash; courteous treatment every time.</li>
+          <li>Reliable &mdash; we fulfill our commitments for your peace of mind.</li>
+          <li>Competitive prices &mdash; the best rates in the market.</li>
+          <li>Immediate response &mdash; we respond right away to your urgent needs.</li>
+        </ul>
+      </div>
+      <div class="trust__3d">
+        <canvas id="truck3d"></canvas>
+        <div class="trust-3d-fallback" id="truck3dFallback">
+          <span class="img-wrap" style="--wrap-bg:#2a3a45; width:100%; height:100%; position:relative;">
+            <img src="img/stock-9.jpg" alt="Tow truck driver with vehicle &mdash; illustrative stock photo, not a Fox Towing and Recovery employee" width="700" height="400" onerror="this.style.display='none';var c=document.getElementById('imgFallback').cloneNode(true);c.style.display='block';this.parentElement.appendChild(c);">
+          </span>
+        </div>
+        <p class="trust__caption" id="hotspotCaption">Drag to rotate &middot; Tap a service hotspot</p>
+        <div class="trust__hotspots">
+          <button type="button" data-hotspot="flatbed">Flatbed towing</button>
+          <button type="button" data-hotspot="lockout">Car lockout</button>
+          <button type="button" data-hotspot="long">Long-distance tow</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hours" id="hours">
+    <div class="contact-card">
+      <h3>Fox Towing and Recovery</h3>
+      <p>Houston, TX and surrounding area</p>
+      <p><a href="tel:+17134743228">(713) 474-3228</a></p>
+      <p><a href="mailto:info@foxtowingandrecovery.com">info@foxtowingandrecovery.com</a></p>
+      <p>24-hour towing &mdash; on call around the clock</p>
+      <p>Se habla Espa&ntilde;ol</p>
+      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Fox+Towing+and+Recovery+Houston+TX" target="_blank" rel="noopener">Open in maps &rarr;</a></p>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <h2 class="section-title">Sample FAQ</h2>
+    <div class="faq__list">
+      <details class="faq__item reveal">
+        <summary>What services do you offer? (sample)</summary>
+        <p>Private property towing, local &amp; long-distance 24-hour towing, and car lockout service.</p>
+      </details>
+      <details class="faq__item reveal">
+        <summary>Are you available at night? (sample)</summary>
+        <p>Yes. We are on call 24 hours a day for urgent towing and roadside assistance.</p>
+      </details>
+      <details class="faq__item reveal">
+        <summary>Do you unlock cars without a locksmith? (sample)</summary>
+        <p>Yes. We open locked cars promptly with car lockout tools at the best price.</p>
+      </details>
+      <details class="faq__item reveal">
+        <summary>Do you tow from private parking lots? (sample)</summary>
+        <p>Yes. We tow unauthorized cars from business parking lots, buildings, and garages.</p>
+      </details>
+    </div>
+    <p class="faq__note">Sample answers based on the business&rsquo;s published service descriptions.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="footer__inner">
+    <a class="footer__brand" href="#hero">
+      <span class="img-wrap" style="--wrap-bg:#fbf8f2;"><img src="img/business-logo-1.jpg" alt="Fox Towing and Recovery logo" width="28" height="28" onerror="this.style.display='none';var c=document.getElementById('imgFallback').cloneNode(true);c.style.display='block';this.parentElement.appendChild(c);"></span>
+      <span>Fox Towing and Recovery</span>
+    </a>
+    <div class="footer__contact">
+      <p>(713) 474-3228</p>
+      <p><a href="mailto:info@foxtowingandrecovery.com">info@foxtowingandrecovery.com</a></p>
+      <p>Houston, TX and surrounding area</p>
+      <p>24-hour towing &middot; Se habla Espa&ntilde;ol</p>
+    </div>
+    <div class="footer__credits">
+      <p>Photos: <a>Schwoaze</a>, <a>MarcinZ83</a>, <a>Scottslm</a>, <a>bayern-reporter_com</a>, <a>RyanMcGuire</a>, <a>Pexels</a>, <a>opollophotography</a>, <a>Dewesoft</a>, <a>Pexels</a>, <a>stevepb</a>, <a>12019</a>, <a>Falkenpost</a> (Pixabay / Pexels &mdash; illustrative stock photos only, not the business&rsquo;s own vehicles, staff, or premises).</p>
+      <p>Business logo and featured image published by Fox Towing and Recovery &mdash; reuse permission to be confirmed before going live.</p>
+      <p>Concept by LeadSky &mdash; independent website concept, not the official website.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="confirmModal" hidden aria-modal="true" role="dialog" aria-label="Demo confirmation">
+  <div class="modal__panel">
+    <h2>Request received (demo)</h2>
+    <p>This is a demo form, nothing was sent.</p>
+    <p><strong>Sample reference:</strong> FT-2026-0931</p>
+    <p><strong>Sample ETA:</strong> 25&ndash;35 minutes</p>
+    <p>No real tow is booked and no payment is taken.</p>
+    <button class="btn btn--amber" id="closeModal">OK</button>
+  </div>
+</div>
+
+<svg id="imgFallback" style="display:none" aria-hidden="true">
+  <rect width="160" height="160" fill="#f0e6d2"/>
+  <path d="M22 72 h10 l4 -26 h72 l4 26 h12 v4 h-102 z" fill="#1d272f"/>
+  <circle cx="38" cy="78" r="9" fill="#0a0e12"/>
+  <circle cx="106" cy="78" r="9" fill="#0a0e12"/>
+</svg>
+
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Mobile drawer */
+  var toggle = document.querySelector('.nav-toggle');
+  var drawer = document.getElementById('nav-drawer');
+  var closeBtn = drawer.querySelector('.nav-close');
+  toggle.addEventListener('click', function(){
+    var open = drawer.hasAttribute('hidden');
+    if(open){ drawer.removeAttribute('hidden'); } else { drawer.setAttribute('hidden',''); }
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  closeBtn.addEventListener('click', function(){
+    drawer.setAttribute('hidden','');
+    toggle.setAttribute('aria-expanded','false');
+  });
+  drawer.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      drawer.setAttribute('hidden','');
+      toggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* Header shadow on scroll */
+  var header = document.querySelector('.site-header');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 10) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
+
+  /* Demo form */
+  var form = document.getElementById('requestForm');
+  var modal = document.getElementById('confirmModal');
+  var closeModal = document.getElementById('closeModal');
+  var useLocation = document.getElementById('useLocation');
+  var locField = form.elements['location'];
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    modal.removeAttribute('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+  closeModal.addEventListener('click', function(){
+    modal.setAttribute('hidden','');
+    document.body.style.overflow = '';
+  });
+  modal.addEventListener('click', function(e){
+    if(e.target === modal){ modal.setAttribute('hidden',''); document.body.style.overflow = ''; }
+  });
+  window.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && !modal.hidden){ modal.setAttribute('hidden',''); document.body.style.overflow = ''; }
+  });
+
+  useLocation.addEventListener('click', function(){
+    if(!navigator.geolocation){
+      locField.value = 'Location unavailable (demo)';
+      return;
+    }
+    locField.value = 'Locating&hellip; (demo)';
+    navigator.geolocation.getCurrentPosition(
+      function(){ locField.value = 'Current GPS location (demo)'; },
+      function(){ locField.value = 'Location unavailable (demo)'; }
+    );
+  });
+
+  /* Dispatch board demo */
+  var marker = document.getElementById('truckMarker');
+  var boardCaption = document.getElementById('boardCaption');
+  document.querySelectorAll('.assign-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var service = btn.getAttribute('data-service');
+      var item = btn.closest('.board__item');
+      var status = item.querySelector('.status');
+      if(window.gsap){
+        gsap.to(marker, { left: '88%', duration: 1, ease: 'power2.inOut' });
+      } else {
+        marker.style.left = '88%';
+      }
+      status.textContent = 'Assigned (sample)';
+      status.className = 'status status--assigned';
+      btn.textContent = 'Assigned';
+      btn.disabled = true;
+      boardCaption.textContent = 'Sample: driver assigned to ' + service + ' &mdash; visual only.';
+    });
+  });
+
+  /* Reveal animations below the first screen only */
+  if(window.gsap && window.ScrollTrigger && !reduced){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.reveal').forEach(function(el){
+      gsap.fromTo(el, { autoAlpha:0, y:30 }, {
+        autoAlpha:1, y:0, duration:0.75, ease:'power2.out',
+        scrollTrigger: { trigger: el, start:'top 86%', toggleActions:'play none none none' }
+      });
+    });
+  }
+
+  /* Three.js tow-truck scene (dark slate trust band) */
+  var container = document.getElementById('truck3d');
+  var fallback = document.getElementById('truck3dFallback');
+  var caption = document.getElementById('hotspotCaption');
+  var renderer, camera, scene, truck, parts = {}, frameId = null, running = false;
+
+  function hasWebGL(){
+    try{
+      var c = document.createElement('canvas');
+      return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl')));
+    }catch(e){ return false; }
+  }
+
+  function stopThree(){
+    running = false;
+    if(frameId){ cancelAnimationFrame(frameId); frameId = null; }
+  }
+  function startThree(){
+    if(!running){ running = true; animate(); }
+  }
+
+  function initThree(){
+    if(reduced || !hasWebGL()){
+      container.style.display = 'none';
+      fallback.style.display = 'flex';
+      fallbackTilt();
+      return;
+    }
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x1d272f);
+
+    var rect = container.getBoundingClientRect();
+    camera = new THREE.PerspectiveCamera(45, rect.width / rect.height || 16/9, 0.1, 100);
+    renderer = new THREE.WebGLRenderer({ canvas: container, antialias: true, alpha: true });
+    renderer.setSize(rect.width, rect.height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+
+    var light1 = new THREE.DirectionalLight(0xffffff, 1.1);
+    light1.position.set(3, 6, 4);
+    scene.add(light1);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.45));
+
+    truck = new THREE.Group();
+    scene.add(truck);
+
+    var matBody = new THREE.MeshStandardMaterial({ color: 0x2a3a45 });
+    var matCab  = new THREE.MeshStandardMaterial({ color: 0x4a5a66 });
+    var matAmber= new THREE.MeshStandardMaterial({ color: 0xc84100, emissive: 0x8a2d00, emissiveIntensity: 0.5 });
+    var matWheel= new THREE.MeshStandardMaterial({ color: 0x0a0e12 });
+    var matBed  = new THREE.MeshStandardMaterial({ color: 0x3d4a55 });
+
+    function add(geo, mat, pos, rot, name){
+      var m = new THREE.Mesh(geo, mat);
+      if(pos) m.position.copy(pos);
+      if(rot) m.rotation.copy(rot);
+      truck.add(m);
+      if(name) parts[name] = m;
+      return m;
+    }
+
+    add(new THREE.BoxGeometry(2.2, 0.5, 1.0), matBody, new THREE.Vector3(0, 0.25, 0), null, 'chassis');
+    add(new THREE.BoxGeometry(0.95, 0.85, 0.75), matCab, new THREE.Vector3(-0.75, 0.72, 0), null, 'cab');
+    add(new THREE.BoxGeometry(0.95, 0.12, 0.77), matAmber, new THREE.Vector3(-0.75, 1.18, 0.39), null);
+    add(new THREE.BoxGeometry(1.6, 0.14, 0.85), matBed, new THREE.Vector3(0.85, 0.42, 0), null, 'flatbed');
+    add(new THREE.CylinderGeometry(0.12, 0.12, 0.4), matAmber, new THREE.Vector3(1.25, 0.18, 0), new THREE.Euler(0, Math.PI/2, 0), 'winch');
+
+    [[-0.95,0.12,-0.5],[-0.95,0.12,0.5],[1.05,0.12,-0.5],[1.05,0.12,0.5]].forEach(function(p,i){
+      add(new THREE.CylinderGeometry(0.3, 0.3, 0.14), matWheel, new THREE.Vector3(p[0],p[1],p[2]), new THREE.Euler(Math.PI/2,0,0), 'wheel'+i);
+    });
+
+    camera.position.set(4, 3, 5.5);
+    camera.lookAt(0, 0.4, 0);
+
+    var hsMat = new THREE.MeshBasicMaterial({ color: 0xc84100 });
+    var hotspots = [];
+    function addHotspot(pos, name){
+      var h = new THREE.Mesh(new THREE.SphereGeometry(0.09, 8, 8), hsMat);
+      h.position.copy(pos);
+      h.userData.name = name;
+      truck.add(h);
+      hotspots.push(h);
+    }
+    addHotspot(new THREE.Vector3(0.85, 0.62, 0.55), 'flatbed');
+    addHotspot(new THREE.Vector3(-0.75, 1.2, 0.5), 'lockout');
+    addHotspot(new THREE.Vector3(1.25, 0.18, 0.55), 'long');
+
+    var hotspotLabels = {
+      flatbed: 'Flatbed towing &mdash; cars, vans, SUVs, pickups and small trucks',
+      lockout: 'Car lockout &mdash; we open locked vehicles promptly',
+      long: 'Long-distance tow &mdash; we tow vehicles beyond Houston'
+    };
+
+    function highlight(name){
+      Object.keys(parts).forEach(function(k){ parts[k].material.emissive.setHex(0x000000); });
+      var p = parts[name];
+      if(p){ p.material.emissive.setHex(0xc84100); p.material.emissiveIntensity = 0.8; }
+      caption.innerHTML = hotspotLabels[name] || 'Drag to rotate &middot; Tap a service hotspot';
+    }
+
+    var theta = -0.5, phi = 1.1, radius = 6.6;
+    var isDown = false, lastX = 0, lastY = 0;
+
+    function updateCamera(){
+      camera.position.x = radius * Math.sin(phi) * Math.sin(theta);
+      camera.position.y = radius * Math.cos(phi);
+      camera.position.z = radius * Math.sin(phi) * Math.cos(theta);
+      camera.lookAt(0, 0.4, 0);
+    }
+
+    function pointerCoords(e){
+      var r = container.getBoundingClientRect();
+      return {
+        x: ((e.clientX - r.left) / r.width) * 2 - 1,
+        y: -((e.clientY - r.top) / r.height) * 2 + 1,
+        clientX: e.clientX,
+        clientY: e.clientY
+      };
+    }
+
+    container.addEventListener('pointerdown', function(e){
+      var c = pointerCoords(e);
+      isDown = true; lastX = c.clientX; lastY = c.clientY;
+      var raycaster = new THREE.Raycaster();
+      var mouse = new THREE.Vector2(c.x, c.y);
+      raycaster.setFromCamera(mouse, camera);
+      var hits = raycaster.intersectObjects(hotspots);
+      if(hits.length){ highlight(hits[0].object.userData.name); } else {
+        Object.keys(parts).forEach(function(k){ parts[k].material.emissive.setHex(0x000000); });
+        caption.textContent = 'Drag to rotate &middot; Tap a service hotspot';
+      }
+    }, { passive: false });
+
+    window.addEventListener('pointermove', function(e){
+      if(fallback.style.display === 'flex') return;
+      var c = pointerCoords(e);
+      if(isDown){
+        var dx = c.clientX - lastX;
+        var dy = c.clientY - lastY;
+        theta += dx * 0.005;
+        phi += -dy * 0.005;
+        if(phi < 0.35) phi = 0.35;
+        if(phi > 1.55) phi = 1.55;
+        lastX = c.clientX; lastY = c.clientY;
+        updateCamera();
+      }
+    });
+    window.addEventListener('pointerup', function(){ isDown = false; });
+
+    function animate(){
+      if(running) frameId = requestAnimationFrame(animate);
+      renderer.render(scene, camera);
+    }
+
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        running = entry.isIntersecting;
+        if(running && !frameId) animate();
+        if(!running && frameId){ cancelAnimationFrame(frameId); frameId = null; }
+      });
+    }, { threshold: 0.05 });
+    io.observe(container);
+
+    startThree();
+    window.addEventListener('resize', function(){
+      if(!renderer) return;
+      var r = container.getBoundingClientRect();
+      renderer.setSize(r.width, r.height);
+      camera.aspect = r.width / r.height;
+      camera.updateProjectionMatrix();
+    });
+  }
+
+  function fallbackTilt(){
+    var el = fallback;
+    var img = el.querySelector('img');
+    if(!img) return;
+    el.addEventListener('pointermove', function(e){
+      var r = el.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      img.style.transform = 'translate(' + (-x * 10) + 'px, ' + (y * 10) + 'px)';
+    });
+  }
+
+  document.querySelectorAll('.trust__hotspots button').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      highlight(btn.getAttribute('data-hotspot'));
+    });
+  });
+
+  initThree();
+})();
+</script>
+</body>
+</html>
