@@ -1,0 +1,69 @@
+[
+  {
+    "file": "img/business-logo-1.jpg",
+    "kind": "business logo",
+    "source": "https://gregorypalmerdmd.com/wp-content/uploads/2026/04/save-e1777633170802.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "dentist",
+    "description": "dentist, patient, dental care, medical, oral care, oral hygiene, dental hygiene, dental chair, dental clinic, dental practice, checking, oral health, dental health, examination, examine, dentist, dentist, dentist, dentist, dentist",
+    "source": "https://pixabay.com/photos/dentist-patient-dental-care-medical-428646/",
+    "photographer": "jarmoluk",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "dentist",
+    "description": "doctor, medical, medicine, health, stetoscope, healthcare, stethoscope, healthy, hospital, diagnostic, medic, health-care, diagnosis, disease, care, nurse, clinical, clinic, mask, dentist, dental, female, treatment, doctor, doctor, doctor, doctor, doctor, medical, medical, health, health, healthcare, hospital, nurse, nurse, dentist, dentist, dentist, dental",
+    "source": "https://pixabay.com/photos/doctor-medical-medicine-health-563429/",
+    "photographer": "DarkoStojanovic",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "dentist customer",
+    "description": "dentist, operation, teeth, lamp, clinic, dental, medicine, dentistry, hygiene, doctor, gray doctors, gray medicine, gray teeth, gray lamp, dentist, dentist, dentist, teeth, doctor, doctor, doctor, doctor, doctor",
+    "source": "https://pixabay.com/photos/dentist-operation-teeth-lamp-4373290/",
+    "photographer": "Movidagrafica",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "dentist customer",
+    "description": "dentist, dental care, dentistry, teeth, doctor, health care, dentist, dentist, dentist, dentist, dentist, teeth, doctor, doctor",
+    "source": "https://pixabay.com/photos/dentist-dental-care-dentistry-teeth-2530990/",
+    "photographer": "drshohmelian",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "dentist Houston",
+    "description": "rain drops, nature, surface, wet, water droplets, dropetals, glass surface, rain, water, drips, beading, United States, Texas, Houston",
+    "source": "https://pixabay.com/photos/rain-drops-surface-wet-1144448/",
+    "photographer": "Brett_Hondow",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "dentist Houston",
+    "description": "architecture, buildings, city, cityscape, downtown, skyline, skyscrapers, urban, modern, metropolitan, aerial view, city view, urban landscape, city, city, city, city, city, city view, United States, Texas, Houston",
+    "source": "https://pixabay.com/photos/architecture-buildings-city-1846657/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
