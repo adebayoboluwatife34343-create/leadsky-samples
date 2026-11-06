@@ -1,0 +1,69 @@
+[
+  {
+    "file": "img/business-featured-1.png",
+    "kind": "business featured image",
+    "source": "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9effc38e-2e58-48bb-9581-395cc845f818/id-preview-a6b04e94--b5526915-ed2c-4c54-b11e-2cf17ef2266a.lovable.app-1776779860816.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "bakery",
+    "description": "bread, croissant, morning, puff paste, puff pastry, flaky pastry, bakery, breakfast, dessert, sweet, snack, homemade, delicious, cuisine, tasty, pie, bake, pastry, bun, nutrition, delicacy, assortment, puff, brown bread, brown dessert, brown nutrition, brown breakfast, brown morning, bread, bread, bread, bread, bread, croissant, croissant, croissant, croissant, bakery, bakery, breakfast, pastry",
+    "source": "https://pixabay.com/photos/bread-croissant-morning-puff-paste-1284438/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "bakery",
+    "description": "breads, pastries, croissants, puff pastries, danish, baked goods, puff pastry, bakery, breakfast, delicious, food, fresh pastries, pastry shop, bakeshop, restaurant, shop, tasty, variety, bread display, bakery, bakery, bakery, bakery, bakery, restaurant, restaurant",
+    "source": "https://pixabay.com/photos/breads-pastries-croissants-1867459/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "bakery customer",
+    "description": "supermarket, shopping, cashier, customer, transaction, smiling, fresh food, bakery, selection, food service, friendly, employee, checkout, point of sale, healthy food, store worker, customer service, checkout counter, packaging, shopper experience",
+    "source": "https://pixabay.com/photos/supermarket-shopping-cashier-10383557/",
+    "photographer": "Feygrace",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "bakery customer",
+    "description": "business, establishments, shops, coffee, cafe, pastry, menu, counter, tables, chairs, employees, cafe, cafe, counter, counter, counter, counter, counter, employees, employees, employees, employees",
+    "source": "https://pixabay.com/photos/business-establishments-shops-2609042/",
+    "photographer": "StockSnap",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "bakery Stockholm",
+    "description": "twilight, bridge, fortress, river, church, leningrad, architecture, night city, historical place, embankment, cultural heritage, tourism, st petersburg, landscape, night city, night city, night city, tourism, tourism, tourism, tourism, tourism",
+    "source": "https://pixabay.com/photos/twilight-bridge-fortress-river-8171206/",
+    "photographer": "soultrain",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "bakery Stockholm",
+    "description": "city, cityscape, waterfront, illuminated, ship, architecture, skyline, historic center, church, steeple, nature, water, sea, night, evening, twilight, lights, mirroring, stockholm, sweden, scandinavia",
+    "source": "https://pixabay.com/photos/city-cityscape-waterfront-4478471/",
+    "photographer": "Bru-nO",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
