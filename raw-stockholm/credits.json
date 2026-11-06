@@ -9,9 +9,9 @@
   {
     "file": "img/stock-1.jpg",
     "kind": "stock photo",
-    "query": "fresh oysters on crushed ice with lemon",
-    "description": "alcohol, beverage, cocktail, cold, drink, glass, ice, lemon, straw, alcohol, alcohol, alcohol, alcohol, alcohol, drink, lemon",
-    "source": "https://pixabay.com/photos/alcohol-beverage-cocktail-cold-1853327/",
+    "query": "restaurant",
+    "description": "restaurant, furniture, interiors, interior design, interior decoration, architecture, bar, building, chairs, hotel, indoors, seats, tables, restaurant, restaurant, restaurant, restaurant, restaurant, bar, hotel, hotel",
+    "source": "https://pixabay.com/photos/restaurant-furniture-interiors-1837150/",
     "photographer": "Pexels",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
@@ -19,27 +19,7 @@
   {
     "file": "img/stock-2.jpg",
     "kind": "stock photo",
-    "query": "fresh oysters on crushed ice with lemon",
-    "description": "drink, glass, lime, mint, cold, fresh, refreshing, citrus, lemonade, refreshment, beverage, carbonated water, fruit, juice, tonic water, straw, drink, drink, drink, drink, drink, mint, lemonade, lemonade, lemonade, fruit, fruit, fruit, juice, juice, juice, juice",
-    "source": "https://pixabay.com/photos/drink-glass-lime-mint-cold-fresh-1532300/",
-    "photographer": "AS_Photography",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-3.jpg",
-    "kind": "stock photo",
-    "query": "salmon crudo plate with herbs minimal white plate",
-    "description": "food, salmon, teriyaki, fish, eat, dish, restaurant, nature, meal, healthy, healthy meal, savory, food photography",
-    "source": "https://pixabay.com/photos/food-salmon-teriyaki-fish-eat-712665/",
-    "photographer": "Wow_Pho",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-4.jpg",
-    "kind": "stock photo",
-    "query": "salmon crudo plate with herbs minimal white plate",
+    "query": "restaurant",
     "description": "new year's eve, salmon, fish, seafood, veggies, nature, salad, meal, dish, plate, food, cuisine, Tasmania, Strahan, Australia",
     "source": "https://pixabay.com/photos/new-years-eve-salmon-fish-seafood-518032/",
     "photographer": "cattalin",
@@ -47,82 +27,42 @@
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "restaurant customer",
+    "description": "chef, cooking, street, costumer, restaurant, japan, tokyo, japanese, food, shinjuku, cook, chef, chef, chef, chef, chef, cooking, cooking, restaurant, restaurant, restaurant, japan, japan, tokyo, tokyo, japanese, cook",
+    "source": "https://pixabay.com/photos/chef-cooking-street-costumer-4807317/",
+    "photographer": "binmassam",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "restaurant customer",
+    "description": "outdoor dining, restaurant, bar, waiter, al fresco, city, customers, group, patrons, people, street, tables, chairs, restaurant, restaurant, restaurant, restaurant, restaurant",
+    "source": "https://pixabay.com/photos/outdoor-dining-restaurant-bar-1846137/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
     "file": "img/stock-5.jpg",
     "kind": "stock photo",
-    "query": "tuna tartare restaurant plate close up",
-    "description": "pasta, italian cuisine, dish, spaghetti, noodles, starter, scampi, parmesan, cheese, food, pasta, pasta, pasta, pasta, pasta, spaghetti",
-    "source": "https://pixabay.com/photos/pasta-italian-cuisine-dish-3547078/",
-    "photographer": "RitaE",
+    "query": "restaurant Stockholm",
+    "description": "building, restaurant, exterior, facade, cafe, sweden, stockholm, swedish, travel, architecture, winter, cold, vacations, city, scandinavia, Stockholm, Stockholm County, Sweden",
+    "source": "https://pixabay.com/photos/building-restaurant-exterior-facade-5906180/",
+    "photographer": "indigodesign",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-6.jpg",
     "kind": "stock photo",
-    "query": "tuna tartare restaurant plate close up",
-    "description": "pizza, slices, italian cuisine, pizza slices, food, meal, dish, snack, tasty, delicious, italian food, fast food, close up, food photography, pizza, pizza, pizza, food, food, food, food, food, fast food",
-    "source": "https://pixabay.com/photos/pizza-slices-italian-cuisine-329523/",
-    "photographer": "joshuemd",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-7.jpg",
-    "kind": "stock photo",
-    "query": "fresh fish on ice market Scandinavian",
-    "description": "fish market, seafood, fish, nature, man, food, market, monochrome",
-    "source": "https://pixabay.com/photos/fish-market-seafood-fish-man-food-428058/",
-    "photographer": "jarmoluk",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-8.jpg",
-    "kind": "stock photo",
-    "query": "fresh fish on ice market Scandinavian",
-    "description": "fish, fish food, nature, fish market, animal, sea, sea market, food, fish head, grey, gray",
-    "source": "https://pixabay.com/photos/fish-fish-food-fish-market-animal-7910906/",
-    "photographer": "akbarnemati",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-9.jpg",
-    "kind": "stock photo",
-    "query": "minimal restaurant table glassware daylight",
-    "description": "table, table setting, event, dining, black and white, top view, table, table setting, table setting, table setting, table setting, event, event, event, event, event, dining, dining, dining",
-    "source": "https://pixabay.com/photos/table-table-setting-event-dining-4397860/",
-    "photographer": "AmirHanna",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-10.jpg",
-    "kind": "stock photo",
-    "query": "minimal restaurant table glassware daylight",
-    "description": "ikea, table, dining, nature, chair, lamp, plant, natural, lifestyle, life, live, living, room, restaurant, simple, white",
-    "source": "https://pixabay.com/photos/ikea-table-dining-chair-lamp-4048225/",
-    "photographer": "tianya1223",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-11.jpg",
-    "kind": "stock photo",
-    "query": "Stockholm waterfront Gamla Stan evening",
-    "description": "stockholm, old town, sweden, stockholm, stockholm, stockholm, stockholm, stockholm",
-    "source": "https://pixabay.com/photos/stockholm-old-town-sweden-718879/",
-    "photographer": "clorichs",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-12.jpg",
-    "kind": "stock photo",
-    "query": "Stockholm waterfront Gamla Stan evening",
-    "description": "stockholm, sweden, historic center, city, water, scandinavia, flow, gamla stan, building, heaven, nature, sun, houses, reflection, sunset, swedish, bell tower, eve, sightseeing",
-    "source": "https://pixabay.com/photos/stockholm-sweden-historic-center-2416489/",
-    "photographer": "Frank_P_AJJ74",
+    "query": "restaurant Stockholm",
+    "description": "caf\u00e9, restaurant, skansen, dining, outdoors, sweden, stockholm, europe, european, hdr, skansen, sweden, sweden, stockholm, stockholm, stockholm, stockholm, stockholm",
+    "source": "https://pixabay.com/photos/caf%C3%A9-restaurant-skansen-dining-454531/",
+    "photographer": "Michelle-Maria",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }
