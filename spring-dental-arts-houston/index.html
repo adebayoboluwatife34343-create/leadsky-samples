@@ -1,535 +1,861 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Spring Dental Arts: 24/7 Patient Assistant (Independent Concept by LeadSky)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#F9F9F9;--white:#FFFFFF;--navy:#2C3E50;--blue:#2980B9;--blue-d:#1F6A9A;--red:#C0392B;--line:#dfe5ea;--mut:#4d5d6c;--r:16px;--ease:cubic-bezier(.22,.8,.26,1)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;font-family:Roboto,system-ui,sans-serif;background:var(--bg);color:var(--navy);line-height:1.6;font-size:17px}
-img{max-width:100%;display:block}
-h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.15;margin:0 0 .5em;font-weight:600}
-h1{font-size:clamp(2.3rem,5vw,4rem)}
-h2{font-size:clamp(1.8rem,3.4vw,2.7rem)}
-h3{font-size:1.3rem}
-p{margin:0 0 1em}
-a{color:var(--blue-d)}
-:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:6px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
-.banner{background:var(--navy);color:#fff;font-size:.85rem;text-align:center;padding:7px 14px}
-header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
-.nav img{height:46px;width:auto}
-.nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0}
-.nav ul a{text-decoration:none;color:var(--navy);font-weight:500;font-size:.95rem;padding:6px 2px;border-bottom:2px solid transparent;transition:border-color .25s}
-.nav ul a:hover{border-color:var(--blue)}
-.btn{display:inline-flex;align-items:center;gap:8px;background:var(--blue-d);color:#fff;border:0;border-radius:999px;padding:13px 24px;font:500 1rem Roboto,sans-serif;text-decoration:none;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s,background .25s;min-height:46px}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(31,106,154,.28);background:#185a84}
-.btn.ghost{background:transparent;color:var(--navy);border:2px solid var(--navy)}
-.btn.ghost:hover{background:var(--navy);color:#fff}
-.btn.sm{padding:9px 18px;min-height:40px;font-size:.92rem}
-.burger{display:none;background:none;border:2px solid var(--navy);border-radius:10px;width:46px;height:46px;cursor:pointer;color:var(--navy)}
-/* hero */
-.hero{background:linear-gradient(180deg,#fff 0%,var(--bg) 100%);position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.02fr 1fr;gap:44px;align-items:center;padding:54px 0 64px}
-.eyebrow{display:inline-block;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--blue-d);margin-bottom:14px}
-.hero p.lead{font-size:1.15rem;color:var(--mut);max-width:34em}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 18px}
-.hero-note{font-size:.88rem;color:var(--mut)}
-.band{background:var(--navy);color:#fff}
-.band .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding-top:22px;padding-bottom:22px}
-.band div{display:flex;gap:12px;align-items:center;font-size:.95rem}
-.band svg{flex:none;width:28px;height:28px;stroke:#fff}
-.band a{color:#fff}
-.band b{display:block;font-weight:500}
-/* chat */
-.phone{background:var(--white);border:1px solid var(--line);border-radius:24px;box-shadow:0 30px 60px -20px rgba(44,62,80,.35);overflow:hidden;display:flex;flex-direction:column;height:620px;max-height:84vh;transform:perspective(1200px) rotateY(-3deg);transition:transform .5s var(--ease)}
-.phone:hover,.phone:focus-within{transform:perspective(1200px) rotateY(0)}
-.ch-head{background:var(--navy);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:12px}
-.ch-head .av{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden}
-.ch-head .av img{width:30px;height:auto}
-.ch-head b{display:block;line-height:1.2}
-.ch-head small{opacity:.9}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#5fe0a0;margin-right:5px}
-.sample-tag{margin-left:auto;font-size:.72rem;background:#fff;color:var(--navy);padding:3px 9px;border-radius:999px;font-weight:700;letter-spacing:.05em}
-.ch-time{background:#eef4f8;color:var(--navy);font-size:.82rem;padding:7px 16px;display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid var(--line)}
-.ch-time label{display:flex;align-items:center;gap:7px;cursor:pointer}
-#msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#f4f7f9;scroll-behavior:smooth}
-.m{max-width:88%;padding:11px 14px;border-radius:16px;font-size:.95rem;animation:pop .35s var(--ease)}
-.m.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
-.m.user{background:var(--blue-d);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
-.m.wide{max-width:100%;width:100%}
-@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.typing span{display:inline-block;width:7px;height:7px;margin:0 2px;border-radius:50%;background:#8a9aa8;animation:bl 1s infinite}
-.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
-@keyframes bl{50%{transform:translateY(-4px);opacity:.5}}
-.chips{display:flex;flex-wrap:wrap;gap:7px;padding:10px 14px;background:#fff;border-top:1px solid var(--line);max-height:96px;overflow-y:auto}
-.chip{border:1px solid var(--blue-d);background:#fff;color:var(--blue-d);border-radius:999px;padding:6px 13px;font:500 .85rem Roboto;cursor:pointer;min-height:34px;transition:background .2s,color .2s}
-.chip:hover{background:var(--blue-d);color:#fff}
-.ch-form{display:flex;gap:8px;padding:10px 14px 14px;background:#fff}
-.ch-form input{flex:1;border:1px solid #b9c5cf;border-radius:999px;padding:11px 16px;font:1rem Roboto;min-width:0}
-.ch-form button{border-radius:999px;border:0;background:var(--blue-d);color:#fff;width:46px;cursor:pointer;font-size:1.1rem}
-.opts{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px}
-.opt{border:1px solid var(--line);background:#f6f9fb;border-radius:10px;padding:8px 11px;font:.88rem Roboto;cursor:pointer;color:var(--navy);min-height:38px;transition:border-color .2s,background .2s}
-.opt:hover,.opt[aria-pressed=true]{border-color:var(--blue-d);background:#e6f1f8}
-.dates{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:8px}
-.dates .opt{text-align:center;padding:6px 2px;line-height:1.25}
-.dates b{display:block;font-size:1.05rem}
-.mini-form label{display:block;font-size:.82rem;font-weight:500;margin:8px 0 3px}
-.mini-form input[type=text],.mini-form input[type=tel],.mini-form input[type=email]{width:100%;border:1px solid #b9c5cf;border-radius:8px;padding:9px 10px;font:.95rem Roboto}
-.err{color:var(--red);font-size:.8rem;min-height:1em}
-.sum{background:#f1f7fb;border:1px dashed var(--blue-d);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:.9rem}
-.sm-note{font-size:.78rem;color:var(--mut)}
-/* sections */
-section{padding:84px 0}
-.alt{background:#fff}
-.head{max-width:680px;margin-bottom:38px}
-.head p{color:var(--mut)}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
-.step{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;position:relative;transition:transform .3s var(--ease),box-shadow .3s}
-.step:hover{transform:translateY(-5px);box-shadow:0 18px 34px -16px rgba(44,62,80,.3)}
-.step::before{counter-increment:s;content:counter(s);position:absolute;top:-16px;left:22px;width:34px;height:34px;border-radius:50%;background:var(--blue-d);color:#fff;display:grid;place-items:center;font-weight:700}
-.save{display:grid;grid-template-columns:1.1fr 1fr;gap:42px;align-items:center;margin-top:60px}
-.save img{border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;width:100%}
-.save ul{padding:0;list-style:none;margin:0}
-.save li{padding:14px 0 14px 38px;border-bottom:1px solid var(--line);position:relative}
-.save li::before{content:"✓";position:absolute;left:0;top:13px;width:26px;height:26px;border-radius:50%;background:#e6f1f8;color:var(--blue-d);display:grid;place-items:center;font-weight:700}
-.cap{font-size:.8rem;color:var(--mut);margin-top:6px}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s}
-.card:hover{transform:translateY(-6px);box-shadow:0 22px 40px -18px rgba(44,62,80,.35)}
-.card img{aspect-ratio:4/3;object-fit:cover;width:100%}
-.card div{padding:18px;flex:1;display:flex;flex-direction:column}
-.card p{font-size:.93rem;color:var(--mut)}
-.card button{margin-top:auto;align-self:flex-start}
-.svc-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
-.svc{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:500 .93rem Roboto;color:var(--navy);cursor:pointer;text-align:left;transition:border-color .2s,transform .2s}
-.svc:hover{border-color:var(--blue-d);transform:translateY(-2px)}
-.svc svg{flex:none;width:30px;height:30px;stroke:var(--blue-d);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.tooth-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:center}
-.stage{position:relative;background:radial-gradient(circle at 50% 40%,#fff,#e3edf4);border-radius:24px;border:1px solid var(--line);aspect-ratio:1/1;max-height:520px;overflow:hidden;touch-action:pan-y}
-.stage canvas{width:100%;height:100%;display:block}
-.stage .fb{position:absolute;inset:0;display:none;place-items:center}
-.stage.nogl .fb{display:grid}
-.stage.nogl canvas{display:none}
-.parts{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
-.dark-quote{background:var(--navy);color:#fff;border-radius:var(--r);padding:28px;display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:center}
-.dark-quote img{border-radius:12px;aspect-ratio:1;object-fit:cover;width:100%;background:#fff}
-.dark-quote p{color:#e8eef3}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
-.areas{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
-.areas span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:.85rem}
-.gal{position:relative}
-.gal img{border-radius:var(--r);width:100%;aspect-ratio:4/3;object-fit:cover}
-details{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;padding:0 18px}
-summary{cursor:pointer;padding:16px 0;font-weight:500;list-style:none;display:flex;justify-content:space-between;gap:12px}
-summary::after{content:"+";font-size:1.4rem;line-height:1;color:var(--blue-d)}
-details[open] summary::after{content:"–"}
-details p{color:var(--mut)}
-.visit{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.mapcard{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#fff}
-.mapcard svg{width:100%;display:block}
-.mapcard div{padding:18px}
-.box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px}
-.box label{display:block;font-weight:500;font-size:.9rem;margin:12px 0 4px}
-.box input,.box textarea,.box select{width:100%;border:1px solid #b9c5cf;border-radius:10px;padding:11px 12px;font:1rem Roboto;background:#fff;color:var(--navy)}
-.box .err{margin-top:2px}
-.ok{background:#e9f6ee;border:1px solid #9bd3ae;color:#1d4d30;border-radius:10px;padding:12px 14px;margin-top:14px}
-footer{background:var(--navy);color:#e6edf2;padding:46px 0 30px;font-size:.9rem}
-footer a{color:#fff}
-footer .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:30px}
-.reveal{will-change:transform}
-@media(max-width:980px){
-.hero-grid,.tooth-grid,.about-grid,.save,.visit,footer .wrap{grid-template-columns:1fr}
-.cards,.svc-list{grid-template-columns:repeat(2,1fr)}
-.steps{grid-template-columns:1fr;gap:34px}
-.phone{transform:none}
-.nav ul{position:absolute;top:70px;left:0;right:0;background:#fff;flex-direction:column;gap:0;padding:8px 22px 18px;border-bottom:1px solid var(--line);display:none}
-.nav ul.open{display:flex}
-.nav ul a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
-.burger{display:block}
-.nav .btn.desk{display:none}
-.band .wrap{grid-template-columns:1fr}
-.dark-quote{grid-template-columns:1fr}
-.dark-quote img{max-width:160px}
-}
-@media(max-width:560px){
-body{font-size:16px}
-section{padding:60px 0}
-.cards,.svc-list{grid-template-columns:1fr}
-.dates{grid-template-columns:repeat(3,1fr)}
-.phone{height:600px}
-}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.phone{transform:none}}
-</style>
-</head>
-<body>
-<div class="banner">Independent website concept by LeadSky for Spring Dental Arts. Not their official website.</div>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="robots" content="noindex">
+  <title>Spring Dental Arts</title>
+  
+  <script id="site-data" type="application/json">{"brand": {"name": "Spring Dental Arts", "tagline": "Gentle care. Clear answers. Your next step.", "logo": "img/business-logo-1.png", "city": "Spring, TX", "country": "US", "currency": "USD", "currency_symbol": "$", "phone": "+1 281-651-9494", "whatsapp": "", "email": "info@springdentalarts.com", "instagram": "https://www.instagram.com/springdentalarts", "tiktok": "", "address": "21334 Kuykendahl Rd B, Spring, TX 77379", "hours": ""}, "colors": {"bg": "#F5F8F7", "surface": "#FFFFFF", "text": "#193C40", "muted": "#53696C", "brand": "#176B73", "accent": "#D6EAE5"}, "fonts": {"heading": "DM Serif Display", "body": "Manrope"}, "hero": {"eyebrow": "SPRING DENTAL ARTS • INTERACTIVE DEMO", "title": "A question about your smile? Start here.", "subtitle": "Try a sample assistant for Spring Dental Arts. Ask about Invisalign®, dental implants or payment options, then explore a sample appointment booking. Available to try any time. Nothing is sent to the practice.", "image": "img/business-featured-2.jpg", "cta_primary": "Ask the assistant", "cta_secondary": "Try a sample booking", "shape3d": "tooth"}, "stats": [], "about": {"title": "Built around care in Spring.", "text": "Spring Dental Arts welcomes new patients and serves families in Klein, Country Lake Estates, Northampton, Bridgestone and nearby communities. Dr. Ahmad J. Akram, DMD, takes a gentle, personal approach to dental care. This independent product sample shows how a website assistant could help visitors find answers and take the next step.", "image": "img/business-featured-2.jpg"}, "items": [{"name": "Dental implant consultation", "description": "Explore a consultation about replacing missing teeth. Sample price for a consultation only, not implant treatment.", "price": 125, "price_label": "Sample price", "duration": "", "image": "", "category": "Dental Implants"}, {"name": "Invisalign® consultation", "description": "Ask about clear aligners and arrange an assessment. Sample price for a consultation only.", "price": 75, "price_label": "Sample price", "duration": "", "image": "", "category": "Invisalign®"}, {"name": "Emergency dental assessment", "description": "Explore a sample appointment for an urgent dental concern. Treatment and any imaging would be discussed separately.", "price": 125, "price_label": "Sample price", "duration": "", "image": "", "category": "Emergency Dentistry"}, {"name": "Exams & Cleaning", "description": "Choose a routine visit in the demo. The practice would confirm the care needed and its actual cost.", "price": 200, "price_label": "Sample price", "duration": "", "image": "", "category": "General Dentistry"}, {"name": "Teeth Whitening", "description": "Explore whitening as a cosmetic care option. The practice would confirm suitability and treatment details.", "price": 450, "price_label": "Sample price", "duration": "", "image": "", "category": "Cosmetic Dentistry"}, {"name": "Dental Crowns", "description": "Ask about restoring a tooth with a crown. An examination would determine the right treatment.", "price": 1300, "price_label": "Sample price", "duration": "", "image": "", "category": "Restorative Dentistry"}], "gallery": [{"image": "img/business-featured-2.jpg", "caption": "Image from the Spring Dental Arts website."}], "videos": [], "steps": [{"title": "Ask in your own words", "text": "Type a question or choose a quick reply. The demo uses prepared answers about the practice and its services."}, {"title": "Explore your next step", "text": "Find service information and learn what the team would need to confirm about costs, insurance or financing."}, {"title": "Try a sample booking", "text": "Choose a service and a sample time. Review a demo confirmation. No appointment is created and nothing is sent."}], "points": [{"title": "Help after hours", "text": "Give visitors a place to start when they have questions outside business hours."}, {"title": "Less repeated admin", "text": "A connected version could handle common questions so the team has more time for patient care."}, {"title": "A shorter path to booking", "text": "Bring service questions and appointment selection into one simple conversation."}, {"title": "Clear limits", "text": "Keep clinical decisions with the dental team. Clearly label sample prices and availability."}], "faq": [{"q": "Is this the official Spring Dental Arts website?", "a": "No. This is an independent product concept by LeadSky. Contact Spring Dental Arts directly at (281) 651-9494 for care or a real appointment."}, {"q": "Will the demo book a real appointment?", "a": "No. All times and booking confirmations are sample data. Nothing is sent to the practice or added to its calendar."}, {"q": "Are the prices actual practice fees?", "a": "No. Every displayed price is a sample for this demonstration. Ask Spring Dental Arts for current fees and a treatment estimate."}, {"q": "Can the assistant confirm insurance or financing?", "a": "It can explain what to ask. Specific plans, benefits, financing terms and eligibility must be confirmed with the practice."}, {"q": "Can I get a diagnosis in the chat?", "a": "No. This demo offers general service information. A dentist must assess your concern and recommend treatment."}, {"q": "What information should I enter?", "a": "Use sample details only. Do not enter medical history, insurance identifiers or payment information."}], "demo": {"assistant_name": "Spring Dental Arts Demo Assistant", "greeting": "Welcome! I’m a sample assistant for Spring Dental Arts in Spring, TX. Ask about a service or try a sample booking. I use prepared replies, and nothing is sent to the practice. Please use sample details only.", "quick_questions": ["Tell me about dental implants", "Is Invisalign® available?", "I need emergency dental care", "Do you accept my insurance?", "What financing options are available?", "Try a sample booking"], "script": [{"q": "Tell me about dental implants", "a": "Spring Dental Arts offers dental implants. An assessment with the dental team is the next step to discuss your needs, suitability and costs. Would you like to explore a sample implant consultation?"}, {"q": "Is Invisalign® available?", "a": "Yes. Invisalign® is listed among the practice’s services. The dental team would assess your smile and explain suitable options, timing and fees. You can try a sample Invisalign® consultation booking here."}, {"q": "I need emergency dental care", "a": "Spring Dental Arts lists emergency dentistry as a service. Call (281) 651-9494 to ask about care and availability. This demo is not monitored and cannot arrange urgent treatment. If you have trouble breathing or swallowing, seek emergency medical help."}, {"q": "Do you accept my insurance?", "a": "I don’t have verified details of accepted plans or your coverage. Contact Spring Dental Arts at (281) 651-9494 to confirm your plan and benefits. Please do not enter insurance identifiers in this demo."}, {"q": "What financing options are available?", "a": "The practice website includes a financing section, but specific providers and terms are not supplied here. Call (281) 651-9494 to ask about current options, eligibility and payment arrangements."}, {"q": "Try a sample booking", "a": "Let’s try it. Choose a service, then select a slot labelled sample. You can review a sample confirmation at the end. Nothing will be sent, booked or charged."}, {"q": "How much does treatment cost?", "a": "All prices in this demo are sample prices, not Spring Dental Arts fees. Actual costs depend on your assessment and treatment plan. Contact the practice for an estimate."}, {"q": "Are you accepting new patients?", "a": "Spring Dental Arts welcomes new patients. Call (281) 651-9494 to confirm availability, or explore the sample booking flow here."}, {"q": "Where are you located?", "a": "Spring Dental Arts is at 21334 Kuykendahl Rd B, Spring, TX 77379. The practice serves nearby communities including Klein, Northampton, Bridgestone and Country Lake Estates."}, {"q": "What are your opening hours?", "a": "Verified opening hours are not included in this demo. Please call (281) 651-9494 to confirm when the practice is open."}, {"q": "Who is the dentist?", "a": "The practice website introduces Dr. Ahmad J. Akram, DMD, and describes his gentle, patient-focused approach."}, {"q": "Do you offer teeth whitening?", "a": "Yes. Teeth Whitening is listed among the practice’s services, along with veneers and other cosmetic dentistry options. The dental team can help you understand which options suit your smile."}, {"q": "Can I book an appointment tonight?", "a": "You can explore this demo at any time, but its slots are samples. They do not show live availability. Contact the practice to arrange a real appointment."}, {"q": "Can I change or cancel this booking?", "a": "You can restart the sample flow and choose another time. Since no real appointment is created, there is nothing to cancel with the practice."}, {"q": "I have another question", "a": "This demo has prepared replies about services, payment questions and sample bookings. Try one of the suggested questions, or contact Spring Dental Arts at (281) 651-9494 for help from the team."}], "staff": ["Dr. Ahmad J. Akram, DMD"], "slots": ["Sample — Monday, 9:00 AM", "Sample — Monday, 2:30 PM", "Sample — Tuesday, 10:00 AM", "Sample — Wednesday, 3:00 PM", "Sample — Thursday, 11:30 AM"], "kpis": [{"label": "Data status", "value": "Sample only"}, {"label": "Calendar connection", "value": "Demo only"}, {"label": "Booking status", "value": "Nothing sent"}], "columns": ["Sample patient", "Service", "Sample time", "Status"], "records": [{"Sample patient": "Sample patient A", "Service": "Invisalign® consultation", "Sample time": "Monday, 9:00 AM", "Status": "Sample request"}, {"Sample patient": "Sample patient B", "Service": "Dental implant consultation", "Sample time": "Tuesday, 10:00 AM", "Status": "Sample request"}, {"Sample patient": "Sample patient C", "Service": "Exams & Cleaning", "Sample time": "Thursday, 11:30 AM", "Status": "Sample request"}], "options": [{"name": "Dental implant consultation — Sample price", "price": 125, "unit": "consultation"}, {"name": "Invisalign® consultation — Sample price", "price": 75, "unit": "consultation"}, {"name": "Emergency dental assessment — Sample price", "price": 125, "unit": "assessment"}, {"name": "Exams & Cleaning — Sample price", "price": 200, "unit": "visit"}]}, "banner": "Independent website concept by LeadSky for Spring Dental Arts. Not their official website.", "credits": []}</script>
 
-<header class="nav">
-<div class="wrap">
-<a href="#top" aria-label="Spring Dental Arts, back to top"><img src="img/business-logo-1.png" alt="Spring Dental Arts logo" height="46" width="150"></a>
-<button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu">☰</button>
-<ul id="menu">
-<li><a href="#assistant">Assistant</a></li>
-<li><a href="#how">How it works</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#tooth">Tooth viewer</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<a class="btn sm desk" href="tel:+12816519494">Call (281) 651-9494</a>
-</div>
-</header>
+  <style>
+    /* CSS Variables injected from SITE.colors */
+    :root {
+      --bg: #fcfaf7;
+      --surface: #f4efe6;
+      --text: #242220;
+      --muted: #736e65;
+      --brand: #42382c;
+      --accent: #9c7c58;
+    }
+  </style>
 
-<main id="top">
-<div class="hero" id="assistant">
-<div class="wrap hero-grid">
-<div>
-<span class="eyebrow">Dentist in Spring, TX · Working product sample</span>
-<h1>Questions at 10 pm? Spring Dental Arts can still answer.</h1>
-<p class="lead">Try the patient assistant on the right. Ask about dental implants, Invisalign® or emergency care, then pick a time and request an appointment. It works the same way on a phone, at any hour.</p>
-<div class="cta-row">
-<a class="btn" href="#assistant" data-chat="book">Try booking in the chat</a>
-<a class="btn ghost" href="tel:+12816519494">Call (281) 651-9494</a>
-</div>
-<p class="hero-note">This is a sample built to show the idea. Replies are scripted, availability is sample data, and nothing is sent to the office.</p>
-</div>
+  <!-- Google Fonts Link built dynamically or loaded safely -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link id="dynamic-fonts" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap">
 
-<div class="phone" role="region" aria-label="Sample patient assistant chat">
-<div class="ch-head">
-<span class="av"><img src="img/business-logo-1.png" alt="" width="30" height="30"></span>
-<div><b>Spring Dental Arts assistant</b><small><span class="dot"></span>Online 24/7 (sample)</small></div>
-<span class="sample-tag">SAMPLE</span>
-</div>
-<div class="ch-time"><span id="clock">Visitor time: 10:42 PM</span><label><input type="checkbox" id="afterhrs" checked> Show as after-hours</label></div>
-<div id="msgs" aria-live="polite"></div>
-<div class="chips" id="chips"></div>
-<form class="ch-form" id="chform" autocomplete="off">
-<label for="chin" class="sr" style="position:absolute;left:-9999px">Type your question</label>
-<input id="chin" type="text" placeholder="Ask about implants, Invisalign, insurance…" maxlength="160">
-<button type="submit" aria-label="Send message">➤</button>
-</form>
-</div>
-</div>
-<div class="band">
-<div class="wrap">
-<div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round"><path d="M12 22s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg><span><b>21334 Kuykendahl Rd B</b>Spring, TX 77379</span></div>
-<div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span><b><a href="tel:+12816519494">(281) 651-9494</a></b>Emergency dentistry available</span></div>
-<div><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round"><path d="M12 21c-5-3.5-8-6.5-8-10a4.5 4.5 0 0 1 8-2.5A4.5 4.5 0 0 1 20 11c0 3.5-3 6.5-8 10z"/></svg><span><b>Accepting new patients</b>Families across Spring &amp; Klein</span></div>
-</div>
-</div>
-</div>
+  <!-- Tailwind CSS CDN for robust modern utility classes -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: 'var(--bg)',
+            surface: 'var(--surface)',
+            ink: 'var(--text)',
+            muted: 'var(--muted)',
+            brand: 'var(--brand)',
+            accent: 'var(--accent)',
+          },
+          fontFamily: {
+            heading: ['"Cormorant Garamond"', 'serif'],
+            body: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 
-<section id="how" class="alt">
-<div class="wrap">
-<div class="head reveal"><span class="eyebrow">How it works</span><h2>From a late-night question to a requested appointment</h2><p>The assistant sits on the practice website. It answers from the information the office approves, and hands off to the team when a person is needed.</p></div>
-<div class="steps">
-<div class="step reveal"><h3>1. Patient asks</h3><p>A visitor asks about a treatment such as dental implants, Invisalign®, wisdom tooth extractions or emergency care, in their own words.</p></div>
-<div class="step reveal"><h3>2. Assistant answers</h3><p>It replies with the practice's own information, points to insurance and financing, and never guesses at prices or diagnoses.</p></div>
-<div class="step reveal"><h3>3. Visit is requested</h3><p>The patient picks a service, a day and a time, and leaves contact details. In a live version, the request goes to the front desk calendar.</p></div>
-</div>
-<div class="save">
-<div class="reveal">
-<img src="img/stock-2.jpg" alt="Dentist in a dental practice (illustrative stock photo)" width="900" height="600" loading="lazy">
-<p class="cap">Illustrative stock photo. Not the Spring Dental Arts team or office.</p>
-</div>
-<div class="reveal">
-<h2>What it saves the front desk</h2>
-<ul>
-<li>Repeat questions about services, insurance and financing, answered once and reused.</li>
-<li>Missed after-hours enquiries, because the chat stays open when the phone line is not.</li>
-<li>Back-and-forth when booking: service, day and time are collected in one pass.</li>
-<li>Urgent cases are pointed straight to the phone number, so they are not left waiting.</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
+  <style>
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4, .font-heading {
+      font-family: 'Cormorant Garamond', serif;
+    }
+    /* Custom scrollbar & smooth polish */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
+  </style>
 
-<section id="services">
-<div class="wrap">
-<div class="head reveal"><span class="eyebrow">Services the assistant knows</span><h2>Built around the treatments Spring Dental Arts lists</h2><p>Tap any service to ask the assistant about it in the chat above.</p></div>
-<div class="cards">
-<article class="card reveal"><img src="img/stock-11.jpg" alt="Dental model and tools (illustrative stock photo)" width="600" height="450" loading="lazy"><div><h3>Dental Implants</h3><p>Replace missing teeth. Also listed: bridges, partials &amp; dentures.</p><button class="btn sm ghost" data-ask="dental implants">Ask about this</button></div></article>
-<article class="card reveal"><img src="img/business-featured-2.jpg" alt="Smile gallery image published by Spring Dental Arts" width="600" height="450" loading="lazy"><div><h3>Cosmetic Dentistry</h3><p>Teeth whitening, veneers, Invisalign® and more. Image from the practice's own smile gallery.</p><button class="btn sm ghost" data-ask="Invisalign">Ask about this</button></div></article>
-<article class="card reveal"><img src="img/stock-3.jpg" alt="Dental chair in a clinic (illustrative stock photo)" width="600" height="450" loading="lazy"><div><h3>General &amp; Restorative</h3><p>Exams &amp; cleaning, crowns, inlays &amp; onlays, root canals, extractions.</p><button class="btn sm ghost" data-ask="exam and cleaning">Ask about this</button></div></article>
-<article class="card reveal"><img src="img/stock-12.jpg" alt="Dentist with equipment (illustrative stock photo)" width="600" height="450" loading="lazy"><div><h3>Emergency Dentistry</h3><p>Pain, a broken tooth or an accident? The assistant points you to the phone line first.</p><button class="btn sm ghost" data-ask="emergency">Ask about this</button></div></article>
-</div>
-<div class="svc-list" id="svclist"></div>
-</div>
-</section>
+  <!-- Three.js r128 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style id='phone-safety'>canvas{pointer-events:none!important}@media(max-width:820px){canvas{opacity:.3!important}html,body{overflow-x:hidden}img,video{max-width:100%}}</style></head>
+<body class="bg-bg text-ink antialiased selection:bg-accent/20">
 
-<section id="tooth" class="alt">
-<div class="wrap tooth-grid">
-<div class="stage" id="stage">
-<canvas id="c3d" aria-label="Interactive 3D tooth model. Drag to rotate." role="img"></canvas>
-<div class="fb"><svg viewBox="0 0 200 240" width="60%" role="img" aria-label="Tooth illustration"><path d="M50 40c20-18 40-4 50-4s30-14 50 4c14 14 8 50-4 70-8 16-6 46-16 86-4 14-14 14-18-2-4-18-6-34-12-34s-8 16-12 34c-4 16-14 16-18 2-10-40-8-70-16-86-12-20-18-56-4-70z" fill="#fff" stroke="#2C3E50" stroke-width="4"/></svg></div>
-</div>
-<div class="reveal">
-<span class="eyebrow">Explore</span>
-<h2>A closer look at one tooth</h2>
-<p>When patients ask what a crown or a root canal is, a simple visual helps. Drag the model to turn it, then pick a part to highlight it.</p>
-<div class="parts" role="group" aria-label="Highlight a tooth part">
-<button class="opt" data-part="crown" aria-pressed="false">Crown</button>
-<button class="opt" data-part="roots" aria-pressed="false">Roots</button>
-<button class="opt" data-part="none" aria-pressed="true">Show all</button>
-</div>
-<p id="partinfo" aria-live="polite">The model shows a general molar shape for education. It is not a patient record.</p>
-<button class="btn" data-ask="root canal">Ask the assistant about root canals</button>
-</div>
-</div>
-</section>
+  <!-- Slim Banner in normal flow ABOVE header -->
+  <div class="bg-brand text-bg text-[11px] sm:text-xs py-2 px-4 text-center tracking-wide font-medium relative z-30">
+    <span id="banner-text">Independent website concept by LeadSky. Not the official website.</span>
+  </div>
 
-<section id="about">
-<div class="wrap about-grid">
-<div class="reveal">
-<span class="eyebrow">Your trusted Spring dentist</span>
-<h2>Meet Dr. Ahmad J. Akram, DMD</h2>
-<p>Dr. Akram loves helping people feel confident about their smiles. He earned his BDS in 2005 at de' Montmorency College of Dentistry and a DMD from Boston University School of Dental Medicine in 2010. He later completed a General Practice Residency at Saint Francis.</p>
-<p>The practice serves families across Country Lake Estates, Klein, Inverness Estates, Miramar Lake, Willow Forest, Wimbledon Falls, Creekwood Acres, Northampton, Five Oaks, Mossy Oaks, Forest North, Bridgestone, Laurel Park and Windrose West.</p>
-<div class="areas" aria-label="Neighborhoods served"><span>Klein</span><span>Country Lake Estates</span><span>Inverness Estates</span><span>Miramar Lake</span><span>Willow Forest</span><span>Forest North</span></div>
-</div>
-<div class="reveal">
-<div class="dark-quote">
-<img src="img/business-logo-1.png" alt="Spring Dental Arts logo" width="200" height="200" style="object-fit:contain;padding:14px">
-<div><h3 style="color:#fff">Gentle, modern, personalized care</h3><p style="margin:0">Compassion and comfort, cost-effective family dentistry, and state-of-the-art equipment, as described by the practice. We can't wait to see you smile!</p></div>
-</div>
-<p class="cap">Dr. Akram's photograph isn't included in this concept. A live site would use the practice's own team photos.</p>
-</div>
-</div>
-</section>
+  <!-- Sticky Header: exactly 1 row, max 64px tall -->
+  <header class="sticky top-0 bg-bg/95 backdrop-blur-md z-40 border-b border-brand/10 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Brand Logo / Name: max 20px, one line, ellipsis -->
+      <a href="#" class="font-heading text-base sm:text-lg font-bold tracking-tight text-brand truncate max-w-[150px] sm:max-w-xs" id="nav-brand-name">
+        Aura & Wood Atelier
+      </a>
 
-<section id="faq" class="alt">
-<div class="wrap" style="max-width:820px">
-<div class="head reveal"><span class="eyebrow">FAQ</span><h2>Questions the assistant handles</h2></div>
-<details><summary>Is Spring Dental Arts accepting new patients?</summary><p>Yes. The practice says it welcomes new patients and encourages you to schedule an appointment.</p></details>
-<details><summary>What if I have a dental emergency?</summary><p>Emergency dentistry is one of the listed services. Call (281) 651-9494. For severe swelling, trouble breathing or heavy bleeding, call 911 or go to an emergency room.</p></details>
-<details><summary>Do you take my insurance? Are there financing options?</summary><p>The practice has Insurances and Financing pages on its website. The assistant would link to them and pass your plan details to the office to confirm. This sample does not state which plans are accepted.</p></details>
-<details><summary>Can I pay online?</summary><p>The practice website has a Pay Online link. This concept does not process any payments.</p></details>
-<details><summary>What are your opening hours?</summary><p>Hours were not available when this concept was built. Please call (281) 651-9494 to confirm. A live version would show the office's real hours.</p></details>
-</div>
-</section>
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-muted">
+        <a href="#about" class="hover:text-brand transition-colors">Atelier</a>
+        <a href="#items" class="hover:text-brand transition-colors">Collections</a>
+        <a href="#gallery" class="hover:text-brand transition-colors">Gallery</a>
+        <a href="#assistant" class="hover:text-brand transition-colors">AI Assistant</a>
+        <a href="#faq" class="hover:text-brand transition-colors">FAQ</a>
+      </nav>
 
-<section id="contact">
-<div class="wrap">
-<div class="head reveal"><span class="eyebrow">Visit &amp; contact</span><h2>Find the office or send a message</h2></div>
-<div class="visit">
-<div class="mapcard reveal">
-<svg viewBox="0 0 600 300" role="img" aria-label="Stylized map showing the office on Kuykendahl Road, Spring, Texas"><rect width="600" height="300" fill="#e7eef3"/><path d="M0 220 L600 120" stroke="#fff" stroke-width="22"/><path d="M180 0 L260 300" stroke="#fff" stroke-width="14"/><path d="M430 0 L400 300" stroke="#fff" stroke-width="10"/><rect x="40" y="40" width="110" height="70" rx="8" fill="#d3e2d3"/><rect x="450" y="190" width="110" height="80" rx="8" fill="#d3e2d3"/><text x="300" y="196" font-size="15" fill="#2C3E50" transform="rotate(-9 300 196)" font-family="Roboto">Kuykendahl Rd</text><g transform="translate(300 118)"><path d="M0 40C-26 12-26-24 0-24s26 36 0 64z" fill="#C0392B"/><circle cy="-4" r="9" fill="#fff"/></g></svg>
-<div><h3>Spring Dental Arts</h3><p>21334 Kuykendahl Rd B, Spring, TX 77379<br>Hours: please call to confirm.</p><a class="btn sm" href="https://www.google.com/maps/search/?api=1&query=21334+Kuykendahl+Rd+B+Spring+TX+77379" target="_blank" rel="noopener">Open in Google Maps</a> <a class="btn sm ghost" href="tel:+12816519494">Call</a></div>
-</div>
-<form class="box reveal" id="cform" novalidate>
-<h3>Contact the office (demo form)</h3>
-<label for="cn">Full name</label><input id="cn" name="n" autocomplete="name"><div class="err" id="e1"></div>
-<label for="ce">Email</label><input id="ce" type="email" autocomplete="email"><div class="err" id="e2"></div>
-<label for="cp">Phone</label><input id="cp" type="tel" autocomplete="tel"><div class="err" id="e3"></div>
-<label for="cm">How can we help?</label><textarea id="cm" rows="4"></textarea><div class="err" id="e4"></div>
-<button class="btn" type="submit" style="margin-top:12px">Send message</button>
-<div id="cok" role="status"></div>
-<p class="sm-note" style="margin-top:10px">Real office email: <a href="mailto:info@springdentalarts.com">info@springdentalarts.com</a>. This form needs a backend to send anything.</p>
-</form>
-</div>
-</div>
-</section>
-</main>
+      <!-- Right Action & Mobile Menu Toggle -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
+        <a href="#assistant" id="nav-cta" class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-semibold uppercase tracking-wider bg-brand text-bg rounded-sm hover:bg-brand/90 transition-all whitespace-nowrap">
+          Consult AI
+        </a>
+        <button id="menu-toggle" aria-label="Open menu" class="md:hidden p-2 text-brand hover:text-accent focus:outline-none flex items-center justify-center min-h-[44px] min-w-[44px]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<footer>
-<div class="wrap">
-<div>
-<p><b style="color:#fff">Spring Dental Arts</b><br>21334 Kuykendahl Rd B, Spring, TX 77379 · <a href="tel:+12816519494">(281) 651-9494</a> · <a href="mailto:info@springdentalarts.com">info@springdentalarts.com</a></p>
-<p>Official site: <a href="https://springdentalarts.com/" target="_blank" rel="noopener">springdentalarts.com</a> · <a href="https://www.facebook.com/springdentalarts" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/springdentalarts" target="_blank" rel="noopener">Instagram</a></p>
-<p>Concept by LeadSky. Independent concept, not endorsed by Spring Dental Arts. The logo and smile gallery image belong to the practice and are shown for a private concept only. Chat replies and appointment slots are sample.</p>
-</div>
-<div>
-<p><b style="color:#fff">Photo credits (Pixabay, illustrative only)</b></p>
-<p><a href="https://pixabay.com/photos/dentist-dental-care-dentistry-teeth-2530990/" target="_blank" rel="noopener">drshohmelian</a> · <a href="https://pixabay.com/photos/dentist-dental-chair-clinic-medical-2589771/" target="_blank" rel="noopener">StockSnap</a> · <a href="https://pixabay.com/photos/dentistry-dental-model-10510081/" target="_blank" rel="noopener">RHDOSTOCKER</a> · <a href="https://pixabay.com/photos/dentist-medicine-scientist-doctor-3528684/" target="_blank" rel="noopener">ExplorerBob</a></p>
-</div>
-</div>
-</footer>
+  <!-- Mobile Full-Screen Menu Drawer -->
+  <div id="mobile-menu" class="fixed inset-0 bg-bg z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-8 md:hidden overflow-y-auto">
+    <div class="flex items-center justify-between">
+      <span class="font-heading text-xl font-bold text-brand" id="mobile-menu-title">Aura & Wood</span>
+      <button id="menu-close" aria-label="Close menu" class="p-2 text-brand hover:text-accent min-h-[44px] min-w-[44px] flex items-center justify-center">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col space-y-6 text-center my-auto py-8">
+      <a href="#about" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">Atelier</a>
+      <a href="#items" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">Collections</a>
+      <a href="#gallery" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">Gallery</a>
+      <a href="#assistant" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">AI Assistant</a>
+      <a href="#faq" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">FAQ</a>
+    </nav>
+    <div class="text-center pb-4">
+      <a href="#assistant" id="mobile-cta" class="mobile-link inline-block w-full py-3.5 bg-brand text-bg text-sm font-semibold uppercase tracking-wider rounded-sm text-center">
+        Consult AI Assistant
+      </a>
+    </div>
+  </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script>
-(function(){
-var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var $=function(s,r){return (r||document).querySelector(s)};
-/* nav */
-var burger=$('#burger'),menu=$('#menu');
-burger.addEventListener('click',function(){var o=menu.classList.toggle('open');burger.setAttribute('aria-expanded',o);burger.setAttribute('aria-label',o?'Close menu':'Open menu')});
-menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');burger.setAttribute('aria-expanded','false')}});
+  <!-- Hero Section with Interactive 3D Canvas -->
+  <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden py-16 lg:py-24">
+    <!-- 3D Canvas Background Container (zIndex 0, pointer-events none, max 70vw & opacity <= 0.3 on phones) -->
+    <div id="canvas-container" class="absolute inset-0 z-0 pointer-events-none opacity-[0.28] sm:opacity-80 transition-opacity max-w-[70vw] sm:max-w-none mx-auto"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+      <div class="max-w-3xl">
+        <span id="hero-eyebrow" class="inline-block text-xs uppercase tracking-widest text-accent font-semibold mb-4 bg-surface/80 px-3 py-1 rounded-sm border border-accent/20">
+          Master Joinery & Bespoke Design
+        </span>
+        <h1 id="hero-title" class="font-heading text-[clamp(30px,8vw,56px)] font-normal leading-[1.08] text-brand mb-6">
+          Spaces shaped by grain, time, and touch.
+        </h1>
+        <p id="hero-subtitle" class="text-base sm:text-lg text-muted mb-8 leading-relaxed max-w-2xl">
+          We design and craft extraordinary kitchens, library walls, and architectural joinery for discerning private residences across the United Kingdom.
+        </p>
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
+          <a href="#assistant" id="hero-cta-primary" class="inline-flex items-center justify-center px-8 py-3.5 bg-brand text-bg text-[15px] font-semibold uppercase tracking-wider rounded-sm hover:bg-brand/90 transition-all shadow-sm min-h-[48px]">
+            Consult an Artisan
+          </a>
+          <a href="#items" id="hero-cta-secondary" class="inline-flex items-center justify-center px-8 py-3.5 bg-surface text-brand border border-brand/20 text-[15px] font-semibold uppercase tracking-wider rounded-sm hover:bg-surface/80 transition-all min-h-[48px]">
+            Explore Portfolio
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* services */
-var SERVICES=['Dental Implants','Bridges, Partials & Dentures','Teeth Whitening','Invisalign®','Veneers','Cosmetic Dentistry','Crown Lengthening','Dental Bridges','Dental Crowns','Dental Sealants','Emergency Dentistry','Exams & Cleaning','General Dentistry','Inlays & Onlays','Mouthguards','Oral Cancer Screenings','Restorative Dentistry','Root Canals','Simple Extraction','Surgical Extraction','Surgical Treatments','Total Health & Wellness','Wisdom Tooth Extractions'];
-var ICO=['<path d="M7 3c-3 0-4 4-3 7 1 4 1 11 3 11 1.5 0 1.5-5 5-5s3.5 5 5 5c2 0 2-7 3-11 1-3 0-7-3-7-2 0-3 1-5 1S9 3 7 3z"/>','<path d="M3 12h18M6 12v4m6-4v4m6-4v4M5 8c0-3 3-4 7-4s7 1 7 4"/>','<path d="M12 3v3M12 18v3M3 12h3M18 12h3M6 6l2 2M16 16l2 2M6 18l2-2M16 8l2-2"/><circle cx="12" cy="12" r="3"/>','<path d="M3 10c0-3 4-5 9-5s9 2 9 5-4 6-9 6-9-3-9-6zM7 12h10"/>','<path d="M12 3l8 6-8 12L4 9z"/>','<path d="M12 3l2 5 5 .5-4 3.5 1.5 5L12 14l-4.5 3 1.5-5L5 8.5 10 8z"/>'];
-var sl=$('#svclist');
-SERVICES.forEach(function(s,i){var b=document.createElement('button');b.className='svc';b.type='button';b.dataset.ask=s;b.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true">'+ICO[i%ICO.length]+'</svg><span></span>';b.lastChild.textContent=s;sl.appendChild(b)});
+  <!-- Stats Section -->
+  <section id="stats-section" class="border-y border-brand/10 bg-surface/50 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="stats-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
 
-/* chat */
-var msgs=$('#msgs'),chips=$('#chips'),form=$('#chform'),inp=$('#chin');
-var PHONE='(281) 651-9494',busy=false;
-function scrollEnd(){msgs.scrollTop=msgs.scrollHeight}
-function esc(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML}
-function user(t){var d=document.createElement('div');d.className='m user';d.textContent=t;msgs.appendChild(d);scrollEnd()}
-function bot(html,wide,cb){
- var t=document.createElement('div');t.className='m bot typing';t.innerHTML='<span></span><span></span><span></span>';msgs.appendChild(t);scrollEnd();busy=true;
- setTimeout(function(){t.className='m bot'+(wide?' wide':'');t.innerHTML=html;busy=false;scrollEnd();if(cb)cb(t)},RM?0:650);
-}
-var SAMPLE='<div class="sm-note">Sample reply. Not medical advice.</div>';
-var KB=[
- {k:['implant'],a:'Spring Dental Arts lists <b>dental implants</b> among its services, along with bridges, partials &amp; dentures for replacing missing teeth. Which option suits you depends on an exam. I can help you request one.'},
- {k:['invisalign','aligner','braces','straight'],a:'<b>Invisalign®</b> is on the practice\'s list of services. A dentist would check your teeth first and talk through your options. Would you like to request a consultation?'},
- {k:['emergency','pain','hurt','broken','chipped','knocked','swelling','urgent','toothache'],a:'<b>Emergency dentistry</b> is offered. Please call <a href="tel:+12816519494">'+PHONE+'</a> right away. If you have severe swelling, trouble breathing or heavy bleeding, call 911 or go to an emergency room.'},
- {k:['insurance','insure','coverage','delta','cigna','aetna'],a:'The practice has an <b>Insurances</b> page on its website. I can pass your plan name along with your request so the office can confirm your coverage. I don\'t state which plans are accepted here.'},
- {k:['financ','payment plan','afford','cost','price','how much','pay'],a:'There is a <b>Financing</b> page on the practice website, and a <b>Pay Online</b> link. I can\'t quote prices. The team gives cost details after an exam. Want to request one?'},
- {k:['whiten','bleach'],a:'<b>Teeth whitening</b> is part of the cosmetic services. Veneers and cosmetic dentistry are also listed for discolored or chipped teeth.'},
- {k:['veneer','cosmetic','smile','chip','discolor'],a:'The practice offers <b>cosmetic dentistry</b> and <b>veneers</b> for discolored or chipped teeth. A consultation is the best way to see what fits your goals.'},
- {k:['clean','exam','checkup','check-up','general','sealant'],a:'<b>Exams &amp; cleaning</b> and general dentistry are listed services, along with sealants and oral cancer screenings. New patients are welcome.'},
- {k:['wisdom','extract'],a:'The practice lists <b>wisdom tooth extractions</b>, plus simple and surgical extractions. The dentist would examine you before recommending anything.'},
- {k:['root canal','root'],a:'<b>Root canals</b> are listed under restorative dentistry, alongside crowns, inlays &amp; onlays. If a tooth hurts, an exam is the first step. You can use the booking option here.'},
- {k:['crown','bridge','denture','partial'],a:'<b>Crowns, bridges, partials and dentures</b> are all on the services list. Tell me what you need and I will help request a visit.'},
- {k:['hour','open','close','when','weekend','saturday'],a:'I don\'t have the office hours in this sample, so I won\'t guess. Please call <a href="tel:+12816519494">'+PHONE+'</a>. A live version would show the office\'s real hours here.'},
- {k:['where','address','location','direction','park','find'],a:'The office is at <b>21334 Kuykendahl Rd B, Spring, TX 77379</b>. <a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=21334+Kuykendahl+Rd+B+Spring+TX+77379">Open in Google Maps</a>.'},
- {k:['new patient','accepting','kids','family','child'],a:'Yes, the practice says it is <b>accepting new patients</b> and serves families across Spring, Klein and nearby neighborhoods.'},
- {k:['dr','doctor','akram','dentist'],a:'<b>Dr. Ahmad J. Akram, DMD</b> leads the practice. He earned his DMD at Boston University School of Dental Medicine in 2010.'},
- {k:['hi','hello','hey'],a:'Hello! I can answer questions about services, insurance and financing, or help you request an appointment.'}
-];
-var CHIPS=[['Dental implants','dental implants'],['Invisalign®','Invisalign'],['Dental emergency','emergency'],['Insurance','insurance'],['Financing','financing'],['Book appointment','__book']];
-function renderChips(){chips.innerHTML='';CHIPS.forEach(function(c){var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=c[0];b.onclick=function(){send(c[1],c[0])};chips.appendChild(b)})}
-renderChips();
-function answer(q){
- var s=q.toLowerCase();
- if(/book|appointment|schedule|reserve|consult|visit|see a dentist/.test(s))return startBook();
- for(var i=0;i<KB.length;i++){for(var j=0;j<KB[i].k.length;j++){if(s.indexOf(KB[i].k[j])>-1){return bot(KB[i].a+SAMPLE+'<div class="opts"><button class="opt" data-act="book">Request an appointment</button></div>')}}}
- bot('I\'m not sure about that one, so I\'d rather not guess. You can call <a href="tel:+12816519494">'+PHONE+'</a> or email <a href="mailto:info@springdentalarts.com">info@springdentalarts.com</a>. I can also help you request an appointment.'+SAMPLE+'<div class="opts"><button class="opt" data-act="book">Request an appointment</button></div>');
-}
-function send(q,label){if(busy||!q.trim())return;user(label||q);answer(q)}
-form.addEventListener('submit',function(e){e.preventDefault();var v=inp.value.trim();if(!v)return;inp.value='';send(v)});
-msgs.addEventListener('click',function(e){var b=e.target.closest('[data-act]');if(b&&b.dataset.act==='book'&&!busy){user('Request an appointment');startBook()}});
-/* booking */
-var B={};
-function startBook(){
- B={};
- var html='Happy to help. What do you need? <div class="opts" id="svopts"></div>';
- bot(html,false,function(m){
-  ['Exam & Cleaning','Emergency Dentistry','Dental Implants','Invisalign® consultation','Teeth Whitening','Wisdom Tooth Extraction','Root Canal','Other / not sure'].forEach(function(s){
-   var b=document.createElement('button');b.className='opt';b.type='button';b.textContent=s;
-   b.onclick=function(){if(B.svc||busy)return;B.svc=s;user(s);pickDate()};$('#svopts',m).appendChild(b);
-  });
-  $('#svopts',m).removeAttribute('id');
- });
-}
-function pickDate(){
- var d=new Date(),days=[];d.setHours(12,0,0,0);
- while(days.length<12){d=new Date(d.getTime()+864e5);if(d.getDay()!==0)days.push(new Date(d))}
- bot('Pick a day. <span class="sm-note">(Sample availability. A live version would read the office calendar.)</span><div class="dates"></div>',true,function(m){
-  var g=$('.dates',m);
-  days.forEach(function(x){
-   var b=document.createElement('button');b.type='button';b.className='opt';
-   b.innerHTML=x.toLocaleDateString('en-US',{weekday:'short'})+'<b>'+x.getDate()+'</b>'+x.toLocaleDateString('en-US',{month:'short'});
-   b.onclick=function(){if(B.date||busy)return;B.date=x;B.dlabel=x.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'});user(B.dlabel);pickTime(x)};
-   g.appendChild(b)});
- });
-}
-function pickTime(x){
- var all=['8:30 AM','9:30 AM','10:30 AM','11:30 AM','1:30 PM','2:30 PM','3:30 PM','4:30 PM'],seed=x.getDate()*7+x.getMonth();
- var sl=all.filter(function(t,i){return (i+seed)%3!==0});
- bot('Sample times for '+esc(B.dlabel)+':<div class="opts"></div>',false,function(m){
-  sl.forEach(function(t){var b=document.createElement('button');b.type='button';b.className='opt';b.textContent=t;
-   b.onclick=function(){if(B.time||busy)return;B.time=t;user(t);details()};$('.opts',m).appendChild(b)});
- });
-}
-function details(){
- bot('Almost done. Who is the appointment for?<form class="mini-form" novalidate><label for="bn">Full name</label><input type="text" id="bn" autocomplete="name"><div class="err" data-e="n"></div><label for="bp">Phone</label><input type="tel" id="bp" autocomplete="tel"><div class="err" data-e="p"></div><label for="be">Email (optional)</label><input type="email" id="be" autocomplete="email"><div class="err" data-e="e"></div><label><input type="checkbox" id="bnew" checked> I am a new patient</label><button class="btn sm" type="submit" style="margin-top:10px">Review request</button></form>',true,function(m){
-  var f=$('form',m);
-  f.addEventListener('submit',function(e){
-   e.preventDefault();var n=$('#bn',f).value.trim(),p=$('#bp',f).value.trim(),em=$('#be',f).value.trim(),ok=true;
-   var E=function(k,t){$('[data-e='+k+']',f).textContent=t;if(t)ok=false};
-   E('n',n.length<2?'Please enter your name.':'');
-   E('p',p.replace(/\D/g,'').length<10?'Please enter a 10-digit phone number.':'');
-   E('e',em&&!/^\S+@\S+\.\S+$/.test(em)?'Please enter a valid email or leave blank.':'');
-   if(!ok)return;
-   var nw=$('#bnew',f).checked;f.querySelector('button').disabled=true;
-   user(n+' · '+p);
-   bot('Here is your request:<div class="sum"><b>'+esc(B.svc)+'</b><br>'+esc(B.dlabel)+' at '+esc(B.time)+'<br>'+esc(n)+' · '+esc(p)+(nw?'<br>New patient':'')+'</div><b>This is a demo, nothing was sent.</b> In a live version, this request would reach the front desk to confirm. For now, you can call <a href="tel:+12816519494">'+PHONE+'</a>.<div class="opts"><button class="opt" data-act="book">Start again</button></div>');
-  });
- });
-}
-/* greeting */
-function clock(){var ah=$('#afterhrs').checked;$('#clock').textContent='Visitor time: '+(ah?'10:42 PM (after hours)':'2:15 PM')}
-$('#afterhrs').addEventListener('change',clock);clock();
-bot('Hi! I\'m the Spring Dental Arts assistant (sample). Ask me about implants, Invisalign®, emergencies, insurance or financing, or request an appointment.'+SAMPLE);
-/* data-ask / data-chat buttons */
-document.addEventListener('click',function(e){
- var a=e.target.closest('[data-ask]');
- if(a){e.preventDefault();var q=a.dataset.ask;document.getElementById('assistant').scrollIntoView({behavior:RM?'auto':'smooth'});setTimeout(function(){send('Tell me about '+q)},RM?0:450);return}
- var c=e.target.closest('[data-chat]');
- if(c){e.preventDefault();document.getElementById('assistant').scrollIntoView({behavior:RM?'auto':'smooth'});setTimeout(function(){if(!busy){user('I want to book');startBook()}},300)}
-});
-/* contact form */
-$('#cform').addEventListener('submit',function(e){
- e.preventDefault();var ok=true;
- function chk(id,eid,bad,msg){var v=$(id).value.trim();$(eid).textContent=bad(v)?msg:'';if(bad(v))ok=false;$(id).setAttribute('aria-invalid',bad(v))}
- chk('#cn','#e1',function(v){return v.length<2},'Please enter your name.');
- chk('#ce','#e2',function(v){return !/^\S+@\S+\.\S+$/.test(v)},'Please enter a valid email.');
- chk('#cp','#e3',function(v){return v.replace(/\D/g,'').length<10},'Please enter a 10-digit phone number.');
- chk('#cm','#e4',function(v){return v.length<5},'Please add a short message.');
- $('#cok').innerHTML=ok?'<div class="ok">This is a demo form, nothing was sent.</div>':'';
-});
-/* reveals */
-if(window.gsap&&window.ScrollTrigger&&!RM){
- gsap.registerPlugin(ScrollTrigger);
- gsap.utils.toArray('.reveal').forEach(function(el,i){gsap.from(el,{y:34,opacity:0,duration:.8,ease:'power3.out',delay:(i%4)*.05,scrollTrigger:{trigger:el,start:'top 90%',once:true}})});
-}
-/* 3D tooth */
-(function(){
- var stage=$('#stage'),cv=$('#c3d');
- var ok=false;try{var t=document.createElement('canvas');ok=!!(window.THREE&&(t.getContext('webgl')||t.getContext('experimental-webgl')))}catch(e){}
- if(!ok){stage.classList.add('nogl');return}
- var r=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
- r.setPixelRatio(Math.min(devicePixelRatio,2));
- var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(35,1,.1,50);cam.position.set(0,.3,7.2);
- sc.add(new THREE.HemisphereLight(0xffffff,0xb7c9d8,.85));
- var k=new THREE.DirectionalLight(0xffffff,.9);k.position.set(3,4,5);sc.add(k);
- var rim=new THREE.DirectionalLight(0xbfe0f5,.5);rim.position.set(-4,1,-3);sc.add(rim);
- var g=new THREE.Group();sc.add(g);
- var pts=[[0,-.1],[.55,0],[1.05,.25],[1.3,.7],[1.35,1.2],[1.2,1.65],[.85,1.85],[.45,1.75],[.15,1.6],[0,1.62]].map(function(p){return new THREE.Vector2(p[0],p[1])});
- var crownGeo=new THREE.LatheGeometry(pts,64);
- var crownMat=new THREE.MeshPhysicalMaterial({color:0xf7f4ec,roughness:.25,metalness:0,clearcoat:.8,clearcoatRoughness:.2,emissive:0x000000});
- var crown=new THREE.Mesh(crownGeo,crownMat);crown.position.y=.2;crown.scale.set(1,1,.92);g.add(crown);
- /* cusp bumps */
- [[-.5,-.4],[.5,-.4],[-.5,.45],[.5,.45]].forEach(function(p){var s=new THREE.Mesh(new THREE.SphereGeometry(.36,32,24),crownMat);s.position.set(p[0],1.82,p[1]*.9);s.scale.set(1,.75,1);g.add(s)});
- var rootMat=new THREE.MeshPhysicalMaterial({color:0xe6d3ab,roughness:.5,clearcoat:.2,emissive:0x000000});
- var roots=new THREE.Group();g.add(roots);
- [[-.55,0],[.55,0]].forEach(function(p,i){var m=new THREE.Mesh(new THREE.CylinderGeometry(.3,.09,2.2,32,1),rootMat);m.position.set(p[0]*1.1,-.8,0);m.rotation.z=(i?-1:1)*.14;roots.add(m);var tip=new THREE.Mesh(new THREE.SphereGeometry(.09,16,12),rootMat);tip.position.set(p[0]*1.1+(i?-1:1)*.15,-1.9,0);roots.add(tip)});
- g.position.y=-.3;g.rotation.x=.12;
- var vy=0,dragging=false,lx=0,ty=0,tx=.12,vis=true,raf;
- function size(){var w=stage.clientWidth,h=stage.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
- size();addEventListener('resize',size);
- cv.addEventListener('pointerdown',function(e){dragging=true;lx=e.clientX;cv.setPointerCapture(e.pointerId)});
- cv.addEventListener('pointermove',function(e){if(dragging){g.rotation.y+=(e.clientX-lx)*.01;lx=e.clientX}});
- cv.addEventListener('pointerup',function(){dragging=false});
- cv.addEventListener('pointercancel',function(){dragging=false});
- cv.tabIndex=0;cv.addEventListener('keydown',function(e){if(e.key==='ArrowLeft')g.rotation.y-=.2;if(e.key==='ArrowRight')g.rotation.y+=.2});
- function frame(){raf=null;if(!vis)return;if(!RM&&!dragging)g.rotation.y+=.006;r.render(sc,cam);if(!RM||true)raf=requestAnimationFrame(frame)}
- if(RM){r.render(sc,cam);var rr=function(){r.render(sc,cam)};cv.addEventListener('pointermove',rr);cv.addEventListener('keydown',rr);addEventListener('resize',rr)}
- else{new IntersectionObserver(function(en){vis=en[0].isIntersecting;if(vis&&!raf)frame()}).observe(stage);frame()}
- var info={crown:'The crown is the visible part of the tooth, covered by hard enamel.',roots:'The roots anchor the tooth in the jaw. Root canal treatment deals with the inside of the root.',none:'The model shows a general molar shape for education. It is not a patient record.'};
- document.querySelectorAll('[data-part]').forEach(function(b){b.addEventListener('click',function(){
-  document.querySelectorAll('[data-part]').forEach(function(x){x.setAttribute('aria-pressed',x===b)});
-  var p=b.dataset.part;crownMat.emissive.setHex(p==='crown'?0x2a6e9f:0);crownMat.emissiveIntensity=.35;rootMat.emissive.setHex(p==='roots'?0x8a5a10:0);rootMat.emissiveIntensity=.35;
-  $('#partinfo').textContent=info[p];if(RM)r.render(sc,cam);
- })});
-})();
-})();
-</script>
+  <!-- About Section -->
+  <section id="about" class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-3 block">The Atelier Philosophy</span>
+          <h2 id="about-title" class="font-heading text-[clamp(24px,6vw,40px)] text-brand mb-6 leading-snug">
+            Uncompromising timber selection meets uncompromising architectural detail.
+          </h2>
+          <p id="about-text" class="text-muted text-base sm:text-lg leading-relaxed mb-8">
+            Every board of European oak, American walnut, and London plane is hand-selected in our Clerkenwell studio for grain harmony and structural integrity. We unite centuries-old hand-joinery with precise modern engineering to create enduring centerpieces for your home.
+          </p>
+          <div id="points-container" class="space-y-4">
+            <!-- Injected points -->
+          </div>
+        </div>
+        <div class="relative">
+          <div class="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl bg-surface">
+            <img id="about-image" src="" alt="Atelier Craftsmanship" class="w-full h-full object-cover">
+          </div>
+          <div class="absolute -bottom-6 -left-6 bg-brand text-bg p-6 max-w-xs hidden sm:block shadow-xl border border-white/10">
+            <p class="font-heading text-xl italic mb-1">"Perfection is attained not when there is nothing more to add, but when there is nothing left to take away."</p>
+            <span class="text-xs uppercase tracking-widest text-accent font-semibold">Master Joiner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Assistant Showcase (Front and Centre) -->
+  <section id="assistant" class="py-20 bg-surface border-y border-brand/10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Interactive Studio Concierge</span>
+        <h2 id="ai-heading" class="font-heading text-[clamp(24px,6vw,40px)] text-brand mb-4">Meet Our AI Atelier Assistant</h2>
+        <p id="ai-subheading" class="text-muted text-sm sm:text-base">Ask questions instantly about our timber sourcing, lead times, or bespoke design process. Powered directly by studio knowledge.</p>
+      </div>
+
+      <!-- Chat Window Interface -->
+      <div class="bg-bg rounded-lg shadow-xl border border-brand/10 overflow-hidden max-w-3xl mx-auto flex flex-col h-[550px]">
+        <!-- Chat Header -->
+        <div class="bg-brand text-bg px-6 py-4 flex items-center justify-between">
+          <div class="flex items-center space-x-3">
+            <div class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></div>
+            <div>
+              <h3 id="assistant-name-display" class="font-heading text-lg font-medium text-bg">Atelier AI</h3>
+              <p class="text-xs text-bg/70">Online &bull; Instant Answers</p>
+            </div>
+          </div>
+          <span class="text-xs uppercase tracking-wider bg-accent/30 px-2.5 py-1 rounded text-bg/90 font-medium">Secure Demo</span>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <div id="chat-messages" class="flex-1 p-6 overflow-y-auto space-y-4 bg-bg/50">
+          <!-- Initial Greeting injected by JS -->
+        </div>
+
+        <!-- Typing Indicator -->
+        <div id="typing-indicator" class="px-6 py-2 hidden">
+          <div class="flex items-center space-x-2 text-muted text-xs italic">
+            <div class="flex space-x-1">
+              <div class="w-1.5 h-1.5 bg-accent rounded-full animate-bounce"></div>
+              <div class="w-1.5 h-1.5 bg-accent rounded-full animate-bounce [animation-delay:0.2s]"></div>
+              <div class="w-1.5 h-1.5 bg-accent rounded-full animate-bounce [animation-delay:0.4s]"></div>
+            </div>
+            <span>Atelier AI is consulting studio logs...</span>
+          </div>
+        </div>
+
+        <!-- Quick Reply Chips -->
+        <div id="quick-questions-container" class="px-6 py-3 bg-surface/80 border-t border-brand/10 flex flex-wrap gap-2 overflow-x-auto">
+          <!-- Injected via JS -->
+        </div>
+
+        <!-- Chat Input Form -->
+        <form id="chat-form" class="p-4 bg-surface border-t border-brand/10 flex items-center space-x-3">
+          <input type="text" id="chat-input" placeholder="Ask about timber, lead times, or visits..." class="flex-1 bg-bg border border-brand/20 rounded px-4 py-3 text-sm text-ink focus:outline-none focus:border-accent min-h-[44px]">
+          <button type="submit" aria-label="Send message" class="bg-brand text-bg px-6 py-3 rounded text-[15px] font-semibold uppercase tracking-wider hover:bg-brand/90 transition-all flex items-center justify-center min-h-[44px] min-w-[44px]">
+            Send
+          </button>
+        </form>
+      </div>
+
+      <!-- What it saves them / How it works callout -->
+      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-bg p-6 rounded border border-brand/10">
+          <div class="w-10 h-10 rounded bg-surface flex items-center justify-center text-accent mb-4 font-heading font-bold text-lg">01</div>
+          <h3 class="font-heading text-xl text-brand mb-2">Instant Client Support</h3>
+          <p class="text-sm text-muted">Answers intricate questions about timber certifications and lead times 24 hours a day, seven days a week.</p>
+        </div>
+        <div class="bg-bg p-6 rounded border border-brand/10">
+          <div class="w-10 h-10 rounded bg-surface flex items-center justify-center text-accent mb-4 font-heading font-bold text-lg">02</div>
+          <h3 class="font-heading text-xl text-brand mb-2">Zero Waiting Time</h3>
+          <p class="text-sm text-muted">Prospective clients receive immediate, accurate specifications without waiting for workshop hours to resume.</p>
+        </div>
+        <div class="bg-bg p-6 rounded border border-brand/10">
+          <div class="w-10 h-10 rounded bg-surface flex items-center justify-center text-accent mb-4 font-heading font-bold text-lg">03</div>
+          <h3 class="font-heading text-xl text-brand mb-2">Qualified Enquiries</h3>
+          <p class="text-sm text-muted">Filters and directs serious architectural and residential clients straight to your bespoke consultation booking queue.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Items / Collections Section -->
+  <section id="items" class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Bespoke Portfolio</span>
+          <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">Handcrafted Commissions</h2>
+        </div>
+        <p class="text-muted text-sm sm:text-base mt-4 md:mt-0 max-w-md">Each commission is engineered specifically for the architectural proportions and interior palette of the client's home.</p>
+      </div>
+
+      <div id="items-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps / How We Work Section -->
+  <section id="steps" class="py-20 bg-surface border-t border-brand/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">The Commission Journey</span>
+        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">From Raw Timber to Installed Masterpiece</h2>
+      </div>
+      <div id="steps-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-20 lg:py-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Visual Archive</span>
+        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">Selected Details & Finishes</h2>
+      </div>
+      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Videos Section (if any) -->
+  <section id="videos-section" class="py-20 bg-brand text-bg">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Atelier Film</span>
+        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-bg">Witness the Hand-Joinery Process</h2>
+      </div>
+      <div id="videos-container" class="grid grid-cols-1 gap-8">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-20 lg:py-28">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Frequently Asked Questions</span>
+        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">Everything You Need to Know</h2>
+      </div>
+      <div id="faq-container" class="space-y-4">
+        <!-- Injected via JS using <details>/<summary> -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brand text-bg py-16 border-t border-brand/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div>
+          <h3 id="footer-brand-name" class="font-heading text-2xl font-bold mb-4">Aura & Wood Atelier</h3>
+          <p id="footer-tagline" class="text-bg/70 text-sm leading-relaxed mb-6">Handcrafted Solid Wood Kitchens & Architectural Joinery</p>
+          <p id="footer-address" class="text-xs text-bg/60 mb-2">42 Heritage Yard, Clerkenwell, London EC1R 5DF</p>
+          <p id="footer-hours" class="text-xs text-bg/60">Mon–Fri: 8:30am – 5:30pm (By Appointment)</p>
+        </div>
+        <div>
+          <h4 class="font-heading text-lg font-medium mb-4 text-accent">Direct Contact</h4>
+          <p class="text-sm text-bg/80 mb-2" id="footer-phone">Phone: +44 20 7946 0912</p>
+          <p class="text-sm text-bg/80 mb-4" id="footer-email">Email: atelier@aurawood.co.uk</p>
+          <div class="flex space-x-4">
+            <a id="footer-instagram" href="#" target="_blank" rel="noopener" class="text-xs uppercase tracking-wider bg-bg/10 px-3 py-2 rounded hover:bg-bg/20 transition-all min-h-[44px] flex items-center">Instagram</a>
+            <a id="footer-whatsapp" href="#" target="_blank" rel="noopener" class="text-xs uppercase tracking-wider bg-emerald-600 text-white px-3 py-2 rounded hover:bg-emerald-500 transition-all min-h-[44px] flex items-center">WhatsApp</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-heading text-lg font-medium mb-4 text-accent">About LeadSky</h4>
+          <p class="text-xs text-bg/70 leading-relaxed mb-4">
+            This premium interactive website concept and AI assistant was designed and built independently by LeadSky to demonstrate modern digital capabilities.
+          </p>
+          <div id="credits-container" class="text-xs text-bg/50 space-y-1">
+            <!-- Credits injected -->
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-bg/10 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-bg/50">
+        <p id="copyright-text">&copy; 2026 Aura & Wood Atelier. All rights reserved.</p>
+        <p class="mt-4 sm:mt-0">Concept by LeadSky &bull; Independent Demo</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <a id="whatsapp-float" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-600 text-white p-3.5 rounded-full shadow-2xl hover:bg-emerald-500 transition-all flex items-center justify-center hover:scale-105 min-h-[44px] min-w-[44px]">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+  </a>
+
+  <!-- Core Application Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Read JSON from <script id="site-data">
+      const dataEl = document.getElementById('site-data');
+      if (!dataEl) return;
+      let site;
+      try {
+        site = JSON.parse(dataEl.textContent);
+      } catch (e) {
+        console.error('Failed to parse site-data JSON', e);
+        return;
+      }
+
+      // 2. Apply CSS variables for colors
+      if (site.colors) {
+        const r = document.documentElement;
+        if (site.colors.bg) r.style.setProperty('--bg', site.colors.bg);
+        if (site.colors.surface) r.style.setProperty('--surface', site.colors.surface);
+        if (site.colors.text) r.style.setProperty('--text', site.colors.text);
+        if (site.colors.muted) r.style.setProperty('--muted', site.colors.muted);
+        if (site.colors.brand) r.style.setProperty('--brand', site.colors.brand);
+        if (site.colors.accent) r.style.setProperty('--accent', site.colors.accent);
+      }
+
+      // 3. Set Document Title & Meta
+      if (site.brand && site.brand.name) {
+        document.title = site.brand.name + ' — ' + (site.brand.tagline || '');
+      }
+
+      // 4. Populate Banner
+      if (site.banner) {
+        const bannerEl = document.getElementById('banner-text');
+        if (bannerEl) bannerEl.textContent = site.banner;
+      }
+
+      // 5. Populate Header & Navigation
+      if (site.brand) {
+        const navName = document.getElementById('nav-brand-name');
+        if (navName) navName.textContent = site.brand.name;
+        const mobTitle = document.getElementById('mobile-menu-title');
+        if (mobTitle) mobTitle.textContent = site.brand.name;
+        
+        const footName = document.getElementById('footer-brand-name');
+        if (footName) footName.textContent = site.brand.name;
+        const footTagline = document.getElementById('footer-tagline');
+        if (footTagline) footTagline.textContent = site.brand.tagline;
+        const footAddress = document.getElementById('footer-address');
+        if (footAddress) footAddress.textContent = site.brand.address;
+        const footHours = document.getElementById('footer-hours');
+        if (footHours) footHours.textContent = site.brand.hours;
+        const footPhone = document.getElementById('footer-phone');
+        if (footPhone) footPhone.textContent = 'Phone: ' + site.brand.phone;
+        const footEmail = document.getElementById('footer-email');
+        if (footEmail) footEmail.textContent = 'Email: ' + site.brand.email;
+
+        if (site.brand.instagram) {
+          const ig = document.getElementById('footer-instagram');
+          if (ig) ig.href = site.brand.instagram;
+        } else {
+          const ig = document.getElementById('footer-instagram');
+          if (ig) ig.style.display = 'none';
+        }
+
+        if (site.brand.whatsapp) {
+          const waFloat = document.getElementById('whatsapp-float');
+          if (waFloat) waFloat.href = `https://wa.me/${site.brand.whatsapp}?text=Hello%20${encodeURIComponent(site.brand.name)},%20I%20would%20like%20to%20enquire%20about%20a%20commission.`;
+          const footWa = document.getElementById('footer-whatsapp');
+          if (footWa) footWa.href = `https://wa.me/${site.brand.whatsapp}`;
+        } else {
+          const waFloat = document.getElementById('whatsapp-float');
+          if (waFloat) waFloat.style.display = 'none';
+          const footWa = document.getElementById('footer-whatsapp');
+          if (footWa) footWa.style.display = 'none';
+        }
+      }
+
+      // 6. Populate Hero
+      if (site.hero) {
+        if (site.hero.eyebrow) {
+          const el = document.getElementById('hero-eyebrow');
+          if (el) el.textContent = site.hero.eyebrow;
+        }
+        if (site.hero.title) {
+          const el = document.getElementById('hero-title');
+          if (el) el.textContent = site.hero.title;
+        }
+        if (site.hero.subtitle) {
+          const el = document.getElementById('hero-subtitle');
+          if (el) el.textContent = site.hero.subtitle;
+        }
+        if (site.hero.cta_primary) {
+          const el = document.getElementById('hero-cta-primary');
+          if (el) el.textContent = site.hero.cta_primary;
+        }
+        if (site.hero.cta_secondary) {
+          const el = document.getElementById('hero-cta-secondary');
+          if (el) el.textContent = site.hero.cta_secondary;
+        }
+      }
+
+      // 7. Populate Stats
+      const statsGrid = document.getElementById('stats-grid');
+      if (statsGrid && site.stats && site.stats.length > 0) {
+        statsGrid.innerHTML = site.stats.map(s => `
+          <div class="p-6">
+            <div class="font-heading text-4xl sm:text-5xl font-bold text-brand mb-2">${s.value}</div>
+            <div class="text-xs uppercase tracking-widest text-muted font-medium">${s.label}</div>
+          </div>
+        `).join('');
+      } else if (statsGrid) {
+        document.getElementById('stats-section').style.display = 'none';
+      }
+
+      // 8. Populate About & Points
+      if (site.about) {
+        const titleEl = document.getElementById('about-title');
+        if (titleEl) titleEl.textContent = site.about.title;
+        const textEl = document.getElementById('about-text');
+        if (textEl) textEl.textContent = site.about.text;
+        const imgEl = document.getElementById('about-image');
+        if (imgEl) imgEl.src = site.about.image || '';
+      }
+
+      const pointsContainer = document.getElementById('points-container');
+      if (pointsContainer && site.points && site.points.length > 0) {
+        pointsContainer.innerHTML = site.points.map(p => `
+          <div class="flex items-start space-x-3">
+            <div class="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center text-accent mt-1 flex-shrink-0">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+            </div>
+            <div>
+              <h4 class="font-heading text-lg font-medium text-brand">${p.title}</h4>
+              <p class="text-sm text-muted">${p.text}</p>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 9. Populate Items (Collections)
+      const itemsGrid = document.getElementById('items-grid');
+      if (itemsGrid && site.items && site.items.length > 0) {
+        const sym = site.brand.currency_symbol || '£';
+        itemsGrid.innerHTML = site.items.map(item => {
+          let priceDisplay = '';
+          if (item.price > 0) {
+            priceDisplay = sym + item.price.toLocaleString();
+          } else if (item.price_label) {
+            priceDisplay = item.price_label;
+          }
+          return `
+            <div class="bg-surface rounded-lg overflow-hidden border border-brand/10 flex flex-col justify-between group">
+              <div>
+                <div class="aspect-[16/10] overflow-hidden bg-brand/5 relative">
+                  <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+                  ${item.category ? `<span class="absolute top-4 left-4 bg-bg/90 backdrop-blur-sm text-brand text-xs uppercase tracking-wider px-3 py-1 rounded font-medium">${item.category}</span>` : ''}
+                </div>
+                <div class="p-6">
+                  <div class="flex justify-between items-baseline mb-2">
+                    <h3 class="font-heading text-2xl font-medium text-brand">${item.name}</h3>
+                    <span class="text-sm font-semibold text-accent">${priceDisplay}</span>
+                  </div>
+                  <p class="text-sm text-muted leading-relaxed mb-4">${item.description}</p>
+                </div>
+              </div>
+              <div class="px-6 pb-6 pt-0 flex items-center justify-between border-t border-brand/10 mt-2">
+                <span class="text-xs text-muted font-medium pt-4">Timeline: ${item.duration || 'Custom'}</span>
+                <a href="#assistant" class="text-xs uppercase tracking-wider font-semibold text-brand hover:text-accent pt-4 inline-flex items-center space-x-1">
+                  <span>Enquire</span>
+                  <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          `;
+        }).join('');
+      } else if (itemsGrid) {
+        document.getElementById('items').style.display = 'none';
+      }
+
+      // 10. Populate Steps
+      const stepsGrid = document.getElementById('steps-grid');
+      if (stepsGrid && site.steps && site.steps.length > 0) {
+        stepsGrid.innerHTML = site.steps.map((st, idx) => `
+          <div class="bg-bg p-6 rounded border border-brand/10">
+            <div class="font-heading text-3xl text-accent mb-4">0${idx + 1}</div>
+            <h3 class="font-heading text-xl font-medium text-brand mb-2">${st.title}</h3>
+            <p class="text-sm text-muted leading-relaxed">${st.text}</p>
+          </div>
+        `).join('');
+      } else if (stepsGrid) {
+        document.getElementById('steps').style.display = 'none';
+      }
+
+      // 11. Populate Gallery
+      const galleryGrid = document.getElementById('gallery-grid');
+      if (galleryGrid && site.gallery && site.gallery.length > 0) {
+        galleryGrid.innerHTML = site.gallery.map(g => `
+          <div class="group relative overflow-hidden rounded bg-surface aspect-square">
+            <img src="${g.image}" alt="${g.caption || 'Gallery detail'}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy">
+            <div class="absolute inset-0 bg-brand/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-6 flex flex-col justify-end">
+              <p class="text-xs text-bg uppercase tracking-widest font-semibold mb-1">Atelier Detail</p>
+              <p class="text-sm text-bg/90 font-heading italic">${g.caption || ''}</p>
+            </div>
+          </div>
+        `).join('');
+      } else if (galleryGrid) {
+        document.getElementById('gallery').style.display = 'none';
+      }
+
+      // 12. Populate Videos
+      const videosContainer = document.getElementById('videos-container');
+      if (videosContainer && site.videos && site.videos.length > 0) {
+        videosContainer.innerHTML = site.videos.map(v => `
+          <div class="relative aspect-[16/9] rounded overflow-hidden shadow-2xl bg-black">
+            <button class="tt-play absolute inset-0 w-full h-full group focus:outline-none" data-player="${v.player}">
+              <img src="${v.poster}" alt="Video poster" class="w-full h-full object-cover opacity-80 group-hover:opacity-95 transition-opacity">
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-full bg-accent text-white flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                  <svg class="w-7 h-7 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </button>
+          </div>
+        `).join('');
+
+        document.querySelectorAll('.tt-play').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const playerUrl = this.getAttribute('data-player');
+            const parent = this.parentElement;
+            parent.innerHTML = `<iframe src="${playerUrl}?autoplay=1" class="w-full h-full border-0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+          });
+        });
+      } else if (videosContainer) {
+        const vSec = document.getElementById('videos-section');
+        if (vSec) vSec.style.display = 'none';
+      }
+
+      // 13. Populate FAQ
+      const faqContainer = document.getElementById('faq-container');
+      if (faqContainer && site.faq && site.faq.length > 0) {
+        faqContainer.innerHTML = site.faq.map(f => `
+          <details class="bg-surface rounded border border-brand/10 overflow-hidden group">
+            <summary class="p-6 font-heading text-xl text-brand cursor-pointer flex justify-between items-center select-none">
+              <span>${f.q}</span>
+              <span class="transform group-open:rotate-180 transition-transform text-accent">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </span>
+            </summary>
+            <div class="px-6 pb-6 text-sm text-muted leading-relaxed border-t border-brand/10 pt-4">
+              ${f.a}
+            </div>
+          </details>
+        `).join('');
+      } else if (faqContainer) {
+        const faqSec = document.getElementById('faq');
+        if (faqSec) faqSec.style.display = 'none';
+      }
+
+      // 14. Populate Credits
+      const creditsContainer = document.getElementById('credits-container');
+      if (creditsContainer && site.credits && site.credits.length > 0) {
+        creditsContainer.innerHTML = site.credits.map(c => `<div>${c.text}</div>`).join('');
+      }
+
+      // 15. AI Assistant Logic
+      const demo = site.demo || {};
+      const assistantName = demo.assistant_name || 'Atelier AI';
+      const greeting = demo.greeting || 'Hello, how may I assist you?';
+      const quickQuestions = demo.quick_questions || [];
+      const scriptPairs = demo.script || [];
+
+      const nameDisplay = document.getElementById('assistant-name-display');
+      if (nameDisplay) nameDisplay.textContent = assistantName;
+
+      const chatMessages = document.getElementById('chat-messages');
+      const quickQuestionsContainer = document.getElementById('quick-questions-container');
+      const chatForm = document.getElementById('chat-form');
+      const chatInput = document.getElementById('chat-input');
+      const typingIndicator = document.getElementById('typing-indicator');
+
+      function appendMessage(sender, text) {
+        const isBot = sender === 'bot';
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `flex ${isBot ? 'justify-start' : 'justify-end'} mb-3`;
+        msgDiv.innerHTML = `
+          <div class="max-w-[85%] sm:max-w-[75%] rounded-lg px-4 py-3 text-sm ${isBot ? 'bg-surface text-brand border border-brand/10' : 'bg-brand text-bg'}">
+            ${isBot ? `<p class="text-[10px] uppercase tracking-wider text-accent font-semibold mb-1">${assistantName}</p>` : ''}
+            <p class="leading-relaxed">${text}</p>
+          </div>
+        `;
+        chatMessages.appendChild(msgDiv);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+
+      // Initial Greeting
+      appendMessage('bot', greeting);
+
+      // Render Quick Questions
+      if (quickQuestionsContainer && quickQuestions.length > 0) {
+        quickQuestionsContainer.innerHTML = quickQuestions.map(q => `
+          <button type="button" class="quick-chip text-xs bg-bg hover:bg-brand hover:text-bg text-brand border border-brand/20 px-3 py-1.5 rounded-full transition-all min-h-[44px] flex items-center">
+            ${q}
+          </button>
+        `).join('');
+
+        document.querySelectorAll('.quick-chip').forEach(chip => {
+          chip.addEventListener('click', () => {
+            const questionText = chip.textContent.trim();
+            handleUserQuery(questionText);
+          });
+        });
+      }
+
+      function findBestAnswer(query) {
+        const lowerQ = query.toLowerCase();
+        let bestMatch = "Thank you for your enquiry. Our master craftsmen would be delighted to discuss this specific detail during your private consultation.";
+        
+        for (let pair of scriptPairs) {
+          if (lowerQ.includes(pair.q.toLowerCase()) || pair.q.toLowerCase().includes(lowerQ)) {
+            bestMatch = pair.a;
+            break;
+          }
+        }
+        return bestMatch;
+      }
+
+      function handleUserQuery(query) {
+        appendMessage('user', query);
+        chatInput.value = '';
+
+        if (typingIndicator) typingIndicator.classList.remove('hidden');
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+
+        setTimeout(() => {
+          if (typingIndicator) typingIndicator.classList.add('hidden');
+          const answer = findBestAnswer(query);
+          appendMessage('bot', answer);
+        }, 800);
+      }
+
+      if (chatForm) {
+        chatForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const val = chatInput.value.trim();
+          if (!val) return;
+          handleUserQuery(val);
+        });
+      }
+
+      // 16. Mobile Menu Toggles
+      const menuToggle = document.getElementById('menu-toggle');
+      const menuClose = document.getElementById('menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+          mobileMenu.classList.remove('translate-x-full');
+        });
+      }
+      if (menuClose && mobileMenu) {
+        menuClose.addEventListener('click', () => {
+          mobileMenu.classList.add('translate-x-full');
+        });
+      }
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          if (mobileMenu) mobileMenu.classList.add('translate-x-full');
+        });
+      });
+
+      // 17. Three.js r128 Interactive 3D Scene
+      const container = document.getElementById('canvas-container');
+      if (container && typeof THREE !== 'undefined') {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.z = 7;
+
+        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+
+        // Lights
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+        scene.add(ambientLight);
+
+        const pointLight = new THREE.PointLight(0x9c7c58, 2, 50);
+        pointLight.position.set(5, 5, 5);
+        scene.add(pointLight);
+
+        const pointLight2 = new THREE.PointLight(0x42382c, 1.5, 50);
+        pointLight2.position.set(-5, -5, 3);
+        scene.add(pointLight2);
+
+        // Build Geometry based on site.hero.shape3d
+        const shapeType = site.hero.shape3d || 'gem';
+        let geometry;
+        
+        if (shapeType === 'gem') {
+          geometry = new THREE.IcosahedronGeometry(1.8, 0);
+        } else if (shapeType === 'flower') {
+          geometry = new THREE.TorusKnotGeometry(1.2, 0.4, 64, 16);
+        } else if (shapeType === 'cake' || shapeType === 'bottle') {
+          geometry = new THREE.CylinderGeometry(1.2, 1.5, 2.5, 32);
+        } else if (shapeType === 'tooth') {
+          geometry = new THREE.ConeGeometry(1.5, 2.8, 16);
+        } else if (shapeType === 'orb') {
+          geometry = new THREE.SphereGeometry(1.8, 32, 32);
+        } else {
+          geometry = new THREE.OctahedronGeometry(1.8, 0);
+        }
+
+        const brandColorHex = site.colors.brand || '#42382c';
+        const material = new THREE.MeshPhysicalMaterial({
+          color: new THREE.Color(brandColorHex),
+          metalness: 0.2,
+          roughness: 0.3,
+          transmission: 0.4,
+          transparent: true,
+          opacity: 0.85,
+          wireframe: false
+        });
+
+        const mesh = new THREE.Mesh(geometry, material);
+        scene.add(mesh);
+
+        // Subtle wireframe overlay for luxury architectural feel
+        const wireMaterial = new THREE.MeshBasicMaterial({ color: new THREE.Color(site.colors.accent || '#9c7c58'), wireframe: true, transparent: true, opacity: 0.25 });
+        const wireMesh = new THREE.Mesh(geometry, wireMaterial);
+        wireMesh.scale.set(1.01, 1.01, 1.01);
+        scene.add(wireMesh);
+
+        // Mouse movement interaction
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetX = 0;
+        let targetY = 0;
+
+        document.addEventListener('mousemove', (event) => {
+          mouseX = (event.clientX - window.innerWidth / 2) * 0.001;
+          mouseY = (event.clientY - window.innerHeight / 2) * 0.001;
+        });
+
+        // Reduced motion check
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const clock = new THREE.Clock();
+
+        function animate() {
+          requestAnimationFrame(animate);
+
+          const delta = clock.getDelta();
+          targetX += (mouseX - targetX) * 0.05;
+          targetY += (mouseY - targetY) * 0.05;
+
+          if (!prefersReducedMotion) {
+            mesh.rotation.x += 0.003 + targetY;
+            mesh.rotation.y += 0.005 + targetX;
+            wireMesh.rotation.x = mesh.rotation.x;
+            wireMesh.rotation.y = mesh.rotation.y;
+          }
+
+          renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', () => {
+          camera.aspect = container.clientWidth / container.clientHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(container.clientWidth, container.clientHeight);
+        });
+      }
+
+    });
+  </script>
 </body>
 </html>
