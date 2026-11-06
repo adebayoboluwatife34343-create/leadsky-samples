@@ -1,0 +1,1081 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>u_graine · Flowers in Paris — Concept LeadSky</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Alegreya+Sans:ital,wght@0,400;0,600;0,800;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+<style>
+/* ===== Design tokens ===== */
+:root{
+  --bg:#fdfaf5;
+  --panel:#f5ece2;
+  --surface:#ffffff;
+  --text:#2c2620;
+  --text-secondary:#6b5b50;
+  --brand:#9c6b4e;
+  --brand-dark:#7a523e;
+  --line:#e9ded2;
+  --font-display:'Cormorant Garamond',serif;
+  --font-body:'Alegreya Sans',sans-serif;
+}
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:1rem;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{ color:inherit; text-decoration:none; }
+svg, .media-wrap{ display:block; max-width:100%; height:auto; }
+::focus-visible{ outline:2px solid var(--brand); outline-offset:2px; }
+
+/* ===== Concept banner ===== */
+.concept-banner{
+  background:var(--brand-dark);
+  color:#fdfaf5;
+  text-align:center;
+  font-size:0.75rem;
+  padding:0.5rem 1rem;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+}
+
+/* ===== Header ===== */
+.site-header{
+  position:sticky; top:0; z-index:60;
+  background:rgba(253,250,245,0.94);
+  border-bottom:1px solid var(--line);
+  backdrop-filter: blur(8px);
+}
+.header-inner{
+  max-width:1100px; margin:0 auto; padding:0 1.5rem;
+  display:flex; align-items:center; justify-content:space-between; height:56px;
+}
+.brand{ font-family:var(--font-display); font-weight:700; font-style:italic; font-size:1.35rem; letter-spacing:0.02em; color:var(--text); }
+.brand .paris{ font-family:var(--font-body); font-weight:600; font-style:normal; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.14em; color:var(--brand); margin-left:0.45rem; vertical-align:0.1em; }
+.nav-links{ display:flex; gap:1.6rem; align-items:center; }
+.nav-links a{ font-size:0.88rem; font-weight:600; color:var(--text-secondary); padding:0.35rem 0; border-bottom:2px solid transparent; transition:color .25s, border-color .25s; }
+.nav-links a:hover{ color:var(--brand); border-color:var(--brand); }
+.cart-button{ position:relative; background:none; border:none; cursor:pointer; padding:0.4rem; }
+.cart-button svg{ width:20px; height:20px; fill:none; stroke:var(--text); stroke-width:1.4; }
+.cart-count{
+  position:absolute; top:-6px; right:-6px; background:var(--brand); color:#fdfaf5;
+  font-size:0.65rem; font-weight:800; width:14px; height:14px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; line-height:1;
+}
+.insta-link{ font-size:0.8rem; font-weight:700; text-transform:uppercase; letter-spacing:0.12em; color:var(--text-secondary); margin-left:1rem; }
+.mobile-menu-button{ display:none; background:none; border:none; font-size:1.4rem; color:var(--text); line-height:1; }
+
+/* ===== Hero ===== */
+.hero{
+  position:relative;
+  display:grid;
+  grid-template-columns: 1fr 460px;
+  align-items:center;
+  min-height:72vh;
+  gap:2rem;
+  padding:6vh 1.5rem 4vh;
+  overflow:hidden;
+}
+.hero-content{z-index:2;}
+.hero-eyebrow{ font-size:0.75rem; font-weight:800; letter-spacing:0.22em; text-transform:uppercase; color:var(--brand); margin-bottom:0.7rem; }
+.hero h1{
+  font-family:var(--font-display);
+  font-size:clamp(2rem, 5.5vw, 4rem);
+  font-weight:700;
+  line-height:1.08;
+  letter-spacing:0.005em;
+  color:var(--text);
+  margin:0 0 1rem;
+}
+.hero h1 .dot{ color:var(--brand); }
+.hero-sub{
+  font-size:clamp(1rem, 2.2vw, 1.25rem);
+  line-height:1.7;
+  color:var(--text-secondary);
+  max-width:38ch;
+  margin:0 0 1.75rem;
+}
+.hero-actions{ display:flex; flex-wrap:wrap; gap:0.8rem; }
+.btn{
+  display:inline-block; padding:1rem 1.7rem; font-family:var(--font-body); font-weight:700; font-size:0.95rem;
+  border:none; border-radius:0; cursor:pointer; transition:background .25s, color .25s, transform .1s; text-align:center;
+}
+.btn:active{ transform:scale(0.97); }
+.btn-primary{ background:var(--brand-dark); color:#fdfaf5; }
+.btn-primary:hover{ background:var(--brand); }
+.btn-outline{ background:transparent; color:var(--text-secondary); border:1.5px solid var(--text-secondary); padding:0.95rem 1.65rem; }
+.btn-outline:hover{ border-color:var(--brand); color:var(--brand); }
+
+.hero-visual{
+  position:relative; height:100%; display:flex; align-items:center; justify-content:center;
+  background:var(--panel); border:1px solid var(--line); overflow:hidden;
+}
+.hero-credit{
+  position:absolute; bottom:0; left:0; right:0;
+  background:linear-gradient(transparent, rgba(0,0,0,0.65));
+  color:#fdfaf5; font-size:0.65rem; padding:0.8rem 1rem; text-align:center;
+}
+
+/* ===== Sections ===== */
+.container{max-width:1060px; margin:0 auto; padding:0 1.5rem;}
+.section{ padding:8vh 0; }
+.section-header{ margin-bottom:4vh; text-align:center; }
+.section-header h2{
+  font-family:var(--font-display); font-weight:700; font-size:clamp(1.5rem, 3vw, 2.2rem);
+  letter-spacing:0.01em; margin-bottom:0.9rem; color:var(--text);
+}
+.section-header p{ color:var(--text-secondary); font-size:0.95rem; max-width:46ch; margin:0 auto; }
+.shop-note{ text-align:center; font-size:0.8rem; color:var(--text-secondary); margin-bottom:2rem; max-width:46ch; margin-left:auto; margin-right:auto; }
+
+/* ===== Image wrappers ===== */
+.media-wrap{ position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:var(--panel); }
+
+/* ===== Products ===== */
+.filters{ display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:center; margin-bottom:3vh; }
+.filter-btn{
+  background:transparent; border:1px solid var(--line); color:var(--text-secondary);
+  font-family:var(--font-body); font-weight:600; font-size:0.8rem; padding:0.5rem 1rem;
+  cursor:pointer; transition:all .25s; text-transform:uppercase; letter-spacing:0.1em;
+}
+.filter-btn.active{ background:var(--brand-dark); color:#fdfaf5; border-color:var(--brand-dark); }
+.filter-btn:not(.active):hover{ border-color:var(--brand); color:var(--brand); }
+
+.product-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:1.75rem; }
+.product-card{
+  position:relative; border:1px solid var(--line); background:var(--surface); overflow:hidden;
+  transition:transform .35s ease, box-shadow .35s ease; display:flex; flex-direction:column;
+}
+.product-card:hover{ transform:translateY(-6px); box-shadow:0 14px 30px rgba(44,38,32,0.08); }
+.product-visual{
+  position:relative; aspect-ratio:4/5; overflow:hidden; background:var(--panel); display:flex; align-items:center; justify-content:center;
+}
+.product-body{ padding:1.25rem 1rem 1rem; flex:1; display:flex; flex-direction:column; }
+.product-tag{
+  font-size:0.65rem; font-weight:800; letter-spacing:0.14em; text-transform:uppercase; color:var(--brand); margin-bottom:0.55rem;
+}
+.product-card h3{ font-family:var(--font-display); font-weight:700; font-size:1.25rem; margin:0 0 0.5rem; color:var(--text); }
+.product-price{
+  font-family:var(--font-display); font-weight:700; font-size:1.35rem; color:var(--text); margin-bottom:0.75rem;
+}
+.product-price small{ font-family:var(--font-body); font-weight:400; font-size:0.72rem; color:var(--text-secondary); }
+.product-desc{ font-size:0.85rem; color:var(--text-secondary); margin-bottom:auto; line-height:1.55; }
+.product-actions{ margin-top:0.9rem; }
+.btn-add{
+  width:100%; background:var(--brand-dark); color:#fdfaf5; padding:0.95rem; font-family:var(--font-body); font-weight:700; font-size:0.9rem;
+  border:none; cursor:pointer;
+}
+.btn-add:hover{ background:var(--brand); }
+
+/* ===== Cart panel ===== */
+.cart-overlay{ position:fixed; inset:0; background:rgba(44,38,32,0.35); z-index:100; opacity:0; visibility:hidden; transition:opacity .3s, visibility .3s; }
+.cart-overlay.open{ opacity:1; visibility:visible; }
+.cart-panel{
+  position:fixed; right:0; top:0; bottom:0; width:min(420px,100%);
+  background:#fff; z-index:110; transform:translateX(100%); transition:transform .35s ease;
+  border-left:1px solid var(--line); display:flex; flex-direction:column;
+}
+.cart-panel.open{ transform:translateX(0); }
+.cart-header{ padding:1.25rem; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
+.cart-header h3{ font-family:var(--font-display); font-weight:700; font-size:1.3rem; color:var(--text); }
+.close-cart{ background:none; border:none; font-size:1.5rem; color:var(--text-secondary); cursor:pointer; line-height:1; }
+.cart-items{ flex:1; overflow-y:auto; padding:1rem; }
+.cart-empty{ text-align:center; color:var(--text-secondary); font-size:0.95rem; padding:6vh 1rem; }
+.cart-item{ display:flex; gap:0.9rem; padding:0.9rem 0; border-bottom:1px solid #efe5d9; }
+.cart-item svg{ width:64px; height:80px; background:#f5ece2; flex-shrink:0; }
+.cart-item-info{ flex:1; display:flex; flex-direction:column; justify-content:center; }
+.cart-item-info h4{ font-family:var(--font-display); font-size:1rem; margin-bottom:0.25rem; color:var(--text); }
+.cart-item-qty{ font-size:0.8rem; color:var(--text-secondary); margin-bottom:0.4rem; }
+.cart-item-price{ font-weight:700; color:var(--text); white-space:nowrap; }
+.cart-controls{ display:flex; gap:0.5rem; margin-top:0.5rem; }
+.qty-btn{ background:#f5ece2; border:none; width:24px; height:24px; font-size:1rem; cursor:pointer; font-weight:800; color:var(--text); }
+.qty-btn:hover{ background:#e9ded2; }
+.cart-footer{ padding:1rem; border-top:1px solid var(--line); background:#fff; }
+.cart-total{ font-family:var(--font-display); font-weight:700; font-size:1.15rem; margin-bottom:0.85rem; }
+.checkout-btn{ width:100%; background:var(--brand); color:#fdfaf5; padding:1rem; font-family:var(--font-body); font-weight:700; font-size:0.95rem; border:none; cursor:pointer; }
+.checkout-btn:hover{ opacity:0.9; }
+
+/* ===== Checkout panel ===== */
+.checkout-overlay{ position:fixed; inset:0; background:rgba(44,38,32,0.45); z-index:120; opacity:0; visibility:hidden; transition:opacity .3s, visibility .3s; }
+.checkout-overlay.open{ opacity:1; visibility:visible; }
+.checkout-panel{
+  position:fixed; left:0; right:0; top:10vh; bottom:10vh; width:min(520px,92%);
+  background:#fff; z-index:130; margin:0 auto; transform:translateY(40px); opacity:0; visibility:hidden;
+  transition:transform .35s ease, opacity .3s ease, visibility .3s ease;
+  border:1px solid var(--line); display:flex; flex-direction:column; overflow:hidden;
+}
+.checkout-panel.open{ transform:translateY(0); opacity:1; visibility:visible; }
+.checkout-header{ padding:1.25rem 1.5rem; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
+.checkout-header h3{ font-family:var(--font-display); font-weight:700; font-size:1.3rem; color:var(--text); }
+.close-checkout{ background:none; border:none; font-size:1.5rem; color:var(--text-secondary); cursor:pointer; line-height:1; }
+.checkout-body{ flex:1; overflow-y:auto; padding:1.5rem; }
+.checkout-form{ display:grid; gap:1rem; max-width:380px; margin:0 auto; }
+.field label{ display:block; font-size:0.8rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-secondary); margin-bottom:0.4rem; }
+.field input{ width:100%; padding:0.75rem; border:1px solid var(--line); background:#fff; font-family:var(--font-body); font-size:0.95rem; }
+.field input:focus{ border-color:var(--brand); outline:none; }
+.radiogroup{ display:flex; flex-direction:column; gap:0.55rem; border:1px solid var(--line); padding:0.85rem; background:#fdfaf5; }
+.radiogroup legend{ font-size:0.8rem; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:var(--brand); padding:0 0.5rem; }
+.radio-label{ display:flex; align-items:center; gap:0.6rem; font-size:0.9rem; cursor:pointer; }
+.radio-label input{ accent-color:var(--brand); width:18px; height:18px; }
+.pay-btn{ width:100%; background:var(--brand-dark); color:#fdfaf5; padding:1.1rem; font-family:var(--font-body); font-weight:700; font-size:1rem; border:none; cursor:pointer; margin-top:0.5rem; }
+.pay-btn:hover{ background:var(--brand); }
+.checkout-message{ max-width:380px; margin:0 auto; text-align:center; padding:2rem 1rem; display:none; }
+.checkout-message strong{ display:block; font-family:var(--font-display); font-weight:700; font-size:1.25rem; color:var(--text); margin-bottom:0.5rem; }
+.checkout-message p{ color:var(--text-secondary); font-size:0.95rem; }
+.reset-checkout{ margin-top:1.2rem; background:transparent; border:1px solid var(--line); color:var(--text-secondary); padding:0.75rem 1.4rem; font-size:0.85rem; cursor:pointer; }
+.reset-checkout:hover{ border-color:var(--brand); color:var(--brand); }
+
+/* ===== How it works ===== */
+.steps{ display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:1.75rem; text-align:center; }
+.step{ padding:0 1rem; }
+.step-number{
+  width:42px; height:42px; border-radius:50%; background:var(--panel); color:var(--text);
+  font-family:var(--font-display); font-weight:700; font-size:1.4rem; display:flex; align-items:center; justify-content:center;
+  margin:0 auto 1rem; border:1px solid var(--line);
+}
+.step h4{ font-family:var(--font-display); font-weight:700; margin-bottom:0.5rem; font-size:1.15rem; }
+.step p{ font-size:0.9rem; color:var(--text-secondary); max-width:260px; margin:0 auto; line-height:1.6; }
+
+/* ===== Gallery ===== */
+.gallery-grid{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:1rem;
+}
+.gallery-item{ position:relative; aspect-ratio:1/1; overflow:hidden; background:#f3e9dd; cursor:pointer; display:flex; flex-direction:column; }
+.gallery-item svg{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; opacity:0.9; }
+.gallery-item:hover svg{ transform:scale(1.05); }
+.gallery-caption{ padding:0.75rem; font-size:0.75rem; color:var(--text-secondary); background:#fff; border-top:1px solid var(--line); }
+.lightbox{ position:fixed; inset:0; background:rgba(253,250,245,0.98); z-index:140; display:none; align-items:center; justify-content:center; padding:1rem; }
+.lightbox.open{ display:flex; flex-direction:column; }
+.lightbox-content{ max-width:70vw; max-height:75vh; background:#fff; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; flex-direction:column; padding:1rem; }
+.lightbox-content svg{ max-width:100%; max-height:100%; display:block; }
+.lightbox-caption{ margin-top:1rem; font-size:0.75rem; color:var(--text-secondary); text-align:center; max-width:40ch; line-height:1.5; }
+.close-lightbox{ position:absolute; top:1rem; right:1rem; background:none; border:none; font-size:2rem; color:var(--text-secondary); cursor:pointer; line-height:1; z-index:141; }
+
+/* ===== About ===== */
+.about{ background:var(--panel); }
+.about-inner{ display:grid; grid-template-columns: 1fr 420px; gap:3rem; align-items:center; }
+.about h2{ font-family:var(--font-display); font-weight:700; font-size:clamp(1.5rem,3vw,2rem); margin-bottom:1rem; color:var(--text); }
+.about p{ margin-bottom:1rem; color:var(--text-secondary); font-size:0.95rem; max-width:46ch; }
+.about-image{ aspect-ratio:4/5; overflow:hidden; background:var(--surface); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; }
+.about-image svg{ max-height:75%; width:auto; opacity:0.9; }
+
+/* ===== 3D atelier ===== */
+.canvas-wrap{ position:relative; height:520px; border:1px solid var(--line); background:var(--panel); overflow:hidden; display:flex; align-items:center; justify-content:center; }
+.canvas-wrap canvas{ position:absolute; inset:0; width:100%; height:100%; display:block; }
+.webgl-fallback{ position:absolute; inset:0; display:none; align-items:center; justify-content:center; background:var(--panel); }
+.canvas-caption{ margin-top:0.75rem; font-size:0.7rem; color:var(--text-secondary); text-align:center; }
+
+/* ===== FAQ ===== */
+.faq{ max-width:620px; margin:0 auto; }
+.faq details{ border:1px solid var(--line); margin-bottom:0.75rem; background:#fff; }
+.faq summary{
+  padding:0.9rem 1.1rem; font-weight:700; font-size:0.95rem; color:var(--text); cursor:pointer; list-style:none;
+}
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{ content:' +'; float:right; font-weight:400; color:var(--brand); }
+.faq details[open] summary::after{ content:' −'; }
+.faq p{ padding:0 1.1rem 1rem; font-size:0.9rem; color:var(--text-secondary); line-height:1.6; }
+
+/* ===== Footer ===== */
+footer{ border-top:1px solid var(--line); padding:10vh 1.5rem 6vh; }
+.footer-grid{ display:grid; grid-template-columns: 1fr 260px; gap:2.5rem; max-width:1060px; margin:0 auto; }
+.footer-contact p{ margin-bottom:0.6rem; color:var(--text-secondary); font-size:0.9rem; }
+.footer-contact a{ color:var(--brand); font-weight:700; }
+.footer-credits h3{ font-family:var(--font-display); font-weight:700; font-size:1rem; margin-bottom:0.75rem; color:var(--text); }
+.footer-credits ul{ list-style:none; padding:0; font-size:0.7rem; color:var(--text-secondary); line-height:1.7; }
+.footer-credits li{ margin-bottom:0.5rem; }
+.footer-credits a{ color:var(--brand); text-decoration:underline; }
+.concept-line{ margin-top:1.5rem; font-size:0.72rem; color:var(--text-secondary); border-top:1px solid var(--line); padding-top:1rem; }
+
+/* ===== Mobile ===== */
+.bottom-bar{
+  position:fixed; bottom:0; left:0; right:0; z-index:50;
+  background:rgba(253,250,245,0.94); border-top:1px solid var(--line); backdrop-filter: blur(8px);
+  display:none;
+}
+.bottom-bar .row{ display:flex; justify-content:space-around; padding:0.55rem 0; }
+.bottom-bar a{
+  display:flex; flex-direction:column; align-items:center; gap:0.3rem; font-size:0.68rem; font-weight:700;
+  color:var(--text-secondary); text-transform:uppercase; letter-spacing:0.08em; padding-top:0.45rem;
+}
+.bottom-bar a.active{ color:var(--brand); }
+.mobile-drawer{ position:fixed; inset:0; background:#fdfaf5; z-index:100; transform:translateX(100%); transition:transform .35s ease; display:flex; flex-direction:column; }
+.mobile-drawer.open{ transform:translateX(0); }
+.drawer-header{ padding:1.25rem; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; }
+.drawer-close{ background:none; border:none; font-size:1.6rem; color:var(--text-secondary); cursor:pointer; line-height:1; }
+.drawer-links{ padding:1.25rem; display:flex; flex-direction:column; gap:0.9rem; }
+.drawer-links a{ font-size:1.1rem; font-weight:700; color:var(--text); }
+
+@media (max-width:900px){
+  .hero{ grid-template-columns: 1fr; min-height:60vh; padding:5vh 1rem 3vh; }
+  .hero-visual{ position:relative; min-height:400px; }
+  .hero h1{ font-size:2.1rem; }
+  .nav-links{ display:none; }
+  .insta-link{ display:none; }
+  .mobile-menu-button{ display:block; }
+  .mobile-drawer{ padding-top:0; }
+  .bottom-bar{ display:block; }
+  .footer-grid{ grid-template-columns: 1fr; gap:2rem; }
+  .about-inner{ grid-template-columns: 1fr; gap:2rem; }
+  .gallery-grid{ grid-template-columns: repeat(2,1fr); }
+  .cart-panel{ width:100%; }
+  .canvas-wrap{ height:360px; }
+}
+@media (max-width:480px){
+  .gallery-grid{ grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="concept-banner">Independent website concept by LeadSky for unknown. Not their official website.</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="brand">u_graine <span class="paris">Paris</span></a>
+    <nav class="nav-links">
+      <a href="#shop">Shop</a>
+      <a href="#atelier">Studio 3D</a>
+      <a href="#livraison">Delivery</a>
+      <a href="#a-propos">About</a>
+      <a href="#contact">Contact</a>
+      <button class="cart-button" id="cart-button" aria-label="Basket"><svg viewBox="0 0 24 24"><circle cx="9" cy="20" r="1"/><circle cx="20" cy="20" r="1"/><path d="M7 4h4l1 10h4l-2-6H5l-2 6Z"/></svg><span class="cart-count" id="cart-count">0</span></button>
+    </nav>
+    <a href="https://www.instagram.com/u_graine" class="insta-link" target="_blank" rel="noopener">Instagram</a>
+    <button class="mobile-menu-button" id="mobile-menu" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<nav class="mobile-drawer" id="mobile-drawer">
+  <div class="drawer-header">
+    <div class="brand">u_graine <span class="paris">Paris</span></div>
+    <button class="drawer-close" id="drawer-close">✕</button>
+  </div>
+  <div class="drawer-links">
+    <a href="#shop">Shop</a>
+    <a href="#atelier">Studio 3D</a>
+    <a href="#livraison">Delivery</a>
+    <a href="#a-propos">About</a>
+    <a href="#contact">Contact</a>
+    <a href="https://www.instagram.com/u_graine" target="_blank" rel="noopener">Instagram u_graine</a>
+  </div>
+</div>
+
+<main>
+  <section class="hero" id="hero" aria-labelledby="hero-title">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Floral studio</span>
+      <h1 id="hero-title">u_graine <span class="dot">·</span> Flowers in Paris</h1>
+      <p class="hero-sub">Bespoke floral arrangements in Paris. Delivery and collection in the 1st arrondissement. Choose, pay, receive.</p>
+      <div class="hero-actions">
+        <a href="#shop" class="btn btn-primary">View arrangements</a>
+        <a href="https://www.instagram.com/u_graine" class="btn btn-outline" target="_blank" rel="noopener">View Instagram</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="media-wrap" style="width:100%;height:100%;">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative bouquet — stock-style image, not a photo of u_graine" style="width:100%;height:100%;">
+          <rect x="44" y="72" width="12" height="20" fill="#c7b2a1" rx="2"/>
+          <circle cx="38" cy="42" r="8" fill="#eaddc8"/>
+          <circle cx="62" cy="48" r="8" fill="#eaddc8"/>
+          <circle cx="50" cy="36" r="9" fill="#eaddc8"/>
+          <circle cx="38" cy="42" r="3" fill="#5d4037"/>
+          <circle cx="62" cy="48" r="3" fill="#5d4037"/>
+          <circle cx="50" cy="36" r="4" fill="#5d4037"/>
+          <path d="M50 56 Q44 72 50 82 Q56 72 50 56" fill="none" stroke="#6b8e5b" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <p class="hero-credit">Illustration only — not a photo of u_graine.</p>
+    </div>
+  </section>
+
+  <section class="section" id="atelier" aria-labelledby="atelier-title">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="atelier-title">Interactive bouquet</h2>
+        <p>3D model for illustration only. Drag to rotate.</p>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="bouquet-canvas"></canvas>
+        <div class="webgl-fallback" id="bouquet-fallback"></div>
+        <p class="canvas-caption">3D illustration only — not a creation by u_graine.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="shop" aria-labelledby="shop-title">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="shop-title">The shop</h2>
+        <p>Indicative prices. Each arrangement can be added to the basket and paid for immediately in this concept.</p>
+      </div>
+      <p class="shop-note">Illustrations only — not u_graine's creations.</p>
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Wedding">Wedding</button>
+        <button class="filter-btn" data-filter="Birthday">Birthday</button>
+        <button class="filter-btn" data-filter="Birth">Birth</button>
+        <button class="filter-btn" data-filter="Everyday">Everyday</button>
+      </div>
+      <div class="product-grid" id="product-grid"></div>
+    </div>
+  </section>
+
+  <section class="section how-it-works" id="livraison" aria-labelledby="steps-title">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="steps-title">How it works</h2>
+        <p>Choose an arrangement, pay online, and receive your order in Paris.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h4>Choose</h4>
+          <p>Browse the gallery of arrangements and add your favourite to the basket.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h4>Pay</h4>
+          <p>Credit card, Apple Pay, Google Pay or bank transfer. Pay online, no back-and-forth messages.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h4>Receive</h4>
+          <p>Delivery to Paris or collection of your arrangement, ready to give.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="gallery-title">Visual world</h2>
+        <p>Illustrative references. Replace with your own photographs.</p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <section class="section about" id="a-propos" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about-inner">
+        <div>
+          <h2 id="about-title">u_graine, floral creator in Paris</h2>
+          <p>u_graine makes bespoke floral arrangements in Paris. Today, orders go by direct message: "DM to book a spot".</p>
+          <p>This concept replaces the back-and-forth with a real online shop: your customers choose, book and pay in one go, from Instagram on their phone.</p>
+          <p><strong>Delivery and collection in Paris.</strong></p>
+        </div>
+        <div class="about-image">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustration: vase and bouquet">
+            <rect x="42" y="70" width="16" height="22" fill="#d8c3b5" rx="2"/>
+            <path d="M34 70 Q50 40 66 70" fill="none" stroke="#9c6b4e" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="42" cy="62" r="7" fill="#eaddc8"/>
+            <circle cx="58" cy="58" r="7" fill="#d8a7b1"/>
+            <circle cx="50" cy="52" r="6" fill="#f0c4a3"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="contact" aria-labelledby="faq-title">
+    <div class="container">
+      <div class="section-header">
+        <h2 id="faq-title">Questions</h2>
+        <p>Everything you need to know before placing an order.</p>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>How do I place an order?</summary>
+          <p>Choose an arrangement in the shop, add it to your basket and pay online. Your order is confirmed once payment is made.</p>
+        </details>
+        <details>
+          <summary>Do you deliver everywhere?</summary>
+          <p>Delivery and collection in Paris only.</p>
+        </details>
+        <details>
+          <summary>What payment methods are accepted?</summary>
+          <p>Credit card, Apple Pay, Google Pay and bank transfer (this site is a demo: no real payment is taken).</p>
+        </details>
+        <details>
+          <summary>Are the prices final?</summary>
+          <p>The prices shown are indicative prices. They are your prices to set.</p>
+        </details>
+        <details>
+          <summary>Can I still contact you by DM?</summary>
+          <p>Yes. Find us on Instagram: <a href="https://www.instagram.com/u_graine" target="_blank" rel="noopener">@u_graine</a>.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-contact">
+      <div class="brand" style="font-size:1.25rem;">u_graine <span class="paris">Paris</span></div>
+      <p>Floral arrangement creator in Paris.</p>
+      <p>Delivery and collection in Paris.</p>
+      <p><a href="https://www.instagram.com/u_graine" target="_blank" rel="noopener">Follow u_graine on Instagram</a></p>
+      <p><a href="https://www.google.com/maps/search/?api=1&query=u_graine+Paris" target="_blank" rel="noopener">Open on Google Maps</a></p>
+    </div>
+    <div class="footer-credits">
+      <h3>Photography credits</h3>
+      <ul>
+        <li>chachbrand — <a href="https://pixabay.com/photos/dried-flowers-decoration-bouquet-10531158/" target="_blank" rel="noopener">Dried flowers decoration bouquet (Pixabay)</a></li>
+        <li>Pexels — <a href="https://pixabay.com/photos/bouquet-bride-flowers-1851462/" target="_blank" rel="noopener">Bouquet bride flowers (Pixabay)</a></li>
+        <li>Lolame — <a href="https://pixabay.com/photos/tulip-flower-bloom-blossom-petals-6994245/" target="_blank" rel="noopener">Tulip flower bloom blossom petals (Pixabay)</a></li>
+        <li>ArtTower — <a href="https://pixabay.com/photos/bouquet-flowers-roses-142876/" target="_blank" rel="noopener">Bouquet flowers roses (Pixabay)</a></li>
+        <li>amydiycraft — <a href="https://pixabay.com/photos/mothers-day-flower-mom-love-5137688/" target="_blank" rel="noopener">Mothers day flower mom love (Pixabay)</a></li>
+        <li>SnapwireSnaps — <a href="https://pixabay.com/photos/flower-botany-nature-growth-petals-731830/" target="_blank" rel="noopener">Flower botany nature growth petals (Pixabay)</a></li>
+        <li>Juuud28 — <a href="https://pixabay.com/photos/street-night-market-people-crowd-4431082/" target="_blank" rel="noopener">Street night market people crowd (Pixabay)</a></li>
+        <li>wal_172619 — <a href="https://pixabay.com/photos/shopping-street-pedestrian-zone-7924559/" target="_blank" rel="noopener">Shopping street pedestrian zone (Pixabay)</a></li>
+        <li>Ylanite — <a href="https://pixabay.com/photos/christmas-gifts-presents-ornament-8453177/" target="_blank" rel="noopener">Christmas gifts presents ornament (Pixabay)</a></li>
+        <li>KAVOWO — <a href="https://pixabay.com/photos/paper-texture-wrapping-paper-3155438/" target="_blank" rel="noopener">Paper texture wrapping paper (Pixabay)</a></li>
+        <li>congerdesign — <a href="https://pixabay.com/photos/child-girl-tie-shoes-shoelaces-4818426/" target="_blank" rel="noopener">Child girl tie shoes shoelaces (Pixabay)</a></li>
+        <li>Olessya — <a href="https://pixabay.com/photos/flowers-bouquet-stairs-260897/" target="_blank" rel="noopener">Flowers bouquet stairs (Pixabay)</a></li>
+      </ul>
+      <p style="margin-top:1rem;"><strong>Concept by LeadSky.</strong> Independent mockup for u_graine, Paris. No affiliation with the business.</p>
+    </div>
+  </div>
+  <div class="concept-line">Independent website concept by LeadSky for unknown. Not their official website.</div>
+</footer>
+
+<!-- Cart panel -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-panel" id="cart-panel">
+  <div class="cart-header">
+    <h3>Your basket</h3>
+    <button class="close-cart" id="close-cart">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items">
+    <div class="cart-empty">Your basket is empty.</div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">Total : <span class="total-value">0,00 €</span></div>
+    <button class="checkout-btn" id="checkout-btn">Go to payment</button>
+  </div>
+</aside>
+
+<!-- Checkout panel -->
+<div class="checkout-overlay" id="checkout-overlay"></div>
+<div class="checkout-panel" id="checkout-panel">
+  <div class="checkout-header">
+    <h3>Payment</h3>
+    <button class="close-checkout" id="close-checkout">✕</button>
+  </div>
+  <div class="checkout-body">
+    <form id="checkout-form" class="checkout-form" novalidate>
+      <div class="field">
+        <label for="checkout-name">Name</label>
+        <input id="checkout-name" type="text" required placeholder="Example: Camille">
+      </div>
+      <div class="field">
+        <label for="checkout-email">E-mail</label>
+        <input id="checkout-email" type="email" required placeholder="camille@example.com">
+      </div>
+      <div class="field">
+        <label for="checkout-address">Delivery address (Paris)</label>
+        <input id="checkout-address" type="text" required placeholder="12 rue de Rivoli, 75001 Paris">
+      </div>
+      <fieldset class="radiogroup">
+        <legend>Delivery</legend>
+        <label class="radio-label"><input type="radio" name="delivery" value="livraison" checked> Delivery to Paris</label>
+        <label class="radio-label"><input type="radio" name="delivery" value="retrait"> Collection at the studio</label>
+      </fieldset>
+      <fieldset class="radiogroup">
+        <legend>Payment method (demo)</legend>
+        <label class="radio-label"><input type="radio" name="payment" value="carte" checked> Credit card</label>
+        <label class="radio-label"><input type="radio" name="payment" value="apple"> Apple Pay</label>
+        <label class="radio-label"><input type="radio" name="payment" value="google"> Google Pay</label>
+        <label class="radio-label"><input type="radio" name="payment" value="virement"> Bank transfer</label>
+      </fieldset>
+      <button class="pay-btn" type="submit">Pay now</button>
+    </form>
+    <div class="checkout-message" id="checkout-message">
+      <strong>This is a demo form, nothing was sent.</strong>
+      <p>This is a demonstration. No payment has been taken and no data has been transmitted.</p>
+      <button class="reset-checkout" id="reset-checkout">New order</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============ SVG illustrations ============ */
+function flowerSVG(fill){
+  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Floral illustration">
+    <circle cx="50" cy="30" r="13" fill="${fill}"/>
+    <circle cx="50" cy="30" r="5" fill="#5d4037"/>
+    <path d="M50 17 Q40 11 30 21 Q20 31 30 41 Q40 51 50 41 Q60 51 70 41 Q80 31 70 21 Q60 11 50 17" fill="${fill}" opacity="0.92"/>
+    <path d="M50 45 Q45 61 50 81 Q55 61 50 45" fill="none" stroke="#6b8e5b" stroke-width="6" stroke-linecap="round"/>
+    <path d="M36 51 Q31 66 41 71" fill="none" stroke="#6b8e5b" stroke-width="4" stroke-linecap="round"/>
+    <path d="M64 51 Q69 66 59 71" fill="none" stroke="#6b8e5b" stroke-width="4" stroke-linecap="round"/>
+  </svg>`;
+}
+function bouquetSVG(fill){
+  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative bouquet">
+    <rect x="44" y="72" width="12" height="20" fill="#c7b2a1" rx="2"/>
+    <circle cx="38" cy="42" r="8" fill="${fill}"/>
+    <circle cx="62" cy="48" r="8" fill="${fill}"/>
+    <circle cx="50" cy="36" r="9" fill="${fill}"/>
+    <circle cx="38" cy="42" r="3" fill="#5d4037"/>
+    <circle cx="62" cy="48" r="3" fill="#5d4037"/>
+    <circle cx="50" cy="36" r="4" fill="#5d4037"/>
+    <path d="M50 56 Q44 72 50 82 Q56 72 50 56" fill="none" stroke="#6b8e5b" stroke-width="5" stroke-linecap="round"/>
+  </svg>`;
+}
+function wrapSVG(){
+  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative wrapped gift">
+    <rect x="10" y="20" width="80" height="70" fill="#f5ece2" stroke="#e9ded2" stroke-width="2"/>
+    <path d="M20 40 Q50 10 80 40" fill="none" stroke="#d8c3b5" stroke-width="3"/>
+    <path d="M20 60 Q50 30 80 60" fill="none" stroke="#d8c3b5" stroke-width="3"/>
+    <path d="M50 30 Q70 50 50 70 Q30 50 50 30" fill="none" stroke="#9c6b4e" stroke-width="2"/>
+    <rect x="46" y="30" width="8" height="20" fill="#9c6b4e"/>
+  </svg>`;
+}
+function scissorsSVG(){
+  return `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrative florist scissors">
+    <circle cx="30" cy="30" r="14" fill="none" stroke="#9c6b4e" stroke-width="4"/>
+    <circle cx="46" cy="30" r="14" fill="none" stroke="#9c6b4e" stroke-width="4"/>
+    <path d="M30 44 Q20 70 30 90" fill="none" stroke="#9c6b4e" stroke-width="5" stroke-linecap="round"/>
+    <path d="M46 44 Q56 70 46 90" fill="none" stroke="#9c6b4e" stroke-width="5" stroke-linecap="round"/>
+    <path d="M38 52 L44 52" stroke="#9c6b4e" stroke-width="3"/>
+  </svg>`;
+}
+
+/* ============ Products data (concept samples, EUR) ============ */
+const products = [
+  {
+    id:'p1', name:'Bridal bouquet', occasion:'Wedding', price:120,
+    svg: bouquetSVG('#eaddc8'),
+    desc:'Roses and eucalyptus, silk ribbon finish. Indicative price.'
+  },
+  {
+    id:'p2', name:'Joyful arrangement', occasion:'Birthday', price:55,
+    svg: flowerSVG('#f0c4a3'),
+    desc:'Seasonal flowers, kraft wrap. Indicative price.'
+  },
+  {
+    id:'p3', name:'Birth bouquet', occasion:'Birth', price:60,
+    svg: flowerSVG('#d8a7b1'),
+    desc:'Fresh tulips, tied stems. Indicative price.'
+  },
+  {
+    id:'p4', name:'Classic roses', occasion:'Everyday', price:70,
+    svg: bouquetSVG('#c7b2a1'),
+    desc:'Rose bouquet, kraft wrapping. Indicative price.'
+  },
+  {
+    id:'p5', name:'Wild bouquet', occasion:'Wedding', price:95,
+    svg: flowerSVG('#b9c9a8'),
+    desc:'Dried flowers, boho style. Indicative price.'
+  }
+];
+
+/* ============ Gallery data ============ */
+const galleryData = [
+  {svg: scissorsSVG(), alt:'Florist scissors — illustration', caption:'Paris street at night — stock illustration'},
+  {svg: bouquetSVG('#b9c9a8'), alt:'Illustrative bouquet — illustration', caption:'Pedestrian shopping street — stock illustration'},
+  {svg: wrapSVG(), alt:'Illustrative wrapped gift — illustration', caption:'Wrapped gifts — stock illustration'},
+  {svg: wrapSVG(), alt:'Illustrative wrapping paper — illustration', caption:'Wrapping paper — stock illustration'},
+  {svg: scissorsSVG(), alt:'Illustrative scissors — illustration', caption:'Hands tying a ribbon — stock illustration'},
+  {svg: bouquetSVG('#eaddc8'), alt:'Illustrative bouquet — illustration', caption:'Bouquet on stairs — stock illustration'}
+];
+
+/* ============ Cart state ============ */
+const cart = {};
+const cartCountEl = document.getElementById('cart-count');
+const cartItemsEl = document.getElementById('cart-items');
+const cartEmptyEl = cartItemsEl.querySelector('.cart-empty');
+const totalValueEl = document.querySelector('.total-value');
+const cartOverlay = document.getElementById('cart-overlay');
+const cartPanel = document.getElementById('cart-panel');
+const cartBtn = document.getElementById('cart-button');
+const closeCartBtn = document.getElementById('close-cart');
+const checkoutBtn = document.getElementById('checkout-btn');
+
+function formatPrice(n){ return n.toFixed(2).replace('.',',') + ' €'; }
+function cartTotal(){
+  return Object.keys(cart).reduce((sum,id)=>{
+    const p = products.find(x=>x.id===id);
+    return sum + (p.price * (cart[id]||0));
+  },0);
+}
+function cartQty(){
+  return Object.values(cart).reduce((a,b)=>a+b,0);
+}
+function updateCartBadge(){
+  const q = cartQty();
+  cartCountEl.textContent = q;
+  cartCountEl.style.display = q ? 'flex' : 'none';
+}
+function openCart(){
+  cartOverlay.classList.add('open');
+  cartPanel.classList.add('open');
+}
+function closeCart(){
+  cartOverlay.classList.remove('open');
+  cartPanel.classList.remove('open');
+}
+function renderCart(){
+  cartItemsEl.innerHTML = '';
+  const keys = Object.keys(cart).filter(id=> (cart[id]||0) > 0);
+  if(keys.length===0){
+    cartItemsEl.appendChild(cartEmptyEl.cloneNode(true));
+    totalValueEl.textContent = formatPrice(0);
+    return;
+  }
+  keys.forEach(id=>{
+    const p = products.find(x=>x.id===id);
+    const qty = cart[id];
+    const item = document.createElement('div');
+    item.className='cart-item';
+    item.innerHTML = `
+      <div>${p.svg}</div>
+      <div class="cart-item-info">
+        <h4>${p.name}</h4>
+        <div class="cart-item-qty">Quantity : <button class="qty-btn" data-id="${id}" data-delta="-1">−</button> ${qty} <button class="qty-btn" data-id="${id}" data-delta="1">+</button></div>
+        <div class="cart-item-price">${formatPrice(p.price * qty)}</div>
+      </div>
+      <button class="btn" style="padding:0.35rem 0.7rem; font-size:0.8rem; background:#f5ece2; color:var(--text); margin-left:auto;" data-remove="${id}">Remove</button>
+    `;
+    cartItemsEl.appendChild(item);
+  });
+  totalValueEl.textContent = formatPrice(cartTotal());
+  cartItemsEl.querySelectorAll('.qty-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const id = btn.dataset.id; const delta = parseInt(btn.dataset.delta,10);
+      cart[id] = (cart[id]||0) + delta;
+      if(cart[id] <= 0) delete cart[id];
+      updateCartBadge(); renderCart();
+    });
+  });
+  cartItemsEl.querySelectorAll('[data-remove]').forEach(btn=>{
+    btn.addEventListener('click',()=>{ delete cart[btn.dataset.remove]; updateCartBadge(); renderCart(); });
+  });
+}
+function addToCart(id){
+  cart[id] = (cart[id]||0) + 1;
+  updateCartBadge();
+  renderCart();
+  openCart();
+}
+
+/* ============ Product rendering ============ */
+const productGrid = document.getElementById('product-grid');
+const filterBtns = document.querySelectorAll('.filter-btn');
+
+function renderProducts(filter='all'){
+  productGrid.innerHTML = '';
+  const filtered = filter === 'all' ? products : products.filter(p=>p.occasion===filter);
+  filtered.forEach((p,i)=>{
+    const card = document.createElement('article');
+    card.className='product-card';
+    card.style.opacity='0';
+    card.style.transform='translateY(20px)';
+    card.innerHTML = `
+      <div class="product-visual" aria-hidden="true">
+        <div class="media-wrap" style="width:100%;height:100%;position:relative;">
+          ${p.svg}
+        </div>
+      </div>
+      <div class="product-body">
+        <span class="product-tag">${p.occasion}</span>
+        <h3>${p.name}</h3>
+        <div class="product-price">${formatPrice(p.price)} <small>Indicative price</small></div>
+        <p class="product-desc">${p.desc}</p>
+        <div class="product-actions"><button class="btn-add" data-id="${p.id}">Add to basket</button></div>
+      </div>
+    `;
+    productGrid.appendChild(card);
+    gsap.to(card, {opacity:1, y:0, duration:0.6, delay: i*0.06, ease:'power2.out'});
+    card.querySelector('.btn-add').addEventListener('click',()=>addToCart(p.id));
+  });
+}
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    renderProducts(btn.dataset.filter);
+  });
+});
+
+/* ============ Gallery ============ */
+const galleryGrid = document.getElementById('gallery-grid');
+galleryData.forEach((g,i)=>{
+  const item = document.createElement('div');
+  item.className='gallery-item';
+  item.innerHTML = `
+    <div class="media-wrap" style="width:100%;height:100%;position:relative;">
+      ${g.svg}
+    </div>
+    <p class="gallery-caption">${g.caption}</p>
+  `;
+  item.addEventListener('click',()=>{
+    lightboxContent.innerHTML = g.svg;
+    lightboxCap.textContent = g.caption;
+    lightboxEl.classList.add('open');
+  });
+  galleryGrid.appendChild(item);
+});
+
+/* Lightbox */
+const lightboxEl = document.createElement('div');
+lightboxEl.className='lightbox';
+lightboxEl.id='lightbox';
+lightboxEl.innerHTML = `
+  <button class="close-lightbox" id="close-lightbox">✕</button>
+  <div class="lightbox-content" id="lightbox-content"></div>
+  <p class="lightbox-caption" id="lightbox-caption"></p>
+`;
+document.body.appendChild(lightboxEl);
+const lightboxContent = document.getElementById('lightbox-content');
+const lightboxCap = document.getElementById('lightbox-caption');
+const closeLightbox = document.getElementById('close-lightbox');
+function closeLB(){ lightboxEl.classList.remove('open'); lightboxContent.innerHTML=''; }
+closeLightbox.addEventListener('click', closeLB);
+lightboxEl.addEventListener('click',(e)=>{ if(e.target===lightboxEl) closeLB(); });
+
+/* ============ Cart UI ============ */
+cartBtn.addEventListener('click', openCart);
+closeCartBtn.addEventListener('click', closeCart);
+cartOverlay.addEventListener('click',(e)=>{ if(e.target===cartOverlay) closeCart(); });
+checkoutBtn.addEventListener('click',()=>{
+  if(cartQty()===0){ alert('Your basket is empty.'); return; }
+  closeCart();
+  openCheckout();
+});
+
+/* ============ Checkout demo ============ */
+const checkoutOverlay = document.getElementById('checkout-overlay');
+const checkoutPanel = document.getElementById('checkout-panel');
+const closeCheckout = document.getElementById('close-checkout');
+const checkoutForm = document.getElementById('checkout-form');
+const checkoutMessage = document.getElementById('checkout-message');
+const resetCheckout = document.getElementById('reset-checkout');
+
+function openCheckout(){
+  checkoutOverlay.classList.add('open');
+  checkoutPanel.classList.add('open');
+}
+function closeCheckoutPanel(){
+  checkoutOverlay.classList.remove('open');
+  checkoutPanel.classList.remove('open');
+  checkoutForm.style.display='grid';
+  checkoutMessage.style.display='none';
+  checkoutForm.reset();
+}
+closeCheckout.addEventListener('click', closeCheckoutPanel);
+checkoutOverlay.addEventListener('click',(e)=>{ if(e.target===checkoutOverlay) closeCheckoutPanel(); });
+
+checkoutForm.addEventListener('submit',(e)=>{
+  e.preventDefault();
+  if(!checkoutForm.checkValidity()){
+    checkoutForm.reportValidity();
+    return;
+  }
+  checkoutForm.style.display='none';
+  checkoutMessage.style.display='block';
+  Object.keys(cart).forEach(id=>delete cart[id]);
+  updateCartBadge(); renderCart();
+});
+resetCheckout.addEventListener('click',()=>{
+  checkoutMessage.style.display='none';
+  checkoutForm.style.display='grid';
+  checkoutForm.reset();
+});
+
+/* ============ Mobile drawer ============ */
+const mobileMenu = document.getElementById('mobile-menu');
+const drawerClose = document.getElementById('drawer-close');
+const drawer = document.getElementById('mobile-drawer');
+mobileMenu.addEventListener('click',()=>drawer.classList.add('open'));
+drawerClose.addEventListener('click',()=>drawer.classList.remove('open'));
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('open')));
+
+/* ============ Reveal animations below first screen ============ */
+gsap.registerPlugin(ScrollTrigger);
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduce){
+  gsap.from('.section-header', {y:30, opacity:0, duration:0.8, ease:'power2.out', scrollTrigger:{trigger:'.section-header', start:'top 80%', toggleActions:'play none none none'}});
+  gsap.utils.toArray('.product-card').forEach((card,i)=>{
+    gsap.from(card, {y:40, opacity:0, duration:0.6, delay:i*0.08, ease:'power2.out', scrollTrigger:{trigger:card, start:'top 90%', toggleActions:'play none none none'}});
+  });
+  gsap.from('.step', {y:40, opacity:0, duration:0.7, stagger:0.15, ease:'power2.out', scrollTrigger:{trigger:'#livraison', start:'top 85%', toggleActions:'play none none none'}});
+  gsap.from('.gallery-item', {y:40, opacity:0, duration:0.5, stagger:0.08, ease:'power2.out', scrollTrigger:{trigger:'#gallery', start:'top 85%', toggleActions:'play none none none'}});
+}
+
+/* ============ Three.js bouquet ============ */
+(function initBouquet(){
+  const canvas = document.getElementById('bouquet-canvas');
+  const fallback = document.getElementById('bouquet-fallback');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let renderer, scene, camera, group;
+  let isDragging=false, targetRotY=0, currentRotY=0;
+  let autoRotate = !reduced.matches;
+  let visible=true, animId;
+
+  try{
+    renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true});
+    const wrap = canvas.parentElement;
+    renderer.setSize(wrap.clientWidth, wrap.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+    renderer.setClearColor(0x000000, 0);
+
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(45, wrap.clientWidth/wrap.clientHeight, 0.1, 10);
+    camera.position.set(0, 0, 2.6);
+
+    const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambient);
+    const key = new THREE.PointLight(0xfff4e6, 1);
+    key.position.set(3, 5, 4);
+    scene.add(key);
+    const fill = new THREE.PointLight(0xffe8d4, 0.4);
+    fill.position.set(-3, 0, 3);
+    scene.add(fill);
+
+    class StemCurve extends THREE.Curve {
+      constructor(){ super(); }
+      getPoint(t){
+        return new THREE.Vector3(
+          Math.sin(t*Math.PI*1.6)*0.05,
+          -t*1.4,
+          Math.cos(t*Math.PI)*0.04
+        );
+      }
+    }
+
+    const matWrap = new THREE.MeshStandardMaterial({color:0xc7b2a1, roughness:0.9});
+    const matRibbon = new THREE.MeshStandardMaterial({color:0x9c6b4e, roughness:0.5});
+    const matStem = new THREE.MeshStandardMaterial({color:0x6b8e5b, roughness:0.8});
+    const matPetal = new THREE.MeshStandardMaterial({color:0xeaddc8, roughness:0.7});
+    const matCenter = new THREE.MeshStandardMaterial({color:0x8a6d55, roughness:0.6});
+    const matLeaf = new THREE.MeshStandardMaterial({color:0x8aa375, roughness:0.9});
+
+    function makeFlower(){
+      const g = new THREE.Group();
+      const center = new THREE.Mesh(new THREE.IcosahedronGeometry(0.085,1), matCenter);
+      g.add(center);
+      for(let i=0;i<8;i++){
+        const petal = new THREE.Mesh(new THREE.ConeGeometry(0.07,0.34,4), matPetal);
+        petal.rotation.x = Math.PI/2 + 0.35;
+        petal.rotation.z = (i/8)*Math.PI*2;
+        petal.position.set(Math.sin((i/8)*Math.PI*2)*0.13, Math.cos((i/8)*Math.PI*2)*0.13, 0.12);
+        petal.lookAt(new THREE.Vector3(0,0,0.3));
+        g.add(petal);
+      }
+      return g;
+    }
+
+    group = new THREE.Group();
+
+    const wrapMesh = new THREE.Mesh(new THREE.BoxGeometry(0.58,1.4,0.58), matWrap);
+    group.add(wrapMesh);
+
+    const ribbon = new THREE.Mesh(new THREE.TorusGeometry(0.35,0.026,16,70), matRibbon);
+    ribbon.rotation.x = Math.PI/2;
+    ribbon.position.y = 0.3;
+    group.add(ribbon);
+
+    const ribbonV = new THREE.Mesh(new THREE.BoxGeometry(0.04,1.2,0.04), matRibbon);
+    ribbonV.position.y = 0.24;
+    group.add(ribbonV);
+
+    for(let i=-1;i<=1;i+=1){
+      const stem = new THREE.Mesh(new THREE.CylinderGeometry(0.035,0.02,1.05,8), matStem);
+      stem.position.set(i*0.14,-0.42,0);
+      stem.rotation.x = Math.PI/2;
+      group.add(stem);
+    }
+    const curve = new StemCurve();
+    const points = curve.getPoints(20);
+    const stemGeo = new THREE.BufferGeometry().setFromPoints(points);
+    const stemLine = new THREE.Line(stemGeo, new THREE.LineBasicMaterial({color:0x6b8e5b}));
+    group.add(stemLine);
+
+    for(let i=0;i<4;i++){
+      const leaf = new THREE.Mesh(new THREE.PlaneGeometry(0.22,0.5), matLeaf);
+      leaf.position.set((i%2?0.28:-0.28), -0.68 + i*0.2, 0.1);
+      leaf.rotation.x = Math.PI/3.5;
+      group.add(leaf);
+    }
+
+    for(let i=0;i<6;i++){
+      const f = makeFlower();
+      const a = (i/6)*Math.PI*2;
+      f.position.set(Math.sin(a)*0.16, 0.82, Math.cos(a)*0.16);
+      f.rotation.z = 0.4;
+      group.add(f);
+    }
+    const topF = makeFlower();
+    topF.position.set(0,0.96,0);
+    topF.scale.setScalar(1.15);
+    group.add(topF);
+
+    scene.add(group);
+
+    function resize(){
+      const w = wrap.clientWidth || 300;
+      const h = wrap.clientHeight || 400;
+      renderer.setSize(w,h);
+      camera.aspect = w/h;
+      camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    function onDown(){ isDragging=true; }
+    function onUp(){ isDragging=false; }
+    function onMove(e){
+      const dx = e.movementX || 0;
+      if(dx) targetRotY += dx*0.002;
+    }
+    canvas.addEventListener('pointerdown', onDown);
+    window.addEventListener('pointerup', onUp);
+    canvas.addEventListener('pointermove', onMove);
+    canvas.addEventListener('touchmove',(e)=>{ if(isDragging && e.touches[0]){ const t=e.touches[0]; targetRotY += (t.movementX||0)*0.002; } },{passive:false});
+
+    function animate(){
+      if(!visible){ animId=requestAnimationFrame(animate); return; }
+      if(!isDragging){
+        targetRotY += autoRotate ? 0.001 : 0;
+      }
+      currentRotY += (targetRotY - currentRotY)*0.05;
+      group.rotation.y = currentRotY;
+      renderer.render(scene, camera);
+      animId = requestAnimationFrame(animate);
+    }
+    animate();
+
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(en=>{ visible = en.isIntersecting; });
+    },{threshold:0.05});
+    io.observe(document.getElementById('atelier'));
+
+    reduced.addEventListener('change',(e)=>{ autoRotate = !e.matches; });
+  }catch(err){
+    console.warn('Three.js unavailable, showing static SVG fallback', err);
+    canvas.style.display='none';
+    fallback.style.display='flex';
+    fallback.innerHTML = `<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" role="img" aria-label="Static bouquet illustration">${bouquetSVG('#eaddc8')}</svg>`;
+  }
+})();
+
+renderProducts();
+</script>
+</body>
+</html>
