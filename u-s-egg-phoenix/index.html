@@ -1,1507 +1,457 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <title>U.S. Egg | Phoenix Valley Breakfast & Craft Coffee</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <style>
-    :root {
-      --bg: #fcf9f2;
-      --bg-alt: #f2ece1;
-      --text: #221f1d;
-      --text-muted: #5c554e;
-      --brand: #0f4c5c;
-      --accent: #e36414;
-      --white: #ffffff;
-      --border: #e6dfd3;
-      --font-display: 'Syne', sans-serif;
-      --font-body: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    /* Top banner */
-    .concept-banner {
-      background: var(--text);
-      color: var(--white);
-      font-size: 0.8rem;
-      text-align: center;
-      padding: 8px 16px;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      position: relative;
-      z-index: 1000;
-    }
-
-    /* Navigation */
-    .nav {
-      position: sticky;
-      top: 0;
-      background: rgba(252, 249, 242, 0.85);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 48px;
-      z-index: 999;
-      transition: all 0.3s ease;
-    }
-
-    .nav-brand {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--brand);
-      text-decoration: none;
-      letter-spacing: -0.02em;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-brand span {
-      color: var(--accent);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    .nav-cta {
-      background: var(--brand);
-      color: var(--white);
-      padding: 12px 24px;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: transform 0.2s, background 0.2s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .nav-cta:hover {
-      background: #0b3844;
-      transform: translateY(-2px);
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    /* Hero Section */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      min-height: calc(100vh - 75px);
-      align-items: center;
-      padding: 60px 48px;
-      gap: 64px;
-      max-width: 1440px;
-      margin: 0 auto;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(227, 100, 20, 0.1);
-      color: var(--accent);
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      width: fit-content;
-    }
-
-    .hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 4vw, 4.2rem);
-      font-weight: 800;
-      line-height: 1.08;
-      color: var(--text);
-      letter-spacing: -0.03em;
-    }
-
-    .hero p {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      max-width: 540px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      margin-top: 8px;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: var(--white);
-      padding: 16px 32px;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: transform 0.2s, background 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 10px 25px rgba(227, 100, 20, 0.25);
-    }
-
-    .btn-primary:hover {
-      background: #cf5810;
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--brand);
-      border: 2px solid var(--brand);
-      padding: 14px 28px;
-      border-radius: 50px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(15, 76, 92, 0.05);
-      transform: translateY(-2px);
-    }
-
-    .hero-visual {
-      position: relative;
-      width: 100%;
-      height: 560px;
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.12);
-    }
-
-    .hero-visual img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .hero-visual:hover img {
-      transform: scale(1.03);
-    }
-
-    .hero-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 32px;
-      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, transparent 100%);
-      color: var(--white);
-    }
-
-    .hero-overlay h3 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin-bottom: 6px;
-    }
-
-    .hero-overlay p {
-      color: rgba(255,255,255,0.85);
-      font-size: 0.95rem;
-    }
-
-    /* 3D Showcase Section */
-    .showcase-3d-section {
-      background: var(--bg-alt);
-      padding: 100px 48px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 64px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .section-tag {
-      color: var(--accent);
-      font-weight: 700;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      letter-spacing: 0.1em;
-    }
-
-    .section-header h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3vw, 3rem);
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.02em;
-    }
-
-    .section-header p {
-      color: var(--text-muted);
-      font-size: 1.1rem;
-    }
-
-    .interactive-3d-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .canvas-container {
-      width: 100%;
-      height: 420px;
-      background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(230,223,211,0.5) 100%);
-      border-radius: 20px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: inset 0 0 40px rgba(0,0,0,0.05);
-      border: 1px solid var(--border);
-    }
-
-    #canvas-3d {
-      width: 100%;
-      height: 100%;
-      display: block;
-      cursor: grab;
-    }
-
-    #canvas-3d:active {
-      cursor: grabbing;
-    }
-
-    .canvas-badge {
-      position: absolute;
-      bottom: 16px;
-      left: 16px;
-      background: rgba(34, 31, 29, 0.8);
-      color: var(--white);
-      padding: 6px 14px;
-      border-radius: 30px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      backdrop-filter: blur(4px);
-    }
-
-    .showcase-content h3 {
-      font-family: var(--font-display);
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: var(--text);
-    }
-
-    .showcase-content p {
-      color: var(--text-muted);
-      margin-bottom: 24px;
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .feature-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .feature-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .feature-list li span {
-      background: rgba(15, 76, 92, 0.1);
-      color: var(--brand);
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-    }
-
-    /* Locations Section */
-    .locations-section {
-      padding: 100px 48px;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .locations-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
-    }
-
-    .location-card {
-      background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      transition: transform 0.3s, box-shadow 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .location-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    }
-
-    .location-img-wrap {
-      height: 220px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .location-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-
-    .location-card:hover .location-img-wrap img {
-      transform: scale(1.05);
-    }
-
-    .location-badge {
-      position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--brand);
-      color: var(--white);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .location-body {
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-      gap: 16px;
-    }
-
-    .location-body h3 {
-      font-family: var(--font-display);
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .location-details {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      color: var(--text-muted);
-      font-size: 0.95rem;
-    }
-
-    .location-details div {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .location-actions {
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      gap: 12px;
-    }
-
-    .btn-card {
-      flex: 1;
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-align: center;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .btn-card.primary {
-      background: var(--brand);
-      color: var(--white);
-    }
-
-    .btn-card.primary:hover {
-      background: #0b3844;
-    }
-
-    .btn-card.secondary {
-      background: rgba(15, 76, 92, 0.08);
-      color: var(--brand);
-    }
-
-    .btn-card.secondary:hover {
-      background: rgba(15, 76, 92, 0.15);
-    }
-
-    /* Menu Section */
-    .menu-section {
-      background: var(--bg-alt);
-      padding: 100px 48px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .menu-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
-      margin-bottom: 48px;
-      flex-wrap: wrap;
-    }
-
-    .tab-btn {
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 12px 28px;
-      border-radius: 30px;
-      font-weight: 600;
-      cursor: pointer;
-      color: var(--text);
-      transition: all 0.2s;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-    }
-
-    .tab-btn.active, .tab-btn:hover {
-      background: var(--brand);
-      color: var(--white);
-      border-color: var(--brand);
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 32px;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .menu-card {
-      background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .menu-card-img {
-      height: 200px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .menu-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s;
-    }
-
-    .menu-card:hover .menu-card-img img {
-      transform: scale(1.05);
-    }
-
-    .menu-card-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      flex-grow: 1;
-    }
-
-    .menu-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-
-    .menu-card-body h3 {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .menu-price {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--accent);
-    }
-
-    .menu-card-body p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      line-height: 1.5;
-    }
-
-    .menu-card-footer {
-      margin-top: auto;
-      padding-top: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .order-btn {
-      background: rgba(227, 100, 20, 0.1);
-      color: var(--accent);
-      border: none;
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-
-    .order-btn:hover {
-      background: var(--accent);
-      color: var(--white);
-    }
-
-    /* Catering Section */
-    .catering-section {
-      padding: 100px 48px;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .catering-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-
-    .catering-content {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-
-    .catering-content h2 {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.02em;
-    }
-
-    .catering-content p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.7;
-    }
-
-    .catering-form-wrap {
-      background: var(--white);
-      padding: 40px;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .form-group label {
-      font-weight: 600;
-      font-size: 0.9rem;
-      color: var(--text);
-    }
-
-    .form-control {
-      padding: 14px 18px;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      background: var(--bg);
-      color: var(--text);
-      transition: border-color 0.2s;
-    }
-
-    .form-control:focus {
-      outline: none;
-      border-color: var(--brand);
-      background: var(--white);
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-    }
-
-    .form-submit-btn {
-      width: 100%;
-      background: var(--brand);
-      color: var(--white);
-      border: none;
-      padding: 16px;
-      border-radius: 12px;
-      font-weight: 600;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.2s;
-      margin-top: 8px;
-    }
-
-    .form-submit-btn:hover {
-      background: #0b3844;
-      transform: translateY(-2px);
-    }
-
-    .form-message {
-      margin-top: 16px;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      text-align: center;
-      display: none;
-    }
-
-    .form-message.success {
-      background: rgba(46, 133, 64, 0.1);
-      color: #2e8540;
-      display: block;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--text);
-      color: var(--white);
-      padding: 80px 48px 40px 48px;
-    }
-
-    .footer-content {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 64px;
-      padding-bottom: 60px;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .footer-brand h3 {
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 16px;
-      color: var(--white);
-    }
-
-    .footer-brand h3 span {
-      color: var(--accent);
-    }
-
-    .footer-brand p {
-      color: rgba(255,255,255,0.7);
-      max-width: 360px;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    .footer-links h4 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: var(--white);
-    }
-
-    .footer-links ul {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.7);
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.2s;
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-
-    .footer-bottom {
-      max-width: 1280px;
-      margin: 40px auto 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      color: rgba(255,255,255,0.5);
-      font-size: 0.85rem;
-    }
-
-    .footer-bottom a {
-      color: rgba(255,255,255,0.7);
-      text-decoration: underline;
-    }
-
-    .photo-credits {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 968px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 40px 24px;
-        text-align: center;
-      }
-      .hero-content {
-        align-items: center;
-      }
-      .hero-buttons {
-        justify-content: center;
-      }
-      .hero p {
-        max-width: 100%;
-      }
-      .interactive-3d-wrapper, .catering-grid {
-        grid-template-columns: 1fr;
-      }
-      .nav-links {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 32px;
-      }
-      .locations-section, .menu-section, .showcase-3d-section, .catering-section {
-        padding: 60px 24px;
-      }
-      .nav {
-        padding: 16px 24px;
-      }
-    }
-
-    /* Modal for Online Ordering Demo */
-    .modal-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(5px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2000;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-    }
-
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .modal-card {
-      background: var(--white);
-      width: 100%;
-      max-width: 500px;
-      border-radius: 24px;
-      padding: 32px;
-      position: relative;
-      transform: translateY(20px);
-      transition: transform 0.3s ease;
-    }
-
-    .modal-overlay.active .modal-card {
-      transform: translateY(0);
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: var(--bg);
-      border: none;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text);
-    }
-
-    .modal-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    .modal-card p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 24px;
-    }
-
-    /* Reduced Motion Styles */
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  </style>
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>U.S. Egg</title>
+<script id="site-data" type="application/json">{"brand": {"name": "U.S. Egg", "tagline": "Breakfast, lunch, and a place to meet.", "logo": "", "city": "Phoenix", "country": "US", "currency": "USD", "currency_symbol": "$", "phone": "+1 480-443-5558", "whatsapp": "", "email": "privacy@useggrestaurant.com", "instagram": "", "tiktok": "", "address": "7119 East Shea Boulevard Scottsdale 85254", "hours": ""}, "colors": {"bg": "#FFF9EF", "surface": "#FFFFFF", "text": "#29251F", "muted": "#686054", "brand": "#843522", "accent": "#E9B34D"}, "fonts": {"heading": "DM Serif Display", "body": "DM Sans"}, "hero": {"eyebrow": "U.S. EGG · PHOENIX VALLEY", "title": "Make time for breakfast.", "subtitle": "Come together over breakfast or lunch. Planning for a group? Ask about catering across the Phoenix Valley.", "image": "img/business-featured-1.webp", "cta_primary": "Plan your visit", "cta_secondary": "Call U.S. Egg", "shape3d": "cake"}, "stats": [], "about": {"title": "Good company starts at the table.", "text": "U.S. Egg serves breakfast and lunch at multiple locations across the Phoenix Valley. Visit for a meal or get in touch about catering. The Scottsdale address listed here is on East Shea Boulevard.", "image": "img/business-featured-1.webp"}, "items": [{"name": "Breakfast", "description": "Make room for a morning meal. Call your chosen location for the current menu and prices.", "price": 16, "price_label": "Sample price", "duration": "", "image": "img/business-featured-1.webp", "category": "Breakfast"}, {"name": "Lunch", "description": "Plan a midday meal at U.S. Egg. Contact your location for available dishes.", "price": 18, "price_label": "Sample price", "duration": "", "image": "", "category": "Lunch"}, {"name": "Catering", "description": "Share your date, group size, and location to ask about catering options. Actual pricing needs confirmation.", "price": 22, "price_label": "Sample price", "duration": "", "image": "", "category": "Catering"}, {"name": "Visit the Shea Boulevard location", "description": "Find U.S. Egg at 7119 East Shea Boulevard, Scottsdale 85254. Call to confirm hours before your visit.", "price": 0, "price_label": "No purchase included", "duration": "", "image": "", "category": "Locations"}], "gallery": [{"image": "img/business-featured-1.webp", "caption": "Berry pancakes, pictured in U.S. Egg’s featured image."}], "videos": [], "steps": [{"title": "Choose your location", "text": "Start with the Phoenix Valley location you want to visit. This concept includes the supplied Scottsdale address."}, {"title": "Confirm the details", "text": "Call to check hours, current menus, and ordering options."}, {"title": "Plan your meal", "text": "Visit for breakfast or lunch. For catering, discuss your date, group size, and requirements with the restaurant."}], "points": [{"title": "Breakfast and lunch", "text": "Two reasons to gather around the table."}, {"title": "Across the Valley", "text": "U.S. Egg operates multiple locations in the Phoenix Valley."}, {"title": "Catering available", "text": "Bring your group plans to the restaurant and ask about the options."}], "faq": [{"q": "What does U.S. Egg serve?", "a": "U.S. Egg offers breakfast, lunch, and catering. Contact the restaurant for its current menu."}, {"q": "Where is the Scottsdale location?", "a": "The supplied address is 7119 East Shea Boulevard, Scottsdale 85254."}, {"q": "What are the opening hours?", "a": "Hours have not been supplied for this concept. Call +1 480-443-5558 to confirm before visiting."}, {"q": "Can I order online here?", "a": "This independent concept does not process orders. Visit https://www.useggrestaurant.com or call to confirm ordering options for your location."}, {"q": "Are these the restaurant’s prices?", "a": "No. Amounts marked “Sample price” are illustrative estimates in USD. The catering example is per person. Confirm all prices with U.S. Egg."}, {"q": "Can I send a catering request through this page?", "a": "The request form is a demonstration. Contact the restaurant directly for catering. This is a demo form, nothing was sent"}], "demo": {"assistant_name": "Visit planner demo", "greeting": "Plan a breakfast, lunch, or catering enquiry. All entries stay within this demonstration. Call U.S. Egg to confirm arrangements.", "quick_questions": ["Where is the Scottsdale location?", "How do I ask about catering?", "Can I order online?", "Are these actual prices?"], "script": [{"q": "Where is the Scottsdale location?", "a": "7119 East Shea Boulevard, Scottsdale 85254. Call +1 480-443-5558 to confirm hours."}, {"q": "How do I ask about catering?", "a": "Prepare your preferred date, group size, location, and any dietary requirements. Call the restaurant to discuss availability and pricing."}, {"q": "Can I order online?", "a": "This demo cannot place orders. Check the official website or call your chosen location for ordering options."}, {"q": "Are these actual prices?", "a": "No. These are sample estimates for this concept. They are not menu prices or quotes from U.S. Egg."}, {"q": "Submit request", "a": "Your sample request is complete. Contact U.S. Egg directly to make arrangements. This is a demo form, nothing was sent"}], "staff": [], "slots": [], "kpis": [{"label": "Request status", "value": "Demo only"}, {"label": "Availability", "value": "Confirm by phone"}, {"label": "Pricing", "value": "Sample estimates"}], "columns": ["Name", "Contact details", "Breakfast, lunch, or catering", "Preferred location", "Preferred date", "Group size", "Dietary requirements", "Message", "Status"], "records": [{"Name": "Sample guest", "Contact details": "", "Breakfast, lunch, or catering": "Catering", "Preferred location": "Scottsdale — East Shea Boulevard", "Preferred date": "", "Group size": "", "Dietary requirements": "", "Message": "Sample enquiry: please provide catering options and a quote.", "Status": "Demo entry — not submitted"}], "options": [{"name": "Breakfast — sample estimate", "price": 16, "unit": "per person; actual menu price to be confirmed"}, {"name": "Lunch — sample estimate", "price": 18, "unit": "per person; actual menu price to be confirmed"}, {"name": "Catering — sample estimate", "price": 22, "unit": "per person; actual quote required"}]}, "banner": "Independent website concept by LeadSky for U.S. Egg. Not their official website.", "credits": []}</script>
+<style>
+:root{--bg:#fff8ee;--surface:#fff;--text:#14213d;--muted:#4b5568;--brand:#1d4ed8;--accent:#ffb703;--hf:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--bf:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--r:22px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--bf);overflow-x:hidden;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--hf);line-height:1.08;margin:0 0 .5em;letter-spacing:-.02em;overflow-wrap:anywhere}
+h1{font-size:clamp(30px,8vw,56px)}
+h2{font-size:clamp(24px,6vw,40px)}
+h3{font-size:20px}
+p{margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+section{padding:56px 0;position:relative}
+.eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#14213d;padding:5px 12px;border-radius:99px;margin-bottom:14px}
+.top{background:#14213d;color:#fff;font-size:12.5px;text-align:center;padding:7px 12px;line-height:1.35}
+header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:2px solid color-mix(in srgb,var(--text) 12%,transparent);height:64px}
+.hrow{display:flex;align-items:center;gap:10px;height:64px;width:min(1120px,100% - 24px);margin-inline:auto}
+.logo{display:flex;align-items:center;gap:8px;min-width:0;flex:1;text-decoration:none;font:800 18px/1 var(--hf)}
+.logo span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;font-size:18px}
+.logo img{height:34px;width:auto;border-radius:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:99px;border:2px solid var(--text);background:var(--brand);color:#fff;font:700 16px var(--bf);text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .18s,box-shadow .18s;box-shadow:0 4px 0 var(--text)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--text)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--text)}
+.btn.alt{background:var(--accent);color:#14213d}
+.btn.ghost{background:var(--surface);color:var(--text)}
+.hbtn{min-height:44px;padding:0 14px;font-size:15px;box-shadow:0 3px 0 var(--text)}
+.menu-btn{width:44px;height:44px;border-radius:14px;border:2px solid var(--text);background:var(--surface);display:grid;place-content:center;gap:5px;cursor:pointer;flex:none}
+.menu-btn i{display:block;width:20px;height:2.5px;background:var(--text);border-radius:2px}
+nav.desk{display:none}
+#drawer{position:fixed;inset:0;z-index:100;background:var(--brand);color:#fff;display:none;flex-direction:column;padding:20px 24px;overflow:auto}
+#drawer.open{display:flex}
+#drawer .close{align-self:flex-end;min-width:44px;min-height:44px;border-radius:50%;border:2px solid #fff;background:transparent;color:#fff;font-size:24px;cursor:pointer}
+#drawer a.l{font:800 clamp(28px,8vw,40px)/1.2 var(--hf);text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.25)}
+#drawer .btn{margin-top:22px;background:var(--accent);color:#14213d;border-color:#14213d}
+.hero{padding:0;background:var(--bg);overflow:hidden;isolation:isolate}
+.hero .stage{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.3}
+.hero canvas{position:absolute;right:0;top:0;width:70vw!important;height:100%!important}
+.hero .fb{position:absolute;inset:0;background:radial-gradient(circle at 80% 30%,color-mix(in srgb,var(--accent) 60%,transparent),transparent 55%)}
+.hero .in{position:relative;z-index:2;padding:44px 0 56px;display:grid;gap:28px}
+.hero p.sub{font-size:17px;max-width:46ch;color:var(--muted)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero .ph{border-radius:var(--r);overflow:hidden;border:3px solid var(--text);aspect-ratio:4/3;position:relative;background:var(--brand)}
+.hero .ph img{width:100%;height:100%;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.stat{background:var(--surface);border:2px solid var(--text);border-radius:18px;padding:12px}
+.stat b{display:block;font:800 clamp(20px,5.5vw,30px) var(--hf);color:var(--brand)}
+.stat span{font-size:13px;color:var(--muted);line-height:1.3;display:block}
+.fallback{background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;width:100%;height:100%}
+.fallback svg{width:48px;height:48px;opacity:.85}
+.block{background:var(--brand);color:#fff}
+.block .eyebrow{background:var(--accent)}
+.grid{display:grid;gap:18px;grid-template-columns:1fr}
+.card{background:var(--surface);border:2px solid var(--text);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;color:var(--text)}
+.card:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 8px 0 var(--text)}
+.card .im{aspect-ratio:16/10;background:var(--brand);position:relative;overflow:hidden}
+.card .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .im img{transform:scale(1.06)}
+.card .bd{padding:18px;display:flex;flex-direction:column;flex:1}
+.card p{color:var(--muted);font-size:15px}
+.meta{margin-top:auto;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;font-size:14px}
+.price{font:800 20px var(--hf);color:var(--brand)}
+.tag{position:absolute;left:10px;top:10px;background:var(--accent);color:#14213d;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chip{min-height:44px;padding:0 16px;border-radius:99px;border:2px solid var(--text);background:var(--surface);color:var(--text);font:600 15px var(--bf);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--text);color:#fff}
+.pts{display:grid;gap:14px}
+.pt{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.5);border-radius:var(--r);padding:20px}
+.pt .n{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#14213d;display:grid;place-items:center;font:800 18px var(--hf);margin-bottom:10px}
+.pt p{margin:0;opacity:.95}
+.steps{display:grid;gap:14px;counter-reset:s}
+.step{background:var(--surface);border:2px solid var(--text);border-radius:var(--r);padding:20px 20px 20px 74px;position:relative}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:42px;height:42px;border-radius:14px;background:var(--accent);border:2px solid var(--text);display:grid;place-items:center;font:800 20px var(--hf)}
+.step p{margin:0;color:var(--muted)}
+.about{display:grid;gap:24px;align-items:center}
+.about .ph{border-radius:var(--r);overflow:hidden;border:3px solid var(--text);aspect-ratio:4/3;background:var(--brand)}
+.about .ph img{width:100%;height:100%;object-fit:cover}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gal button{padding:0;border:2px solid var(--text);border-radius:18px;overflow:hidden;aspect-ratio:1;cursor:pointer;background:var(--brand);position:relative}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gal button:hover img{transform:scale(1.07)}
+#lb{position:fixed;inset:0;z-index:120;background:rgba(10,15,30,.92);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px;gap:12px}
+#lb.open{display:flex}
+#lb img{max-height:75vh;max-width:100%;border-radius:14px;object-fit:contain}
+#lb p{color:#fff;margin:0}
+#lb button{min-height:44px;min-width:44px;border-radius:99px;border:2px solid #fff;background:transparent;color:#fff;font-size:18px;cursor:pointer;padding:0 16px}
+.tt-play{position:relative;border:2px solid var(--text);border-radius:var(--r);overflow:hidden;padding:0;cursor:pointer;aspect-ratio:16/9;background:var(--brand);width:100%}
+.tt-play img{width:100%;height:100%;object-fit:cover}
+.tt-play:after{content:"▶";position:absolute;inset:0;margin:auto;width:60px;height:60px;border-radius:50%;background:var(--accent);color:#14213d;display:grid;place-items:center;font-size:22px}
+.vid iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:var(--r)}
+.vid small a{font-size:14px}
+details{background:var(--surface);border:2px solid var(--text);border-radius:18px;margin-bottom:10px;color:var(--text)}
+summary{cursor:pointer;padding:16px 50px 16px 18px;font:700 17px var(--hf);list-style:none;position:relative;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:16px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-size:20px}
+details[open] summary:after{content:"–"}
+details p{padding:0 18px 16px;margin:0;color:var(--muted)}
+.contact{display:grid;gap:24px}
+form{background:var(--surface);color:var(--text);border:2px solid var(--text);border-radius:var(--r);padding:20px;display:grid;gap:14px}
+label{font-weight:700;font-size:14px;display:grid;gap:6px}
+input,select,textarea{font:16px var(--bf);padding:12px 14px;border:2px solid var(--text);border-radius:14px;background:var(--bg);color:var(--text);min-height:46px;width:100%}
+textarea{min-height:96px;resize:vertical}
+.err{color:#b00020;font-size:13px;min-height:0}
+.note{font-size:14px;padding:12px 14px;border-radius:14px;background:color-mix(in srgb,var(--accent) 35%,#fff);color:#14213d;display:none}
+.note.show{display:block}
+.info{display:grid;gap:10px;align-content:start}
+.info .row{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.5);border-radius:18px;padding:14px 16px}
+.info b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.info a{color:#fff;overflow-wrap:anywhere}
+footer{background:#14213d;color:#e8ecf5;padding:36px 0 90px;font-size:14px}
+footer a{color:#fff}
+.wa{position:fixed;right:14px;bottom:14px;z-index:60;width:56px;height:56px;border-radius:50%;background:#128c4a;color:#fff;display:grid;place-items:center;border:2px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.3);text-decoration:none;transition:transform .2s}
+.wa:hover{transform:scale(1.08) rotate(-6deg)}
+.wa svg{width:30px;height:30px}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media(min-width:700px){
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .pts{grid-template-columns:repeat(2,1fr)}
+ .gal{grid-template-columns:repeat(3,1fr)}
+ .about{grid-template-columns:1fr 1fr}
+ .contact{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:repeat(2,1fr)}
+ section{padding:80px 0}
+}
+@media(min-width:1000px){
+ .grid{grid-template-columns:repeat(3,1fr)}
+ .pts{grid-template-columns:repeat(4,1fr)}
+ .steps{grid-template-columns:repeat(4,1fr)}
+ .step{padding:74px 18px 20px}
+ .hero .in{grid-template-columns:1.1fr .9fr;align-items:center;padding:70px 0}
+ .hero canvas{width:55vw!important}
+ .hero .stage{opacity:.9}
+ .hero .stage.on{opacity:.55}
+ nav.desk{display:flex;gap:18px;font-weight:600;font-size:15px}
+ nav.desk a{text-decoration:none;padding:8px 2px;border-bottom:3px solid transparent}
+ nav.desk a:hover{border-color:var(--accent)}
+ .menu-btn{display:none}
+ .logo span{font-size:22px}
+}
+@media(prefers-reduced-motion:reduce){
+ *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+ .rv{opacity:1;transform:none}
+}
+</style>
+<style id='phone-safety'>canvas{pointer-events:none!important}@media(max-width:820px){canvas{opacity:.3!important}html,body{overflow-x:hidden}img,video{max-width:100%}}</style></head>
 <body>
-
-  <!-- Top Banner -->
-  <div class="concept-banner">
-    Independent website concept by LeadSky for U.S. Egg. Not their official website.
+<div class="top" id="banner"></div>
+<header>
+ <div class="hrow">
+  <a class="logo" href="#top" id="logo"></a>
+  <nav class="desk" id="deskNav" aria-label="Main"></nav>
+  <a class="btn hbtn" id="hCta" href="#contact"></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
+ </div>
+</header>
+<div id="drawer" role="dialog" aria-modal="true" aria-label="Menu"></div>
+<main id="top">
+ <section class="hero" id="hero">
+  <div class="stage" id="stage" aria-hidden="true"><div class="fb"></div></div>
+  <div class="wrap in">
+   <div>
+    <span class="eyebrow" id="hEye"></span>
+    <h1 id="hTitle"></h1>
+    <p class="sub" id="hSub"></p>
+    <div class="ctas" id="hCtas"></div>
+    <div class="stats" id="stats"></div>
+   </div>
+   <div class="ph" id="hPh"></div>
   </div>
-
-  <!-- Navigation -->
-  <nav class="nav">
-    <a href="#" class="nav-brand">U.S. EGG <span>// VALLEY</span></a>
-    <ul class="nav-links">
-      <li><a href="#locations">Locations</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#catering">Catering</a></li>
-      <li><a href="#story">Story</a></li>
-    </ul>
-    <button class="nav-cta" onclick="openOrderModal('General Order')">Order Online</button>
-    <button class="mobile-menu-btn" aria-label="Toggle Menu">&#9776;</button>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span>☀️</span> Phoenix, Scottsdale & Gilbert
-      </div>
-      <h1>Legendary Breakfast & Fresh Craft Coffee across the Phoenix Valley</h1>
-      <p>Fluffy buttermilk pancakes, artisan eggs Benedict, and sun-kissed morning favorites crafted daily in Phoenix, Scottsdale, and Gilbert.</p>
-      <div class="hero-buttons">
-        <a href="#menu" class="btn-primary">Explore Menu & Locations</a>
-        <a href="#catering" class="btn-secondary">View Catering</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <img src="img/stock-9.jpg" alt="Cast iron skillet breakfast with eggs bacon and potatoes">
-      <div class="hero-overlay">
-        <h3>Southwestern Green Chile Skillet</h3>
-        <p>Freshly cracked eggs, roasted green chiles, potatoes, and melted cheese under warm Arizona sunshine.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3D Interactive Showcase Section -->
-  <section class="showcase-3d-section" id="story">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Craftsmanship</span>
-        <h2>The Morning Sanctuary Experience</h2>
-        <p>Every plate and every cup of artisan coffee is crafted with care to fuel your morning across the Arizona desert.</p>
-      </div>
-      <div class="interactive-3d-wrapper">
-        <div class="canvas-container" id="canvas-container">
-          <canvas id="canvas-3d"></canvas>
-          <div class="canvas-badge" id="canvas-badge-text">Interactive 3D Coffee Cup (Drag to Rotate)</div>
-        </div>
-        <div class="showcase-content">
-          <h3>Artisan Coffee & Fresh Ingredients</h3>
-          <p>We believe mornings in the Valley deserve better coffee, hearty farm-fresh breakfasts, and a welcoming atmosphere for families and locals alike.</p>
-          <ul class="feature-list">
-            <li><span>✓</span> Freshly roasted specialty coffee and handcrafted lattes</li>
-            <li><span>✓</span> Signature pancake batters made fresh every morning</li>
-            <li><span>✓</span> Warm, sunlit dining rooms and outdoor patio seating</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Locations Section -->
-  <section class="locations-section" id="locations">
-    <div class="section-header">
-      <span class="section-tag">Find Your Spot</span>
-      <h2>Choose Your Valley Spot</h2>
-      <p>Visit your nearest U.S. Egg cafe in Phoenix, Scottsdale, or Gilbert for dine-in, takeout, or delivery.</p>
-    </div>
-    <div class="locations-grid">
-      <!-- Location 1 -->
-      <div class="location-card">
-        <div class="location-img-wrap">
-          <img src="img/stock-5.jpg" alt="Sunny restaurant patio with outdoor dining chairs and umbrellas in arizona">
-          <span class="location-badge">Scottsdale</span>
-        </div>
-        <div class="location-body">
-          <h3>Scottsdale (Shea Blvd)</h3>
-          <div class="location-details">
-            <div>📍 <span>7119 East Shea Boulevard, Scottsdale, AZ 85254</span></div>
-            <div>📞 <a href="tel:+14804435558" style="color:var(--brand); text-decoration:none;">+1 480-443-5558</a></div>
-            <div>🕒 <span>Open Daily: 6:30 AM – 2:30 PM</span></div>
-          </div>
-          <div class="location-actions">
-            <a href="https://www.useggrestaurant.com" target="_blank" rel="noopener" class="btn-card primary">Order Online</a>
-            <a href="https://maps.google.com/?q=7119+East+Shea+Boulevard+Scottsdale+85254" target="_blank" rel="noopener" class="btn-card secondary">Get Directions</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Location 2 -->
-      <div class="location-card">
-        <div class="location-img-wrap">
-          <img src="img/stock-6.jpg" alt="Sunny restaurant patio in Phoenix">
-          <span class="location-badge">Phoenix</span>
-        </div>
-        <div class="location-body">
-          <h3>Phoenix Valley Spot</h3>
-          <div class="location-details">
-            <div>📍 <span>Central Phoenix Location, Phoenix, AZ</span></div>
-            <div>📞 <a href="tel:+14804435558" style="color:var(--brand); text-decoration:none;">+1 480-443-5558</a></div>
-            <div>🕒 <span>Open Daily: 6:30 AM – 2:30 PM</span></div>
-          </div>
-          <div class="location-actions">
-            <a href="https://www.useggrestaurant.com" target="_blank" rel="noopener" class="btn-card primary">Order Online</a>
-            <a href="https://maps.google.com/?q=Phoenix+AZ" target="_blank" rel="noopener" class="btn-card secondary">Get Directions</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Location 3 -->
-      <div class="location-card">
-        <div class="location-img-wrap">
-          <img src="img/stock-7.jpg" alt="Barista pouring latte art into ceramic mug in bright sunlit cafe">
-          <span class="location-badge">Gilbert</span>
-        </div>
-        <div class="location-body">
-          <h3>Gilbert Spot</h3>
-          <div class="location-details">
-            <div>📍 <span>East Valley Gilbert Location, Gilbert, AZ</span></div>
-            <div>📞 <a href="tel:+14804435558" style="color:var(--brand); text-decoration:none;">+1 480-443-5558</a></div>
-            <div>🕒 <span>Open Daily: 6:30 AM – 2:30 PM</span></div>
-          </div>
-          <div class="location-actions">
-            <a href="https://www.useggrestaurant.com" target="_blank" rel="noopener" class="btn-card primary">Order Online</a>
-            <a href="https://maps.google.com/?q=Gilbert+AZ" target="_blank" rel="noopener" class="btn-card secondary">Get Directions</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Menu Section -->
-  <section class="menu-section" id="menu">
-    <div class="section-header">
-      <span class="section-tag">Fresh Kitchen</span>
-      <h2>Explore Our Signature Plates</h2>
-      <p>Crafted fresh daily using wholesome ingredients and time-honored morning recipes.</p>
-    </div>
-    <div class="menu-tabs">
-      <button class="tab-btn active" onclick="filterMenu('all')">All Classics</button>
-      <button class="tab-btn" onclick="filterMenu('breakfast')">Breakfast Griddle</button>
-      <button class="tab-btn" onclick="filterMenu('lunch')">Lunch & Toast</button>
-      <button class="tab-btn" onclick="filterMenu('coffee')">Craft Coffee</button>
-    </div>
-    <div class="menu-grid">
-      <!-- Menu Item 1 -->
-      <div class="menu-card" data-category="breakfast">
-        <div class="menu-card-img">
-          <img src="img/business-featured-1.webp" alt="Berry Pancakes featured dish">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-header">
-            <h3>Legendary Berry Pancakes</h3>
-            <span class="menu-price">$13.50</span>
-          </div>
-          <p>Towering fluffy buttermilk pancakes loaded with fresh seasonal berries and pure maple syrup.</p>
-          <div class="menu-card-footer">
-            <span style="font-size: 0.8rem; color: var(--text-muted);">Fresh Griddle</span>
-            <button class="order-btn" onclick="openOrderModal('Legendary Berry Pancakes')">Add to Order</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Menu Item 2 -->
-      <div class="menu-card" data-category="breakfast">
-        <div class="menu-card-img">
-          <img src="img/stock-2.jpg" alt="Stack of fluffy pancakes with whipped cream and maple syrup">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-header">
-            <h3>Classic Whipped Cream Stacks</h3>
-            <span class="menu-price">$12.00</span>
-          </div>
-          <p>Light, airy pancakes topped with whipped sweet cream and melted butter.</p>
-          <div class="menu-card-footer">
-            <span style="font-size: 0.8rem; color: var(--text-muted);">Griddle Favorite</span>
-            <button class="order-btn" onclick="openOrderModal('Classic Whipped Cream Stacks')">Add to Order</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Menu Item 3 -->
-      <div class="menu-card" data-category="lunch">
-        <div class="menu-card-img">
-          <img src="img/stock-3.jpg" alt="Poached eggs on toast with breakfast greens">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-header">
-            <h3>Artisan Avocado Toast</h3>
-            <span class="menu-price">$14.25</span>
-          </div>
-          <p>Smashed farm-fresh avocado, perfectly poached eggs, and microgreens on artisan rustic bread.</p>
-          <div class="menu-card-footer">
-            <span style="font-size: 0.8rem; color: var(--text-muted);">Healthy Choice</span>
-            <button class="order-btn" onclick="openOrderModal('Artisan Avocado Toast')">Add to Order</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Menu Item 4 -->
-      <div class="menu-card" data-category="coffee">
-        <div class="menu-card-img">
-          <img src="img/stock-8.jpg" alt="Coffee cappuccino latte art in ceramic cup">
-        </div>
-        <div class="menu-card-body">
-          <div class="menu-card-header">
-            <h3>Craft Latte & Espresso</h3>
-            <span class="menu-price">$5.25</span>
-          </div>
-          <p>Rich espresso poured with velvety steamed milk and exquisite latte art.</p>
-          <div class="menu-card-footer">
-            <span style="font-size: 0.8rem; color: var(--text-muted);">Specialty Coffee</span>
-            <button class="order-btn" onclick="openOrderModal('Craft Latte & Espresso')">Add to Order</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Catering Section -->
-  <section class="catering-section" id="catering">
-    <div class="catering-grid">
-      <div class="catering-content">
-        <span class="section-tag">Group Catering</span>
-        <h2>Feed the Whole Crew Across the Valley</h2>
-        <p>From corporate breakfast meetings to family gatherings and morning celebrations, bring legendary U.S. Egg platters, fresh breakfast burritos, and craft coffee directly to your table.</p>
-        <ul class="feature-list">
-          <li><span>✓</span> Customized morning platters and breakfast burritos</li>
-          <li><span>✓</span> Fresh coffee carafes and artisan pastry trays</li>
-          <li><span>✓</span> Convenient pickup or delivery across Phoenix, Scottsdale & Gilbert</li>
-        </ul>
-      </div>
-      <div class="catering-form-wrap">
-        <h3 style="font-family:var(--font-display); font-size:1.5rem; margin-bottom:20px; color:var(--text);">Request Catering Quote</h3>
-        <form id="catering-form" onsubmit="handleCateringSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" class="form-control" required placeholder="Jane Doe">
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" class="form-control" required placeholder="+1 (480) 000-0000">
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="date">Event Date</label>
-              <input type="date" id="date" class="form-control" required>
-            </div>
-            <div class="form-group">
-              <label for="headcount">Headcount</label>
-              <input type="number" id="headcount" class="form-control" required placeholder="15">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="notes">Catering Details / Location</label>
-            <textarea id="notes" class="form-control" rows="3" placeholder="Tell us about your event and preferred Valley location"></textarea>
-          </div>
-          <button type="submit" class="form-submit-btn">Submit Catering Request</button>
-          <div id="form-message" class="form-message">This is a demo form, nothing was sent.</div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-brand">
-        <h3>U.S. EGG <span>// VALLEY</span></h3>
-        <p>Serving legendary breakfast, lunch, and craft coffee across Phoenix, Scottsdale, and Gilbert. Crafted fresh daily.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="#locations">Valley Locations</a></li>
-          <li><a href="#menu">Featured Menu</a></li>
-          <li><a href="#catering">Catering Services</a></li>
-          <li><a href="#story">Our Story</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Contact & Info</h4>
-        <ul>
-          <li><a href="tel:+14804435558">+1 480-443-5558</a></li>
-          <li><a href="mailto:privacy@useggrestaurant.com">privacy@useggrestaurant.com</a></li>
-          <li><span>7119 East Shea Boulevard, Scottsdale, AZ 85254</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="photo-credits">
-        <span>Stock photo credits: Pixabay photographers (piviso, JillWellington, pen_ash, Pexels, Cparks, 13758299, 8618939, Alexas_Fotos, romjanaly).</span>
-        <span>Business featured image published by U.S. Egg on their website.</span>
-      </div>
-      <div>
-        <span>Concept by LeadSky. Not affiliated with U.S. Egg.</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Modal for Order Demo -->
-  <div class="modal-overlay" id="order-modal">
-    <div class="modal-card">
-      <button class="modal-close" onclick="closeOrderModal()">&times;</button>
-      <h3>Online Ordering Demo</h3>
-      <p id="modal-item-text">You selected an item from the U.S. Egg menu. In the live website, this opens the secure online ordering checkout for your nearest Valley location.</p>
-      <div style="background: var(--bg); padding: 16px; border-radius: 12px; margin-bottom: 20px; font-size: 0.9rem; color: var(--text-muted);">
-        <strong>Demo Status:</strong> Online cart simulation active. No payment or real order was processed.
-      </div>
-      <button class="form-submit-btn" onclick="closeOrderModal()">Got it (Close Demo)</button>
-    </div>
+ </section>
+ <section id="services" hidden><div class="wrap">
+  <span class="eyebrow">Services</span><h2>What we can help with</h2>
+  <div class="chips" id="chips"></div>
+  <div class="grid" id="items"></div>
+ </div></section>
+ <section class="block" id="why" hidden><div class="wrap">
+  <span class="eyebrow">Why choose us</span><h2>What you can expect</h2>
+  <div class="pts" id="pts"></div>
+ </div></section>
+ <section id="process" hidden><div class="wrap">
+  <span class="eyebrow">Process</span><h2>How it works</h2>
+  <div class="steps" id="steps"></div>
+ </div></section>
+ <section id="about" hidden style="background:color-mix(in srgb,var(--accent) 22%,var(--bg))"><div class="wrap about">
+  <div><span class="eyebrow">About</span><h2 id="aT"></h2><p id="aX"></p></div>
+  <div class="ph" id="aPh"></div>
+ </div></section>
+ <section id="area" hidden><div class="wrap">
+  <span class="eyebrow">Service area</span><h2 id="areaT"></h2><p id="areaX"></p>
+ </div></section>
+ <section id="work" hidden><div class="wrap">
+  <span class="eyebrow">Gallery</span><h2>Our work</h2>
+  <div class="gal" id="gal"></div>
+ </div></section>
+ <section id="videos" hidden><div class="wrap">
+  <span class="eyebrow">Videos</span><h2>Watch</h2>
+  <div class="grid" id="vids"></div>
+ </div></section>
+ <section id="faq" hidden><div class="wrap" style="max-width:780px">
+  <span class="eyebrow">FAQ</span><h2>Common questions</h2>
+  <div id="faqs"></div>
+ </div></section>
+ <section class="block" id="contact"><div class="wrap contact">
+  <div>
+   <span class="eyebrow">Get in touch</span><h2>Request a quote or booking</h2>
+   <p>Tell us what you need. This form is a demo and does not send anything.</p>
+   <div class="info" id="info"></div>
   </div>
-
-  <script>
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Mobile menu toggle
-    const mobileBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    mobileBtn.addEventListener('click', () => {
-      if (navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
-      } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '75px';
-        navLinks.style.left = '0';
-        navLinks.style.right = '0';
-        navLinks.style.background = 'var(--bg)';
-        navLinks.style.padding = '24px';
-        navLinks.style.borderBottom = '1px solid var(--border)';
-      }
-    });
-
-    // Menu category filter
-    function filterMenu(category) {
-      const buttons = document.querySelectorAll('.tab-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      const cards = document.querySelectorAll('.menu-card');
-      cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    // Modal functions
-    function openOrderModal(itemName) {
-      const modal = document.getElementById('order-modal');
-      const text = document.getElementById('modal-item-text');
-      text.innerText = `You selected "${itemName}". In the live website, this opens the online ordering cart for pickup or delivery at our Phoenix, Scottsdale, or Gilbert locations.`;
-      modal.classList.add('active');
-    }
-
-    function closeOrderModal() {
-      const modal = document.getElementById('order-modal');
-      modal.classList.remove('active');
-    }
-
-    // Catering form submission demo
-    function handleCateringSubmit(event) {
-      event.preventDefault();
-      const msg = document.getElementById('form-message');
-      msg.style.display = 'block';
-      msg.classList.add('success');
-      document.getElementById('catering-form').reset();
-    }
-
-    // Three.js Interactive Coffee Cup 3D Scene (Respects prefers-reduced-motion)
-    const container = document.getElementById('canvas-container');
-    if (container && typeof THREE !== 'undefined') {
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-      camera.position.set(0, 3, 6);
-
-      const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas-3d'), antialias: true, alpha: true });
-      renderer.setSize(container.clientWidth, container.clientHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-      // Lighting
-      const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
-      scene.add(ambientLight);
-
-      const directionalLight = new THREE.DirectionalLight(0xfff5e6, 2.0);
-      directionalLight.position.set(5, 8, 5);
-      scene.add(directionalLight);
-
-      const pointLight = new THREE.PointLight(0xe36414, 1.5, 10);
-      pointLight.position.set(-3, 2, 2);
-      scene.add(pointLight);
-
-      // Coffee Cup Group
-      const cupGroup = new THREE.Group();
-
-      // Saucer
-      const saucerGeo = new THREE.CylinderGeometry(1.8, 1.2, 0.15, 32);
-      const saucerMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.2, metalness: 0.1 });
-      const saucer = new THREE.Mesh(saucerGeo, saucerMat);
-      saucer.position.y = -0.6;
-      cupGroup.add(saucer);
-
-      // Cup Body
-      const cupGeo = new THREE.CylinderGeometry(1.1, 0.8, 1.8, 32);
-      const cupMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.15, metalness: 0.1 });
-      const cup = new THREE.Mesh(cupGeo, cupMat);
-      cupGroup.add(cup);
-
-      // Coffee Liquid inside
-      const liquidGeo = new THREE.CylinderGeometry(1.05, 0.78, 0.1, 32);
-      const liquidMat = new THREE.MeshStandardMaterial({ color: 0x4a2e1b, roughness: 0.4 });
-      const liquid = new THREE.Mesh(liquidGeo, liquidMat);
-      liquid.position.y = 0.75;
-      cupGroup.add(liquid);
-
-      // Cup Handle
-      const handleCurve = new THREE.EllipseCurve(
-        0, 0,
-        0.5, 0.7,
-        -Math.PI / 2, Math.PI / 2,
-        false,
-        0
-      );
-      const points = handleCurve.getPoints(50);
-      const handleGeo = new THREE.TubeGeometry(new THREE.CatmullRomCurve3(points.map(p => new THREE.Vector3(1.1 + p.x * 0.2, p.y * 0.8, 0))), 20, 0.12, 16, false);
-      const handleMat = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.2 });
-      const handle = new THREE.Mesh(handleGeo, handleMat);
-      handle.rotation.y = Math.PI / 2;
-      handle.position.x = 1.1;
-      cupGroup.add(handle);
-
-      scene.add(cupGroup);
-
-      // Set initial rotation
-      cupGroup.rotation.x = 0.2;
-      cupGroup.rotation.y = 0.5;
-
-      if (prefersReducedMotion) {
-        // Render static frame for reduced motion
-        renderer.render(scene, camera);
-        const badgeText = document.getElementById('canvas-badge-text');
-        if (badgeText) badgeText.innerText = 'Interactive 3D Coffee Cup (Static due to reduced motion)';
-      } else {
-        // Interaction variables
-        let isDragging = false;
-        let previousMousePosition = { x: 0, y: 0 };
-        let targetRotation = { x: 0.2, y: 0.5 };
-
-        container.addEventListener('mousedown', (e) => {
-          isDragging = true;
-          previousMousePosition = { x: e.clientX, y: e.clientY };
-        });
-
-        window.addEventListener('mousemove', (e) => {
-          if (!isDragging) return;
-          const deltaX = e.clientX - previousMousePosition.x;
-          const deltaY = e.clientY - previousMousePosition.y;
-
-          targetRotation.y += deltaX * 0.008;
-          targetRotation.x += deltaY * 0.008;
-
-          previousMousePosition = { x: e.clientX, y: e.clientY };
-        });
-
-        window.addEventListener('mouseup', () => {
-          isDragging = false;
-        });
-
-        // Touch support
-        container.addEventListener('touchstart', (e) => {
-          isDragging = true;
-          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        });
-
-        window.addEventListener('touchmove', (e) => {
-          if (!isDragging) return;
-          const deltaX = e.touches[0].clientX - previousMousePosition.x;
-          const deltaY = e.touches[0].clientY - previousMousePosition.y;
-
-          targetRotation.y += deltaX * 0.008;
-          targetRotation.x += deltaY * 0.008;
-
-          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        });
-
-        window.addEventListener('touchend', () => {
-          isDragging = false;
-        });
-
-        // Animation loop
-        function animate() {
-          requestAnimationFrame(animate);
-
-          // Smooth rotation inertia if not dragging
-          if (!isDragging) {
-            targetRotation.y += 0.005; // Gentle auto-rotation
-          }
-
-          cupGroup.rotation.y += (targetRotation.y - cupGroup.rotation.y) * 0.05;
-          cupGroup.rotation.x += (targetRotation.x - cupGroup.rotation.x) * 0.05;
-
-          // Clamp x rotation to avoid flipping upside down
-          targetRotation.x = Math.max(-0.5, Math.min(0.8, targetRotation.x));
-
-          renderer.render(scene, camera);
-        }
-
-        animate();
-      }
-
-      // Window resize handling
-      window.addEventListener('resize', () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        if (prefersReducedMotion) {
-          renderer.render(scene, camera);
-        }
-      });
-    }
-  </script>
+  <form id="form" novalidate>
+   <label>Your name<input name="name" autocomplete="name" required><span class="err" data-for="name"></span></label>
+   <label>Phone or email<input name="contact" autocomplete="tel" required><span class="err" data-for="contact"></span></label>
+   <label>Service<select name="service" id="fService"></select></label>
+   <label>Preferred time<select name="slot" id="fSlot"></select></label>
+   <label>Details<textarea name="msg" placeholder="Tell us a little about the job"></textarea></label>
+   <button class="btn" type="submit" id="fBtn">Send request</button>
+   <div class="note" id="fNote" role="status" aria-live="polite"></div>
+  </form>
+ </div></section>
+</main>
+<footer><div class="wrap">
+ <p id="fAddr"></p>
+ <p id="fCred"></p>
+ <p>Concept by LeadSky</p>
+</div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Image viewer"><img alt=""><p></p><button id="lbX">Close</button></div>
+<script>
+(function(){
+var S=JSON.parse(document.getElementById('site-data').textContent);
+var B=S.brand||{},C=S.colors||{},F=S.fonts||{},H=S.hero||{};
+var $=function(i){return document.getElementById(i)};
+var esc=function(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML};
+var R=document.documentElement.style;
+['bg','surface','text','muted','brand','accent'].forEach(function(k){if(C[k])R.setProperty('--'+k,C[k])});
+var fams=[];
+[F.heading,F.body].forEach(function(f){if(f&&fams.indexOf(f)<0)fams.push(f)});
+if(fams.length){var l=document.createElement('link');l.rel='stylesheet';
+l.href='https://fonts.googleapis.com/css2?'+fams.map(function(f){return 'family='+encodeURIComponent(f).replace(/%20/g,'+')+':wght@400;600;700;800'}).join('&')+'&display=swap';
+document.head.appendChild(l);
+var sys='system-ui,-apple-system,"Segoe UI",Roboto,sans-serif';
+if(F.heading)R.setProperty('--hf','"'+F.heading+'",'+sys);
+if(F.body)R.setProperty('--bf','"'+F.body+'",'+sys);}
+document.title=B.name||'Website';
+$('banner').textContent=S.banner||'';
+if(!S.banner)$('banner').style.display='none';
+var icon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg>';
+function img(src,alt,lazy){
+ return '<img src="'+esc(src)+'" alt="'+esc(alt)+'"'+(lazy?' loading="lazy" decoding="async"':'')+' onerror="this.parentNode.replaceChild(fb(),this)">';
+}
+window.fb=function(){var d=document.createElement('div');d.className='fallback';d.setAttribute('role','img');d.setAttribute('aria-label','Image unavailable');d.innerHTML=icon;return d};
+function ph(el,src,alt,lazy){if(src)el.innerHTML=img(src,alt,lazy);else el.appendChild(fb())}
+var tel=(B.phone||'').replace(/[^\d+]/g,'');
+// header
+var lg=$('logo');
+lg.innerHTML=(B.logo?'<img src="'+esc(B.logo)+'" alt="" onerror="this.remove()">':'')+'<span>'+esc(B.name)+'</span>';
+lg.setAttribute('aria-label',(B.name||'')+' home');
+var cta=H.cta_primary||'Get a quote';
+$('hCta').textContent=tel?'Call':cta;
+$('hCta').href=tel?'tel:'+tel:'#contact';
+// nav
+var nav=[];
+function has(a){return Array.isArray(a)&&a.length}
+if(has(S.items))nav.push(['services','Services']);
+if(has(S.points))nav.push(['why','Why us']);
+if(has(S.steps))nav.push(['process','Process']);
+if(S.about&&(S.about.text||S.about.title))nav.push(['about','About']);
+nav.push(['area','Area']);
+if(has(S.gallery))nav.push(['work','Work']);
+if(has(S.videos))nav.push(['videos','Videos']);
+if(has(S.faq))nav.push(['faq','FAQ']);
+nav.push(['contact','Contact']);
+$('deskNav').innerHTML=nav.map(function(n){return '<a href="#'+n[0]+'">'+n[1]+'</a>'}).join('');
+var dr=$('drawer');
+dr.innerHTML='<button class="close" id="dClose" aria-label="Close menu">×</button>'+nav.map(function(n){return '<a class="l" href="#'+n[0]+'">'+n[1]+'</a>'}).join('')+'<a class="btn" href="#contact">'+esc(cta)+'</a>'+(tel?'<a class="btn ghost" href="tel:'+tel+'">Call '+esc(B.phone)+'</a>':'');
+function setMenu(o){dr.classList.toggle('open',o);$('menuBtn').setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';if(o)$('dClose').focus();else $('menuBtn').focus()}
+$('menuBtn').onclick=function(){setMenu(true)};
+dr.addEventListener('click',function(e){if(e.target.closest('a')||e.target.id==='dClose'){var a=e.target.closest('a');dr.classList.remove('open');$('menuBtn').setAttribute('aria-expanded',false);document.body.style.overflow='';}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(dr.classList.contains('open'))setMenu(false);$('lb').classList.remove('open')}});
+// hero
+$('hEye').textContent=H.eyebrow||'';if(!H.eyebrow)$('hEye').style.display='none';
+$('hTitle').textContent=H.title||B.name||'';
+$('hSub').textContent=H.subtitle||B.tagline||'';
+var hc='<a class="btn" href="#contact">'+esc(cta)+'</a>';
+if(H.cta_secondary){hc+=tel?'<a class="btn ghost" href="tel:'+tel+'">'+esc(H.cta_secondary)+'</a>':'<a class="btn ghost" href="#services">'+esc(H.cta_secondary)+'</a>'}
+$('hCtas').innerHTML=hc;
+$('stats').innerHTML=has(S.stats)?S.stats.map(function(s){return '<div class="stat"><b>'+esc(s.value)+'</b><span>'+esc(s.label)+'</span></div>'}).join(''):'';
+ph($('hPh'),H.image,(B.name||'')+' hero image',false);
+// money
+function money(it){if(it.price&&+it.price>0)return esc(B.currency_symbol||'')+(+it.price).toLocaleString('en-GB');return esc(it.price_label||'')}
+// items
+var items=has(S.items)?S.items.slice(0,12):[];
+if(items.length){
+ $('services').hidden=false;
+ var cats=[];items.forEach(function(i){if(i.category&&cats.indexOf(i.category)<0)cats.push(i.category)});
+ var cur='All';
+ var drawI=function(){
+  $('items').innerHTML=items.filter(function(i){return cur==='All'||i.category===cur}).map(function(i){
+   var m=money(i);
+   return '<article class="card rv"><div class="im">'+(i.image?img(i.image,i.name,true):'<div class="fallback">'+icon+'</div>')+(i.category?'<span class="tag">'+esc(i.category)+'</span>':'')+'</div><div class="bd"><h3>'+esc(i.name)+'</h3><p>'+esc(i.description)+'</p><div class="meta"><span class="price">'+m+'</span><span>'+esc(i.duration)+'</span></div></div></article>';
+  }).join('');
+  reveal();
+ };
+ if(cats.length>1){
+  var all=['All'].concat(cats);
+  $('chips').innerHTML=all.map(function(c){return '<button type="button" class="chip" aria-pressed="'+(c===cur)+'">'+esc(c)+'</button>'}).join('');
+  $('chips').onclick=function(e){var b=e.target.closest('.chip');if(!b)return;cur=b.textContent;[].forEach.call($('chips').children,function(x){x.setAttribute('aria-pressed',x===b)});drawI()};
+ }else $('chips').remove();
+ drawI();
+ $('fService').innerHTML=items.map(function(i){return '<option>'+esc(i.name)+'</option>'}).join('')+'<option>Something else</option>';
+}else $('fService').parentNode.remove();
+var slots=(S.demo&&S.demo.slots)||[];
+if(slots.length)$('fSlot').innerHTML=slots.map(function(s){return '<option>'+esc(s)+'</option>'}).join('');else $('fSlot').parentNode.remove();
+// points
+if(has(S.points)){$('why').hidden=false;$('pts').innerHTML=S.points.map(function(p,i){return '<div class="pt rv"><div class="n">'+(i+1)+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(p.text)+'</p></div>'}).join('')}
+if(has(S.steps)){$('process').hidden=false;$('steps').innerHTML=S.steps.map(function(p){return '<div class="step rv"><h3>'+esc(p.title)+'</h3><p>'+esc(p.text)+'</p></div>'}).join('')}
+if(S.about&&(S.about.text||S.about.title)){$('about').hidden=false;$('aT').textContent=S.about.title||'';$('aX').textContent=S.about.text||'';ph($('aPh'),S.about.image,S.about.title||'About',true)}
+// area
+var place=[B.city,B.country].filter(Boolean).join(', ');
+if(place||B.address){$('area').hidden=false;$('areaT').textContent=place?'Based in '+place:'Where to find us';$('areaX').textContent=(B.address?B.address+'. ':'')+(H.eyebrow&&place?'Coverage: '+H.eyebrow+'.':'')}
+// gallery
+if(has(S.gallery)){
+ $('work').hidden=false;
+ $('gal').innerHTML=S.gallery.slice(0,12).map(function(g,i){return '<button type="button" data-i="'+i+'" aria-label="View: '+esc(g.caption||'photo '+(i+1))+'">'+(g.image?img(g.image,g.caption||'Gallery photo',true):'<div class="fallback">'+icon+'</div>')+'</button>'}).join('');
+ $('gal').onclick=function(e){var b=e.target.closest('button');if(!b)return;var g=S.gallery[+b.dataset.i];if(!g.image)return;var lb=$('lb');lb.querySelector('img').src=g.image;lb.querySelector('img').alt=g.caption||'';lb.querySelector('p').textContent=g.caption||'';lb.classList.add('open');$('lbX').focus()};
+ $('lbX').onclick=function(){$('lb').classList.remove('open')};
+ $('lb').onclick=function(e){if(e.target.id==='lb')$('lb').classList.remove('open')};
+}
+// videos
+if(has(S.videos)){
+ $('videos').hidden=false;
+ $('vids').innerHTML=S.videos.map(function(v){return '<div class="vid"><button class="tt-play" data-player="'+esc(v.player)+'" aria-label="Play video"><img src="'+esc(v.poster)+'" alt="Video preview" loading="lazy"></button>'+(v.link?'<small><a href="'+esc(v.link)+'" target="_blank" rel="noopener">Open</a></small>':'')+'</div>'}).join('');
+ $('vids').onclick=function(e){var b=e.target.closest('.tt-play');if(!b)return;var f=document.createElement('iframe');f.src=b.dataset.player;f.allow='autoplay; fullscreen';f.title='Video';b.replaceWith(f)};
+}
+// faq
+if(has(S.faq)){$('faq').hidden=false;$('faqs').innerHTML=S.faq.map(function(f){return '<details><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>'}).join('')}
+// contact
+var info=[];
+if(B.phone)info.push(['Call','<a href="tel:'+tel+'">'+esc(B.phone)+'</a>']);
+if(B.whatsapp)info.push(['WhatsApp','<a href="https://wa.me/'+esc(B.whatsapp.replace(/\D/g,''))+'" target="_blank" rel="noopener">Message us</a>']);
+if(B.email)info.push(['Email','<a href="mailto:'+esc(B.email)+'">'+esc(B.email)+'</a>']);
+if(B.address)info.push(['Address','<a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(B.address)+'" target="_blank" rel="noopener">'+esc(B.address)+'</a>']);
+if(B.hours)info.push(['Hours',esc(B.hours)]);
+if(B.instagram)info.push(['Instagram','<a href="'+esc(B.instagram)+'" target="_blank" rel="noopener">Follow</a>']);
+if(B.tiktok)info.push(['TikTok','<a href="'+esc(B.tiktok)+'" target="_blank" rel="noopener">Follow</a>']);
+$('info').innerHTML=info.map(function(r){return '<div class="row"><b>'+r[0]+'</b>'+r[1]+'</div>'}).join('');
+// form
+var fm=$('form');
+fm.addEventListener('submit',function(e){
+ e.preventDefault();var ok=true;
+ ['name','contact'].forEach(function(n){
+  var el=fm.elements[n],er=fm.querySelector('[data-for='+n+']');
+  if(!el.value.trim()){er.textContent='Please fill this in.';el.setAttribute('aria-invalid','true');ok=false}
+  else if(n==='contact'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim())&&el.value.replace(/\D/g,'').length<7){er.textContent='Enter a valid phone number or email.';ok=false}
+  else{er.textContent='';el.removeAttribute('aria-invalid')}
+ });
+ var nt=$('fNote');
+ if(!ok){nt.className='note';return}
+ nt.textContent='Thanks, '+fm.elements.name.value.trim()+'. This is a demo form, nothing was sent.';
+ nt.className='note show';
+});
+// whatsapp
+if(B.whatsapp){var w=document.createElement('a');w.className='wa';w.href='https://wa.me/'+B.whatsapp.replace(/\D/g,'');w.target='_blank';w.rel='noopener';w.setAttribute('aria-label','Chat on WhatsApp');w.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.2-.4.700-1.300.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.800 11.900 11.900 0 0 0 4.600 4c1.700.7 2.400.8 3.200.7a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.3-.2-.5-.3z"/></svg>';document.body.appendChild(w)}
+// footer
+$('fAddr').innerHTML='<strong>'+esc(B.name)+'</strong>'+(B.address?' · '+esc(B.address):'');
+$('fCred').innerHTML=has(S.credits)?'Photo credits: '+S.credits.map(function(c){return c.url?'<a href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.text)+'</a>':esc(c.text)}).join(' · '):'';
+if(!has(S.credits))$('fCred').remove();
+// reveal
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var io=('IntersectionObserver' in window&&!rm)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+function reveal(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){if(io)io.observe(el);else el.classList.add('in')})}
+reveal();
+// 3D
+function init3D(){
+ var stage=$('stage');
+ if(rm)return;
+ var gl;try{var c=document.createElement('canvas');gl=c.getContext('webgl')||c.getContext('experimental-webgl')}catch(e){}
+ if(!gl)return;
+ var s=document.createElement('script');
+ s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+ s.onload=function(){try{build(stage)}catch(e){}};
+ document.head.appendChild(s);
+}
+function build(stage){
+ var T=THREE,w=stage.clientWidth,h=stage.clientHeight;
+ var ren=new T.WebGLRenderer({antialias:true,alpha:true});
+ ren.setPixelRatio(Math.min(devicePixelRatio,2));
+ ren.setSize(w,h);stage.appendChild(ren.domElement);stage.classList.add('on');
+ stage.querySelector('.fb').style.display='none';
+ var sc=new T.Scene(),cam=new T.PerspectiveCamera(40,w/h,.1,100);cam.position.set(0,0,7);
+ sc.add(new T.AmbientLight(0xffffff,.55));
+ var d=new T.DirectionalLight(0xffffff,1);d.position.set(4,5,6);sc.add(d);
+ var d2=new T.PointLight(new T.Color(C.accent||'#ffb703'),1.2,30);d2.position.set(-4,-2,3);sc.add(d2);
+ var bm=new T.MeshStandardMaterial({color:new T.Color(C.brand||'#1d4ed8'),roughness:.35,metalness:.25});
+ var am=new T.MeshStandardMaterial({color:new T.Color(C.accent||'#ffb703'),roughness:.3,metalness:.4});
+ var g=new T.Group();
+ function m(geo,mat,x,y,z){var o=new T.Mesh(geo,mat);o.position.set(x||0,y||0,z||0);g.add(o);return o}
+ var shape=H.shape3d||'orb';
+ if(shape==='braid'){
+  [0,1,2].forEach(function(i){
+   var pts=[];for(var t=0;t<=60;t++){var u=t/60*Math.PI*4;pts.push(new T.Vector3(Math.cos(u+i*2.094)*.7,t/60*5-2.5,Math.sin(u+i*2.094)*.7))}
+   m(new T.TubeGeometry(new T.CatmullRomCurve3(pts),120,.22,12),i%2?am:bm)})
+ }else if(shape==='flower'){
+  for(var i=0;i<8;i++){var a=i/8*Math.PI*2;var p=m(new T.SphereGeometry(.7,24,16),i%2?am:bm,Math.cos(a)*1.2,Math.sin(a)*1.2,0);p.scale.set(1,1.6,.4);p.rotation.z=a-Math.PI/2}
+  m(new T.SphereGeometry(.6,24,16),am)
+ }else if(shape==='cake'){
+  [[1.7,.8,-1],[1.2,.8,-.2],[.75,.7,.6]].forEach(function(r,i){m(new T.CylinderGeometry(r[0],r[0],r[1],40),i%2?am:bm,0,r[2],0)});
+  m(new T.CylinderGeometry(.05,.05,.7,8),am,0,1.4,0);m(new T.SphereGeometry(.14,12,12),bm,0,1.85,0)
+ }else if(shape==='gem'){
+  m(new T.OctahedronGeometry(1.8,0),bm).scale.y=1.3
+ }else if(shape==='tooth'){
+  m(new T.SphereGeometry(1.3,32,24),bm,0,.5,0).scale.set(1.2,1,1);
+  [-.6,.6].forEach(function(x){var r=m(new T.CylinderGeometry(.4,.15,1.6,20),bm,x,-1,0);r.rotation.z=x*.3})
+ }else if(shape==='scales'){
+  m(new T.CylinderGeometry(.1,.1,3.6,12),am,0,0,0);m(new T.BoxGeometry(3.4,.1,.1),am,0,1.7,0);
+  [-1.6,1.6].forEach(function(x){m(new T.CylinderGeometry(.8,.8,.1,32),bm,x,.2,0)});
+  m(new T.CylinderGeometry(.7,1,.2,24),am,0,-1.8,0)
+ }else if(shape==='car'){
+  m(new T.BoxGeometry(3.6,.8,1.5),bm,0,-.2,0);m(new T.BoxGeometry(1.8,.7,1.3),am,-.1,.5,0);
+  [[-1.2,-.2],[1.2,-.2]].forEach(function(p){[-.8,.8].forEach(function(z){var w=m(new T.CylinderGeometry(.42,.42,.3,24),new T.MeshStandardMaterial({color:0x1a1a1a,roughness:.7}),p[0],p[1]-.4,z);w.rotation.x=Math.PI/2})})
+ }else if(shape==='bottle'){
+  m(new T.CylinderGeometry(.9,.9,2.6,32),bm,0,-.4,0);m(new T.CylinderGeometry(.35,.7,.8,32),bm,0,1.2,0);m(new T.CylinderGeometry(.3,.3,.5,24),am,0,1.85,0)
+ }else if(shape==='wave'){
+  var pts2=[];for(var k=0;k<=80;k++){var u2=k/80;pts2.push(new T.Vector3(u2*6-3,Math.sin(u2*Math.PI*3)*.9,Math.cos(u2*Math.PI*3)*.4))}
+  m(new T.TubeGeometry(new T.CatmullRomCurve3(pts2),160,.3,16),bm);
+  var pts3=pts2.map(function(p){return new T.Vector3(p.x,p.y-1,p.z-.6)});
+  m(new T.TubeGeometry(new T.CatmullRomCurve3(pts3),160,.2,16),am)
+ }else{
+  m(new T.SphereGeometry(1.6,48,32),bm);var ring=m(new T.TorusGeometry(2.3,.1,16,80),am);ring.rotation.x=1.2
+ }
+ sc.add(g);
+ var tx=0,ty=0;
+ addEventListener('pointermove',function(e){tx=(e.clientX/innerWidth-.5)*.8;ty=(e.clientY/innerHeight-.5)*.5},{passive:true});
+ var vis=true;
+ if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(stage);
+ function loop(t){
+  requestAnimationFrame(loop);if(!vis||document.hidden)return;
+  g.rotation.y+=.006;g.rotation.x+=(ty-g.rotation.x)*.05;g.position.x+=(tx-g.position.x)*.05;
+  g.position.y=Math.sin(t/900)*.12;
+  ren.render(sc,cam)
+ }
+ loop(0);
+ addEventListener('resize',function(){var w=stage.clientWidth,h=stage.clientHeight;ren.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix()});
+}
+init3D();
+})();
+</script>
 </body>
 </html>

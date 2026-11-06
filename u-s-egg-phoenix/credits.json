@@ -9,19 +9,19 @@
   {
     "file": "img/stock-1.jpg",
     "kind": "stock photo",
-    "query": "stack of fluffy pancakes with maple syrup and butter on wooden table",
-    "description": "pancakes, maple syrup, raspberries, breakfast, pouring syrup, plate, breakfast plate, stack, stack of pancakes, breakfast food, breakfast meal, sweet, food, delicious, morning, tasty, fruits, food photography, pancakes, breakfast, breakfast, food, food, food, food, food",
-    "source": "https://pixabay.com/photos/pancakes-maple-syrup-raspberries-2291908/",
-    "photographer": "piviso",
+    "query": "cafe",
+    "description": "cat's cafe, mac wallpaper, cat, desktop backgrounds, interior, full hd wallpaper, windows wallpaper, hd wallpaper, free background, laptop wallpaper, animal, table, wallpaper hd, pet, rest, 4k wallpaper, relax, wallpaper 4k, free wallpaper, 4k wallpaper 1920x1080, cool backgrounds, beautiful wallpaper, wallpaper, cafe",
+    "source": "https://pixabay.com/photos/cats-cafe-cat-interior-table-rest-4697753/",
+    "photographer": "ALEXNEWWORLD",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-2.jpg",
     "kind": "stock photo",
-    "query": "stack of fluffy pancakes with maple syrup and butter on wooden table",
-    "description": "pancakes, whipped cream, breakfast, plate, breakfast plate, meal, breakfast meal, stack, stack of pancakes, food, table, food photography, eat, pancakes, pancakes, pancakes, pancakes, pancakes, breakfast, breakfast, breakfast",
-    "source": "https://pixabay.com/photos/pancakes-whipped-cream-breakfast-1851249/",
+    "query": "cafe",
+    "description": "coffee, cup, caffeine, drink, latte, latte art, coffee cup, morning coffee, coffee break, hot coffee, beverage, hot, mug, rustic, saucer, table, wooden table, coffee, coffee, coffee, coffee, coffee, table, table",
+    "source": "https://pixabay.com/photos/coffee-cup-caffeine-drink-latte-2179028/",
     "photographer": "Pexels",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
@@ -29,27 +29,7 @@
   {
     "file": "img/stock-3.jpg",
     "kind": "stock photo",
-    "query": "avocado toast with poached eggs and microgreens on rustic plate",
-    "description": "poached eggs on toast, breakfast, healthy, brunch, morning, food, breakfast, breakfast, breakfast, breakfast, brunch, brunch, brunch, brunch, brunch, morning",
-    "source": "https://pixabay.com/photos/poached-eggs-on-toast-breakfast-739401/",
-    "photographer": "JillWellington",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-4.jpg",
-    "kind": "stock photo",
-    "query": "avocado toast with poached eggs and microgreens on rustic plate",
-    "description": "smashed avocado on toast, avocado, poached egg, lunch, healthy, cafe, tasty, delicious, avocado, avocado, avocado, avocado, avocado, poached egg",
-    "source": "https://pixabay.com/photos/smashed-avocado-on-toast-avocado-4488463/",
-    "photographer": "pen_ash",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-5.jpg",
-    "kind": "stock photo",
-    "query": "sunny restaurant patio with outdoor dining chairs and umbrellas in arizona",
+    "query": "cafe customer",
     "description": "outdoor dining, restaurant, bar, waiter, al fresco, city, customers, group, patrons, people, street, tables, chairs, restaurant, restaurant, restaurant, restaurant, restaurant",
     "source": "https://pixabay.com/photos/outdoor-dining-restaurant-bar-1846137/",
     "photographer": "Pexels",
@@ -57,52 +37,32 @@
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "cafe customer",
+    "description": "bmw, motorcycle, vehicle, ride, bike, motorbike, speed, travel, vintage, transportation, motorcycle, bike, bike, bike, bike, bike",
+    "source": "https://pixabay.com/photos/bmw-motorcycle-vehicle-ride-bike-1313343/",
+    "photographer": "Monoar_CGI_Artist",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "cafe Phoenix",
+    "description": "digital nomad, dortmund, phoenix lake, lake, work, remote work, anywhere, coffee shop, outdoors, sun, to sit, nature, laptop, alone, single, free, freedom, man, hear, water, ruhr area",
+    "source": "https://pixabay.com/photos/digital-nomad-dortmund-phoenix-lake-4915090/",
+    "photographer": "Peggy_Marco",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
     "file": "img/stock-6.jpg",
     "kind": "stock photo",
-    "query": "sunny restaurant patio with outdoor dining chairs and umbrellas in arizona",
-    "description": "cafe, tables and chairs, bistro, tables, chairs, restaurant, city, urban, brunch, cafe, cafe, cafe, cafe, restaurant, restaurant, restaurant, restaurant, restaurant",
-    "source": "https://pixabay.com/photos/cafe-tables-and-chairs-bistro-5579069/",
-    "photographer": "Cparks",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-7.jpg",
-    "kind": "stock photo",
-    "query": "barista pouring latte art into ceramic mug in bright sunlit cafe",
-    "description": "coffee, cup, caffeine, espresso, coffee cup, brown coffee, brown cup",
-    "source": "https://pixabay.com/photos/coffee-cup-caffeine-espresso-4618705/",
-    "photographer": "13758299",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-8.jpg",
-    "kind": "stock photo",
-    "query": "barista pouring latte art into ceramic mug in bright sunlit cafe",
-    "description": "coffee, 4k wallpaper, free background, cappuccino, full hd wallpaper, coffee cup, latte art, coffee art, heart, hd wallpaper, laptop wallpaper, foam, 4k wallpaper 1920x1080, beautiful wallpaper, windows wallpaper, free wallpaper, wallpaper hd, coffee foam, drink, wallpaper 4k, beverage, mac wallpaper, desktop backgrounds, delicious, cool backgrounds, cup, closeup, background",
-    "source": "https://pixabay.com/photos/coffee-cappuccino-latte-art-6154681/",
-    "photographer": "8618939",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-9.jpg",
-    "kind": "stock photo",
-    "query": "cast iron skillet breakfast with eggs bacon and potatoes",
-    "description": "fried egg, pan, meal, grill, egg yolk, food, fried eggs, frying pan, protein, cook, yolk, eggs, kitchen, egg, fried, yummy, tasty, eggs, eggs, eggs, egg, egg, egg, egg, egg",
-    "source": "https://pixabay.com/photos/fried-egg-pan-meal-grill-egg-yolk-3238173/",
-    "photographer": "Alexas_Fotos",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-10.jpg",
-    "kind": "stock photo",
-    "query": "cast iron skillet breakfast with eggs bacon and potatoes",
-    "description": "fried egg, food, pan, egg yolk, egg, breakfast, fried, meal, salad, bacon, tomato, lunch, cooked, vegetable, dish, tasty, delicious, healthy, meat, cheese, cuisine, closeup",
-    "source": "https://pixabay.com/photos/fried-egg-food-pan-egg-yolk-egg-6011611/",
-    "photographer": "romjanaly",
+    "query": "cafe Phoenix",
+    "description": "cafe, building, greece, karpathos island, nature, facade, architecture, chairs, tables, front, windows, door, restaurant, empty, closed, street, outdoors, summer, mediterranean, hd wallpaper",
+    "source": "https://pixabay.com/photos/cafe-building-greece-3537801/",
+    "photographer": "analogicus",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }
