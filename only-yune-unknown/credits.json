@@ -6,13 +6,13 @@
     "source": "https://www.tiktok.com/@onlywxyne"
   },
   {
-    "file": "img/work-2.jpg",
+    "file": "img/work-1.jpg",
     "kind": "their own photo (from their Tiktok)",
     "use_as": "gallery / service card: their real work (still from their video)",
     "source": "https://www.tiktok.com/@onlywxyne"
   },
   {
-    "file": "img/work-3.jpg",
+    "file": "img/work-2.jpg",
     "kind": "their own photo (from their Tiktok)",
     "use_as": "gallery / service card: their real work (still from their video)",
     "source": "https://www.tiktok.com/@onlywxyne"
@@ -20,7 +20,47 @@
   {
     "file": "img/stock-1.jpg",
     "kind": "stock photo",
-    "query": "hair braider",
+    "query": "knotless box braids close up professional styling",
+    "description": "woman, hair, braid, hairstyle, blur, braided hair, brunette, fashion, female, girl, hairdo, lady, model, hair, hair, hair, hair, hair",
+    "source": "https://pixabay.com/photos/woman-hair-braid-hairstyle-blur-1853957/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "knotless box braids close up professional styling",
+    "description": "girl, african, child, female, person, close up, cute, kid, portrait, young, little girl, african girl, childhood, african, african, african, african, african, child, child, kid, little girl, little girl, little girl, little girl",
+    "source": "https://pixabay.com/photos/girl-african-child-female-person-1854096/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "neat cornrows feed in braids hair salon",
+    "description": "girl, little girl, child, spinning, hair, woman, teamwork, hairstyle, plait, girl, girl, little girl, little girl, hair, woman, woman, teamwork, teamwork, hairstyle, hairstyle, hairstyle, hairstyle, hairstyle",
+    "source": "https://pixabay.com/photos/girl-little-girl-child-spinning-8232444/",
+    "photographer": "Bergadder",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "neat cornrows feed in braids hair salon",
+    "description": "african, ghana, world, pride, tourism, standard, josephkebbie, nationality, national, country, ghana, ghana, ghana, ghana, ghana, standard",
+    "source": "https://pixabay.com/photos/african-ghana-world-pride-tourism-2726211/",
+    "photographer": "jkebbie",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "stylish black woman hair braiding studio portrait",
     "description": "pink hair, hairstyle, woman, makeup, cosmetics, hair flip, young woman, colored hair, fashion, female portrait, female, skin, bust, woman, woman, woman, woman, fashion, fashion, fashion, fashion, fashion",
     "source": "https://pixabay.com/photos/pink-hair-hairstyle-woman-makeup-1450045/",
     "photographer": "Stuchy",
@@ -28,52 +68,52 @@
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
-    "file": "img/stock-2.jpg",
-    "kind": "stock photo",
-    "query": "hair braider",
-    "description": "woman, portrait, model, fashion, fashion model, style, stylish woman, young woman, hairstyle, curly hair, long hair, female, girl, smile, happy, smiling, happy girl, woman, woman, model, fashion, fashion, fashion, long hair, girl, girl, girl, girl, girl, smile, happy, happy",
-    "source": "https://pixabay.com/photos/woman-portrait-model-fashion-2593366/",
-    "photographer": "StockSnap",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-3.jpg",
-    "kind": "stock photo",
-    "query": "hair braider customer",
-    "description": "barber shop, job, work, iranian, occupation, iran, mashhad, men, hair, life, lifestyle, jorj barber, social documentary, stylist, persian, asian, canon photo, people, person, haircut, hairdresser's, mostafa meraji, photojournalism, real pictures, everyday, barber shop, barber shop, barber shop, barber shop, job, haircut, haircut, haircut, haircut, haircut",
-    "source": "https://pixabay.com/photos/barber-shop-job-work-iranian-6797761/",
-    "photographer": "mostafa_meraji",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-4.jpg",
-    "kind": "stock photo",
-    "query": "hair braider customer",
-    "description": "barber, clippers, fade haircut, barbershop, haircut, styling, grooming, hairstyle, professional, care, home barbering, ceramic blades, makeover, male, manual work, beard care, tool maintenance, salon, lighting, men's haircut",
-    "source": "https://pixabay.com/photos/barber-clippers-fade-haircut-10552936/",
-    "photographer": "louiscarter196",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-5.jpg",
-    "kind": "stock photo",
-    "query": "hair braider unknown",
-    "description": "woman, hair, portrait, flip, hair flip, colorful hair, young woman, fashion, style, stylish woman, colorful, female, girl, woman, hair, hair, hair, hair, hair, fashion",
-    "source": "https://pixabay.com/photos/woman-hair-portrait-flip-hair-flip-1869208/",
-    "photographer": "Pexels",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
     "file": "img/stock-6.jpg",
     "kind": "stock photo",
-    "query": "hair braider unknown",
-    "description": "woman, portrait, black hair, long hair, makeup, cosmetics, face, girl, brunette, dark, young woman, modeling, model, pose, posing, studio photography, woman, black hair, black hair, black hair, long hair, long hair, long hair, long hair, long hair, makeup, makeup, makeup, face, face, brunette, model",
-    "source": "https://pixabay.com/photos/woman-portrait-black-hair-long-hair-2647691/",
-    "photographer": "JerzyG\u00f3recki",
+    "query": "stylish black woman hair braiding studio portrait",
+    "description": "woman, model, portrait, fashion, glamour, girl, female, studio photography, style, stylish woman, blonde, blonde woman, female model, modeling, pose, posing, female portrait, woman, woman, model, model, model, portrait, fashion, fashion, fashion, fashion, fashion",
+    "source": "https://pixabay.com/photos/woman-model-portrait-fashion-600238/",
+    "photographer": "Nissor",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "hair braiding edge control styling close up",
+    "description": "hair, hairdresser, maintenance, cutting, fund, paint, woman, fashion, beauty, portrait, living room, people, girl, beautiful, human, women, style, design, hairdresser, hairdresser, hairdresser, hairdresser, hairdresser",
+    "source": "https://pixabay.com/photos/hair-hairdresser-maintenance-4541781/",
+    "photographer": "Engin_Akyurt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "hair braiding edge control styling close up",
+    "description": "braid african, girl black, beautiful, model, face, summer, picture, nature, dreamy, young child, town, style, black, woman, happiness, hand, african, young lady, baby, holiday, burundi, relaxation, rest, landscape",
+    "source": "https://pixabay.com/photos/braid-african-girl-black-beautiful-2218520/",
+    "photographer": "kassoum_kone",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "luxurious hair styling salon interior warm lighting",
+    "description": "beauty salon, barber, nail salon, salon, hairdresser, fashion, beauty, interior, 3 d, interior design, interior designer, beauty salon, beauty salon, beauty salon, nail salon, salon, salon, salon, salon, salon",
+    "source": "https://pixabay.com/photos/beauty-salon-barber-nail-salon-4043096/",
+    "photographer": "Sunriseforever",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "luxurious hair styling salon interior warm lighting",
+    "description": "beauty salon, hair dresser, table, furniture, indoors, room, inside, interior, modern, chair, beauty salon, beauty salon, beauty salon, beauty salon, beauty salon, hair dresser",
+    "source": "https://pixabay.com/photos/beauty-salon-hair-dresser-table-3277314/",
+    "photographer": "Michelle-Maria",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }
