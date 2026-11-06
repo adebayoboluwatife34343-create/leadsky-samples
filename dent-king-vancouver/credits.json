@@ -2,27 +2,7 @@
   {
     "file": "img/stock-1.jpg",
     "kind": "stock photo",
-    "query": "expert technician fixing car dent with LED light Vancouver",
-    "description": "car, vehicle, car wallpapers, man, data acquisition system, daq",
-    "source": "https://pixabay.com/photos/car-vehicle-man-7232127/",
-    "photographer": "Dewesoft",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-2.jpg",
-    "kind": "stock photo",
-    "query": "expert technician fixing car dent with LED light Vancouver",
-    "description": "child labor, car mechanic, cars, labor, kid, mechanic, child labor, child labor, car mechanic, car mechanic, car mechanic, car mechanic, mechanic, mechanic, mechanic, mechanic, mechanic",
-    "source": "https://pixabay.com/photos/child-labor-car-mechanic-cars-labor-934900/",
-    "photographer": "suvajit",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-3.jpg",
-    "kind": "stock photo",
-    "query": "luxury car paintless dent repair workshop clean",
+    "query": "car repair",
     "description": "man, car, repair, car repair, car workshop, repair shop, repairs, garage, mechanic, vw beetle, volkswagen, beetle, automotive, workshop, tools, supplies, car wallpapers, monochrome, black and white",
     "source": "https://pixabay.com/photos/man-car-repair-car-repair-362150/",
     "photographer": "RyanMcGuire",
@@ -30,9 +10,9 @@
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
-    "file": "img/stock-4.jpg",
+    "file": "img/stock-2.jpg",
     "kind": "stock photo",
-    "query": "luxury car paintless dent repair workshop clean",
+    "query": "car repair",
     "description": "auto, car, garage, auto shop, car wallpapers, vintage, vehicle, antique, automobile, automotive, classic, equipment, fix, mechanic, nostalgia, repair, retro, sepia, service, repair shop, tools, transportation, workshop",
     "source": "https://pixabay.com/photos/auto-car-garage-auto-shop-vintage-1868726/",
     "photographer": "Pexels",
@@ -40,62 +20,42 @@
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "car repair customer",
+    "description": "motorbike, garage, repairs, workshop, hobby, automotive, build, mechanic, motor, motorcycle, big bike, vehicle, garage, garage, garage, garage, garage, mechanic, motorcycle, motorcycle",
+    "source": "https://pixabay.com/photos/motorbike-garage-repairs-workshop-407186/",
+    "photographer": "SplitShire",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "car repair customer",
+    "description": "car engine, motor, clean, customized, engine, vehicle, auto, automobile, transportation, mechanic, technology, power, metal, machine, automotive, repair, speed, chrome, mechanical, new, fuel, shiny, hood, metallic, garage, hybrid, racing, oil, shop, prototype, business, gray business, gray car, gray technology, gray shopping, gray news, gray shop, gray company, gray garage, gray metal, gray power, gray new, gray clean, car engine, car engine, car engine, car engine, car engine, motor, engine, engine, engine, mechanic",
+    "source": "https://pixabay.com/photos/car-engine-motor-clean-customized-1548434/",
+    "photographer": "paulbr75",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
     "file": "img/stock-5.jpg",
     "kind": "stock photo",
-    "query": "close up car door ding repair reflection board",
-    "description": "coupe, limousine, car, auto, vehicle, passenger car, automotive, bentley, side view, design, shiny car, luxury car, car wallpapers, car model, car design, car body",
-    "source": "https://pixabay.com/photos/coupe-limousine-car-auto-vehicle-1374448/",
-    "photographer": "pgottschalk",
+    "query": "car repair Vancouver",
+    "description": "welding, wheel repair, weld, tig, mend, industrial welding, alloy wheel, dark, welding, welding, welding, welding, welding, weld, tig, tig, tig, tig, tig, mend, dark",
+    "source": "https://pixabay.com/photos/welding-wheel-repair-weld-tig-mend-7913385/",
+    "photographer": "TheOtherKev",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-6.jpg",
     "kind": "stock photo",
-    "query": "close up car door ding repair reflection board",
-    "description": "sports car, auto, automobile, hdr, front, headlight, sporty, red, sharp, vehicle, macro, close-up, headlight, headlight, headlight, headlight, headlight",
-    "source": "https://pixabay.com/photos/sports-car-auto-automobile-hdr-116949/",
-    "photographer": "12019",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-7.jpg",
-    "kind": "stock photo",
-    "query": "satisfied customer shaking hands with mechanic auto shop",
-    "description": "writing, flower background, flower wallpaper, pencil, note, shop, pink, nature, seller, paper, sketch, uniform, beautiful, beautiful flowers, hand, sale, flowers, gift",
-    "source": "https://pixabay.com/photos/writing-pencil-note-shop-pink-3934298/",
-    "photographer": "borevina",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-8.jpg",
-    "kind": "stock photo",
-    "query": "satisfied customer shaking hands with mechanic auto shop",
-    "description": "girl, shop, souvenirs, woman, shelf, work, shopping, spain, searching, atmosphere, shop, shop, shopping, shopping, shopping, shopping, shopping",
-    "source": "https://pixabay.com/photos/girl-shop-souvenirs-woman-shelf-4181395/",
-    "photographer": "kasjanf",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-9.jpg",
-    "kind": "stock photo",
-    "query": "professional automotive dent removal tools stainless steel rods",
-    "description": "grid, wire mesh, stainless rods, metal, cool backgrounds, free background, wallpaper hd, pattern, steel grid, stainless steel, regularly, wallpaper 4k, 4k wallpaper, squares, full hd wallpaper, 4k wallpaper 1920x1080, metal bars, symmetry, symmetrically, windows wallpaper, three dimensional, bars, beautiful wallpaper, object, metal object, laptop wallpaper, mac wallpaper, background, desktop backgrounds, pipes, tube, hd wallpaper, free wallpaper, metal tubes",
-    "source": "https://pixabay.com/photos/grid-wire-mesh-stainless-rods-metal-826831/",
-    "photographer": "cocoparisienne",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-10.jpg",
-    "kind": "stock photo",
-    "query": "professional automotive dent removal tools stainless steel rods",
-    "description": "drill, milling, milling machine, tool, metal, metal processing, industry, cnc, rotate, machine, cnc machine, production, lathe, to cut, metal construction, drill head, engineering, rounding, drilling machine, mechanics, technology, cutting tools, machining, industry, cnc, cnc, machine, machine, machine, machine, machine, engineering, engineering",
-    "source": "https://pixabay.com/photos/drill-milling-milling-machine-tool-444510/",
-    "photographer": "blickpixel",
+    "query": "car repair Vancouver",
+    "description": "vancouver, pier, sea, sunset, canada, nature, sundown, dusk, twilight",
+    "source": "https://pixabay.com/photos/vancouver-pier-sea-sunset-canada-7434702/",
+    "photographer": "Alex_Agrico",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }
