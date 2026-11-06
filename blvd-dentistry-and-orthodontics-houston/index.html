@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Instant multi-location booking concept for BLVD Dentistry and Orthodontics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#ffffff;--ivory:#f4f7fa;--navy:#0f2b46;--aqua:#009688;--teal:#00796b;--line:#e2e8f0;--muted:#46586b;--r:18px;--sh:0 18px 50px -20px rgba(15,43,70,.35)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:var(--navy);background:var(--bg);line-height:1.6;font-size:16px;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Plus Jakarta Sans',Inter,sans-serif;line-height:1.12;margin:0 0 .5em;letter-spacing:-.02em}
+img{max-width:100%;display:block}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+.banner{background:var(--navy);color:#fff;text-align:center;font-size:13px;padding:8px 14px}
+.skip{position:absolute;left:-999px;top:0;background:#fff;padding:8px 14px;z-index:99}.skip:focus{left:8px;top:8px}
+header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:18px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);font-family:'Plus Jakarta Sans';font-weight:800;line-height:1.1;font-size:15px}
+.brand small{display:block;font-weight:500;font-size:11.5px;color:var(--muted);letter-spacing:.02em}
+.nav nav{margin-left:auto;display:flex;gap:4px;align-items:center}
+.nav nav a{color:var(--navy);text-decoration:none;font-weight:500;font-size:14.5px;padding:8px 11px;border-radius:999px}
+.nav nav a:hover{background:var(--ivory)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:600 15px 'Plus Jakarta Sans',sans-serif;padding:13px 22px;border-radius:999px;background:var(--navy);color:#fff;text-decoration:none;transition:transform .2s,box-shadow .2s,background .2s;min-height:46px}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px -10px rgba(15,43,70,.6)}
+.btn.teal{background:var(--teal)}.btn.ghost{background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.menu-btn{display:none;margin-left:auto;background:none;border:1.5px solid var(--line);border-radius:10px;width:44px;height:44px;font-size:20px;color:var(--navy);cursor:pointer}
+.eyebrow{display:inline-block;font:700 12.5px 'Plus Jakarta Sans';letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+/* hero */
+.hero{background:linear-gradient(180deg,#fff 0%,var(--ivory) 100%);padding:56px 0 72px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-180px;top:-160px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(0,150,136,.14),transparent 68%)}
+.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:48px;align-items:start;position:relative}
+.hero h1{font-size:clamp(2.2rem,4.6vw,3.9rem);font-weight:800}
+.hero h1 span{color:var(--teal)}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:34em}
+.rise>*{animation:rise .6s cubic-bezier(.2,.7,.2,1) both}
+.rise>*:nth-child(2){animation-delay:.08s}.rise>*:nth-child(3){animation-delay:.16s}.rise>*:nth-child(4){animation-delay:.24s}
+@keyframes rise{from{transform:translateY(14px)}to{transform:none}}
+.badges{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:10px}
+.badges li{display:flex;gap:12px;align-items:flex-start;font-weight:500}
+.badges svg{flex:none;margin-top:2px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.stage{perspective:1200px}
+.widget{background:#fff;border:1px solid var(--line);border-radius:24px;box-shadow:var(--sh);padding:22px;transition:transform .25s ease-out;transform-style:preserve-3d}
+.w-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.w-head h2{font-size:1.2rem;margin:0}
+.tag{font:700 11px 'Plus Jakarta Sans';letter-spacing:.08em;text-transform:uppercase;background:#e6f4f2;color:#004d43;padding:5px 10px;border-radius:999px;white-space:nowrap}
+.steps{display:flex;gap:6px;margin-bottom:16px}
+.steps i{flex:1;height:5px;border-radius:5px;background:var(--line);transition:background .3s}
+.steps i.on{background:var(--teal)}
+.pane{display:none}.pane.show{display:block;animation:fade .3s}
+@keyframes fade{from{opacity:.2;transform:translateY(6px)}to{opacity:1;transform:none}}
+.pane h3{font-size:1rem;margin-bottom:10px}
+.group-l{font:700 12px 'Plus Jakarta Sans';color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:12px 0 6px}
+.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.opt{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:11px 12px;text-align:left;cursor:pointer;font:500 14.5px Inter;color:var(--navy);min-height:46px;transition:border-color .2s,background .2s,transform .2s}
+.opt:hover{border-color:var(--teal);transform:translateY(-1px)}
+.opt[aria-pressed=true]{border-color:var(--teal);background:#e6f4f2;box-shadow:inset 0 0 0 1px var(--teal)}
+.opt small{display:block;color:var(--muted);font-size:12.5px}
+.tl .opt{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.opts.one{grid-template-columns:1fr}
+.days{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:8px}
+.day{flex:none;min-width:62px;text-align:center;border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:8px 6px;cursor:pointer;font:600 13px 'Plus Jakarta Sans';color:var(--navy)}
+.day b{display:block;font-size:19px}
+.day[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.seg{display:inline-flex;background:var(--ivory);border-radius:999px;padding:3px;margin:4px 0 10px}
+.seg button{border:0;background:none;padding:7px 14px;border-radius:999px;font:600 13px Inter;color:var(--navy);cursor:pointer}
+.seg button[aria-pressed=true]{background:#fff;box-shadow:0 1px 4px rgba(15,43,70,.2)}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;max-height:178px;overflow:auto;padding:2px}
+.slot{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:9px 0;font:600 13.5px Inter;color:var(--navy);cursor:pointer;min-height:42px}
+.slot:hover{border-color:var(--teal)}
+.slot[aria-pressed=true]{background:var(--teal);color:#fff;border-color:var(--teal)}
+.slot[disabled]{color:#6b7a8c;background:var(--ivory);text-decoration:line-through;cursor:not-allowed}
+.field{margin-bottom:10px}
+.field label{display:block;font:600 13.5px Inter;margin-bottom:4px}
+.field input,.field select,.field textarea{width:100%;padding:12px;border:1.5px solid #b7c3d1;border-radius:10px;font:16px Inter;color:var(--navy);background:#fff}
+.field .err{color:#b00020;font-size:13px;min-height:1em;margin-top:2px}
+.sum{background:var(--ivory);border-radius:12px;padding:12px 14px;font-size:14.5px;margin-bottom:12px}
+.sum div{display:flex;justify-content:space-between;gap:10px;padding:3px 0}
+.sum span:first-child{color:var(--muted)}
+.w-foot{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:14px}
+.note{font-size:12.5px;color:var(--muted);margin:10px 0 0}
+/* sections */
+section{padding:84px 0}
+.alt{background:var(--ivory)}
+.sec-h{max-width:720px;margin-bottom:38px}
+.sec-h h2{font-size:clamp(1.8rem,3.4vw,2.7rem);font-weight:800}
+.sec-h p{color:var(--muted);font-size:1.07rem}
+.how{display:grid;grid-template-columns:1.1fr .9fr;gap:42px;align-items:center}
+.how ol{list-style:none;counter-reset:s;padding:0;margin:0;display:grid;gap:14px}
+.how li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 16px 64px;position:relative}
+.how li:before{content:counter(s);position:absolute;left:16px;top:14px;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font:800 15px 'Plus Jakarta Sans'}
+.how li b{display:block;font-family:'Plus Jakarta Sans'}
+.how li span{color:var(--muted);font-size:15px}
+.toothcard{background:linear-gradient(160deg,#e6f4f2,#fff 60%);border:1px solid var(--line);border-radius:24px;padding:14px;box-shadow:var(--sh)}
+#tooth{width:100%;height:340px;display:block;cursor:grab;touch-action:pan-y;border-radius:16px}
+.toothcard p{margin:6px 8px 4px;font-size:13.5px;color:var(--muted);text-align:center}
+.tfallback{display:none;padding:20px}
+.saves{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:40px}
+.save{display:grid;grid-template-columns:150px 1fr;background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.save img{width:100%;height:100%;object-fit:cover}
+.save div{padding:18px;background:#ffffff;border-left:1px solid var(--line)}
+.save h3{font-size:1.05rem;color:var(--navy)}.save p{margin:0;color:var(--navy);font-size:15px;font-weight:500}
+.band{display:grid;grid-template-columns:1.2fr 1fr;gap:0;border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:var(--sh)}
+.band img{width:100%;height:100%;object-fit:cover;min-height:260px}
+.band div{padding:34px;display:flex;flex-direction:column;justify-content:center;background:#ffffff}
+.band h2{font-size:1.9rem;color:var(--navy)}
+.band p{color:var(--navy);font-weight:500}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tab{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 18px;font:600 14.5px 'Plus Jakarta Sans';color:var(--navy);cursor:pointer;min-height:44px}
+.tab[aria-selected=true]{background:var(--navy);color:#fff;border-color:var(--navy)}
+.locs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.loc{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.loc:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.loc .city{font:700 12px 'Plus Jakarta Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+.loc h3{font-size:1.25rem;margin:4px 0 10px}
+.loc p{margin:0 0 6px;font-size:14.5px;color:var(--muted)}
+.loc p b{color:var(--navy)}
+.loc .btn{margin-top:auto;align-self:flex-start}
+.loc .spacer{flex:1;min-height:12px}
+.tr{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:18px}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.tcard:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.tcard-img-wrap{position:relative;width:100%;aspect-ratio:4/3}
+.tcard img{width:100%;height:100%;object-fit:cover}
+.tcard-overlay{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top, rgba(15,43,70,0.92) 0%, rgba(15,43,70,0.7) 60%, transparent 100%);padding:16px 14px 10px;display:flex;justify-content:space-between;align-items:flex-end;color:#fff}
+.tcard-overlay .price{font:700 15px 'Plus Jakarta Sans';color:#fff;margin:0}
+.tcard-overlay .price small{font:500 11.5px Inter;color:#d5e0ec;display:block}
+.tcard div.tcard-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+.tcard h3{font-size:1.05rem}
+.tcard p{margin:0 0 10px;color:var(--muted);font-size:14.5px}
+.brk{margin-top:26px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.brk table{width:100%;border-collapse:collapse;font-size:15px}
+.brk td{padding:9px 0;border-bottom:1px solid var(--line)}
+.brk td:last-child{text-align:right;font-weight:600}
+.brk tr:last-child td{border:0;font-weight:800}
+.rev{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:flex;flex-direction:column}
+.rcard blockquote{margin:0 0 16px;font-size:15.5px}
+.rcard cite{margin-top:auto;font-style:normal;font:700 14px 'Plus Jakarta Sans'}
+.rcard cite small{display:block;font:500 12.5px Inter;color:var(--muted)}
+.faq-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:36px;align-items:start}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.faq summary{cursor:pointer;padding:16px 18px;font:700 16px 'Plus Jakarta Sans';list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"+";font-size:22px;color:var(--teal);transition:transform .25s}
+.faq details[open] summary:after{transform:rotate(45deg)}
+.faq .ans{padding:0 18px 16px;color:var(--muted);animation:fade .3s}
+.faq-img img{border-radius:var(--r);aspect-ratio:4/5;object-fit:cover;width:100%}
+.faq-img p{font-size:13px;color:var(--muted);margin:8px 0 0}
+.cta{background:var(--navy);color:#fff;text-align:center;padding:70px 0}
+.cta h2{font-size:clamp(1.8rem,3.4vw,2.6rem);color:#fff}
+.cta p{color:#d5e0ec;max-width:36em;margin:0 auto 24px}
+.cta .btn{background:#fff;color:var(--navy)}
+footer{background:#0a1f33;color:#d5e0ec;padding:44px 0 96px;font-size:14.5px}
+footer a{color:#9fe3da}
+footer .cols{display:grid;grid-template-columns:1.2fr 1fr;gap:30px}
+footer h4{color:#fff;font-size:1rem}
+footer ul{padding:0;margin:0;list-style:none}
+footer li{margin-bottom:5px}
+dialog{border:0;border-radius:22px;padding:0;max-width:460px;width:calc(100% - 32px);box-shadow:0 30px 80px -20px rgba(0,0,0,.5);color:var(--navy)}
+dialog::backdrop{background:rgba(15,43,70,.6)}
+dialog[open]{animation:pop .35s cubic-bezier(.2,.8,.2,1)}
+@keyframes pop{from{transform:translateY(24px);opacity:0}to{transform:none;opacity:1}}
+.dlg{padding:28px}
+.dlg .ok{width:54px;height:54px;border-radius:50%;background:#e6f4f2;display:grid;place-items:center;margin-bottom:12px}
+.mbar{display:none}
+@media (max-width:1020px){
+.hero .wrap,.how,.faq-grid,.band,.brk,footer .cols{grid-template-columns:1fr}
+.tr{grid-template-columns:1fr 1fr}.locs,.rev{grid-template-columns:1fr 1fr}
+.saves{grid-template-columns:1fr}
+.faq-img{display:none}
+}
+@media (max-width:760px){
+section{padding:58px 0}
+.menu-btn{display:block}
+.nav nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;padding:10px 16px 16px;margin:0}
+.nav nav.open{display:flex}
+.nav nav a{padding:12px}
+.brand small{display:none}
+.opts{grid-template-columns:1fr}
+.slots{grid-template-columns:repeat(3,1fr)}
+.tr,.locs,.rev{grid-template-columns:1fr}
+.save{grid-template-columns:110px 1fr}
+.hero{padding:34px 0 50px}
+.band div{padding:24px}
+.mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom));z-index:60;box-shadow:0 -8px 24px -14px rgba(15,43,70,.4)}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="banner">Independent website concept by LeadSky for BLVD Dentistry and Orthodontics. Not their official website.</div>
+<header class="nav">
+<div class="wrap">
+<a class="brand" href="#top" aria-label="BLVD Dentistry and Orthodontics, home">
+<svg width="36" height="36" viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="10" fill="#0f2b46"/><path d="M11 10c2-1.6 4.4-.4 7 0s5-1.6 7 0c2.2 1.8 1.4 5.2.8 8-.6 2.6-1 7.4-2.6 8.2-1.8.8-2.2-3.4-2.9-5.5-.5-1.5-1.6-1.5-2.6 0-.7 2.1-1.1 6.3-2.9 5.5-1.6-.8-2-5.600-2.600-8.200-.600-2.800-1.400-6.200.8-8z" fill="#fff"/><circle cx="26" cy="9" r="3.200" fill="#009688"/></svg>
+<span>BLVD Dentistry &amp; Orthodontics<small>Your Smile, Our Priority</small></span></a>
+<button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav" aria-label="Open menu">☰</button>
+<nav id="mainNav" aria-label="Main">
+<a href="#locations" data-city="Houston">Houston</a>
+<a href="#locations" data-city="Austin">Austin</a>
+<a href="#locations" data-city="Fort Worth">Fort Worth</a>
+<a href="#treatments">Treatments</a>
+<a href="#reviews">Reviews</a>
+<a href="#faq">FAQ</a>
+<a href="tel:+12812050948">(281) 205-0948</a>
+<a class="btn teal" href="#book" style="color:#fff">Book Appointment</a>
+</nav>
+</div>
+</header>
+
+<main id="main">
+<section class="hero" id="top" style="padding-bottom:72px">
+<div class="wrap">
+<div class="rise">
+<span class="eyebrow">Online booking concept · Texas</span>
+<h1>Get in. <span>Get exceptional care.</span> Get on with your day.</h1>
+<p class="lead">Book your next dental visit in seconds. Pick your office in Houston, Austin or Fort Worth, choose a time, and you're done. No phone calls required.</p>
+<ul class="badges">
+<li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00796b" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Offices across Austin, Houston and Fort Worth in one booking flow</li>
+<li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00796b" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Open the page at 10pm, book for tomorrow. No waiting for the office to open</li>
+<li><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00796b" stroke-width="2.4" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>Care for the whole family, with orthodontics included</li>
+</ul>
+<div class="cta-row">
+<a class="btn teal" href="#book">Try the booking demo</a>
+<a class="btn ghost" href="#locations">Find your nearest office</a>
+</div>
+</div>
+
+<div class="stage rise" id="book">
+<div class="widget" id="widget" aria-label="Instant booking demo">
+<div class="w-head"><h2>Book a visit</h2><span class="tag">Demo · sample availability</span></div>
+<div class="steps" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+
+<div class="pane show" data-pane="1">
+<h3>1. Choose your office</h3>
+<div id="locPick"></div>
+</div>
+
+<div class="pane" data-pane="2">
+<h3>2. What do you need?</h3>
+<div class="opts one tl" id="trPick"></div>
+</div>
+
+<div class="pane" data-pane="3">
+<h3>3. Pick a day and time</h3>
+<div class="days" id="days" role="group" aria-label="Choose a day"></div>
+<div class="seg" role="group" aria-label="Time of day">
+<button type="button" data-f="all" aria-pressed="true">All day</button>
+<button type="button" data-f="am" aria-pressed="false">Morning</button>
+<button type="button" data-f="pm" aria-pressed="false">Afternoon</button>
+</div>
+<div class="slots" id="slots" role="group" aria-label="Available times"></div>
+<p class="note">Times shown are sample availability, not the office's real calendar.</p>
+</div>
+
+<div class="pane" data-pane="4">
+<h3>4. Your details</h3>
+<div class="sum" id="sum"></div>
+<form id="form" novalidate>
+<div class="field"><label for="fn">Full name</label><input id="fn" autocomplete="name" required><div class="err" id="e1" aria-live="polite"></div></div>
+<div class="field"><label for="fp">Mobile phone</label><input id="fp" type="tel" autocomplete="tel" placeholder="(555) 555-0100" required><div class="err" id="e2" aria-live="polite"></div></div>
+<div class="field"><label for="fe">Email</label><input id="fe" type="email" autocomplete="email" required><div class="err" id="e3" aria-live="polite"></div></div>
+<button class="btn teal" type="submit" style="width:100%">Confirm sample booking</button>
+<p class="note">This is a demo form, nothing was sent.</p>
+</form>
+</div>
+
+<div class="w-foot"><button class="btn ghost" id="back" type="button" style="visibility:hidden">Back</button><button class="btn" id="next" type="button" disabled>Continue</button></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="how">
+<div class="wrap how">
+<div>
+<span class="eyebrow">How it works</span>
+<h2 style="font-size:clamp(1.8rem,3.4vw,2.6rem);font-weight:800">Scheduling as easy as ordering takeout</h2>
+<p style="color:var(--muted);margin-bottom:22px">That's how BLVD describes it on its own site. This concept makes it literal: one page, four taps.</p>
+<ol>
+<li><b>Choose an office</b><span>Galleria, Heights, Oak Forest, Richmond, Spring Cypress, 5th Street, Riverside or Hulen.</span></li>
+<li><b>Choose a treatment</b><span>Check-up, orthodontics, children's visit or a toothache.</span></li>
+<li><b>Pick a time</b><span>See open slots for that office, morning or afternoon.</span></li>
+<li><b>Confirm</b><span>The office gets the request. You get a calendar file. In this demo, nothing is actually sent.</span></li>
+</ol>
+</div>
+<div class="toothcard">
+<canvas id="tooth" aria-label="Interactive 3D tooth model. Drag to rotate." role="img"></canvas>
+<svg class="tfallback" id="toothSvg" viewBox="0 0 120 120" role="img" aria-label="Tooth illustration"><path d="M30 22c9-8 20-2 30-2s21-6 30 2c9 8 5 24 2 36-3 12-4 38-12 40-7 2-9-16-12-24-2-5-5-5-8 0-3 8-5 26-12 24-8-2-9-28-12-40-3-12-7-28 2-36z" fill="#fff" stroke="#0f2b46" stroke-width="3"/></svg>
+<p>A small 3D tooth you can drag and turn. Just a friendly detail.</p>
+</div>
+</div>
+<div class="wrap">
+<div class="saves">
+<div class="save"><img src="img/stock-9.jpg" loading="lazy" alt="Illustrative stock photo of a receptionist answering a phone call"><div><h3>Fewer phone calls to the front desk</h3><p>Patients currently call each office to schedule. Online booking can take routine requests off the phones so staff can focus on people in the building.</p></div></div>
+<div class="save"><img src="img/stock-10.jpg" loading="lazy" alt="Illustrative stock photo of a doctor typing at a desk computer"><div><h3>Requests that arrive after hours</h3><p>Someone who looks at the website in the evening can book straight away, instead of waiting until a phone line is open.</p></div></div>
+</div>
+<p class="note" style="text-align:center">Photos on this page are illustrative stock images, not BLVD's offices or staff.</p>
+</div>
+</section>
+
+<section style="padding-top:60px;padding-bottom:20px">
+<div class="wrap">
+<div class="band">
+<img src="img/business-featured-1.jpg" width="1024" height="541" loading="lazy" alt="BLVD Dentistry and Orthodontics featured image from their website">
+<div>
+<span class="eyebrow">In their words</span>
+<h2>Exceptional care in a modern, comfortable setting.</h2>
+<p style="color:var(--navy)">BLVD says it prioritizes patients' needs and never recommends unnecessary services. The booking experience should feel just as straightforward.</p>
+<p class="note" style="margin:0">Image published by BLVD on its own website.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="locations">
+<div class="wrap">
+<div class="sec-h"><span class="eyebrow">Locations</span><h2>Find your nearest BLVD office</h2><p>Eight offices across three cities. Pick one and the booking widget jumps to it.</p></div>
+<div class="tabs" role="tablist" aria-label="Filter by city" id="tabs">
+<button class="tab" role="tab" aria-selected="true" data-c="All">All offices</button>
+<button class="tab" role="tab" aria-selected="false" data-c="Houston">Houston</button>
+<button class="tab" role="tab" aria-selected="false" data-c="Austin">Austin</button>
+<button class="tab" role="tab" aria-selected="false" data-c="Fort Worth">Fort Worth</button>
+</div>
+<div class="locs" id="locGrid"></div>
+<p class="note">Address and hours are shown only where they appear on BLVD's website text we reviewed. Other details would be added from their site before launch.</p>
+</div>
+</section>
+
+<section class="alt" id="treatments">
+<div class="wrap">
+<div class="sec-h"><span class="eyebrow">Treatments and pricing</span><h2>See the cost before you book</h2><p>One reviewer says BLVD showed her the cost breakdown before she chose to proceed. The booking flow can do the same.</p></div>
+<div class="tr" id="trGrid"></div>
+<div class="brk">
+<div>
+<h3 style="font-size:1.3rem">Sample cost breakdown</h3>
+<p style="color:var(--muted);margin:0">Choose a treatment card above to update this example. All figures are <b>sample numbers</b> for the concept, not BLVD's prices.</p>
+</div>
+<table aria-live="polite"><caption style="text-align:left;font-weight:700;padding-bottom:6px" id="brkT">Check-up and cleaning (sample)</caption><tbody id="brkB"></tbody></table>
+</div>
+</div>
+</section>
+
+<section id="reviews">
+<div class="wrap">
+<div class="sec-h"><span class="eyebrow">What patients say</span><h2>Easy appointments, friendly staff</h2><p>Excerpts from Google reviews as shown on BLVD's own website.</p></div>
+<div class="rev">
+<figure class="rcard" style="margin:0"><blockquote>“Making an appointment is easy, no time on hold and they always return calls in a timely manner.”</blockquote><cite>Monica G.<small>Google Review, shown on blvddentistry.com</small></cite></figure>
+<figure class="rcard" style="margin:0"><blockquote>“Their scheduling is flexible (no waiting months for a visit!) and they're great at working with you to fit in appointments.”</blockquote><cite>Heather G.<small>Google Review, shown on blvddentistry.com</small></cite></figure>
+<figure class="rcard" style="margin:0"><blockquote>“Best dental clinic for young kids… both my kids were so happy coming in and leaving the clinic.”</blockquote><cite>Kristine C.S.<small>Google Review, shown on blvddentistry.com</small></cite></figure>
+</div>
+</div>
+</section>
+
+<section class="alt" id="faq">
+<div class="wrap faq-grid">
+<div>
+<div class="sec-h"><span class="eyebrow">FAQ</span><h2>Questions before you book</h2></div>
+<div class="faq">
+<details><summary>Is this the real BLVD booking system?</summary><div class="ans">No. It is an independent concept by LeadSky. Times and prices are samples, and nothing is sent to any office.</div></details>
+<details><summary>Do you recommend unnecessary treatment?</summary><div class="ans">BLVD states on its website that it never recommends unnecessary services.</div></details>
+<details><summary>What about insurance and billing?</summary><div class="ans">BLVD has an Insurance page on its website. A live version of this tool would show accepted plans for each office. We don't have those details here.</div></details>
+<details><summary>Can I book a child's visit or braces consult?</summary><div class="ans">Yes, the demo includes both. BLVD offers care for the whole family and orthodontics.</div></details>
+<details><summary>What if I have a toothache?</summary><div class="ans">The demo has a toothache option. For anything urgent, call your nearest office. Houston: <a href="tel:+12812050948">(281) 205-0948</a>. Austin 5th Street: <a href="tel:+17379904135">(737) 990-4135</a>.</div></details>
+<details><summary>What would a live version need?</summary><div class="ans">A connection to each office's scheduling software, confirmation emails or texts, and approval from BLVD. None of that exists in this demo.</div></details>
+</div>
+</div>
+<div class="faq-img"><img src="img/stock-6.jpg" loading="lazy" alt="Illustrative stock photo of a dentist with dental tools"><p>Illustrative stock photo.</p></div>
+</div>
+</section>
+
+<section class="cta">
+<div class="wrap">
+<h2>A healthy smile you love is just around the corner.</h2>
+<p>Try the booking flow again, or call an office directly.</p>
+<a class="btn" href="#book">Back to the booking demo</a>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap cols">
+<div>
+<h4>BLVD Dentistry &amp; Orthodontics</h4>
+<p>Independent website concept by LeadSky for BLVD Dentistry and Orthodontics. Not their official website. Official site: <a href="https://www.blvddentistry.com/" rel="noopener">blvddentistry.com</a>.</p>
+<p>Phone: <a href="tel:+12812050948">+1 281-205-0948</a> · <a href="mailto:austin@blvddentistry.com">austin@blvddentistry.com</a></p>
+<p>Concept by LeadSky.</p>
+</div>
+<div>
+<h4>Photo credits</h4>
+<ul>
+<li>Featured image: published by BLVD on its own website.</li>
+<li>Stock-1: StockSnap, <a href="https://pixabay.com/photos/dentist-dental-chair-clinic-medical-2589771/" rel="noopener">Pixabay</a></li>
+<li>Stock-3: StockSnap, <a href="https://pixabay.com/photos/chair-dentist-dental-clinic-teeth-2584260/" rel="noopener">Pixabay</a></li>
+<li>Stock-4: PublicDomainPictures, <a href="https://pixabay.com/photos/mother-baby-happy-motherhood-84628/" rel="noopener">Pixabay</a></li>
+<li>Stock-5: jarmoluk, <a href="https://pixabay.com/photos/dentist-patient-dental-care-medical-428646/" rel="noopener">Pixabay</a></li>
+<li>Stock-6: drshohmelian, <a href="https://pixabay.com/photos/dentist-dental-care-dentistry-teeth-2530990/" rel="noopener">Pixabay</a></li>
+<li>Stock-9: Rodrigo_SalomonHC, <a href="https://pixabay.com/photos/receptionists-phone-call-hotel-5975962/" rel="noopener">Pixabay</a></li>
+<li>Stock-10: Free-Photos, <a href="https://pixabay.com/photos/computer-business-typing-keyboard-1149148/" rel="noopener">Pixabay</a></li>
+</ul>
+</div>
+</div>
+</footer>
+
+<div class="mbar"><a class="btn teal" href="#book">Book Now</a><a class="btn ghost" href="tel:+12812050948">Call Us</a></div>
+
+<dialog id="dlg" aria-labelledby="dT">
+<div class="dlg">
+<div class="ok"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#00796b" stroke-width="3" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></div>
+<h3 id="dT">Sample booking complete</h3>
+<p style="color:var(--muted)">This is a demo form, nothing was sent. In a live version, this is where the office would receive your request.</p>
+<div class="sum" id="dSum"></div>
+<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn teal" id="ics" type="button">Download sample calendar file</button><button class="btn ghost" id="close" type="button">Close</button></div>
+</div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+var RM=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var $=function(s,r){return (r||document).querySelector(s)},$$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+var LOCS=[
+{id:'galleria',n:'Galleria',c:'Houston',addr:null,ph:null,hrs:null},
+{id:'heights',n:'Heights',c:'Houston',addr:null,ph:null,hrs:null},
+{id:'oak',n:'Oak Forest',c:'Houston',addr:null,ph:null,hrs:null},
+{id:'richmond',n:'Richmond',c:'Houston',addr:null,ph:null,hrs:null},
+{id:'cypress',n:'Spring Cypress',c:'Houston',addr:null,ph:null,hrs:null},
+{id:'5th',n:'5th Street',c:'Austin',addr:'1011 W 5th St Ste 120, Austin, TX 78703',ph:'(737) 990-4135',tel:'+17379904135',hrs:'Mon 9:00am – 6:00pm · Tue–Thu 8:00am – 4:00pm'},
+{id:'riverside',n:'Riverside',c:'Austin',addr:null,ph:null,hrs:null},
+{id:'hulen',n:'Hulen',c:'Fort Worth',addr:null,ph:null,hrs:null}
+];
+var TR=[
+{id:'chk',n:'Check-up and cleaning',d:'45 min',img:'img/stock-1.jpg',alt:'Illustrative stock photo of a dental chair in a clinic',desc:'Routine exam and cleaning for adults.',p:[['Exam',45],['Cleaning',70],['X-rays (if needed)',30]]},
+{id:'ortho',n:'Braces consultation',d:'30 min',img:'img/stock-3.jpg',alt:'Illustrative stock photo of a dental chair and equipment',desc:'Talk through orthodontic options with the team.',p:[['Consultation',0],['Records and imaging',90],['Treatment plan review',0]]},
+{id:'kids',n:"Children's visit",d:'30 min',img:'img/stock-4.jpg',alt:'Illustrative stock photo of a happy mother and child',desc:'A gentle first or regular visit for young patients.',p:[['Child exam',40],['Child cleaning',45],['X-rays (if needed)',25]]},
+{id:'ache',n:'Toothache visit',d:'30 min',img:'img/stock-5.jpg',alt:'Illustrative stock photo of a dentist examining a patient',desc:'Get the pain looked at. For urgent issues, call the office.',p:[['Focused exam',55],['X-ray',25],['Treatment estimate',0]]}
+];
+var st={loc:null,tr:null,date:null,time:null,f:'all',step:1};
+var money=function(n){return '$'+n};
+/* locations picker */
+var lp=$('#locPick');
+['Houston','Austin','Fort Worth'].forEach(function(c){
+ var l=document.createElement('div');l.className='group-l';l.textContent=c;lp.appendChild(l);
+ var g=document.createElement('div');g.className='opts';
+ LOCS.filter(function(x){return x.c===c}).forEach(function(x){
+  var b=document.createElement('button');b.type='button';b.className='opt';b.setAttribute('aria-pressed','false');b.dataset.id=x.id;b.textContent=x.n;
+  b.onclick=function(){setLoc(x.id)};g.appendChild(b)});
+ lp.appendChild(g)});
+function setLoc(id){st.loc=id;st.time=null;$$('#locPick .opt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.id===id)});upd()}
+/* treatments picker */
+var tp=$('#trPick');
+TR.forEach(function(t){var b=document.createElement('button');b.type='button';b.className='opt';b.setAttribute('aria-pressed','false');b.dataset.id=t.id;
+ b.innerHTML='<span>'+t.n+'<small>'+t.d+'</small></span><small>sample</small>';
+ b.onclick=function(){setTr(t.id)};tp.appendChild(b)});
+function setTr(id){st.tr=id;$$('#trPick .opt').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.id===id)});upd();brk(id)}
+/* days */
+var days=[],d=new Date();d.setHours(0,0,0,0);
+while(days.length<7){d=new Date(d.getTime()+864e5);if(d.getDay()!==0&&d.getDay()!==6)days.push(new Date(d))}
+var dw=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],mo=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var dEl=$('#days');
+days.forEach(function(x,i){var b=document.createElement('button');b.type='button';b.className='day';b.setAttribute('aria-pressed','false');
+ b.innerHTML=dw[x.getDay()]+'<b>'+x.getDate()+'</b>'+mo[x.getMonth()];
+ b.onclick=function(){st.date=i;st.time=null;$$('.day').forEach(function(y,j){y.setAttribute('aria-pressed',j===i)});slots();upd()};dEl.appendChild(b)});
+function hash(s){var h=0;for(var i=0;i<s.length;i++)h=(h*31+s.charCodeAt(i))|0;return Math.abs(h)}
+function fmt(h,m){var s=h>=12?'pm':'am',hh=h%12||12;return hh+':'+(m?'30':'00')+s}
+function slots(){
+ var el=$('#slots');el.innerHTML='';
+ if(st.date===null){el.innerHTML='<p class="note" style="grid-column:1/-1">Choose a day to see times.</p>';return}
+ var k=(st.loc||'')+days[st.date].getDate();
+ for(var h=8;h<16;h++)for(var m=0;m<2;m++){
+  if(st.f==='am'&&h>=12)continue;if(st.f==='pm'&&h<12)continue;
+  var lbl=fmt(h,m),b=document.createElement('button');b.type='button';b.className='slot';b.textContent=lbl;
+  var taken=hash(k+lbl)%100<32;
+  if(taken){b.disabled=true;b.setAttribute('aria-label',lbl+', unavailable')}
+  else{b.setAttribute('aria-pressed',st.time===lbl);b.onclick=(function(l){return function(){st.time=l;$$('.slot').forEach(function(y){if(!y.disabled)y.setAttribute('aria-pressed',y.textContent===l)});upd()}})(lbl)}
+  el.appendChild(b)}
+ if(!el.children.length)el.innerHTML='<p class="note" style="grid-column:1/-1">No sample times in this range.</p>';
+}
+$$('.seg button').forEach(function(b){b.onclick=function(){st.f=b.dataset.f;$$('.seg button').forEach(function(y){y.setAttribute('aria-pressed',y===b)});slots()}});
+slots();
+function L(){return LOCS.filter(function(x){return x.id===st.loc})[0]}
+function T(){return TR.filter(function(x){return x.id===st.tr})[0]}
+function total(t){return t.p.reduce(function(a,b){return a+b[1]},0)}
+function sumHtml(){var l=L(),t=T(),x=days[st.date];
+ return '<div><span>Office</span><b>'+l.n+', '+l.c+'</b></div><div><span>Treatment</span><b>'+t.n+'</b></div><div><span>When</span><b>'+dw[x.getDay()]+' '+mo[x.getMonth()]+' '+x.getDate()+', '+st.time+'</b></div><div><span>Sample estimate</span><b>'+(total(t)?'about '+money(total(t)):'Consult first')+'</b></div>'}
+/* stepper */
+var panes=$$('.pane'),bars=$$('.steps i'),next=$('#next'),back=$('#back');
+function ok(){return st.step===1?!!st.loc:st.step===2?!!st.tr:st.step===3?(st.date!==null&&!!st.time):true}
+function upd(){
+ panes.forEach(function(p,i){p.classList.toggle('show',i+1===st.step)});
+ bars.forEach(function(b,i){b.classList.toggle('on',i<st.step)});
+ back.style.visibility=st.step>1?'visible':'hidden';
+ next.style.display=st.step===4?'none':'';next.disabled=!ok();
+ if(st.step===4)$('#sum').innerHTML=sumHtml();
+}
+next.onclick=function(){if(ok()&&st.step<4){st.step++;if(st.step===3)slots();upd()}};
+back.onclick=function(){if(st.step>1){st.step--;upd()}};
+upd();
+/* form */
+var form=$('#form');
+form.addEventListener('submit',function(e){e.preventDefault();
+ var n=$('#fn').value.trim(),p=$('#fp').value.replace(/\D/g,''),m=$('#fe').value.trim(),good=true;
+ $('#e1').textContent=n.length<2?(good=false,'Please enter your name.'):'';
+ $('#e2').textContent=p.length<10?(good=false,'Enter a 10-digit US phone number.'):'';
+ $('#e3').textContent=!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(m)?(good=false,'Enter a valid email address.'):'';
+ if(!good)return;
+ $('#dSum').innerHTML=sumHtml();$('#dlg').showModal();
+});
+$('#close').onclick=function(){$('#dlg').close()};
+$('#ics').onclick=function(){
+ var l=L(),t=T(),x=new Date(days[st.date]),mt=st.time.match(/(\d+):(\d+)(am|pm)/),h=+mt[1]%12+(mt[3]==='pm'?12:0);
+ x.setHours(h,+mt[2],0,0);var e=new Date(x.getTime()+30*6e4);
+ var z=function(v){return v.getFullYear()+('0'+(v.getMonth()+1)).slice(-2)+('0'+v.getDate()).slice(-2)+'T'+('0'+v.getHours()).slice(-2)+('0'+v.getMinutes()).slice(-2)+'00'};
+ var txt='BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//LeadSky//Concept//EN\r\nBEGIN:VEVENT\r\nUID:sample-'+Date.now()+'@leadsky-concept\r\nDTSTART:'+z(x)+'\r\nDTEND:'+z(e)+'\r\nSUMMARY:SAMPLE: '+t.n+' at BLVD '+l.n+'\r\nDESCRIPTION:Concept demo only. Not a real appointment.\r\nEND:VEVENT\r\nEND:VCALENDAR';
+ var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type:'text/calendar'}));a.download='sample-appointment.ics';document.body.appendChild(a);a.click();a.remove();
+};
+/* location grid */
+var grid=$('#locGrid');
+function drawLocs(c){
+ grid.innerHTML='';
+ LOCS.filter(function(x){return c==='All'||x.c===c}).forEach(function(x){
+  var a=document.createElement('article');a.className='loc';
+  a.innerHTML='<span class="city">'+x.c+', TX</span><h3>'+x.n+'</h3>'+
+  (x.addr?'<p><b>Address:</b> '+x.addr+'</p>':'<p><b>Address:</b> see their website</p>')+
+  (x.ph?'<p><b>Phone:</b> <a href="tel:'+x.tel+'">'+x.ph+'</a></p>':'<p><b>Phone:</b> see their website</p>')+
+  (x.hrs?'<p><b>Hours:</b> '+x.hrs+'</p>':'<p><b>Hours:</b> see their website</p>')+'<div class="spacer"></div>';
+  var b=document.createElement('button');b.type='button';b.className='btn teal';b.textContent='Book at '+x.n;
+  b.onclick=function(){setLoc(x.id);st.step=Math.max(1,Math.min(st.step,1));st.step=2;upd();$('#book').scrollIntoView({behavior:RM?'auto':'smooth',block:'center'})};
+  a.appendChild(b);grid.appendChild(a)});
+}
+drawLocs('All');
+function setTab(c){$$('.tab').forEach(function(t){t.setAttribute('aria-selected',t.dataset.c===c)});drawLocs(c)}
+$$('.tab').forEach(function(t){t.onclick=function(){setTab(t.dataset.c)}});
+$$('nav a[data-city]').forEach(function(a){a.addEventListener('click',function(){setTab(a.dataset.city);nav.classList.remove('open')})});
+/* treatments grid */
+var tg=$('#trGrid');
+TR.forEach(function(t,i){
+ var a=document.createElement('article');a.className='tcard';
+ a.innerHTML='<div class="tcard-img-wrap"><img src="'+t.img+'" loading="lazy" alt="'+t.alt+'"><div class="tcard-overlay"><div class="price">'+(total(t)?'About '+money(total(t)):'Consult first')+'<small>Sample estimate · '+t.d+'</small></div></div></div><div class="tcard-body"><h3>'+t.n+'</h3><p>'+t.desc+'</p></div>';
+ var b=document.createElement('button');b.type='button';b.className='btn ghost';b.style.margin='0 18px 18px';b.textContent='See breakdown';
+ b.onclick=function(){brk(t.id)};
+ a.appendChild(b);tg.appendChild(a)});
+function brk(id){var t=TR.filter(function(x){return x.id===id})[0];
+ $('#brkT').textContent=t.n+' (sample)';
+ $('#brkB').innerHTML=t.p.map(function(r){return '<tr><td>'+r[0]+'</td><td>'+(r[1]?money(r[1]):'Included')+'</td></tr>'}).join('')+'<tr><td>Sample total</td><td>'+(total(t)?money(total(t)):'Discussed at visit')+'</td></tr>'}
+brk('chk');
+/* nav */
+var nav=$('#mainNav'),mb=$('#menuBtn');
+mb.onclick=function(){var o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',o)};
+$$('#mainNav a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');mb.setAttribute('aria-expanded','false')})});
+/* tilt */
+var wg=$('#widget');
+if(!RM&&window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+ var stg=$('.stage');
+ stg.addEventListener('mousemove',function(e){var r=stg.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;wg.style.transform='rotateY('+(x*5)+'deg) rotateX('+(-y*4)+'deg)'});
+ stg.addEventListener('mouseleave',function(){wg.style.transform=''});
+}
+/* scroll reveals (below the fold only) */
+if(window.gsap&&window.ScrollTrigger&&!RM){
+ gsap.registerPlugin(ScrollTrigger);
+ gsap.utils.toArray('.save,.band,.loc,.tcard,.rcard,.how li,.brk').forEach(function(el){
+  gsap.from(el,{y:28,opacity:0,duration:.7,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 92%',once:true}})});
+}
+/* 3D tooth */
+(function(){
+ var cv=$('#tooth'),fb=$('#toothSvg');
+ function fallback(){cv.style.display='none';fb.style.display='block'}
+ if(!window.THREE){fallback();return}
+ var gl;try{var tc=document.createElement('canvas');gl=tc.getContext('webgl')||tc.getContext('experimental-webgl')}catch(e){}
+ if(!gl){fallback();return}
+ var r=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true});
+ r.setPixelRatio(Math.min(devicePixelRatio,2));
+ var sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(35,1,.1,50);cam.position.set(0,.4,7.2);
+ sc.add(new THREE.HemisphereLight(0xffffff,0xbfd8e8,.85));
+ var dl=new THREE.DirectionalLight(0xffffff,.9);dl.position.set(3,4,5);sc.add(dl);
+ var pl=new THREE.PointLight(0x00b3a2,.6,20);pl.position.set(-4,-1,3);sc.add(pl);
+ var pts=[[0,1.55],[.45,1.5],[.95,1.3],[1.25,.9],[1.3,.35],[1.15,-.2],[.95,-.55],[.7,-.7],[0,-.72]].map(function(p){return new THREE.Vector2(p[0],p[1])});
+ var mat=new THREE.MeshPhysicalMaterial({color:0xfdfdfb,roughness:.22,metalness:0,clearcoat:.8,clearcoatRoughness:.2});
+ var g=new THREE.Group(),crown=new THREE.Mesh(new THREE.LatheGeometry(pts,48),mat);crown.scale.set(1,1,.85);g.add(crown);
+ [-.5,.5].forEach(function(x){var root=new THREE.Mesh(new THREE.ConeGeometry(.42,1.5,32),mat);root.position.set(x,-1.4,0);root.rotation.z=Math.PI+(x>0?-.08:.08);g.add(root)});
+ g.position.y=-.1;sc.add(g);
+ function size(){var w=cv.clientWidth,h=cv.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix()}
+ size();addEventListener('resize',size);
+ var vis=true,drag=false,lx=0,vy=0;
+ new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(cv);
+ cv.addEventListener('pointerdown',function(e){drag=true;lx=e.clientX;cv.setPointerCapture(e.pointerId);cv.style.cursor='grabbing'});
+ cv.addEventListener('pointermove',function(e){if(drag){g.rotation.y+=(e.clientX-lx)*.012;lx=e.clientX}});
+ cv.addEventListener('pointerup',function(){drag=false;cv.style.cursor='grab'});
+ g.rotation.y=.5;
+ function loop(){requestAnimationFrame(loop);if(!vis)return;if(!RM&&!drag){g.rotation.y+=.004;}r.render(sc,cam)}
+ if(RM){r.render(sc,cam);var rr=function(){r.render(sc,cam)};cv.addEventListener('pointermove',rr);addEventListener('resize',rr)}else loop();
+})();
+})();
+</script>
+</body>
+</html>
