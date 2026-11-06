@@ -1,0 +1,886 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Rosa Drömmar</title>
+<script id="site-data" type="application/json">{"brand": {"name": "Rosa Drömmar", "tagline": "Restaurant in Stockholm", "logo": "", "city": "Stockholm", "country": "SE", "currency": "SEK", "currency_symbol": "kr", "phone": "+4686563894", "whatsapp": "+4686563894", "email": "info@rosadrommar.se", "instagram": "", "tiktok": "", "address": "5 Essinge Brogata, Stockholm 11261", "hours": "Mo-Fr 15:00-24:00, Sat-Sun 13:00-24:00"}, "colors": {"bg": "#faf7f5", "surface": "#ffffff", "text": "#2a2a2a", "muted": "#6b6b6b", "brand": "#c07a9a", "accent": "#8d5a6a"}, "fonts": {"heading": "Playfair Display", "body": "Lato"}, "hero": {"eyebrow": "Restaurant in Stockholm", "title": "Rosa Drömmar", "subtitle": "Warm Swedish meals in Essinge Brogata. Open daily.", "image": "img/stock-5.jpg", "cta_primary": "Book a table", "cta_secondary": "View menu", "shape3d": "bottle"}, "stats": [], "about": {"title": "About Rosa Drömmar", "text": "Rosa Drömmar is a restaurant in Stockholm. We are located at 5 Essinge Brogata. Our kitchen is open from early afternoon until late every day of the week. We welcome guests for lunch, dinner, and evening meals.", "image": "img/stock-4.jpg"}, "items": [{"name": "Grilled salmon with vegetables", "description": "Fresh salmon served with seasonal vegetables.", "price": 245, "price_label": "Sample price", "duration": "", "image": "img/stock-2.jpg", "category": "Main"}, {"name": "Swedish meatballs", "description": "Traditional meatballs with mash and lingonberries.", "price": 175, "price_label": "Sample price", "duration": "", "image": "img/stock-1.jpg", "category": "Main"}, {"name": "Vegetarian pasta", "description": "Pasta with fresh vegetables and herbs.", "price": 155, "price_label": "Sample price", "duration": "", "image": "img/stock-1.jpg", "category": "Main"}, {"name": "Chocolate cake", "description": "Rich chocolate cake with whipped cream.", "price": 85, "price_label": "Sample price", "duration": "", "image": "img/stock-1.jpg", "category": "Dessert"}, {"name": "House coffee", "description": "Freshly brewed coffee.", "price": 45, "price_label": "Sample price", "duration": "", "image": "img/stock-6.jpg", "category": "Drink"}, {"name": "Fresh juice", "description": "Pressed fruit juice.", "price": 55, "price_label": "Sample price", "duration": "", "image": "img/stock-2.jpg", "category": "Drink"}], "gallery": [{"image": "img/stock-1.jpg", "caption": "Illustrative restaurant interior"}, {"image": "img/stock-3.jpg", "caption": "Illustrative kitchen"}, {"image": "img/stock-6.jpg", "caption": "Illustrative outdoor café"}], "videos": [], "steps": [{"title": "Choose a time", "text": "Pick a day and hour that works for you."}, {"title": "Confirm your visit", "text": "Call or email us to confirm the booking."}, {"title": "Join us", "text": "We are waiting at 5 Essinge Brogata."}], "points": [{"title": "Central location", "text": "Find us in Stockholm, near Essinge Brogata."}, {"title": "Open daily", "text": "We welcome guests every day of the week."}, {"title": "Late kitchen", "text": "Our kitchen is open until midnight."}], "faq": [{"q": "Is the website working?", "a": "No. The website is currently broken. Please call or email us instead."}, {"q": "Where is Rosa Drömmar?", "a": "5 Essinge Brogata, Stockholm 11261."}, {"q": "What are the opening hours?", "a": "Monday to Friday 15:00-24:00. Saturday and Sunday 13:00-24:00."}, {"q": "How can I book a table?", "a": "Call +46 8 656 3894 or email info@rosadrommar.se."}, {"q": "Do you take phone orders?", "a": "Yes. You can reach us at +46 8 656 3894 during opening hours."}], "demo": {"assistant_name": "Rosa Assistant", "greeting": "Hello. This is a demo assistant for Rosa Drömmar. Nothing is sent.", "quick_questions": ["Opening hours", "Address", "Book a table"], "script": [{"q": "What are your opening hours?", "a": "Mo-Fr 15:00-24:00, Sa-Sun 13:00-24:00."}, {"q": "Where are you located?", "a": "5 Essinge Brogata, Stockholm 11261."}, {"q": "How do I book?", "a": "Call +46 8 656 3894 or email info@rosadrommar.se."}], "staff": [], "slots": [], "kpis": [{"label": "Demo messages", "value": "0"}], "columns": ["Name", "Phone", "Message"], "records": [], "options": [{"name": "Table booking", "price": 0, "unit": "sample"}]}, "banner": "Independent website concept by LeadSky for Rosa Drömmar. Not their official website.", "credits": [{"text": "Photo by Pexels", "url": "https://pixabay.com/photos/restaurant-furniture-interiors-1837150/"}, {"text": "Photo by cattalin", "url": "https://pixabay.com/photos/new-years-eve-salmon-fish-seafood-518032/"}, {"text": "Photo by binmassam", "url": "https://pixabay.com/photos/chef-cooking-street-costumer-4807317/"}, {"text": "Photo by Pexels", "url": "https://pixabay.com/photos/outdoor-dining-restaurant-bar-1846137/"}, {"text": "Photo by indigodesign", "url": "https://pixabay.com/photos/building-restaurant-exterior-facade-5906180/"}, {"text": "Photo by Michelle-Maria", "url": "https://pixabay.com/photos/caf%C3%A9-restaurant-skansen-dining-454531/"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  :root {
+    --bg: #fdfaf7;
+    --surface: #ffffff;
+    --text: #212121;
+    --muted: #7a7a7a;
+    --brand: #6b4a2e;
+    --accent: #b5833d;
+    --radius: 14px;
+    --shadow: 0 12px 34px -14px rgba(0,0,0,0.06);
+    --font-heading: "Cormorant Garamond", serif;
+    --font-body: "Inter", sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 104px; }
+  body { font-family: var(--font-body); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: var(--brand); text-decoration: none; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; line-height: 1.25; color: var(--text); }
+  .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+  .section { padding: 64px 0; }
+  .section-title { font-size: clamp(1.8rem, 3vw, 2.6rem); margin-bottom: 10px; letter-spacing: -0.01em; }
+  .section-sub { color: var(--muted); margin-bottom: 40px; font-size: 1.05rem; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 14px 26px; border: 0; border-radius: 8px; font-family: inherit; font-size: 0.95rem; font-weight: 600; cursor: pointer; transition: transform .25s ease, opacity .25s ease; }
+  .btn-primary { background: var(--brand); color: #ffffff; }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--muted); }
+  .btn-secondary:hover { background: #f2ebe0; }
+  .btn-full { width: 100%; }
+  .hidden { display: none !important; }
+  .top-banner { background: var(--brand); color: #ffffff; font-size: 0.85rem; text-align: center; padding: 7px 16px; letter-spacing: 0.04em; }
+  .top-banner .brand-name { font-weight: 700; }
+  .site-header { position: sticky; top: 0; background: var(--bg); border-bottom: 1px solid #e7e0d4; z-index: 100; }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; max-width: 1140px; margin: 0 auto; gap: 16px; }
+  .brand-link { font-family: var(--font-heading); font-size: clamp(1.1rem, 4vw, 1.45rem); font-weight: 700; color: var(--text); min-width: 0; overflow-wrap: anywhere; }
+  .nav-links { display: none; gap: 24px; list-style: none; }
+  .nav-links a { color: var(--text); font-weight: 500; font-size: 0.95rem; }
+  .nav-links a:hover { color: var(--brand); }
+  .contact-chip { display: none; align-items: center; gap: 10px; background: var(--surface); padding: 8px 14px; border-radius: 8px; border: 1px solid #e7e0d4; font-size: 0.9rem; white-space: nowrap; }
+  .contact-chip svg { width: 16px; height: 16px; fill: var(--brand); flex-shrink: 0; }
+  .menu-toggle { display: flex; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; }
+  .menu-toggle span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform .3s ease, opacity .3s ease; }
+  @media (min-width: 768px) {
+    .nav-links { display: flex; }
+    .contact-chip { display: flex; }
+    .menu-toggle { display: none; }
+  }
+  .hero { position: relative; padding: 96px 20px; min-height: 75vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .hero-grid { display: grid; grid-template-columns: 1fr; gap: 40px; max-width: 1140px; margin: 0 auto; width: 100%; }
+  .hero-content { max-width: 620px; }
+  .hero-eyebrow { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.22em; color: var(--brand); font-weight: 600; margin-bottom: 14px; display: block; }
+  .hero h1 { font-size: clamp(2.4rem, 5.5vw, 4.6rem); margin-bottom: 22px; letter-spacing: -0.02em; }
+  .hero-subtitle { font-size: clamp(1rem, 2vw, 1.25rem); color: var(--muted); margin-bottom: 30px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .hero-visual { position: absolute; inset: 0; z-index: 1; }
+  #hero3d { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .hero-fallback { position: absolute; inset: 0; z-index: 0; display: none; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--brand) 0%, var(--accent) 100%); }
+  .hero-fallback svg { width: 120px; height: 120px; color: rgba(255,255,255,0.45); }
+  @media (min-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr 1fr; align-items: center; }
+    .hero-visual { position: relative; height: 560px; }
+    #hero3d { position: relative; }
+    .hero-fallback { position: relative; height: 100%; }
+  }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px; }
+  .stat-card { background: var(--surface); padding: 32px 24px; border-radius: var(--radius); box-shadow: var(--shadow); text-align: center; border: 1px solid #eae4d8; }
+  .stat-value { font-family: var(--font-heading); font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--brand); display: block; margin-bottom: 6px; }
+  .stat-label { color: var(--muted); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  .about-grid { display: grid; grid-template-columns: 1fr; gap: 40px; align-items: center; }
+  .about-image { border-radius: var(--radius); overflow: hidden; background: #eae4d8; }
+  .about-text h2 { margin-bottom: 16px; font-size: clamp(1.6rem, 3vw, 2.2rem); }
+  .about-text p { color: var(--muted); font-size: 1.05rem; margin-bottom: 18px; }
+  @media (min-width: 768px) { .about-grid { grid-template-columns: 1fr 1fr; } }
+  .items-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+  .item-card { background: var(--surface); border: 1px solid #eae4d8; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: transform .35s ease; display: flex; flex-direction: column; }
+  .item-card:hover { transform: translateY(-6px); }
+  .item-image-wrap { height: 200px; background: #eae4d8; }
+  .item-image-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .item-content { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+  .item-meta { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 8px; }
+  .item-card h3 { font-size: 1.15rem; margin-bottom: 8px; }
+  .item-card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 14px; flex: 1; }
+  .item-price { font-family: var(--font-heading); font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+  .item-duration { font-size: 0.85rem; color: var(--muted); }
+  .points-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 24px; }
+  .point-card { background: var(--surface); border: 1px solid #eae4d8; border-radius: var(--radius); padding: 28px 22px; box-shadow: var(--shadow); }
+  .point-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+  .point-card p { color: var(--muted); font-size: 0.95rem; }
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 24px; position: relative; }
+  .step-card { background: var(--surface); border: 1px solid #eae4d8; border-radius: var(--radius); padding: 28px 20px; text-align: center; box-shadow: var(--shadow); position: relative; z-index: 2; }
+  .step-number { font-family: var(--font-heading); font-size: 3rem; color: #eae4d8; position: absolute; top: 12px; left: 50%; transform: translateX(-50%); z-index: 1; }
+  .step-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+  .step-card p { color: var(--muted); font-size: 0.9rem; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .gallery-item { border-radius: var(--radius); overflow: hidden; background: #eae4d8; position: relative; aspect-ratio: 4/3; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+  .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px; background: linear-gradient(transparent, rgba(0,0,0,0.55)); color: #fff; font-size: 0.85rem; }
+  .video-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .tt-play { position: relative; width: 100%; padding: 0; background: none; border: 1px solid #eae4d8; border-radius: var(--radius); overflow: hidden; cursor: pointer; aspect-ratio: 16/9; }
+  .tt-play img { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.85; transition: opacity .3s ease; }
+  .tt-play:hover img { opacity: 1; }
+  .play-badge { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,0.35); }
+  .play-badge::before { content: ''; display: inline-block; width: 0; height: 0; border-left: 16px solid #fff; border-top: 10px solid transparent; border-bottom: 10px solid transparent; margin-left: 4px; }
+  .service-area-card { background: var(--surface); border: 1px solid #eae4d8; border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); max-width: 420px; margin: 0 auto; }
+  .service-area-card h2 { font-size: 1.5rem; margin-bottom: 10px; }
+  .contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; color: var(--text); }
+  .contact-item svg { width: 20px; height: 20px; fill: var(--brand); flex-shrink: 0; margin-top: 2px; }
+  .contact-item a { color: var(--text); }
+  .contact-item a:hover { color: var(--brand); }
+  .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 700px; margin: 0 auto; }
+  .faq-item { border: 1px solid #eae4d8; border-radius: 10px; overflow: hidden; background: var(--surface); }
+  .faq-q { width: 100%; text-align: left; padding: 18px 22px; background: transparent; border: 0; font-family: inherit; font-size: 1rem; font-weight: 600; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .faq-q:hover { background: #f7f4ee; }
+  .faq-a { padding: 0 22px 18px; color: var(--muted); font-size: 0.95rem; line-height: 1.55; border-top: 1px solid #eae4d8; }
+  .booking-wrap { max-width: 640px; margin: 0 auto; background: var(--surface); border: 1px solid #eae4d8; border-radius: var(--radius); padding: 36px 28px; box-shadow: var(--shadow); }
+  .booking-wrap h2 { font-size: 1.6rem; margin-bottom: 22px; }
+  .form-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 20px; }
+  @media (min-width: 600px) { .form-grid { grid-template-columns: 1fr 1fr; } }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+  .form-group input, .form-group select, .form-group textarea { padding: 12px 14px; border: 1px solid #d8cfbe; border-radius: 8px; font-family: inherit; font-size: 0.95rem; background: var(--bg); color: var(--text); }
+  .form-group input:focus { border-color: var(--brand); outline: none; }
+  .form-msg { margin-top: 16px; padding: 14px; background: #f7f4ee; border: 1px solid #e7dcbd; border-radius: 8px; color: #6b4a2e; font-size: 0.9rem; }
+  .site-footer { border-top: 1px solid #e7e0d4; padding: 40px 0; color: var(--muted); font-size: 0.85rem; text-align: center; }
+  .credits-list { list-style: none; display: flex; justify-content: center; gap: 18px; margin-bottom: 12px; flex-wrap: wrap; }
+  .credits-list a { color: var(--muted); }
+  .credits-list a:hover { color: var(--brand); }
+  .whatsapp-float { position: fixed; bottom: 24px; right: 24px; z-index: 200; display: none; align-items: center; gap: 8px; background: #25d366; color: #fff; padding: 12px 16px; border-radius: 40px; font-weight: 700; font-size: 0.9rem; box-shadow: 0 8px 24px rgba(37,211,102,0.3); }
+  .whatsapp-float svg { width: 22px; height: 22px; fill: #fff; }
+  @media (max-width: 600px) {
+    .whatsapp-float span { display: none; }
+    .whatsapp-float { padding: 14px; border-radius: 50%; justify-content: center; width: 56px; height: 56px; }
+  }
+  .chat-toggle { position: fixed; bottom: 24px; left: 24px; z-index: 200; background: var(--brand); color: #fff; border: 0; border-radius: 40px; padding: 12px 18px; font-weight: 700; cursor: pointer; box-shadow: var(--shadow); display: flex; align-items: center; gap: 10px; }
+  .chat-panel { position: fixed; bottom: 96px; left: 24px; width: 340px; height: 520px; background: var(--surface); border: 1px solid #eae4d8; border-radius: 16px; box-shadow: var(--shadow); display: none; flex-direction: column; z-index: 200; overflow: hidden; }
+  .chat-panel.open { display: flex; }
+  .chat-header { background: var(--brand); color: #fff; padding: 14px 18px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+  .chat-close { background: none; border: 0; color: #fff; font-size: 1.4rem; cursor: pointer; line-height: 1; }
+  .chat-messages { flex: 1; padding: 16px; overflow-y: auto; font-size: 0.9rem; color: var(--text); }
+  .chat-bubble { max-width: 80%; padding: 10px 14px; border-radius: 12px; margin-bottom: 10px; background: #f2ebe0; }
+  .chat-bubble.me { background: var(--brand); color: #fff; align-self: flex-end; }
+  .chat-input { padding: 14px 18px; border-top: 1px solid #eae4d8; display: flex; gap: 8px; }
+  .chat-input input { flex: 1; padding: 10px 14px; border: 1px solid #d8cfbe; border-radius: 8px; font-family: inherit; }
+  .chat-input button { background: var(--brand); color: #fff; border: 0; border-radius: 8px; padding: 0 16px; cursor: pointer; }
+  .quick-list { display: flex; flex-direction: column; gap: 8px; padding: 12px 18px; background: #f7f4ee; }
+  .quick-btn { width: 100%; text-align: left; padding: 8px 12px; background: #fff; border: 1px solid #eae4d8; border-radius: 8px; font-size: 0.85rem; cursor: pointer; }
+  .quick-btn:hover { background: #f2ebe0; }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.revealed { opacity: 1; transform: none; }
+  .image-fallback { width: 100%; height: 100%; background: linear-gradient(135deg, #eae4d8, #f2ebe0); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 0.8rem; }
+  .item-image-wrap .image-fallback { height: 200px; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .whatsapp-float { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-banner" id="top-banner">Independent website concept by LeadSky for <span class="brand-name">NAME</span>. Not their official website.</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#" class="brand-link" id="brand-link">
+      <img src="img/logo.png" alt="" id="brand-logo" style="height:32px;width:auto;display:none;">
+      <span id="brand-name-text">Rodden Auto Works</span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#points">Why us</a></li>
+        <li><a href="#steps">Process</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#service-area">Service area</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#booking">Booking</a></li>
+      </ul>
+    </nav>
+    <div class="contact-chip" id="contact-chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44-2.83 4.55-5.14 7.79-5.14 4.01 0 7.75 2.49 9.23 6.35.44 1.14.44 2.44 0 3.58-1.45 3.91-4.8 7.03-8.95 7.03-1.02 0-2.06-.21-3.02-.65-4.66-2.11-6.92-6.84-5.05-11.17z"/></svg><a href="tel:+2348012345678">+234 801 234 5678</a></div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" id="hero" aria-label="Home">
+  <div class="hero-grid">
+    <div class="hero-content">
+      <span class="hero-eyebrow" id="hero-eyebrow">Auto care in Lagos</span>
+      <h1 id="hero-title">Honest repairs, beautiful results</h1>
+      <p class="hero-subtitle" id="hero-subtitle">From routine servicing to full detailing, we treat every vehicle like our own.</p>
+      <div class="hero-actions">
+        <a href="#booking" class="btn btn-primary" id="hero-cta-1">Book a visit</a>
+        <a href="#services" class="btn btn-secondary" id="hero-cta-2">Get a quote</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-fallback"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L1 21h22L12 2zm0 3.78 6.36 4.86L19 15.25 15.12 17.55 12 19.44 8.88 17.55 5 15.25 8.64 10.64 12 5.78z" fill="currentColor"/></svg></div>
+      <canvas id="hero3d"></canvas>
+    </div>
+  </div>
+</section>
+
+<section class="section stats-section reveal" id="stats" aria-label="Key stats">
+  <div class="container">
+    <h2 class="section-title" id="stats-title">Key figures</h2>
+    <div class="stats-grid" id="stats-grid"></div>
+  </div>
+</section>
+
+<section class="section about reveal" id="about" aria-label="About">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal" id="about-image-wrap"></div>
+      <div class="about-text reveal">
+        <h2 id="about-title">About Rodden Auto Works</h2>
+        <div id="about-text"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section services reveal" id="services" aria-label="Services">
+  <div class="container">
+    <h2 class="section-title" id="services-title">Our Services</h2>
+    <p class="section-sub" id="services-sub">We care for vehicles of every age and mileage.</p>
+    <div class="items-grid" id="items-grid"></div>
+  </div>
+</section>
+
+<section class="section points reveal" id="points" aria-label="Why choose us">
+  <div class="container">
+    <h2 class="section-title" id="points-title">Why choose us</h2>
+    <div class="points-grid" id="points-grid"></div>
+  </div>
+</section>
+
+<section class="section steps reveal" id="steps" aria-label="Process">
+  <div class="container">
+    <h2 class="section-title" id="steps-title">How it works</h2>
+    <div class="steps-grid" id="steps-grid"></div>
+  </div>
+</section>
+
+<section class="section gallery reveal" id="gallery" aria-label="Gallery">
+  <div class="container">
+    <h2 class="section-title" id="gallery-title">Recent work</h2>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </div>
+</section>
+
+<section class="section videos reveal" id="videos" aria-label="Videos">
+  <div class="container">
+    <h2 class="section-title" id="videos-title">Watch</h2>
+    <div class="video-grid" id="video-grid"></div>
+  </div>
+</section>
+
+<section class="section service-area reveal" id="service-area" aria-label="Service area">
+  <div class="container">
+    <div class="service-area-card reveal">
+      <h2 id="area-title">Lagos, Nigeria</h2>
+      <div id="area-details"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section faq reveal" id="faq" aria-label="FAQ">
+  <div class="container">
+    <h2 class="section-title" id="faq-title">Frequently asked questions</h2>
+    <div class="faq-list" id="faq-list"></div>
+  </div>
+</section>
+
+<section class="section booking reveal" id="booking" aria-label="Booking">
+  <div class="container">
+    <div class="booking-wrap">
+      <h2 id="booking-title">Request a quote</h2>
+      <form id="quote-form" novalidate>
+        <div class="form-grid">
+          <div class="form-group"><label>Full name</label><input type="text" name="name" required></div>
+          <div class="form-group"><label>Email address</label><input type="email" name="email"></div>
+          <div class="form-group"><label>Phone number</label><input type="tel" name="phone" required></div>
+          <div class="form-group"><label>Service</label><select name="service" id="booking-service"><option value="">Choose a service</option></select></div>
+          <div class="form-group"><label>Preferred date</label><input type="date" name="date"></div>
+          <div class="form-group"><label>Preferred time</label><input type="time" name="time"></div>
+          <div class="form-group" style="grid-column: 1 / -1"><label>Message</label><textarea name="message" rows="4" placeholder="Tell us about your vehicle and the work needed"></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Send request</button>
+      </form>
+      <div id="form-message" class="form-msg" style="display:none">This is a demo form, nothing was sent</div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <ul class="credits-list" id="credits-list"></ul>
+    <p>Concept by LeadSky</p>
+  </div>
+</footer>
+
+<a href="https://wa.me/2348012345678" class="whatsapp-float" id="whatsapp-float" aria-label="Message us on WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#fff"/></svg><span>WhatsApp</span></a>
+
+<button class="chat-toggle" id="chat-toggle" aria-expanded="false">Assistant</button>
+<div class="chat-panel" id="chat-panel" role="dialog" aria-modal="true" aria-label="Assistant chat">
+  <div class="chat-header"><span id="chat-assistant-name">Assistant</span><button class="chat-close" id="chat-close" aria-label="Close chat">&times;</button></div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="quick-list" id="quick-list"></div>
+  <div class="chat-input"><input id="chat-input" type="text" placeholder="Type a message"><button id="chat-send">Send</button></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+class WaveCurve extends THREE.Curve {
+  constructor(){ super(); }
+  getPoint(t, target){
+    const x = t * 4 - 2;
+    const y = Math.sin(x * Math.PI) * 0.7;
+    const z = Math.cos(x * 0.8) * 0.3;
+    return (target || new THREE.Vector3()).set(x, y, z);
+  }
+}
+class BraidCurve extends THREE.Curve {
+  constructor(){ super(); }
+  getPoint(t, target){
+    const a = t * Math.PI * 4;
+    return (target || new THREE.Vector3()).set(Math.cos(a), Math.sin(a), (t - 0.5) * 3);
+  }
+}
+
+(function(){
+  const dataEl = document.getElementById('site-data');
+  if(!dataEl) return;
+  const SITE = JSON.parse(dataEl.textContent);
+
+  document.title = SITE.brand.name;
+
+  const bannerEl = document.getElementById('top-banner');
+  if(bannerEl && SITE.banner) bannerEl.innerHTML = SITE.banner.replace('NAME', SITE.brand.name);
+
+  const root = document.documentElement;
+  ['bg','surface','text','muted','brand','accent'].forEach(k => {
+    root.style.setProperty('--' + k, SITE.colors[k]);
+  });
+
+  const hf = SITE.fonts.heading.replace(/ /g, '+');
+  const bf = SITE.fonts.body.replace(/ /g, '+');
+  const fLink = document.createElement('link');
+  fLink.rel = 'stylesheet';
+  fLink.href = `https://fonts.googleapis.com/css2?family=${hf}:wght@400;600;700&family=${bf}:wght@400;500;600&display=swap`;
+  document.head.appendChild(fLink);
+  root.style.setProperty('--font-heading', '"' + SITE.fonts.heading + '", serif');
+  root.style.setProperty('--font-body', '"' + SITE.fonts.body + '", sans-serif');
+
+  const brandNameEl = document.getElementById('brand-name-text');
+  if(brandNameEl) brandNameEl.textContent = SITE.brand.name;
+  const logoImg = document.getElementById('brand-logo');
+  if(SITE.brand.logo){
+    logoImg.src = SITE.brand.logo;
+    logoImg.alt = SITE.brand.name + ' logo';
+    logoImg.style.display = 'block';
+  }
+
+  const chip = document.getElementById('contact-chip');
+  const chipLink = chip.querySelector('a');
+  if(SITE.brand.phone){
+    chipLink.href = 'tel:' + SITE.brand.phone;
+    chipLink.textContent = SITE.brand.phone;
+    chip.style.display = 'flex';
+  }
+
+  const heroEyebrow = document.getElementById('hero-eyebrow');
+  if(heroEyebrow) heroEyebrow.textContent = SITE.hero.eyebrow;
+  const heroTitle = document.getElementById('hero-title');
+  if(heroTitle) heroTitle.textContent = SITE.hero.title;
+  const heroSub = document.getElementById('hero-subtitle');
+  if(heroSub) heroSub.textContent = SITE.hero.subtitle;
+  const cta1 = document.getElementById('hero-cta-1');
+  if(cta1){ cta1.textContent = SITE.hero.cta_primary; cta1.href = '#booking'; }
+  const cta2 = document.getElementById('hero-cta-2');
+  if(cta2){ cta2.textContent = SITE.hero.cta_secondary; cta2.href = '#services'; }
+
+  function hide(sec){ const el = document.getElementById(sec); if(el) el.style.display = 'none'; }
+
+  if(!SITE.stats || SITE.stats.length === 0) hide('stats');
+  else {
+    const grid = document.getElementById('stats-grid');
+    SITE.stats.forEach(s => {
+      const card = document.createElement('div');
+      card.className = 'stat-card reveal';
+      card.innerHTML = '<span class="stat-value">' + s.value + '</span><span class="stat-label">' + s.label + '</span>';
+      grid.appendChild(card);
+    });
+  }
+
+  if(!SITE.about || !SITE.about.title) hide('about');
+  else {
+    const at = document.getElementById('about-title');
+    if(at) at.textContent = SITE.about.title;
+    const ad = document.getElementById('about-text');
+    if(ad) ad.textContent = SITE.about.text;
+    const wrap = document.getElementById('about-image-wrap');
+    if(SITE.about.image){
+      const img = document.createElement('img');
+      img.src = SITE.about.image;
+      img.alt = SITE.about.title;
+      img.loading = 'lazy';
+      img.onerror = function(){ wrap.innerHTML = '<div class="image-fallback"></div>'; };
+      wrap.appendChild(img);
+    } else { wrap.innerHTML = '<div class="image-fallback"></div>'; }
+  }
+
+  if(!SITE.items || SITE.items.length === 0) hide('services');
+  else {
+    const st = document.getElementById('services-title');
+    if(st) st.textContent = 'Our Services';
+    const ss = document.getElementById('services-sub');
+    if(ss) ss.textContent = 'We care for vehicles of every age and mileage.';
+    const grid = document.getElementById('items-grid');
+    const sel = document.getElementById('booking-service');
+    SITE.items.forEach(it => {
+      const card = document.createElement('article');
+      card.className = 'item-card reveal';
+      const priceHtml = (it.price === 0) ? (it.price_label || 'Price on request') : (SITE.brand.currency_symbol + it.price.toLocaleString());
+      card.innerHTML =
+        '<div class="item-image-wrap">' +
+        (it.image ? '<img src="' + it.image + '" alt="' + it.name + '" loading="lazy">' : '<div class="image-fallback"></div>') +
+        '</div>' +
+        '<div class="item-content">' +
+        '<div class="item-meta">' + (it.category || '') + '</div>' +
+        '<h3>' + it.name + '</h3>' +
+        '<p>' + it.description + '</p>' +
+        '<div class="item-price">' + priceHtml + '</div>' +
+        '<div class="item-duration">' + (it.duration || '') + '</div>' +
+        '</div>';
+      grid.appendChild(card);
+      if(sel){
+        const o = document.createElement('option');
+        o.value = it.name;
+        o.textContent = it.name + (it.price === 0 ? ' (' + it.price_label + ')' : ' — ' + SITE.brand.currency_symbol + it.price.toLocaleString());
+        sel.appendChild(o);
+      }
+    });
+  }
+
+  if(!SITE.points || SITE.points.length === 0) hide('points');
+  else {
+    const pt = document.getElementById('points-title');
+    if(pt) pt.textContent = 'Why choose us';
+    const grid = document.getElementById('points-grid');
+    SITE.points.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'point-card reveal';
+      card.innerHTML = '<h3>' + p.title + '</h3><p>' + p.text + '</p>';
+      grid.appendChild(card);
+    });
+  }
+
+  if(!SITE.steps || SITE.steps.length === 0) hide('steps');
+  else {
+    const st = document.getElementById('steps-title');
+    if(st) st.textContent = 'How it works';
+    const grid = document.getElementById('steps-grid');
+    SITE.steps.forEach((s, i) => {
+      const card = document.createElement('article');
+      card.className = 'step-card reveal';
+      card.innerHTML = '<div class="step-number">' + (i + 1) + '</div><h3>' + s.title + '</h3><p>' + s.text + '</p>';
+      grid.appendChild(card);
+    });
+  }
+
+  if(!SITE.gallery || SITE.gallery.length === 0) hide('gallery');
+  else {
+    const gt = document.getElementById('gallery-title');
+    if(gt) gt.textContent = 'Recent work';
+    const grid = document.getElementById('gallery-grid');
+    SITE.gallery.forEach(g => {
+      const item = document.createElement('figure');
+      item.className = 'gallery-item reveal';
+      item.innerHTML =
+        '<img src="' + g.image + '" alt="' + (g.caption || 'Gallery image') + '" loading="lazy">' +
+        '<figcaption class="gallery-caption">' + (g.caption || '') + '</figcaption>';
+      grid.appendChild(item);
+    });
+  }
+
+  if(!SITE.videos || SITE.videos.length === 0) hide('videos');
+  else {
+    const vt = document.getElementById('videos-title');
+    if(vt) vt.textContent = 'Watch';
+    const grid = document.getElementById('video-grid');
+    SITE.videos.forEach(v => {
+      const btn = document.createElement('button');
+      btn.className = 'tt-play';
+      btn.dataset.player = v.player;
+      btn.setAttribute('aria-label', 'Play ' + (v.caption || 'video'));
+      btn.innerHTML =
+        '<img src="' + v.poster + '" alt="' + (v.caption || 'Video poster') + '" loading="lazy">' +
+        '<div class="play-badge" aria-hidden="true"></div>';
+      grid.appendChild(btn);
+    });
+    document.querySelectorAll('.tt-play').forEach(btn => {
+      btn.addEventListener('click', function(){
+        const player = this.dataset.player;
+        const parent = this.parentElement;
+        const iframe = document.createElement('iframe');
+        iframe.src = player;
+        iframe.allow = 'autoplay; fullscreen';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = '0';
+        iframe.style.borderRadius = 'inherit';
+        parent.replaceChild(iframe, this);
+        const open = document.createElement('a');
+        open.href = player;
+        open.target = '_blank';
+        open.rel = 'noopener';
+        open.textContent = 'Open in new window';
+        open.style.display = 'block';
+        open.style.marginTop = '8px';
+        open.style.fontSize = '0.85rem';
+        open.style.color = 'var(--brand)';
+        parent.appendChild(open);
+      });
+    });
+  }
+
+  if(!SITE.brand.city && !SITE.brand.address) hide('service-area');
+  else {
+    const at = document.getElementById('area-title');
+    if(at) at.textContent = (SITE.brand.city || '') + (SITE.brand.country ? ', ' + SITE.brand.country : '');
+    const details = document.getElementById('area-details');
+    let html = '';
+    if(SITE.brand.address){
+      html += '<div class="contact-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>' + SITE.brand.address + '</span></div>';
+    }
+    if(SITE.brand.hours){
+      html += '<div class="contact-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg><span>' + SITE.brand.hours + '</span></div>';
+    }
+    if(SITE.brand.phone){
+      html += '<div class="contact-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79c1.44-2.83 4.55-5.14 7.79-5.14 4.01 0 7.75 2.49 9.23 6.35.44 1.14.44 2.44 0 3.58-1.45 3.91-4.8 7.03-8.95 7.03-1.02 0-2.06-.21-3.02-.65-4.66-2.11-6.92-6.84-5.05-11.17z"/></svg><a href="tel:' + SITE.brand.phone + '">' + SITE.brand.phone + '</a></div>';
+    }
+    if(SITE.brand.email){
+      html += '<div class="contact-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.79.9-1.79 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:' + SITE.brand.email + '">' + SITE.brand.email + '</a></div>';
+    }
+    details.innerHTML = html;
+  }
+
+  if(!SITE.faq || SITE.faq.length === 0) hide('faq');
+  else {
+    const ft = document.getElementById('faq-title');
+    if(ft) ft.textContent = 'Frequently asked questions';
+    const list = document.getElementById('faq-list');
+    SITE.faq.forEach(f => {
+      const item = document.createElement('div');
+      item.className = 'faq-item';
+      item.innerHTML =
+        '<button class="faq-q" aria-expanded="false">' + f.q + '<span>+</span></button>' +
+        '<div class="faq-a" style="display:none">' + f.a + '</div>';
+      list.appendChild(item);
+    });
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', function(){
+        const expanded = this.getAttribute('aria-expanded') === 'true';
+        const answer = this.nextElementSibling;
+        this.setAttribute('aria-expanded', !expanded);
+        answer.style.display = expanded ? 'none' : 'block';
+        this.querySelector('span').textContent = expanded ? '+' : '\u2212';
+      });
+    });
+  }
+
+  const form = document.getElementById('quote-form');
+  const msg = document.getElementById('form-message');
+  const bt = document.getElementById('booking-title');
+  if(bt) bt.textContent = 'Request a quote';
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    msg.textContent = 'This is a demo form, nothing was sent';
+    msg.style.display = 'block';
+    setTimeout(function(){ form.reset(); msg.style.display = 'none'; }, 4000);
+  });
+
+  const credits = document.getElementById('credits-list');
+  if(SITE.credits && SITE.credits.length){
+    SITE.credits.forEach(c => {
+      const li = document.createElement('li');
+      if(c.url){
+        const a = document.createElement('a');
+        a.href = c.url;
+        a.textContent = c.text;
+        li.appendChild(a);
+      } else { li.textContent = c.text; }
+      credits.appendChild(li);
+    });
+  }
+
+  const waFloat = document.getElementById('whatsapp-float');
+  if(SITE.brand.whatsapp){
+    waFloat.href = 'https://wa.me/' + SITE.brand.whatsapp;
+    waFloat.style.display = 'flex';
+  }
+
+  const chatToggle = document.getElementById('chat-toggle');
+  const chatPanel = document.getElementById('chat-panel');
+  const chatClose = document.getElementById('chat-close');
+  const chatName = document.getElementById('chat-assistant-name');
+  const chatMsg = document.getElementById('chat-messages');
+  const quickList = document.getElementById('quick-list');
+  const chatInput = document.getElementById('chat-input');
+  const chatSend = document.getElementById('chat-send');
+  if(chatName) chatName.textContent = SITE.demo.assistant_name || 'Assistant';
+  const greeting = document.createElement('div');
+  greeting.className = 'chat-bubble';
+  greeting.textContent = SITE.demo.greeting || 'Hello. How can I help?';
+  chatMsg.appendChild(greeting);
+  if(SITE.demo.quick_questions){
+    SITE.demo.quick_questions.forEach(q => {
+      const b = document.createElement('button');
+      b.className = 'quick-btn';
+      b.textContent = q;
+      b.addEventListener('click', function(){
+        const me = document.createElement('div');
+        me.className = 'chat-bubble me';
+        me.textContent = q;
+        chatMsg.appendChild(me);
+        chatMsg.scrollTop = chatMsg.scrollHeight;
+        const found = SITE.demo.script.find(s => s.q === q);
+        setTimeout(function(){
+          const bub = document.createElement('div');
+          bub.className = 'chat-bubble';
+          bub.textContent = found ? found.a : "I'm not sure about that. Please call us or use the booking form.";
+          chatMsg.appendChild(bub);
+          chatMsg.scrollTop = chatMsg.scrollHeight;
+        }, 400);
+      });
+      quickList.appendChild(b);
+    });
+  }
+  function sendChat(){
+    const val = chatInput.value.trim();
+    if(!val) return;
+    const me = document.createElement('div');
+    me.className = 'chat-bubble me';
+    me.textContent = val;
+    chatMsg.appendChild(me);
+    chatInput.value = '';
+    chatMsg.scrollTop = chatMsg.scrollHeight;
+    setTimeout(function(){
+      const bub = document.createElement('div');
+      bub.className = 'chat-bubble';
+      bub.textContent = "Thanks. We'll get back to you shortly.";
+      chatMsg.appendChild(bub);
+      chatMsg.scrollTop = chatMsg.scrollHeight;
+    }, 400);
+  }
+  chatToggle.addEventListener('click', function(){
+    chatPanel.classList.toggle('open');
+    chatToggle.setAttribute('aria-expanded', chatPanel.classList.contains('open'));
+  });
+  chatClose.addEventListener('click', function(){
+    chatPanel.classList.remove('open');
+    chatToggle.setAttribute('aria-expanded', 'false');
+  });
+  chatSend.addEventListener('click', sendChat);
+  chatInput.addEventListener('keypress', function(e){ if(e.key === 'Enter') sendChat(); });
+
+  const observer = new IntersectionObserver(function(entries){
+    entries.forEach(entry => {
+      if(entry.isIntersecting) entry.target.classList.add('revealed');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  const menuToggle = document.getElementById('menu-toggle');
+  menuToggle.addEventListener('click', function(){
+    const nav = document.getElementById('nav-links');
+    const open = nav.style.display === 'flex';
+    nav.style.display = open ? 'none' : 'flex';
+    if(!open){
+      nav.style.flexDirection = 'column';
+      nav.style.position = 'absolute';
+      nav.style.top = '100%';
+      nav.style.left = '0';
+      nav.style.right = '0';
+      nav.style.background = 'var(--bg)';
+      nav.style.padding = '16px';
+      nav.style.borderTop = '1px solid #e7e0d4';
+    }
+  });
+
+  function initHero3D(){
+    if(typeof THREE === 'undefined') return;
+    const canvas = document.getElementById('hero3d');
+    const container = canvas.parentElement;
+    const fallback = document.querySelector('.hero-fallback');
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let scene, camera, renderer, group, raf;
+
+    function createShape(type){
+      const g = new THREE.Group();
+      const mat = new THREE.MeshStandardMaterial({ color: 0x6b4a2e, roughness: 0.45, metalness: 0.25 });
+      const accentMat = new THREE.MeshStandardMaterial({ color: 0xb5833d, roughness: 0.3, metalness: 0.4 });
+      try {
+        switch(type){
+          case 'orb': {
+            g.add(new THREE.Mesh(new THREE.IcosahedronGeometry(1, 0), mat));
+            break;
+          }
+          case 'wave': {
+            const curve = new WaveCurve();
+            g.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 64, 0.06, 16, false), mat));
+            break;
+          }
+          case 'braid': {
+            const curve = new BraidCurve();
+            g.add(new THREE.Mesh(new THREE.TubeGeometry(curve, 80, 0.08, 24, false), mat));
+            break;
+          }
+          case 'flower': {
+            for(let i = 0; i < 8; i++){
+              const p = new THREE.Mesh(new THREE.SphereGeometry(0.45, 16, 16), mat);
+              p.scale.set(1, 0.35, 0.35);
+              const angle = (i / 8) * Math.PI * 2;
+              p.position.set(Math.cos(angle) * 0.7, Math.sin(angle) * 0.7, 0);
+              p.rotation.z = angle;
+              g.add(p);
+            }
+            g.add(new THREE.Mesh(new THREE.SphereGeometry(0.22, 16, 16), accentMat));
+            break;
+          }
+          case 'cake': {
+            for(let i = 0; i < 3; i++){
+              const cyl = new THREE.Mesh(new THREE.CylinderGeometry(0.9 - i * 0.25, 0.65 - i * 0.25, 0.5, 32), mat);
+              cyl.position.y = i * 0.55 - 0.55;
+              g.add(cyl);
+            }
+            break;
+          }
+          case 'gem': {
+            g.add(new THREE.Mesh(new THREE.OctahedronGeometry(1, 0), mat));
+            break;
+          }
+          case 'tooth': {
+            const shape = new THREE.Shape();
+            shape.moveTo(0, 0.5);
+            shape.lineTo(0.22, 0.15);
+            shape.lineTo(0.45, 0.5);
+            shape.lineTo(0.35, 0);
+            shape.lineTo(0.55, -0.45);
+            shape.lineTo(0, -0.1);
+            shape.lineTo(-0.55, -0.45);
+            shape.lineTo(-0.35, 0);
+            shape.lineTo(-0.45, 0.5);
+            shape.lineTo(-0.22, 0.15);
+            shape.lineTo(0, 0.5);
+            const ext = new THREE.ExtrudeGeometry(shape, { depth: 0.25, bevelEnabled: true, bevelThickness: 0.06, bevelSize: 0.06, bevelSegments: 4 });
+            g.add(new THREE.Mesh(ext, mat));
+            break;
+          }
+          case 'scales': {
+            for(let i = 0; i < 10; i++){
+              const s = new THREE.Mesh(new THREE.CircleGeometry(0.4, 16, 4), mat);
+              s.position.set(Math.sin(i) * 0.9, (i - 4.5) * 0.32, 0);
+              s.rotation.z = i * 0.5;
+              g.add(s);
+            }
+            break;
+          }
+          case 'car': {
+            const body = new THREE.Mesh(new THREE.BoxGeometry(1.3, 0.55, 0.7), mat);
+            body.position.y = 0.28;
+            g.add(body);
+            const cabin = new THREE.Mesh(new THREE.BoxGeometry(0.7, 0.45, 0.5), mat);
+            cabin.position.set(0, 0.6, 0);
+            g.add(cabin);
+            const wheelMat = new THREE.MeshStandardMaterial({ color: 0x1a1a1a });
+            [-0.5, 0.5].forEach(x => {
+              const w = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.2, 0.14, 16), wheelMat);
+              w.rotation.x = Math.PI / 2;
+              w.position.set(x, 0.15, 0.4);
+              g.add(w);
+            });
+            break;
+          }
+          case 'bottle': {
+            const pts = [];
+            for(let i = 0; i < 24; i++){
+              const y = (i / 23) * 2.2 - 1.1;
+              let r = 0.35;
+              if(y < -0.9) r = 0.18;
+              else if(y > 0.9) r = 0.22;
+              pts.push(new THREE.Vector2(r, y));
+            }
+            g.add(new THREE.Mesh(new THREE.LatheGeometry(pts, 32), mat));
+            break;
+          }
+          default: {
+            g.add(new THREE.Mesh(new THREE.IcosahedronGeometry(1, 0), mat));
+          }
+        }
+      } catch(e){
+        g.add(new THREE.Mesh(new THREE.SphereGeometry(1, 16, 16), mat));
+      }
+      return g;
+    }
+
+    function init(){
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
+      camera.position.z = 4.5;
+      scene.add(new THREE.AmbientLight(0xffffff, 0.5));
+      const dir = new THREE.DirectionalLight(0xffffff, 0.9);
+      dir.position.set(5, 10, 8);
+      scene.add(dir);
+      const fill = new THREE.PointLight(0xffd8b8, 0.4);
+      fill.position.set(-5, 0, 5);
+      scene.add(fill);
+      group = createShape(SITE.hero.shape3d || 'orb');
+      scene.add(group);
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+      animate();
+    }
+
+    let mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
+    document.addEventListener('pointermove', function(e){
+      const rect = container.getBoundingClientRect();
+      mouse.targetX = (e.clientX - rect.left) / rect.width - 0.5;
+      mouse.targetY = (e.clientY - rect.top) / rect.height - 0.5;
+    });
+
+    function animate(){
+      raf = requestAnimationFrame(animate);
+      mouse.x += (mouse.targetX - mouse.x) * 0.05;
+      mouse.y += (mouse.targetY - mouse.y) * 0.05;
+      if(group){
+        group.rotation.y += 0.004;
+        group.rotation.x += 0.002;
+        group.rotation.y += mouse.x * 0.04;
+        group.rotation.x += mouse.y * 0.04;
+        group.position.y = Math.sin(Date.now() * 0.001) * 0.05;
+      }
+      if(renderer && scene && camera) renderer.render(scene, camera);
+    }
+
+    const io = new IntersectionObserver(function(entries){
+      entries.forEach(e => {
+        if(e.isIntersecting){ if(!raf) animate(); }
+        else { cancelAnimationFrame(raf); raf = null; }
+      });
+    }, { threshold: 0.05 });
+    io.observe(document.querySelector('.hero'));
+
+    window.addEventListener('resize', function(){
+      if(camera && renderer){
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      }
+    });
+
+    if(prefersReduced){
+      canvas.style.display = 'none';
+      if(fallback) fallback.style.display = 'flex';
+    } else {
+      init();
+    }
+  }
+  initHero3D();
+})();
+</script>
+</body>
+</html>
