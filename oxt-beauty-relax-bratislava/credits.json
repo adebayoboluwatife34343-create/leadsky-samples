@@ -1,0 +1,62 @@
+[
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "beauty",
+    "description": "beauty, nymph, antiques, lovely, beautiful",
+    "source": "https://pixabay.com/photos/beauty-nymph-antiques-lovely-9258054/",
+    "photographer": "Long_Phung",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "beauty",
+    "description": "eye, woman, vision, focus, look, blue eyes, eyelashes, face, details, skin, eyes, beauty, close-up, fashion, aesthetics, natural light, lighting, health",
+    "source": "https://pixabay.com/photos/eye-woman-vision-focus-look-10491430/",
+    "photographer": "vladdemidenko1990",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "beauty customer",
+    "description": "hair, hairdresser, maintenance, design, woman, cutting, fashion, portrait, girl, beauty, living room, people, beautiful, scan, style, human, model, make-up, hairdresser, hairdresser, hairdresser, hairdresser, hairdresser",
+    "source": "https://pixabay.com/photos/hair-hairdresser-maintenance-design-4556486/",
+    "photographer": "Engin_Akyurt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "beauty customer",
+    "description": "barbershop, haircut, scissors, hair, hairstyle, men, barbershop, barbershop, barbershop, barbershop, haircut, haircut, haircut, haircut, haircut",
+    "source": "https://pixabay.com/photos/barbershop-haircut-scissors-hair-4019683/",
+    "photographer": "OrnaW",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "beauty Bratislava",
+    "description": "street, old town, house, ancient, night, window, light, walk, city, building, tourism, slovakia, bratislava, night, night, night, night, night",
+    "source": "https://pixabay.com/photos/street-old-town-house-ancient-7690119/",
+    "photographer": "Michael_Pointner",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "beauty Bratislava",
+    "description": "theater, bratislava, old town, reflection, bottle, facade, building, old building, national theater, historic, historical, landmark, tourist attraction, street, urban, city, slovakia, bratislava, bratislava, bratislava, bratislava, bratislava, slovakia, slovakia",
+    "source": "https://pixabay.com/photos/theater-bratislava-old-town-6066228/",
+    "photographer": "HelenJank",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
