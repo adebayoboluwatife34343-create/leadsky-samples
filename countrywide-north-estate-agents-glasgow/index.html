@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Countrywide North Estate Agents — Glasgow property sales, lettings and free valuations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f4f0;
+    --surface: #ffffff;
+    --text: #1e3a32;
+    --text-secondary: #4a5d55;
+    --brand: #2c6e4f;
+    --brand-dark: #1e3a32;
+    --accent: #b07a3e;
+    --border: #d8d3cb;
+    --shadow: 0 12px 34px rgba(0,0,0,0.07);
+    --radius: 10px;
+    --font-head: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:var(--font-body); font-size:16px; line-height:1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--brand-dark); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  a:focus, button:focus, input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+  img { display: block; max-width: 100%; height: auto; border-radius: var(--radius); background: #e8e4dc; }
+  .concept-banner { background: var(--brand-dark); color: #fff; text-align: center; font-size: 13px; letter-spacing: 0.4px; padding: 9px 16px; }
+  .skip-link { position: absolute; left: -999px; top: 16px; background: var(--accent); color: #fff; padding: 8px 14px; z-index: 1000; border-radius: 6px; }
+  .skip-link:focus { left: 16px; }
+
+  .sticky-header { position: sticky; top: 0; background: rgba(247,244,240,0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); z-index: 100; }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 10px 20px; }
+  .header-left { display: flex; align-items: center; gap: 16px; }
+  .wordmark { font-family: var(--font-head); font-weight: 700; font-size: 19px; color: var(--text); }
+  .tag { font-size: 12px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--brand); font-weight: 600; }
+  .nav-links { display: flex; gap: 24px; align-items: center; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: var(--text); }
+  .btn-brand { background: var(--brand); color: #fff; border: none; padding: 9px 16px; font-size: 14px; font-weight: 600; border-radius: 6px; cursor: pointer; }
+  .btn-brand:hover { background: var(--brand-dark); }
+  .btn-outline { background: transparent; color: var(--brand-dark); border: 1px solid var(--brand-dark); padding: 8px 15px; font-size: 14px; font-weight: 600; border-radius: 6px; cursor: pointer; }
+  .btn-outline:hover { background: rgba(30,58,50,0.08); }
+  .menu-toggle { display: none; background: none; border: none; font-size: 24px; color: var(--text); cursor: pointer; line-height: 1; }
+
+  .mobile-drawer { position: fixed; inset: 0; background: #fff; z-index: 200; transform: translatex(100%); transition: transform 0.3s ease; padding: 80px 24px 40px; }
+  .mobile-drawer.open { transform: translatex(0); }
+  .close-drawer { position: absolute; top: 20px; right: 20px; background: none; border: none; font-size: 26px; cursor: pointer; color: var(--text); }
+  .mobile-drawer nav { display: flex; flex-direction: column; gap: 0; }
+  .mobile-drawer a { display: block; padding: 16px 0; font-size: 19px; font-weight: 500; color: var(--text); text-decoration: none; border-bottom: 1px solid #f0ece4; }
+
+  .mobile-bottom { display: none; position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid var(--border); padding: 10px 16px; display: flex; justify-content: space-around; z-index: 90; }
+  .mobile-bottom a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 14px; display: flex; align-items: center; gap: 6px; }
+  .mobile-bottom .act { background: var(--brand); color: #fff; padding: 8px 13px; border-radius: 8px; }
+
+  .hero { position: relative; min-height: 72vh; display: flex; align-items: center; justify-content: center; background: var(--brand-dark); overflow: hidden; }
+  .hero-image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: 1; border-radius: 0; background: #14241f; }
+  .hero::after { content: ''; position: absolute; inset: 0; z-index: 2; background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.25) 55%, rgba(0,0,0,0.55) 100%); }
+  .hero-content { position: relative; z-index: 3; color: #fff; max-width: 900px; padding: 0 20px; text-align: center; margin: 0 auto; }
+  .hero-card { background: rgba(0,0,0,0.55); color: #fff; padding: 40px 32px; border-radius: 14px; display: inline-block; text-align: left; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,0.25); }
+  .eyebrow { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600; color: #b9d8ca; margin: 0 0 10px; }
+  .hero h1 { font-family: var(--font-head); font-size: clamp(30px, 5.2vw, 48px); line-height: 1.18; margin: 0 0 14px; color: #fff; font-weight: 700; }
+  .hero p { font-size: 17px; color: rgba(255,255,255,0.95); margin: 0 0 22px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  .hero-card .btn-outline { color: #fff; border-color: #fff; }
+  .hero-card .btn-outline:hover { background: rgba(255,255,255,0.1); color: #fff; }
+
+  .section-pad { padding: 56px 20px; }
+  .section-head { text-align: center; margin-bottom: 36px; }
+  .section-head h2 { font-family: var(--font-head); font-size: clamp(26px, 4vw, 36px); margin: 0 0 10px; color: var(--text); }
+  .section-head p { color: var(--text-secondary); margin: 0; }
+
+  .property-search { background: var(--bg); }
+  .search-wrap { max-width: 900px; margin: 0 auto; background: var(--surface); padding: 26px 22px; border-radius: 12px; border: 1px solid var(--border); display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; align-items: end; }
+  .search-wrap label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; color: var(--text-secondary); display: block; margin-bottom: 6px; }
+  .search-wrap select, .search-wrap input { width: 100%; padding: 12px 14px; border: 1px solid var(--border); border-radius: 8px; font-family: inherit; font-size: 15px; background: #fff; }
+  .search-wrap button { grid-column: 1 / -1; background: var(--brand); color: #fff; border: none; padding: 14px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 15px; }
+  .search-wrap button:hover { background: var(--brand-dark); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 18px; max-width: 1100px; margin: 0 auto; }
+  .listing-card { background: var(--surface); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; }
+  .listing-card img { width: 100%; height: 210px; object-fit: cover; border-radius: 0; border-bottom: 1px solid var(--border); }
+  .card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+  .card-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--brand-dark); margin: 0 0 8px; }
+  .card-title { font-family: var(--font-head); font-size: 19px; margin: 0 0 8px; color: var(--text); }
+  .card-text { font-size: 14px; color: var(--text-secondary); margin-bottom: auto; }
+  .card-link { margin-top: 14px; color: var(--brand-dark); font-weight: 600; font-size: 14px; }
+
+  .services { background: #fbf9f6; }
+  .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 22px; max-width: 1000px; margin: 0 auto; }
+  .service-card { background: var(--surface); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); display: flex; flex-direction: column; }
+  .service-card img { width: 100%; height: 230px; object-fit: cover; border-radius: 0; border-bottom: 1px solid var(--border); }
+  .service-body { padding: 24px; }
+  .service-card h3 { font-family: var(--font-head); font-size: 21px; margin: 0 0 10px; color: var(--text); }
+  .service-card p { font-size: 15px; color: var(--text-secondary); margin: 0 0 18px; }
+
+  .how-it-works { background: var(--bg); }
+  .steps { display: flex; gap: 20px; max-width: 920px; margin: 0 auto; justify-content: center; flex-wrap: wrap; }
+  .step { flex: 1; min-width: 240px; max-width: 300px; text-align: center; padding: 24px 16px; }
+  .step-num { font-family: var(--font-head); font-size: 34px; color: var(--brand); font-weight: 700; line-height: 1; }
+  .step h4 { font-family: var(--font-head); margin: 14px 0 8px; color: var(--text); font-size: 19px; }
+  .step p { color: var(--text-secondary); font-size: 15px; margin: 0; }
+
+  .valuation-band { position: relative; padding: 56px 20px; background: var(--brand-dark); color: #fff; overflow: hidden; }
+  .valuation-band h2 { font-family: var(--font-head); font-size: clamp(26px, 4vw, 32px); margin: 0 0 16px; color: #fff; }
+  .valuation-wrap { max-width: 1050px; margin: 0 auto; display: grid; grid-template-columns: 1fr 430px; gap: 34px; align-items: center; }
+  #tenement-canvas { width: 100%; height: 340px; border-radius: var(--radius); background: #14241f; position: relative; }
+  .valuation-form { background: rgba(255,255,255,0.94); color: var(--text); padding: 28px 24px; border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.4); }
+  .valuation-form label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 6px; color: var(--text-secondary); }
+  .valuation-form input, .valuation-form textarea { width: 100%; padding: 11px 13px; border: 1px solid var(--border); border-radius: 7px; font-family: inherit; font-size: 14px; margin-bottom: 14px; background: #fff; }
+  .valuation-form button { width: 100%; background: var(--accent); color: #fff; border: none; padding: 13px; border-radius: 7px; font-weight: 600; cursor: pointer; font-size: 15px; }
+  .valuation-form button:hover { background: #9a6834; }
+  .demo-note { font-size: 12px; color: var(--text-secondary); margin-top: 10px; }
+  .opening { margin-top: 22px; font-size: 15px; border-top: 1px solid rgba(255,255,255,0.22); padding-top: 16px; color: #d8e4dc; }
+  .opening strong { color: #fff; }
+
+  .gallery { background: var(--bg); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; max-width: 1000px; margin: 0 auto; }
+  .gallery-grid img { width: 100%; height: 240px; object-fit: cover; border-radius: 8px; cursor: pointer; border: 1px solid var(--border); background: #e8e4dc; }
+
+  .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,0.92); z-index: 600; display: none; align-items: center; justify-content: center; padding: 40px; }
+  .lightbox img { max-width: 88vw; max-height: 78vh; border-radius: 6px; box-shadow: 0 0 40px rgba(0,0,0,0.6); cursor: zoom-out; border-radius: 0; }
+  .close-lightbox { position: absolute; top: 26px; right: 30px; color: #fff; font-size: 34px; background: none; border: none; cursor: pointer; line-height: 1; padding: 0; }
+
+  .about { background: #fbf9f6; }
+  .about-wrap { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 34px; align-items: center; }
+  .about-text h2 { font-family: var(--font-head); font-size: 30px; margin: 0 0 14px; color: var(--text); }
+  .about-text p { margin: 0 0 12px; color: var(--text-secondary); font-size: 16px; }
+  .about-img img { width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius); border: 1px solid var(--border); }
+  .contact-details { margin-top: 18px; }
+  .contact-details p { margin: 4px 0; font-size: 15px; color: var(--text-secondary); }
+  .contact-details a { color: var(--brand-dark); font-weight: 600; }
+
+  .faq { background: var(--bg); }
+  .faq-list { max-width: 720px; margin: 0 auto; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-question { width: 100%; text-align: left; background: none; border: none; padding: 18px 0; font-family: var(--font-head); font-size: 18px; color: var(--text); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+  .faq-answer { max-height: 0; overflow: hidden; padding: 0 0 16px; color: var(--text-secondary); font-size: 15px; line-height: 1.6; transition: max-height 0.35s ease; }
+  .faq-item.open .faq-answer { max-height: 500px; }
+
+  footer { background: var(--brand-dark); color: #e8e4dc; padding: 48px 20px 28px; }
+  .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto 40px; }
+  .footer-brand { font-family: var(--font-head); font-weight: 700; font-size: 21px; color: #fff; margin: 0 0 10px; }
+  .footer-col p, .footer-col a { color: #d8e4dc; font-size: 14px; line-height: 1.75; }
+  .footer-col a:hover { color: #fff; }
+  .map-link { display: inline-block; margin-top: 12px; }
+  .footer-form label { display: block; font-size: 12px; margin-bottom: 4px; color: #e8e4dc; font-weight: 600; }
+  .footer-form input, .footer-form textarea { width: 100%; padding: 10px; border-radius: 7px; border: none; margin-bottom: 10px; font-family: inherit; }
+  .footer-form button { background: var(--accent); color: #fff; border: none; padding: 11px 16px; border-radius: 7px; cursor: pointer; font-weight: 600; font-size: 14px; }
+  .footer-form button:hover { background: #9a6834; }
+  .credits { border-top: 1px solid #3a3a32; padding-top: 22px; font-size: 12px; color: #d8e4dc; line-height: 1.8; }
+  .credits a { color: #b9d8ca; text-decoration: underline; }
+  .credits a:hover { color: #fff; }
+  .concept-by { text-align: center; margin-top: 18px; font-size: 12px; color: #d8e4dc; }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .menu-toggle { display: block; }
+    .hero-card { padding: 30px 22px; text-align: center; display: block; }
+    .hero-actions { justify-content: center; }
+    .valuation-wrap { grid-template-columns: 1fr; gap: 26px; }
+    #tenement-canvas { height: 300px; }
+    .about-wrap { grid-template-columns: 1fr; gap: 26px; }
+    .about-img img { height: 300px; }
+    .mobile-bottom { display: flex; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    .mobile-drawer { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="concept-banner">Independent website concept by LeadSky for Countrywide North Estate Agents. Not their official website.</div>
+
+<header class="sticky-header">
+  <div class="header-inner">
+    <div class="header-left">
+      <a href="#hero" class="wordmark">Countrywide North Estate Agents</a>
+      <span class="tag">Glasgow</span>
+    </div>
+    <nav class="nav-links" id="nav-links">
+      <a href="#properties">Properties for sale</a>
+      <a href="#lettings">To let</a>
+      <a href="#services">Services</a>
+      <a href="#valuation">Free valuation</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#valuation" class="btn-brand">Book valuation</a>
+    <button class="menu-toggle" aria-label="Open menu">&#9776;</button>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobile-drawer">
+  <button class="close-drawer" aria-label="Close menu">&#215;</button>
+  <nav>
+    <a href="#properties">Properties for sale</a>
+    <a href="#lettings">To let</a>
+    <a href="#services">Services</a>
+    <a href="#valuation">Free valuation</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:+441414321089" class="btn-brand" style="margin-top:18px; display:inline-block; text-align:center;">Call +44 141 432 1089</a>
+  </nav>
+</div>
+
+<main id="main-content">
+  <section class="hero" id="hero">
+    <img src="img/stock-1.jpg" alt="Illustrative stock photograph of a residential street with tenement-style buildings" class="hero-image">
+    <div class="hero-content">
+      <div class="hero-card">
+        <p class="eyebrow">Countrywide North &middot; Glasgow</p>
+        <h1>Selling, letting and valuing homes across Glasgow</h1>
+        <p>Residential sales, lettings and free property valuations for Glasgow homeowners, buyers, landlords and tenants.</p>
+        <div class="hero-actions">
+          <a href="#valuation" class="btn-brand">Book a free valuation</a>
+          <a href="#properties" class="btn-outline">Browse properties for sale</a>
+        </div>
+        <a href="tel:+441414321089" style="margin-top:10px; display:inline-block; color:#fff; font-weight:600; font-size:14px;">Call +44 141 432 1089</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="property-search section-pad" id="properties">
+    <div class="section-head">
+      <h2>Search properties in Glasgow</h2>
+      <p>Browse residential homes for sale and to let across Glasgow.</p>
+    </div>
+    <div class="search-wrap">
+      <label for="search-type">Type</label>
+      <select id="search-type"><option>For sale</option><option>To let</option></select>
+      <label for="search-location">Location</label>
+      <input id="search-location" value="Glasgow">
+      <label for="search-bedrooms">Bedrooms</label>
+      <select id="search-bedrooms"><option>Any</option><option>1+</option><option>2+</option><option>3+</option></select>
+      <button type="button">Search</button>
+    </div>
+  </section>
+
+  <section class="featured-listings section-pad">
+    <div class="section-head">
+      <h2>Featured listings</h2>
+      <p>Illustrative sample properties until Countrywide North uploads current listings.</p>
+    </div>
+    <div class="grid">
+      <article class="listing-card" id="listing-1">
+        <img src="img/stock-2.jpg" alt="Illustrative stock photograph of a building door and facade">
+        <div class="card-body">
+          <p class="card-tag">For sale</p>
+          <h3 class="card-title">Glasgow tenement flat</h3>
+          <p class="card-text">Traditional residential property with period features.</p>
+          <a href="#listing-1" class="card-link">View details</a>
+        </div>
+      </article>
+      <article class="listing-card" id="listing-2">
+        <img src="img/stock-3.jpg" alt="Illustrative stock photograph of a bright living room interior">
+        <div class="card-body">
+          <p class="card-tag">For sale</p>
+          <h3 class="card-title">Bright family home</h3>
+          <p class="card-text">Modern living space with natural light throughout.</p>
+          <a href="#listing-2" class="card-link">View details</a>
+        </div>
+      </article>
+      <article class="listing-card" id="listing-3">
+        <img src="img/stock-4.jpg" alt="Illustrative stock photograph of a bright dining room interior">
+        <div class="card-body">
+          <p class="card-tag">To let</p>
+          <h3 class="card-title">City centre apartment</h3>
+          <p class="card-text">Contemporary apartment close to Glasgow amenities.</p>
+          <a href="#listing-3" class="card-link">View details</a>
+        </div>
+      </article>
+      <article class="listing-card" id="listing-4">
+        <img src="img/stock-6.jpg" alt="Illustrative stock photograph of a kitchen and dining room interior">
+        <div class="card-body">
+          <p class="card-tag">For sale</p>
+          <h3 class="card-title">Residential property</h3>
+          <p class="card-text">Home ready for sale in a quiet Glasgow street.</p>
+          <a href="#listing-4" class="card-link">View details</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="services section-pad" id="services">
+    <div class="section-head">
+      <h2>Our services</h2>
+      <p>Residential sales, lettings and free valuations across Glasgow.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="img/stock-10.jpg" alt="Illustrative stock photograph of Glasgow cityscape and River Clyde architecture">
+        <div class="service-body">
+          <h3>Residential sales</h3>
+          <p>We market Glasgow homes to local buyers and manage the sales process from listing to completion.</p>
+          <a href="#valuation" class="card-link">Book a valuation</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="img/stock-8.jpg" alt="Illustrative stock photograph related to real estate and selling">
+        <div class="service-body">
+          <h3>Lettings</h3>
+          <p>We help landlords let their properties and help tenants find the right rental home in Glasgow.</p>
+          <a href="#valuation" class="card-link">Book a valuation</a>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="img/stock-5.jpg" alt="Illustrative stock photograph of a bright kitchen interior">
+        <div class="service-body">
+          <h3>Free valuations</h3>
+          <p>Book a no-obligation property valuation and find out what your Glasgow home is worth.</p>
+          <a href="#valuation" class="card-link">Book a valuation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works section-pad">
+    <div class="section-head">
+      <h2>How it works</h2>
+      <p>Simple steps to sell, let or value your property.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Get in touch</h4>
+        <p>Call, email or book a free valuation online.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>We visit your property</h4>
+        <p>A free valuation at your home, arranged at a time that suits you.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Sell or let</h4>
+        <p>We market your property across Glasgow and handle the enquiries.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="valuation-band section-pad" id="valuation">
+    <div class="valuation-wrap">
+      <div>
+        <h2>Book your free valuation</h2>
+        <p style="color:#d8e4dc; margin:0 0 20px;">Find out what your Glasgow property is worth with a no-obligation valuation.</p>
+        <div id="tenement-canvas">
+          <div style="width:100%;height:100%;background:#14241f;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#8a9a92;font-size:15px;">Interactive tenement scene (WebGL required)</div>
+        </div>
+      </div>
+      <form class="valuation-form" id="valuation-form">
+        <label for="v-name">Full name</label>
+        <input type="text" id="v-name" required>
+        <label for="v-email">Email address</label>
+        <input type="email" id="v-email" required>
+        <label for="v-phone">Phone number</label>
+        <input type="tel" id="v-phone" required>
+        <label for="v-address">Property address</label>
+        <input type="text" id="v-address" required>
+        <label for="v-postcode">Postcode</label>
+        <input type="text" id="v-postcode" required>
+        <button type="submit">Book free valuation</button>
+        <p class="demo-note">This is a demo form. Nothing will be sent.</p>
+      </form>
+    </div>
+    <div class="opening">
+      <strong>Countrywide North Estate Agents</strong><br>
+      202 Kilmarnock Road, Glasgow G41 3PG<br>
+      Opening hours: to be confirmed by Countrywide North Estate Agents.
+    </div>
+  </section>
+
+  <section class="gallery section-pad">
+    <div class="section-head">
+      <h2>Property gallery</h2>
+      <p>Illustrative sample imagery for design purposes.</p>
+    </div>
+    <div class="gallery-grid">
+      <img src="img/stock-3.jpg" alt="Illustrative stock photograph of a bright living room interior" data-lightbox>
+      <img src="img/stock-4.jpg" alt="Illustrative stock photograph of a bright dining room interior" data-lightbox>
+      <img src="img/stock-5.jpg" alt="Illustrative stock photograph of a bright kitchen interior" data-lightbox>
+      <img src="img/stock-6.jpg" alt="Illustrative stock photograph of a kitchen and dining room interior" data-lightbox>
+      <img src="img/stock-9.jpg" alt="Illustrative stock photograph of Glasgow SECC buildings and architecture" data-lightbox>
+      <img src="img/stock-10.jpg" alt="Illustrative stock photograph of Glasgow River Clyde buildings and riverfront" data-lightbox>
+    </div>
+  </section>
+
+  <section class="about section-pad" id="about">
+    <div class="about-wrap">
+      <div class="about-text">
+        <h2>About Countrywide North Estate Agents</h2>
+        <p>Countrywide North Estate Agents is a Glasgow estate agent based at 202 Kilmarnock Road, Glasgow G41 3PG. We provide residential sales, lettings and free property valuations to homeowners, buyers, landlords and tenants across Glasgow.</p>
+        <p>Get in touch to discuss selling, letting or valuing your property.</p>
+        <div class="contact-details">
+          <p><a href="tel:+441414321089">+44 141 432 1089</a></p>
+          <p><a href="mailto:cityliving@countrywidenorth.co.uk">cityliving@countrywidenorth.co.uk</a></p>
+          <p>202 Kilmarnock Road, Glasgow G41 3PG</p>
+        </div>
+      </div>
+      <div class="about-img">
+        <img src="img/stock-11.jpg" alt="Illustrative stock photograph of an office consultation desk">
+      </div>
+    </div>
+  </section>
+
+  <section class="faq section-pad">
+    <div class="section-head">
+      <h2>Frequently asked questions</h2>
+      <p>Helpful answers about our Glasgow services.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-1">Do you offer free property valuations? <span class="q-icon">+</span></button>
+        <div class="faq-answer" id="faq-1">Yes. Countrywide North Estate Agents offers free property valuations for homes in Glasgow.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-2">Where are you located?</button>
+        <div class="faq-answer">We are based at 202 Kilmarnock Road, Glasgow G41 3PG.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-3">Can you help with lettings?</button>
+        <div class="faq-answer">Yes. We help landlords let their properties and help tenants find rental homes in Glasgow.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-4">How do I book a valuation?</button>
+        <div class="faq-answer">Use the booking form on this page, call us, or email cityliving@countrywidenorth.co.uk.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-pad" id="lettings">
+    <div class="section-head">
+      <h2>Lettings in Glasgow</h2>
+      <p>We help landlords let their properties and help tenants find rental homes across Glasgow.</p>
+    </div>
+    <p>Countrywide North Estate Agents manages residential lettings from marketing and viewings to tenancy agreements.</p>
+    <a href="#valuation" class="btn-brand">Book a valuation</a>
+  </section>
+
+  <section class="section-pad" id="contact">
+    <div class="section-head">
+      <h2>Contact Countrywide North</h2>
+      <p>Get in touch about sales, lettings or a free valuation.</p>
+    </div>
+    <div class="contact-details">
+      <p><a href="tel:+441414321089">+44 141 432 1089</a></p>
+      <p><a href="mailto:cityliving@countrywidenorth.co.uk">cityliving@countrywidenorth.co.uk</a></p>
+      <p>202 Kilmarnock Road, Glasgow G41 3PG</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=202+Kilmarnock+Road+Glasgow+G41+3PG" target="_blank" rel="noopener" class="map-link">View on Google Maps &rarr;</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand">Countrywide North Estate Agents</div>
+      <p>202 Kilmarnock Road<br>Glasgow G41 3PG</p>
+      <p><a href="tel:+441414321089">+44 141 432 1089</a></p>
+      <p><a href="mailto:cityliving@countrywidenorth.co.uk">cityliving@countrywidenorth.co.uk</a></p>
+      <a href="https://www.google.com/maps/search/?api=1&query=202+Kilmarnock+Road+Glasgow+G41+3PG" target="_blank" rel="noopener" class="map-link">View on Google Maps &rarr;</a>
+    </div>
+    <div class="footer-col">
+      <form class="footer-form" id="contact-form">
+        <label for="cf-name">Name</label>
+        <input type="text" id="cf-name" required>
+        <label for="cf-email">Email</label>
+        <input type="email" id="cf-email" required>
+        <label for="cf-message">Message</label>
+        <textarea id="cf-message" rows="3" required></textarea>
+        <button type="submit">Send enquiry</button>
+      </form>
+      <p class="demo-note" style="color:#c9c4b8; font-size:12px; margin-top:8px;">This is a demo form. Nothing will be sent.</p>
+    </div>
+    <div class="footer-col">
+      <p style="margin-top:0; font-weight:600; color:#fff;">Photo credits</p>
+      <p class="credits">
+        All photography is illustrative stock imagery licensed from Pixabay and is not the work, premises or team of Countrywide North Estate Agents.<br><br>
+        1. <a href="https://pixabay.com/photos/buildings-windows-st-petersburg-1336611/" target="_blank" rel="noopener">leleblad</a><br>
+        2. <a href="https://pixabay.com/photos/door-building-vegetation-facade-8453898/" target="_blank" rel="noopener">lecreusois</a><br>
+        3. <a href="https://pixabay.com/photos/chairs-floor-furniture-indoors-2181947/" target="_blank" rel="noopener">Pexels</a><br>
+        4. <a href="https://pixabay.com/photos/dining-room-living-room-modern-3108037/" target="_blank" rel="noopener">jeanvdmeulen</a><br>
+        5. <a href="https://pixabay.com/photos/kitchen-home-interior-modern-room-2165756/" target="_blank" rel="noopener">ClickerHappy</a><br>
+        6. <a href="https://pixabay.com/photos/kitchen-dining-room-dining-table-1336160/" target="_blank" rel="noopener">midascode</a><br>
+        7. <a href="https://pixabay.com/photos/real-estate-countryside-house-9085906/" target="_blank" rel="noopener">homesinthewild</a><br>
+        8. <a href="https://pixabay.com/photos/real-estate-agent-house-selling-fun-1180176/" target="_blank" rel="noopener">Alexas_Fotos</a><br>
+        9. <a href="https://pixabay.com/photos/secc-glasgow-buildings-architecture-961000/" target="_blank" rel="noopener">DesignFife</a><br>
+        10. <a href="https://pixabay.com/photos/glasgow-clyde-river-buildings-bank-1329950/" target="_blank" rel="noopener">2396584</a><br>
+        11. <a href="https://pixabay.com/photos/call-center-headset-woman-service-2275745/" target="_blank" rel="noopener">geralt</a><br>
+        12. <a href="https://pixabay.com/photos/receptionists-phone-call-hotel-5975962/" target="_blank" rel="noopener">Rodrigo_SalomonHC</a>
+      </p>
+    </div>
+  </div>
+  <p class="concept-by">Concept by LeadSky &middot; Independent website concept, not the official website of Countrywide North Estate Agents.</p>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="close-lightbox" aria-label="Close gallery">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  (function(){
+    'use strict';
+
+    var toggle = document.querySelector('.menu-toggle');
+    var drawer = document.getElementById('mobile-drawer');
+    var close = document.querySelector('.close-drawer');
+
+    toggle.addEventListener('click', function(){ drawer.classList.toggle('open'); });
+    close.addEventListener('click', function(){ drawer.classList.remove('open'); });
+    document.querySelectorAll('.mobile-drawer a').forEach(function(a){
+      a.addEventListener('click', function(){ drawer.classList.remove('open'); });
+    });
+
+    document.querySelectorAll('.faq-question').forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var item = btn.parentElement;
+        var open = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+        btn.setAttribute('aria-expanded', 'false');
+        if (!open) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    var lightbox = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lightbox-img');
+    var lbClose = document.querySelector('.close-lightbox');
+    document.querySelectorAll('[data-lightbox]').forEach(function(img){
+      img.addEventListener('click', function(){
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lightbox.style.display = 'flex';
+      });
+    });
+    lbClose.addEventListener('click', function(){ lightbox.style.display = 'none'; });
+    lightbox.addEventListener('click', function(e){ if (e.target === lightbox) lightbox.style.display = 'none'; });
+
+    function setupDemoForm(formId){
+      var form = document.getElementById(formId);
+      if (!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var btn = form.querySelector('button');
+        var original = btn.textContent;
+        btn.textContent = 'Sending (demo)';
+        btn.disabled = true;
+        setTimeout(function(){
+          btn.textContent = original;
+          btn.disabled = false;
+          form.reset();
+          var notice = document.createElement('p');
+          notice.className = 'demo-note';
+          notice.style.marginTop = '10px';
+          notice.textContent = 'This is a demo form, nothing was sent.';
+          form.appendChild(notice);
+          setTimeout(function(){ notice.remove(); }, 4000);
+        }, 700);
+      });
+    }
+    setupDemoForm('valuation-form');
+    setupDemoForm('contact-form');
+
+    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+      gsap.registerPlugin(ScrollTrigger);
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!reduced) {
+        gsap.utils.toArray('.section-head, .listing-card, .service-card, .step, .about-wrap > *').forEach(function(el){
+          gsap.from(el, {
+            scrollTrigger: { trigger: el, start: 'top 82%', toggleActions: 'play none none reverse' },
+            y: 30, opacity: 0, duration: 0.6, ease: 'power2.out'
+          });
+        });
+      }
+    }
+
+    function initTenement(){
+      var container = document.getElementById('tenement-canvas');
+      if (!container) return;
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced || typeof THREE === 'undefined') {
+        container.innerHTML = '<img src="img/stock-2.jpg" alt="Illustrative stock photograph of a Glasgow tenement building facade" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">';
+        return;
+      }
+      try {
+        var width = container.clientWidth || 400;
+        var height = container.clientHeight || 340;
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+        camera.position.set(0, 1.5, 5.2);
+
+        var renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(width, height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        container.appendChild(renderer.domElement);
+
+        var ambient = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambient);
+        var dirLight = new THREE.DirectionalLight(0xffffff, 0.9);
+        dirLight.position.set(4, 8, 4);
+        scene.add(dirLight);
+
+        var building = new THREE.Group();
+
+        var baseGeo = new THREE.BoxGeometry(2.2, 3.2, 1.4);
+        var baseMat = new THREE.MeshStandardMaterial({ color: 0x8d6e53 });
+        var base = new THREE.Mesh(baseGeo, baseMat);
+        building.add(base);
+
+        var roofGeo = new THREE.BoxGeometry(2.4, 0.35, 1.6);
+        var roofMat = new THREE.MeshStandardMaterial({ color: 0x5d4037 });
+        var roof = new THREE.Mesh(roofGeo, roofMat);
+        roof.position.y = 1.78;
+        building.add(roof);
+
+        var winGeo = new THREE.BoxGeometry(0.34, 0.48, 0.11);
+        var winMat = new THREE.MeshStandardMaterial({ color: 0xfff3d6, emissive: 0xffecb3, emissiveIntensity: 0.45 });
+        var floors = [[], [], []];
+        for (var r = 0; r < 3; r++) {
+          for (var c = 0; c < 2; c++) {
+            var w = new THREE.Mesh(winGeo, winMat);
+            w.position.set(-0.68 + c * 1.36, -0.45 + r * 1.08, 0.72);
+            floors[r].push(w);
+            building.add(w);
+          }
+        }
+        scene.add(building);
+
+        var angle = 0;
+        var targetAngle = 0;
+        var dragging = false;
+        var previousX = 0;
+        var running = true;
+
+        container.style.cursor = 'grab';
+        container.addEventListener('pointerdown', function(e){ dragging = true; previousX = e.clientX; container.style.cursor = 'grabbing'; });
+        window.addEventListener('pointermove', function(e){
+          if (!dragging) return;
+          targetAngle += (e.clientX - previousX) * 0.004;
+          previousX = e.clientX;
+        });
+        window.addEventListener('pointerup', function(){ dragging = false; container.style.cursor = 'grab'; });
+
+        var highlights = {
+          Sales: floors[0],
+          Lettings: floors[1],
+          Valuations: floors[2]
+        };
+        function highlight(name){
+          Object.values(highlights).forEach(function(arr){
+            arr.forEach(function(w){ w.material.emissive.setHex(0xffecb3); w.material.emissiveIntensity = 0.45; });
+          });
+          var arr = highlights[name];
+          if (arr) arr.forEach(function(w){ w.material.emissive.setHex(0xb07a3e); w.material.emissiveIntensity = 0.9; });
+          setTimeout(function(){
+            if (arr) arr.forEach(function(w){ w.material.emissive.setHex(0xffecb3); w.material.emissiveIntensity = 0.45; });
+          }, 1400);
+        }
+
+        var bar = document.createElement('div');
+        bar.style.display = 'flex';
+        bar.style.gap = '10px';
+        bar.style.justifyContent = 'center';
+        bar.style.marginTop = '12px';
+        bar.style.flexWrap = 'wrap';
+        ['Sales', 'Lettings', 'Valuations'].forEach(function(name){
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.textContent = name;
+          b.style.background = 'transparent';
+          b.style.color = '#cfe0d6';
+          b.style.border = '1px solid #3a5a4b';
+          b.style.padding = '6px 14px';
+          b.style.borderRadius = '6px';
+          b.style.fontSize = '13px';
+          b.style.cursor = 'pointer';
+          b.style.fontFamily = 'inherit';
+          b.addEventListener('click', function(){ highlight(name); });
+          bar.appendChild(b);
+        });
+        container.parentNode.insertBefore(bar, container.nextSibling);
+
+        function animate(){
+          if (!running) return;
+          requestAnimationFrame(animate);
+          angle += (targetAngle - angle) * 0.04;
+          building.rotation.y = angle;
+          renderer.render(scene, camera);
+        }
+        animate();
+
+        window.addEventListener('resize', function(){
+          var w = container.clientWidth || 400;
+          var h = container.clientHeight || 340;
+          camera.aspect = w / h;
+          camera.updateProjectionMatrix();
+          renderer.setSize(w, h);
+        });
+
+        var io = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            running = entry.isIntersecting;
+            if (running) animate();
+          });
+        }, { threshold: 0.1 });
+        io.observe(container);
+
+      } catch (err) {
+        console.warn('Three.js scene failed, using static fallback', err);
+        container.innerHTML = '<img src="img/stock-2.jpg" alt="Illustrative stock photograph of a Glasgow tenement building facade" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">';
+      }
+    }
+
+    initTenement();
+  })();
+</script>
+</body>
+</html>
