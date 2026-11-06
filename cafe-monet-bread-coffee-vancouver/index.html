@@ -1,952 +1,457 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <title>Cafe Monet Bread & Coffee | Vancouver Artisanal Bakery & Cafe</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS Local Inlined Styles & Utility Classes -->
-  <style>
-    /* Tailwind CSS Base Reset & Custom Styling */
-    *, ::before, ::after { box-sizing: border-box; border-width: 0; border-style: solid; border-color: #e8dfd1; }
-    html { line-height: 1.5; -webkit-text-size-adjust: 100%; font-family: 'Plus Jakarta Sans', sans-serif; }
-    body { margin: 0; background-color: #fbf9f5; color: #2b2523; font-family: 'Plus Jakarta Sans', sans-serif; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
-    h1, h2, h3, h4, h5, h6 { font-family: 'Fraunces', serif; margin: 0; }
-    a { color: inherit; text-decoration: inherit; }
-    button, input { font-family: inherit; font-size: 100%; margin: 0; padding: 0; line-height: inherit; color: inherit; }
-    button { background: transparent; cursor: pointer; }
-    img { display: block; max-width: 100%; height: auto; }
-
-    /* Custom Classes & Animations */
-    .glass-nav {
-      background: rgba(251, 249, 245, 0.9);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .custom-scrollbar::-webkit-scrollbar { height: 6px; width: 6px; }
-    .custom-scrollbar::-webkit-scrollbar-track { background: #f3efe6; }
-    .custom-scrollbar::-webkit-scrollbar-thumb { background: #8a6240; border-radius: 3px; }
-
-    /* Reduced Motion Support */
-    @media (prefers-reduced-motion: reduce) {
-      *, ::before, ::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  </style>
-
-  <!-- GSAP & Three.js Libraries -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <!-- Tailwind CSS Compiled Styling Helpers via Inline Styles & Utility Map -->
-  <style>
-    .bg-vanilla { background-color: #fbf9f5; }
-    .bg-cream { background-color: #f3efe6; }
-    .bg-espresso { background-color: #2b2523; }
-    .text-espresso { color: #2b2523; }
-    .text-cream { color: #f3efe6; }
-    .text-caramel { color: #8a6240; }
-    .border-oat { border-color: #e8dfd1; }
-    .bg-caramel { background-color: #8a6240; }
-    .hover\:bg-caramel:hover { background-color: #8a6240; }
-    .hover\:text-caramel:hover { color: #8a6240; }
-    .selection\:bg-caramel::selection { background-color: #8a6240; color: #ffffff; }
-    
-    /* Layout & Utilities */
-    .max-w-7xl { max-width: 80rem; }
-    .max-w-5xl { max-width: 64rem; }
-    .mx-auto { margin-left: auto; margin-right: auto; }
-    .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
-    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
-    .py-20 { padding-top: 5rem; padding-bottom: 5rem; }
-    .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
-    .h-20 { height: 5rem; }
-    .flex { display: flex; }
-    .hidden { display: none; }
-    .grid { display: grid; }
-    .items-center { align-items: center; }
-    .justify-between { justify-content: space-between; }
-    .justify-center { justify-content: center; }
-    .flex-col { flex-direction: column; }
-    .gap-2 { gap: 0.5rem; }
-    .gap-4 { gap: 1rem; }
-    .gap-6 { gap: 1.5rem; }
-    .gap-8 { gap: 2rem; }
-    .gap-12 { gap: 3rem; }
-    .rounded-full { border-radius: 9999px; }
-    .rounded-2xl { border-radius: 1rem; }
-    .rounded-3xl { border-radius: 1.5rem; }
-    .overflow-hidden { overflow: hidden; }
-    .relative { position: relative; }
-    .absolute { position: absolute; }
-    .sticky { position: sticky; }
-    .top-0 { top: 0; }
-    .z-40 { z-index: 40; }
-    .z-50 { z-index: 50; }
-    .w-full { width: 100%; }
-    .h-full { height: 100%; }
-    .object-cover { object-fit: cover; }
-    .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
-    .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
-    .shadow-lg { box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
-    .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
-    .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
-    .border { border-width: 1px; }
-    .border-b { border-bottom-width: 1px; }
-    .border-t { border-top-width: 1px; }
-    .text-xs { font-size: 0.75rem; line-height: 1rem; }
-    .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
-    .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
-    .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
-    .text-2xl { font-size: 1.5rem; line-height: 2rem; }
-    .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
-    .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-    .font-bold { font-weight: 700; }
-    .font-medium { font-weight: 500; }
-    .font-semibold { font-weight: 600; }
-    .uppercase { text-transform: uppercase; }
-    .tracking-tight { letter-spacing: -0.025em; }
-    .tracking-wide { letter-spacing: 0.025em; }
-    .tracking-wider { letter-spacing: 0.05em; }
-    .tracking-widest { letter-spacing: 0.1em; }
-    .text-center { text-align: center; }
-    .transition-colors { transition-property: color, background-color, border-color; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
-    .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 300ms; }
-    
-    @media (min-width: 640px) {
-      .sm\:text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
-      .sm\:text-6xl { font-size: 3.75rem; line-height: 1; }
-      .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .sm\:flex { display: flex; }
-      .sm\:hidden { display: none; }
-    }
-    @media (min-width: 768px) {
-      .md\:flex { display: flex; }
-      .md\:hidden { display: none; }
-      .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .md\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
-      .md\:col-span-3 { grid-column: span 3 / span 3; }
-      .md\:col-span-4 { grid-column: span 4 / span 4; }
-      .md\:col-span-5 { grid-column: span 5 / span 5; }
-    }
-    @media (min-width: 1024px) {
-      .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-      .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-      .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-      .lg\:grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
-      .lg\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
-      .lg\:col-span-5 { grid-column: span 5 / span 5; }
-      .lg\:col-span-6 { grid-column: span 6 / span 6; }
-      .lg\:col-span-7 { grid-column: span 7 / span 7; }
-      .lg\:text-7xl { font-size: 4.5rem; line-height: 1; }
-    }
-  </style>
-</head>
-<body class="bg-vanilla text-espresso antialiased selection:bg-caramel selection:text-white">
-
-  <!-- Independent Concept Banner -->
-  <aside aria-label="Notice" class="bg-espresso text-cream text-xs py-2 px-4 text-center font-medium tracking-wide relative z-50">
-    Independent website concept by LeadSky for Cafe Monet Bread & Coffee (568 Robson Street, Vancouver). Not their official website.
-  </aside>
-
-  <!-- Sticky Navigation -->
-  <header class="sticky top-0 z-45 glass-nav border-b border-oat/60 transition-all duration-300" style="z-index: 45;">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 group">
-        <span class="font-serif text-2xl font-bold tracking-tight text-espresso group-hover:text-caramel transition-colors">
-          Cafe Monet <span class="text-xs font-sans tracking-widest uppercase block text-caramel">Vancouver</span>
-        </span>
-      </a>
-
-      <!-- Desktop Nav -->
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
-        <a href="#menu" class="hover:text-caramel transition-colors">Menu</a>
-        <a href="#bakery" class="hover:text-caramel transition-colors">Artisan Bakery</a>
-        <a href="#shaved-ice" class="hover:text-caramel transition-colors">Shaved Ice</a>
-        <a href="#story" class="hover:text-caramel transition-colors">Our Craft</a>
-        <a href="#gallery" class="hover:text-caramel transition-colors">Gallery</a>
-        <a href="#contact" class="hover:text-caramel transition-colors">Location & Hours</a>
-      </nav>
-
-      <div class="hidden md:flex items-center gap-4">
-        <a href="#menu" class="bg-espresso text-cream px-5 py-2.5 rounded-full text-sm font-medium hover:bg-caramel transition-colors shadow-sm">
-          Browse Menu
-        </a>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="md:hidden text-espresso p-2 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width:24px;height:24px;">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Mobile Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-vanilla border-b border-oat shadow-lg py-6 px-6 flex flex-col gap-4 z-50">
-      <a href="#menu" class="mobile-link text-lg font-serif">Menu</a>
-      <a href="#bakery" class="mobile-link text-lg font-serif">Artisan Bakery</a>
-      <a href="#shaved-ice" class="mobile-link text-lg font-serif">Shaved Ice</a>
-      <a href="#story" class="mobile-link text-lg font-serif">Our Craft</a>
-      <a href="#gallery" class="mobile-link text-lg font-serif">Gallery</a>
-      <a href="#contact" class="mobile-link text-lg font-serif">Location & Hours</a>
-      <a href="#menu" class="mobile-link bg-espresso text-cream text-center py-3 rounded-full font-medium mt-2">Browse Menu</a>
-    </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="relative min-h-[90vh] flex items-center overflow-hidden bg-vanilla py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <!-- Left Content -->
-      <div class="lg:col-span-7 flex flex-col justify-center z-10">
-        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-cream border border-oat/80 w-fit mb-6">
-          <span class="w-2 h-2 rounded-full bg-caramel" style="width:8px;height:8px;background:#8a6240;display:inline-block;border-radius:9999px;"></span>
-          <span class="text-xs font-semibold tracking-wider uppercase text-caramel">568 Robson Street, Vancouver</span>
-        </div>
-        
-        <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-espresso leading-[1.08] mb-6">
-          Artisanal Bakery, Specialty Coffee & Shaved Ice in Vancouver
-        </h1>
-        
-        <p class="text-lg sm:text-xl text-espresso/80 font-normal max-w-2xl mb-8 leading-relaxed" style="color: rgba(43,37,35,0.8);">
-          Freshly baked sourdough loaves, velvety espresso lattes, and refreshing artisanal shaved ice crafted daily right here in downtown Vancouver.
-        </p>
-
-        <div class="flex flex-wrap items-center gap-4">
-          <a href="#menu" class="bg-espresso text-cream px-8 py-4 rounded-full font-medium hover:bg-caramel transition-all duration-300 shadow-md hover:shadow-lg">
-            Explore Menu & Pricing
-          </a>
-          <a href="#contact" class="border border-espresso/30 text-espresso px-8 py-4 rounded-full font-medium hover:bg-cream transition-all duration-300" style="border-color: rgba(43,37,35,0.3);">
-            Visit Our Cafe
-          </a>
-        </div>
-
-        <div class="mt-12 pt-8 border-t border-oat flex items-center gap-8 text-sm text-espresso/70" style="color: rgba(43,37,35,0.7);">
-          <div>
-            <strong class="block font-serif text-xl text-espresso">7:00 AM</strong>
-            <span>Weekday Opening</span>
-          </div>
-          <div class="w-px h-8 bg-oat" style="width:1px;height:2rem;background:#e8dfd1;"></div>
-          <div>
-            <strong class="block font-serif text-xl text-espresso">Daily</strong>
-            <span>Fresh Sourdough & Pastries</span>
-          </div>
-          <div class="w-px h-8 bg-oat" style="width:1px;height:2rem;background:#e8dfd1;"></div>
-          <div>
-            <strong class="block font-serif text-xl text-espresso">Artisan</strong>
-            <span>Shaved Ice Desserts</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right Visual & Interactive Canvas -->
-      <div class="lg:col-span-5 relative">
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-cream aspect-[4/5] bg-cream" style="border-color: #f3efe6;">
-          <img src="img/stock-7.jpg" alt="Japanese matcha shaved ice dessert with red beans" class="w-full h-full object-cover">
-          <!-- WCAG AA Compliant Dark Overlay for Text Readability -->
-          <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);"></div>
-          
-          <div class="absolute bottom-6 left-6 right-6 p-6 rounded-2xl bg-espresso/85 backdrop-blur-md border border-cream/20 shadow-lg text-cream" style="background: rgba(43,37,35,0.85);">
-            <span class="text-xs font-semibold tracking-wider uppercase text-caramel mb-1 block">Featured Creation</span>
-            <p class="font-serif text-xl font-bold text-cream mb-1">Matcha Shaved Ice & Croissant</p>
-            <p class="text-xs text-cream/80" style="color: rgba(243,239,230,0.8);">Crafted with delicate texture, sweet red beans, and premium ceremonial matcha.</p>
-          </div>
-        </div>
-
-        <div class="absolute -top-6 -left-6 hidden sm:flex items-center gap-3 bg-vanilla p-3 px-4 rounded-2xl shadow-xl border border-oat">
-          <div class="w-10 h-10 rounded-full bg-caramel/10 flex items-center justify-center text-caramel font-bold" style="width:40px;height:40px;background:rgba(138,98,64,0.1);display:flex;align-items:center;justify-content:center;border-radius:9999px;">☕</div>
-          <div>
-            <p class="text-xs font-bold text-espresso">Specialty Coffee</p>
-            <p class="text-[10px] text-espresso/60" style="font-size:10px;color:rgba(43,37,35,0.6);">House-roasted espresso beans</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive 3D / Highlight Section with Three.js -->
-  <section class="py-16 bg-cream border-y border-oat/50 relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-5">
-        <span class="text-xs font-semibold uppercase tracking-widest text-caramel mb-3 block">Immersive Coffee Experience</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso mb-4">
-          Experience the Art of the Pour
-        </h2>
-        <p class="text-espresso/80 leading-relaxed mb-6" style="color: rgba(43,37,35,0.8);">
-          Explore our interactive ceramic cup model representing the precise craft behind every morning latte served at Cafe Monet. Drag or move your mouse to inspect the warm ceramic glaze and steam.
-        </p>
-        <div class="flex items-center gap-4 text-xs font-medium text-caramel">
-          <span class="flex items-center gap-1.5">✦ Interactive 3D View</span>
-          <span class="flex items-center gap-1.5">✦ Freshly Brewed Daily</span>
-        </div>
-      </div>
-      
-      <!-- Three.js Container -->
-      <div class="lg:col-span-7 h-[350px] sm:h-[420px] rounded-3xl bg-vanilla border border-oat/80 shadow-inner relative overflow-hidden flex items-center justify-center" id="canvas-container" style="height: 420px;">
-        <noscript>
-          <img src="img/stock-3.jpg" alt="Latte art in ceramic coffee cup cafe" class="w-full h-full object-cover">
-        </noscript>
-        <div class="absolute bottom-4 right-4 bg-vanilla/90 backdrop-blur px-3 py-1 rounded-full text-[11px] text-espresso/70 pointer-events-none" style="background:rgba(251,249,245,0.9);">
-          Interactive 3D Ceramic Cup • Drag to Rotate
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quick Highlights / Categories -->
-  <section class="py-20 bg-vanilla">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs font-semibold uppercase tracking-widest text-caramel mb-3 block">Daily Offerings</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso mb-4">Crafted for Vancouver Mornings & Afternoons</h2>
-        <p class="text-espresso/70" style="color: rgba(43,37,35,0.7);">From warm sourdough loaves straight from the oven to iced traditional desserts.</p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-cream rounded-3xl p-6 border border-oat/70 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
-          <div>
-            <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6" style="aspect-ratio: 4/3;">
-              <img src="img/stock-1.jpg" alt="Artisan sourdough bread loaf on wooden table" class="w-full h-full object-cover">
-            </div>
-            <h3 class="font-serif text-xl font-bold text-espresso mb-2">Artisan Breads</h3>
-            <p class="text-sm text-espresso/70 mb-4" style="color: rgba(43,37,35,0.7);">Naturally fermented sourdough, rustic baguettes, and hearty whole grain loaves baked fresh every morning.</p>
-          </div>
-          <a href="#menu" class="text-xs font-bold uppercase tracking-wider text-caramel flex items-center gap-1">
-            View Bread Menu &rarr;
-          </a>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="bg-cream rounded-3xl p-6 border border-oat/70 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
-          <div>
-            <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6" style="aspect-ratio: 4/3;">
-              <img src="img/stock-3.jpg" alt="Latte art in ceramic coffee cup cafe" class="w-full h-full object-cover">
-            </div>
-            <h3 class="font-serif text-xl font-bold text-espresso mb-2">Specialty Espresso Bar</h3>
-            <p class="text-sm text-espresso/70 mb-4" style="color: rgba(43,37,35,0.7);">Velvety flat whites, rich americanos, signature lattes, and premium loose-leaf teas expertly pulled.</p>
-          </div>
-          <a href="#menu" class="text-xs font-bold uppercase tracking-wider text-caramel flex items-center gap-1">
-            View Coffee Drinks &rarr;
-          </a>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="bg-cream rounded-3xl p-6 border border-oat/70 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
-          <div>
-            <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6" style="aspect-ratio: 4/3;">
-              <img src="img/stock-5.jpg" alt="Freshly baked croissants and pastries display case" class="w-full h-full object-cover">
-            </div>
-            <h3 class="font-serif text-xl font-bold text-espresso mb-2">Handcrafted Pastries</h3>
-            <p class="text-sm text-espresso/70 mb-4" style="color: rgba(43,37,35,0.7);">Flaky butter croissants, pain au chocolat, seasonal fruit danishes, and sweet artisanal morning treats.</p>
-          </div>
-          <a href="#menu" class="text-xs font-bold uppercase tracking-wider text-caramel flex items-center gap-1">
-            View Pastry Selection &rarr;
-          </a>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="bg-cream rounded-3xl p-6 border border-oat/70 hover:shadow-xl transition-all duration-300 group flex flex-col justify-between">
-          <div>
-            <div class="aspect-[4/3] rounded-2xl overflow-hidden mb-6" style="aspect-ratio: 4/3;">
-              <img src="img/stock-7.jpg" alt="Japanese matcha shaved ice dessert with red beans" class="w-full h-full object-cover">
-            </div>
-            <h3 class="font-serif text-xl font-bold text-espresso mb-2">Premium Shaved Ice</h3>
-            <p class="text-sm text-espresso/70 mb-4" style="color: rgba(43,37,35,0.7);">Delicate, snow-like shaved ice bowls topped with sweet red beans, fresh fruit, condensed milk, and mochi.</p>
-          </div>
-          <a href="#menu" class="text-xs font-bold uppercase tracking-wider text-caramel flex items-center gap-1">
-            View Shaved Ice &rarr;
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Interactive Menu Showcase Section -->
-  <section id="menu" class="py-20 bg-cream/70 border-t border-oat/60" style="background-color: rgba(243,239,230,0.7);">
-    <div class="max-w-5xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-semibold uppercase tracking-widest text-caramel mb-3 block">Menu & Pricing</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso mb-4">Explore Our Daily Selections</h2>
-        <p class="text-espresso/70" style="color: rgba(43,37,35,0.7);">Select a category below to browse our house specialties available at Robson Street.</p>
-      </div>
-
-      <!-- Tab Buttons -->
-      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-4 mb-12" role="tablist">
-        <button role="tab" aria-selected="true" aria-controls="panel-coffee" id="tab-coffee" class="menu-tab px-6 py-3 rounded-full text-sm font-semibold transition-all bg-espresso text-cream shadow-md">Coffee & Tea</button>
-        <button role="tab" aria-selected="false" aria-controls="panel-bakery" id="tab-bakery" class="menu-tab px-6 py-3 rounded-full text-sm font-semibold transition-all bg-vanilla text-espresso border border-oat">Bakery & Sourdough</button>
-        <button role="tab" aria-selected="false" aria-controls="panel-pastries" id="tab-pastries" class="menu-tab px-6 py-3 rounded-full text-sm font-semibold transition-all bg-vanilla text-espresso border border-oat">Pastries</button>
-        <button role="tab" aria-selected="false" aria-controls="panel-shaved-ice" id="tab-shaved-ice" class="menu-tab px-6 py-3 rounded-full text-sm font-semibold transition-all bg-vanilla text-espresso border border-oat">Shaved Ice Desserts</button>
-      </div>
-
-      <!-- Tab Panels -->
-      <div class="bg-vanilla rounded-3xl p-6 sm:p-10 border border-oat shadow-lg">
-        <!-- Coffee & Tea Panel -->
-        <div id="panel-coffee" role="tabpanel" aria-labelledby="tab-coffee" class="menu-panel grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">House Espresso</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Rich, bold double shot pulled from sustainably sourced beans.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$4.25</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Caffè Latte</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Espresso with velvety microfoam and delicate latte art.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$5.75</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Vanilla Bean Cappuccino</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Traditional espresso, textured milk foam, and natural vanilla bean infusion.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$6.00</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Ceremonial Matcha Latte</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Premium Japanese green tea stone-ground to order with steamed oat or dairy milk.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$6.50</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Loose-Leaf Earl Grey Tea</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Fragrant black tea infused with cold-pressed bergamot oil.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$4.75</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Iced Caramel Cold Brew</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Slow-steeped cold brew over hand-carved ice with house caramel.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$6.25</span>
-          </div>
-        </div>
-
-        <!-- Bakery & Sourdough Panel -->
-        <div id="panel-bakery" role="tabpanel" aria-labelledby="tab-bakery" class="menu-panel hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Classic Country Sourdough Loaf</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Long fermentation, bubbly caramelized crust, and airy open crumb.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$9.00</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Multigrain Ancient Seed Loaf</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Packed with flax, sunflower, pumpkin seeds, and cracked wheat.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$10.50</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Rustic French Baguette</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Crisp exterior with a tender, chewy center. Baked fresh twice daily.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$5.50</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Rosemary & Sea Salt Focaccia</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Infused with extra virgin olive oil, fresh rosemary, and flaky Maldon salt.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$8.00</span>
-          </div>
-        </div>
-
-        <!-- Pastries Panel -->
-        <div id="panel-pastries" role="tabpanel" aria-labelledby="tab-pastries" class="menu-panel hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">All-Butter French Croissant</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Laminated with European cultured butter for exquisite flaky layers.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$4.75</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Pain au Chocolat</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Flaky croissant dough wrapped around two batons of dark Belgian chocolate.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$5.25</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Almond Cream Croissant</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Twice-baked croissant filled with rich frangipane and toasted sliced almonds.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$6.25</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Seasonal Berry Danish</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Puff pastry with vanilla pastry cream and fresh Vancouver market berries.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$5.75</span>
-          </div>
-        </div>
-
-        <!-- Shaved Ice Panel -->
-        <div id="panel-shaved-ice" role="tabpanel" aria-labelledby="tab-shaved-ice" class="menu-panel hidden grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Traditional Red Bean Shaved Ice</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Silky shaved ice piled high with sweet azuki red beans and condensed milk.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$13.50</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Ceremonial Matcha Shaved Ice</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Green tea shaved snow with mochi pieces, red bean paste, and condensed milk.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$14.50</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Mango Fresh Fruit Shaved Ice</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Sweet ripe mango chunks, mango puree drizzle, and vanilla cream.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$15.00</span>
-          </div>
-          <div class="flex items-start justify-between p-4 rounded-2xl bg-cream/50 border border-oat/40">
-            <div>
-              <h3 class="font-serif font-bold text-lg text-espresso">Injeolmi Soybean Shaved Ice</h3>
-              <p class="text-xs text-espresso/70 mt-1" style="color: rgba(43,37,35,0.7);">Roasted soybean powder, chewy rice cake bites, sliced almonds, and sweet milk.</p>
-            </div>
-            <span class="font-serif font-bold text-caramel text-lg">$14.00</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Story / Craft Section -->
-  <section id="story" class="py-24 bg-vanilla">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-6 relative">
-        <div class="grid grid-cols-2 gap-4">
-          <div class="space-y-4" style="display:flex;flex-direction:column;gap:1rem;">
-            <div class="rounded-3xl overflow-hidden aspect-[4/5] shadow-lg" style="aspect-ratio: 4/5;">
-              <img src="img/stock-2.jpg" alt="Artisan sourdough bread loaf on wooden table" class="w-full h-full object-cover">
-            </div>
-            <div class="rounded-3xl overflow-hidden aspect-square shadow-lg" style="aspect-ratio: 1/1;">
-              <img src="img/stock-9.jpg" alt="Cozy modern cafe interior with wooden tables" class="w-full h-full object-cover">
-            </div>
-          </div>
-          <div class="space-y-4 pt-8" style="display:flex;flex-direction:column;gap:1rem;padding-top:2rem;">
-            <div class="rounded-3xl overflow-hidden aspect-square shadow-lg" style="aspect-ratio: 1/1;">
-              <img src="img/stock-4.jpg" alt="Latte art in ceramic coffee cup cafe" class="w-full h-full object-cover">
-            </div>
-            <div class="rounded-3xl overflow-hidden aspect-[4/5] shadow-lg" style="aspect-ratio: 4/5;">
-              <img src="img/stock-6.jpg" alt="Freshly baked croissants and pastries display case" class="w-full h-full object-cover">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="lg:col-span-6">
-        <span class="text-xs font-semibold uppercase tracking-widest text-caramel mb-3 block">Our Neighborhood Sanctuary</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso mb-6">
-          Rooted in Vancouver with a Passion for European Baking
-        </h2>
-        <p class="text-espresso/80 leading-relaxed mb-6" style="color: rgba(43,37,35,0.8);">
-          Located right on Robson Street, Cafe Monet Bread & Coffee brings together the art of slow-fermented artisanal bread, comforting specialty espresso drinks, and refreshing traditional shaved ice desserts.
-        </p>
-        <p class="text-espresso/80 leading-relaxed mb-8" style="color: rgba(43,37,35,0.8);">
-          Whether you are stopping by for a quick morning flat white and fresh butter croissant on your way to work, picking up a warm sourdough loaf for dinner, or gathering with friends for a comforting bowl of shaved ice, our doors are open daily.
-        </p>
-
-        <div class="grid grid-cols-2 gap-6 pt-6 border-t border-oat">
-          <div>
-            <h3 class="font-serif text-2xl font-bold text-espresso mb-1">Robson Street</h3>
-            <p class="text-xs text-espresso/70" style="color: rgba(43,37,35,0.7);">Downtown Vancouver location</p>
-          </div>
-          <div>
-            <h3 class="font-serif text-2xl font-bold text-espresso mb-1">Open Daily</h3>
-            <p class="text-xs text-espresso/70" style="color: rgba(43,37,35,0.7);">Mon-Sun 7:00 AM onwards</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section id="gallery" class="py-20 bg-cream/50 border-t border-oat/60" style="background-color: rgba(243,239,230,0.5);">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs font-semibold uppercase tracking-widest text-caramel mb-3 block">Atmosphere & Craft</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso mb-4">A Glimpse Inside Cafe Monet</h2>
-        <p class="text-espresso/70" style="color: rgba(43,37,35,0.7);">Warm wooden tables, steaming mugs, and freshly baked goods waiting for you.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="rounded-3xl overflow-hidden aspect-[4/3] shadow-md group relative" style="aspect-ratio: 4/3;">
-          <img src="img/stock-3.jpg" alt="Latte art in ceramic coffee cup cafe" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-espresso/40 flex items-end p-6">
-            <span class="text-cream text-xs font-medium bg-espresso/90 backdrop-blur px-3 py-1.5 rounded-full" style="background: rgba(43,37,35,0.9);">Specialty Coffee</span>
-          </div>
-        </div>
-        <div class="rounded-3xl overflow-hidden aspect-[4/3] shadow-md group relative" style="aspect-ratio: 4/3;">
-          <img src="img/stock-1.jpg" alt="Artisan sourdough bread loaf on wooden table" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-espresso/40 flex items-end p-6">
-            <span class="text-cream text-xs font-medium bg-espresso/90 backdrop-blur px-3 py-1.5 rounded-full" style="background: rgba(43,37,35,0.9);">Artisan Sourdough</span>
-          </div>
-        </div>
-        <div class="rounded-3xl overflow-hidden aspect-[4/3] shadow-md group relative" style="aspect-ratio: 4/3;">
-          <img src="img/stock-5.jpg" alt="Freshly baked croissants and pastries display case" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-espresso/40 flex items-end p-6">
-            <span class="text-cream text-xs font-medium bg-espresso/90 backdrop-blur px-3 py-1.5 rounded-full" style="background: rgba(43,37,35,0.9);">Daily Pastries</span>
-          </div>
-        </div>
-        <div class="rounded-3xl overflow-hidden aspect-[4/3] shadow-md group relative" style="aspect-ratio: 4/3;">
-          <img src="img/stock-7.jpg" alt="Japanese matcha shaved ice dessert with red beans" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-espresso/40 flex items-end p-6">
-            <span class="text-cream text-xs font-medium bg-espresso/90 backdrop-blur px-3 py-1.5 rounded-full" style="background: rgba(43,37,35,0.9);">Shaved Ice Desserts</span>
-          </div>
-        </div>
-        <div class="rounded-3xl overflow-hidden aspect-[4/3] shadow-md group relative" style="aspect-ratio: 4/3;">
-          <img src="img/stock-9.jpg" alt="Cozy modern cafe interior with wooden tables" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-espresso/40 flex items-end p-6">
-            <span class="text-cream text-xs font-medium bg-espresso/90 backdrop-blur px-3 py-1.5 rounded-full" style="background: rgba(43,37,35,0.9);">Cafe Interior</span>
-          </div>
-        </div>
-        <div class="rounded-3xl overflow-hidden aspect-[4/3] shadow-md group relative" style="aspect-ratio: 4/3;">
-          <img src="img/stock-10.jpg" alt="Cozy modern cafe interior with wooden tables" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-espresso/40 flex items-end p-6">
-            <span class="text-cream text-xs font-medium bg-espresso/90 backdrop-blur px-3 py-1.5 rounded-full" style="background: rgba(43,37,35,0.9);">Seating Area</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Location & Hours Section -->
-  <section id="contact" class="py-20 bg-vanilla">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12">
-      <!-- Info Column -->
-      <div class="lg:col-span-5 flex flex-col justify-between">
-        <div>
-          <span class="text-xs font-semibold uppercase tracking-widest text-caramel mb-3 block">Visit Us</span>
-          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso mb-6">Come Say Hello on Robson Street</h2>
-          <p class="text-espresso/70 mb-8 leading-relaxed" style="color: rgba(43,37,35,0.7);">
-            Conveniently situated in downtown Vancouver. Drop in for your morning espresso, grab fresh pastries, or relax with our signature shaved ice.
-          </p>
-
-          <div class="space-y-6" style="display:flex;flex-direction:column;gap:1.5rem;">
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-cream flex items-center justify-center text-caramel shrink-0 font-bold" style="width:40px;height:40px;background:#f3efe6;display:flex;align-items:center;justify-content:center;border-radius:9999px;">📍</div>
-              <div>
-                <strong class="block font-serif text-espresso">Address</strong>
-                <span class="text-sm text-espresso/70" style="color: rgba(43,37,35,0.7);">568 Robson Street, Vancouver, BC V6B 2B7</span>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-cream flex items-center justify-center text-caramel shrink-0 font-bold" style="width:40px;height:40px;background:#f3efe6;display:flex;align-items:center;justify-content:center;border-radius:9999px;">📞</div>
-              <div>
-                <strong class="block font-serif text-espresso">Phone</strong>
-                <a href="tel:+16044391088" class="text-sm text-espresso/70 hover:text-caramel transition-colors" style="color: rgba(43,37,35,0.7);">+1 604-439-1088</a>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-cream flex items-center justify-center text-caramel shrink-0 font-bold" style="width:40px;height:40px;background:#f3efe6;display:flex;align-items:center;justify-content:center;border-radius:9999px;">✉️</div>
-              <div>
-                <strong class="block font-serif text-espresso">Email</strong>
-                <a href="mailto:cafemonet.ca@gmail.com" class="text-sm text-espresso/70 hover:text-caramel transition-colors" style="color: rgba(43,37,35,0.7);">cafemonet.ca@gmail.com</a>
-              </div>
-            </div>
-
-            <div class="flex items-start gap-4">
-              <div class="w-10 h-10 rounded-full bg-cream flex items-center justify-center text-caramel shrink-0 font-bold" style="width:40px;height:40px;background:#f3efe6;display:flex;align-items:center;justify-content:center;border-radius:9999px;">🕒</div>
-              <div>
-                <strong class="block font-serif text-espresso">Opening Hours</strong>
-                <span class="text-sm text-espresso/70 block" style="color: rgba(43,37,35,0.7);">Monday – Friday: 07:00 – 21:00</span>
-                <span class="text-sm text-espresso/70 block" style="color: rgba(43,37,35,0.7);">Saturday – Sunday: 09:00 – 21:00</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Newsletter & Enquiry Form Card -->
-      <div class="lg:col-span-7 bg-cream rounded-3xl p-8 sm:p-10 border border-oat shadow-lg flex flex-col justify-center">
-        <h3 class="font-serif text-2xl font-bold text-espresso mb-2">Stay Updated on Seasonal Specials</h3>
-        <p class="text-sm text-espresso/70 mb-6" style="color: rgba(43,37,35,0.7);">Subscribe to receive updates on new seasonal pastry batches, fresh sourdough releases, and shaved ice flavours.</p>
-
-        <form id="demo-newsletter-form" class="space-y-4" style="display:flex;flex-direction:column;gap:1rem;">
-          <div>
-            <label for="subscriber-email" class="block text-xs font-semibold uppercase tracking-wider text-espresso mb-2">Your Email Address</label>
-            <input type="email" id="subscriber-email" required placeholder="name@example.com" class="w-full px-4 py-3 rounded-xl bg-vanilla border border-oat text-espresso placeholder:text-espresso/40 focus:outline-none focus:border-caramel transition-colors" style="width:100%;padding:0.75rem 1rem;border-radius:0.75rem;background:#fbf9f5;border:1px solid #e8dfd1;color:#2b2523;">
-          </div>
-          <button type="submit" class="w-full bg-espresso text-cream py-4 rounded-xl font-medium hover:bg-caramel transition-colors shadow-sm" style="width:100%;background:#2b2523;color:#f3efe6;padding:1rem;border-radius:0.75rem;">
-            Subscribe to Updates
-          </button>
-          <p id="form-feedback" class="text-xs text-center text-caramel font-medium hidden mt-2"></p>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-espresso text-cream py-16 border-t border-espresso/20">
-    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-cream/10" style="border-bottom-color: rgba(243,239,230,0.1);">
-      <div class="md:col-span-5">
-        <span class="font-serif text-2xl font-bold tracking-tight text-cream block mb-4">
-          Cafe Monet <span class="text-xs font-sans tracking-widest uppercase block text-caramel">Vancouver</span>
-        </span>
-        <p class="text-cream/70 text-sm max-w-sm leading-relaxed mb-6" style="color: rgba(243,239,230,0.7);">
-          Artisanal bakery, specialty coffee, and traditional shaved ice located on Robson Street in downtown Vancouver, BC.
-        </p>
-        <p class="text-xs text-cream/50" style="color: rgba(243,239,230,0.5);">
-          568 Robson Street, Vancouver, BC V6B 2B7<br>
-          +1 604-439-1088 | cafemonet.ca@gmail.com
-        </p>
-      </div>
-
-      <div class="md:col-span-3">
-        <h4 class="font-serif font-bold text-base mb-4 text-cream">Quick Links</h4>
-        <ul class="space-y-2.5 text-sm text-cream/70" style="display:flex;flex-direction:column;gap:0.6rem;color:rgba(243,239,230,0.7);">
-          <li><a href="#menu" class="hover:text-cream transition-colors">Menu & Pricing</a></li>
-          <li><a href="#bakery" class="hover:text-cream transition-colors">Artisan Bakery</a></li>
-          <li><a href="#shaved-ice" class="hover:text-cream transition-colors">Shaved Ice</a></li>
-          <li><a href="#story" class="hover:text-cream transition-colors">Our Craft</a></li>
-          <li><a href="#gallery" class="hover:text-cream transition-colors">Gallery</a></li>
-          <li><a href="#contact" class="hover:text-cream transition-colors">Location & Hours</a></li>
-        </ul>
-      </div>
-
-      <div class="md:col-span-4">
-        <h4 class="font-serif font-bold text-base mb-4 text-cream">Photography & Credits</h4>
-        <p class="text-xs text-cream/60 leading-relaxed mb-4" style="color: rgba(243,239,230,0.6);">
-          Stock photography licensed under Pixabay Content License. Photographers: <a href="https://pixabay.com/users/vugarahmadov-23150537/" target="_blank" class="underline">VugarAhmadov</a>, <a href="https://pixabay.com/users/amiraxgelcola-18587186/" target="_blank" class="underline">amiraxgelcola</a>, <a href="https://pixabay.com/users/13758299-13758299/" target="_blank" class="underline">13758299</a>, <a href="https://pixabay.com/users/engin_akyurt-3049586/" target="_blank" class="underline">Engin_Akyurt</a>, <a href="https://www.pexels.com" target="_blank" class="underline">Pexels</a>, <a href="https://pixabay.com/users/thaoantran0101-29938816/" target="_blank" class="underline">thaoantran0101</a>, <a href="https://pixabay.com/users/danieldtwal-18342419/" target="_blank" class="underline">DanielTwal</a>, <a href="https://pixabay.com/users/tianya1223-14983638/" target="_blank" class="underline">tianya1223</a>.
-        </p>
-        <p class="text-xs text-cream/60" style="color: rgba(243,239,230,0.6);">
-          Independent website concept created by <strong class="text-cream">LeadSky</strong>. Not affiliated with or endorsed by Cafe Monet Bread & Coffee.
-        </p>
-      </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-6 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-cream/50" style="color: rgba(243,239,230,0.5);">
-      <p>&copy; 2026 Cafe Monet Bread & Coffee. All rights reserved.</p>
-      <p class="mt-4 sm:mt-0">Independent Concept Demo by LeadSky</p>
-    </div>
-  </footer>
-
-  <!-- Scripts & Interactions -->
-  <script>
-    // Check for Reduced Motion Preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    // Mobile Navigation Toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const mobileLinks = document.querySelectorAll('.mobile-link');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
-
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-      });
-    });
-
-    // Menu Tabs Functionality
-    const tabButtons = document.querySelectorAll('.menu-tab');
-    const menuPanels = document.querySelectorAll('.menu-panel');
-
-    tabButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        tabButtons.forEach(b => {
-          b.setAttribute('aria-selected', 'false');
-          b.classList.remove('bg-espresso', 'text-cream', 'shadow-md');
-          b.classList.add('bg-vanilla', 'text-espresso', 'border', 'border-oat');
-        });
-
-        btn.setAttribute('aria-selected', 'true');
-        btn.classList.remove('bg-vanilla', 'text-espresso', 'border', 'border-oat');
-        btn.classList.add('bg-espresso', 'text-cream', 'shadow-md');
-
-        menuPanels.forEach(panel => panel.classList.add('hidden'));
-
-        const targetId = 'panel-' + btn.id.replace('tab-', '');
-        document.getElementById(targetId).classList.remove('hidden');
-      });
-    });
-
-    // Demo Newsletter Form Handler
-    const newsletterForm = document.getElementById('demo-newsletter-form');
-    const formFeedback = document.getElementById('form-feedback');
-
-    newsletterForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      formFeedback.textContent = "This is a demo form, nothing was sent.";
-      formFeedback.classList.remove('hidden');
-      newsletterForm.reset();
-      setTimeout(() => {
-        formFeedback.classList.add('hidden');
-      }, 5000);
-    });
-
-    // Three.js Interactive Ceramic Coffee Cup (with reduced-motion & off-screen pausing)
-    const container = document.getElementById('canvas-container');
-    if (container && typeof THREE !== 'undefined' && !prefersReducedMotion) {
-      const scene = new THREE.Scene();
-      const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-      const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setSize(container.clientWidth, container.clientHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      container.appendChild(renderer.domElement);
-
-      // Lighting
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-      scene.add(ambientLight);
-
-      const directionalLight = new THREE.DirectionalLight(0xfff5e6, 1.2);
-      directionalLight.position.set(5, 10, 7);
-      scene.add(directionalLight);
-
-      const pointLight = new THREE.PointLight(0x8a6240, 2, 50);
-      pointLight.position.set(-3, -2, 4);
-      scene.add(pointLight);
-
-      // Ceramic Cup Group
-      const cupGroup = new THREE.Group();
-
-      const cupGeometry = new THREE.CylinderGeometry(1.2, 0.9, 2.2, 32, 1, true);
-      const cupMaterial = new THREE.MeshStandardMaterial({
-        color: 0xf3efe6,
-        roughness: 0.2,
-        metalness: 0.1,
-        side: THREE.DoubleSide
-      });
-      const cupMesh = new THREE.Mesh(cupGeometry, cupMaterial);
-      cupGroup.add(cupMesh);
-
-      const liquidGeometry = new THREE.CylinderGeometry(1.18, 0.88, 0.1, 32);
-      const liquidMaterial = new THREE.MeshStandardMaterial({
-        color: 0x3d2314,
-        roughness: 0.1,
-        metalness: 0.2
-      });
-      const liquidMesh = new THREE.Mesh(liquidGeometry, liquidMaterial);
-      liquidMesh.position.y = 0.9;
-      cupGroup.add(liquidMesh);
-
-      const saucerGeometry = new THREE.CylinderGeometry(2.2, 1.8, 0.2, 32);
-      const saucerMaterial = new THREE.MeshStandardMaterial({
-        color: 0xfbf9f5,
-        roughness: 0.3,
-        metalness: 0.05
-      });
-      const saucerMesh = new THREE.Mesh(saucerGeometry, saucerMaterial);
-      saucerMesh.position.y = -1.2;
-      cupGroup.add(saucerMesh);
-
-      scene.add(cupGroup);
-      camera.position.z = 6;
-      camera.position.y = 1;
-
-      // Mouse rotation interaction
-      let isDragging = false;
-      let previousMousePosition = { x: 0, y: 0 };
-
-      container.addEventListener('mousedown', (e) => {
-        isDragging = true;
-        previousMousePosition = { x: e.clientX, y: e.clientY };
-      });
-
-      window.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        const deltaX = e.clientX - previousMousePosition.x;
-        const deltaY = e.clientY - previousMousePosition.y;
-
-        cupGroup.rotation.y += deltaX * 0.008;
-        cupGroup.rotation.x += deltaY * 0.008;
-
-        previousMousePosition = { x: e.clientX, y: e.clientY };
-      });
-
-      window.addEventListener('mouseup', () => {
-        isDragging = false;
-      });
-
-      container.addEventListener('touchstart', (e) => {
-        if (e.touches.length === 1) {
-          isDragging = true;
-          previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-        }
-      });
-
-      window.addEventListener('touchmove', (e) => {
-        if (!isDragging || e.touches.length !== 1) return;
-        const deltaX = e.touches[0].clientX - previousMousePosition.x;
-        const deltaY = e.touches[0].clientY - previousMousePosition.y;
-
-        cupGroup.rotation.y += deltaX * 0.008;
-        cupGroup.rotation.x += deltaY * 0.008;
-
-        previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-      });
-
-      window.addEventListener('touchend', () => {
-        isDragging = false;
-      });
-
-      // Intersection Observer to pause Three.js when off-screen
-      let isVisible = true;
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          isVisible = entry.isIntersecting;
-        });
-      }, { threshold: 0.1 });
-      observer.observe(container);
-
-      // Animation Loop
-      let clock = new THREE.Clock();
-      function animate() {
-        requestAnimationFrame(animate);
-        if (!isVisible) return;
-        const elapsedTime = clock.getElapsedTime();
-
-        if (!isDragging) {
-          cupGroup.rotation.y += 0.004;
-          cupGroup.rotation.x = Math.sin(elapsedTime * 0.8) * 0.08;
-        }
-
-        renderer.render(scene, camera);
-      }
-      animate();
-
-      window.addEventListener('resize', () => {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-      });
-    } else if (container) {
-      // Fallback if reduced motion is preferred or WebGL is missing
-      container.innerHTML = '<img src="img/stock-3.jpg" alt="Latte art in ceramic coffee cup cafe" class="w-full h-full object-cover">';
-    }
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cafe Monet Bread & Coffee</title>
+<script id="site-data" type="application/json">{"brand": {"name": "Cafe Monet Bread & Coffee", "tagline": "Coffee, pastries and a pause on Robson Street.", "logo": "", "city": "Vancouver", "country": "CA", "currency": "CAD", "currency_symbol": "CA$", "phone": "+1 604-439-1088", "whatsapp": "", "email": "cafemonet.ca@gmail.com", "instagram": "", "tiktok": "", "address": "568 Robson Street Vancouver V6B 2B7", "hours": "Monday–Friday: 7am–9pm. Saturday–Sunday: 9am–9pm."}, "colors": {"bg": "#F7F3EB", "surface": "#FFFCF7", "text": "#292D26", "muted": "#62665C", "brand": "#354B3B", "accent": "#925032"}, "fonts": {"heading": "Cormorant Garamond", "body": "Manrope"}, "hero": {"eyebrow": "Cafe Monet Bread & Coffee · Vancouver", "title": "Make time for a coffee break.", "subtitle": "Explore coffee, pastries and shaved ice, then find us on Robson Street. Menu prices shown here are samples. Photography is illustrative stock.", "image": "img/stock-2.jpg", "cta_primary": "Explore the menu", "cta_secondary": "Call the cafe", "shape3d": "cake"}, "stats": [], "about": {"title": "A stop on Robson Street.", "text": "Find Cafe Monet Bread & Coffee at 568 Robson Street in Vancouver. Drop by for coffee, pastries or shaved ice. Open every day, with a 7am start on weekdays. The photograph shown is illustrative stock, not the cafe's own product photography.", "image": "img/stock-2.jpg"}, "items": [{"name": "Coffee", "description": "Plan your next coffee break. Call the cafe for current drinks, sizes and availability. Image is illustrative stock.", "price": 5, "price_label": "Sample price", "duration": "", "image": "img/stock-2.jpg", "category": "Coffee"}, {"name": "Pastries", "description": "Pair your coffee with a pastry. Ask the cafe about the current selection. Sample price is per pastry.", "price": 6, "price_label": "Sample price", "duration": "", "image": "", "category": "Pastries"}, {"name": "Shaved ice", "description": "Explore the shaved ice selection. Contact the cafe for available flavours, portions and prices.", "price": 16, "price_label": "Sample price", "duration": "", "image": "", "category": "Shaved ice"}, {"name": "Coffee and pastry", "description": "A sample pairing for your visit. Each item is subject to availability. This is not a confirmed cafe bundle or offer.", "price": 11, "price_label": "Sample price", "duration": "", "image": "", "category": "Sample pairing"}], "gallery": [{"image": "img/stock-2.jpg", "caption": "Coffee inspiration. Illustrative stock photo by Pexels; not a Cafe Monet product photograph."}, {"image": "img/stock-6.jpg", "caption": "Vancouver scenery. Illustrative stock photo by Alex_Agrico; not the cafe's premises or view."}], "videos": [], "steps": [{"title": "Explore the menu", "text": "Browse coffee, pastries and shaved ice. Prices on this concept are samples."}, {"title": "Check with the cafe", "text": "Call +1 604-439-1088 for current menu details and availability."}, {"title": "Plan your visit", "text": "Find the cafe at 568 Robson Street. Open until 9pm every day."}, {"title": "Try a visit request", "text": "Preview a request with your name, contact details, preferred date and message. This is a demo form, nothing was sent"}], "points": [{"title": "Coffee, pastries and shaved ice", "text": "Three menu categories to explore for your next cafe stop."}, {"title": "On Robson Street", "text": "Find the cafe at 568 Robson Street in Vancouver."}, {"title": "Open every day", "text": "Visit from 7am on weekdays or 9am on weekends. Closing time is 9pm."}, {"title": "Easy to contact", "text": "Call or email the cafe for menu questions and visit enquiries."}], "faq": [{"q": "Where is Cafe Monet Bread & Coffee?", "a": "The address is 568 Robson Street Vancouver V6B 2B7."}, {"q": "What are the opening hours?", "a": "Monday to Friday, 7am–9pm. Saturday and Sunday, 9am–9pm."}, {"q": "What can I browse here?", "a": "This concept highlights coffee, pastries and shaved ice. Contact the cafe for its current menu and availability."}, {"q": "Are these the cafe's actual prices and photos?", "a": "No. All displayed prices are samples in Canadian dollars. Photos are labelled illustrative stock and do not show the cafe's own products or premises."}, {"q": "Can I place an order or book through this website?", "a": "This independent concept does not place orders or confirm bookings. Call +1 604-439-1088 or email cafemonet.ca@gmail.com to enquire directly."}, {"q": "Does the visit request send my details?", "a": "This is a demo form, nothing was sent"}], "demo": {"assistant_name": "Menu preview", "greeting": "Welcome to this Cafe Monet website concept. Explore menu categories or try a sample visit request. Prices and request details are for demonstration.", "quick_questions": ["What menu categories can I explore?", "When is the cafe open?", "Where is the cafe?", "Try a sample visit request"], "script": [{"q": "What menu categories can I explore?", "a": "Coffee, pastries and shaved ice. The prices shown are samples. Call the cafe for its current selection."}, {"q": "When is the cafe open?", "a": "Monday–Friday: 7am–9pm. Saturday–Sunday: 9am–9pm."}, {"q": "Where is the cafe?", "a": "568 Robson Street Vancouver V6B 2B7."}, {"q": "Try a sample visit request", "a": "Enter your name, email or phone, preferred visit date, preferred time and message. This preview does not check availability or confirm a booking."}, {"q": "Submit demo request", "a": "This is a demo form, nothing was sent"}], "staff": [], "slots": [], "kpis": [], "columns": ["Request", "Interest", "Status"], "records": [{"Request": "Sample visit enquiry", "Interest": "Coffee and pastries", "Status": "Demo only — not sent"}, {"Request": "Sample menu enquiry", "Interest": "Shaved ice", "Status": "Demo only — not sent"}], "options": [{"name": "Coffee — sample price", "price": 5, "unit": "CAD per drink"}, {"name": "Pastry — sample price", "price": 6, "unit": "CAD per pastry"}, {"name": "Shaved ice — sample price", "price": 16, "unit": "CAD per serving"}, {"name": "Coffee and pastry — sample pairing price", "price": 11, "unit": "CAD per pairing"}]}, "banner": "Independent website concept by LeadSky for Cafe Monet Bread & Coffee. Not their official website.", "credits": [{"text": "Illustrative coffee stock photo by Pexels on Pixabay.", "url": "https://pixabay.com/photos/coffee-cup-caffeine-drink-latte-2179028/"}, {"text": "Illustrative Vancouver stock photo by Alex_Agrico on Pixabay.", "url": "https://pixabay.com/photos/vancouver-pier-sea-sunset-canada-7434702/"}]}</script>
+<style>
+:root{--bg:#fff8ee;--surface:#fff;--text:#14213d;--muted:#4b5568;--brand:#1d4ed8;--accent:#ffb703;--hf:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--bf:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--r:22px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 var(--bf);overflow-x:hidden;-webkit-text-size-adjust:100%}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--hf);line-height:1.08;margin:0 0 .5em;letter-spacing:-.02em;overflow-wrap:anywhere}
+h1{font-size:clamp(30px,8vw,56px)}
+h2{font-size:clamp(24px,6vw,40px)}
+h3{font-size:20px}
+p{margin:0 0 1em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+section{padding:56px 0;position:relative}
+.eyebrow{display:inline-block;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:var(--accent);color:#14213d;padding:5px 12px;border-radius:99px;margin-bottom:14px}
+.top{background:#14213d;color:#fff;font-size:12.5px;text-align:center;padding:7px 12px;line-height:1.35}
+header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:2px solid color-mix(in srgb,var(--text) 12%,transparent);height:64px}
+.hrow{display:flex;align-items:center;gap:10px;height:64px;width:min(1120px,100% - 24px);margin-inline:auto}
+.logo{display:flex;align-items:center;gap:8px;min-width:0;flex:1;text-decoration:none;font:800 18px/1 var(--hf)}
+.logo span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;font-size:18px}
+.logo img{height:34px;width:auto;border-radius:8px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border-radius:99px;border:2px solid var(--text);background:var(--brand);color:#fff;font:700 16px var(--bf);text-decoration:none;cursor:pointer;white-space:nowrap;transition:transform .18s,box-shadow .18s;box-shadow:0 4px 0 var(--text)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--text)}
+.btn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--text)}
+.btn.alt{background:var(--accent);color:#14213d}
+.btn.ghost{background:var(--surface);color:var(--text)}
+.hbtn{min-height:44px;padding:0 14px;font-size:15px;box-shadow:0 3px 0 var(--text)}
+.menu-btn{width:44px;height:44px;border-radius:14px;border:2px solid var(--text);background:var(--surface);display:grid;place-content:center;gap:5px;cursor:pointer;flex:none}
+.menu-btn i{display:block;width:20px;height:2.5px;background:var(--text);border-radius:2px}
+nav.desk{display:none}
+#drawer{position:fixed;inset:0;z-index:100;background:var(--brand);color:#fff;display:none;flex-direction:column;padding:20px 24px;overflow:auto}
+#drawer.open{display:flex}
+#drawer .close{align-self:flex-end;min-width:44px;min-height:44px;border-radius:50%;border:2px solid #fff;background:transparent;color:#fff;font-size:24px;cursor:pointer}
+#drawer a.l{font:800 clamp(28px,8vw,40px)/1.2 var(--hf);text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.25)}
+#drawer .btn{margin-top:22px;background:var(--accent);color:#14213d;border-color:#14213d}
+.hero{padding:0;background:var(--bg);overflow:hidden;isolation:isolate}
+.hero .stage{position:absolute;inset:0;z-index:0;pointer-events:none;opacity:.3}
+.hero canvas{position:absolute;right:0;top:0;width:70vw!important;height:100%!important}
+.hero .fb{position:absolute;inset:0;background:radial-gradient(circle at 80% 30%,color-mix(in srgb,var(--accent) 60%,transparent),transparent 55%)}
+.hero .in{position:relative;z-index:2;padding:44px 0 56px;display:grid;gap:28px}
+.hero p.sub{font-size:17px;max-width:46ch;color:var(--muted)}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.hero .ph{border-radius:var(--r);overflow:hidden;border:3px solid var(--text);aspect-ratio:4/3;position:relative;background:var(--brand)}
+.hero .ph img{width:100%;height:100%;object-fit:cover}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:6px}
+.stat{background:var(--surface);border:2px solid var(--text);border-radius:18px;padding:12px}
+.stat b{display:block;font:800 clamp(20px,5.5vw,30px) var(--hf);color:var(--brand)}
+.stat span{font-size:13px;color:var(--muted);line-height:1.3;display:block}
+.fallback{background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;color:#fff;width:100%;height:100%}
+.fallback svg{width:48px;height:48px;opacity:.85}
+.block{background:var(--brand);color:#fff}
+.block .eyebrow{background:var(--accent)}
+.grid{display:grid;gap:18px;grid-template-columns:1fr}
+.card{background:var(--surface);border:2px solid var(--text);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;color:var(--text)}
+.card:hover{transform:translateY(-4px) rotate(-.4deg);box-shadow:0 8px 0 var(--text)}
+.card .im{aspect-ratio:16/10;background:var(--brand);position:relative;overflow:hidden}
+.card .im img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.card:hover .im img{transform:scale(1.06)}
+.card .bd{padding:18px;display:flex;flex-direction:column;flex:1}
+.card p{color:var(--muted);font-size:15px}
+.meta{margin-top:auto;display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap;font-size:14px}
+.price{font:800 20px var(--hf);color:var(--brand)}
+.tag{position:absolute;left:10px;top:10px;background:var(--accent);color:#14213d;font-size:12px;font-weight:700;padding:3px 10px;border-radius:99px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.chip{min-height:44px;padding:0 16px;border-radius:99px;border:2px solid var(--text);background:var(--surface);color:var(--text);font:600 15px var(--bf);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--text);color:#fff}
+.pts{display:grid;gap:14px}
+.pt{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.5);border-radius:var(--r);padding:20px}
+.pt .n{width:40px;height:40px;border-radius:50%;background:var(--accent);color:#14213d;display:grid;place-items:center;font:800 18px var(--hf);margin-bottom:10px}
+.pt p{margin:0;opacity:.95}
+.steps{display:grid;gap:14px;counter-reset:s}
+.step{background:var(--surface);border:2px solid var(--text);border-radius:var(--r);padding:20px 20px 20px 74px;position:relative}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:42px;height:42px;border-radius:14px;background:var(--accent);border:2px solid var(--text);display:grid;place-items:center;font:800 20px var(--hf)}
+.step p{margin:0;color:var(--muted)}
+.about{display:grid;gap:24px;align-items:center}
+.about .ph{border-radius:var(--r);overflow:hidden;border:3px solid var(--text);aspect-ratio:4/3;background:var(--brand)}
+.about .ph img{width:100%;height:100%;object-fit:cover}
+.gal{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.gal button{padding:0;border:2px solid var(--text);border-radius:18px;overflow:hidden;aspect-ratio:1;cursor:pointer;background:var(--brand);position:relative}
+.gal img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.gal button:hover img{transform:scale(1.07)}
+#lb{position:fixed;inset:0;z-index:120;background:rgba(10,15,30,.92);display:none;align-items:center;justify-content:center;flex-direction:column;padding:16px;gap:12px}
+#lb.open{display:flex}
+#lb img{max-height:75vh;max-width:100%;border-radius:14px;object-fit:contain}
+#lb p{color:#fff;margin:0}
+#lb button{min-height:44px;min-width:44px;border-radius:99px;border:2px solid #fff;background:transparent;color:#fff;font-size:18px;cursor:pointer;padding:0 16px}
+.tt-play{position:relative;border:2px solid var(--text);border-radius:var(--r);overflow:hidden;padding:0;cursor:pointer;aspect-ratio:16/9;background:var(--brand);width:100%}
+.tt-play img{width:100%;height:100%;object-fit:cover}
+.tt-play:after{content:"▶";position:absolute;inset:0;margin:auto;width:60px;height:60px;border-radius:50%;background:var(--accent);color:#14213d;display:grid;place-items:center;font-size:22px}
+.vid iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:var(--r)}
+.vid small a{font-size:14px}
+details{background:var(--surface);border:2px solid var(--text);border-radius:18px;margin-bottom:10px;color:var(--text)}
+summary{cursor:pointer;padding:16px 50px 16px 18px;font:700 17px var(--hf);list-style:none;position:relative;min-height:44px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:16px;top:10px;width:28px;height:28px;border-radius:50%;background:var(--accent);display:grid;place-items:center;font-size:20px}
+details[open] summary:after{content:"–"}
+details p{padding:0 18px 16px;margin:0;color:var(--muted)}
+.contact{display:grid;gap:24px}
+form{background:var(--surface);color:var(--text);border:2px solid var(--text);border-radius:var(--r);padding:20px;display:grid;gap:14px}
+label{font-weight:700;font-size:14px;display:grid;gap:6px}
+input,select,textarea{font:16px var(--bf);padding:12px 14px;border:2px solid var(--text);border-radius:14px;background:var(--bg);color:var(--text);min-height:46px;width:100%}
+textarea{min-height:96px;resize:vertical}
+.err{color:#b00020;font-size:13px;min-height:0}
+.note{font-size:14px;padding:12px 14px;border-radius:14px;background:color-mix(in srgb,var(--accent) 35%,#fff);color:#14213d;display:none}
+.note.show{display:block}
+.info{display:grid;gap:10px;align-content:start}
+.info .row{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.5);border-radius:18px;padding:14px 16px}
+.info b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+.info a{color:#fff;overflow-wrap:anywhere}
+footer{background:#14213d;color:#e8ecf5;padding:36px 0 90px;font-size:14px}
+footer a{color:#fff}
+.wa{position:fixed;right:14px;bottom:14px;z-index:60;width:56px;height:56px;border-radius:50%;background:#128c4a;color:#fff;display:grid;place-items:center;border:2px solid #fff;box-shadow:0 6px 16px rgba(0,0,0,.3);text-decoration:none;transition:transform .2s}
+.wa:hover{transform:scale(1.08) rotate(-6deg)}
+.wa svg{width:30px;height:30px}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s,transform .6s}
+.rv.in{opacity:1;transform:none}
+@media(min-width:700px){
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .pts{grid-template-columns:repeat(2,1fr)}
+ .gal{grid-template-columns:repeat(3,1fr)}
+ .about{grid-template-columns:1fr 1fr}
+ .contact{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:repeat(2,1fr)}
+ section{padding:80px 0}
+}
+@media(min-width:1000px){
+ .grid{grid-template-columns:repeat(3,1fr)}
+ .pts{grid-template-columns:repeat(4,1fr)}
+ .steps{grid-template-columns:repeat(4,1fr)}
+ .step{padding:74px 18px 20px}
+ .hero .in{grid-template-columns:1.1fr .9fr;align-items:center;padding:70px 0}
+ .hero canvas{width:55vw!important}
+ .hero .stage{opacity:.9}
+ .hero .stage.on{opacity:.55}
+ nav.desk{display:flex;gap:18px;font-weight:600;font-size:15px}
+ nav.desk a{text-decoration:none;padding:8px 2px;border-bottom:3px solid transparent}
+ nav.desk a:hover{border-color:var(--accent)}
+ .menu-btn{display:none}
+ .logo span{font-size:22px}
+}
+@media(prefers-reduced-motion:reduce){
+ *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+ .rv{opacity:1;transform:none}
+}
+</style>
+<style id='phone-safety'>canvas{pointer-events:none!important}@media(max-width:820px){canvas{opacity:.3!important}html,body{overflow-x:hidden}img,video{max-width:100%}}</style></head>
+<body>
+<div class="top" id="banner"></div>
+<header>
+ <div class="hrow">
+  <a class="logo" href="#top" id="logo"></a>
+  <nav class="desk" id="deskNav" aria-label="Main"></nav>
+  <a class="btn hbtn" id="hCta" href="#contact"></a>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><i></i><i></i><i></i></button>
+ </div>
+</header>
+<div id="drawer" role="dialog" aria-modal="true" aria-label="Menu"></div>
+<main id="top">
+ <section class="hero" id="hero">
+  <div class="stage" id="stage" aria-hidden="true"><div class="fb"></div></div>
+  <div class="wrap in">
+   <div>
+    <span class="eyebrow" id="hEye"></span>
+    <h1 id="hTitle"></h1>
+    <p class="sub" id="hSub"></p>
+    <div class="ctas" id="hCtas"></div>
+    <div class="stats" id="stats"></div>
+   </div>
+   <div class="ph" id="hPh"></div>
+  </div>
+ </section>
+ <section id="services" hidden><div class="wrap">
+  <span class="eyebrow">Services</span><h2>What we can help with</h2>
+  <div class="chips" id="chips"></div>
+  <div class="grid" id="items"></div>
+ </div></section>
+ <section class="block" id="why" hidden><div class="wrap">
+  <span class="eyebrow">Why choose us</span><h2>What you can expect</h2>
+  <div class="pts" id="pts"></div>
+ </div></section>
+ <section id="process" hidden><div class="wrap">
+  <span class="eyebrow">Process</span><h2>How it works</h2>
+  <div class="steps" id="steps"></div>
+ </div></section>
+ <section id="about" hidden style="background:color-mix(in srgb,var(--accent) 22%,var(--bg))"><div class="wrap about">
+  <div><span class="eyebrow">About</span><h2 id="aT"></h2><p id="aX"></p></div>
+  <div class="ph" id="aPh"></div>
+ </div></section>
+ <section id="area" hidden><div class="wrap">
+  <span class="eyebrow">Service area</span><h2 id="areaT"></h2><p id="areaX"></p>
+ </div></section>
+ <section id="work" hidden><div class="wrap">
+  <span class="eyebrow">Gallery</span><h2>Our work</h2>
+  <div class="gal" id="gal"></div>
+ </div></section>
+ <section id="videos" hidden><div class="wrap">
+  <span class="eyebrow">Videos</span><h2>Watch</h2>
+  <div class="grid" id="vids"></div>
+ </div></section>
+ <section id="faq" hidden><div class="wrap" style="max-width:780px">
+  <span class="eyebrow">FAQ</span><h2>Common questions</h2>
+  <div id="faqs"></div>
+ </div></section>
+ <section class="block" id="contact"><div class="wrap contact">
+  <div>
+   <span class="eyebrow">Get in touch</span><h2>Request a quote or booking</h2>
+   <p>Tell us what you need. This form is a demo and does not send anything.</p>
+   <div class="info" id="info"></div>
+  </div>
+  <form id="form" novalidate>
+   <label>Your name<input name="name" autocomplete="name" required><span class="err" data-for="name"></span></label>
+   <label>Phone or email<input name="contact" autocomplete="tel" required><span class="err" data-for="contact"></span></label>
+   <label>Service<select name="service" id="fService"></select></label>
+   <label>Preferred time<select name="slot" id="fSlot"></select></label>
+   <label>Details<textarea name="msg" placeholder="Tell us a little about the job"></textarea></label>
+   <button class="btn" type="submit" id="fBtn">Send request</button>
+   <div class="note" id="fNote" role="status" aria-live="polite"></div>
+  </form>
+ </div></section>
+</main>
+<footer><div class="wrap">
+ <p id="fAddr"></p>
+ <p id="fCred"></p>
+ <p>Concept by LeadSky</p>
+</div></footer>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Image viewer"><img alt=""><p></p><button id="lbX">Close</button></div>
+<script>
+(function(){
+var S=JSON.parse(document.getElementById('site-data').textContent);
+var B=S.brand||{},C=S.colors||{},F=S.fonts||{},H=S.hero||{};
+var $=function(i){return document.getElementById(i)};
+var esc=function(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML};
+var R=document.documentElement.style;
+['bg','surface','text','muted','brand','accent'].forEach(function(k){if(C[k])R.setProperty('--'+k,C[k])});
+var fams=[];
+[F.heading,F.body].forEach(function(f){if(f&&fams.indexOf(f)<0)fams.push(f)});
+if(fams.length){var l=document.createElement('link');l.rel='stylesheet';
+l.href='https://fonts.googleapis.com/css2?'+fams.map(function(f){return 'family='+encodeURIComponent(f).replace(/%20/g,'+')+':wght@400;600;700;800'}).join('&')+'&display=swap';
+document.head.appendChild(l);
+var sys='system-ui,-apple-system,"Segoe UI",Roboto,sans-serif';
+if(F.heading)R.setProperty('--hf','"'+F.heading+'",'+sys);
+if(F.body)R.setProperty('--bf','"'+F.body+'",'+sys);}
+document.title=B.name||'Website';
+$('banner').textContent=S.banner||'';
+if(!S.banner)$('banner').style.display='none';
+var icon='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-6h4v6"/></svg>';
+function img(src,alt,lazy){
+ return '<img src="'+esc(src)+'" alt="'+esc(alt)+'"'+(lazy?' loading="lazy" decoding="async"':'')+' onerror="this.parentNode.replaceChild(fb(),this)">';
+}
+window.fb=function(){var d=document.createElement('div');d.className='fallback';d.setAttribute('role','img');d.setAttribute('aria-label','Image unavailable');d.innerHTML=icon;return d};
+function ph(el,src,alt,lazy){if(src)el.innerHTML=img(src,alt,lazy);else el.appendChild(fb())}
+var tel=(B.phone||'').replace(/[^\d+]/g,'');
+// header
+var lg=$('logo');
+lg.innerHTML=(B.logo?'<img src="'+esc(B.logo)+'" alt="" onerror="this.remove()">':'')+'<span>'+esc(B.name)+'</span>';
+lg.setAttribute('aria-label',(B.name||'')+' home');
+var cta=H.cta_primary||'Get a quote';
+$('hCta').textContent=tel?'Call':cta;
+$('hCta').href=tel?'tel:'+tel:'#contact';
+// nav
+var nav=[];
+function has(a){return Array.isArray(a)&&a.length}
+if(has(S.items))nav.push(['services','Services']);
+if(has(S.points))nav.push(['why','Why us']);
+if(has(S.steps))nav.push(['process','Process']);
+if(S.about&&(S.about.text||S.about.title))nav.push(['about','About']);
+nav.push(['area','Area']);
+if(has(S.gallery))nav.push(['work','Work']);
+if(has(S.videos))nav.push(['videos','Videos']);
+if(has(S.faq))nav.push(['faq','FAQ']);
+nav.push(['contact','Contact']);
+$('deskNav').innerHTML=nav.map(function(n){return '<a href="#'+n[0]+'">'+n[1]+'</a>'}).join('');
+var dr=$('drawer');
+dr.innerHTML='<button class="close" id="dClose" aria-label="Close menu">×</button>'+nav.map(function(n){return '<a class="l" href="#'+n[0]+'">'+n[1]+'</a>'}).join('')+'<a class="btn" href="#contact">'+esc(cta)+'</a>'+(tel?'<a class="btn ghost" href="tel:'+tel+'">Call '+esc(B.phone)+'</a>':'');
+function setMenu(o){dr.classList.toggle('open',o);$('menuBtn').setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':'';if(o)$('dClose').focus();else $('menuBtn').focus()}
+$('menuBtn').onclick=function(){setMenu(true)};
+dr.addEventListener('click',function(e){if(e.target.closest('a')||e.target.id==='dClose'){var a=e.target.closest('a');dr.classList.remove('open');$('menuBtn').setAttribute('aria-expanded',false);document.body.style.overflow='';}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){if(dr.classList.contains('open'))setMenu(false);$('lb').classList.remove('open')}});
+// hero
+$('hEye').textContent=H.eyebrow||'';if(!H.eyebrow)$('hEye').style.display='none';
+$('hTitle').textContent=H.title||B.name||'';
+$('hSub').textContent=H.subtitle||B.tagline||'';
+var hc='<a class="btn" href="#contact">'+esc(cta)+'</a>';
+if(H.cta_secondary){hc+=tel?'<a class="btn ghost" href="tel:'+tel+'">'+esc(H.cta_secondary)+'</a>':'<a class="btn ghost" href="#services">'+esc(H.cta_secondary)+'</a>'}
+$('hCtas').innerHTML=hc;
+$('stats').innerHTML=has(S.stats)?S.stats.map(function(s){return '<div class="stat"><b>'+esc(s.value)+'</b><span>'+esc(s.label)+'</span></div>'}).join(''):'';
+ph($('hPh'),H.image,(B.name||'')+' hero image',false);
+// money
+function money(it){if(it.price&&+it.price>0)return esc(B.currency_symbol||'')+(+it.price).toLocaleString('en-GB');return esc(it.price_label||'')}
+// items
+var items=has(S.items)?S.items.slice(0,12):[];
+if(items.length){
+ $('services').hidden=false;
+ var cats=[];items.forEach(function(i){if(i.category&&cats.indexOf(i.category)<0)cats.push(i.category)});
+ var cur='All';
+ var drawI=function(){
+  $('items').innerHTML=items.filter(function(i){return cur==='All'||i.category===cur}).map(function(i){
+   var m=money(i);
+   return '<article class="card rv"><div class="im">'+(i.image?img(i.image,i.name,true):'<div class="fallback">'+icon+'</div>')+(i.category?'<span class="tag">'+esc(i.category)+'</span>':'')+'</div><div class="bd"><h3>'+esc(i.name)+'</h3><p>'+esc(i.description)+'</p><div class="meta"><span class="price">'+m+'</span><span>'+esc(i.duration)+'</span></div></div></article>';
+  }).join('');
+  reveal();
+ };
+ if(cats.length>1){
+  var all=['All'].concat(cats);
+  $('chips').innerHTML=all.map(function(c){return '<button type="button" class="chip" aria-pressed="'+(c===cur)+'">'+esc(c)+'</button>'}).join('');
+  $('chips').onclick=function(e){var b=e.target.closest('.chip');if(!b)return;cur=b.textContent;[].forEach.call($('chips').children,function(x){x.setAttribute('aria-pressed',x===b)});drawI()};
+ }else $('chips').remove();
+ drawI();
+ $('fService').innerHTML=items.map(function(i){return '<option>'+esc(i.name)+'</option>'}).join('')+'<option>Something else</option>';
+}else $('fService').parentNode.remove();
+var slots=(S.demo&&S.demo.slots)||[];
+if(slots.length)$('fSlot').innerHTML=slots.map(function(s){return '<option>'+esc(s)+'</option>'}).join('');else $('fSlot').parentNode.remove();
+// points
+if(has(S.points)){$('why').hidden=false;$('pts').innerHTML=S.points.map(function(p,i){return '<div class="pt rv"><div class="n">'+(i+1)+'</div><h3>'+esc(p.title)+'</h3><p>'+esc(p.text)+'</p></div>'}).join('')}
+if(has(S.steps)){$('process').hidden=false;$('steps').innerHTML=S.steps.map(function(p){return '<div class="step rv"><h3>'+esc(p.title)+'</h3><p>'+esc(p.text)+'</p></div>'}).join('')}
+if(S.about&&(S.about.text||S.about.title)){$('about').hidden=false;$('aT').textContent=S.about.title||'';$('aX').textContent=S.about.text||'';ph($('aPh'),S.about.image,S.about.title||'About',true)}
+// area
+var place=[B.city,B.country].filter(Boolean).join(', ');
+if(place||B.address){$('area').hidden=false;$('areaT').textContent=place?'Based in '+place:'Where to find us';$('areaX').textContent=(B.address?B.address+'. ':'')+(H.eyebrow&&place?'Coverage: '+H.eyebrow+'.':'')}
+// gallery
+if(has(S.gallery)){
+ $('work').hidden=false;
+ $('gal').innerHTML=S.gallery.slice(0,12).map(function(g,i){return '<button type="button" data-i="'+i+'" aria-label="View: '+esc(g.caption||'photo '+(i+1))+'">'+(g.image?img(g.image,g.caption||'Gallery photo',true):'<div class="fallback">'+icon+'</div>')+'</button>'}).join('');
+ $('gal').onclick=function(e){var b=e.target.closest('button');if(!b)return;var g=S.gallery[+b.dataset.i];if(!g.image)return;var lb=$('lb');lb.querySelector('img').src=g.image;lb.querySelector('img').alt=g.caption||'';lb.querySelector('p').textContent=g.caption||'';lb.classList.add('open');$('lbX').focus()};
+ $('lbX').onclick=function(){$('lb').classList.remove('open')};
+ $('lb').onclick=function(e){if(e.target.id==='lb')$('lb').classList.remove('open')};
+}
+// videos
+if(has(S.videos)){
+ $('videos').hidden=false;
+ $('vids').innerHTML=S.videos.map(function(v){return '<div class="vid"><button class="tt-play" data-player="'+esc(v.player)+'" aria-label="Play video"><img src="'+esc(v.poster)+'" alt="Video preview" loading="lazy"></button>'+(v.link?'<small><a href="'+esc(v.link)+'" target="_blank" rel="noopener">Open</a></small>':'')+'</div>'}).join('');
+ $('vids').onclick=function(e){var b=e.target.closest('.tt-play');if(!b)return;var f=document.createElement('iframe');f.src=b.dataset.player;f.allow='autoplay; fullscreen';f.title='Video';b.replaceWith(f)};
+}
+// faq
+if(has(S.faq)){$('faq').hidden=false;$('faqs').innerHTML=S.faq.map(function(f){return '<details><summary>'+esc(f.q)+'</summary><p>'+esc(f.a)+'</p></details>'}).join('')}
+// contact
+var info=[];
+if(B.phone)info.push(['Call','<a href="tel:'+tel+'">'+esc(B.phone)+'</a>']);
+if(B.whatsapp)info.push(['WhatsApp','<a href="https://wa.me/'+esc(B.whatsapp.replace(/\D/g,''))+'" target="_blank" rel="noopener">Message us</a>']);
+if(B.email)info.push(['Email','<a href="mailto:'+esc(B.email)+'">'+esc(B.email)+'</a>']);
+if(B.address)info.push(['Address','<a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(B.address)+'" target="_blank" rel="noopener">'+esc(B.address)+'</a>']);
+if(B.hours)info.push(['Hours',esc(B.hours)]);
+if(B.instagram)info.push(['Instagram','<a href="'+esc(B.instagram)+'" target="_blank" rel="noopener">Follow</a>']);
+if(B.tiktok)info.push(['TikTok','<a href="'+esc(B.tiktok)+'" target="_blank" rel="noopener">Follow</a>']);
+$('info').innerHTML=info.map(function(r){return '<div class="row"><b>'+r[0]+'</b>'+r[1]+'</div>'}).join('');
+// form
+var fm=$('form');
+fm.addEventListener('submit',function(e){
+ e.preventDefault();var ok=true;
+ ['name','contact'].forEach(function(n){
+  var el=fm.elements[n],er=fm.querySelector('[data-for='+n+']');
+  if(!el.value.trim()){er.textContent='Please fill this in.';el.setAttribute('aria-invalid','true');ok=false}
+  else if(n==='contact'&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value.trim())&&el.value.replace(/\D/g,'').length<7){er.textContent='Enter a valid phone number or email.';ok=false}
+  else{er.textContent='';el.removeAttribute('aria-invalid')}
+ });
+ var nt=$('fNote');
+ if(!ok){nt.className='note';return}
+ nt.textContent='Thanks, '+fm.elements.name.value.trim()+'. This is a demo form, nothing was sent.';
+ nt.className='note show';
+});
+// whatsapp
+if(B.whatsapp){var w=document.createElement('a');w.className='wa';w.href='https://wa.me/'+B.whatsapp.replace(/\D/g,'');w.target='_blank';w.rel='noopener';w.setAttribute('aria-label','Chat on WhatsApp');w.innerHTML='<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.700 6.700 0 0 1-3.300-2.900c-.2-.4.2-.4.700-1.300.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.800 11.900 11.900 0 0 0 4.600 4c1.700.7 2.400.8 3.200.7a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.3-.2-.5-.3z"/></svg>';document.body.appendChild(w)}
+// footer
+$('fAddr').innerHTML='<strong>'+esc(B.name)+'</strong>'+(B.address?' · '+esc(B.address):'');
+$('fCred').innerHTML=has(S.credits)?'Photo credits: '+S.credits.map(function(c){return c.url?'<a href="'+esc(c.url)+'" target="_blank" rel="noopener">'+esc(c.text)+'</a>':esc(c.text)}).join(' · '):'';
+if(!has(S.credits))$('fCred').remove();
+// reveal
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var io=('IntersectionObserver' in window&&!rm)?new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12}):null;
+function reveal(){document.querySelectorAll('.rv:not(.in)').forEach(function(el){if(io)io.observe(el);else el.classList.add('in')})}
+reveal();
+// 3D
+function init3D(){
+ var stage=$('stage');
+ if(rm)return;
+ var gl;try{var c=document.createElement('canvas');gl=c.getContext('webgl')||c.getContext('experimental-webgl')}catch(e){}
+ if(!gl)return;
+ var s=document.createElement('script');
+ s.src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+ s.onload=function(){try{build(stage)}catch(e){}};
+ document.head.appendChild(s);
+}
+function build(stage){
+ var T=THREE,w=stage.clientWidth,h=stage.clientHeight;
+ var ren=new T.WebGLRenderer({antialias:true,alpha:true});
+ ren.setPixelRatio(Math.min(devicePixelRatio,2));
+ ren.setSize(w,h);stage.appendChild(ren.domElement);stage.classList.add('on');
+ stage.querySelector('.fb').style.display='none';
+ var sc=new T.Scene(),cam=new T.PerspectiveCamera(40,w/h,.1,100);cam.position.set(0,0,7);
+ sc.add(new T.AmbientLight(0xffffff,.55));
+ var d=new T.DirectionalLight(0xffffff,1);d.position.set(4,5,6);sc.add(d);
+ var d2=new T.PointLight(new T.Color(C.accent||'#ffb703'),1.2,30);d2.position.set(-4,-2,3);sc.add(d2);
+ var bm=new T.MeshStandardMaterial({color:new T.Color(C.brand||'#1d4ed8'),roughness:.35,metalness:.25});
+ var am=new T.MeshStandardMaterial({color:new T.Color(C.accent||'#ffb703'),roughness:.3,metalness:.4});
+ var g=new T.Group();
+ function m(geo,mat,x,y,z){var o=new T.Mesh(geo,mat);o.position.set(x||0,y||0,z||0);g.add(o);return o}
+ var shape=H.shape3d||'orb';
+ if(shape==='braid'){
+  [0,1,2].forEach(function(i){
+   var pts=[];for(var t=0;t<=60;t++){var u=t/60*Math.PI*4;pts.push(new T.Vector3(Math.cos(u+i*2.094)*.7,t/60*5-2.5,Math.sin(u+i*2.094)*.7))}
+   m(new T.TubeGeometry(new T.CatmullRomCurve3(pts),120,.22,12),i%2?am:bm)})
+ }else if(shape==='flower'){
+  for(var i=0;i<8;i++){var a=i/8*Math.PI*2;var p=m(new T.SphereGeometry(.7,24,16),i%2?am:bm,Math.cos(a)*1.2,Math.sin(a)*1.2,0);p.scale.set(1,1.6,.4);p.rotation.z=a-Math.PI/2}
+  m(new T.SphereGeometry(.6,24,16),am)
+ }else if(shape==='cake'){
+  [[1.7,.8,-1],[1.2,.8,-.2],[.75,.7,.6]].forEach(function(r,i){m(new T.CylinderGeometry(r[0],r[0],r[1],40),i%2?am:bm,0,r[2],0)});
+  m(new T.CylinderGeometry(.05,.05,.7,8),am,0,1.4,0);m(new T.SphereGeometry(.14,12,12),bm,0,1.85,0)
+ }else if(shape==='gem'){
+  m(new T.OctahedronGeometry(1.8,0),bm).scale.y=1.3
+ }else if(shape==='tooth'){
+  m(new T.SphereGeometry(1.3,32,24),bm,0,.5,0).scale.set(1.2,1,1);
+  [-.6,.6].forEach(function(x){var r=m(new T.CylinderGeometry(.4,.15,1.6,20),bm,x,-1,0);r.rotation.z=x*.3})
+ }else if(shape==='scales'){
+  m(new T.CylinderGeometry(.1,.1,3.6,12),am,0,0,0);m(new T.BoxGeometry(3.4,.1,.1),am,0,1.7,0);
+  [-1.6,1.6].forEach(function(x){m(new T.CylinderGeometry(.8,.8,.1,32),bm,x,.2,0)});
+  m(new T.CylinderGeometry(.7,1,.2,24),am,0,-1.8,0)
+ }else if(shape==='car'){
+  m(new T.BoxGeometry(3.6,.8,1.5),bm,0,-.2,0);m(new T.BoxGeometry(1.8,.7,1.3),am,-.1,.5,0);
+  [[-1.2,-.2],[1.2,-.2]].forEach(function(p){[-.8,.8].forEach(function(z){var w=m(new T.CylinderGeometry(.42,.42,.3,24),new T.MeshStandardMaterial({color:0x1a1a1a,roughness:.7}),p[0],p[1]-.4,z);w.rotation.x=Math.PI/2})})
+ }else if(shape==='bottle'){
+  m(new T.CylinderGeometry(.9,.9,2.6,32),bm,0,-.4,0);m(new T.CylinderGeometry(.35,.7,.8,32),bm,0,1.2,0);m(new T.CylinderGeometry(.3,.3,.5,24),am,0,1.85,0)
+ }else if(shape==='wave'){
+  var pts2=[];for(var k=0;k<=80;k++){var u2=k/80;pts2.push(new T.Vector3(u2*6-3,Math.sin(u2*Math.PI*3)*.9,Math.cos(u2*Math.PI*3)*.4))}
+  m(new T.TubeGeometry(new T.CatmullRomCurve3(pts2),160,.3,16),bm);
+  var pts3=pts2.map(function(p){return new T.Vector3(p.x,p.y-1,p.z-.6)});
+  m(new T.TubeGeometry(new T.CatmullRomCurve3(pts3),160,.2,16),am)
+ }else{
+  m(new T.SphereGeometry(1.6,48,32),bm);var ring=m(new T.TorusGeometry(2.3,.1,16,80),am);ring.rotation.x=1.2
+ }
+ sc.add(g);
+ var tx=0,ty=0;
+ addEventListener('pointermove',function(e){tx=(e.clientX/innerWidth-.5)*.8;ty=(e.clientY/innerHeight-.5)*.5},{passive:true});
+ var vis=true;
+ if('IntersectionObserver' in window)new IntersectionObserver(function(e){vis=e[0].isIntersecting}).observe(stage);
+ function loop(t){
+  requestAnimationFrame(loop);if(!vis||document.hidden)return;
+  g.rotation.y+=.006;g.rotation.x+=(ty-g.rotation.x)*.05;g.position.x+=(tx-g.position.x)*.05;
+  g.position.y=Math.sin(t/900)*.12;
+  ren.render(sc,cam)
+ }
+ loop(0);
+ addEventListener('resize',function(){var w=stage.clientWidth,h=stage.clientHeight;ren.setSize(w,h);cam.aspect=w/h;cam.updateProjectionMatrix()});
+}
+init3D();
+})();
+</script>
 </body>
 </html>
