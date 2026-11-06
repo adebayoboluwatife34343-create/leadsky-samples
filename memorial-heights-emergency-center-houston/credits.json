@@ -1,0 +1,136 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://mhehc.com/images/mhec-logo-280.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "https://mhehc.com/images/og-default.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "modern freestanding emergency room exterior daylight Houston Texas",
+    "description": "architecture, buildings, city, cityscape, downtown, skyline, skyscrapers, urban, modern, metropolitan, aerial view, city view, urban landscape, city, city, city, city, city, city view, United States, Texas, Houston",
+    "source": "https://pixabay.com/photos/architecture-buildings-city-1846657/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "modern freestanding emergency room exterior daylight Houston Texas",
+    "description": "dining room, living room, modern, white, bright, windows, interior design, window, apartment, room, furniture, table, chairs, contemporary, indoors, inside, interior, clean, architecture, zoom background, blue background, blue window, blue room, blue zoom, blue table, blue design, blue interior, blue clean, dining room, dining room, living room, living room, living room, living room, living room, windows, interior design, interior design, window, apartment, apartment, apartment, apartment, room, furniture, table, interior, zoom background",
+    "source": "https://pixabay.com/photos/dining-room-living-room-modern-3108037/",
+    "photographer": "jeanvdmeulen",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "emergency room reception desk check-in clean medical",
+    "description": "receptionists, phone call, hotel, reception, woman, man, work, attention, lobby, employees, professional, company, assistance, hotel, hotel, hotel, hotel, hotel, reception",
+    "source": "https://pixabay.com/photos/receptionists-phone-call-hotel-5975962/",
+    "photographer": "Rodrigo_SalomonHC",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "emergency room reception desk check-in clean medical",
+    "description": "hotel, reception, entrance hall, input range, key counter, room key, key, lobby, check in, registration, bell, bell jar, desk, leisure time, booking, to travel, business, service, help, call, tourism, hotel, hotel, hotel, hotel, hotel, reception, check in",
+    "source": "https://pixabay.com/photos/hotel-reception-entrance-hall-595587/",
+    "photographer": "geralt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "doctor reviewing tablet with patient in ER",
+    "description": "doctor, patient, tablet, healthcare, clinic, consultation, data, modern, communication, professional, discussion, adult, serious, assessment, medical practice, explanation, diagram, evaluation, graph, digital, health services",
+    "source": "https://pixabay.com/photos/doctor-patient-tablet-healthcare-10454490/",
+    "photographer": "erwinbosman",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "doctor reviewing tablet with patient in ER",
+    "description": "surgery, hospital, doctor, care, clinic, disease, emergency, group, team, health, help, infection, mask, medical, nurse, professional, people, physician, surgeon, medicine, scrubs, op, operation, surgery, surgery, surgery, surgery, hospital, hospital, hospital, hospital, doctor, doctor, doctor, doctor, doctor, medical, nurse, operation",
+    "source": "https://pixabay.com/photos/surgery-hospital-doctor-care-1822458/",
+    "photographer": "sasint",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "CT scan or X-ray room medical imaging equipment",
+    "description": "hospital, healthcare, medical, medicine, laboratory, clinic, nurse, doctor, blue hospital, blue medical, blue doctors, blue medicine, blue laboratory, blue healthcare, hospital, healthcare, nurse, nurse, nurse, nurse, nurse, doctor",
+    "source": "https://pixabay.com/photos/hospital-healthcare-medical-4904920/",
+    "photographer": "dmchannelsng",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "CT scan or X-ray room medical imaging equipment",
+    "description": "bethesda naval medical center, maryland, hospital, technician, patient, ct scan, machine, care, treatment, brown hospital, brown medical, brown care, hospital, hospital, patient, patient, patient, ct scan, ct scan, ct scan, ct scan, ct scan",
+    "source": "https://pixabay.com/photos/bethesda-naval-medical-center-80380/",
+    "photographer": "12019",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "emergency physician in scrubs consulting with family",
+    "description": "surgery, hospital, medical professionals, doctor, nurses, healthcare, operating room, care, clinic, emergency, group, team, health, medical masks, medical, nurse, professionals, physician, surgeons, medicine, scrubs, operation, surgery, surgery, hospital, hospital, hospital, hospital, doctor, doctor, doctor, doctor, doctor, healthcare, health, medical, medical, medical",
+    "source": "https://pixabay.com/photos/surgery-hospital-1807541/",
+    "photographer": "sasint",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "emergency physician in scrubs consulting with family",
+    "description": "doctor, surgeon, operation, instruments, medical, health, doctor, doctor, doctor, doctor, doctor, surgeon, operation, medical, medical, health",
+    "source": "https://pixabay.com/photos/doctor-surgeon-operation-650534/",
+    "photographer": "marionbrun",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-11.jpg",
+    "kind": "stock photo",
+    "query": "insurance card ID and clipboard on medical desk",
+    "description": "computer, business, typing, keyboard, laptop, doctor, medical care, desk, doctor, doctor, doctor, doctor, doctor",
+    "source": "https://pixabay.com/photos/computer-business-typing-keyboard-1149148/",
+    "photographer": "Free-Photos",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-12.jpg",
+    "kind": "stock photo",
+    "query": "insurance card ID and clipboard on medical desk",
+    "description": "working, female, work, desk, office, think, thinking, work, work, office, think, thinking, thinking, thinking, thinking, thinking",
+    "source": "https://pixabay.com/photos/working-female-work-desk-office-791849/",
+    "photographer": "kaboompics",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]

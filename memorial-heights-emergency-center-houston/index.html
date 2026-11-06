@@ -1,0 +1,1019 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Online Pre-Registration — Memorial Heights Emergency Center</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --bg:#fdfcf9;
+  --alt:#f5f0ea;
+  --ink:#1f3a2e;
+  --brand:#2e6e58;
+  --brand-dark:#1b4536;
+  --accent:#c0392b;
+  --white:#ffffff;
+  --radius:12px;
+  --shadow:0 12px 36px rgba(31,58,46,.08);
+  --font-display:'Crimson Pro',serif;
+  --font-body:'Montserrat',sans-serif;
+}
+*, *::before, *::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.disclaimer{
+  background:var(--brand-dark);
+  color:#fff;
+  text-align:center;
+  font-size:12.5px;
+  padding:7px 16px;
+  letter-spacing:.2px;
+}
+a{color:var(--brand); text-decoration:none; cursor:pointer}
+a:focus-visible, button:focus-visible{outline:2px solid var(--brand); outline-offset:3px}
+h1,h2,h3,h4{font-family:var(--font-display); margin:0 0 1rem; line-height:1.15; font-weight:700}
+h1{font-size:clamp(26px, 4vw, 42px); letter-spacing:-.01em}
+h2{font-size:clamp(24px, 3vw, 32px)}
+p{margin:0 0 1rem}
+.container{max-width:1200px; margin:0 auto; padding:0 20px}
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(253,252,249,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--light);
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  height:64px; gap:16px;
+}
+.logo{height:32px; width:auto; display:block}
+.main-nav{display:flex; gap:26px; align-items:center; font-size:14px; font-weight:600; letter-spacing:.2px}
+.main-nav a{color:var(--ink)}
+.main-nav a:hover{color:var(--brand)}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  border:none; border-radius:8px; font-family:var(--font-body); font-weight:700; font-size:14px;
+  padding:11px 20px; cursor:pointer; text-decoration:none;
+}
+.btn-brand{background:var(--brand); color:#fff}
+.btn-brand:hover{background:var(--brand-dark)}
+.btn-ghost{background:transparent; color:var(--ink); border:1px solid #c9d4cf}
+.btn-ghost:hover{background:var(--alt)}
+.phone-link{font-weight:700; color:var(--ink)}
+.menu-toggle{display:none; background:none; border:none; font-size:20px; color:var(--ink); cursor:pointer}
+
+/* Hero */
+.hero{
+  position:relative;
+  min-height:70vh;
+  background:var(--bg);
+  overflow:hidden;
+  display:flex; align-items:center;
+}
+.hero-bg{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit:cover; object-position:center;
+  display:block;
+  z-index:1;
+}
+.hero-overlay{
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.65) 0%, rgba(0,0,0,.55) 100%);
+  pointer-events:none;
+  z-index:2;
+}
+.hero-inner{
+  position:relative; z-index:3;
+  width:100%; padding:3rem 2rem 4rem;
+  display:grid;
+  grid-template-columns:1fr 420px;
+  gap:3rem; align-items:center;
+}
+.hero-text{
+  background:rgba(0,0,0,.5);
+  padding:1.75rem 2rem;
+  border-radius:10px;
+  backdrop-filter:blur(6px);
+}
+.hero-eyebrow{
+  font-family:var(--font-body); font-weight:700; letter-spacing:.18em; font-size:12px; text-transform:uppercase; color:#a8d8c2; margin-bottom:.5rem
+}
+.hero-headline{color:#fff; margin-bottom:1rem}
+.hero-sub{color:#eef5f0; font-size:17px; margin-bottom:1.5rem; max-width:460px}
+.status-chip{
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,.14); border:1px solid rgba(255,255,255,.35);
+  color:#fff; padding:7px 14px; border-radius:20px; font-size:13px; font-weight:700; margin-bottom:1.5rem
+}
+.status-chip .dot{width:8px; height:8px; background:#7fd29b; border-radius:50%; box-shadow:0 0 8px #7fd29b}
+.checkin-card{
+  background:var(--white); border-radius:var(--radius); box-shadow:var(--shadow);
+  padding:2rem; border:1px solid #c9d4cf; position:relative; overflow:hidden
+}
+.checkin-card h3{font-size:20px; margin-bottom:.25rem}
+.checkin-card .card-sub{font-size:14px; color:#4a5a52; margin-bottom:1.5rem}
+.demo-notice{
+  background:#fdf1e7; border:1px solid #e3c9a8; color:#7a4a12;
+  padding:.75rem 1rem; border-radius:8px; font-size:13px; font-weight:700; margin-bottom:1rem;
+}
+
+/* Stepper */
+.stepper{display:flex; gap:10px; margin-bottom:1.5rem; position:relative}
+.step-dot{
+  width:26px; height:26px; border-radius:50%; border:2px solid #c9d4cf;
+  background:#fff; color:var(--ink); font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0
+}
+.step-dot.active{border-color:var(--brand); background:var(--brand); color:#fff}
+.step-line{
+  position:absolute; left:13px; right:13px; top:12px; height:2px; background:#c9d4cf; z-index:-1
+}
+.step-line.fill{background:var(--brand); transform-origin:left; transform:scalex(0)}
+.form-grid{display:grid; gap:1rem}
+.form-group label{display:block; font-size:12.5px; font-weight:700; letter-spacing:.2px; margin-bottom:4px; color:var(--ink)}
+.form-group input, .form-group select, .form-group textarea{
+  width:100%; padding:10px 12px; border:1px solid #c9d4cf; border-radius:8px; background:#fff; font-size:14px; color:var(--ink)
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus{border-color:var(--brand); outline:none; box-shadow:0 0 0 3px rgba(46,110,88,.12)}
+.err{color:#b3402e; font-size:12px; margin-top:4px; display:none}
+.btn-step{margin-top:1rem; background:var(--brand); color:#fff; border:none; border-radius:8px; padding:11px 18px; font-weight:700; cursor:pointer; width:fit-content}
+.btn-step:disabled{opacity:.5; cursor:not-allowed}
+.btn-back{background:transparent; color:var(--ink); border:1px solid #c9d4cf; border-radius:8px; padding:10px 16px; font-weight:700; cursor:pointer; margin-right:10px}
+.success-box{background:var(--alt); border:1px solid #c9d4cf; border-radius:10px; padding:1.25rem; margin-top:1rem}
+.success-box p{margin:0; font-size:14px}
+.hidden{display:none}
+.sample-review{border-top:1px solid #c9d4cf; padding-top:1rem; margin-top:1rem}
+.sample-review p{font-size:13px; color:#4a5a52; margin:.25rem 0}
+
+/* Section base */
+section{padding:5rem 0}
+.section-head{text-align:center; max-width:660px; margin:0 auto 3rem}
+.section-head .kicker{font-family:var(--font-body); font-weight:700; letter-spacing:.16em; font-size:12px; text-transform:uppercase; color:var(--brand); margin-bottom:.75rem}
+.section-head h2{color:var(--ink)}
+.section-head p{color:#4a5a52; margin-bottom:0}
+.section-head.left{text-align:left}
+
+/* Signature 3D */
+#three-signature{padding:4rem 0}
+.three-wrap{display:grid; grid-template-columns:1fr 1fr; gap:3rem; align-items:center; background:var(--alt); border:1px solid #c9d4cf; border-radius:14px; overflow:hidden}
+.three-canvas-wrap{position:relative; min-height:340px; background:#fff; border-right:1px solid #c9d4cf}
+#medical-cross{display:block; width:100%; height:100%; background:#fff}
+.three-fallback{display:none; width:100%; height:100%; background:#f5f0ea; display:flex; align-items:center; justify-content:center}
+.three-text h3{font-size:24px; margin-bottom:.75rem}
+.three-text p{font-size:15px; color:#4a5a52; margin-bottom:1.25rem}
+
+/* How it works */
+.how-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem}
+.how-step{background:var(--white); border:1px solid #c9d4cf; border-radius:12px; padding:1.5rem; text-align:left; display:flex; flex-direction:column}
+.how-step .step-svg{width:44px; height:44px; flex-shrink:0; margin-bottom:.75rem}
+.how-step h4{font-size:17px; margin:.5rem 0 .5rem}
+.how-step p{font-size:14px; color:#4a5a52; margin:0; flex:1}
+
+/* Services */
+.services-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem}
+.service-card{background:var(--white); border:1px solid #c9d4cf; border-radius:12px; overflow:hidden; display:flex; flex-direction:column}
+.service-thumb{height:160px; background:var(--alt); display:flex; align-items:center; justify-content:center; color:var(--brand); font-size:30px}
+.service-card .inner{padding:1.25rem; flex:1; display:flex; flex-direction:column}
+.service-card h3{font-size:17px; margin-bottom:.4rem}
+.service-card p{font-size:14px; color:#4a5a52; margin-bottom:1rem; flex:1}
+.learn-more{margin-top:auto; color:var(--brand); font-weight:700; font-size:13.5px; display:inline-flex; align-items:center; gap:6px}
+.learn-more::after{content:"›"; font-size:16px}
+
+/* Trust / About */
+.trust-band{background:var(--brand-dark); color:#fff; border-radius:14px; padding:3rem 2rem; overflow:hidden}
+.trust-band > .container{position:relative; z-index:2}
+.trust-text h2{color:#fff; font-size:clamp(24px,3vw,30px); margin-bottom:.75rem}
+.trust-text p{color:#d8e8df; font-size:16px; margin-bottom:1.5rem; max-width:520px}
+.location-chip{display:inline-flex; align-items:center; gap:10px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.3); padding:8px 16px; border-radius:20px; font-size:13px; font-weight:700; color:#fff}
+
+/* What to bring */
+.bring-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem}
+.bring-item{background:var(--white); border:1px solid #c9d4cf; border-radius:12px; padding:1.5rem; text-align:center; display:flex; flex-direction:column; align-items:center}
+.bring-item .thumb{width:48px; height:48px; border-radius:10px; background:var(--alt); margin:0 auto .75rem; display:flex; align-items:center; justify-content:center; color:var(--brand); font-size:22px}
+.bring-item h4{font-size:15px; margin-bottom:.3rem}
+.bring-item p{font-size:13.5px; color:#4a5a52; margin:0}
+
+/* Portal preview */
+.portal-preview{background:var(--alt); border:1px solid #c9d4cf; border-radius:14px; padding:2rem; display:flex; gap:1.5rem; align-items:flex-start; flex-wrap:wrap}
+.portal-thumb{width:300px; height:200px; border-radius:10px; border:1px solid #c9d4cf; flex-shrink:0; object-fit:cover; object-position:center}
+.portal-caption{font-size:12px; color:#7a8a82; margin-top:.5rem; max-width:300px}
+.portal-text{flex:1; min-width:220px}
+.portal-label{font-size:12px; font-weight:800; letter-spacing:.2em; text-transform:uppercase; color:#8a6d3f; margin-bottom:.25rem; display:block}
+.portal-text h3{font-size:18px; margin-bottom:.4rem}
+.portal-text p{font-size:14px; color:#4a5a52; margin-bottom:.75rem}
+
+/* Map */
+.map-wrap{border:1px solid #c9d4cf; border-radius:12px; overflow:hidden; background:#fff}
+.map-cta{display:flex; align-items:center; gap:1.5rem; padding:2rem; background:var(--alt); flex-wrap:wrap}
+.map-cta .map-icon{width:48px; height:48px; border-radius:10px; background:#fff; border:1px solid #c9d4cf; display:flex; align-items:center; justify-content:center; color:var(--brand); font-size:22px; flex-shrink:0}
+.map-cta .map-info{flex:1; min-width:200px}
+.map-cta .map-info strong{display:block; font-size:16px; color:var(--ink)}
+.map-cta .map-info div{color:#4a5a52; font-size:14px}
+.map-cta .btn-brand{margin-left:auto; white-space:nowrap}
+
+/* Hours */
+.hours-wrap{background:var(--white); border:1px solid #c9d4cf; border-radius:12px; padding:2rem}
+.hours-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:1rem}
+.hour-item{border-bottom:1px solid #c9d4cf; padding:.75rem 0; font-size:14px}
+.hour-item span{float:right; font-weight:700; color:var(--brand)}
+
+/* FAQ */
+.faq-list{max-width:720px; margin:0 auto}
+.faq-item{border:1px solid #c9d4cf; border-radius:10px; margin-bottom:.75rem; overflow:hidden}
+.faq-btn{width:100%; text-align:left; padding:1rem 1.25rem; background:#fff; border:none; font-family:inherit; font-weight:700; font-size:15px; cursor:pointer; display:flex; justify-content:space-between; align-items:center}
+.faq-btn:hover{background:var(--alt)}
+.faq-panel{padding:0 1.25rem 1rem; color:#4a5a52; font-size:14.5px; line-height:1.5; display:none; border-top:1px solid #c9d4cf}
+
+/* CTA */
+.cta-strip{background:var(--brand-dark); color:#fff; border-radius:14px; padding:3rem 2rem; text-align:center}
+.cta-strip h2{color:#fff; margin-bottom:.5rem}
+.cta-strip p{color:#cfe3d9; margin-bottom:1.5rem; font-size:16px}
+.cta-actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap}
+
+/* Footer */
+footer{border-top:1px solid #c9d4cf; padding:4rem 0 3rem; color:#4a5a52; font-size:13px}
+.footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr; gap:2rem}
+.footer-brand .logo{height:28px; margin-bottom:1rem; display:block}
+.footer-brand p{margin-bottom:1rem; max-width:260px}
+.footer-col h5{color:var(--ink); font-size:13px; text-transform:uppercase; letter-spacing:.2em; margin-bottom:1rem}
+.footer-col ul{list:none; padding:0; margin:0}
+.footer-col li{margin-bottom:.5rem}
+.footer-col a{color:#4a5a52}
+.footer-col a:hover{color:var(--brand)}
+.footer-note{border-top:1px solid #c9d4cf; margin-top:3rem; padding-top:1.5rem; font-size:12px; color:#7a8a82}
+
+/* Bottom mobile bar */
+.bottom-bar{position:fixed; bottom:0; left:0; right:0; display:flex; background:var(--white); border-top:1px solid #c9d4cf; z-index:60; box-shadow:0 -4px 20px rgba(31,58,46,.06); display:none}
+.bottom-btn{flex:1; text-align:center; padding:13px 4px; font-size:12.5px; font-weight:700; color:#4a5a52; border:none; background:none; cursor:pointer}
+.bottom-btn.active, .bottom-btn:hover{color:var(--brand)}
+.bottom-call{color:var(--brand)}
+
+/* Mobile */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr; gap:2rem}
+  .checkin-card{order:-1}
+  .main-nav{display:none}
+  .menu-toggle{display:block}
+  .how-grid, .services-grid, .bring-grid, .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .portal-preview{flex-direction:column; align-items:flex-start; text-align:left}
+  .portal-thumb{align-self:flex-start}
+  .mobile-drawer.open{display:flex}
+  .three-wrap{grid-template-columns:1fr}
+  .three-canvas-wrap{border-right:none; border-bottom:1px solid #c9d4cf}
+}
+.mobile-drawer{
+  position:fixed; inset:0; background:var(--white); z-index:55; display:none; flex-direction:column; padding:2rem
+}
+.drawer-head{display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem}
+.drawer-nav a{display:block; padding:10px 0; font-size:17px; font-weight:600; color:var(--ink)}
+.close-drawer{background:none; border:none; font-size:24px; cursor:pointer; color:var(--ink)}
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{animation-duration:.001s !important; transition-duration:.001s !important}
+  .hero-bg{animation:none; transition:none}
+}
+</style>
+</head>
+<body>
+
+<div class="disclaimer">Independent website concept by LeadSky for Memorial Heights Emergency Center. Not their official website.</div>
+
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <img src="img/business-logo-1.png" alt="Memorial Heights Emergency Center logo" class="logo" onerror="imgFallback(this,'logo')">
+    <nav class="main-nav" id="main-nav">
+      <a href="#services">Services</a>
+      <a href="#what-to-bring">What to bring</a>
+      <a href="#map-directions">Visit us</a>
+      <a href="#faqs">FAQs</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:2815012841" class="phone-link">(281) 501-2841</a>
+    <a href="#checkin-card" class="btn btn-brand">Check In Online</a>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+  </div>
+</header>
+
+<div class="mobile-drawer" id="mobile-drawer">
+  <div class="drawer-head">
+    <div style="font-weight:800; font-size:17px; letter-spacing:.2px">Memorial Heights Emergency Center</div>
+    <button class="close-drawer" id="close-drawer">✕</button>
+  </div>
+  <nav class="drawer-nav">
+    <a href="#services">Services</a>
+    <a href="#what-to-bring">What to bring</a>
+    <a href="#map-directions">Visit us</a>
+    <a href="#faqs">FAQs</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div style="margin-top:auto; margin-top:2rem">
+    <a href="tel:2815012841" class="btn btn-brand" style="width:100%">Call (281) 501-2841</a>
+    <a href="#checkin-card" class="btn btn-ghost" style="width:100%; margin-top:.75rem">Check In Online</a>
+  </div>
+</div>
+
+<main>
+  <section class="hero" id="hero" aria-label="Memorial Heights Emergency Center online pre-registration">
+    <img src="img/business-featured-2.jpg" alt="Memorial Heights Emergency Center featured image" class="hero-bg" onerror="imgFallback(this,'featured')">
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Memorial Heights Emergency Center</div>
+        <h1 class="hero-headline">Online Pre-Registration — Arrive. Be Seen. Faster.</h1>
+        <p class="hero-sub">Securely submit insurance, ID, and symptoms before you arrive at our Houston ER. Open 24/7 at 4000 Washington Avenue, Suite 100, Houston, TX 77007.</p>
+        <div class="status-chip"><span class="dot" aria-hidden="true"></span> Open 24/7 including all holidays · <a href="tel:2815012841" style="color:#fff; text-decoration:underline">(281) 501-2841</a></div>
+      </div>
+
+      <div class="checkin-card" id="checkin-card" tabindex="0">
+        <div class="stepper" id="stepper">
+          <div class="step-line fill" id="step-line"></div>
+          <div class="step-dot active" id="d1">1</div>
+          <div class="step-dot" id="d2">2</div>
+          <div class="step-dot" id="d3">3</div>
+          <div class="step-dot" id="d4">4</div>
+        </div>
+
+        <p class="demo-notice">This is a demonstration form. Nothing will be sent or stored.</p>
+
+        <form id="checkin-form" novalidate>
+          <!-- Step 1: Patient -->
+          <fieldset class="step active" id="step-1">
+            <h3>Patient details</h3>
+            <p class="card-sub">Tell us who is coming in.</p>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Full name</label>
+                <input type="text" id="name" required placeholder="Jane Doe">
+                <span class="err" id="err-name">Please enter your full name</span>
+              </div>
+              <div class="form-group">
+                <label>Date of birth</label>
+                <input type="date" id="dob" required>
+                <span class="err" id="err-dob">Please enter your date of birth</span>
+              </div>
+              <div class="form-group">
+                <label>Phone number</label>
+                <input type="tel" id="phone" required placeholder="(281) 555-0123">
+                <span class="err" id="err-phone">Please enter a phone number</span>
+              </div>
+              <div class="form-group">
+                <label>Reason for visit</label>
+                <select id="reason" required>
+                  <option value="">Select a reason</option>
+                  <option>Trauma, Injury &amp; Illnesses</option>
+                  <option>Flu Treatments</option>
+                  <option>24/7 Pediatric Care</option>
+                  <option>Chest Pain or Breathing Difficulty</option>
+                  <option>Pregnancy Complications</option>
+                  <option>Other</option>
+                </select>
+                <span class="err" id="err-reason">Please select a reason</span>
+              </div>
+            </div>
+            <button type="button" class="btn-step" id="next-1">Continue</button>
+          </fieldset>
+
+          <!-- Step 2: Insurance -->
+          <fieldset class="step" id="step-2">
+            <h3>Insurance &amp; ID</h3>
+            <p class="card-sub">We work with your private insurance to minimize out-of-pocket costs.</p>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Insurance provider</label>
+                <input type="text" id="insurer" required placeholder="e.g. Blue Cross Blue Shield">
+                <span class="err" id="err-insurer">Please enter your insurance provider</span>
+              </div>
+              <div class="form-group">
+                <label>Member ID</label>
+                <input type="text" id="member-id" required placeholder="Member or policy number">
+                <span class="err" id="err-member">Please enter your member ID</span>
+              </div>
+              <div class="form-group">
+                <label>Photo ID (sample upload)</label>
+                <input type="file" id="id-upload" accept="image/*" required>
+                <span class="err" id="err-upload">Please upload a photo ID</span>
+              </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem">
+              <button type="button" class="btn-back" id="prev-2">Back</button>
+              <button type="button" class="btn-step" id="next-2">Continue</button>
+            </div>
+          </fieldset>
+
+          <!-- Step 3: Symptoms -->
+          <fieldset class="step" id="step-3">
+            <h3>Symptoms &amp; arrival</h3>
+            <p class="card-sub">Help our team prepare before you arrive.</p>
+            <div class="form-grid">
+              <div class="form-group" style="grid-column:1 / -1">
+                <label>Describe your symptoms</label>
+                <textarea id="symptoms" rows="3" required placeholder="e.g. fever, cough, shortness of breath"></textarea>
+                <span class="err" id="err-symptoms">Please describe your symptoms</span>
+              </div>
+              <div class="form-group">
+                <label>Severity</label>
+                <select id="severity" required>
+                  <option value="">Select severity</option>
+                  <option>Mild</option>
+                  <option>Moderate</option>
+                  <option>Severe</option>
+                  <option>Life-threatening — call 911</option>
+                </select>
+                <span class="err" id="err-severity">Please select severity</span>
+              </div>
+              <div class="form-group">
+                <label>Expected arrival time</label>
+                <input type="time" id="arrival" required>
+                <span class="err" id="err-arrival">Please select an arrival time</span>
+              </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1rem">
+              <button type="button" class="btn-back" id="prev-3">Back</button>
+              <button type="button" class="btn-step" id="next-3">Continue</button>
+            </div>
+          </fieldset>
+
+          <!-- Step 4: Confirmation -->
+          <fieldset class="step" id="step-4">
+            <h3>Sample confirmation</h3>
+            <p class="card-sub">Review your pre-registration. This is a demo — nothing was sent or charged.</p>
+            <div class="form-grid">
+              <div class="form-group" style="grid-column:1 / -1">
+                <label>Name</label>
+                <p id="s-name" style="margin:0; padding:.5rem 0; border-bottom:1px solid #c9d4cf; color:#4a5a52"></p>
+              </div>
+              <div class="form-group" style="grid-column:1 / -1">
+                <label>Insurance provider</label>
+                <p id="s-insurer" style="margin:0; padding:.5rem 0; border-bottom:1px solid #c9d4cf; color:#4a5a52"></p>
+              </div>
+              <div class="form-group" style="grid-column:1 / -1">
+                <label>Reason for visit</label>
+                <p id="s-reason" style="margin:0; padding:.5rem 0; border-bottom:1px solid #c9d4cf; color:#4a5a52"></p>
+              </div>
+              <div class="form-group" style="grid-column:1 / -1">
+                <label>Expected arrival</label>
+                <p id="s-arrival" style="margin:0; padding:.5rem 0; border-bottom:1px solid #c9d4cf; color:#4a5a52"></p>
+              </div>
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:1.25rem">
+              <button type="button" class="btn-back" id="prev-4">Back</button>
+              <button type="button" class="btn-step" id="finish-demo">Finish demo</button>
+            </div>
+          </fieldset>
+        </form>
+
+        <div class="success-box hidden" id="demo-success" aria-live="polite">
+          <strong>This is a demo form, nothing was sent.</strong>
+          <p>Your pre-registration was not submitted to Memorial Heights Emergency Center and no information was stored.</p>
+          <p>When you are ready, call <a href="tel:2815012841" style="color:var(--brand); font-weight:700">(281) 501-2841</a> or arrive at 4000 Washington Avenue, Suite 100, Houston, TX 77007.</p>
+          <div class="sample-review">
+            <p><strong>Name:</strong> <span id="s-name-view"></span></p>
+            <p><strong>Insurance provider:</strong> <span id="s-insurer-view"></span></p>
+            <p><strong>Reason for visit:</strong> <span id="s-reason-view"></span></p>
+            <p><strong>Expected arrival:</strong> <span id="s-arrival-view"></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="three-signature" aria-label="Emergency care signature graphic">
+    <div class="container">
+      <div class="three-wrap">
+        <div class="three-canvas-wrap">
+          <canvas id="medical-cross" aria-label="Interactive medical cross graphic"></canvas>
+          <div class="three-fallback" id="three-fallback">
+            <svg width="140" height="140" viewBox="0 0 140 140" aria-hidden="true" role="img">
+              <rect x="60" y="20" width="20" height="100" fill="#c0392b" rx="4"/>
+              <rect x="20" y="60" width="100" height="20" fill="#c0392b" rx="4"/>
+            </svg>
+          </div>
+        </div>
+        <div class="three-text">
+          <h3>Care when it matters most</h3>
+          <p>Memorial Heights Emergency Center is a freestanding 24-hour emergency room in Houston, TX 77007. Walk-ins are welcome, and online pre-registration helps you arrive faster.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">How it works</div>
+        <h2>Pre-register in three steps</h2>
+        <p>Complete check-in before you arrive so the front desk can verify insurance and prepare your room ahead of time.</p>
+      </div>
+      <div class="how-grid">
+        <div class="how-step">
+          <svg class="step-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"><rect x="4" y="4" width="36" height="36" rx="8" stroke="#2e6e58" stroke-width="2"/><path d="M12 20 L20 12 L24 16 L28 12 L32 16 L20 28" stroke="#2e6e58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+          <h4>Patient details</h4>
+          <p>Enter name, date of birth, phone, and reason for visit.</p>
+        </div>
+        <div class="how-step">
+          <svg class="step-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"><rect x="4" y="4" width="36" height="36" rx="8" stroke="#2e6e58" stroke-width="2"/><path d="M8 22 Q22 4 36 22" stroke="#2e6e58" stroke-width="2" stroke-linecap="round" fill="none"/><circle cx="22" cy="22" r="4" fill="#2e6e58"/></svg>
+          <h4>Insurance &amp; ID</h4>
+          <p>Submit insurance information and photo ID for upfront verification.</p>
+        </div>
+        <div class="how-step">
+          <svg class="step-svg" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"><rect x="4" y="4" width="36" height="36" rx="8" stroke="#2e6e58" stroke-width="2"/><path d="M12 32 L22 22 L32 32 M22 22 L22 12" stroke="#2e6e58" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+          <h4>Confirm &amp; arrive</h4>
+          <p>Review your summary and head to Memorial Heights ER with less paperwork at the desk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Emergency services</div>
+        <h2>What we treat</h2>
+        <p>Emergency services available 24/7 at our freestanding ER in Houston, TX 77007.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-thumb" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pediatric care illustration"><circle cx="32" cy="24" r="10" stroke="#2e6e58" stroke-width="3"/><path d="M22 44 Q32 34 42 44" stroke="#2e6e58" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="28" cy="20" r="2" fill="#2e6e58"/><circle cx="36" cy="20" r="2" fill="#2e6e58"/></svg>
+          </div>
+          <div class="inner">
+            <h3>24/7 Pediatric Care</h3>
+            <p>You and your child should always have access to quality emergency care.</p>
+            <a href="#services" class="learn-more">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-thumb" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trauma care illustration"><path d="M20 20 H44 V24 H20 Z M24 40 H40 V44 H24 Z" stroke="#2e6e58" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M32 12 L32 20 M32 44 L32 52" stroke="#2e6e58" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+          </div>
+          <div class="inner">
+            <h3>Trauma, Injury &amp; Illnesses</h3>
+            <p>Comprehensive, 24-hour emergency medical care for any patient in need.</p>
+            <a href="#services" class="learn-more">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-thumb" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Flu treatment illustration"><path d="M32 14 L32 30" stroke="#2e6e58" stroke-width="3" stroke-linecap="round" fill="none"/><circle cx="32" cy="32" r="6" stroke="#2e6e58" stroke-width="3" fill="none"/><path d="M26 38 L38 38" stroke="#2e6e58" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+          </div>
+          <div class="inner">
+            <h3>Flu Treatments</h3>
+            <p>Flu, also known as Influenza, is a viral infection that affects your respiratory system.</p>
+            <a href="#services" class="learn-more">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-thumb" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="IV therapy illustration"><rect x="24" y="10" width="16" height="40" rx="4" stroke="#2e6e58" stroke-width="3" fill="#fff"/><path d="M32 10 L32 22 M28 22 L36 22" stroke="#2e6e58" stroke-width="3" stroke-linecap="round" fill="none"/><path d="M22 34 L32 44 L42 34" stroke="#2e6e58" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+          </div>
+          <div class="inner">
+            <h3>IV Iron Infusion Therapy</h3>
+            <p>Restores healthy iron levels quickly for patients with iron-deficiency anemia who need faster relief than oral supplements can provide.</p>
+            <a href="#services" class="learn-more">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-thumb" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lab and imaging illustration"><rect x="16" y="20" width="32" height="24" rx="4" stroke="#2e6e58" stroke-width="3" fill="#fff"/><path d="M24 28 L24 36 M32 28 L32 36 M40 28 L40 36" stroke="#2e6e58" stroke-width="2" stroke-linecap="round" fill="none"/></svg>
+          </div>
+          <div class="inner">
+            <h3>Lab &amp; Imaging</h3>
+            <p>In-house lab with CT scan, Ultrasound, and X-ray for immediate on-site diagnostics.</p>
+            <a href="#services" class="learn-more">Learn More</a>
+          </div>
+        </div>
+        <div class="service-card">
+          <div class="service-thumb" aria-hidden="true">
+            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pregnancy care illustration"><path d="M28 12 Q32 4 36 12 L38 18 L36 30 Q32 34 28 30 L26 18 Z" stroke="#2e6e58" stroke-width="3" fill="none"/><path d="M32 30 L32 42" stroke="#2e6e58" stroke-width="3" stroke-linecap="round" fill="none"/></svg>
+          </div>
+          <div class="inner">
+            <h3>Pregnancy Complications</h3>
+            <p>Emergency care for pregnancy-related complications, available around the clock.</p>
+            <a href="#services" class="learn-more">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="trust-band" id="about">
+    <div class="container">
+      <div class="trust-text">
+        <h2>About Memorial Heights Emergency Center</h2>
+        <p>Memorial Heights Emergency Center is a freestanding 24-hour emergency room combining hospital-level care with the speed and comfort of a private practice. Emergency physicians are available to see walk-in patients around the clock, including all holidays.</p>
+        <div class="location-chip"><span aria-hidden="true">📍</span> 4000 Washington Avenue, Suite 100, Houston, TX 77007</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="what-to-bring">
+    <div class="container">
+      <div class="section-head left">
+        <div class="kicker">Before you arrive</div>
+        <h2>What to bring</h2>
+      </div>
+      <div class="bring-grid">
+        <div class="bring-item">
+          <div class="thumb" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ID icon"><rect x="8" y="8" width="32" height="28" rx="4" stroke="#2e6e58" stroke-width="2"/><path d="M12 20 H36" stroke="#2e6e58" stroke-width="2" stroke-linecap="round"/><path d="M24 8 L24 20" stroke="#2e6e58" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h4>Photo ID</h4>
+          <p>Valid government-issued identification.</p>
+        </div>
+        <div class="bring-item">
+          <div class="thumb" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Insurance card icon"><rect x="8" y="10" width="32" height="28" rx="4" stroke="#2e6e58" stroke-width="2"/><path d="M12 18 H36 M12 24 H36 M12 30 H24" stroke="#2e6e58" stroke-width="2" stroke-linecap="round"/><circle cx="36" cy="14" r="2" fill="#2e6e58"/></svg>
+          </div>
+          <h4>Insurance card</h4>
+          <p>Current private insurance member card.</p>
+        </div>
+        <div class="bring-item">
+          <div class="thumb" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Medication icon"><rect x="12" y="14" width="24" height="24" rx="4" stroke="#2e6e58" stroke-width="2"/><path d="M18 20 L30 20 M24 14 L24 26" stroke="#2e6e58" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="24" r="3" fill="#2e6e58"/></svg>
+          </div>
+          <h4>Medication list</h4>
+          <p>Current medications and dosages, if available.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portal-preview">
+    <div class="container">
+      <div class="portal-preview">
+        <img src="img/stock-5.jpg" alt="Illustrative stock photo of a healthcare consultation, not Memorial Heights Emergency Center staff or premises" class="portal-thumb" onerror="imgFallback(this,'stock')">
+        <div class="portal-text">
+          <span class="portal-label">Sample patient portal</span>
+          <h3>Secure pre-registration portal</h3>
+          <p>Patients can submit insurance, ID, and symptoms before arrival. This preview is labelled sample — no real data is captured.</p>
+        </div>
+        <p class="portal-caption">Illustrative stock photo by erwinbosman via Pixabay. Not presented as Memorial Heights Emergency Center premises or staff.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="map-directions">
+    <div class="container">
+      <div class="section-head left">
+        <div class="kicker">Visit us</div>
+        <h2>Map &amp; directions</h2>
+      </div>
+      <div class="map-wrap">
+        <div class="map-cta">
+          <div class="map-icon" aria-hidden="true">📍</div>
+          <div class="map-info">
+            <strong>Memorial Heights Emergency Center</strong>
+            <div>4000 Washington Avenue, Suite 100</div>
+            <div>Houston, TX 77007</div>
+          </div>
+          <a href="https://maps.google.com/?q=4000+Washington+Avenue+Suite+100+Houston+TX+77007" target="_blank" rel="noopener" class="btn btn-brand">Get directions</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="hours">
+    <div class="container">
+      <div class="section-head left">
+        <div class="kicker">Hours</div>
+        <h2>Opening hours</h2>
+      </div>
+      <div class="hours-wrap">
+        <div class="hours-grid">
+          <div class="hour-item">Monday<span>Open 24 hours</span></div>
+          <div class="hour-item">Tuesday<span>Open 24 hours</span></div>
+          <div class="hour-item">Wednesday<span>Open 24 hours</span></div>
+          <div class="hour-item">Thursday<span>Open 24 hours</span></div>
+          <div class="hour-item">Friday<span>Open 24 hours</span></div>
+          <div class="hour-item">Saturday<span>Open 24 hours</span></div>
+          <div class="hour-item">Sunday<span>Open 24 hours</span></div>
+          <div class="hour-item">Holidays<span>Open 24 hours</span></div>
+        </div>
+        <p style="margin-top:1rem; font-size:14px; color:#4a5a52">Always open — including all holidays. No appointment needed; walk in 24 hours a day, 7 days a week.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="faqs">
+    <div class="container">
+      <div class="section-head">
+        <div class="kicker">Frequently asked questions</div>
+        <h2>FAQs</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-1">Do you accept private insurance? <span aria-hidden="true">▾</span></button>
+          <div class="faq-panel" id="faq-1">Yes. Memorial Heights ER works with your private insurance to minimize out-of-pocket costs. See Insurance Information for details.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-2">What are the hours? <span aria-hidden="true">▾</span></button>
+          <div class="faq-panel" id="faq-2">Memorial Heights ER is open 24 hours a day, 7 days a week, including all holidays. Walk-ins are welcome.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-3">Do you treat children? <span aria-hidden="true">▾</span></button>
+          <div class="faq-panel" id="faq-3">Yes. 24/7 Pediatric Care is available so you and your child always have access to quality emergency care.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-4">What is a freestanding ER? <span aria-hidden="true">▾</span></button>
+          <div class="faq-panel" id="faq-4">Memorial Heights ER is a freestanding 24-hour emergency room combining hospital-level care with the speed and comfort of a private practice.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-btn" aria-expanded="false" aria-controls="faq-5">Can I check in online? <span aria-hidden="true">▾</span></button>
+          <div class="faq-panel" id="faq-5">Yes. Use the Check In Online demo above to pre-register, or call (281) 501-2841.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-strip" id="closing-cta">
+    <div class="container">
+      <h2>Ready to arrive faster?</h2>
+      <p>Start online pre-registration now or call us directly.</p>
+      <div class="cta-actions">
+        <a href="#checkin-card" class="btn btn-brand">Check In Online</a>
+        <a href="tel:2815012841" class="btn btn-ghost">Call (281) 501-2841</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="contact">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img src="img/business-logo-1.png" alt="Memorial Heights Emergency Center logo" class="logo" onerror="imgFallback(this,'logo')">
+      <p>Memorial Heights Emergency Center<br>4000 Washington Avenue, Suite 100<br>Houston, TX 77007</p>
+      <p><a href="tel:2815012841">(281) 501-2841</a> · <a href="mailto:jason.masvero@mhehc.com">jason.masvero@mhehc.com</a></p>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="#services">24/7 Pediatric Care</a></li>
+        <li><a href="#services">Trauma, Injury &amp; Illnesses</a></li>
+        <li><a href="#services">Flu Treatments</a></li>
+        <li><a href="#services">IV Iron Infusion Therapy</a></li>
+        <li><a href="#services">Lab &amp; Imaging</a></li>
+        <li><a href="#services">Pregnancy Complications</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Quick links</h5>
+      <ul>
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#what-to-bring">What to bring</a></li>
+        <li><a href="#map-directions">Directions</a></li>
+        <li><a href="#faqs">FAQs</a></li>
+        <li><a href="tel:2815012841">Call us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-note">
+    <strong>Photo credits (illustrative stock only, never presented as the business's own premises or staff):</strong>
+    <ul style="margin:.4rem 0 0; padding-left:1.2rem; font-size:12px; color:#7a8a82">
+      <li>doctor-patient-tablet-healthcare-10454490 — erwinbosman via <a href="https://pixabay.com/photos/doctor-patient-tablet-healthcare-10454490/" target="_blank" rel="noopener" style="color:#2e6e58">Pixabay</a></li>
+    </ul>
+    <p style="margin-top:.8rem">Independent website concept by LeadSky for Memorial Heights Emergency Center. Not their official website. Sample data labelled sample; nothing is sent or charged.</p>
+  </div>
+</footer>
+
+<div class="bottom-bar" id="bottom-bar">
+  <button class="bottom-btn" id="bottom-checkin">Check In</button>
+  <button class="bottom-btn bottom-call" id="bottom-call">Call</button>
+</div>
+
+<script>
+function imgFallback(img, kind){
+  const svgs = {
+    logo: '<svg xmlns="http://www.w3.org/2000/svg" width="200" height="40" viewBox="0 0 200 40"><rect width="200" height="40" rx="8" fill="%231b4536"/><text x="50%" y="55%" font-family="Montserrat, sans-serif" font-size="13" font-weight="700" fill="%23fdfcf9" text-anchor="middle" dominant-baseline="middle">MEMORIAL HEIGHTS</text><text x="50%" y="85%" font-family="Montserrat, sans-serif" font-size="13" font-weight="700" fill="%232e6e58" text-anchor="middle" dominant-baseline="middle">EMERGENCY CENTER</text></svg>',
+    featured: '<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700"><rect width="1200" height="700" fill="%23e8e3d9"/><path d="M200,520 L450,300 L700,520 L950,320 L1200,520 V700 H200 Z" fill="%23c9d4cf"/><rect x="480" y="340" width="240" height="140" rx="6" fill="%23ffffff" stroke="%231f3a2e"/><circle cx="600" cy="420" r="24" fill="%231f3a2e"/></svg>',
+    stock: '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23f5f0ea"/><path d="M120,180 Q200,60 280,180" fill="none" stroke="%232e6e58" stroke-width="12" stroke-linecap="round"/><circle cx="200" cy="140" r="14" fill="%232e6e58"/></svg>'
+  };
+  img.src = 'data:image/svg+xml;utf8,' + (svgs[kind] || svgs.stock);
+}
+
+// --- Demo stepper logic ---
+(function(){
+  const form = document.getElementById('checkin-form');
+  const steps = form.querySelectorAll('.step');
+  const dots = document.querySelectorAll('.step-dot');
+  const line = document.getElementById('step-line');
+  let current = 1;
+
+  function showStep(n){
+    steps.forEach((s,i)=>{ s.classList.toggle('active', i+1===n); });
+    dots.forEach((d,i)=>{ d.classList.toggle('active', i+1===n); });
+    if(line){ line.style.transform = `scalex(${(n-1)/3})`; line.style.transformOrigin = 'left'; }
+    if(n===4){ document.getElementById('finish-demo').style.display='inline-flex'; }
+    else { document.getElementById('finish-demo').style.display='none'; }
+  }
+
+  function validateStep(n){
+    const step = document.getElementById('step-'+n);
+    const inputs = step.querySelectorAll('input[required], select[required], textarea[required]');
+    let ok = true;
+    inputs.forEach(inp=>{
+      const err = document.getElementById('err-'+inp.id);
+      if(!inp.value){
+        inp.style.borderColor = '#b3402e';
+        if(err) err.style.display = 'block';
+        ok = false;
+      } else {
+        inp.style.borderColor = '';
+        if(err) err.style.display = 'none';
+      }
+    });
+    return ok;
+  }
+
+  document.querySelectorAll('[id^="next-"]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const n = parseInt(btn.id.replace('next-',''),10);
+      if(validateStep(n)){
+        if(n<4){ current=n+1; showStep(current); window.scrollTo({top:document.getElementById('checkin-card').offsetTop-80, behavior:'smooth'}); }
+      }
+    });
+  });
+  document.querySelectorAll('[id^="prev-"]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const n = parseInt(btn.id.replace('prev-',''),10);
+      current=n-1; showStep(current);
+      window.scrollTo({top:document.getElementById('checkin-card').offsetTop-80, behavior:'smooth'});
+    });
+  });
+
+  document.getElementById('finish-demo').addEventListener('click',()=>{
+    if(validateStep(4)){
+      document.getElementById('checkin-form').style.display='none';
+      document.getElementById('demo-success').classList.remove('hidden');
+      document.getElementById('s-name').textContent = document.getElementById('name').value;
+      document.getElementById('s-insurer').textContent = document.getElementById('insurer').value;
+      document.getElementById('s-reason').textContent = document.getElementById('reason').value;
+      document.getElementById('s-arrival').textContent = document.getElementById('arrival').value;
+      document.getElementById('s-name-view').textContent = document.getElementById('name').value;
+      document.getElementById('s-insurer-view').textContent = document.getElementById('insurer').value;
+      document.getElementById('s-reason-view').textContent = document.getElementById('reason').value;
+      document.getElementById('s-arrival-view').textContent = document.getElementById('arrival').value;
+      window.scrollTo({top:document.getElementById('checkin-card').offsetTop-80, behavior:'smooth'});
+    }
+  });
+})();
+
+// --- Mobile nav ---
+(function(){
+  const toggle = document.getElementById('menu-toggle');
+  const closeBtn = document.getElementById('close-drawer');
+  const drawer = document.getElementById('mobile-drawer');
+  toggle.addEventListener('click',()=>{ drawer.classList.add('open'); });
+  closeBtn.addEventListener('click',()=>{ drawer.classList.remove('open'); });
+  drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>drawer.classList.remove('open')));
+})();
+
+// Bottom bar mobile
+(function(){
+  const bar = document.getElementById('bottom-bar');
+  if(window.innerWidth<=768) bar.style.display='flex';
+  document.getElementById('bottom-checkin').addEventListener('click',()=>{
+    document.getElementById('checkin-card').scrollIntoView({behavior:'smooth'});
+  });
+  document.getElementById('bottom-call').addEventListener('click',()=>{
+    window.location.href = 'tel:2815012841';
+  });
+})();
+
+// --- FAQ accordion ---
+document.querySelectorAll('.faq-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const expanded = btn.getAttribute('aria-expanded')==='true';
+    const panel = document.getElementById(btn.getAttribute('aria-controls'));
+    document.querySelectorAll('.faq-btn').forEach(b=>{ b.setAttribute('aria-expanded','false'); });
+    document.querySelectorAll('.faq-panel').forEach(p=>p.style.display='none');
+    if(!expanded){ btn.setAttribute('aria-expanded','true'); panel.style.display='block'; }
+  });
+});
+
+// --- Signature 3D (Three.js r128) ---
+(function(){
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const canvas = document.getElementById('medical-cross');
+  const fallback = document.getElementById('three-fallback');
+  const section = document.getElementById('three-signature');
+
+  if(reduced || !canvas || typeof THREE === 'undefined'){
+    if(canvas) canvas.style.display='none';
+    if(fallback) fallback.style.display='flex';
+    return;
+  }
+
+  let renderer, scene, camera, group, animationId, mouseX=0, mouseY=0;
+
+  function init(){
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(50, canvas.clientWidth/canvas.clientHeight, 0.1, 100);
+    camera.position.set(0,0,4.5);
+
+    renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true});
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+
+    const ambient = new THREE.AmbientLight(0xffffff, 0.7);
+    scene.add(ambient);
+    const dir = new THREE.DirectionalLight(0xffffff, 0.9);
+    dir.position.set(2,5,4);
+    scene.add(dir);
+
+    group = new THREE.Group();
+
+    const matRed = new THREE.MeshStandardMaterial({color:0xc0392b, roughness:0.4, metalness:0.1});
+    const matWhite = new THREE.MeshStandardMaterial({color:0xffffff, roughness:0.3, metalness:0.1});
+
+    const vBar = new THREE.Mesh(new THREE.BoxGeometry(0.5,1.7,0.25), matRed);
+    const hBar = new THREE.Mesh(new THREE.BoxGeometry(1.7,0.5,0.25), matRed);
+    const center = new THREE.Mesh(new THREE.BoxGeometry(0.55,0.55,0.3), matWhite);
+
+    group.add(vBar); group.add(hBar); group.add(center);
+    scene.add(group);
+
+    canvas.addEventListener('mousemove',onMove);
+    canvas.addEventListener('touchmove',onTouch,{passive:true});
+
+    function onMove(e){
+      const rect = canvas.getBoundingClientRect();
+      mouseX = ((e.clientX - rect.left)/rect.width - 0.5)*2;
+      mouseY = ((e.clientY - rect.top)/rect.height - 0.5)*2 * -1;
+    }
+    function onTouch(e){
+      const rect = canvas.getBoundingClientRect();
+      const t = e.touches[0];
+      mouseX = ((t.clientX - rect.left)/rect.width - 0.5)*2;
+      mouseY = ((t.clientY - rect.top)/rect.height - 0.5)*2 * -1;
+    }
+
+    function onResize(){
+      if(!renderer) return;
+      const rect = canvas.parentElement.getBoundingClientRect();
+      renderer.setSize(rect.width, rect.height);
+      camera.aspect = rect.width/rect.height;
+      camera.updateProjectionMatrix();
+    }
+    window.addEventListener('resize',onResize);
+
+    const observer = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          if(!animationId) animate();
+        } else {
+          if(animationId){ cancelAnimationFrame(animationId); animationId = null; }
+        }
+      });
+    },{threshold:0.1});
+    observer.observe(section);
+
+    function animate(){
+      animationId = requestAnimationFrame(animate);
+      const t = performance.now()*0.001;
+      group.rotation.x = 0.15 + mouseY*0.15 + Math.sin(t)*0.08;
+      group.rotation.y = 0.25 + mouseX*0.15 + Math.cos(t*0.6)*0.08;
+      renderer.render(scene, camera);
+    }
+    animate();
+  }
+
+  init();
+})();
+
+// --- GSAP animations (below first screen only) ---
+document.addEventListener('DOMContentLoaded',()=>{
+  gsap.registerPlugin(ScrollTrigger);
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Header scroll effect
+  let lastY = window.scrollY;
+  window.addEventListener('scroll',()=>{
+    const y = window.scrollY;
+    const header = document.getElementById('site-header');
+    if(y>10){ header.style.boxShadow='0 4px 20px rgba(31,58,46,.08)'; } else { header.style.boxShadow='none'; }
+    lastY=y;
+  }, {passive:true});
+
+  if(!reduced){
+    gsap.utils.toArray('section:not(#hero)').forEach(section=>{
+      gsap.from(section, {y:30, opacity:0, duration:.6, scrollTrigger:{trigger:section, start:'top 82%', toggleActions:'play none none once'}});
+    });
+  }
+});
+</script>
+</body>
+</html>
