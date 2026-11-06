@@ -1,0 +1,69 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://peterpetrycpa.com/wp-content/themes/peterpetrycpa/images/logo.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "accountant",
+    "description": "tax, paperwork, accounting, business, finance, budget, economy, taxation, financial, accountant, open book, spectacles, irs, taxpayer, specs, glasses, reference book, law book, learn, study, student, knowledge, swot, read, tax, tax, tax, accounting, accounting, accounting, accounting, accounting, budget, budget, economy, economy, accountant, irs, swot",
+    "source": "https://pixabay.com/photos/tax-paperwork-accounting-business-739107/",
+    "photographer": "stevepb",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "accountant",
+    "description": "tax consultant, files, pile of files, country, office, bureaucracy, taxes, fun, funny, figure, papers, business, work, office job, finance, tax office, tax return, invoice, calculate, income tax, money, files, files, bureaucracy, bureaucracy, bureaucracy, bureaucracy, bureaucracy, taxes, taxes, funny, finance, tax return, tax return, invoice, invoice, income tax, income tax, money",
+    "source": "https://pixabay.com/photos/tax-consultant-files-pile-of-files-3094819/",
+    "photographer": "Alexas_Fotos",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "accountant customer",
+    "description": "barber shop, iran, cosmetology, mashhad, people, job, work, life, lifestyle, everyday, occupation, social documentary, office, mostafa meraji, canon photos, young, men, business, jorj barber, makeup artist, stylist, style blogger, fashion blogger, persian, barbershop in iran, barber shop, barber shop, barber shop, barber shop, iran, iran, people, job, job, job, job, job, work, work, life, life, men, men, men, business, business",
+    "source": "https://pixabay.com/photos/barber-shop-iran-cosmetology-5212059/",
+    "photographer": "mostafa_meraji",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "accountant customer",
+    "description": "apples, farmer's market, buy, buying, consumer, customer, sell, business, deal, fruits, give, hands, sale, produce, fresh produce, fruit stand, buy, buy, buying, consumer, consumer, consumer, customer, customer, customer, customer, customer, sell, sell, business, business, business, business, deal, give, give, sale",
+    "source": "https://pixabay.com/photos/apples-farmers-market-buy-buying-1841132/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "accountant Houston",
+    "description": "cards, connection, chip, credit repair houston, credit repair near me, United States, Texas, Houston",
+    "source": "https://pixabay.com/photos/cards-connection-chip-7006464/",
+    "photographer": "HoustonRS",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "accountant Houston",
+    "description": "rain drops, nature, surface, wet, water droplets, dropetals, glass surface, rain, water, drips, beading, United States, Texas, Houston",
+    "source": "https://pixabay.com/photos/rain-drops-surface-wet-1144448/",
+    "photographer": "Brett_Hondow",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
