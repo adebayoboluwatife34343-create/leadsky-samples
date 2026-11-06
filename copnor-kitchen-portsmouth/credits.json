@@ -1,0 +1,69 @@
+[
+  {
+    "file": "img/business-featured-1.png",
+    "kind": "business featured image",
+    "source": "https://www.copnorkitchen.co.uk/uploads/b/279ad7c0-f0ac-11ec-b3ab-61dca9ea6a0e/BB%20SOCIAL%20NOV%2021Artboard%202%20copy.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "cafe",
+    "description": "cat's cafe, mac wallpaper, cat, desktop backgrounds, interior, full hd wallpaper, windows wallpaper, hd wallpaper, free background, laptop wallpaper, animal, table, wallpaper hd, pet, rest, 4k wallpaper, relax, wallpaper 4k, free wallpaper, 4k wallpaper 1920x1080, cool backgrounds, beautiful wallpaper, wallpaper, cafe",
+    "source": "https://pixabay.com/photos/cats-cafe-cat-interior-table-rest-4697753/",
+    "photographer": "ALEXNEWWORLD",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "cafe",
+    "description": "coffee, cup, caffeine, drink, latte, latte art, coffee cup, morning coffee, coffee break, hot coffee, beverage, hot, mug, rustic, saucer, table, wooden table, coffee, coffee, coffee, coffee, coffee, table, table",
+    "source": "https://pixabay.com/photos/coffee-cup-caffeine-drink-latte-2179028/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "cafe customer",
+    "description": "outdoor dining, restaurant, bar, waiter, al fresco, city, customers, group, patrons, people, street, tables, chairs, restaurant, restaurant, restaurant, restaurant, restaurant",
+    "source": "https://pixabay.com/photos/outdoor-dining-restaurant-bar-1846137/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "cafe customer",
+    "description": "bmw, motorcycle, vehicle, ride, bike, motorbike, speed, travel, vintage, transportation, motorcycle, bike, bike, bike, bike, bike",
+    "source": "https://pixabay.com/photos/bmw-motorcycle-vehicle-ride-bike-1313343/",
+    "photographer": "Monoar_CGI_Artist",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "cafe Portsmouth",
+    "description": "portsmouth, england, nature, old town, street, buildings, sky, clouds, colours, Portsmouth, United Kingdom, England",
+    "source": "https://pixabay.com/photos/portsmouth-england-old-town-street-713856/",
+    "photographer": "921563",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "cafe Portsmouth",
+    "description": "portsmouth, old town, england, street, nature, cars, historic, sky, clouds, blue street, Portsmouth, United Kingdom, England",
+    "source": "https://pixabay.com/photos/portsmouth-old-town-england-street-713817/",
+    "photographer": "921563",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
