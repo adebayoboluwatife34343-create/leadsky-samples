@@ -1,0 +1,69 @@
+[
+  {
+    "file": "img/business-logo-1.svg",
+    "kind": "business logo",
+    "source": "https://www.cobyphilips.co.uk/wp-content/uploads/2023/09/coby-philips-logo-horizontal-white.svg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "employment agency",
+    "description": "employment office, arge, jobcenter, nuremberg, office, job search, looking for a job, unemployed, hartz 4, career, job, curriculum vitae, application, work, workplace, seek, job ad, place of work, applicants, apply online, employment agency, jobcenter, jobcenter, jobcenter, jobcenter, jobcenter, job search, hartz 4",
+    "source": "https://pixabay.com/photos/employment-office-arge-jobcenter-2157225/",
+    "photographer": "andreas160578",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "employment agency",
+    "description": "employment agency, employment office, looking for a job, work, unemployed, job placement, application, unemployment, agency, termination, employment agency, employment agency, unemployed, unemployment, unemployment, unemployment, unemployment, unemployment, agency, agency, agency",
+    "source": "https://pixabay.com/photos/employment-agency-employment-office-771154/",
+    "photographer": "succo",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "employment agency customer",
+    "description": "barber shop, iran, cosmetology, mashhad, people, job, work, life, lifestyle, everyday, occupation, social documentary, office, mostafa meraji, canon photos, young, men, business, jorj barber, makeup artist, stylist, style blogger, fashion blogger, persian, barbershop in iran, barber shop, barber shop, barber shop, barber shop, iran, iran, people, job, job, job, job, job, work, work, life, life, men, men, men, business, business",
+    "source": "https://pixabay.com/photos/barber-shop-iran-cosmetology-5212059/",
+    "photographer": "mostafa_meraji",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "employment agency customer",
+    "description": "apples, farmer's market, buy, buying, consumer, customer, sell, business, deal, fruits, give, hands, sale, produce, fresh produce, fruit stand, buy, buy, buying, consumer, consumer, consumer, customer, customer, customer, customer, customer, sell, sell, business, business, business, business, deal, give, give, sale",
+    "source": "https://pixabay.com/photos/apples-farmers-market-buy-buying-1841132/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "employment agency London",
+    "description": "cv, resume, job, employment, business, recruitment, career, hr, work, employee, experience, application, document, interview, employer, portfolio, cirriculum, vitae, james, bond, secret, agent, occupation, vacancy, resume, resume, resume, resume, resume, London, England, United Kingdom",
+    "source": "https://pixabay.com/photos/cv-resume-job-employment-business-3726428/",
+    "photographer": "olilynch",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "employment agency London",
+    "description": "ferris wheel, london eye, river, ride, england, landmark, thames, architecture, uk, city, tourism, famous, attraction, symbol, capital, monument, united kingdom, london, london eye, london, london, london, london, london",
+    "source": "https://pixabay.com/photos/ferris-wheel-london-eye-river-ride-6547089/",
+    "photographer": "dimitrisvetsikas1969",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
