@@ -1,801 +1,1235 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="robots" content="noindex">
-  <title>Chaston Nursery</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Chaston Nursery — A Little Closer to Their Day | Independent Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #FAF8F4;
+  --ink: #1E293B;
+  --green: #3B7A57;
+  --deep: #28553E;
+  --coral: #E87A5D;
+  --sand: #F1ECE1;
+  --line: #DEDFD5;
+  --muted: #59645F;
+  --white: #FFFFFF;
+  --radius: 24px;
+  --shadow: 0 24px 65px rgba(36, 60, 48, 0.08);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 14px/1.65 "Plus Jakarta Sans", sans-serif; }
+button, input, select, textarea { font: inherit; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button, a { touch-action: manipulation; }
+button { cursor: pointer; }
+a { color: inherit; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid #E87A5D;
+  outline-offset: 4px;
+}
+button:disabled { cursor: not-allowed; opacity: 0.45; }
+img { display: block; width: 100%; object-fit: cover; }
+h1, h2, h3, h4, p { margin: 0; }
+h1, h2, h3, h4 { font-family: Outfit, sans-serif; font-weight: 500; line-height: 1.08; }
+h1 { font-size: clamp(48px, 5.6vw, 82px); letter-spacing: -3px; }
+h2 { font-size: clamp(34px, 3.8vw, 53px); letter-spacing: -1.7px; }
+h3 { font-size: 25px; letter-spacing: -0.5px; }
+p { color: var(--muted); }
 
-  <script id="site-data" type="application/json">{"brand": {"name": "Chaston Nursery & Pre-Preparatory School", "tagline": "Care, learning and a closer connection.", "logo": "img/business-logo-1.jpg", "city": "London", "country": "GB", "currency": "GBP", "currency_symbol": "£", "phone": "0207 482 0701", "whatsapp": "", "email": "info@chastonnursery.co.uk", "instagram": "", "tiktok": "", "address": "Chalk Farm: Chaston Place, Off Grafton Terrace, Kentish Town, NW5 4JH. West Hampstead: 30/31 Palmerston Road, London, NW6 2JL.", "hours": "Monday–Friday, 8:00 am–6:00 pm. Saturday–Sunday closed."}, "colors": {"bg": "#F8F6EE", "surface": "#FFFFFF", "text": "#223D35", "muted": "#586960", "brand": "#315E47", "accent": "#E7B853"}, "fonts": {"heading": "Bree Serif", "body": "Nunito Sans"}, "hero": {"eyebrow": "CHASTON NURSERY · LONDON · INTERACTIVE DEMO", "title": "A little help with your nursery day.", "subtitle": "Ask about Chaston, explore sample places at Chalk Farm and West Hampstead, or view a sample daily update. Try the parent assistant below. Nothing is sent, booked or charged.", "image": "img/stock-1.jpg", "cta_primary": "Ask the assistant", "cta_secondary": "Explore the parent demo", "shape3d": "flower"}, "stats": [{"value": "3 months–5 years", "label": "Care and education"}, {"value": "2", "label": "Nursery locations"}], "about": {"title": "Two nurseries. One place to stay in touch.", "text": "Chaston Nursery provides care and education for children aged three months to five years in Chalk Farm and West Hampstead. This working concept brings enquiries, bookings and daily updates together. Availability, fees, child records and progress notes shown in the demo are sample data. The accompanying photograph is illustrative stock photography.", "image": "img/stock-2.jpg"}, "items": [{"name": "Butterfly Room", "description": "Explore a sample booking for the Butterfly Room at Chalk Farm. Room allocation and actual fees must be confirmed with Chaston.", "price": 95, "price_label": "Sample price", "duration": "Sample full day", "image": "", "category": "Chalk Farm"}, {"name": "Ladybird Room", "description": "Try selecting a sample day in the Ladybird Room at Chalk Farm. No place is reserved.", "price": 95, "price_label": "Sample price", "duration": "Sample full day", "image": "", "category": "Chalk Farm"}, {"name": "Busy Bees Room", "description": "View the sample booking flow for the Busy Bees Room at Chalk Farm.", "price": 95, "price_label": "Sample price", "duration": "Sample full day", "image": "", "category": "Chalk Farm"}, {"name": "Fireflies Room", "description": "Explore sample availability for the Fireflies Room at Chalk Farm.", "price": 95, "price_label": "Sample price", "duration": "Sample full day", "image": "", "category": "Chalk Farm"}, {"name": "Panda Room", "description": "Try a sample booking for the Panda Room at West Hampstead. Actual availability must be confirmed with Chaston.", "price": 95, "price_label": "Sample price", "duration": "Sample full day", "image": "", "category": "West Hampstead"}, {"name": "Teddies Room", "description": "Explore the parent booking demo for the Teddies Room at West Hampstead.", "price": 95, "price_label": "Sample price", "duration": "Sample full day", "image": "", "category": "West Hampstead"}, {"name": "Main Room", "description": "View a sample day booking for the Main Room at West Hampstead.", "price": 95, "price_label": "Sample price", "duration": "Sample full day", "image": "", "category": "West Hampstead"}], "gallery": [{"image": "img/stock-1.jpg", "caption": "Illustrative stock photograph: learning through building and play."}, {"image": "img/stock-2.jpg", "caption": "Illustrative stock photograph: colour and creativity."}], "videos": [], "steps": [{"title": "Ask a question", "text": "Type a question or tap a suggested reply. The demo assistant uses prepared answers about Chaston and the sample portal."}, {"title": "Try a booking", "text": "Choose a nursery, room and sample date. Review a sample fee and payment preview. Nothing is reserved or charged."}, {"title": "Open a daily update", "text": "Explore sample attendance, activities and progress notes in the parent view."}, {"title": "Switch to the staff view", "text": "Try recording sample attendance, planning an activity and preparing a parent update. Changes stay within the demo."}], "points": [{"title": "Less time on routine questions", "text": "A shared assistant could help parents find location details, opening hours and next steps."}, {"title": "Simpler booking administration", "text": "One place for availability, bookings and payments could reduce repeated calls and emails."}, {"title": "Clearer daily updates", "text": "A parent portal could bring activity reports and progress notes into one place."}, {"title": "More connected staff records", "text": "A shared staff view could make attendance, curriculum plans and parent updates easier to manage."}], "faq": [{"q": "Is this Chaston's official booking system?", "a": "No. This is an independent working concept by LeadSky. All bookings, fees, availability and child records shown here are samples. Nothing is sent or charged."}, {"q": "What ages does Chaston care for?", "a": "Chaston provides care and education for children aged three months to five years. Contact the nursery to discuss a suitable place."}, {"q": "Where are the nurseries?", "a": "Chalk Farm is at Chaston Place, Off Grafton Terrace, Kentish Town, NW5 4JH. West Hampstead is at 30/31 Palmerston Road, London, NW6 2JL."}, {"q": "What are the opening hours?", "a": "The website lists Monday to Friday, 8:00 am to 6:00 pm, with Saturday and Sunday closed. Confirm session times for your chosen nursery directly."}, {"q": "How do I enquire about a real place?", "a": "Call Chalk Farm on 0207 482 0701 or West Hampstead on 0207 372 2120. You can also email info@chastonnursery.co.uk."}, {"q": "Are the prices and daily reports real?", "a": "No. Prices, availability, attendance and daily reports are sample data for this demo. Ask Chaston for current fees and availability. Please use fictional details when exploring the demo."}], "demo": {"assistant_name": "Chaston Demo Assistant", "greeting": "Hello. Explore nursery information, try a sample booking or open a sample daily report. I use prepared replies. This is an independent demo, so I cannot confirm places, contact staff or take payments.", "quick_questions": ["Which ages do you care for?", "Where are your nurseries?", "Try a sample booking", "What are the fees?", "Show a sample daily report", "Open the staff demo"], "script": [{"q": "Which ages do you care for?", "a": "Chaston provides care and education for children aged three months to five years. Contact the nursery to discuss the right setting and availability for your child."}, {"q": "Where are your nurseries?", "a": "Chaston has nurseries at Chalk Farm and West Hampstead. Chalk Farm: Chaston Place, Off Grafton Terrace, Kentish Town, NW5 4JH. West Hampstead: 30/31 Palmerston Road, London, NW6 2JL."}, {"q": "What time do you open?", "a": "The website lists Monday–Friday, 8:00 am–6:00 pm. Saturday and Sunday are closed. Please confirm your chosen nursery's session times directly."}, {"q": "Try a sample booking", "a": "Choose Chalk Farm or West Hampstead, then select a room and a sample date. The demo uses a sample full-day fee of £95. Review the payment preview to finish. No real place is reserved and no payment is taken."}, {"q": "Are there places available?", "a": "The calendar contains sample availability only. For real places, call Chalk Farm on 0207 482 0701 or West Hampstead on 0207 372 2120, or email info@chastonnursery.co.uk."}, {"q": "What are the fees?", "a": "Chaston's actual fees are not supplied in this demo. The £95 full-day fee is a sample price for exploring the booking flow. Contact Chaston for current fees, session options and terms."}, {"q": "Which rooms are at Chalk Farm?", "a": "The website lists the Butterfly Room, Ladybird Room, Busy Bees Room and Fireflies Room, plus an outdoor space. Ask Chaston which room would suit your child."}, {"q": "Which rooms are at West Hampstead?", "a": "The website lists the Panda Room, Teddies Room and Main Room, plus an outdoor area. Ask Chaston about room allocation and available places."}, {"q": "Show a sample daily report", "a": "Sample report — Child A, Butterfly Room, Chalk Farm: attended the sample session; explored building blocks and colour sorting; practised taking turns. Sample progress note: beginning to describe choices during play. This is fictional demo content."}, {"q": "Can I see my child's progress?", "a": "The parent demo includes fictional daily activities and progress notes. It does not connect to Chaston's records. A live platform could let authorised parents view updates shared by staff."}, {"q": "Open the staff demo", "a": "Explore the sample attendance list, add a fictional activity plan or prepare a sample parent update. All records are labelled sample. No staff member or parent receives anything."}, {"q": "Will I get a reminder?", "a": "The demo can preview a booking reminder. It does not send email, text messages or notifications. Automated reminders are part of the proposed platform."}, {"q": "How do I contact the nursery?", "a": "Call Chalk Farm on 0207 482 0701 or West Hampstead on 0207 372 2120. Email info@chastonnursery.co.uk. This assistant cannot send an enquiry for you."}, {"q": "My enquiry is urgent", "a": "This demo cannot alert staff or monitor urgent messages. Contact the nursery directly: Chalk Farm, 0207 482 0701; West Hampstead, 0207 372 2120. If someone is in immediate danger, contact emergency services."}, {"q": "Can I pay online?", "a": "You can explore a sample payment summary here. No money is taken. Online payments are a proposed feature of this concept; contact Chaston about its current payment arrangements."}, {"q": "Can I book a visit?", "a": "Please contact Chaston directly to arrange a real visit. Call your preferred nursery or email info@chastonnursery.co.uk. This demo cannot arrange appointments."}, {"q": "I have another question", "a": "I have prepared answers about locations, hours, rooms and the sample portal. For other questions, contact info@chastonnursery.co.uk or call your preferred nursery."}], "staff": [], "slots": ["Sample only · 9 November 2026 · Chalk Farm · Butterfly Room · 8:00 am–6:00 pm", "Sample only · 10 November 2026 · Chalk Farm · Ladybird Room · 8:00 am–6:00 pm", "Sample only · 11 November 2026 · Chalk Farm · Busy Bees Room · 8:00 am–6:00 pm", "Sample only · 12 November 2026 · Chalk Farm · Fireflies Room · 8:00 am–6:00 pm", "Sample only · 9 November 2026 · West Hampstead · Panda Room · 8:00 am–6:00 pm", "Sample only · 10 November 2026 · West Hampstead · Teddies Room · 8:00 am–6:00 pm", "Sample only · 11 November 2026 · West Hampstead · Main Room · 8:00 am–6:00 pm"], "kpis": [{"label": "Sample attendance records", "value": "3"}, {"label": "Sample parent updates ready", "value": "2"}, {"label": "Sample bookings awaiting review", "value": "1"}], "columns": ["Record type", "Child", "Nursery", "Room", "Attendance", "Activity", "Progress note", "Parent update"], "records": [{"Record type": "Sample", "Child": "Child A — fictional", "Nursery": "Chalk Farm", "Room": "Butterfly Room", "Attendance": "Sample: present", "Activity": "Sample: building blocks and colour sorting", "Progress note": "Sample: beginning to describe choices during play", "Parent update": "Sample: ready to preview; not sent"}, {"Record type": "Sample", "Child": "Child B — fictional", "Nursery": "West Hampstead", "Room": "Teddies Room", "Attendance": "Sample: present", "Activity": "Sample: drawing and shared storytelling", "Progress note": "Sample: joined a short group activity", "Parent update": "Sample: ready to preview; not sent"}, {"Record type": "Sample", "Child": "Child C — fictional", "Nursery": "West Hampstead", "Room": "Main Room", "Attendance": "Sample: expected", "Activity": "Sample plan: counting and outdoor play", "Progress note": "Sample: awaiting an observation", "Parent update": "Sample: draft; not sent"}], "options": [{"name": "Sample full day — Chalk Farm", "price": 95, "unit": "per sample day; actual fees unconfirmed"}, {"name": "Sample full day — West Hampstead", "price": 95, "unit": "per sample day; actual fees unconfirmed"}]}, "banner": "Independent website concept by LeadSky for Chaston Nursery. Not their official website.", "credits": [{"text": "Illustrative building-block photograph by FeeLoona on Pixabay.", "url": "https://pixabay.com/photos/christmas-background-child-tower-1864718/"}, {"text": "Illustrative colouring photograph by ponce_photography on Pixabay.", "url": "https://pixabay.com/photos/crayons-coloring-book-coloring-hand-1445053/"}]}</script>
+.wrap { width: min(1260px, 90%); margin: auto; }
+.concept { padding: 9px 20px; text-align: center; background: var(--deep); color: white; font-size: 11px; letter-spacing: 0.2px; font-weight: 500; }
+.header { position: sticky; top: 0; z-index: 30; background: rgba(250, 248, 244, 0.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(14px); }
+.nav { height: 88px; display: flex; align-items: center; justify-space: space-between; gap: 22px; }
 
-  <style id="theme-vars">
-    :root {
-      --bg: #fcfaf7;
-      --surface: #f4efe6;
-      --text: #242220;
-      --muted: #736e65;
-      --brand: #42382c;
-      --accent: #9c7c58;
-    }
-  </style>
+.brand { display: flex; align-items: center; text-decoration: none; gap: 12px; }
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--green), var(--deep));
+  color: white;
+  display: grid;
+  place-items: center;
+  font-family: Outfit, sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  box-shadow: 0 4px 12px rgba(59, 122, 87, 0.25);
+  flex-shrink: 0;
+}
+.brand strong { display: block; font-family: Outfit; font-size: 21px; line-height: 1.1; font-weight: 600; color: var(--ink); }
+.brand small { font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); display: block; }
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            bg: 'var(--bg)',
-            surface: 'var(--surface)',
-            ink: 'var(--text)',
-            muted: 'var(--muted)',
-            brand: 'var(--brand)',
-            accent: 'var(--accent)',
-          }
-        }
-      }
-    }
-  </script>
+.links { display: flex; align-items: center; gap: 26px; }
+.links a { text-decoration: none; font-size: 13px; font-weight: 600; }
+.btn {
+  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border-radius: 12px;
+  padding: 14px 22px;
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: none;
+  background: var(--green);
+  color: white;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.btn:hover { background: var(--deep); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(40, 85, 62, 0.2); }
+.btn.light { background: white; color: var(--ink); border-color: var(--line); }
+.btn.light:hover { background: var(--sand); transform: translateY(-2px); }
+.btn.small { padding: 10px 16px; border-radius: 9px; }
+.arrow { font-size: 16px; font-weight: 400; line-height: 1; }
+.menu { display: none; background: none; border: 1px solid var(--line); border-radius: 8px; padding: 9px; }
 
-  <style>
-    * { box-sizing: border-box; }
-    html {
-      scroll-padding-top: 5rem;
-    }
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      margin: 0;
-    }
-    .img-fallback {
-      background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .img-fallback::after {
-      content: '🪵';
-      font-size: 2rem;
-      opacity: 0.4;
-    }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
-  </style>
+.eyebrow { display: flex; align-items: center; gap: 9px; font-size: 10px; font-weight: 800; letter-spacing: 1.7px; text-transform: uppercase; color: var(--green); margin-bottom: 20px; }
+.dot { width: 7px; height: 7px; background: var(--green); border-radius: 100%; display: inline-block; }
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<style id='phone-safety'>canvas{pointer-events:none!important}@media(max-width:820px){canvas{opacity:.3!important}html,body{overflow-x:hidden}img,video{max-width:100%}}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}</style></head>
-<body class="bg-bg text-ink antialiased">
+.hero { padding: 65px 0 40px; position: relative; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1fr 1.02fr; gap: 65px; align-items: center; }
+.hero h1 em { font-style: normal; color: var(--green); }
+.hero-copy > p { max-width: 440px; margin: 25px 0; font-size: 15px; line-height: 1.9; }
+.actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-note { margin-top: 23px; font-size: 11px; color: var(--muted); display: flex; gap: 8px; align-items: center; }
 
-  <!-- Slim Banner in normal flow ABOVE header -->
-  <div class="bg-brand text-bg text-[11px] sm:text-xs py-2 px-4 text-center tracking-wide font-medium relative z-30">
-    <span id="banner-text">Independent website concept by LeadSky. Not the official website.</span>
+.hero-visual { position: relative; padding: 0 0 50px 20px; perspective: 1000px; }
+.hero-photo { height: 470px; border-radius: 110px 25px 25px 25px; object-position: 50% 45%; box-shadow: var(--shadow); }
+.photo-caption { position: absolute; top: 17px; right: 17px; background: rgba(255, 254, 247, 0.94); padding: 7px 13px; border-radius: 50px; font-size: 9px; color: #3E4942; border: 1px solid rgba(0,0,0,0.06); font-weight: 600; }
+
+.day-card { position: absolute; bottom: 4px; left: -22px; width: 310px; border-radius: 20px; background: white; padding: 20px; box-shadow: 0 20px 70px rgba(24, 61, 48, 0.16); transform: rotate(-3deg); transition: transform 0.4s; border: 1px solid var(--line); }
+.day-card:hover { transform: rotate(0deg) translateY(-5px); }
+.mini-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.mini-top strong { font-family: Outfit; font-size: 16px; font-weight: 500; }
+.sample { background: #F1EDE5; color: #615B50; font-size: 9px; letter-spacing: 0.6px; text-transform: uppercase; padding: 4px 8px; border-radius: 5px; font-weight: 700; white-space: nowrap; }
+.mini-tabs { display: flex; gap: 5px; margin-bottom: 12px; }
+.mini-tabs button { border: 0; background: transparent; color: var(--muted); font-size: 10px; padding: 6px 10px; border-radius: 6px; }
+.mini-tabs button[aria-selected="true"] { background: #EDF4ED; color: var(--deep); font-weight: 700; }
+.mini-feed { display: flex; gap: 12px; align-items: center; font-size: 11px; }
+.mini-icon { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 12px; background: #F9EDDB; color: #8C591A; flex-shrink: 0; font-size: 16px; }
+.mini-feed p { font-size: 10px; margin-top: 3px; }
+.mini-line { height: 1px; background: var(--line); margin: 13px 0; }
+.mini-bottom { font-size: 9px; display: flex; justify-content: space-between; color: var(--muted); }
+
+.blocks { position: absolute; right: -32px; bottom: 0; width: 180px; height: 170px; pointer-events: none; }
+.blocks canvas { width: 100%; height: 100%; }
+.block-fallback { display: flex; align-items: center; justify-content: center; height: 100%; gap: 5px; transform: rotate(-10deg); }
+.block-fallback span { display: grid; place-items: center; width: 55px; height: 55px; background: var(--coral); color: #502D22; border-radius: 10px; box-shadow: 7px 8px 0 #B85B44; font-family: Outfit; font-size: 28px; font-weight: 700; }
+.block-fallback span:nth-child(2) { background: #E8C36F; box-shadow: 7px 8px 0 #BB9445; transform: translateY(-24px); }
+
+.campus-strip { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 28px 0 15px; margin-top: 38px; border-top: 1px solid var(--line); }
+.campus-strip > p { font-size: 12px; font-weight: 500; }
+.campus-switch { display: flex; gap: 7px; flex-wrap: wrap; }
+.campus-switch button { background: none; border: 1px solid var(--line); padding: 10px 16px; border-radius: 50px; font-size: 11px; color: var(--muted); display: flex; align-items: center; gap: 9px; }
+.campus-switch button[aria-pressed="true"] { background: #EDF2E9; color: var(--deep); border-color: #C4D4C4; font-weight: 700; }
+.campus-switch .dot { width: 5px; height: 5px; }
+
+.section { padding: 85px 0; }
+.section-head { display: flex; justify-content: space-between; gap: 35px; align-items: flex-end; margin-bottom: 34px; }
+.section-head > p { max-width: 380px; font-size: 13px; line-height: 1.8; }
+
+.demo-section { background: var(--sand); border-radius: 42px 42px 0 0; padding-top: 65px; }
+.demo-label { display: flex; align-items: center; gap: 10px; font-size: 11px; margin-bottom: 15px; }
+.demo-shell { display: grid; grid-template-columns: 215px 1fr; background: #FFF; border: 1px solid #D9DDD2; border-radius: 22px; overflow: hidden; box-shadow: var(--shadow); min-height: 580px; }
+.sidebar { padding: 26px 18px; background: #F8F9F4; border-right: 1px solid #E5E8DF; display: flex; flex-direction: column; gap: 7px; }
+.side-brand { display: flex; align-items: center; gap: 9px; padding: 0 8px 22px; font-family: Outfit; font-size: 18px; color: var(--deep); font-weight: 600; }
+.side-logo { display: grid; place-items: center; width: 30px; height: 30px; background: #E2ECDC; border-radius: 9px; font-size: 18px; font-weight: 700; }
+.side-tab { width: 100%; border: 0; background: transparent; display: flex; gap: 10px; align-items: center; text-align: left; padding: 12px; border-radius: 8px; font-size: 11px; color: var(--muted); }
+.side-tab[aria-selected="true"] { background: #E6EEDF; color: var(--deep); font-weight: 800; }
+.side-tab svg { width: 17px; height: 17px; stroke: currentColor; fill: none; stroke-width: 1.6; }
+.side-note { margin-top: auto; padding: 18px 8px 0; font-size: 10px; color: var(--muted); border-top: 1px solid #E5E8DF; }
+.side-note strong { display: block; font-size: 11px; color: var(--ink); margin-bottom: 4px; }
+
+.workspace { padding: 28px 32px; min-width: 0; }
+.workspace-top { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding-bottom: 22px; border-bottom: 1px solid #EEE; }
+.workspace-top small { font-size: 10px; color: var(--muted); font-weight: 700; letter-spacing: 0.5px; }
+.workspace-top h3 { font-size: 25px; margin-top: 4px; }
+.avatar { display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: #F4E7D7; font-size: 12px; font-weight: 700; color: #8C591A; }
+.panel { padding-top: 22px; }
+.panel[hidden] { display: none; }
+
+.overview { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; }
+.child-card { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; background: #F9F8F3; padding: 12px 16px; border-radius: 14px; border: 1px solid #ECEEE6; }
+.child-avatar { width: 42px; height: 42px; border-radius: 12px; background: #E9E0F4; display: grid; place-items: center; font-family: Outfit; font-size: 20px; color: #674D7C; font-weight: 700; }
+.child-card strong { font-size: 13px; display: block; }
+.child-card p { font-size: 10px; }
+.status { margin-left: auto; color: var(--deep); background: #EDF4E8; border-radius: 30px; padding: 4px 10px; font-size: 9px; font-weight: 700; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; margin-bottom: 24px; }
+.stat { border: 1px solid #E7E7DE; border-radius: 12px; padding: 12px 10px; background: white; }
+.stat svg { width: 19px; height: 19px; display: block; margin-bottom: 9px; stroke: var(--green); fill: none; stroke-width: 1.5; }
+.stat b { display: block; font-size: 11px; }
+.stat small { font-size: 9px; color: var(--muted); }
+.subhead { font-size: 13px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.timeline { border-left: 1px solid #E0E5D9; margin-left: 5px; padding-left: 19px; }
+.event { position: relative; margin-bottom: 19px; }
+.event:before { content: ""; position: absolute; left: -24px; top: 5px; width: 8px; height: 8px; border-radius: 50%; background: #A4BB92; border: 2px solid white; }
+.event time { font-size: 9px; color: var(--muted); font-weight: 600; }
+.event strong { display: block; font-size: 11px; margin: 3px 0; }
+.event p { font-size: 10px; }
+
+.activity-visual { position: relative; border-radius: 14px; overflow: hidden; height: 225px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+.activity-visual img { height: 100%; object-fit: cover; }
+.activity-visual > div { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; padding: 18px; background: linear-gradient(180deg, transparent 20%, rgba(0, 0, 0, 0.78) 100%); color: white; }
+.activity-visual strong { font-family: Outfit; font-size: 23px; font-weight: 500; color: white; line-height: 1.15; }
+.activity-visual p { color: rgba(255, 255, 255, 0.9); font-size: 10px; margin-top: 6px; font-weight: 500; }
+.tiny-note { font-size: 9px; color: var(--muted); margin-top: 8px; line-height: 1.4; }
+.progress-note { padding: 16px; border-radius: 12px; background: #F6F2E8; margin-top: 16px; border: 1px solid #EADBCE; }
+.progress-note strong { font-size: 11px; display: block; }
+.progress-note p { font-size: 10px; margin-top: 7px; }
+.text-button { border: 0; background: none; padding: 0; color: var(--deep); font-size: 11px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+
+.panel-title { font-size: 21px; margin-bottom: 8px; }
+.panel-intro { font-size: 11px; margin-bottom: 20px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+label { display: block; font-size: 11px; font-weight: 700; margin-bottom: 6px; }
+input, select, textarea { width: 100%; padding: 11px 12px; background: #FFF; border: 1px solid #CFD7CC; border-radius: 8px; color: var(--ink); font-size: 12px; }
+textarea { min-height: 82px; resize: vertical; }
+
+.room-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; }
+.room-option { border: 1px solid var(--line); border-radius: 12px; padding: 14px; background: white; text-align: left; display: flex; gap: 12px; align-items: center; cursor: pointer; }
+.room-option[aria-pressed="true"] { background: #EFF5EB; border-color: var(--green); }
+.room-option svg { width: 37px; height: 37px; flex-shrink: 0; }
+.room-option strong { display: block; font-size: 11px; }
+.room-option small { font-size: 9px; color: var(--muted); }
+.notice { background: #F8F3E6; border: 1px solid #E8DDC4; padding: 12px 14px; border-radius: 8px; font-size: 10px; color: #655332; margin: 16px 0; }
+
+.calendar { border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-top: 18px; background: white; }
+.calendar-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.calendar-head strong { font-size: 12px; }
+.calendar-head button { background: #F3F5EE; border: 0; border-radius: 6px; width: 31px; height: 31px; }
+.days, .dates { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; text-align: center; }
+.days span { font-size: 9px; color: var(--muted); padding-bottom: 8px; font-weight: 700; }
+.dates button { border: 0; background: #F6F7F1; border-radius: 7px; min-height: 34px; font-size: 10px; color: var(--ink); }
+.dates button.selected { background: var(--green); color: white; font-weight: 700; }
+.dates button:disabled { background: transparent; opacity: 0.3; }
+
+.time-slots { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0; }
+.time-slots button { border: 1px solid var(--line); border-radius: 6px; padding: 8px 13px; background: white; font-size: 10px; }
+.time-slots button[aria-pressed="true"] { background: var(--deep); color: white; border-color: var(--deep); font-weight: 700; }
+
+.result { border-radius: 10px; padding: 15px; background: #EDF4E8; color: var(--deep); font-size: 12px; margin-top: 16px; border: 1px solid #C4D4C4; }
+.result:empty { display: none; }
+
+.chat-log { height: 260px; overflow-y: auto; background: #F7F8F3; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 12px; border: 1px solid var(--line); }
+.bubble { font-size: 11px; max-width: 88%; padding: 12px 15px; background: white; border: 1px solid #E3E7DC; border-radius: 12px 12px 12px 3px; line-height: 1.5; }
+.bubble.user { align-self: flex-end; background: #E7EFDF; border-color: #D5E3CA; border-radius: 12px 12px 3px 12px; color: var(--deep); font-weight: 500; }
+.quick-questions { display: flex; flex-wrap: wrap; gap: 7px; margin: 13px 0; }
+.quick-questions button { font-size: 10px; padding: 7px 11px; border: 1px solid var(--line); border-radius: 30px; background: white; color: var(--deep); font-weight: 600; }
+.chat-form { display: flex; gap: 9px; }
+.chat-form input { flex: 1; min-width: 0; }
+
+.staff-row { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #ECEEE6; }
+.staff-row > div { flex: 1; }
+.staff-row strong { font-size: 12px; }
+.staff-row small { display: block; font-size: 10px; color: var(--muted); }
+.toggle { border: 1px solid #D4DDCF; background: #F4F6EF; border-radius: 30px; padding: 8px 12px; font-size: 10px; color: var(--muted); min-width: 96px; font-weight: 600; }
+.toggle[aria-pressed="true"] { background: var(--green); color: white; border-color: var(--green); font-weight: 700; }
+.staff-tools { margin-top: 23px; }
+.staff-tools form { display: grid; gap: 12px; }
+
+.demo-bottom { display: flex; justify-content: space-between; gap: 25px; margin-top: 21px; font-size: 10px; color: var(--muted); }
+.demo-bottom span { display: flex; align-items: center; gap: 7px; }
+
+.how { display: grid; grid-template-columns: repeat(3, 1fr); gap: 45px; margin-top: 50px; }
+.how-item { display: flex; gap: 15px; }
+.step { width: 29px; height: 29px; border-radius: 50%; background: #E2E7D7; color: var(--deep); font-size: 11px; display: grid; place-items: center; flex-shrink: 0; font-weight: 700; }
+.how h4 { font-size: 18px; margin: 3px 0 9px; }
+.how p { font-size: 11px; line-height: 1.7; }
+
+/* Nursery settings layout */
+.campuses { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.campus-card { background: white; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
+.campus-photo { height: 190px; position: relative; overflow: hidden; }
+.campus-photo img { height: 100%; object-fit: cover; }
+.campus-photo-tag { position: absolute; bottom: 12px; left: 12px; background: rgba(0,0,0,0.65); color: white; padding: 4px 10px; border-radius: 20px; font-size: 9px; font-weight: 600; backdrop-filter: blur(4px); }
+.campus-art { height: 110px; background: #E8EDDF; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--line); }
+.campus-art svg { width: 100%; height: 100%; }
+.campus-card:nth-child(2) .campus-art { background: #F4E6D9; }
+.campus-content { padding: 28px; }
+.campus-content .eyebrow { font-size: 9px; margin-bottom: 12px; }
+.campus-content h3 { font-size: 29px; margin-bottom: 10px; }
+.campus-content p { font-size: 12px; line-height: 1.7; }
+.room-tags { display: flex; gap: 7px; flex-wrap: wrap; margin: 18px 0; }
+.room-tags span { padding: 5px 9px; border: 1px solid var(--line); border-radius: 6px; font-size: 9px; color: var(--muted); background: #F9F8F4; font-weight: 600; }
+.campus-contact { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 11px; }
+.campus-contact a { font-weight: 700; text-decoration: none; color: var(--deep); }
+
+/* Experience Cards Showcase */
+.experience-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.exp-card { background: white; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
+.exp-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+.exp-img { height: 210px; position: relative; }
+.exp-img img { height: 100%; object-fit: cover; }
+.exp-badge { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.92); color: var(--deep); padding: 4px 10px; border-radius: 30px; font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; border: 1px solid rgba(0,0,0,0.05); }
+.exp-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
+.exp-body h3 { font-size: 20px; margin-bottom: 8px; }
+.exp-body p { font-size: 12px; line-height: 1.6; margin-bottom: 16px; }
+
+.learning { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 75px; }
+.learning-art { position: relative; padding-right: 45px; padding-bottom: 45px; }
+.learning-art > img { height: 395px; border-radius: 24px 80px 24px 24px; box-shadow: var(--shadow); }
+.story-inset { position: absolute; right: 0; bottom: 0; width: 185px; background: #FFF; padding: 10px; border-radius: 18px; box-shadow: var(--shadow); transform: rotate(4deg); border: 1px solid var(--line); }
+.story-inset img { height: 130px; border-radius: 12px; }
+.story-inset p { font-size: 9px; padding: 7px 2px 2px; color: var(--muted); font-weight: 500; }
+.learning-copy > p { margin: 22px 0; font-size: 13px; line-height: 1.8; }
+.learning-list { padding: 0; list-style: none; margin: 20px 0; }
+.learning-list li { border-bottom: 1px solid var(--line); padding: 14px 0; font-size: 12px; display: flex; justify-content: space-between; gap: 15px; font-weight: 600; }
+.learning-list span { color: var(--green); }
+
+.faq-layout { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 80px; }
+.faq-layout > div > p { margin-top: 18px; font-size: 12px; max-width: 290px; line-height: 1.7; }
+details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; gap: 20px; font-size: 14px; font-weight: 700; color: var(--ink); }
+summary::-webkit-details-marker { display: none; }
+summary:after { content: "+"; font-size: 20px; color: var(--green); font-weight: 400; line-height: 1; }
+details[open] summary:after { content: "−"; }
+details p { font-size: 12px; margin-top: 13px; max-width: 530px; line-height: 1.8; }
+
+.closing { background: #E7EDDF; border-radius: 28px; padding: 44px 50px; display: flex; justify-content: space-between; align-items: center; gap: 30px; margin-bottom: 70px; border: 1px solid #D4E0CA; }
+.closing h2 { font-size: 38px; }
+.closing p { font-size: 12px; margin-top: 13px; max-width: 420px; }
+.closing .actions { flex-shrink: 0; }
+
+.footer { padding: 40px 0 24px; border-top: 1px solid var(--line); background: white; }
+.footer-top { display: flex; justify-content: space-between; gap: 35px; margin-bottom: 35px; }
+.footer-top p { font-size: 11px; max-width: 370px; line-height: 1.7; }
+.footer-links { display: flex; gap: 20px; font-size: 11px; font-weight: 600; }
+.footer-small { border-top: 1px solid var(--line); padding-top: 20px; font-size: 9px; color: var(--muted); display: flex; justify-content: space-between; gap: 24px; line-height: 1.6; }
+.credits { max-width: 720px; }
+.credits a { text-underline-offset: 2px; color: var(--ink); }
+
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translate(-50%, 20px); background: var(--deep); color: white; border-radius: 12px; padding: 13px 20px; font-size: 12px; z-index: 100; opacity: 0; pointer-events: none; transition: 0.25s; max-width: 90%; box-shadow: var(--shadow); font-weight: 500; }
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+dialog { border: 1px solid var(--line); border-radius: 20px; padding: 28px; max-width: 460px; width: 90%; color: var(--ink); background: var(--paper); box-shadow: var(--shadow); }
+dialog::backdrop { background: rgba(21, 39, 30, 0.55); backdrop-filter: blur(4px); }
+dialog h3 { margin-bottom: 15px; }
+dialog p { font-size: 12px; margin-bottom: 15px; line-height: 1.7; }
+.dialog-close { float: right; border: 0; background: var(--sand); border-radius: 50%; width: 30px; height: 30px; font-size: 16px; font-weight: bold; color: var(--ink); cursor: pointer; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+@media(min-width: 1500px) { .hero { padding-top: 80px; padding-bottom: 55px; } }
+@media(max-width: 1050px) {
+  .links { gap: 16px; }
+  .hero-grid { gap: 35px; }
+  .hero-photo { height: 430px; }
+  .day-card { left: -5px; width: 280px; }
+  .blocks { right: -20px; }
+  .demo-shell { grid-template-columns: 180px 1fr; }
+  .workspace { padding: 24px; }
+  .overview { gap: 15px; }
+  .learning { gap: 40px; }
+  .faq-layout { gap: 45px; }
+  .closing { padding: 35px; }
+  .experience-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width: 760px) {
+  .wrap { width: 90%; }
+  .concept { font-size: 9px; padding: 8px 15px; }
+  .nav { height: 74px; }
+  .brand strong { font-size: 18px; }
+  .brand-mark { width: 38px; height: 38px; font-size: 18px; }
+  .brand small { font-size: 7px; }
+  .menu { display: block; }
+  .links { display: none; position: absolute; left: 0; right: 0; top: 74px; padding: 22px 5%; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 20px; box-shadow: var(--shadow); }
+  .links.open { display: flex; }
+  .hero { padding-top: 38px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  h1 { font-size: 50px; letter-spacing: -2px; max-width: 480px; }
+  .hero-copy > p { font-size: 13px; margin: 20px 0; max-width: 480px; }
+  .hero-visual { margin-top: 5px; padding-left: 20px; padding-bottom: 50px; }
+  .hero-photo { height: 360px; border-top-left-radius: 85px; }
+  .day-card { left: 0; width: 270px; }
+  .blocks { right: -5px; bottom: -5px; width: 145px; height: 145px; }
+  .campus-strip { margin-top: 24px; flex-direction: column; align-items: start; gap: 13px; }
+  .section { padding: 57px 0; }
+  .section-head { display: block; }
+  .section-head > p { margin-top: 17px; max-width: 480px; }
+  .demo-section { border-radius: 27px 27px 0 0; padding-top: 45px; }
+  .demo-shell { display: block; border-radius: 16px; }
+  .sidebar { padding: 12px; flex-direction: row; overflow-x: auto; border-right: 0; border-bottom: 1px solid var(--line); gap: 5px; }
+  .side-brand, .side-note { display: none; }
+  .side-tab { width: auto; white-space: nowrap; padding: 11px 12px; font-size: 10px; }
+  .side-tab svg { width: 15px; }
+  .workspace { padding: 21px 17px; }
+  .workspace-top { padding-bottom: 17px; }
+  .workspace-top h3 { font-size: 22px; }
+  .overview { grid-template-columns: 1fr; }
+  .activity-visual { height: 180px; }
+  .progress-note { margin: 0; padding: 13px; }
+  .activity-visual strong { font-size: 21px; }
+  .tiny-note { font-size: 8px; }
+  .demo-bottom { flex-direction: column; gap: 8px; }
+  .how { gap: 24px; grid-template-columns: 1fr; margin-top: 32px; }
+  .how-item p { max-width: 420px; }
+  .campuses { grid-template-columns: 1fr; }
+  .experience-grid { grid-template-columns: 1fr; }
+  .campus-content { padding: 24px; }
+  .learning { grid-template-columns: 1fr; gap: 35px; }
+  .learning-art { max-width: 540px; }
+  .learning-art > img { height: 320px; }
+  .faq-layout { grid-template-columns: 1fr; gap: 20px; }
+  .closing { flex-direction: column; align-items: start; padding: 30px; margin-bottom: 45px; }
+  .closing h2 { font-size: 32px; }
+  .footer-top, .footer-small { flex-direction: column; gap: 20px; }
+  .footer-links { flex-wrap: wrap; }
+  .form-grid { gap: 11px; }
+  .room-option { padding: 11px; gap: 8px; }
+  .room-option svg { width: 28px; }
+  .chat-log { height: 290px; }
+  .hero-note { font-size: 9px; }
+}
+@media(max-width: 390px) {
+  h1 { font-size: 42px; }
+  .hero-photo { height: 310px; }
+  .blocks { width: 110px; height: 120px; right: -15px; }
+  .day-card { width: 248px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .campus-switch button { padding: 9px 12px; font-size: 10px; }
+  .btn { padding: 13px 16px; }
+}
+@media(prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *:before, *:after { animation: none !important; transition: none !important; }
+  .day-card { transform: none; }
+  .story-inset { transform: none; }
+  .exp-card:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="concept">Independent website concept by LeadSky for Chaston Nursery. Not their official website.</div>
+
+<header class="header">
+<div class="wrap nav">
+<a href="#home" class="brand" aria-label="Chaston Nursery concept home">
+  <span class="brand-mark" aria-hidden="true">C</span>
+  <span>
+    <strong>Chaston Nursery</strong>
+    <small>&amp; Pre-Preparatory School</small>
+  </span>
+</a>
+<button class="menu" id="menu" aria-expanded="false" aria-controls="navlinks" aria-label="Toggle navigation">☰</button>
+<nav class="links" id="navlinks" aria-label="Main navigation">
+  <a href="#product">Explore the portal</a>
+  <a href="#nurseries">Our nurseries</a>
+  <a href="#experiences">Everyday experiences</a>
+  <a href="#questions">Questions</a>
+  <a class="btn small" href="#product" data-open="booking">Try tour booking <span class="arrow">↗</span></a>
+</nav>
+</div>
+</header>
+
+<main>
+<section class="hero" id="home">
+<div class="wrap">
+<div class="hero-grid">
+<div class="hero-copy">
+<div class="eyebrow"><span class="dot"></span> Two London nurseries. One connected day.</div>
+<h1>Little moments.<br>Big discoveries.<br><em>Closer together.</em></h1>
+<p>A new way to stay connected with Chaston Nursery. Explore a parent portal concept for daily updates, nursery sessions and visits to Chalk Farm or West Hampstead.</p>
+<div class="actions">
+  <a href="#product" class="btn" data-open="parent">Step inside the demo <span class="arrow">↗</span></a>
+  <a href="#product" class="btn light" data-open="booking">Try booking a tour</a>
+</div>
+<div class="hero-note"><span class="dot"></span> Care &amp; education from 3 months to 5 years · London</div>
+</div>
+<div class="hero-visual" id="heroScene">
+<img class="hero-photo" src="img/stock-1.jpg" alt="Illustrative photograph of a young child exploring a picture book" width="630" height="650" fetchpriority="high">
+<span class="photo-caption">A glimpse of childhood · illustrative photo</span>
+<div class="day-card">
+<div class="mini-top"><strong>A little window into their day</strong><span class="sample">Sample</span></div>
+<div class="mini-tabs" role="tablist" aria-label="Portal preview">
+<button role="tab" aria-selected="true" aria-controls="miniContent" id="miniDay">Daily moments</button>
+<button role="tab" aria-selected="false" aria-controls="miniContent" id="miniRooms">Room availability</button>
+</div>
+<div id="miniContent" role="tabpanel" aria-labelledby="miniDay">
+<div class="mini-feed"><span class="mini-icon">☀</span><div><strong>A morning full of discoveries</strong><p>Story time, painting &amp; outdoor play</p></div></div>
+</div>
+<div class="mini-line"></div>
+<div class="mini-bottom"><span id="previewCampus">Chalk Farm · Butterfly Room</span><span>Demo preview ↗</span></div>
+</div>
+<div class="blocks" id="blocks" role="img" aria-label="Three colourful dimensional learning blocks"><div class="block-fallback"><span>A</span><span>B</span><span>C</span></div></div>
+</div>
+</div>
+<div class="campus-strip">
+  <p>A familiar place. A more connected experience.</p>
+  <div class="campus-switch" aria-label="Choose nursery">
+    <button data-campus="Chalk Farm" aria-pressed="true"><span class="dot"></span> Chalk Farm, Kentish Town</button>
+    <button data-campus="West Hampstead" aria-pressed="false"><span class="dot"></span> West Hampstead</button>
   </div>
+</div>
+</div>
+</section>
 
-  <!-- Sticky Header: ONE row, exactly max 64px tall -->
-  <header class="sticky top-0 bg-bg/95 backdrop-blur-md z-40 border-b border-brand/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 min-w-0">
-      <!-- Brand Logo / Name: single line truncation, min-w-0 allows flex child shrinking -->
-      <a href="#" class="font-heading text-sm sm:text-base md:text-lg font-bold tracking-tight text-brand truncate min-w-0 shrink leading-none" id="nav-brand-name">
-        Aura & Wood Atelier
-      </a>
-
-      <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-muted shrink-0">
-        <a href="#about" class="hover:text-brand transition-colors">Atelier</a>
-        <a href="#items" class="hover:text-brand transition-colors">Collections</a>
-        <a href="#gallery" class="hover:text-brand transition-colors">Gallery</a>
-        <a href="#assistant" class="hover:text-brand transition-colors">AI Assistant</a>
-        <a href="#faq" class="hover:text-brand transition-colors">FAQ</a>
-      </nav>
-
-      <!-- Right Action & Mobile Menu Toggle -->
-      <div class="flex items-center space-x-2 shrink-0">
-        <a href="#assistant" id="nav-cta" class="inline-flex items-center justify-center px-2.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider bg-brand text-bg rounded hover:bg-brand/90 transition-all whitespace-nowrap shrink-0 max-h-[36px]">
-          Consult AI
-        </a>
-        <button id="menu-toggle" type="button" aria-label="Open menu" class="md:hidden p-2 text-brand hover:text-accent focus:outline-none flex items-center justify-center min-h-[44px] min-w-[44px] shrink-0 relative z-50">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Mobile Full-Screen Menu Drawer -->
-  <div id="mobile-menu" class="fixed inset-0 bg-bg z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-6 md:hidden overflow-y-auto">
-    <div class="flex items-center justify-between border-b border-brand/10 pb-4">
-      <span class="font-heading text-lg font-bold text-brand truncate pr-2" id="mobile-menu-title">Aura & Wood Atelier</span>
-      <button id="menu-close" type="button" aria-label="Close menu" class="p-2 text-brand hover:text-accent min-h-[44px] min-w-[44px] flex items-center justify-center shrink-0">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-    <nav class="flex flex-col space-y-6 text-center my-auto py-8">
-      <a href="#about" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">Atelier</a>
-      <a href="#items" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">Collections</a>
-      <a href="#gallery" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">Gallery</a>
-      <a href="#assistant" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">AI Assistant</a>
-      <a href="#faq" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">FAQ</a>
-    </nav>
-    <div class="text-center pb-4">
-      <a href="#assistant" id="mobile-cta" class="mobile-link inline-flex items-center justify-center w-full py-3.5 bg-brand text-bg text-sm font-semibold uppercase tracking-wider rounded text-center min-h-[44px]">
-        Consult AI Assistant
-      </a>
-    </div>
+<section class="section demo-section" id="product">
+<div class="wrap">
+<div class="section-head">
+  <div>
+    <div class="eyebrow">Made for the moments in between</div>
+    <h2>Their day, a little<br>closer to yours.</h2>
   </div>
+  <p>Try the parent and staff experience below. Everything is a local simulation: no accounts, real child records, messages or payments.</p>
+</div>
+<div class="demo-label"><span class="sample">Interactive product concept</span><span>Click around. Make it your own.</span></div>
+<div class="demo-shell">
+<aside class="sidebar" role="tablist" aria-label="Demo features">
+<div class="side-brand"><span class="side-logo">c.</span> chaston connect</div>
+<button class="side-tab" role="tab" id="tab-parent" aria-selected="true" aria-controls="panel-parent" data-panel="parent"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10H3Z"/><path d="M9 20v-7h6v7"/></svg>My child's day</button>
+<button class="side-tab" role="tab" id="tab-sessions" aria-selected="false" aria-controls="panel-sessions" data-panel="sessions"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M7 2v6m10-6v6M3 11h18m-12 4h3"/></svg>Sessions &amp; places</button>
+<button class="side-tab" role="tab" id="tab-booking" aria-selected="false" aria-controls="panel-booking" data-panel="booking"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 21V7l8-4 8 4v14M2 21h20M9 21v-7h6v7M7 9h2m6 0h2"/></svg>Book a nursery tour</button>
+<button class="side-tab" role="tab" id="tab-assistant" aria-selected="false" aria-controls="panel-assistant" data-panel="assistant"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11a8 8 0 0 1-8 8H7l-5 3 2-6a8 8 0 1 1 17-5Z"/><path d="M7 10h10M7 14h6"/></svg>Ask Chaston</button>
+<button class="side-tab" role="tab" id="tab-staff" aria-selected="false" aria-controls="panel-staff" data-panel="staff"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="7" r="3"/><path d="M3 21v-4a6 6 0 0 1 12 0v4m2-17a3 3 0 0 1 0 6m1 4a5 5 0 0 1 3 5v2"/></svg>Staff workspace</button>
+<div class="side-note"><strong>A safe space to explore.</strong> All names, records, dates and availability inside this demo are fictional sample data.</div>
+</aside>
+<div class="workspace">
+<div class="workspace-top">
+  <div><small id="workspaceCampus">CHALK FARM · DEMO WORKSPACE</small><h3 id="workspaceHeading">A happy little day.</h3></div>
+  <span class="avatar" title="Sample parent account" aria-label="Sample parent account">JD</span>
+</div>
 
-  <!-- Hero Section -->
-  <section class="relative min-h-[75vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden py-12 lg:py-20">
-    <div id="canvas-container" class="absolute inset-0 z-0 pointer-events-none opacity-30 sm:opacity-75 max-w-[70vw] sm:max-w-none mx-auto"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-      <div class="max-w-3xl">
-        <span id="hero-eyebrow" class="inline-block text-xs uppercase tracking-widest text-accent font-semibold mb-4 bg-surface/90 px-3 py-1 rounded border border-accent/20">
-          Master Joinery & Bespoke Design
-        </span>
-        <h1 id="hero-title" class="font-heading text-[clamp(30px,8vw,56px)] font-normal leading-tight text-brand mb-6">
-          Spaces shaped by grain, time, and touch.
-        </h1>
-        <p id="hero-subtitle" class="text-base sm:text-lg text-muted mb-8 leading-relaxed max-w-2xl">
-          We design and craft extraordinary kitchens, library walls, and architectural joinery for private residences across the United Kingdom.
-        </p>
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
-          <a href="#assistant" id="hero-cta-primary" class="inline-flex items-center justify-center px-6 py-3.5 bg-brand text-bg text-[15px] font-semibold uppercase tracking-wider rounded hover:bg-brand/90 transition-all shadow-sm min-h-[48px]">
-            Consult an Artisan
-          </a>
-          <a href="#items" id="hero-cta-secondary" class="inline-flex items-center justify-center px-6 py-3.5 bg-surface text-brand border border-brand/20 text-[15px] font-semibold uppercase tracking-wider rounded hover:bg-surface/80 transition-all min-h-[48px]">
-            Explore Portfolio
-          </a>
-        </div>
-      </div>
+<div class="panel" id="panel-parent" role="tabpanel" aria-labelledby="tab-parent">
+<div class="child-card"><span class="child-avatar" aria-hidden="true">J</span><div><strong>Jamie · sample child</strong><p id="childRoom">Butterfly Room · Chalk Farm</p></div><span class="status" id="parentAttendance">Checked in · sample</span></div>
+<div class="overview">
+<div>
+<div class="stats">
+<div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v7m-3-7v5a3 3 0 0 0 6 0V3M7 11v10M17 3c-4 5-4 9 0 9V3Zm0 9v9"/></svg><b>Lunch enjoyed</b><small>Sample meal log</small></div>
+<div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 15A9 9 0 0 1 9 3a9 9 0 1 0 11 12Z"/></svg><b>Rested well</b><small>12:30–13:15 · sample</small></div>
+<div class="stat"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12 2 2M4 20l2-2M18 6l2-2"/></svg><b>Feeling curious</b><small>Sample daily note</small></div>
+</div>
+<div class="subhead">Today's little moments <span class="sample">Sample day</span></div>
+<div class="timeline" id="timeline">
+<div class="event"><time>14:00</time><strong>Colours, textures &amp; tiny masterpieces</strong><p>Explored mixing colours and making marks.</p></div>
+<div class="event"><time>11:15</time><strong>A story shared together</strong><p>Chose a picture book for a quiet reading moment.</p></div>
+<div class="event"><time>09:00</time><strong>Ready for a new day</strong><p>Settled in and explored the play area.</p></div>
+</div>
+</div>
+<div class="overview-side">
+  <div>
+    <div class="activity-visual">
+      <img src="img/stock-5.jpg" alt="Illustrative art materials and colourful painting tools" width="400" height="350" loading="lazy">
+      <div><strong>Small hands.<br>Bright ideas.</strong><p>Creative exploration · sample activity</p></div>
     </div>
-  </section>
+    <p class="tiny-note">Illustrative stock image, not a nursery photograph.</p>
+  </div>
+  <div class="progress-note">
+    <strong>A growing confidence</strong>
+    <p>Sample progress note: Jamie chose new colours independently and shared materials during a creative activity.</p>
+    <button class="text-button" id="progressDetails" style="margin-top:12px">Read the sample learning note ↗</button>
+  </div>
+</div>
+</div>
+</div>
 
-  <!-- Stats Section -->
-  <section id="stats-section" class="border-y border-brand/10 bg-surface/50 py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div id="stats-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-      </div>
+<div class="panel" id="panel-sessions" role="tabpanel" aria-labelledby="tab-sessions" hidden>
+<h4 class="panel-title">Find a little room to grow.</h4><p class="panel-intro">Explore fictional room availability and a booking flow. Actual places, age suitability, sessions and fees must be confirmed by the nursery.</p>
+<div class="form-grid"><div><label for="sessionCampus">Nursery</label><select id="sessionCampus"><option>Chalk Farm</option><option>West Hampstead</option></select></div><div><label for="sessionDate">Preferred weekday</label><input type="date" id="sessionDate" required></div></div>
+<div class="room-grid" id="roomGrid"></div>
+<div class="notice">Sample availability only. “Available” does not indicate a real nursery place. No nursery fees have been supplied.</div>
+<form id="sessionForm"><div class="form-grid"><div><label for="childName">Sample child's first name</label><input id="childName" required maxlength="40" placeholder="Use a fictional name" autocomplete="off"></div><div><label for="sessionType">Demo session preference</label><select id="sessionType"><option>Full day — illustrative option</option><option>Morning — illustrative option</option><option>Afternoon — illustrative option</option></select></div></div><button class="btn small" style="margin-top:15px" type="submit">Preview booking &amp; payment <span class="arrow">→</span></button></form>
+<div id="sessionResult" class="result" role="status"></div>
+</div>
+
+<div class="panel" id="panel-booking" role="tabpanel" aria-labelledby="tab-booking" hidden>
+<h4 class="panel-title">Come and picture their day.</h4><p class="panel-intro">Try a nursery visit booking. All dates and times are sample slots, not live availability.</p>
+<div class="form-grid"><div><label for="tourCampus">Choose a nursery</label><select id="tourCampus"><option>Chalk Farm</option><option>West Hampstead</option></select></div><div><label for="tourRoom">Room to ask about</label><select id="tourRoom"></select></div></div>
+<div class="calendar"><div class="calendar-head"><button id="prevMonth" aria-label="Previous month" type="button">←</button><strong id="monthLabel"></strong><button id="nextMonth" aria-label="Next month" type="button">→</button></div><div class="days" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="dates" id="calendarDates" aria-label="Choose a sample visit date"></div></div>
+<div class="time-slots" aria-label="Sample visit times"><button aria-pressed="false" data-time="09:30" type="button">09:30</button><button aria-pressed="false" data-time="11:00" type="button">11:00</button><button aria-pressed="false" data-time="14:30" type="button">14:30</button></div>
+<form id="tourForm"><div class="form-grid"><div><label for="parentName">Your demo name</label><input id="parentName" required maxlength="60" placeholder="Use a fictional name" autocomplete="off"></div><div><label for="parentEmail">Demo email</label><input type="email" id="parentEmail" required placeholder="parent@example.com" autocomplete="off"></div></div><p class="tiny-note">Please use fictional details. Nothing is transmitted or stored after you leave.</p><button type="submit" class="btn small" style="margin-top:15px">Preview visit request <span class="arrow">→</span></button></form>
+<div id="tourResult" class="result" role="status"></div>
+</div>
+
+<div class="panel" id="panel-assistant" role="tabpanel" aria-labelledby="tab-assistant" hidden>
+<h4 class="panel-title">A little help, when you need it.</h4><p class="panel-intro">A scripted assistant demo, not a live AI or staff member. It cannot access records or contact the nursery.</p>
+<div class="chat-log" id="chatLog" role="log" aria-live="polite" aria-label="Demo assistant conversation"><div class="bubble">Hello! I can explain the two nursery locations, age range and contact details, or help you explore this concept. What would you like to know?</div></div>
+<div class="quick-questions"><button data-question="How do admissions work?">Admissions</button><button data-question="What are the fees?">Fees</button><button data-question="What are the opening hours?">Opening hours</button><button data-question="I have an urgent concern">Urgent concern</button></div>
+<form class="chat-form" id="chatForm"><label for="chatInput" class="sr-only">Ask the demo assistant a question</label><input id="chatInput" required maxlength="400" placeholder="Ask a question…"><button class="btn small" type="submit" aria-label="Send to scripted demo assistant">Send ↗</button></form>
+<p class="tiny-note">Do not enter personal, medical or safeguarding information.</p>
+</div>
+
+<div class="panel" id="panel-staff" role="tabpanel" aria-labelledby="tab-staff" hidden>
+<h4 class="panel-title">More time for little people.</h4><p class="panel-intro">Try a sample attendance register and add a fictional learning update. Changes appear in the parent view during this visit.</p>
+<div class="subhead"><span id="staffRoom">Butterfly Room · sample register</span><span class="sample">Sample records</span></div>
+<div id="staffRegister"></div>
+<div class="staff-tools"><form id="updateForm"><div class="form-grid"><div><label for="updateType">Update type</label><select id="updateType"><option>Learning moment</option><option>Meal update</option><option>Rest update</option><option>Curriculum plan</option></select></div><div><label for="updateChild">Sample child</label><select id="updateChild"><option>Jamie</option></select></div></div><div><label for="staffNote">Sample update</label><textarea id="staffNote" required maxlength="350" placeholder="Write a fictional activity or learning note…"></textarea></div><button type="submit" class="btn small">Add to sample parent feed <span class="arrow">↗</span></button></form><div id="staffResult" class="result" role="status"></div></div>
+</div>
+</div>
+</div>
+<div class="demo-bottom"><span><span class="dot"></span> No real child information. No live availability. No charges.</span><span>Proposed integrations: secure accounts, nursery records, payments &amp; reminders.</span></div>
+<div class="how">
+<div class="how-item"><span class="step">01</span><div><h4>One place to arrange it.</h4><p>Explore a nursery, choose a room and preview a visit request without switching between calls and emails.</p></div></div>
+<div class="how-item"><span class="step">02</span><div><h4>A window into their day.</h4><p>Bring learning notes, meals and rest updates together in a clear parent view.</p></div></div>
+<div class="how-item"><span class="step">03</span><div><h4>Less chasing. More caring.</h4><p>A shared workspace could help staff organise attendance, plan activities and keep parents informed.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="nurseries">
+<div class="wrap">
+<div class="section-head">
+  <div>
+    <div class="eyebrow">Rooted in your neighbourhood</div>
+    <h2>Two settings.<br>One Chaston family.</h2>
+  </div>
+  <p>Care and education for children aged 3 months to five years, with nursery settings in Chalk Farm and West Hampstead.</p>
+</div>
+<div class="campuses">
+
+<article class="campus-card">
+<div class="campus-photo">
+  <img src="img/stock-7.jpg" alt="Illustrative photograph of a child on a swing in a green outdoor garden" width="600" height="300" loading="lazy">
+  <span class="campus-photo-tag">Outdoor &amp; Active Play Preview · Illustrative</span>
+</div>
+<div class="campus-art" aria-label="Decorative illustration of a leafy London nursery building" role="img">
+  <svg viewBox="0 0 560 180" aria-hidden="true"><circle cx="460" cy="43" r="27" fill="#e8c677"/><path d="M0 155Q130 120 250 156T560 145V180H0" fill="#cbd9bd"/><path d="M140 150V65h180v85" fill="#fbf7e9"/><path d="m126 66 106-43 106 43" fill="#71936a"/><path d="M160 85h32v32h-32zm55 0h32v32h-32zm55 0h32v32h-32z" fill="#b8d4ce"/><path d="M215 150v-23h32v23" fill="#e39b77"/><path d="M382 150V76M96 154v-39" stroke="#6d8056" stroke-width="7"/><circle cx="382" cy="68" r="36" fill="#a4bc8b"/><circle cx="95" cy="97" r="25" fill="#8eaa7a"/><path d="M350 151h112M30 154h70" stroke="#789367" stroke-width="3"/><path d="M178 85v32m-18-16h32m39-16v32m-16-16h32m39-16v32m-16-16h32" stroke="#fdfaf0" stroke-width="3"/></svg>
+</div>
+<div class="campus-content">
+  <div class="eyebrow">Kentish Town · London</div>
+  <h3>Chalk Farm</h3>
+  <p>Chaston Place, off Grafton Terrace<br>Kentish Town, NW5 4JH</p>
+  <div class="room-tags"><span>Butterfly Room</span><span>Ladybird Room</span><span>Busy Bees Room</span><span>Fireflies Room</span><span>Outdoor space</span></div>
+  <p>Mon–Fri, 8:00 am–6:00 pm<br>Saturday &amp; Sunday closed</p>
+  <div class="campus-contact">
+    <a href="tel:+442074820701">0207 482 0701 ↗</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=Chaston+Place+Grafton+Terrace+London+NW5+4JH" target="_blank" rel="noopener">View map ↗</a>
+    <a href="#product" data-open="booking" data-location="Chalk Farm">Try a visit request ↗</a>
+  </div>
+</div>
+</article>
+
+<article class="campus-card">
+<div class="campus-photo">
+  <img src="img/stock-8.jpg" alt="Illustrative photograph of children playing in a sunny outdoor playground area" width="600" height="300" loading="lazy">
+  <span class="campus-photo-tag">Garden &amp; Play Area Preview · Illustrative</span>
+</div>
+<div class="campus-art" aria-label="Decorative illustration of a London townhouse nursery" role="img">
+  <svg viewBox="0 0 560 180" aria-hidden="true"><circle cx="105" cy="43" r="26" fill="#f0c879"/><path d="M0 157Q180 129 310 154T560 152V180H0" fill="#e3cbb7"/><path d="M181 153V44h91v109m7 0V44h91v109" fill="#fdf7e9"/><path d="M173 42h107v13H173m98-13h107v13H271" fill="#bd8d72"/><path d="M196 65h23v27h-23zm37 0h23v27h-23zm61 0h23v27h-23zm37 0h23v27h-23zM196 105h23v27h-23zm135 0h23v27h-23z" fill="#a9c5bc"/><path d="M234 153v-43h22v43m38 0v-43h22v43" fill="#789b80"/><path d="M215 42V26h12v16m104 0V26h12v16" fill="#bd8d72"/><path d="M427 153V89" stroke="#918063" stroke-width="6"/><circle cx="427" cy="75" r="32" fill="#a7b58b"/><path d="M120 154h315" stroke="#b49b82" stroke-width="3"/></svg>
+</div>
+<div class="campus-content">
+  <div class="eyebrow">West Hampstead · London</div>
+  <h3>West Hampstead</h3>
+  <p>30/31 Palmerston Road<br>London, NW6 2JL</p>
+  <div class="room-tags"><span>Panda Room</span><span>Teddies Room</span><span>Main Room</span><span>Outdoor area</span></div>
+  <p>Contact this setting directly to confirm its<br>current session times and opening hours.</p>
+  <div class="campus-contact">
+    <a href="tel:+442073722120">0207 372 2120 ↗</a>
+    <a href="https://www.google.com/maps/search/?api=1&amp;query=30+31+Palmerston+Road+London+NW6+2JL" target="_blank" rel="noopener">View map ↗</a>
+    <a href="#product" data-open="booking" data-location="West Hampstead">Try a visit request ↗</a>
+  </div>
+</div>
+</article>
+
+</div>
+<p class="tiny-note" style="margin-top:15px">Building illustrations and stock photographs are illustrative preview assets and do not depict the actual nursery premises or enrolled children.</p>
+</div>
+</section>
+
+<section class="section" id="experiences" style="background:#F4F1E8">
+<div class="wrap">
+<div class="section-head">
+  <div>
+    <div class="eyebrow">Curriculum &amp; Daily Life</div>
+    <h2>Everyday experiences<br>designed for growth.</h2>
+  </div>
+  <p>From storytelling to creative arts and quiet rest times, explore how a digital daily log keeps families connected to key EYFS milestones.</p>
+</div>
+<div class="experience-grid">
+  
+  <article class="exp-card">
+    <div class="exp-img">
+      <img src="img/stock-4.jpg" alt="Illustrative photograph of a child quietly reading under a blanket" width="400" height="250" loading="lazy">
+      <span class="exp-badge">Storytelling &amp; Literacy</span>
     </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-3 block">The Atelier Philosophy</span>
-          <h2 id="about-title" class="font-heading text-[clamp(24px,6vw,40px)] text-brand mb-6 leading-snug">
-            Uncompromising timber selection meets precision architectural detail.
-          </h2>
-          <p id="about-text" class="text-muted text-base leading-relaxed mb-8">
-            Every board of European oak, American walnut, and London plane is hand-selected in our Clerkenwell studio for grain harmony and structural integrity.
-          </p>
-          <div id="points-container" class="space-y-4">
-          </div>
-        </div>
-        <div class="relative">
-          <div class="aspect-[4/5] rounded overflow-hidden shadow-xl bg-surface">
-            <img id="about-image" src="img/about.jpg" alt="Atelier Craftsmanship" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.classList.add('img-fallback'); this.style.display='none';">
-          </div>
-        </div>
-      </div>
+    <div class="exp-body">
+      <h3>Cozy Corner Reading</h3>
+      <p>Building early vocabulary, imagination, and quiet concentration through shared storybooks and picture exploration.</p>
+      <span class="tiny-note">Illustrative stock photograph</span>
     </div>
-  </section>
+  </article>
 
-  <!-- AI Assistant Showcase -->
-  <section id="assistant" class="py-16 bg-surface border-y border-brand/10">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Interactive Studio Assistant</span>
-        <h2 id="ai-heading" class="font-heading text-[clamp(24px,6vw,40px)] text-brand mb-3">Meet Our AI Atelier Assistant</h2>
-        <p id="ai-subheading" class="text-muted text-sm sm:text-base">Ask questions instantly about timber specifications, lead times, or scheduling studio appointments.</p>
-      </div>
-
-      <div class="bg-bg rounded shadow-lg border border-brand/10 overflow-hidden flex flex-col h-[520px]">
-        <div class="bg-brand text-bg px-5 py-4 flex items-center justify-between">
-          <div class="flex items-center space-x-3">
-            <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-            <div>
-              <h3 id="assistant-name-display" class="font-heading text-lg font-medium text-bg">Atelier AI</h3>
-              <p class="text-[11px] text-bg/70">Online &bull; Instant Support</p>
-            </div>
-          </div>
-          <span class="text-[10px] uppercase tracking-wider bg-accent/30 px-2.5 py-1 rounded text-bg font-medium">Studio Demo</span>
-        </div>
-
-        <div id="chat-messages" class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4 bg-bg/50">
-        </div>
-
-        <div id="typing-indicator" class="px-6 py-2 hidden">
-          <div class="flex items-center space-x-2 text-muted text-xs italic">
-            <span>Atelier AI is checking studio records...</span>
-          </div>
-        </div>
-
-        <div id="quick-questions-container" class="px-4 py-3 bg-surface border-t border-brand/10 flex flex-wrap gap-2">
-        </div>
-
-        <form id="chat-form" class="p-3 sm:p-4 bg-surface border-t border-brand/10 flex items-center space-x-2">
-          <input type="text" id="chat-input" placeholder="Ask about timber, lead times, or visits..." class="flex-1 bg-bg border border-brand/20 rounded px-4 py-2.5 text-sm text-ink focus:outline-none focus:border-accent min-h-[44px]">
-          <button type="submit" aria-label="Send message" class="bg-brand text-bg px-5 py-2.5 rounded text-xs font-semibold uppercase tracking-wider hover:bg-brand/90 transition-all flex items-center justify-center min-h-[44px] min-w-[44px]">
-            Send
-          </button>
-        </form>
-      </div>
+  <article class="exp-card">
+    <div class="exp-img">
+      <img src="img/stock-6.jpg" alt="Illustrative photograph of bright watercolor paints and creative art tools" width="400" height="250" loading="lazy">
+      <span class="exp-badge">Creative Arts &amp; Expression</span>
     </div>
-  </section>
-
-  <!-- Items / Collections Section -->
-  <section id="items" class="py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Bespoke Portfolio</span>
-          <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">Handcrafted Commissions</h2>
-        </div>
-      </div>
-      <div id="items-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      </div>
+    <div class="exp-body">
+      <h3>Color &amp; Fine Motor Play</h3>
+      <p>Hands-on painting, color mixing, and sensory exploration that foster fine motor control and self-expression.</p>
+      <span class="tiny-note">Illustrative stock photograph</span>
     </div>
-  </section>
+  </article>
 
-  <!-- Steps Section -->
-  <section id="steps" class="py-16 bg-surface border-t border-brand/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Commission Journey</span>
-        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">From Timber to Installation</h2>
-      </div>
-      <div id="steps-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      </div>
+  <article class="exp-card">
+    <div class="exp-img">
+      <img src="img/stock-10.jpg" alt="Illustrative portrait of a happy smiling toddler" width="400" height="250" loading="lazy">
+      <span class="exp-badge">Emotional Well-being</span>
     </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section id="gallery" class="py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Visual Archive</span>
-        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">Selected Details & Finishes</h2>
-      </div>
-      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      </div>
+    <div class="exp-body">
+      <h3>Nurturing Rest &amp; Care</h3>
+      <p>Creating safe, peaceful spaces for afternoon naps, quiet reflection, and gentle emotional support throughout the day.</p>
+      <span class="tiny-note">Illustrative stock photograph</span>
     </div>
-  </section>
+  </article>
 
-  <!-- Videos Section -->
-  <section id="videos-section" class="py-16 bg-brand text-bg">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Atelier Film</span>
-        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-bg">Joinery Craftsmanship</h2>
-      </div>
-      <div id="videos-container" class="grid grid-cols-1 gap-6">
-      </div>
-    </div>
-  </section>
+</div>
+</div>
+</section>
 
-  <!-- FAQ Section -->
-  <section id="faq" class="py-16 lg:py-24">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Questions</span>
-        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">Frequently Asked Questions</h2>
-      </div>
-      <div id="faq-container" class="space-y-4">
-      </div>
-    </div>
-  </section>
+<section class="section" style="background:#FAF8F4">
+<div class="wrap learning">
+<div class="learning-art">
+  <img src="img/stock-2.jpg" alt="Illustrative photograph of children playing musical instruments" width="600" height="500" loading="lazy">
+  <div class="story-inset">
+    <img src="img/stock-3.jpg" alt="Illustrative still life of a teddy bear with a book" width="200" height="160" loading="lazy">
+    <p>Room for quiet discoveries, too.</p>
+  </div>
+</div>
+<div class="learning-copy">
+  <div class="eyebrow">Care, learning &amp; connection</div>
+  <h2>A whole world<br>in their little day.</h2>
+  <p>Chaston’s stated aim is to provide accessible, affordable childcare with close attention to quality care and learning. This concept puts everyday communication around that purpose.</p>
+  <ul class="learning-list">
+    <li>Learning moments, shared with context <span>↗</span></li>
+    <li>Meals and rest, easier to follow <span>↗</span></li>
+    <li>Visits and session enquiries, together <span>↗</span></li>
+  </ul>
+  <a href="#product" class="btn light small" data-open="staff" style="margin-top:16px">Explore the staff workspace <span class="arrow">→</span></a>
+  <p class="tiny-note">Illustrative stock photography. Not Chaston children, staff or premises.</p>
+</div>
+</div>
+</section>
 
-  <!-- Footer -->
-  <footer class="bg-brand text-bg py-12 border-t border-brand/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-        <div>
-          <h3 id="footer-brand-name" class="font-heading text-xl font-bold mb-3">Aura & Wood Atelier</h3>
-          <p id="footer-tagline" class="text-bg/70 text-xs leading-relaxed mb-4">Handcrafted Solid Wood Kitchens & Architectural Joinery</p>
-          <p id="footer-address" class="text-xs text-bg/60 mb-1"></p>
-          <p id="footer-hours" class="text-xs text-bg/60"></p>
-        </div>
-        <div>
-          <h4 class="font-heading text-base font-medium mb-3 text-accent">Direct Contact</h4>
-          <p class="text-xs text-bg/80 mb-1" id="footer-phone"></p>
-          <p class="text-xs text-bg/80 mb-4" id="footer-email"></p>
-          <div class="flex space-x-3">
-            <a id="footer-instagram" href="#" target="_blank" rel="noopener" class="text-xs uppercase tracking-wider bg-bg/10 px-3 py-2 rounded hover:bg-bg/20 transition-all min-h-[44px] flex items-center">Instagram</a>
-            <a id="footer-whatsapp" href="#" target="_blank" rel="noopener" class="text-xs uppercase tracking-wider bg-emerald-600 text-white px-3 py-2 rounded hover:bg-emerald-500 transition-all min-h-[44px] flex items-center">WhatsApp</a>
-          </div>
-        </div>
-        <div>
-          <h4 class="font-heading text-base font-medium mb-3 text-accent">Concept Credits</h4>
-          <div id="credits-container" class="text-xs text-bg/60 space-y-1 mb-4">
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-bg/10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-bg/50">
-        <p id="copyright-text">&copy; 2026 Aura & Wood Atelier.</p>
-        <p class="mt-2 sm:mt-0">Concept by LeadSky</p>
-      </div>
-    </div>
-  </footer>
+<section class="section" id="questions">
+<div class="wrap faq-layout">
+<div>
+  <div class="eyebrow">A few helpful answers</div>
+  <h2>Little questions.<br>Clear answers.</h2>
+  <p>For actual admissions, fees and care arrangements, please contact Chaston Nursery directly.</p>
+  <a href="mailto:info@chastonnursery.co.uk" class="text-button" style="display:inline-block;margin-top:18px">info@chastonnursery.co.uk ↗</a>
+</div>
+<div>
+<details open><summary>Is this the official Chaston Nursery website?</summary><p>No. This is an independent, private product concept by LeadSky. It demonstrates possible digital services and is not endorsed by Chaston Nursery. Visit <a href="https://www.chastonnursery.co.uk/" target="_blank" rel="noopener">the official website</a> for nursery information.</p></details>
+<details><summary>What ages does Chaston Nursery care for?</summary><p>The supplied nursery information states that Chaston provides care and education for children aged 3 months to five years. Contact the relevant setting about suitable rooms and available places.</p></details>
+<details><summary>Can I book a real place or pay here?</summary><p>No. All availability and booking actions are demonstrations. No booking is made and no payment is taken. Actual fees, sessions and places must be confirmed directly with the nursery.</p></details>
+<details><summary>Are the daily reports real?</summary><p>No. Every child name, activity, attendance record and learning note in the portal is fictional sample data. A real service would require secure authentication, appropriate permissions and a connected nursery management system.</p></details>
+<details><summary>How would reminders and payments work?</summary><p>A production platform would need approved payment and messaging providers. This concept only previews those steps. It does not send emails, SMS messages or reminders, and it never asks for card details.</p></details>
+</div>
+</div>
+</section>
 
-  <!-- Floating WhatsApp Button -->
-  <a id="whatsapp-float" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-600 text-white p-3.5 rounded-full shadow-xl hover:bg-emerald-500 transition-all flex items-center justify-center min-h-[44px] min-w-[44px]">
-    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-    </svg>
+<div class="wrap">
+<section class="closing">
+  <div>
+    <div class="eyebrow" style="margin-bottom:13px">A more connected nursery day</div>
+    <h2>See what a little<br>connection can do.</h2>
+    <p>Explore a visit, follow a sample day or try the staff view.</p>
+  </div>
+  <div class="actions">
+    <a href="#product" class="btn" data-open="booking">Try a nursery visit <span class="arrow">↗</span></a>
+    <a href="#product" class="btn light" data-open="assistant">Ask a question</a>
+  </div>
+</section>
+</div>
+</main>
+
+<footer class="footer">
+<div class="wrap">
+<div class="footer-top">
+  <a href="#home" class="brand" aria-label="Chaston Nursery concept home">
+    <span class="brand-mark" aria-hidden="true">C</span>
+    <span>
+      <strong>Chaston Nursery</strong>
+      <small>&amp; Pre-Preparatory School</small>
+    </span>
   </a>
+  <p>An independent product demonstration for the Chalk Farm and West Hampstead settings. No affiliation or endorsement is implied.</p>
+  <div class="footer-links">
+    <a href="https://www.chastonnursery.co.uk/" target="_blank" rel="noopener">Official website ↗</a>
+    <a href="mailto:info@chastonnursery.co.uk">Email the nursery ↗</a>
+  </div>
+</div>
+<div class="footer-small">
+<div class="credits">
+  Illustrative photography from Pixabay: 
+  <a href="https://pixabay.com/photos/baby-read-play-reading-playing-5953965/" target="_blank" rel="noopener">katerinakucherenko</a>, 
+  <a href="https://pixabay.com/photos/music-kids-children-play-xylophone-818459/" target="_blank" rel="noopener">thedanw</a>, 
+  <a href="https://pixabay.com/photos/still-life-teddy-white-read-a-book-1037378/" target="_blank" rel="noopener">Oldiefan</a>, 
+  <a href="https://pixabay.com/photos/reading-bed-flashlight-book-read-5069826/" target="_blank" rel="noopener">BrickBard</a>, 
+  <a href="https://pixabay.com/photos/painting-pencils-paint-pens-911804/" target="_blank" rel="noopener">bodobe</a>, 
+  <a href="https://pixabay.com/photos/to-dye-watercolor-colour-5821297/" target="_blank" rel="noopener">webandi</a>, 
+  <a href="https://pixabay.com/photos/girl-swing-rocking-autumn-fall-996635/" target="_blank" rel="noopener">ClickerHappy</a>, 
+  <a href="https://pixabay.com/photos/girl-playground-korean-child-play-5159270/" target="_blank" rel="noopener">kamiel79</a>, 
+  <a href="https://pixabay.com/photos/bed-baby-newborn-child-blanket-1839564/" target="_blank" rel="noopener">Pexels</a>, and 
+  <a href="https://pixabay.com/photos/baby-portrait-motherhood-smile-4116187/" target="_blank" rel="noopener">kbt1016</a>. 
+  Used under the Pixabay Content License. Private concept only.
+</div>
+<span>Concept by LeadSky</span>
+</div>
+</div>
+</footer>
 
-  <!-- Script setup -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const dataEl = document.getElementById('site-data');
-      if (!dataEl) return;
-      let site;
-      try {
-        site = JSON.parse(dataEl.textContent);
-      } catch (e) {
-        console.error('Failed to parse site-data JSON', e);
-        return;
-      }
+<dialog id="learningDialog">
+  <button class="dialog-close" aria-label="Close learning note" id="closeLearning">×</button>
+  <span class="sample">Fictional sample record</span>
+  <h3 style="margin-top:16px">Making their own discoveries.</h3>
+  <p>Jamie explored colour mixing, selected materials and practised sharing space during a creative activity.</p>
+  <p><strong>Possible next step:</strong> offer different tools for mark-making and invite Jamie to describe the colours they choose.</p>
+  <p>This is a demonstration of a learning note, not an assessment of a real child.</p>
+</dialog>
 
-      // 1. CSS Variables & Dynamic Fonts
-      if (site.colors) {
-        const r = document.documentElement;
-        if (site.colors.bg) r.style.setProperty('--bg', site.colors.bg);
-        if (site.colors.surface) r.style.setProperty('--surface', site.colors.surface);
-        if (site.colors.text) r.style.setProperty('--text', site.colors.text);
-        if (site.colors.muted) r.style.setProperty('--muted', site.colors.muted);
-        if (site.colors.brand) r.style.setProperty('--brand', site.colors.brand);
-        if (site.colors.accent) r.style.setProperty('--accent', site.colors.accent);
-      }
+<dialog id="paymentDialog">
+  <button class="dialog-close" aria-label="Close payment preview" id="closePayment">×</button>
+  <span class="sample">Payment preview</span>
+  <h3 style="margin-top:16px">One clear next step.</h3>
+  <p id="paymentSummary"></p>
+  <div class="notice">Actual fees are unknown. No price is quoted and no card details are collected.</div>
+  <p>A real platform would show a nursery-approved fee and use a secure payment provider.</p>
+  <button class="btn small" id="simulatePayment">Finish demo checkout →</button>
+  <div class="result" id="paymentResult" role="status"></div>
+</dialog>
 
-      if (site.fonts && site.fonts.heading && site.fonts.body) {
-        const fontHead = encodeURIComponent(site.fonts.heading);
-        const fontBody = encodeURIComponent(site.fonts.body);
-        const fontLink = document.createElement('link');
-        fontLink.rel = 'stylesheet';
-        fontLink.href = `https://fonts.googleapis.com/css2?family=${fontHead}:wght@400;500;600;700&family=${fontBody}:wght@400;500;600&display=swap`;
-        document.head.appendChild(fontLink);
-        
-        const style = document.createElement('style');
-        style.textContent = `
-          body { font-family: '${site.fonts.body}', sans-serif; }
-          h1, h2, h3, h4, .font-heading { font-family: '${site.fonts.heading}', serif; }
-        `;
-        document.head.appendChild(style);
-      }
+<div class="toast" id="toast" role="status"></div>
 
-      if (site.brand && site.brand.name) {
-        document.title = site.brand.name;
-      }
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-      // 2. Banner
-      if (site.banner) {
-        const bannerEl = document.getElementById('banner-text');
-        if (bannerEl) bannerEl.textContent = site.banner;
-      }
+<script>
+(function(){
+"use strict";
 
-      // 3. Header & Footer Brand details
-      if (site.brand) {
-        const navName = document.getElementById('nav-brand-name');
-        if (navName) navName.textContent = site.brand.name;
-        const mobTitle = document.getElementById('mobile-menu-title');
-        if (mobTitle) mobTitle.textContent = site.brand.name;
+const $=id=>document.getElementById(id);
+const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+const rooms={"Chalk Farm":["Butterfly Room","Ladybird Room","Busy Bees Room","Fireflies Room"],"West Hampstead":["Panda Room","Teddies Room","Main Room"]};
+let campus="Chalk Farm",selectedRoom=rooms[campus][0],activePanel="parent",chosenDate="",chosenTime="",monthOffset=0;
 
-        const footName = document.getElementById('footer-brand-name');
-        if (footName) footName.textContent = site.brand.name;
-        const footTagline = document.getElementById('footer-tagline');
-        if (footTagline) footTagline.textContent = site.brand.tagline || '';
-        const footAddress = document.getElementById('footer-address');
-        if (footAddress) footAddress.textContent = site.brand.address || '';
-        const footHours = document.getElementById('footer-hours');
-        if (footHours) footHours.textContent = site.brand.hours || '';
-        const footPhone = document.getElementById('footer-phone');
-        if (footPhone) footPhone.textContent = 'Phone: ' + (site.brand.phone || '');
-        const footEmail = document.getElementById('footer-email');
-        if (footEmail) footEmail.textContent = 'Email: ' + (site.brand.email || '');
+const today=new Date();today.setHours(0,0,0,0);
+const baseMonth=new Date(today.getFullYear(),today.getMonth(),1);
+const titles={parent:"A happy little day.",sessions:"A place for new beginnings.",booking:"Let’s take a little look.",assistant:"Here to help you explore.",staff:"The day, working together."};
+const attendance={Jamie:true,Alex:false,Robin:true};
 
-        if (site.brand.instagram) {
-          const ig = document.getElementById('footer-instagram');
-          if (ig) ig.href = site.brand.instagram;
-        } else {
-          const ig = document.getElementById('footer-instagram');
-          if (ig) ig.style.display = 'none';
-        }
+let toastTimer;
+function toast(text){$("toast").textContent=text;$("toast").classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("toast").classList.remove("show"),3500)}
 
-        if (site.brand.whatsapp) {
-          const waFloat = document.getElementById('whatsapp-float');
-          if (waFloat) waFloat.href = `https://wa.me/${site.brand.whatsapp}?text=Hello%20${encodeURIComponent(site.brand.name)},%20I%20would%20like%20to%20enquire.`;
-          const footWa = document.getElementById('footer-whatsapp');
-          if (footWa) footWa.href = `https://wa.me/${site.brand.whatsapp}`;
-        } else {
-          const waFloat = document.getElementById('whatsapp-float');
-          if (waFloat) waFloat.style.display = 'none';
-          const footWa = document.getElementById('footer-whatsapp');
-          if (footWa) footWa.style.display = 'none';
-        }
-      }
+$("menu").addEventListener("click",()=>{
+  let open=$("menu").getAttribute("aria-expanded")!=="true";
+  $("menu").setAttribute("aria-expanded",open);
+  $("navlinks").classList.toggle("open",open)
+});
+document.querySelectorAll("#navlinks a").forEach(a=>a.addEventListener("click",()=>{
+  $("navlinks").classList.remove("open");
+  $("menu").setAttribute("aria-expanded","false")
+}));
 
-      // 4. Hero Content
-      if (site.hero) {
-        if (site.hero.eyebrow) document.getElementById('hero-eyebrow').textContent = site.hero.eyebrow;
-        if (site.hero.title) document.getElementById('hero-title').textContent = site.hero.title;
-        if (site.hero.subtitle) document.getElementById('hero-subtitle').textContent = site.hero.subtitle;
-        if (site.hero.cta_primary) document.getElementById('hero-cta-primary').textContent = site.hero.cta_primary;
-        if (site.hero.cta_secondary) document.getElementById('hero-cta-secondary').textContent = site.hero.cta_secondary;
-      }
+function showPanel(name,focus=false){
+  if(!titles[name])return;
+  activePanel=name;
+  document.querySelectorAll(".side-tab").forEach(b=>{
+    const selected=b.dataset.panel===name;
+    b.setAttribute("aria-selected",selected);
+    b.tabIndex=selected?0:-1;
+  });
+  document.querySelectorAll(".panel").forEach(p=>p.hidden=p.id!=="panel-"+name);
+  $("workspaceHeading").textContent=titles[name];
+  if(focus)$("tab-"+name).focus();
+}
 
-      // 5. Stats
-      const statsGrid = document.getElementById('stats-grid');
-      if (statsGrid && site.stats && site.stats.length > 0) {
-        statsGrid.innerHTML = site.stats.map(s => `
-          <div class="p-4">
-            <div class="font-heading text-3xl sm:text-4xl font-bold text-brand mb-1">${s.value}</div>
-            <div class="text-xs uppercase tracking-widest text-muted font-medium">${s.label}</div>
-          </div>
-        `).join('');
-      } else if (statsGrid) {
-        const stSec = document.getElementById('stats-section');
-        if (stSec) stSec.style.display = 'none';
-      }
+document.querySelectorAll("[data-panel]").forEach(b=>b.addEventListener("click",()=>showPanel(b.dataset.panel)));
 
-      // 6. About & Points
-      if (site.about) {
-        if (site.about.title) document.getElementById('about-title').textContent = site.about.title;
-        if (site.about.text) document.getElementById('about-text').textContent = site.about.text;
-        const imgEl = document.getElementById('about-image');
-        if (imgEl && site.about.image) imgEl.src = site.about.image;
-      }
+const tabs=[...document.querySelectorAll(".side-tab")];
+tabs.forEach((b,i)=>b.addEventListener("keydown",e=>{
+  let n;
+  if(e.key==="ArrowRight"||e.key==="ArrowDown")n=(i+1)%tabs.length;
+  if(e.key==="ArrowLeft"||e.key==="ArrowUp")n=(i+tabs.length-1)%tabs.length;
+  if(e.key==="Home")n=0;
+  if(e.key==="End")n=tabs.length-1;
+  if(n!==undefined){
+    e.preventDefault();
+    showPanel(tabs[n].dataset.panel,true);
+  }
+}));
 
-      const pointsContainer = document.getElementById('points-container');
-      if (pointsContainer && site.points && site.points.length > 0) {
-        pointsContainer.innerHTML = site.points.map(p => `
-          <div class="flex items-start space-x-3">
-            <div class="w-4 h-4 rounded-full bg-accent/20 flex items-center justify-center text-accent mt-1 shrink-0 text-xs">✓</div>
-            <div>
-              <h4 class="font-heading text-base font-medium text-brand">${p.title}</h4>
-              <p class="text-xs sm:text-sm text-muted">${p.text}</p>
-            </div>
-          </div>
-        `).join('');
-      }
+document.querySelectorAll("[data-open]").forEach(a=>a.addEventListener("click",()=>{
+  if(a.dataset.location)setCampus(a.dataset.location);
+  showPanel(a.dataset.open);
+}));
 
-      // 7. Items
-      const itemsGrid = document.getElementById('items-grid');
-      if (itemsGrid && site.items && site.items.length > 0) {
-        const sym = site.brand.currency_symbol || '£';
-        itemsGrid.innerHTML = site.items.map(item => {
-          let priceDisplay = '';
-          if (item.price > 0) {
-            priceDisplay = sym + item.price.toLocaleString();
-          } else if (item.price_label) {
-            priceDisplay = item.price_label;
-          }
-          return `
-            <div class="bg-surface rounded overflow-hidden border border-brand/10 flex flex-col justify-between">
-              <div>
-                <div class="aspect-[16/10] overflow-hidden bg-brand/5 relative">
-                  <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.onerror=null; this.parentElement.classList.add('img-fallback'); this.style.display='none';">
-                  ${item.category ? `<span class="absolute top-3 left-3 bg-bg/90 text-brand text-[10px] uppercase tracking-wider px-2 py-0.5 rounded font-medium">${item.category}</span>` : ''}
-                </div>
-                <div class="p-5">
-                  <div class="flex justify-between items-baseline mb-2 gap-2">
-                    <h3 class="font-heading text-xl font-medium text-brand">${item.name}</h3>
-                    <span class="text-xs font-semibold text-accent shrink-0">${priceDisplay}</span>
-                  </div>
-                  <p class="text-xs sm:text-sm text-muted leading-relaxed mb-4">${item.description}</p>
-                </div>
-              </div>
-              <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-brand/10 mt-2">
-                <span class="text-[11px] text-muted font-medium pt-3">Timeline: ${item.duration || 'Custom'}</span>
-                <a href="#assistant" class="text-xs uppercase tracking-wider font-semibold text-brand hover:text-accent pt-3 inline-flex items-center space-x-1">
-                  <span>Enquire</span>
-                </a>
-              </div>
-            </div>
-          `;
-        }).join('');
-      } else if (itemsGrid) {
-        const itSec = document.getElementById('items');
-        if (itSec) itSec.style.display = 'none';
-      }
+function roomIcon(index){
+  const colors=["#D8E6CB","#F1D7BF","#DED6ED","#D1E5E7"];
+  return '<svg viewBox="0 0 44 44" aria-hidden="true"><rect x="2" y="2" width="40" height="40" rx="12" fill="'+colors[index%4]+'"/><path d="M13 27V17l9-5 9 5v10l-9 5Z" fill="none" stroke="#41634b" stroke-width="1.5"/><path d="m13 17 9 5 9-5m-9 5v10" fill="none" stroke="#41634b" stroke-width="1.5"/></svg>';
+}
 
-      // 8. Steps
-      const stepsGrid = document.getElementById('steps-grid');
-      if (stepsGrid && site.steps && site.steps.length > 0) {
-        stepsGrid.innerHTML = site.steps.map((st, idx) => `
-          <div class="bg-bg p-5 rounded border border-brand/10">
-            <div class="font-heading text-2xl text-accent mb-2">0${idx + 1}</div>
-            <h3 class="font-heading text-lg font-medium text-brand mb-1">${st.title}</h3>
-            <p class="text-xs text-muted leading-relaxed">${st.text}</p>
-          </div>
-        `).join('');
-      } else if (stepsGrid) {
-        const stSec = document.getElementById('steps');
-        if (stSec) stSec.style.display = 'none';
-      }
-
-      // 9. Gallery
-      const galleryGrid = document.getElementById('gallery-grid');
-      if (galleryGrid && site.gallery && site.gallery.length > 0) {
-        galleryGrid.innerHTML = site.gallery.map(g => `
-          <div class="group relative overflow-hidden rounded bg-surface aspect-square">
-            <img src="${g.image}" alt="${g.caption || 'Gallery detail'}" class="w-full h-full object-cover" loading="lazy" onerror="this.onerror=null; this.parentElement.classList.add('img-fallback'); this.style.display='none';">
-            <div class="absolute inset-0 bg-brand/70 opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
-              <p class="text-[10px] text-bg uppercase tracking-widest font-semibold mb-1">Detail</p>
-              <p class="text-xs text-bg/90 font-heading italic">${g.caption || ''}</p>
-            </div>
-          </div>
-        `).join('');
-      } else if (galleryGrid) {
-        const gSec = document.getElementById('gallery');
-        if (gSec) gSec.style.display = 'none';
-      }
-
-      // 10. Videos
-      const videosContainer = document.getElementById('videos-container');
-      if (videosContainer && site.videos && site.videos.length > 0) {
-        videosContainer.innerHTML = site.videos.map(v => `
-          <div class="relative aspect-[16/9] rounded overflow-hidden shadow-lg bg-black">
-            <button class="tt-play absolute inset-0 w-full h-full group focus:outline-none" data-player="${v.player}">
-              <img src="${v.poster}" alt="Video poster" class="w-full h-full object-cover opacity-80" onerror="this.onerror=null; this.parentElement.classList.add('img-fallback');">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                  <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-              </div>
-            </button>
-          </div>
-          ${v.link ? `<div class="text-center mt-2"><a href="${v.link}" target="_blank" rel="noopener" class="text-xs text-bg/70 underline">Open video in new tab</a></div>` : ''}
-        `).join('');
-
-        document.querySelectorAll('.tt-play').forEach(btn => {
-          btn.addEventListener('click', function() {
-            const playerUrl = this.getAttribute('data-player');
-            const parent = this.parentElement;
-            parent.innerHTML = `<iframe src="${playerUrl}?autoplay=1" class="w-full h-full border-0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
-          });
-        });
-      } else if (videosContainer) {
-        const vSec = document.getElementById('videos-section');
-        if (vSec) vSec.style.display = 'none';
-      }
-
-      // 11. FAQ Accordions
-      const faqContainer = document.getElementById('faq-container');
-      if (faqContainer && site.faq && site.faq.length > 0) {
-        faqContainer.innerHTML = site.faq.map(f => `
-          <details class="bg-surface rounded border border-brand/10 overflow-hidden group">
-            <summary class="p-4 sm:p-5 font-heading text-lg text-brand cursor-pointer flex justify-between items-center select-none">
-              <span class="pr-2">${f.q}</span>
-              <span class="transform group-open:rotate-180 transition-transform text-accent shrink-0">↓</span>
-            </summary>
-            <div class="px-4 sm:px-5 pb-5 text-xs sm:text-sm text-muted leading-relaxed border-t border-brand/10 pt-3">
-              ${f.a}
-            </div>
-          </details>
-        `).join('');
-      } else if (faqContainer) {
-        const fSec = document.getElementById('faq');
-        if (fSec) fSec.style.display = 'none';
-      }
-
-      // 12. Credits
-      const creditsContainer = document.getElementById('credits-container');
-      if (creditsContainer && site.credits && site.credits.length > 0) {
-        creditsContainer.innerHTML = site.credits.map(c => `<div><a href="${c.url || '#'}" target="_blank" rel="noopener" class="hover:underline">${c.text}</a></div>`).join('');
-      }
-
-      // 13. Mobile Menu Toggle Logic
-      const menuToggle = document.getElementById('menu-toggle');
-      const menuClose = document.getElementById('menu-close');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          mobileMenu.classList.remove('translate-x-full');
-          document.body.style.overflow = 'hidden';
-        });
-      }
-
-      if (menuClose && mobileMenu) {
-        menuClose.addEventListener('click', (e) => {
-          e.preventDefault();
-          mobileMenu.classList.add('translate-x-full');
-          document.body.style.overflow = '';
-        });
-      }
-
-      document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-          if (mobileMenu) {
-            mobileMenu.classList.add('translate-x-full');
-            document.body.style.overflow = '';
-          }
-        });
-      });
-
-      // 14. Chat Assistant Logic
-      const demo = site.demo || {};
-      const assistantName = demo.assistant_name || 'Atelier AI';
-      const greeting = demo.greeting || 'Hello, how may I assist you today?';
-      const quickQuestions = demo.quick_questions || [];
-      const scriptPairs = demo.script || [];
-
-      const nameDisplay = document.getElementById('assistant-name-display');
-      if (nameDisplay) nameDisplay.textContent = assistantName;
-
-      const chatMessages = document.getElementById('chat-messages');
-      const quickQuestionsContainer = document.getElementById('quick-questions-container');
-      const chatForm = document.getElementById('chat-form');
-      const chatInput = document.getElementById('chat-input');
-      const typingIndicator = document.getElementById('typing-indicator');
-
-      function appendMessage(sender, text) {
-        const isBot = sender === 'bot';
-        const msgDiv = document.createElement('div');
-        msgDiv.className = `flex ${isBot ? 'justify-start' : 'justify-end'} mb-3`;
-        msgDiv.innerHTML = `
-          <div class="max-w-[85%] rounded px-4 py-3 text-xs sm:text-sm ${isBot ? 'bg-surface text-brand border border-brand/10' : 'bg-brand text-bg'}">
-            ${isBot ? `<p class="text-[10px] uppercase tracking-wider text-accent font-semibold mb-1">${assistantName}</p>` : ''}
-            <p class="leading-relaxed">${text}</p>
-          </div>
-        `;
-        chatMessages.appendChild(msgDiv);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
-
-      appendMessage('bot', greeting);
-
-      if (quickQuestionsContainer && quickQuestions.length > 0) {
-        quickQuestionsContainer.innerHTML = quickQuestions.map(q => `
-          <button type="button" class="quick-chip text-xs bg-bg hover:bg-brand hover:text-bg text-brand border border-brand/20 px-3 py-1.5 rounded transition-all min-h-[44px] flex items-center">
-            ${q}
-          </button>
-        `).join('');
-
-        document.querySelectorAll('.quick-chip').forEach(chip => {
-          chip.addEventListener('click', () => {
-            handleUserQuery(chip.textContent.trim());
-          });
-        });
-      }
-
-      function findAnswer(query) {
-        const qLower = query.toLowerCase();
-        for (let pair of scriptPairs) {
-          if (qLower.includes(pair.q.toLowerCase()) || pair.q.toLowerCase().includes(qLower)) {
-            return pair.a;
-          }
-        }
-        return "Thank you for your enquiry. Our master craftsmen will be delighted to cover this during your studio consultation.";
-      }
-
-      function handleUserQuery(query) {
-        appendMessage('user', query);
-        if (chatInput) chatInput.value = '';
-
-        if (typingIndicator) typingIndicator.classList.remove('hidden');
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-
-        setTimeout(() => {
-          if (typingIndicator) typingIndicator.classList.add('hidden');
-          appendMessage('bot', findAnswer(query));
-        }, 600);
-      }
-
-      if (chatForm) {
-        chatForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const val = chatInput.value.trim();
-          if (!val) return;
-          handleUserQuery(val);
-        });
-      }
-
-      // 15. Three.js Interactive Scene supporting all listed shapes
-      const container = document.getElementById('canvas-container');
-      if (container && typeof THREE !== 'undefined') {
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-        camera.position.z = 7;
-
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        container.appendChild(renderer.domElement);
-
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
-        scene.add(ambientLight);
-
-        const pointLight = new THREE.PointLight(0x9c7c58, 2, 50);
-        pointLight.position.set(5, 5, 5);
-        scene.add(pointLight);
-
-        const shapeType = (site.hero && site.hero.shape3d) ? site.hero.shape3d : 'gem';
-        let geometry;
-
-        if (shapeType === 'braid' || shapeType === 'flower') {
-          geometry = new THREE.TorusKnotGeometry(1.2, 0.35, 64, 16);
-        } else if (shapeType === 'cake') {
-          geometry = new THREE.CylinderGeometry(1.4, 1.4, 1.2, 32);
-        } else if (shapeType === 'bottle') {
-          geometry = new THREE.CylinderGeometry(0.6, 1.2, 2.4, 32);
-        } else if (shapeType === 'tooth' || shapeType === 'scales') {
-          geometry = new THREE.ConeGeometry(1.4, 2.4, 16);
-        } else if (shapeType === 'orb') {
-          geometry = new THREE.SphereGeometry(1.5, 32, 32);
-        } else if (shapeType === 'wave') {
-          geometry = new THREE.TorusGeometry(1.4, 0.4, 16, 50);
-        } else if (shapeType === 'car') {
-          geometry = new THREE.BoxGeometry(2.2, 1.0, 1.4);
-        } else {
-          geometry = new THREE.IcosahedronGeometry(1.5, 0);
-        }
-
-        const brandColorHex = (site.colors && site.colors.brand) ? site.colors.brand : '#42382c';
-        const material = new THREE.MeshPhysicalMaterial({
-          color: new THREE.Color(brandColorHex),
-          metalness: 0.2,
-          roughness: 0.4,
-          transparent: true,
-          opacity: 0.8
-        });
-
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
-
-        const wireMat = new THREE.MeshBasicMaterial({
-          color: new THREE.Color((site.colors && site.colors.accent) ? site.colors.accent : '#9c7c58'),
-          wireframe: true,
-          transparent: true,
-          opacity: 0.3
-        });
-        const wireMesh = new THREE.Mesh(geometry, wireMat);
-        wireMesh.scale.set(1.02, 1.02, 1.02);
-        scene.add(wireMesh);
-
-        let mouseX = 0, mouseY = 0;
-        let targetX = 0, targetY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-          mouseX = (e.clientX - window.innerWidth / 2) * 0.0008;
-          mouseY = (e.clientY - window.innerHeight / 2) * 0.0008;
-        });
-
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        function animate() {
-          requestAnimationFrame(animate);
-          if (!prefersReduced) {
-            targetX += (mouseX - targetX) * 0.05;
-            targetY += (mouseY - targetY) * 0.05;
-            mesh.rotation.x += 0.003 + targetY;
-            mesh.rotation.y += 0.005 + targetX;
-            wireMesh.rotation.x = mesh.rotation.x;
-            wireMesh.rotation.y = mesh.rotation.y;
-          }
-          renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-          if (!container) return;
-          camera.aspect = container.clientWidth / container.clientHeight;
-          camera.updateProjectionMatrix();
-          renderer.setSize(container.clientWidth, container.clientHeight);
-        });
-      }
+function renderRooms(){
+  const grid=$("roomGrid");
+  grid.replaceChildren();
+  rooms[campus].forEach((room,i)=>{
+    let b=document.createElement("button");
+    b.type="button";
+    b.className="room-option";
+    b.setAttribute("aria-pressed",room===selectedRoom);
+    b.innerHTML=roomIcon(i);
+    let text=document.createElement("span"),strong=document.createElement("strong"),small=document.createElement("small");
+    strong.textContent=room;
+    small.textContent=i%2===0?"Available · sample only":"Enquire · sample only";
+    text.append(strong,small);
+    b.append(text);
+    b.addEventListener("click",()=>{
+      selectedRoom=room;
+      renderRooms();
+      $("sessionResult").replaceChildren();
     });
-  </script>
+    grid.append(b);
+  });
+  $("tourRoom").replaceChildren();
+  rooms[campus].forEach(room=>{
+    let o=document.createElement("option");
+    o.textContent=room;
+    $("tourRoom").append(o);
+  });
+}
+
+function setCampus(value){
+  campus=value;
+  selectedRoom=rooms[campus][0];
+  document.querySelectorAll("[data-campus]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.campus===campus));
+  $("sessionCampus").value=campus;
+  $("tourCampus").value=campus;
+  $("workspaceCampus").textContent=campus.toUpperCase()+" · DEMO WORKSPACE";
+  $("childRoom").textContent=rooms[campus][0]+" · "+campus;
+  $("previewCampus").textContent=campus+" · "+rooms[campus][0];
+  $("staffRoom").textContent=rooms[campus][0]+" · sample register";
+  renderRooms();
+  $("sessionResult").replaceChildren();
+  $("tourResult").replaceChildren();
+}
+
+document.querySelectorAll("[data-campus]").forEach(b=>b.addEventListener("click",()=>setCampus(b.dataset.campus)));
+$("sessionCampus").addEventListener("change",e=>setCampus(e.target.value));
+$("tourCampus").addEventListener("change",e=>setCampus(e.target.value));
+
+function miniTab(isDay){
+  $("miniDay").setAttribute("aria-selected",isDay);
+  $("miniRooms").setAttribute("aria-selected",!isDay);
+  $("miniContent").setAttribute("aria-labelledby",isDay?"miniDay":"miniRooms");
+  $("miniContent").innerHTML=isDay?'<div class="mini-feed"><span class="mini-icon">☀</span><div><strong>A morning full of discoveries</strong><p>Story time, painting &amp; outdoor play</p></div></div>':'<div class="mini-feed"><span class="mini-icon">⌂</span><div><strong>Explore a place to grow</strong><p>Room availability is sample data only</p></div></div>';
+}
+$("miniDay").onclick=()=>miniTab(true);
+$("miniRooms").onclick=()=>miniTab(false);
+
+[$("miniDay"),$("miniRooms")].forEach(b=>b.addEventListener("keydown",e=>{
+  if(e.key==="ArrowLeft"||e.key==="ArrowRight"){
+    e.preventDefault();
+    const day=$("miniDay").getAttribute("aria-selected")!=="true";
+    miniTab(day);
+    (day?$("miniDay"):$("miniRooms")).focus();
+  }
+}));
+
+const localDate=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+$("sessionDate").min=localDate(today);
+let initial=new Date(today);
+initial.setDate(initial.getDate()+1);
+while(initial.getDay()===0||initial.getDay()===6)initial.setDate(initial.getDate()+1);
+$("sessionDate").value=localDate(initial);
+
+$("sessionDate").addEventListener("input",()=>{$("sessionDate").setCustomValidity("");$("sessionResult").replaceChildren()});
+
+$("sessionForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  const date=new Date($("sessionDate").value+"T12:00:00");
+  if(!Number.isFinite(date.getTime())||date<today||date.getDay()===0||date.getDay()===6){
+    $("sessionDate").setCustomValidity("Choose a future weekday for this sample.");
+    $("sessionDate").reportValidity();
+    return;
+  }
+  $("paymentSummary").textContent="Sample request for "+$("childName").value.trim()+" · "+selectedRoom+" · "+campus+" · "+date.toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"})+". Preference: "+$("sessionType").value+".";
+  $("paymentResult").replaceChildren();
+  $("simulatePayment").disabled=false;
+  $("paymentDialog").showModal();
+});
+
+$("simulatePayment").onclick=()=>{
+  $("paymentResult").textContent="This is a demo form, nothing was sent. No payment was taken and no place was reserved.";
+  $("sessionResult").textContent="This is a demo form, nothing was sent. Your sample checkout was explored; no booking or payment was made.";
+  $("simulatePayment").disabled=true;
+};
+$("closePayment").onclick=()=>$("paymentDialog").close();
+
+function renderCalendar(){
+  const month=new Date(baseMonth.getFullYear(),baseMonth.getMonth()+monthOffset,1);
+  $("monthLabel").textContent=month.toLocaleDateString("en-GB",{month:"long",year:"numeric"});
+  $("prevMonth").disabled=monthOffset===0;
+  $("calendarDates").replaceChildren();
+  const offset=(month.getDay()+6)%7;
+  for(let i=0;i<offset;i++)$("calendarDates").append(document.createElement("span"));
+  const count=new Date(month.getFullYear(),month.getMonth()+1,0).getDate();
+  for(let day=1;day<=count;day++){
+    let date=new Date(month.getFullYear(),month.getMonth(),day),key=localDate(date),b=document.createElement("button");
+    b.type="button";
+    b.textContent=day;
+    b.disabled=date<=today||date.getDay()===0||date.getDay()===6;
+    b.setAttribute("aria-label",date.toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long",year:"numeric"})+" — sample slot");
+    b.setAttribute("aria-pressed",key===chosenDate);
+    if(key===chosenDate)b.classList.add("selected");
+    b.onclick=()=>{chosenDate=key;renderCalendar();$("tourResult").replaceChildren()};
+    $("calendarDates").append(b);
+  }
+}
+$("prevMonth").onclick=()=>{if(monthOffset>0){monthOffset--;renderCalendar()}};
+$("nextMonth").onclick=()=>{monthOffset++;renderCalendar()};
+
+document.querySelectorAll("[data-time]").forEach(b=>b.onclick=()=>{
+  chosenTime=b.dataset.time;
+  document.querySelectorAll("[data-time]").forEach(t=>t.setAttribute("aria-pressed",t===b));
+  $("tourResult").replaceChildren();
+});
+
+$("tourForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  if(!chosenDate||!chosenTime){
+    $("tourResult").textContent="Please select a sample date and time before previewing your request.";
+    return;
+  }
+  const d=new Date(chosenDate+"T12:00:00");
+  $("tourResult").replaceChildren();
+  let title=document.createElement("strong");
+  title.textContent="This is a demo form, nothing was sent.";
+  let info=document.createElement("p");
+  info.style.marginTop="8px";
+  info.textContent="Visit preview: "+campus+" · "+$("tourRoom").value+" · "+d.toLocaleDateString("en-GB",{day:"numeric",month:"long",year:"numeric"})+" at "+chosenTime+". No visit has been booked.";
+  let reminder=document.createElement("p");
+  reminder.style.marginTop="8px";
+  reminder.textContent="Email/SMS reminder preview: “Your nursery visit is tomorrow at "+chosenTime+".” No reminder is scheduled. Contact the nursery to arrange a real visit.";
+  $("tourResult").append(title,info,reminder);
+});
+
+function addBubble(text,user){
+  const el=document.createElement("div");
+  el.className="bubble"+(user?" user":"");
+  el.textContent=text;
+  $("chatLog").append(el);
+  $("chatLog").scrollTop=$("chatLog").scrollHeight;
+}
+
+function ask(question){
+  addBubble(question,true);
+  const q=question.toLowerCase();
+  let answer;
+  if(/urgent|emergency|safeguard|danger|ill|injur/.test(q))
+    answer="This demo is not monitored and cannot triage or escalate real concerns. If someone is in immediate danger, call 999. For a nursery concern, contact staff directly: Chalk Farm 0207 482 0701; West Hampstead 0207 372 2120. Do not share sensitive information here.";
+  else if(/fee|cost|price|fund|pay/.test(q))
+    answer="Confirmed fees and funding details have not been supplied. Please email info@chastonnursery.co.uk or call your chosen setting. The payment flow in this concept does not charge money.";
+  else if(/hour|time|open|session/.test(q))
+    answer="The supplied information lists Chalk Farm opening Monday–Friday, 8:00 am–6:00 pm, and closed at weekends. Please contact West Hampstead directly to confirm its hours. Exact session options must be confirmed with each setting.";
+  else if(/admission|age|place|enrol|enroll/.test(q))
+    answer="Chaston provides care and education for children aged 3 months to five years. Contact the nursery for admissions, room suitability and actual places. You can also try the sample tour booking tab; it does not send a request.";
+  else if(/where|address|location|campus/.test(q))
+    answer="Chalk Farm: Chaston Place, off Grafton Terrace, Kentish Town, NW5 4JH. West Hampstead: 30/31 Palmerston Road, London, NW6 2JL. Both settings use info@chastonnursery.co.uk.";
+  else if(/tour|visit|book/.test(q))
+    answer="Choose “Book a nursery tour” to try a sample calendar and request preview. All slots are fictional. Call Chalk Farm on 0207 482 0701 or West Hampstead on 0207 372 2120 to arrange a real visit.";
+  else if(/room/.test(q))
+    answer="Chalk Farm lists Butterfly, Ladybird, Busy Bees and Fireflies rooms. West Hampstead lists Panda, Teddies and Main Room. Age groups and availability need nursery confirmation.";
+  else 
+    answer="I only have scripted information about admissions, fees, hours, locations and this demo. For a personal answer, email info@chastonnursery.co.uk. Nothing you type here is sent to the nursery.";
+  addBubble(answer,false);
+}
+
+$("chatForm").onsubmit=e=>{
+  e.preventDefault();
+  const q=$("chatInput").value.trim();
+  if(q)ask(q);
+  $("chatInput").value="";
+};
+document.querySelectorAll("[data-question]").forEach(b=>b.onclick=()=>ask(b.dataset.question));
+
+function renderRegister(){
+  $("staffRegister").replaceChildren();
+  Object.keys(attendance).forEach(name=>{
+    let row=document.createElement("div");
+    row.className="staff-row";
+    let avatar=document.createElement("span");
+    avatar.className="avatar";
+    avatar.textContent=name[0];
+    let detail=document.createElement("div"),strong=document.createElement("strong"),small=document.createElement("small");
+    strong.textContent=name+" · sample";
+    small.textContent=attendance[name]?"Present in sample register":"Not checked in · sample";
+    detail.append(strong,small);
+    let toggle=document.createElement("button");
+    toggle.className="toggle";
+    toggle.type="button";
+    toggle.setAttribute("aria-pressed",attendance[name]);
+    toggle.setAttribute("aria-label","Toggle sample attendance for "+name);
+    toggle.textContent=attendance[name]?"✓ Checked in":"Check in";
+    toggle.onclick=()=>{
+      attendance[name]=!attendance[name];
+      renderRegister();
+      $("parentAttendance").textContent=attendance.Jamie?"Checked in · sample":"Not checked in · sample";
+      toast("Sample attendance updated in this browser only.");
+    };
+    row.append(avatar,detail,toggle);
+    $("staffRegister").append(row);
+  });
+}
+
+$("updateForm").onsubmit=e=>{
+  e.preventDefault();
+  const text=$("staffNote").value.trim();
+  if(!text)return;
+  let event=document.createElement("div");
+  event.className="event";
+  let time=document.createElement("time");
+  time.textContent="Just now · sample";
+  let title=document.createElement("strong");
+  title.textContent=$("updateType").value+" · sample";
+  let p=document.createElement("p");
+  p.textContent=text;
+  event.append(time,title,p);
+  $("timeline").prepend(event);
+  $("staffResult").textContent="This is a demo form, nothing was sent. Your fictional update is visible in the sample parent feed during this visit.";
+  $("staffNote").value="";
+};
+
+$("progressDetails").onclick=()=>$("learningDialog").showModal();
+$("closeLearning").onclick=()=>$("learningDialog").close();
+
+document.querySelectorAll("dialog").forEach(d=>d.addEventListener("click",e=>{
+  if(e.target===d){
+    const r=d.getBoundingClientRect();
+    if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close();
+  }
+}));
+
+setCampus(campus);
+renderCalendar();
+renderRegister();
+showPanel("parent");
+
+/* GSAP Scroll Entrance Animations for sub-hero elements */
+if(window.gsap && window.ScrollTrigger && !reduced.matches){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from(".campus-card", {
+    scrollTrigger: { trigger: ".campuses", start: "top 85%" },
+    y: 30, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power2.out"
+  });
+  gsap.from(".exp-card", {
+    scrollTrigger: { trigger: ".experience-grid", start: "top 85%" },
+    y: 35, opacity: 0, duration: 0.8, stagger: 0.15, ease: "power2.out"
+  });
+}
+
+/* Three.js Dimensional Learning Blocks */
+function initBlocks(){
+  const host=$("blocks");
+  if(!window.THREE)return;
+  let renderer;
+  try{ renderer=new THREE.WebGLRenderer({alpha:true,antialias:true}); }catch(e){return;}
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,1.7));
+  renderer.setSize(180,170);
+  renderer.outputEncoding=THREE.sRGBEncoding;
+  host.replaceChildren(renderer.domElement);
+
+  const scene=new THREE.Scene(),camera=new THREE.PerspectiveCamera(35,180/170,0.1,100);
+  camera.position.set(0,1.1,7);
+
+  scene.add(new THREE.HemisphereLight(0xffffff,0x9b947b,1.25));
+  let light=new THREE.DirectionalLight(0xffffff,1.6);
+  light.position.set(-3,5,6);
+  scene.add(light);
+  let fill=new THREE.DirectionalLight(0xffd5a9,0.5);
+  fill.position.set(3,0,2);
+  scene.add(fill);
+
+  const group=new THREE.Group();
+  scene.add(group);
+
+  function face(letter,bg){
+    let c=document.createElement("canvas");
+    c.width=c.height=128;
+    let ctx=c.getContext("2d");
+    ctx.fillStyle=bg;
+    ctx.fillRect(0,0,128,128);
+    ctx.strokeStyle="rgba(255,255,255,0.4)";
+    ctx.lineWidth=5;
+    ctx.strokeRect(10,10,108,108);
+    ctx.fillStyle="#35483B";
+    ctx.font="bold 75px Georgia, serif";
+    ctx.textAlign="center";
+    ctx.textBaseline="middle";
+    ctx.fillText(letter,64,68);
+    let t=new THREE.CanvasTexture(c);
+    t.encoding=THREE.sRGBEncoding;
+    return t;
+  }
+
+  const colors=[0xe87a5d,0xe8c36f,0x91b291],hex=["#e87a5d","#e8c36f","#91b291"],pos=[[-0.85,-0.5,0.15],[0.3,-0.45,-0.15],[-0.25,0.7,0]];
+  pos.forEach((p,i)=>{
+    let base=new THREE.MeshStandardMaterial({color:colors[i],roughness:0.6,metalness:0.05});
+    let front=new THREE.MeshStandardMaterial({map:face("ABC"[i],hex[i]),roughness:0.65});
+    let cube=new THREE.Mesh(new THREE.BoxGeometry(1.02,1.02,1.02),[base,base,base,base,front,base]);
+    cube.position.set(...p);
+    cube.rotation.set(0.08,i===1?-0.2:0.12,i===2?-0.08:0.04);
+    group.add(cube);
+  });
+
+  group.rotation.set(0.12,-0.3,-0.08);
+  let visible=true,frame=0,tx=-0.3,ty=0.12;
+
+  function draw(t){
+    frame=0;
+    if(!visible||document.hidden)return;
+    if(!reduced.matches){
+      group.rotation.y+=(tx+Math.sin(t*0.0005)*0.07-group.rotation.y)*0.05;
+      group.rotation.x+=(ty-group.rotation.x)*0.05;
+      group.position.y=Math.sin(t*0.0009)*0.045;
+    }
+    renderer.render(scene,camera);
+    if(!reduced.matches)frame=requestAnimationFrame(draw);
+  }
+
+  function start(){if(!frame&&visible&&!document.hidden)frame=requestAnimationFrame(draw);}
+
+  const observer=new IntersectionObserver(entries=>{
+    visible=entries[0].isIntersecting;
+    if(visible)start();else if(frame){cancelAnimationFrame(frame);frame=0;}
+  },{threshold:0.05});
+  observer.observe(host);
+
+  $("heroScene").addEventListener("pointermove",e=>{
+    if(reduced.matches||e.pointerType==="touch")return;
+    const r=$("heroScene").getBoundingClientRect();
+    tx=-0.3+((e.clientX-r.left)/r.width-0.5)*0.5;
+    ty=0.12+((e.clientY-r.top)/r.height-0.5)*0.2;
+  });
+
+  $("heroScene").addEventListener("pointerleave",()=>{tx=-0.3;ty=0.12;});
+
+  document.addEventListener("visibilitychange",()=>{
+    if(document.hidden&&frame){cancelAnimationFrame(frame);frame=0;}else start();
+  });
+
+  reduced.addEventListener("change",()=>{
+    if(frame){cancelAnimationFrame(frame);frame=0;}
+    group.rotation.set(0.12,-0.3,-0.08);
+    group.position.y=0;
+    start();
+  });
+
+  renderer.domElement.addEventListener("webglcontextlost",e=>{
+    e.preventDefault();
+    if(frame)cancelAnimationFrame(frame);
+    host.innerHTML='<div class="block-fallback"><span>A</span><span>B</span><span>C</span></div>';
+  });
+
+  start();
+}
+initBlocks();
+})();
+</script>
 </body>
 </html>
