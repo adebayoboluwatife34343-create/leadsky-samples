@@ -1,5 +1,11 @@
 [
   {
+    "file": "img/profile.jpg",
+    "kind": "their own photo",
+    "use_as": "logo / profile picture",
+    "source": "https://x.com/AnuCaterers"
+  },
+  {
     "file": "img/stock-1.jpg",
     "kind": "stock photo",
     "query": "caterer",
