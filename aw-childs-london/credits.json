@@ -1,0 +1,72 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://awchilds.co.uk/wp-content/uploads/2020/10/AW-Childs-Logo-RGB-light.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "https://awchilds.co.uk/wp-content/uploads/2017/01/AW-Childs-Twitter-Facebook-Logo-Light.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/awchildsestateagents"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "estate agent",
+    "description": "key, home, house, estate, business, mortgage, real, loan, new, property, rent, agent, buy, apartment, investment, sale, building, hand, lock, housing, owner, purchase, residential, sign, unlock, security, person, key, mortgage, mortgage, mortgage, mortgage, loan, loan, property, property, property, rent, rent, rent, rent, rent, apartment, apartment, investment",
+    "source": "https://pixabay.com/photos/key-home-house-estate-business-2323278/",
+    "photographer": "mastersenaiper",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "estate agent",
+    "description": "house, key, property, security, apartment, building, home, house keys, lease, estate agents, key, property, property, property, property, property, apartment, house keys, house keys",
+    "source": "https://pixabay.com/photos/house-key-property-security-4516175/",
+    "photographer": "Schluesseldienst",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "estate agent customer",
+    "description": "call center, headset, woman, service, consulting, information, conversation, continents, global, international, headphones, phone, help, call, corporate, booking, make a phone call, pc, call center, call center, call center, call center, call center, service, service, service, call",
+    "source": "https://pixabay.com/photos/call-center-headset-woman-service-2275745/",
+    "photographer": "geralt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "estate agent customer",
+    "description": "purchase, windows wallpaper, wallpaper 4k, desktop backgrounds, house, free background, cool backgrounds, house purchase, real estate, man, full hd wallpaper, woman, handing over, 4k wallpaper, markler, real estate agent, 4k wallpaper 1920x1080, beautiful wallpaper, property, possession, mac wallpaper, laptop wallpaper, worth, to buy, contract, shaking hands, handshake, agreement, free wallpaper, wallpaper hd, partnership, hand, hd wallpaper, collaboration, background, people",
+    "source": "https://pixabay.com/photos/purchase-house-house-purchase-3347053/",
+    "photographer": "geralt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "estate agent London",
+    "description": "purchase, house, house purchase, real estate, 4k wallpaper 1920x1080, handing over, real estate agent, wallpaper hd, property, possession, worth, desktop backgrounds, 4k wallpaper, to buy, contract, cool backgrounds, mac wallpaper, free wallpaper, shaking hands, free background, laptop wallpaper, handshake, agreement, windows wallpaper, partnership, hd wallpaper, hand, full hd wallpaper, wallpaper 4k, man, beautiful wallpaper, collaboration, background, people",
+    "source": "https://pixabay.com/photos/purchase-house-house-purchase-3113198/",
+    "photographer": "geralt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
