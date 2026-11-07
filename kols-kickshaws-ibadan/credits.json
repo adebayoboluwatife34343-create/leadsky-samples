@@ -1,5 +1,11 @@
 [
   {
+    "file": "img/profile.jpg",
+    "kind": "their own photo",
+    "use_as": "logo / profile picture",
+    "source": "https://x.com/KolsKickshaws"
+  },
+  {
     "file": "img/business-logo-1.svg",
     "kind": "business logo",
     "source": "https://static.whatsapp.net/rsrc.php/yM/r/ys-5GPT4pwS.svg",
@@ -67,9 +73,9 @@
     "file": "img/stock-6.jpg",
     "kind": "stock photo",
     "query": "caterer Ibadan",
-    "description": "barbecue, bbq, grill, meat, vegetables, food, lunch, dinner, gray vegetables, gray meat, gray dinner, bbq, bbq, bbq, bbq, bbq",
-    "source": "https://pixabay.com/photos/barbecue-bbq-grill-meat-vegetables-2619439/",
-    "photographer": "StockSnap",
+    "description": "dessert, chocolate, food, sweets, nuts, tasty, delicious, dessert buffet, glasses, chocolate, chocolate, chocolate, chocolate, chocolate",
+    "source": "https://pixabay.com/photos/dessert-chocolate-food-sweets-nuts-5582984/",
+    "photographer": "lubovlisitsa",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }
