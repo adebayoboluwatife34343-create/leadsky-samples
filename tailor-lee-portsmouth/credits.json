@@ -1,0 +1,62 @@
+[
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "tailor",
+    "description": "antique, sewing machine, home, old, retro, vintage, tailor, tailoring, stitching, oldtimer, nostalgia, nostalgic, antique, sewing machine, sewing machine, sewing machine, sewing machine, sewing machine, tailor, tailor, tailor, tailoring",
+    "source": "https://pixabay.com/photos/antique-sewing-machine-home-old-1838324/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "tailor",
+    "description": "sewing needle, thread, mend, eye of needle, button, chores, sew, tailor, stitch, dressmaking, seamstress, handmade, cotton, needlework, sewing needle, sewing needle, thread, thread, chores, sew, sew, tailor, tailor, tailor, tailor, tailor, seamstress, seamstress, seamstress, handmade, handmade, handmade, handmade",
+    "source": "https://pixabay.com/photos/sewing-needle-thread-mend-541737/",
+    "photographer": "stevepb",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "tailor customer",
+    "description": "clothing, suits, tuxedo, shopping, mall, hanger, people, tuxedo, shopping, shopping, mall, mall, mall, mall, mall, hanger, hanger, people",
+    "source": "https://pixabay.com/photos/clothing-suits-tuxedo-shopping-2587288/",
+    "photographer": "StockSnap",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "tailor customer",
+    "description": "store window, schneider, fashion, clothing, store window, schneider, schneider, schneider, schneider, schneider",
+    "source": "https://pixabay.com/photos/store-window-schneider-fashion-613596/",
+    "photographer": "jpeter2",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "tailor Portsmouth",
+    "description": "portsmouth, england, nature, old town, street, buildings, sky, clouds, colours, Portsmouth, United Kingdom, England",
+    "source": "https://pixabay.com/photos/portsmouth-england-old-town-street-713856/",
+    "photographer": "921563",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "tailor Portsmouth",
+    "description": "portsmouth, old town, england, street, nature, cars, historic, sky, clouds, blue street, Portsmouth, United Kingdom, England",
+    "source": "https://pixabay.com/photos/portsmouth-old-town-england-street-713817/",
+    "photographer": "921563",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
