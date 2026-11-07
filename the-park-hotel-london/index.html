@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F9F8F3">
+<title>The Park Hotel London · Guest Experience Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Three.js r128 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<!-- GSAP 3.12.5 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{--paper:#f9f8f3;--navy:#1b2a3a;--gold:#c49a45;--line:#deded5;--muted:#626b70;--green:#285a49;--cream:#e8e2d5;--white:#fff;--shadow:0 24px 70px #1b2a3a12}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;background:var(--paper);color:var(--navy);font:16px/1.6 Outfit,sans-serif}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #996e23;outline-offset:4px}button{color:inherit}button:disabled{cursor:default;opacity:.65}img{display:block;width:100%;object-fit:cover}h1,h2,h3,p{margin-top:0}h1,h2{font-family:"Playfair Display",serif;font-weight:500;line-height:1.12}h1{font-size:clamp(42px,5.2vw,76px);letter-spacing:-2px;margin-bottom:24px}h2{font-size:clamp(32px,3.6vw,48px);letter-spacing:-1px}h3{line-height:1.3}button{border:0}button,a,input,select,textarea{border-radius:5px}.concept{background:var(--navy);color:#fff;text-align:center;padding:9px 18px;font-size:11px;letter-spacing:.2px}.wrap{width:min(1200px,calc(100% - 64px));margin:auto}.header{position:sticky;top:0;z-index:30;background:#f9f8f3f5;border-bottom:1px solid var(--line);backdrop-filter:blur(15px)}.header-row{height:78px;display:flex;align-items:center;gap:26px}.brand{text-decoration:none;display:flex;align-items:center;gap:12px;margin-right:auto}.brand-mark{width:39px;height:44px;border:1px solid var(--gold);display:grid;place-items:center;font:27px "Playfair Display",serif;border-radius:19px 19px 2px 2px}.brand strong{display:block;font:20px "Playfair Display",serif}.brand small{display:block;font-size:9px;letter-spacing:2.5px}.desktop-nav{display:flex;gap:24px;font-size:13px}.desktop-nav a{text-decoration:none}.desktop-nav a:hover{text-decoration:underline;text-underline-offset:7px}.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;padding:13px 20px;min-height:46px;background:var(--navy);color:#fff;text-decoration:none;font-weight:500;font-size:14px;transition:background .2s,transform .2s}.btn:hover{background:#344b5d;transform:translateY(-2px)}.btn.light{background:#fff;color:var(--navy);border:1px solid var(--line)}.btn.gold{background:#e6c581;color:#1b2a3a}.menu-toggle{display:none;background:transparent;width:40px;height:40px;font-size:16px}.mobile-menu{display:none;border-top:1px solid var(--line);padding:18px 24px}.mobile-menu.open{display:grid;gap:10px}.mobile-menu a{padding:9px;text-decoration:none}.hero{padding:65px 0 70px;position:relative;overflow:hidden}.hero:before{content:"";position:absolute;right:-200px;top:-140px;width:700px;height:700px;border:1px solid #ded9ca;border-radius:50%;pointer-events:none}.hero-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:center;position:relative}.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:2.3px;font-weight:600;display:flex;align-items:center;gap:10px;margin-bottom:20px}.eyebrow:before{content:"";width:25px;height:1px;background:var(--gold)}.hero-copy>p{color:var(--muted);max-width:390px;font-size:17px;line-height:1.8}.hero-copy h1 em{color:#876329;font-weight:400}.hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin:28px 0 20px}.micro{font-size:11px;color:var(--muted)}.hero-context{margin-top:36px;padding-top:22px;border-top:1px solid var(--line);display:flex;align-items:center;gap:14px;font-size:12px}.hero-context svg{width:32px;flex-shrink:0}.hero-context span{color:var(--muted);display:block}.product{background:#fff;border:1px solid #e0e1da;border-radius:16px;box-shadow:var(--shadow);overflow:hidden}.product-top{padding:17px 23px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:8px}.product-label{font-size:12px;font-weight:500}.sample{font-size:9px;letter-spacing:1px;text-transform:uppercase;background:#f0eee6;padding:4px 7px;border-radius:3px;white-space:nowrap}.switcher{display:flex;background:#eeeee8;padding:4px;margin:18px 22px 0;border-radius:7px}.switcher button{flex:1;background:transparent;font-size:12px;min-height:36px}.switcher button[aria-pressed=true]{background:#fff;box-shadow:0 2px 6px #0000000b}.app{padding:22px}.welcome{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.welcome h3{font:25px "Playfair Display",serif;margin:0}.welcome p{font-size:11px;color:var(--muted);margin:4px 0 0}.avatar{border:1px solid var(--line);border-radius:50%;width:36px;height:36px;display:grid;place-items:center;font-size:12px}.stay-photo{height:144px;border-radius:8px;position:relative;overflow:hidden;background:var(--navy)}.stay-photo img{height:100%}.stay-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8),rgba(0,0,0,.12))}.stay-photo .photo-copy{position:absolute;left:17px;bottom:14px;color:#fff;z-index:1}.photo-copy strong{display:block;font:24px "Playfair Display",serif}.photo-copy span{font-size:11px}.stock-tag{position:absolute;z-index:2;right:8px;top:8px;background:#fff;padding:3px 6px;font-size:8px;color:var(--navy)}.stay-dates{display:grid;grid-template-columns:1fr 1fr 1fr;border:1px solid var(--line);border-radius:6px;margin:15px 0; padding:12px}.stay-dates div+div{border-left:1px solid var(--line);padding-left:14px}.stay-dates span{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);display:block}.stay-dates strong{font-size:12px;font-weight:500}.tabs{display:flex;gap:5px;border-bottom:1px solid var(--line);margin:18px 0}.tabs button{flex:1;font-size:11px;background:transparent;padding:9px 2px 12px;border-radius:0;border-bottom:2px solid transparent}.tabs button[aria-selected=true]{border-color:var(--navy);font-weight:600}.tabs svg{width:17px;height:17px;display:block;margin:0 auto 5px}.screen{min-height:240px;animation:appear .25s ease}.screen h4{font-size:15px;margin:0 0 7px}.screen p{font-size:12px;color:var(--muted);margin-bottom:12px}.screen label{display:block;font-size:11px;margin:11px 0 5px}.screen input,.screen select,.screen textarea{width:100%;padding:10px 11px;border:1px solid #c9cfc9;background:#fff;font-size:12px;min-height:42px}.form-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.full{width:100%;margin-top:13px}.screen .btn{font-size:12px}.notice{font-size:10px!important;color:var(--muted);margin:10px 0 0!important}.status-line{background:#eef3ee;padding:10px 12px;color:var(--green);border-radius:5px;font-size:11px;margin-bottom:12px}.key-card{background:linear-gradient(125deg,#1b2a3a,#3d5366);color:#fff;border-radius:12px;padding:22px;position:relative;overflow:hidden;min-height:159px;box-shadow:0 8px 18px #1b2a3a20}.key-card:after{content:"P";position:absolute;right:12px;bottom:-50px;font:190px "Playfair Display",serif;opacity:.07;pointer-events:none}.key-card small{font-size:9px;letter-spacing:2px}.key-card strong{display:block;font:29px "Playfair Display",serif;margin:18px 0 5px}.key-card span{font-size:11px}.key-card.unlocked{background:linear-gradient(125deg,#285a49,#427963)}.chat-log{height:160px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;padding:2px 5px 8px 0;scroll-behavior:smooth}.bubble{font-size:11px;line-height:1.55;background:#f0f1eb;padding:10px 12px;border-radius:9px 9px 9px 2px;max-width:93%}.bubble.user{align-self:flex-end;background:var(--navy);color:white;border-radius:9px 9px 2px 9px}.chat-form{display:flex;gap:6px;margin-top:9px}.chat-form .btn{margin:0;padding:9px 13px}.suggestions{display:flex;gap:5px;flex-wrap:wrap;margin:9px 0}.suggestions button{font-size:10px;border:1px solid var(--line);background:#fff;padding:6px 9px}.queue-empty{padding:20px;background:#f4f4ee;border-radius:7px;font-size:12px}.queue-item{padding:13px;border:1px solid var(--line);border-radius:7px;margin-top:10px}.queue-item strong{font-size:12px;display:block}.queue-item span{font-size:10px;color:var(--muted)}.queue-item button{display:block;margin-top:9px;font-size:11px;padding:7px 10px;background:#eaf0e9;color:var(--green)}.staff-heading{display:flex;justify-content:space-between;align-items:center}.staff-heading h3{font:25px "Playfair Display",serif;margin:0}.staff-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0}.staff-stats div{padding:12px;background:#f4f4ef;border-radius:6px}.staff-stats strong{font:25px "Playfair Display",serif;display:block}.staff-stats span{font-size:9px}.product-foot{display:flex;gap:6px;align-items:center;padding:12px 22px;border-top:1px solid var(--line);color:var(--muted);font-size:9px}.dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block}.benefits{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px 0}.benefit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.benefit-grid div{display:flex;gap:14px;align-items:center}.benefit-grid svg{width:30px;height:30px;flex-shrink:0;color:#86642e}.benefit-grid strong{display:block;font-size:13px;font-weight:500}.benefit-grid small{color:var(--muted);font-size:11px}.section{padding:85px 0}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:32px}.section-heading h2{margin-bottom:0}.section-heading p{max-width:330px;font-size:14px;color:var(--muted);margin:0}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.step{border-top:1px solid var(--line);padding-top:22px}.step-number{font:25px "Playfair Display",serif;color:#88662c}.step h3{font:23px "Playfair Display",serif;margin:15px 0 10px}.step p{font-size:13px;color:var(--muted);max-width:310px}.step-visual{height:165px;overflow:hidden;border-radius:7px;background:#e8e2d5}.step-visual img{height:100%}.image-caption{font-size:9px;color:var(--muted);margin-top:6px}.editorial{background:var(--navy);color:#fff;overflow:hidden}.editorial-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.editorial-photo{position:relative}.editorial-photo img{height:390px;border-radius:110px 110px 5px 5px}.editorial .eyebrow{color:#e6c581}.editorial h2{margin-bottom:22px}.editorial p{color:#d0d8df;font-size:14px}.editorial .image-caption{color:#c4ccd1}.editorial-links{display:grid;gap:0;margin-top:26px}.editorial-links button{background:transparent;border-bottom:1px solid #ffffff30;border-radius:0;color:#fff;padding:16px 0;text-align:left;display:flex;justify-content:space-between;font-size:14px}.editorial-links button:hover{color:#e6c581}.room-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:28px}.room-main{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:#fff}.room-main img{height:260px}.room-content{padding:23px}.room-content h3{font:26px "Playfair Display",serif;margin:0 0 8px}.room-content p{font-size:13px;color:var(--muted)}.room-picker{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}.room-picker button{border:1px solid var(--line);padding:8px 12px;font-size:12px;background:white}.room-picker button[aria-pressed=true]{background:var(--navy);color:#fff;border-color:var(--navy)}.direct-panel{padding:30px;background:#eae7dc;border-radius:9px;display:flex;flex-direction:column;justify-content:center}.direct-panel h3{font:29px "Playfair Display",serif}.direct-panel p{font-size:13px;color:#4d5960}.direct-panel label{font-size:12px}.price-input{display:flex;align-items:center;background:#fff;border:1px solid #a6aa9f;border-radius:5px;margin:7px 0 18px}.price-input span{padding-left:13px}.price-input input{width:100%;background:transparent;border:0;padding:12px;min-width:0}.calculation{display:flex;justify-content:space-between;border-top:1px solid #c9c6ba;padding-top:16px;font-size:13px}.calculation strong{font-size:22px}.location{background:#eeeee6}.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.location-photo img{height:340px;border-radius:8px}.location p{font-size:14px;color:var(--muted)}.location address{font-style:normal;font-size:14px;border-left:2px solid var(--gold);padding-left:17px;margin:22px 0}.location address a{display:block;margin-top:6px}.faq{max-width:820px;margin:auto}.faq h2{text-align:center;margin-bottom:35px}details{border-bottom:1px solid var(--line);padding:20px 0}summary{cursor:pointer;list-style:none;font-size:16px;display:flex;justify-content:space-between;gap:15px}summary:after{content:"+";font-size:21px}details[open] summary:after{content:"−"}details p{font-size:14px;color:var(--muted);margin:15px 30px 0 0}.footer{padding:36px 0;border-top:1px solid var(--line)}.footer-top{display:flex;justify-content:space-between;gap:30px;font-size:12px}.footer p{color:var(--muted);font-size:11px;max-width:640px}.credits{font-size:10px;color:var(--muted);margin-top:22px}.credits a{margin-right:12px}.mobile-bottom{display:none}.toast{position:fixed;bottom:25px;left:50%;transform:translateX(-50%);max-width:calc(100% - 30px);width:450px;background:var(--navy);color:#fff;padding:15px 20px;border-radius:8px;z-index:100;box-shadow:var(--shadow);font-size:13px}.toast[hidden],[hidden]{display:none!important}@keyframes appear{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}@media(min-width:1000px){.hero-copy{padding-bottom:20px}}@media(max-width:1000px){.hero-grid{gap:30px;grid-template-columns:.85fr 1.15fr}.desktop-nav{display:none}.hero{padding-top:40px}.wrap{width:calc(100% - 40px)}.hero-copy h1{font-size:49px}.editorial-grid{gap:35px}}@media(max-width:700px){html{scroll-padding-top:75px}.wrap{width:calc(100% - 36px)}.concept{font-size:9px;padding:7px 12px}.header-row{height:63px;gap:10px}.brand{gap:7px}.brand-mark{width:28px;height:34px;font-size:21px}.brand strong{font-size:16px;white-space:nowrap}.brand small{font-size:7px;letter-spacing:1.7px}.header-row>.btn{padding:8px 11px;min-height:37px;font-size:11px}.menu-toggle{display:block;width:36px;height:36px;font-size:15px}.hero{padding:30px 0 40px}.hero-grid{display:flex;flex-direction:column;gap:27px}.hero-copy{width:100%}.eyebrow{font-size:9px;margin-bottom:15px}.hero-copy h1{font-size:43px;letter-spacing:-1.4px;max-width:340px;margin-bottom:16px}.hero-copy>p{font-size:14px;line-height:1.7;max-width:350px;margin-bottom:0}.hero-actions{margin:20px 0 10px}.hero-actions .btn{font-size:12px;padding:11px 16px}.hero-context{display:none}.micro{font-size:10px}.product{width:100%;border-radius:12px}.app{padding:18px}.product-top{padding:13px 18px}.switcher{margin:14px 18px 0}.stay-photo{height:135px}.screen{min-height:240px}.hero:before{width:400px;height:400px;right:-260px}.benefits{padding:20px 0}.benefit-grid{gap:18px;grid-template-columns:1fr}.benefit-grid div{gap:13px}.benefit-grid svg{width:25px}.section{padding:52px 0}.section-heading{display:block;margin-bottom:25px}.section-heading p{margin-top:17px}.steps{grid-template-columns:1fr;gap:25px}.step{display:grid;grid-template-columns:1fr 1fr;gap:0 15px;padding-top:17px}.step-number{grid-column:1}.step h3{font-size:21px;margin:8px 0}.step p{font-size:12px;margin:0;grid-column:1}.step-visual{grid-column:2;grid-row:1/4;height:160px}.step .image-caption{grid-column:2;margin-top:5px}.editorial-grid,.location-grid{grid-template-columns:1fr;gap:28px}.editorial-photo img{height:270px;border-radius:70px 70px 5px 5px}.editorial-grid>.editorial-photo{order:2}.room-grid{grid-template-columns:1fr;gap:20px}.room-main img{height:210px}.room-content,.direct-panel{padding:23px}.location-photo img{height:230px}.location-photo{order:2}.footer{padding-bottom:100px}.footer-top{display:block}.footer-top>span{display:block;margin-top:15px}.credits a{display:inline-block;margin-top:5px}.mobile-bottom{position:fixed;bottom:0;left:0;right:0;display:flex;padding:10px 18px calc(10px + env(safe-area-inset-bottom));background:#f9f8f3f5;backdrop-filter:blur(12px);border-top:1px solid var(--line);gap:10px;z-index:40}.mobile-bottom a,.mobile-bottom button{flex:1;min-height:43px;font-size:12px}.toast{bottom:88px}h2{font-size:34px}}@media(prefers-reduced-motion:reduce){html,.chat-log{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<div class="concept">Independent website concept by LeadSky for The Park Hotel. Not their official website.</div>
+<header class="header">
+<div class="wrap header-row">
+<a class="brand" href="#" aria-label="The Park Hotel concept home"><span class="brand-mark" aria-hidden="true">P</span><span><strong>The Park Hotel</strong><small>LONDON · VICTORIA</small></span></a>
+<nav class="desktop-nav" aria-label="Main navigation"><a href="#experience">Guest experience</a><a href="#how">How it works</a><a href="#london">Explore London</a></nav>
+<a class="btn" href="#experience" onclick="openGuest('checkin')">Try the app <span aria-hidden="true">↗</span></a>
+<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-menu" id="menu-button">☰</button>
+</div>
+<nav id="mobile-menu" class="mobile-menu" aria-label="Mobile navigation"><a href="#experience">Try the guest app</a><a href="#how">How it works</a><a href="#rooms">Rooms & direct booking</a><a href="#london">Explore London</a><a href="#questions">About this demo</a><a href="tel:+442078343118">Call the hotel</a></nav>
+</header>
+
+<main>
+<section class="hero">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<div class="eyebrow">A new way to experience your stay</div>
+<h1>London outside.<br>Your stay,<br><em>at your fingertips.</em></h1>
+<p>A guest app concept for The Park Hotel London, Victoria. Check in, explore the neighbourhood and reach reception from one simple space.</p>
+<div class="hero-actions"><a class="btn" href="#experience" onclick="openGuest('checkin')">Explore the guest app <span aria-hidden="true">↗</span></a><button class="btn light" onclick="showStaff()">View staff desk</button></div>
+<div class="micro">Interactive product demo. No real booking or account needed.</div>
+<div class="hero-context">
+<svg viewBox="0 0 40 44" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M8 39V14l12-8 12 8v25M3 39h34M16 39V28h8v11M14 18h3m6 0h3m-12 5h3m6 0h3M20 6V1"/></svg>
+<div>Made for a stay in Victoria.<span>En suite rooms · Free WiFi · 24-hour reception</span></div>
+</div>
+</div>
+
+<div class="product" id="experience">
+<div class="product-top"><span class="product-label">The Park Hotel · Guest space</span><span class="sample">Interactive demo</span></div>
+<div class="switcher" role="group" aria-label="Choose product view"><button id="guest-switch" aria-pressed="true" onclick="setView('guest')">Guest app</button><button id="staff-switch" aria-pressed="false" onclick="setView('staff')">Staff desk <span id="queue-badge"></span></button></div>
+<div id="guest-view" class="app">
+<div class="welcome"><div><h3>Your London chapter.</h3><p>Welcome, Alex · Sample guest</p></div><div class="avatar" aria-hidden="true">AL</div></div>
+<div class="stay-photo"><img src="img/stock-3.jpg" alt="Illustrative hotel bedroom with a double bed; not a Park Hotel room" width="700" height="380"><span class="stock-tag">ILLUSTRATIVE PHOTO</span><div class="photo-copy"><strong>A little space to settle in.</strong><span>Double room · En suite · Sample stay</span></div></div>
+<div class="stay-dates"><div><span>Arrival</span><strong>12 Nov 2026</strong></div><div><span>Departure</span><strong>14 Nov 2026</strong></div><div><span>Your stay</span><strong>2 guests</strong></div></div>
+<div class="tabs" role="tablist" aria-label="Guest app features">
+<button role="tab" id="tab-checkin" aria-selected="true" aria-controls="screen-checkin" onclick="selectTab('checkin')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v5m8-5v5M4 11h16m-12 5 3 3 5-5"/></svg>Check-in</button>
+<button role="tab" id="tab-key" aria-selected="false" aria-controls="screen-key" tabindex="-1" onclick="selectTab('key')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="9" r="5"/><path d="m12 13 9 9m-4-4 3-3m-6 0 3-3"/></svg>Room key</button>
+<button role="tab" id="tab-guide" aria-selected="false" aria-controls="screen-guide" tabindex="-1" onclick="selectTab('guide')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 11a8 8 0 1 0-14 5l-2 5 6-2a8 8 0 0 0 10-8Z"/><path d="M8 10h8m-8 4h5"/></svg>Local guide</button>
+<button role="tab" id="tab-request" aria-selected="false" aria-controls="screen-request" tabindex="-1" onclick="selectTab('request')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 17h16M6 17v-5a6 6 0 0 1 12 0v5M2 21h20M10 3h4m-2 0v3"/></svg>Requests</button>
+</div>
+
+<div class="screen" id="screen-checkin" role="tabpanel" aria-labelledby="tab-checkin">
+<div id="checkin-form-wrap"><h4>Less desk time. More London.</h4><p>Try a pre-arrival check-in with this sample reservation.</p>
+<form id="checkin-form"><div class="form-row"><div><label for="guest-name">Guest name</label><input id="guest-name" autocomplete="off" required value="Alex Morgan" maxlength="70"></div><div><label for="arrival-time">Expected arrival</label><select id="arrival-time"><option>14:00–16:00</option><option>16:00–18:00</option><option>18:00–20:00</option><option>After 20:00</option></select></div></div><button class="btn full" type="submit">Try digital check-in <span aria-hidden="true">→</span></button></form></div>
+<div id="checkin-done" hidden><div class="status-line">✓ Sample check-in recorded in the demo staff queue</div><h4>You're ready to explore the next step.</h4><p>This is a demo form, nothing was sent. Real check-in would require hotel approval and secure identity checks.</p><button class="btn full" onclick="selectTab('key')">Try your room key →</button></div>
+<p class="notice">Simulation only. This does not check you into the hotel.</p>
+</div>
+
+<div class="screen" id="screen-key" role="tabpanel" aria-labelledby="tab-key" hidden>
+<div class="key-card" id="key-card"><small>THE PARK HOTEL · DEMO KEY</small><strong id="key-title">Your door to London.</strong><span id="key-state">Sample room 08 · Locked</span></div>
+<button class="btn full" id="unlock-button" onclick="unlockKey()">Tap to simulate unlocking <span aria-hidden="true">⌁</span></button>
+<p class="notice" id="key-notice" aria-live="polite">No physical lock is connected. A real key needs compatible locks and a secure integration.</p>
+</div>
+
+<div class="screen" id="screen-guide" role="tabpanel" aria-labelledby="tab-guide" hidden>
+<h4>A little local knowledge.</h4><p>Scripted concierge demo · not a live AI service</p>
+<div class="chat-log" id="chat-log" role="log" aria-label="Concierge conversation" aria-live="polite"><div class="bubble">Hello, Alex. Looking for a London landmark, information about your stay, or help from reception?</div></div>
+<div class="suggestions"><button onclick="askGuide('What is nearby?')">Explore nearby</button><button onclick="askGuide('Breakfast times?')">Breakfast</button><button onclick="askGuide('Can I check out late?')">Late check-out</button></div>
+<form id="chat-form" class="chat-form"><label for="chat-input" hidden>Message the demo concierge</label><input id="chat-input" required placeholder="Ask about your stay…" maxlength="300"><button class="btn" type="submit" aria-label="Send message to scripted demo">Send</button></form>
+</div>
+
+<div class="screen" id="screen-request" role="tabpanel" aria-labelledby="tab-request" hidden>
+<h4>A request, without the reception trip.</h4><p>Add a sample request, then see it arrive in the staff desk.</p>
+<form id="request-form"><label for="request-type">What can reception help with?</label><select id="request-type"><option>Extra towels</option><option>Tea & coffee supplies</option><option>Late check-out enquiry</option><option>Booking change enquiry</option><option>Breakfast information</option></select><label for="request-note">Anything else? (optional)</label><input id="request-note" maxlength="180" placeholder="For example: two extra towels"><button class="btn full" type="submit">Add request to demo queue →</button></form>
+<p class="notice" id="request-message" aria-live="polite">Requests stay in this page only. Availability and charges are not confirmed.</p>
+</div>
+</div>
+
+<div id="staff-view" class="app" hidden>
+<div class="staff-heading"><h3>A calmer front desk.</h3><span class="sample">Sample data</span></div>
+<p class="micro">A proposed PMS companion. Try guest actions to populate this queue.</p>
+<div class="staff-stats"><div><strong>18</strong><span>Hotel en suite rooms</span></div><div><strong id="pending-count">0</strong><span>Pending demo items</span></div><div><strong id="done-count">0</strong><span>Handled in demo</span></div></div>
+<h4 style="font-size:13px;margin-bottom:10px">Guest activity <span class="dot" style="margin-left:6px"></span></h4>
+<div id="queue" aria-live="polite"><div class="queue-empty">Your queue is clear. Try check-in or a guest request to see how it appears here.</div></div>
+<button class="btn light full" onclick="openGuest('request')">Create a sample guest request →</button>
+<p class="notice">Local simulation only. No PMS connection, notifications or staff messages. Items reset when this page reloads.</p>
+</div>
+<div class="product-foot"><span class="dot"></span> Local demo session <span style="margin-left:auto">Nothing sent · Nothing charged</span></div>
+</div>
+</div>
+</section>
+
+<!-- Three.js Interactive Key Token Showcase (Real 3D Interactive Scene) -->
+<section style="background:#141f2a; color:#fff; padding:60px 0; overflow:hidden; position:relative;">
+<div class="wrap" style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;">
+<div>
+<div class="eyebrow" style="color:#c49a45;">Digital Key Architecture</div>
+<h2>Inspect the token.<br>Secure by design.</h2>
+<p style="color:#a5b2be; font-size:15px; margin-top:15px; line-height:1.7;">Our interactive 3D cryptographic token demonstrator showcases real-time WebGL rendering with physics-based lighting, specular materials, and touch/mouse rotation.</p>
+<div style="display:flex; gap:15px; margin-top:25px;">
+<span class="sample" style="background:#1e2f40; color:#c49a45; border:1px solid #c49a4540; padding:6px 12px; font-size:11px;">WebGL Active</span>
+<span class="sample" style="background:#1e2f40; color:#fff; border:1px solid #ffffff20; padding:6px 12px; font-size:11px;">60 FPS Render</span>
+</div>
+</div>
+<div id="three-container" style="width:100%; height:320px; border-radius:12px; background:radial-gradient(circle at center, #1e2c3a 0%, #0d141b 100%); border:1px solid #ffffff15; position:relative; box-shadow:0 20px 40px rgba(0,0,0,0.5); cursor:grab;">
+<div style="position:absolute; bottom:12px; left:16px; font-size:10px; color:#8596a5; letter-spacing:1px; z-index:2; pointer-events:none;">DRAG TO ROTATE 3D TOKEN</div>
+</div>
+</div>
+</section>
+
+<div class="benefits"><div class="wrap benefit-grid">
+<div><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="9" y="2" width="14" height="28" rx="3"/><path d="m12 16 3 3 6-7m-7 14h4"/></svg><span><strong>Before you arrive</strong><small>Prepare your stay from your phone.</small></span></div>
+<div><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M25 12c0 7-9 16-9 16S7 19 7 12a9 9 0 1 1 18 0Z"/><circle cx="16" cy="12" r="3"/></svg><span><strong>While you're here</strong><small>Find your way around London Victoria.</small></span></div>
+<div><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><rect x="3" y="5" width="26" height="19" rx="2"/><path d="M12 29h8m-4-5v5M8 11h16M8 16h9"/></svg><span><strong>Behind the scenes</strong><small>Bring guest requests into one clear queue.</small></span></div>
+</div></div>
+
+<section class="section" id="how">
+<div class="wrap">
+<div class="section-heading"><div><div class="eyebrow">Designed around the stay</div><h2>One journey.<br>Fewer little interruptions.</h2></div><p>A proposed companion to the hotel's booking portal. Less repeated admin for reception, and an easier way for guests to get help.</p></div>
+<div class="steps">
+<article class="step"><span class="step-number">01 / Before arrival</span><h3>Prepare, then arrive.</h3><p>A guest confirms their details and expected arrival. Reception sees the same information in one place.</p><div class="step-visual"><img src="img/stock-1.jpg" width="500" height="340" loading="lazy" alt="Illustrative townhouse entrance framed by greenery"></div><div class="image-caption">Illustrative townhouse photograph.</div></article>
+<article class="step"><span class="step-number">02 / During the stay</span><h3>Ask. Explore. Unwind.</h3><p>A local guide and a direct request flow put useful help close at hand, without another trip downstairs.</p><div class="step-visual"><img src="img/stock-9.jpg" width="500" height="340" loading="lazy" alt="Illustrative continental breakfast with toast and drinks"></div><div class="image-caption">Illustrative breakfast, not the hotel's menu.</div></article>
+<article class="step"><span class="step-number">03 / At reception</span><h3>A clearer picture.</h3><p>Staff can review and acknowledge requests. A live product would connect these actions to the hotel's systems.</p><div class="step-visual"><img src="img/stock-5.jpg" width="500" height="340" loading="lazy" alt="Stock photograph of hotel reception staff assisting guests"></div><div class="image-caption">Stock reception team, not Park Hotel staff.</div></article>
+</div>
+</div>
+</section>
+
+<section class="editorial section">
+<div class="wrap editorial-grid">
+<div class="editorial-photo"><img src="img/stock-8.jpg" width="650" height="600" loading="lazy" alt="Royal guards at Buckingham Palace in London"><div class="image-caption">London inspiration · Illustrative stock photography</div></div>
+<div><div class="eyebrow">Your pocket-sized London guide</div><h2>A great city.<br>A helpful starting point.</h2><p>From Westminster Cathedral to Buckingham Palace, the hotel's Victoria location puts London within easy reach. Try the local guide for a little inspiration.</p>
+<div class="editorial-links"><button onclick="launchGuide('What is nearby?')">Plan a little exploring <span aria-hidden="true">↗</span></button><button onclick="launchGuide('How do I change my booking?')">Ask about a booking change <span aria-hidden="true">↗</span></button><button onclick="launchGuide('Breakfast times?')">Find out about breakfast <span aria-hidden="true">↗</span></button></div>
+</div>
+</div>
+</section>
+
+<section class="section" id="rooms">
+<div class="wrap">
+<div class="section-heading"><div><div class="eyebrow">Room to make it your own</div><h2>The essentials.<br>Simply considered.</h2></div><p>Explore the hotel's room categories, or try the direct-booking offer calculator. Room availability and prices need a live booking connection.</p></div>
+<div class="room-grid">
+<article class="room-main"><img src="img/stock-4.jpg" width="800" height="450" loading="lazy" alt="Illustrative bedroom interior; not an actual Park Hotel room"><div class="room-content"><div class="micro" style="margin-bottom:15px">ILLUSTRATIVE ROOM PHOTOGRAPH · NOT HOTEL PREMISES</div><div class="room-picker" role="group" aria-label="Explore room categories"><button aria-pressed="true" onclick="pickRoom(this,'Double')">Double</button><button aria-pressed="false" onclick="pickRoom(this,'Twin')">Twin</button><button aria-pressed="false" onclick="pickRoom(this,'Triple')">Triple</button><button aria-pressed="false" onclick="pickRoom(this,'Quad')">Quad</button></div><h3 id="room-title">Double room</h3><p id="room-description">A double room with an en suite bathroom, TV, direct-dial telephone and tea and coffee facilities.</p><button class="btn light" id="room-enquire" onclick="roomRequest()">Try a Double room enquiry →</button><p class="notice">Demo enquiry only. No room is reserved and no upgrade price is implied.</p></div></article>
+<div class="direct-panel"><div class="eyebrow">On the official hotel website</div><h3>A direct-booking<br>offer, made clear.</h3><p>The hotel's website advertises an additional 10% discount with code <strong>PARK10</strong>. Try the arithmetic with your own example amount.</p><label for="example-price">Example eligible total, before the code (£)</label><div class="price-input"><span aria-hidden="true">£</span><input type="number" id="example-price" min="0" max="100000" step="0.01" value="100" inputmode="decimal" aria-describedby="price-disclaimer"></div><div class="calculation" aria-live="polite"><span>Example after 10% discount</span><strong id="discount-result">£90.00</strong></div><p class="notice" id="price-disclaimer">Illustrative calculation, not a hotel quote. Check current rates, eligibility and terms on the official website.</p><a class="btn full" href="https://www.theparkhotellondon.co.uk/" target="_blank" rel="noopener">Visit the official hotel website ↗</a></div>
+</div>
+</div>
+</section>
+
+<section class="section location" id="london">
+<div class="wrap location-grid">
+<div><div class="eyebrow">London · Victoria</div><h2>Start with Victoria.<br>Make London yours.</h2><p>The Park Hotel is on Belgrave Road, close to Victoria's Underground, railway and coach stations. Westminster Cathedral, Buckingham Palace and the River Thames are nearby places to explore.</p><address>The Park Hotel London<br>Belgrave Road, Victoria, London<a href="tel:+442078343118">+44 20 7834 3118</a><a href="mailto:info@theparkhotellondon.co.uk">info@theparkhotellondon.co.uk</a></address><a class="btn light" href="https://www.google.com/maps/search/?api=1&amp;query=The+Park+Hotel+Belgrave+Road+London" target="_blank" rel="noopener">Find the hotel on Google Maps ↗</a><p class="notice">Reception is open 24 hours. Confirm arrival arrangements directly with the hotel.</p></div>
+<div class="location-photo"><img src="img/stock-7.jpg" width="700" height="500" loading="lazy" alt="Buckingham Palace and its surroundings in London"><div class="image-caption">Buckingham Palace · London stock photography</div></div>
+</div>
+</section>
+
+<section class="section" id="questions">
+<div class="wrap faq"><div class="eyebrow" style="justify-content:center">A clear view of the concept</div><h2>Good questions.<br>Straight answers.</h2>
+<details><summary>Is this the hotel's official guest app?</summary><p>No. This is an independent LeadSky product concept for The Park Hotel London. The hotel has not endorsed it. Guest names, dates, room assignments and queue activity in the app are sample data.</p></details>
+<details><summary>What actually works in this demo?</summary><p>You can complete a sample check-in, simulate unlocking a room, chat with a scripted local guide, select room categories and create guest requests. Requests appear in the staff desk, where you can mark them handled. The discount calculator works locally. Nothing is sent, charged or booked, and demo records disappear when the page reloads.</p></details>
+<details><summary>What would a live version need?</summary><p>A secure guest account system, a connection to the booking engine and PMS, identity verification and hotel-approved operating processes. Digital keys require compatible locks and secure credentials. Payments, notifications, live AI, loyalty and real room availability are not connected or implemented here.</p></details>
+<details><summary>Can I order breakfast or arrange late check-out?</summary><p>The demo lets you enquire about breakfast and late check-out. It does not confirm availability, times, menus or prices. Contact the hotel's 24-hour reception for actual arrangements. No in-room dining service is represented as an existing hotel facility.</p></details>
+</div>
+</section>
+</main>
+<footer class="footer"><div class="wrap"><div class="footer-top"><div><strong>THE PARK HOTEL · LONDON VICTORIA</strong><p>Independent product concept. Not an official hotel service. All photographs are illustrative stock images, not the hotel's rooms, premises, breakfast or team. The typographic brand treatment is a concept, not a verified hotel logo.</p></div><span>Concept by <strong>LeadSky</strong><br><a href="#experience">Back to the guest app ↑</a></span></div><div class="credits">Photography · Pixabay Content License:<br><a href="https://pixabay.com/photos/door-building-vegetation-facade-8453898/" target="_blank" rel="noopener">lecreusois · Townhouse</a><a href="https://pixabay.com/photos/hotel-hotel-rooms-home-decoration-1749602/" target="_blank" rel="noopener">ManuelaJaeger · Bedroom</a><a href="https://pixabay.com/photos/bedroom-interior-design-bed-room-5664221/" target="_blank" rel="noopener">peterweideman · Interior</a><a href="https://pixabay.com/photos/receptionists-phone-call-hotel-5975962/" target="_blank" rel="noopener">Rodrigo_SalomonHC · Reception</a><a href="https://pixabay.com/photos/royal-guard-buckingham-palace-guards-1815020/" target="_blank" rel="noopener">alfcermed · Royal guards</a><a href="https://pixabay.com/photos/snack-white-toast-eating-home-4689117/" target="_blank" rel="noopener">marcosgarzo · Breakfast</a><a href="https://pixabay.com/photos/london-palace-architecture-tourism-8835826/" target="_blank" rel="noopener">ELG21 · Buckingham Palace</a></div></div></footer>
+<div class="mobile-bottom"><a class="btn light" href="tel:+442078343118">Call the hotel</a><button class="btn" onclick="openGuest('checkin');goToApp()">Try the guest app ↗</button></div>
+<div class="toast" id="toast" role="status" hidden></div>
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+let activeTab='checkin',queue=[],selectedRoom='Double',toastTimer,keyTimer;
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+function goToApp(){$('experience').scrollIntoView({behavior:reduceMotion.matches?'instant':'smooth',block:'start'});}
+function notify(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,6000);}
+function setView(view){const guest=view==='guest';$('guest-view').hidden=!guest;$('staff-view').hidden=guest;$('guest-switch').setAttribute('aria-pressed',String(guest));$('staff-switch').setAttribute('aria-pressed',String(!guest));}
+function showStaff(){setView('staff');goToApp();}
+function selectTab(tab){activeTab=tab;['checkin','key','guide','request'].forEach(name=>{const on=name===tab;$('screen-'+name).hidden=!on;$('tab-'+name).setAttribute('aria-selected',String(on));$('tab-'+name).tabIndex=on?0:-1;});}
+function openGuest(tab){setView('guest');selectTab(tab);}
+document.querySelector('.tabs').addEventListener('keydown',event=>{const names=['checkin','key','guide','request'];if(!['ArrowRight','ArrowLeft','Home','End'].includes(event.key))return;event.preventDefault();let index=names.indexOf(activeTab);if(event.key==='Home')index=0;else if(event.key==='End')index=3;else index=(index+(event.key==='ArrowRight'?1:-1)+4)%4;selectTab(names[index]);$('tab-'+names[index]).focus();});
+$('menu-button').addEventListener('click',()=>{const open=$('menu-button').getAttribute('aria-expanded')!=='true';$('menu-button').setAttribute('aria-expanded',String(open));$('menu-button').setAttribute('aria-label',open?'Close navigation':'Open navigation');$('mobile-menu').classList.toggle('open',open);});
+function closeMenu(){$('menu-button').setAttribute('aria-expanded','false');$('menu-button').setAttribute('aria-label','Open navigation');$('mobile-menu').classList.remove('open');}
+document.querySelectorAll('#mobile-menu a').forEach(link=>link.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+function addItem(title,detail){queue.push({id:queue.length+1,title,detail,done:false});renderQueue();}
+function renderQueue(){const container=$('queue');container.replaceChildren();if(!queue.length){const empty=document.createElement('div');empty.className='queue-empty';empty.textContent='Your queue is clear. Try check-in or a guest request to see how it appears here.';container.append(empty);}
+queue.slice().reverse().forEach(item=>{const row=document.createElement('div');row.className='queue-item';const title=document.createElement('strong');title.textContent=item.title;const detail=document.createElement('span');detail.textContent=item.detail+' · Sample record';const button=document.createElement('button');button.textContent=item.done?'✓ Handled in demo':'Mark handled';button.disabled=item.done;button.addEventListener('click',()=>{item.done=true;renderQueue();notify('Sample request marked handled. No guest notification was sent.');});row.append(title,detail,button);container.append(row);});const pending=queue.filter(item=>!item.done).length;$('pending-count').textContent=pending;$('done-count').textContent=queue.length-pending;$('queue-badge').textContent=pending?'('+pending+')':'';}
+$('checkin-form').addEventListener('submit',event=>{event.preventDefault();const name=$('guest-name').value.trim();if(!name){$('guest-name').setCustomValidity('Please enter a guest name.');$('guest-name').reportValidity();return;}addItem('Pre-arrival check-in',name+' · Expected '+$('arrival-time').value);$('checkin-form-wrap').hidden=true;$('checkin-done').hidden=false;notify('This is a demo form, nothing was sent. Sample check-in added to the staff desk.');});
+$('guest-name').addEventListener('input',()=> $('guest-name').setCustomValidity(''));
+function unlockKey(){clearTimeout(keyTimer);$('key-card').classList.add('unlocked');$('key-title').textContent='Demo door unlocked.';$('key-state').textContent='Sample room 08 · Simulation only';$('unlock-button').textContent='✓ Unlocked in demo';$('unlock-button').disabled=true;$('key-notice').textContent='Simulation complete. No real door was unlocked. The demo will relock automatically.';keyTimer=setTimeout(()=>{$('key-card').classList.remove('unlocked');$('key-title').textContent='Your door to London.';$('key-state').textContent='Sample room 08 · Locked';$('unlock-button').textContent='Tap to simulate unlocking ⌁';$('unlock-button').disabled=false;$('key-notice').textContent='Demo relocked. No physical lock is connected.';},5000);}
+$('request-form').addEventListener('submit',event=>{event.preventDefault();const type=$('request-type').value;const note=$('request-note').value.trim();addItem(type,'Alex Morgan · Sample room 08'+(note?' · '+note:''));$('request-message').textContent='This is a demo form, nothing was sent. Your sample request is visible in the staff desk.';$('request-note').value='';notify('Sample request added. Open Staff desk to review it.');});
+function addBubble(text,user){const bubble=document.createElement('div');bubble.className='bubble'+(user?' user':'');bubble.textContent=text;$('chat-log').append(bubble);$('chat-log').scrollTop=$('chat-log').scrollHeight;}
+function askGuide(question){const text=question.trim();if(!text)return;addBubble(text,true);const q=text.toLowerCase();let reply;
+if(/breakfast|food|menu/.test(q))reply='The hotel describes breakfast as available at competitive prices. Current times, menu and prices are not confirmed in this concept. Use Requests → Breakfast information to try an enquiry, or call reception for real details.';
+else if(/late|checkout|check.out/.test(q))reply='Late check-out needs approval from reception. Availability and any charge are not confirmed here. Open Requests and choose Late check-out enquiry to add a sample enquiry to the staff desk.';
+else if(/booking|cancel|modify|change/.test(q))reply='The hotel offers an online portal to view, modify or cancel bookings. Please visit the official hotel website for the real portal. This demo cannot access or change a reservation.';
+else if(/near|explor|palace|attraction|london|walk|sight/.test(q))reply='Start with Westminster Cathedral, then explore Buckingham Palace, Green Park and St James’s Park. The River Thames is another nearby option. Check current opening times and routes before setting out.';
+else if(/wifi|wi-fi|internet/.test(q))reply='The Park Hotel lists free WiFi. Ask reception for connection details. No real WiFi credentials are stored in this demo.';
+else if(/key|unlock/.test(q))reply='Open the Room key tab to try the digital-key simulation. It does not unlock a physical door. A real service would need compatible hotel locks and secure guest verification.';
+else if(/station|location|address|where/.test(q))reply='The hotel is on Belgrave Road in London Victoria, close to Victoria Underground, railway and coach stations. Use the map link below for directions to the hotel.';
+else if(/towel|tea|coffee|request/.test(q))reply='Open Requests to add a sample enquiry for extra towels or tea and coffee supplies. It will appear in the demo staff queue. Nothing is sent to the hotel.';
+else reply='I’m a scripted demo guide. Try asking about nearby landmarks, breakfast, WiFi or booking changes. For a real answer from the hotel, call +44 20 7834 3118.';
+addBubble(reply,false);}
+$('chat-form').addEventListener('submit',event=>{event.preventDefault();askGuide($('chat-input').value);$('chat-input').value='';});
+function launchGuide(question){openGuest('guide');askGuide(question);goToApp();}
+function pickRoom(button,name){selectedRoom=name;document.querySelectorAll('.room-picker button').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));$('room-title').textContent=name+' room';$('room-description').textContent='A '+name.toLowerCase()+' room with an en suite bathroom, TV, direct-dial telephone and tea and coffee facilities.';$('room-enquire').textContent='Try a '+name+' room enquiry →';}
+function roomRequest(){addItem('Room category enquiry','Alex Morgan · Interested in a '+selectedRoom.toLowerCase()+' room');notify('This is a demo form, nothing was sent. Sample room enquiry added to the staff desk.');}
+$('example-price').addEventListener('input',()=>{const field=$('example-price');const amount=field.valueAsNumber;$('discount-result').textContent=field.validity.valid&&Number.isFinite(amount)?new Intl.NumberFormat('en-GB',{style:'currency',currency:'GBP'}).format(amount*.9):'Enter a valid total';});
+
+// Three.js Interactive Key Token Scene
+(function(){
+const container = $('three-container');
+if(!container || typeof THREE === 'undefined') return;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+camera.position.z = 6;
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(container.clientWidth, container.clientHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
+scene.add(ambientLight);
+
+const pointLight = new THREE.PointLight(0xc49a45, 2, 50);
+pointLight.position.set(5, 5, 5);
+scene.add(pointLight);
+
+const pointLight2 = new THREE.PointLight(0x3d5366, 1.5, 50);
+pointLight2.position.set(-5, -5, -2);
+scene.add(pointLight2);
+
+// Create 3D Crypto Token / Key Medallion
+const geometry = new THREE.CylinderGeometry(1.8, 1.8, 0.25, 64);
+const material = new THREE.MeshStandardMaterial({
+  color: 0xc49a45,
+  metalness: 0.85,
+  roughness: 0.2,
+  wireframe: false
+});
+const tokenMesh = new THREE.Mesh(geometry, material);
+tokenMesh.rotation.x = Math.PI / 6;
+scene.add(tokenMesh);
+
+// Add interactive mouse/touch rotation
+let isDragging = false;
+let previousMousePosition = { x: 0, y: 0 };
+
+container.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  previousMousePosition = { x: e.clientX, y: e.clientY };
+});
+
+window.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  const deltaX = e.clientX - previousMousePosition.x;
+  const deltaY = e.clientY - previousMousePosition.y;
+
+  tokenMesh.rotation.y += deltaX * 0.01;
+  tokenMesh.rotation.x += deltaY * 0.01;
+
+  previousMousePosition = { x: e.clientX, y: e.clientY };
+});
+
+window.addEventListener('mouseup', () => { isDragging = false; });
+
+// Touch support
+container.addEventListener('touchstart', (e) => {
+  if(e.touches.length === 1) {
+    isDragging = true;
+    previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+  }
+}, {passive: true});
+
+window.addEventListener('touchmove', (e) => {
+  if (!isDragging || e.touches.length !== 1) return;
+  const deltaX = e.touches[0].clientX - previousMousePosition.x;
+  const deltaY = e.touches[0].clientY - previousMousePosition.y;
+
+  tokenMesh.rotation.y += deltaX * 0.01;
+  tokenMesh.rotation.x += deltaY * 0.01;
+
+  previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+}, {passive: true});
+
+window.addEventListener('touchend', () => { isDragging = false; });
+
+// Animation loop
+function animate() {
+  requestAnimationFrame(animate);
+  if (!isDragging && !reduceMotion.matches) {
+    tokenMesh.rotation.y += 0.005;
+  }
+  renderer.render(scene, camera);
+}
+animate();
+
+// Resize observer
+window.addEventListener('resize', () => {
+  if(!container) return;
+  camera.aspect = container.clientWidth / container.clientHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(container.clientWidth, container.clientHeight);
+});
+})();
+</script>
+</body>
+</html>
