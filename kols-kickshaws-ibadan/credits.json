@@ -1,0 +1,76 @@
+[
+  {
+    "file": "img/business-logo-1.svg",
+    "kind": "business logo",
+    "source": "https://static.whatsapp.net/rsrc.php/yM/r/ys-5GPT4pwS.svg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.png",
+    "kind": "business featured image",
+    "source": "https://static.whatsapp.net/rsrc.php/v4/yO/r/rukeqTVNJDY.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "caterer",
+    "description": "catering, airport, plane, ever, entry, hull, aviation, air traffic, vacations, arrival, rear, charge, meal, food, nourishment, enjoy the meal, airfield, dusseldorf, airport d\u00fcsseldorf, catering, catering, catering, catering, catering, airport, airport, airport, airfield",
+    "source": "https://pixabay.com/photos/catering-airport-plane-ever-entry-210403/",
+    "photographer": "falco",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "caterer",
+    "description": "drinks, alcohol, glasses, champagne, wine, serving trays, alcoholic drinks, beverage, refreshment, catering, wedding, party, event, celebration, alcohol, alcohol, champagne, champagne, champagne, champagne, champagne, wine, wine, catering, catering, wedding, wedding, party, party, party, party, event, event, event",
+    "source": "https://pixabay.com/photos/drinks-alcohol-glasses-champagne-1283608/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "caterer customer",
+    "description": "people, men, women, crowd, cook, bread, chef, baker, store, restaurant, fast food, chef, chef, chef, baker, baker, fast food, fast food, fast food, fast food, fast food",
+    "source": "https://pixabay.com/photos/people-men-women-crowd-cook-bread-2595757/",
+    "photographer": "StockSnap",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "caterer customer",
+    "description": "barber shop, iran, cosmetology, mashhad, people, job, work, life, lifestyle, everyday, occupation, social documentary, office, mostafa meraji, canon photos, young, men, business, jorj barber, makeup artist, stylist, style blogger, fashion blogger, persian, barbershop in iran, barber shop, barber shop, barber shop, barber shop, iran, iran, people, job, job, job, job, job, work, work, life, life, men, men, men, business, business",
+    "source": "https://pixabay.com/photos/barber-shop-iran-cosmetology-5212059/",
+    "photographer": "mostafa_meraji",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "caterer Ibadan",
+    "description": "hors d'oeuvre, starters, appetizers, charcuterie, delicatessen, food platter, catering, cheese, salami, smoked beef, tomato, snack, bread, plate, cuisine, protein, antipasto, meat, tasty, platter, assortment, appetite, finger food, buffet, canapes, nourishment, nutrition, protein, protein, protein, protein, protein",
+    "source": "https://pixabay.com/photos/hors-doeuvre-starters-appetizers-2175326/",
+    "photographer": "stevepb",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "caterer Ibadan",
+    "description": "barbecue, bbq, grill, meat, vegetables, food, lunch, dinner, gray vegetables, gray meat, gray dinner, bbq, bbq, bbq, bbq, bbq",
+    "source": "https://pixabay.com/photos/barbecue-bbq-grill-meat-vegetables-2619439/",
+    "photographer": "StockSnap",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
