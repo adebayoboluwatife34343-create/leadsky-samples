@@ -30,12 +30,6 @@
     "source": "https://www.tiktok.com/@emeditemaom"
   },
   {
-    "file": "img/work-5.jpg",
-    "kind": "their own photo (from their Tiktok)",
-    "use_as": "gallery / service card: their real work (still from their video)",
-    "source": "https://www.tiktok.com/@emeditemaom"
-  },
-  {
     "file": "img/work-6.jpg",
     "kind": "their own photo (from their Tiktok)",
     "use_as": "gallery / service card: their real work (still from their video)",
@@ -61,6 +55,12 @@
   },
   {
     "file": "img/work-10.jpg",
+    "kind": "their own photo (from their Tiktok)",
+    "use_as": "gallery / service card: their real work (still from their video)",
+    "source": "https://www.tiktok.com/@emeditemaom"
+  },
+  {
+    "file": "img/work-11.jpg",
     "kind": "their own photo (from their Tiktok)",
     "use_as": "gallery / service card: their real work (still from their video)",
     "source": "https://www.tiktok.com/@emeditemaom"
