@@ -1,0 +1,76 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://static.wixstatic.com/media/e51c2b_d8c27822b3844282a48892d37a89e52b~mv2.png/v1/fill/w_190,h_69,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/KD%20Key%20transparent.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "https://static.wixstatic.com/media/e51c2b_b05b2b3b600f4980b5c23a12774b26fa~mv2.jpg/v1/fill/w_1800,h_1200,al_c/e51c2b_b05b2b3b600f4980b5c23a12774b26fa~mv2.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "furniture",
+    "description": "living room, couch, interior, room, home, sofa, furniture, modern, table, decor, carpet, indoors, interior design, interior decoration, home furniture, living room, living room, living room, living room, living room, interior, room, room, home, home, home, home, sofa, furniture, interior design",
+    "source": "https://pixabay.com/photos/living-room-couch-interior-room-2732939/",
+    "photographer": "ClickerHappy",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "furniture",
+    "description": "da guojing, indoor, indoor decorations, bedroom, furniture, indoor, bedroom, bedroom, bedroom, bedroom, furniture, furniture, furniture, furniture, furniture",
+    "source": "https://pixabay.com/photos/da-guojing-indoor-indoor-decorations-6888603/",
+    "photographer": "ymyphoto",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "furniture customer",
+    "description": "couple, mattress, shopping, husband, wife, man, woman, linens, shelves, curtain, bed, indoors, mattress, mattress, mattress, mattress, mattress, husband",
+    "source": "https://pixabay.com/photos/couple-mattress-shopping-husband-8152550/",
+    "photographer": "slaapwijsheid",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "furniture customer",
+    "description": "barber shop, iran, cosmetology, mashhad, people, job, work, life, lifestyle, everyday, occupation, social documentary, office, mostafa meraji, canon photos, young, men, business, jorj barber, makeup artist, stylist, style blogger, fashion blogger, persian, barbershop in iran, barber shop, barber shop, barber shop, barber shop, iran, iran, people, job, job, job, job, job, work, work, life, life, men, men, men, business, business",
+    "source": "https://pixabay.com/photos/barber-shop-iran-cosmetology-5212059/",
+    "photographer": "mostafa_meraji",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "furniture London",
+    "description": "ferris wheel, london eye, river, ride, england, landmark, thames, architecture, uk, city, tourism, famous, attraction, symbol, capital, monument, united kingdom, london, london eye, london, london, london, london, london",
+    "source": "https://pixabay.com/photos/ferris-wheel-london-eye-river-ride-6547089/",
+    "photographer": "dimitrisvetsikas1969",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "furniture London",
+    "description": "london, britain, london eye, sky, landmark, ferris wheel, tourism, nature, skyline, attraction, city, people",
+    "source": "https://pixabay.com/photos/london-britain-london-eye-sky-1572444/",
+    "photographer": "designerpoint",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
