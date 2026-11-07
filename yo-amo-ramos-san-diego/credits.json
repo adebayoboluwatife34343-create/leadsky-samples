@@ -1,0 +1,68 @@
+[
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/yo.amoramos"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "florist",
+    "description": "carnation, flower, nature, petals, flower wallpaper, rose, botany, flower girl dress, rose flower, beautiful flowers, decor, flower background, fuchsia, texture",
+    "source": "https://pixabay.com/photos/carnation-flower-nature-petals-10000623/",
+    "photographer": "Susi50",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "florist",
+    "description": "vase, floral background, flowers, laptop wallpaper, flower background, wallpaper hd, bouquet, flower shop, decoration, beautiful flowers, composition, hd wallpaper, bouquet of flowers, flower bouquet, nature, wallpaper 4k, 4k wallpaper, tiny flowers, anniversary bouquet, desktop backgrounds, 4k wallpaper 1920x1080, baptism, free wallpaper, party, full hd wallpaper, mac wallpaper, the ceremony, wedding, color, cool backgrounds, abstraction, background, red, beautiful wallpaper, free background, blue, windows wallpaper, flower wallpaper, orange, flower",
+    "source": "https://pixabay.com/photos/vase-flowers-bouquet-flower-shop-2268019/",
+    "photographer": "aedrozda",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "florist customer",
+    "description": "florist, flower shop, delivery, beautiful flowers, flower wallpaper, online delivery, flower delivery, flowers, bouquet, flower background, flower order, online, service, nature, through the internet, services, ordering a gift online, gift, smartphone, app",
+    "source": "https://pixabay.com/photos/florist-flower-shop-delivery-6974505/",
+    "photographer": "Sunriseforever",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "florist customer",
+    "description": "flower, flower wallpaper, craft, beautiful flowers, flower background, support, from damage, gift, nature, her home, cute",
+    "source": "https://pixabay.com/photos/flower-craft-support-from-damage-4764299/",
+    "photographer": "thanhdoan91",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "florist San Diego",
+    "description": "skyline, ships, yachts, night, evening, glow, harbor, marina, city, lights, buildings, california, skyscrapers, reflections, san diego, san diego, san diego, san diego, san diego, san diego",
+    "source": "https://pixabay.com/photos/skyline-ships-yachts-night-evening-4353504/",
+    "photographer": "JillWellington",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "florist San Diego",
+    "description": "california, nature, beach, san diego, del mar, usa, sea, person, walking, human, ocean, landscape",
+    "source": "https://pixabay.com/photos/california-beach-san-diego-del-mar-2777088/",
+    "photographer": "dfsym",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
