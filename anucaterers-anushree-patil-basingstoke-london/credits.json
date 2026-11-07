@@ -1,0 +1,42 @@
+[
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "caterer",
+    "description": "catering, airport, plane, ever, entry, hull, aviation, air traffic, vacations, arrival, rear, charge, meal, food, nourishment, enjoy the meal, airfield, dusseldorf, airport d\u00fcsseldorf, catering, catering, catering, catering, catering, airport, airport, airport, airfield",
+    "source": "https://pixabay.com/photos/catering-airport-plane-ever-entry-210403/",
+    "photographer": "falco",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "caterer",
+    "description": "drinks, alcohol, glasses, champagne, wine, serving trays, alcoholic drinks, beverage, refreshment, catering, wedding, party, event, celebration, alcohol, alcohol, champagne, champagne, champagne, champagne, champagne, wine, wine, catering, catering, wedding, wedding, party, party, party, party, event, event, event",
+    "source": "https://pixabay.com/photos/drinks-alcohol-glasses-champagne-1283608/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "caterer customer",
+    "description": "people, men, women, crowd, cook, bread, chef, baker, store, restaurant, fast food, chef, chef, chef, baker, baker, fast food, fast food, fast food, fast food, fast food",
+    "source": "https://pixabay.com/photos/people-men-women-crowd-cook-bread-2595757/",
+    "photographer": "StockSnap",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "caterer customer",
+    "description": "barber shop, iran, cosmetology, mashhad, people, job, work, life, lifestyle, everyday, occupation, social documentary, office, mostafa meraji, canon photos, young, men, business, jorj barber, makeup artist, stylist, style blogger, fashion blogger, persian, barbershop in iran, barber shop, barber shop, barber shop, barber shop, iran, iran, people, job, job, job, job, job, work, work, life, life, men, men, men, business, business",
+    "source": "https://pixabay.com/photos/barber-shop-iran-cosmetology-5212059/",
+    "photographer": "mostafa_meraji",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
