@@ -1,0 +1,75 @@
+[
+  {
+    "file": "img/business-logo-1.svg",
+    "kind": "business logo",
+    "source": "https://www.habselstree.org.uk/girls/wp-content/themes/habs/assets/img/logos/habs-girls--blue.svg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/habsgirlsschool"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "school",
+    "description": "school, board, empty, slate, blackboard, chalk, writing board, smeared, concept, school, school, school, school, school, blackboard, blackboard, blackboard, blackboard",
+    "source": "https://pixabay.com/photos/school-board-empty-slate-916678/",
+    "photographer": "geralt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "school",
+    "description": "sea, ocean, fish, diving, coral reef, underwater, blue, nature, marine life, school of fish, biology, abstract, photography, animals, shadow, day, habitat, sea realm, darkness, pattern",
+    "source": "https://pixabay.com/photos/sea-ocean-fish-diving-coral-reef-10393839/",
+    "photographer": "Franziska_Stier",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "school customer",
+    "description": "board, chalk, feedback, review, training, school, communication, university, company, planning, students, project, marketing, presentation, web, smiley, office, business, feedback, feedback, feedback, feedback, feedback, review",
+    "source": "https://pixabay.com/photos/board-chalk-feedback-review-3699978/",
+    "photographer": "athree23",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "school customer",
+    "description": "education, instruction, school, learn, learning, educate, teach, teacher, instructing, teaching, instruction, instruction, instruction, instruction, instruction",
+    "source": "https://pixabay.com/photos/education-instruction-school-learn-614155/",
+    "photographer": "WOKANDAPIX",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "school London",
+    "description": "london, school, river, city, england, architecture, building, uk, university, landmark, historic, britain, british, blue school",
+    "source": "https://pixabay.com/photos/london-school-river-city-england-4868437/",
+    "photographer": "Whizartmedia",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "school London",
+    "description": "ferris wheel, london eye, river, ride, england, landmark, thames, architecture, uk, city, tourism, famous, attraction, symbol, capital, monument, united kingdom, london, london eye, london, london, london, london, london",
+    "source": "https://pixabay.com/photos/ferris-wheel-london-eye-river-ride-6547089/",
+    "photographer": "dimitrisvetsikas1969",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
