@@ -1,801 +1,1120 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="robots" content="noindex">
-  <title>Coby Philips</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Coby Philips | Recruitment Workspace Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F8FAFC;
+  --panel-bg: #FFFFFF;
+  --ink: #0F172A;
+  --blue: #1E40AF;
+  --blue-hover: #18358F;
+  --blue-light: #EFF6FF;
+  --blue-border: #BFDBFE;
+  --green: #059669;
+  --green-light: #ECFDF5;
+  --line: #E2E8F0;
+  --muted: #475569;
+  --white: #FFFFFF;
+  --shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 30px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.6 Inter, sans-serif; }
+button, input, select, textarea { font: inherit; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button, a { touch-action: manipulation; }
+button { cursor: pointer; border: 0; }
+a { color: inherit; text-decoration: none; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #F59E0B; outline-offset: 3px; }
+h1, h2, h3, h4, p { margin-top: 0; }
+h1, h2, h3, .brand-name { font-family: Outfit, sans-serif; }
+h1 { font-size: clamp(38px, 4.5vw, 64px); line-height: 1.08; letter-spacing: -2px; font-weight: 600; margin-bottom: 20px; color: var(--ink); }
+h2 { font-size: clamp(24px, 2.5vw, 32px); line-height: 1.2; letter-spacing: -1px; font-weight: 600; }
+h3 { font-size: 19px; line-height: 1.3; font-weight: 600; }
+small { font-size: 11px; }
 
-  <script id="site-data" type="application/json">{"brand": {"name": "Coby Philips", "tagline": "More than a CV. A person.", "logo": "img/business-logo-1.svg", "city": "London", "country": "GB", "currency": "GBP", "currency_symbol": "£", "phone": "+44 20 7841 1966", "whatsapp": "", "email": "info@cobyphilips.co.uk", "instagram": "", "tiktok": "", "address": "", "hours": ""}, "colors": {"bg": "#F5F3EF", "surface": "#FFFFFF", "text": "#182C30", "muted": "#536569", "brand": "#183E43", "accent": "#E8BC79"}, "fonts": {"heading": "DM Serif Display", "body": "Manrope"}, "hero": {"eyebrow": "COBY PHILIPS · LONDON · INTERACTIVE PRODUCT SAMPLE", "title": "The person behind the CV. The next step, made simpler.", "subtitle": "Try a recruitment assistant that turns a conversation into a candidate profile. Explore sample role matching, interview booking and progress updates in one place. Nothing is sent or booked.", "image": "img/stock-6.jpg", "cta_primary": "Try the assistant", "cta_secondary": "Explore the sample portal", "shape3d": "wave"}, "stats": [], "about": {"title": "Give the conversation more room.", "text": "Coby Philips says a CV is only part of a candidate’s story. This proposed portal builds on that approach. Guided intake gathers skills and preferences before a conversation with the agency. Sample profiles, shortlists and interview slots show how less paperwork could leave more time for people. The London image is illustrative stock photography.", "image": "img/stock-6.jpg"}, "items": [{"name": "Guided candidate intake", "description": "Demo feature: answer questions about your experience, skills and next role. Review a sample profile built from your answers.", "price": 0, "price_label": "Free interactive sample", "duration": "", "image": "", "category": "Candidate workspace"}, {"name": "Role matching", "description": "Demo feature: compare a sample candidate profile with fictional London vacancies. See the reasons for each suggested match.", "price": 0, "price_label": "Free interactive sample", "duration": "", "image": "", "category": "Candidate workspace"}, {"name": "Client role brief", "description": "Demo feature: outline a role, required skills and working preferences. Preview a structured brief for agency review.", "price": 0, "price_label": "Free interactive sample", "duration": "", "image": "", "category": "Client workspace"}, {"name": "Candidate shortlist", "description": "Demo feature: review fictional candidate summaries alongside a sample role. Flag profiles for a follow-up conversation.", "price": 0, "price_label": "Free interactive sample", "duration": "", "image": "", "category": "Client workspace"}, {"name": "Interview scheduling", "description": "Demo feature: choose a sample calendar slot and preview a booking summary. No calendar invitation is sent.", "price": 0, "price_label": "Free interactive sample", "duration": "30-minute sample interview", "image": "", "category": "Shared workspace"}, {"name": "Progress and contract preview", "description": "Demo feature: follow sample application stages and preview a draft contract summary with placeholders for review. Nothing is issued or signed.", "price": 0, "price_label": "Free interactive sample", "duration": "", "image": "", "category": "Shared workspace"}], "gallery": [], "videos": [], "steps": [{"title": "Tell your story", "text": "Use the assistant to describe your skills, experience and preferences. Use fictional details while trying the sample."}, {"title": "Review the fit", "text": "Check the generated profile and explore sample matches. Clients can preview a role brief and candidate shortlist."}, {"title": "Choose the next step", "text": "Select a sample interview slot and see the booking summary. Nothing is added to a real calendar."}, {"title": "Keep progress visible", "text": "Explore a shared view of sample stages, updates and draft documents."}], "points": [{"title": "Less repeat typing", "text": "A shared profile could reduce the need to copy the same candidate details between forms."}, {"title": "Clearer matching", "text": "Skills and preferences sit beside the role brief, helping the agency review the fit."}, {"title": "Fewer scheduling messages", "text": "A calendar flow could make arranging interviews easier for candidates, clients and the agency."}, {"title": "A clearer next step", "text": "Visible stages and automatic updates could support Coby Philips’ stated aim to respond in two minutes, not two days."}], "faq": [{"q": "Is this Coby Philips’ official portal?", "a": "No. This is an independent product concept by LeadSky for Coby Philips. It demonstrates a proposed recruitment workflow."}, {"q": "Are these real jobs or candidates?", "a": "No. All vacancies, candidate profiles, availability and dashboard records in this demo are sample data."}, {"q": "Will the assistant send my details?", "a": "No. This sample uses scripted replies. It does not submit applications, contact the agency or send messages. Please use fictional details."}, {"q": "Can I book a real interview here?", "a": "No. The calendar demonstrates a booking flow with sample slots. It does not reserve time or send invitations."}, {"q": "Does the assistant make recruitment decisions?", "a": "No. It demonstrates intake and suggested matches. The proposed workflow leaves profile review, shortlisting and recruitment decisions with people."}, {"q": "How can I contact Coby Philips?", "a": "Call +44 20 7841 1966 or email info@cobyphilips.co.uk for real enquiries."}], "demo": {"assistant_name": "Coby Philips · Sample assistant", "greeting": "Hello. Let’s explore your next step. I can demonstrate candidate intake, sample role matching or interview scheduling. These are scripted replies using fictional records. Nothing is sent or booked. Where would you like to start?", "quick_questions": ["Help me build a candidate profile", "Show me sample roles", "I need to hire someone", "Show a candidate shortlist", "Try interview booking", "Show application progress"], "script": [{"q": "Help me build a candidate profile", "a": "Let’s start with the person behind the CV. In this proposed flow, I would ask about your recent work, skills, preferred role, location and availability. For this scripted sample, try: “I have administration experience and want a London role.” Please use fictional details."}, {"q": "I have administration experience and want a London role", "a": "Here is a sample profile preview: target role — administrator; location — London; experience — administration. Working pattern, key skills and availability still need your input. A live version could build this profile from your answers for you and the agency to review."}, {"q": "What skills and preferences would you ask about?", "a": "The proposed intake would cover tasks you enjoy, relevant skills, preferred working pattern, location, salary expectations and availability. It would also leave space for what you want the agency to understand beyond your CV."}, {"q": "Show me sample roles", "a": "Explore these fictional London vacancies: Sample role A — Administrator, with document handling and scheduling; Sample role B — Customer Support Coordinator, with written communication and enquiry handling. These illustrate the matching flow. They are not advertised Coby Philips vacancies."}, {"q": "Why does this role match my profile?", "a": "For the sample administrator profile, Sample role A shares administration tasks and a London location. Working pattern, salary expectations and availability remain unconfirmed. A suggested match would need agency review before a shortlist decision."}, {"q": "I need to hire someone", "a": "The proposed client flow starts with a role brief: job title, responsibilities, essential skills, location, working pattern, salary range and intended start date. Try “Show a sample role brief” to preview the result. No vacancy will be published."}, {"q": "Show a sample role brief", "a": "Sample role A: Administrator, London. Fictional responsibilities: maintain documents, coordinate diaries and handle enquiries. Sample requirements: organisation and clear written communication. Salary, working pattern and start date are awaiting input. This is a demonstration brief only."}, {"q": "Show a candidate shortlist", "a": "Sample shortlist for the fictional administrator role: Sample candidate A — administration and diary coordination; Sample candidate B — document handling and customer enquiries. These are fictional profiles. In the proposed portal, a client could review each summary and request an interview for agency follow-up."}, {"q": "Try interview booking", "a": "Choose a fictional 30-minute slot: Tuesday at 10:00, Tuesday at 14:00 or Wednesday at 11:30, London time. These slots demonstrate the calendar flow only. Try “Choose Tuesday at 10:00” to preview a booking summary."}, {"q": "Choose Tuesday at 10:00", "a": "Sample booking preview: Sample candidate A, Sample role A, Tuesday, 10:00–10:30, London time. The calendar date, attendees and meeting location would need confirmation in a live workflow. Nothing has been booked and no invitation has been sent."}, {"q": "Show application progress", "a": "Sample candidate A is at “Profile ready”. Sample candidate B is at “Shortlist review”. Sample candidate C is at “Interview preview”. These fictional stages show how candidates, clients and the agency could see the next action in one place."}, {"q": "Generate a contract", "a": "The proposed portal could assemble a draft from reviewed role and candidate details. This sample shows placeholders for the parties, role, pay, hours and start date. All terms would need appropriate review before issue. No contract is created, sent or signed here."}, {"q": "How quickly will someone respond?", "a": "Coby Philips says it aims to respond in two minutes, not two days. This independent demo cannot promise a response time or reach the agency. For a real enquiry, call +44 20 7841 1966 or email info@cobyphilips.co.uk."}, {"q": "Is this real AI and can I upload my CV?", "a": "This sample uses scripted answers to demonstrate an AI-assisted workflow. It does not analyse a CV or submit your details. Use fictional information while exploring it."}, {"q": "How do I contact Coby Philips?", "a": "Call +44 20 7841 1966 or email info@cobyphilips.co.uk. This assistant cannot send a message on your behalf."}, {"q": "I have another question", "a": "This scripted sample covers candidate profiles, sample roles, client briefs, shortlists and interview booking. Choose a quick question to explore a flow. For an enquiry about Coby Philips’ services, contact the agency directly."}], "staff": [], "slots": ["Sample slot · Tuesday · 10:00–10:30 · London time", "Sample slot · Tuesday · 14:00–14:30 · London time", "Sample slot · Wednesday · 11:30–12:00 · London time"], "kpis": [{"label": "Sample intake", "value": "Profile ready for review"}, {"label": "Sample shortlist", "value": "Awaiting client review"}, {"label": "Sample interview", "value": "Booking preview only"}, {"label": "Live messages sent", "value": "None · demonstration only"}], "columns": ["Sample candidate", "Sample role", "Location", "Stage", "Next action"], "records": [{"Sample candidate": "Sample candidate A", "Sample role": "Administrator · fictional vacancy", "Location": "London", "Stage": "Profile ready", "Next action": "Review skills and preferences"}, {"Sample candidate": "Sample candidate B", "Sample role": "Administrator · fictional vacancy", "Location": "London", "Stage": "Shortlist review", "Next action": "Review sample profile"}, {"Sample candidate": "Sample candidate C", "Sample role": "Customer Support Coordinator · fictional vacancy", "Location": "London", "Stage": "Interview preview", "Next action": "Choose a sample calendar slot"}], "options": [{"name": "Explore candidate intake", "price": 0, "unit": "free demo · no application submitted"}, {"name": "Preview a client shortlist", "price": 0, "unit": "free demo · fictional profiles"}, {"name": "Try interview scheduling", "price": 0, "unit": "free demo · no booking made"}]}, "banner": "Independent website concept by LeadSky for Coby Philips. Not their official website.", "credits": [{"text": "Illustrative London stock photograph by dimitrisvetsikas1969 on Pixabay.", "url": "https://pixabay.com/photos/ferris-wheel-london-eye-river-ride-6547089/"}]}</script>
+.banner { text-align: center; background: #E2E8F0; color: #334155; padding: 8px 14px; font-size: 11px; font-weight: 500; border-bottom: 1px solid #CBD5E1; }
+.shell { display: grid; grid-template-columns: 240px minmax(0, 1fr); min-height: 100vh; }
+.sidebar { background: #0F172A; color: white; padding: 32px 20px; display: flex; flex-direction: column; gap: 32px; border-right: 1px solid #1E293B; }
 
-  <style id="theme-vars">
-    :root {
-      --bg: #fcfaf7;
-      --surface: #f4efe6;
-      --text: #242220;
-      --muted: #736e65;
-      --brand: #42382c;
-      --accent: #9c7c58;
-    }
-  </style>
+.brand-logo { display: flex; align-items: center; gap: 10px; color: white; text-decoration: none; }
+.brand-icon { flex-shrink: 0; }
+.brand-name { font-size: 16px; font-weight: 700; letter-spacing: 1px; color: white; }
+.brand-sub { font: 9px Inter, sans-serif; letter-spacing: 2px; color: #CBD5E1; margin-top: 4px; display: block; }
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            bg: 'var(--bg)',
-            surface: 'var(--surface)',
-            ink: 'var(--text)',
-            muted: 'var(--muted)',
-            brand: 'var(--brand)',
-            accent: 'var(--accent)',
-          }
-        }
-      }
-    }
-  </script>
+.sidebar nav { display: grid; gap: 6px; }
+.navlabel { text-transform: uppercase; letter-spacing: 1.5px; font-size: 10px; font-weight: 600; color: #CBD5E1; margin: 0 10px 8px; }
+.navitem { text-decoration: none; border-radius: 8px; padding: 10px 12px; display: flex; align-items: center; gap: 12px; font-size: 13px; font-weight: 500; color: #CBD5E1; transition: all 0.2s; }
+.navitem:hover, .navitem.active { background: #1E293B; color: white; }
+.navitem.active { box-shadow: inset 3px 0 #3B82F6; }
+.navitem svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 1.8; }
 
-  <style>
-    * { box-sizing: border-box; }
-    html {
-      scroll-padding-top: 5rem;
-    }
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      overflow-x: hidden;
-      margin: 0;
-    }
-    .img-fallback {
-      background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-    .img-fallback::after {
-      content: '🪵';
-      font-size: 2rem;
-      opacity: 0.4;
-    }
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--muted); border-radius: 3px; }
-  </style>
+.sidebar-foot { margin-top: auto; border-top: 1px solid #1E293B; padding-top: 20px; font-size: 11px; color: #CBD5E1; }
+.sidebar-foot strong { display: block; color: white; font-weight: 600; margin-bottom: 6px; }
+.side-scene { position: relative; margin-top: 12px; border-radius: 8px; overflow: hidden; height: 120px; border: 1px solid #334155; }
+.side-scene img { width: 100%; height: 100%; object-fit: cover; }
+.side-scene span { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); padding: 6px 8px; font-size: 9px; color: white; }
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<style id='phone-safety'>canvas{pointer-events:none!important}@media(max-width:820px){canvas{opacity:.3!important}html,body{overflow-x:hidden}img,video{max-width:100%}}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}</style></head>
-<body class="bg-bg text-ink antialiased">
+.main { min-width: 0; }
+.topbar { height: 74px; border-bottom: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; padding: 0 40px; background: #FFFFFF; gap: 15px; }
+.crumb { font-size: 12px; color: var(--muted); }
+.crumb b { color: var(--ink); font-weight: 600; }
+.topright { display: flex; gap: 14px; align-items: center; }
+.pill { font-size: 11px; font-weight: 500; padding: 5px 11px; border: 1px solid #A7F3D0; border-radius: 30px; background: var(--green-light); color: var(--green); display: flex; align-items: center; gap: 6px; }
+.dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+.avatar { width: 34px; height: 34px; background: var(--blue-light); border: 1px solid var(--blue-border); border-radius: 50%; display: grid; place-items: center; color: var(--blue); font-size: 12px; font-weight: 700; }
 
-  <!-- Slim Banner in normal flow ABOVE header -->
-  <div class="bg-brand text-bg text-[11px] sm:text-xs py-2 px-4 text-center tracking-wide font-medium relative z-30">
-    <span id="banner-text">Independent website concept by LeadSky. Not the official website.</span>
+.content { max-width: 1400px; margin: 0 auto; padding: 36px 40px 60px; }
+.introline { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 12px; margin-bottom: 24px; }
+.eyebrow { text-transform: uppercase; color: var(--blue); letter-spacing: 2px; font-size: 11px; font-weight: 700; }
+
+.btn { border-radius: 8px; padding: 11px 18px; font-weight: 600; font-size: 13px; display: inline-flex; gap: 8px; align-items: center; justify-content: center; text-decoration: none; transition: background 0.2s, transform 0.2s, box-shadow 0.2s; }
+.btn:hover { transform: translateY(-1px); }
+.primary { background: var(--blue); color: white; box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2); }
+.primary:hover { background: var(--blue-hover); }
+.secondary { background: white; border: 1px solid #CBD5E1; color: #334155; }
+.secondary:hover { background: #F8FAFC; border-color: #94A3B8; }
+
+.hero { display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; align-items: center; padding: 10px 0 40px; }
+.hero-copy > p { max-width: 440px; color: var(--muted); font-size: 15px; line-height: 1.7; }
+.hero h1 span { color: var(--blue); }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 28px 0 18px; }
+.fine { font-size: 11px; color: #CBD5E1; }
+.hero-note { display: flex; gap: 8px; align-items: center; }
+.check { color: var(--green); font-size: 15px; font-weight: bold; }
+
+.matcher { background: white; border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: 14px; overflow: hidden; position: relative; }
+.windowbar { padding: 14px 20px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; font-size: 12px; background: #F8FAFC; }
+.windowname { display: flex; align-items: center; gap: 8px; font-weight: 600; color: var(--ink); }
+.ai-icon { display: grid; place-items: center; background: var(--blue-light); color: var(--blue); border-radius: 6px; width: 26px; height: 26px; font-size: 14px; font-weight: bold; }
+.chat { padding: 20px; height: 230px; overflow-y: auto; background: #FFFFFF; }
+.chatrow { display: flex; gap: 10px; margin-bottom: 14px; align-items: flex-start; }
+.chatrow.user { justify-content: flex-end; }
+.bubble { background: #F1F5F9; padding: 12px 16px; border-radius: 0 12px 12px 12px; font-size: 12px; max-width: 85%; line-height: 1.6; color: var(--ink); }
+.user .bubble { background: var(--blue); color: white; border-radius: 12px 0 12px 12px; }
+.chat-icon { border-radius: 6px; background: var(--blue-light); border: 1px solid var(--blue-border); padding: 4px 6px; color: var(--blue); font-size: 13px; }
+.suggestions { padding: 0 20px 12px; display: flex; gap: 8px; flex-wrap: wrap; }
+.suggestions button { font-size: 11px; background: #F8FAFC; border: 1px solid #CBD5E1; color: var(--blue); border-radius: 20px; padding: 6px 12px; font-weight: 500; transition: all 0.2s; }
+.suggestions button:hover { background: var(--blue-light); border-color: var(--blue-border); }
+.chat-form { display: flex; gap: 8px; padding: 14px 20px; border-top: 1px solid var(--line); background: #F8FAFC; }
+.chat-form input { min-width: 0; flex: 1; border: 1px solid #CBD5E1; border-radius: 6px; font-size: 12px; padding: 8px 12px; color: var(--ink); background: white; }
+.chat-form input:focus { border-color: var(--blue); }
+.send { background: var(--blue); color: white; width: 36px; height: 36px; border-radius: 6px; display: grid; place-items: center; font-weight: bold; }
+.send:hover { background: var(--blue-hover); }
+.extract { padding: 12px 20px; background: var(--green-light); border-top: 1px solid #A7F3D0; font-size: 11px; color: #065F46; }
+.chips { display: inline-flex; gap: 6px; flex-wrap: wrap; margin-left: 8px; }
+.chip { background: white; border: 1px solid #A7F3D0; color: var(--green); padding: 3px 8px; border-radius: 4px; font-weight: 600; font-size: 10px; }
+
+.section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin: 30px 0 24px; }
+.section-head h2 { margin: 0; }
+.section-head p { font-size: 13px; color: var(--muted); margin: 4px 0 0; }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 36px; }
+.stat { background: white; border: 1px solid var(--line); border-radius: 12px; padding: 20px; box-shadow: var(--shadow); }
+.stat-top { display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+.stat strong { font-family: Outfit, sans-serif; font-size: 32px; font-weight: 600; display: block; line-height: 1.3; color: var(--ink); }
+.stat small { color: var(--muted); font-size: 11px; }
+.spark { width: 44px; height: 22px; stroke: var(--blue); fill: none; stroke-width: 2; }
+
+.specialism-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 40px; }
+.specialism-card { background: white; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.specialism-img { height: 130px; position: relative; overflow: hidden; }
+.specialism-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.specialism-card:hover .specialism-img img { transform: scale(1.05); }
+.specialism-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+.specialism-body h4 { font-size: 15px; margin: 0 0 6px; font-weight: 600; }
+.specialism-body p { font-size: 11px; color: var(--muted); margin: 0 0 12px; line-height: 1.5; flex: 1; }
+.specialism-tag { align-self: flex-start; font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--blue); background: var(--blue-light); border: 1px solid var(--blue-border); padding: 3px 8px; border-radius: 4px; }
+
+.workspace { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr); gap: 24px; align-items: start; }
+.panel { background: white; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.panel-head { padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--line); background: #FFFFFF; }
+.panel-head h3 { margin: 0; font-size: 18px; }
+.panel-head p { margin: 2px 0 0; font-size: 11px; color: var(--muted); }
+.tabs { padding: 12px 24px; display: flex; gap: 8px; flex-wrap: wrap; border-bottom: 1px solid var(--line); background: #F8FAFC; }
+.tab { padding: 7px 12px; background: transparent; border: 1px solid transparent; border-radius: 6px; color: var(--muted); font-size: 11px; font-weight: 600; transition: all 0.2s; }
+.tab:hover { color: var(--ink); background: #E2E8F0; }
+.tab[aria-pressed=true] { background: white; border-color: var(--line); color: var(--blue); box-shadow: 0 2px 4px rgba(0,0,0,0.04); }
+
+.candidate { padding: 18px 24px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 42px 1fr auto; gap: 14px; align-items: center; transition: background 0.2s; }
+.candidate:hover { background: #F8FAFC; }
+.candidate:last-child { border: 0; }
+.initial { width: 42px; height: 42px; background: var(--blue-light); color: var(--blue); border: 1px solid var(--blue-border); display: grid; place-items: center; border-radius: 10px; font-family: Outfit; font-size: 15px; font-weight: 700; }
+.candidate:nth-child(2) .initial { background: #FFEDD5; color: #C2410C; border-color: #FED7AA; }
+.candidate:nth-child(3) .initial { background: #FEF3C7; color: #B45309; border-color: #FDE68A; }
+.candidate h4 { margin: 0; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.candidate p { font-size: 11px; color: var(--muted); margin: 2px 0 8px; }
+.tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.tag { font-size: 10px; background: #F1F5F9; border: 1px solid #E2E8F0; border-radius: 4px; padding: 2px 7px; color: #334155; font-weight: 500; }
+.fit { text-align: right; min-width: 80px; }
+.fit strong { font-size: 18px; font-family: Outfit; color: var(--green); font-weight: 700; display: block; }
+.fit small { display: block; font-size: 9px; color: var(--muted); text-transform: uppercase; }
+.fit button { background: none; color: var(--blue); font-size: 11px; font-weight: 600; padding: 6px 0 0; text-decoration: underline; text-underline-offset: 2px; }
+
+.panel-footer { background: #F8FAFC; padding: 14px 24px; font-size: 11px; color: var(--muted); display: flex; justify-content: space-between; align-items: center; gap: 10px; border-top: 1px solid var(--line); }
+.network { height: 210px; position: relative; background: radial-gradient(circle at center, #EFF6FF, #FFFFFF); overflow: hidden; }
+.network canvas { display: block; width: 100%; height: 100%; position: absolute; inset: 0; }
+.network-fallback { position: absolute; inset: 0; width: 100%; height: 100%; }
+.node-label { position: absolute; font-size: 10px; font-weight: 600; background: rgba(255, 255, 255, 0.95); border: 1px solid var(--blue-border); color: var(--blue); padding: 4px 10px; border-radius: 6px; pointer-events: none; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+.n1 { left: 10%; top: 20%; }
+.n2 { right: 10%; top: 35%; }
+.n3 { left: 32%; bottom: 15%; }
+.network-note { text-align: center; font-size: 10px; color: var(--muted); padding: 10px; border-top: 1px solid var(--line); background: #F8FAFC; }
+.network-filters { padding: 14px 20px; display: flex; gap: 6px; flex-wrap: wrap; }
+.network-filters button { background: #F1F5F9; color: #334155; border: 1px solid #CBD5E1; border-radius: 6px; font-size: 10px; font-weight: 600; padding: 6px 10px; transition: all 0.2s; }
+.network-filters button:hover { background: var(--blue-light); color: var(--blue); border-color: var(--blue-border); }
+.network-detail { font-size: 11px; color: var(--muted); padding: 0 20px 16px; margin: 0; }
+
+.schedule { margin-top: 24px; }
+.schedule-body { padding: 20px 24px; }
+.schedule-person { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding: 12px; background: #F8FAFC; border: 1px solid var(--line); border-radius: 8px; }
+.schedule-person p { font-size: 11px; color: var(--muted); margin: 0; }
+.schedule-person strong { font-size: 13px; color: var(--ink); }
+.schedule label { font-size: 11px; font-weight: 600; display: block; color: var(--ink); margin-bottom: 6px; }
+.schedule input[type=date] { width: 100%; padding: 10px; border: 1px solid #CBD5E1; border-radius: 6px; color: var(--ink); font-size: 12px; background: white; }
+.times { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 14px 0 18px; }
+.times button { border: 1px solid #CBD5E1; border-radius: 6px; padding: 8px 4px; background: white; font-size: 11px; font-weight: 600; color: #334155; transition: all 0.2s; }
+.times button[aria-pressed=true] { background: var(--blue-light); border-color: var(--blue); color: var(--blue); }
+.wide { width: 100%; }
+.feedback { font-size: 12px; color: var(--green); font-weight: 600; margin: 12px 0 0; min-height: 18px; }
+
+.how { margin: 50px 0 40px; }
+.how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.how-card { background: white; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; box-shadow: var(--shadow); }
+.how-image { height: 170px; position: relative; overflow: hidden; }
+.how-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
+.how-card:hover img { transform: scale(1.04); }
+.how-body { padding: 22px; }
+.step { font-size: 11px; font-weight: 700; color: var(--blue); margin-bottom: 8px; display: block; letter-spacing: 1px; }
+.how-body h3 { margin-bottom: 10px; font-size: 18px; }
+.how-body p { font-size: 12px; line-height: 1.7; color: var(--muted); margin: 0; }
+
+.bottom-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 28px; margin-bottom: 40px; }
+.faq h2 { font-size: 26px; margin-bottom: 16px; }
+.faq details { border-bottom: 1px solid var(--line); padding: 14px 0; }
+.faq summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--ink); list-style: none; display: flex; justify-content: space-between; align-items: center; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: '+'; font-size: 18px; color: var(--blue); font-weight: 400; }
+.faq details[open] summary::after { content: '–'; }
+.faq details p { font-size: 12px; color: var(--muted); margin: 10px 0 0; line-height: 1.6; }
+
+.contact { padding: 30px; background: #0F172A; color: white; border-radius: 14px; position: relative; overflow: hidden; box-shadow: var(--shadow); }
+.contact h2 { font-size: 26px; margin: 12px 0 8px; color: white; }
+.contact p { font-size: 12px; color: #CBD5E1; margin-bottom: 20px; }
+.contact a { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: white; font-weight: 600; margin: 6px 0; text-decoration: none; padding: 8px 12px; background: #1E293B; border-radius: 6px; border: 1px solid #334155; transition: all 0.2s; width: 100%; }
+.contact a:hover { background: var(--blue); border-color: var(--blue); }
+.contact .eyebrow { color: #60A5FA; }
+
+.footer { padding: 30px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 11px; display: flex; justify-content: space-between; gap: 24px; }
+.footer p { margin: 0; line-height: 1.6; }
+.footer a { text-decoration: underline; text-underline-offset: 3px; color: #334155; }
+.credits { max-width: 580px; }
+
+.modal { border: 1px solid var(--line); border-radius: 14px; padding: 0; width: min(540px, calc(100% - 30px)); max-height: 90vh; color: var(--ink); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+.modal::backdrop { background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(4px); }
+.modal-head { padding: 20px 24px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; background: #F8FAFC; }
+.modal-head h2 { font-size: 20px; margin: 0; }
+.close { background: #E2E8F0; border-radius: 50%; height: 32px; width: 32px; color: var(--ink); display: grid; place-items: center; font-weight: bold; font-size: 16px; }
+.close:hover { background: #CBD5E1; }
+.modal-body { padding: 24px; }
+.modal label { display: block; font-size: 12px; font-weight: 600; margin-bottom: 14px; color: var(--ink); }
+.modal input, .modal select, .modal textarea { display: block; width: 100%; margin-top: 6px; border: 1px solid #CBD5E1; border-radius: 6px; padding: 10px; background: white; color: var(--ink); font-size: 12px; }
+.modal textarea { min-height: 80px; }
+.notice { font-size: 11px; padding: 10px 14px; background: var(--blue-light); color: var(--blue); border: 1px solid var(--blue-border); border-radius: 6px; margin-bottom: 18px; font-weight: 500; }
+.contract-paper { border: 1px solid var(--line); padding: 20px; background: #FAF9F6; border-radius: 8px; }
+.contract-paper h3 { font-size: 20px; margin-bottom: 12px; }
+.contract-paper p { font-size: 12px; margin-bottom: 8px; }
+.empty { padding: 30px; text-align: center; color: var(--muted); font-size: 12px; }
+.mobile-logo { display: none; }
+
+@media (max-width: 1150px) {
+  .shell { grid-template-columns: 200px 1fr; }
+  .content { padding: 28px 24px 40px; }
+  .topbar { padding: 0 24px; }
+  .hero { gap: 24px; }
+  .specialism-grid { grid-template-columns: repeat(2, 1fr); }
+  .workspace { grid-template-columns: minmax(0, 1.4fr) minmax(260px, 1fr); }
+}
+@media (max-width: 900px) {
+  .shell { display: block; }
+  .sidebar { display: none; }
+  .mobile-logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+  .crumb { display: none; }
+  .topbar { height: 65px; }
+  .hero { grid-template-columns: 1fr; gap: 24px; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .workspace { grid-template-columns: 1fr; }
+  .right-column { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-items: start; }
+  .schedule { margin-top: 0; }
+}
+@media (max-width: 720px) {
+  .content { padding: 20px 16px 30px; }
+  .topbar { padding: 0 16px; }
+  .topright .fine { display: none; }
+  .specialism-grid { grid-template-columns: 1fr; }
+  .right-column { grid-template-columns: 1fr; }
+  .how-grid { grid-template-columns: 1fr; }
+  .bottom-grid { grid-template-columns: 1fr; }
+  .footer { flex-direction: column; gap: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .btn:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+<div class="banner">Independent website concept by LeadSky for Coby Philips. Not their official website.</div>
+
+<div class="shell">
+<aside class="sidebar">
+<a class="brand-logo" href="#home" aria-label="Coby Philips recruitment workspace home">
+  <svg class="brand-icon" viewBox="0 0 36 36" width="32" height="32" aria-hidden="true">
+    <rect x="2" y="2" width="32" height="32" rx="8" fill="#1E40AF"/>
+    <path d="M12 24V12h7a4.5 4.5 0 0 1 0 9h-7" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="23" cy="23" r="2.5" fill="#60A5FA"/>
+  </svg>
+  <div>
+    <span class="brand-name">COBY PHILIPS</span>
+    <span class="brand-sub">RECRUITMENT WORKSPACE</span>
   </div>
+</a>
 
-  <!-- Sticky Header: ONE row, exactly max 64px tall -->
-  <header class="sticky top-0 bg-bg/95 backdrop-blur-md z-40 border-b border-brand/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 min-w-0">
-      <!-- Brand Logo / Name: single line truncation, min-w-0 allows flex child shrinking -->
-      <a href="#" class="font-heading text-sm sm:text-base md:text-lg font-bold tracking-tight text-brand truncate min-w-0 shrink leading-none" id="nav-brand-name">
-        Aura & Wood Atelier
-      </a>
+<nav aria-label="Main navigation">
+<p class="navlabel" style="color: #CBD5E1;">Your Workspace</p>
+<a class="navitem active" href="#home"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Overview</a>
+<a class="navitem" href="#intake"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H9l-5 4z"/><path d="M8 8h8M8 12h5"/></svg>Candidate Intake</a>
+<a class="navitem" href="#specialisms"><svg viewBox="0 0 24 24"><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6"/><path d="m21 3-9 9"/><path d="M15 3h6v6"/></svg>Specialisms</a>
+<a class="navitem" href="#shortlist"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M16 5a3 3 0 0 1 0 6M18 15c3 1 3 4 3 6"/></svg>Talent Shortlist</a>
+<a class="navitem" href="#scheduler"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 2v6M17 2v6M3 11h18M7 15h3M14 15h3"/></svg>Interviews</a>
+<a class="navitem" href="#how"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM14 3v5h5M9 12h7M9 16h7"/></svg>How It Works</a>
+</nav>
 
-      <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-muted shrink-0">
-        <a href="#about" class="hover:text-brand transition-colors">Atelier</a>
-        <a href="#items" class="hover:text-brand transition-colors">Collections</a>
-        <a href="#gallery" class="hover:text-brand transition-colors">Gallery</a>
-        <a href="#assistant" class="hover:text-brand transition-colors">AI Assistant</a>
-        <a href="#faq" class="hover:text-brand transition-colors">FAQ</a>
-      </nav>
+<div class="sidebar-foot">
+<strong>Recruitment, connected.</strong>
+A private product sample for Coby Philips, London.
+<div class="side-scene">
+  <img src="img/stock-4.jpg" alt="London skyline architectural background showcase" loading="lazy">
+  <span>London City Architecture · Illustrative photo</span>
+</div>
+</div>
+</aside>
 
-      <!-- Right Action & Mobile Menu Toggle -->
-      <div class="flex items-center space-x-2 shrink-0">
-        <a href="#assistant" id="nav-cta" class="inline-flex items-center justify-center px-2.5 py-1.5 sm:px-4 sm:py-2 text-[11px] sm:text-xs font-semibold uppercase tracking-wider bg-brand text-bg rounded hover:bg-brand/90 transition-all whitespace-nowrap shrink-0 max-h-[36px]">
-          Consult AI
-        </a>
-        <button id="menu-toggle" type="button" aria-label="Open menu" class="md:hidden p-2 text-brand hover:text-accent focus:outline-none flex items-center justify-center min-h-[44px] min-w-[44px] shrink-0 relative z-50">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
+<main class="main" id="home">
+<header class="topbar">
+<div class="crumb">Workspace <span aria-hidden="true"> / </span> <b>Overview</b></div>
+<a class="mobile-logo" href="#home" aria-label="Coby Philips home">
+  <svg class="brand-icon" viewBox="0 0 36 36" width="28" height="28" aria-hidden="true">
+    <rect x="2" y="2" width="32" height="32" rx="8" fill="#1E40AF"/>
+    <path d="M12 24V12h7a4.5 4.5 0 0 1 0 9h-7" stroke="#FFFFFF" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="23" cy="23" r="2.5" fill="#60A5FA"/>
+  </svg>
+  <span class="brand-name" style="color:var(--ink);font-size:14px">COBY PHILIPS</span>
+</a>
+<div class="topright">
+  <span class="pill"><span class="dot"></span>Interactive Product Sample</span>
+  <span class="fine">London, UK</span>
+  <span class="avatar" aria-label="Sample workspace user">CP</span>
+</div>
+</header>
+
+<div class="content">
+<div class="introline">
+  <span class="eyebrow">Coby Philips / Connected Recruitment Concept</span>
+  <span>Private Concept · Sample Data Throughout</span>
+</div>
+
+<section class="hero" aria-labelledby="hero-title">
+<div class="hero-copy">
+<h1 id="hero-title">Good people.<br>Right roles.<br><span>Less waiting.</span></h1>
+<p>A recruitment workspace for Coby Philips, London. Turn a candidate conversation into a structured profile, explore matching talent, and schedule interviews in one seamless space.</p>
+<div class="hero-actions">
+  <a class="btn primary" href="#intake" id="start-demo">Try Candidate Intake <span aria-hidden="true">↗</span></a>
+  <a class="btn secondary" href="#shortlist">Explore Employer Portal</a>
+</div>
+<div class="hero-note fine" style="color: var(--muted);"><span class="check" aria-hidden="true">✓</span> No account required. Uses sample candidate data.</div>
+</div>
+
+<div class="matcher" id="intake">
+<div class="windowbar">
+  <span class="windowname"><span class="ai-icon" aria-hidden="true">✧</span>Candidate Intake Assistant</span>
+  <span class="pill">Interactive Demo</span>
+</div>
+<div class="chat" id="chat" role="log" aria-label="Candidate intake conversation" aria-live="polite">
+<div class="chatrow">
+  <span class="chat-icon" aria-hidden="true">✧</span>
+  <div class="bubble">Hello. Let’s put your next role into focus.<br>What kind of work are you looking for, and which skills would you like to use?<br><strong>Please use sample details for this interactive test.</strong></div>
+</div>
+</div>
+<div class="suggestions">
+  <button type="button" data-prompt="I’m looking for an office support role. I use Excel and manage diaries.">Office Support</button>
+  <button type="button" data-prompt="I work in finance with Excel, accounting, and reporting experience.">Finance</button>
+  <button type="button" data-prompt="I’m an executive assistant with diary and travel management skills.">Executive Assistant</button>
+</div>
+<form class="chat-form" id="chat-form">
+  <label for="chat-input" class="fine" style="position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden">Describe your sample skills</label>
+  <input id="chat-input" required maxlength="350" placeholder="Try “Excel, diary management, London…”" autocomplete="off">
+  <button class="send" aria-label="Send message" type="submit">↑</button>
+</form>
+<div class="extract"><strong>Profile skills captured:</strong><span class="chips" id="skill-chips"><span class="chip">Waiting for your input</span></span></div>
+</div>
+</section>
+
+<section aria-labelledby="pipeline-heading">
+<div class="section-head">
+  <div>
+    <h2 id="pipeline-heading">Your recruitment, in view.</h2>
+    <p>A connected sample pipeline. Explore live talent matching metrics below.</p>
+  </div>
+  <button class="btn secondary" id="reset" type="button">↻ Reset Demo</button>
+</div>
+<div class="stats">
+<div class="stat">
+  <div class="stat-top">Sample Profiles <svg class="spark" viewBox="0 0 50 25" aria-hidden="true"><path d="M0 20 10 15 20 18 30 8 40 11 50 3"/></svg></div>
+  <strong id="profile-count">3</strong>
+  <small>Fictional candidate records</small>
+</div>
+<div class="stat">
+  <div class="stat-top">Selected Role <span aria-hidden="true">⌁</span></div>
+  <strong style="font-size:20px;line-height:2" id="role-stat">Office support</strong>
+  <small>Change role to compare fit</small>
+</div>
+<div class="stat">
+  <div class="stat-top">Interviews Planned <span aria-hidden="true">▦</span></div>
+  <strong id="booking-count">0</strong>
+  <small>Local demo selections</small>
+</div>
+<div class="stat">
+  <div class="stat-top">Workspace Status <span class="dot"></span></div>
+  <strong style="font-size:22px;line-height:1.9">Ready</strong>
+  <small>Independent sample environment</small>
+</div>
+</div>
+</section>
+
+<section id="specialisms" aria-labelledby="specialisms-heading">
+<div class="section-head">
+  <div>
+    <span class="eyebrow">Recruitment Sectors</span>
+    <h2 id="specialisms-heading" style="margin-top:6px">Tailored talent across core practice areas.</h2>
+    <p>Every service card highlights specific candidate competencies and sector focus.</p>
+  </div>
+</div>
+<div class="specialism-grid">
+  <article class="specialism-card">
+    <div class="specialism-img">
+      <img src="img/stock-2.jpg" alt="Office team planning meeting in modern workspace" loading="lazy">
+    </div>
+    <div class="specialism-body">
+      <h4>Office & Administration</h4>
+      <p>Experienced coordinators, receptionists, diary managers, and operational support staff.</p>
+      <span class="specialism-tag">Office Support</span>
+    </div>
+  </article>
+
+  <article class="specialism-card">
+    <div class="specialism-img">
+      <img src="img/stock-6.jpg" alt="Finance professional reviewing analytical data at desk" loading="lazy">
+    </div>
+    <div class="specialism-body">
+      <h4>Finance & Accounting</h4>
+      <p>Qualified bookkeepers, financial analysts, payroll managers, and reporting specialists.</p>
+      <span class="specialism-tag">Finance</span>
+    </div>
+  </article>
+
+  <article class="specialism-card">
+    <div class="specialism-img">
+      <img src="img/stock-3.jpg" alt="Executive assistant conducting professional briefing" loading="lazy">
+    </div>
+    <div class="specialism-body">
+      <h4>Executive Assistance</h4>
+      <p>High-caliber EAs and PAs providing C-suite diary, travel, and board support.</p>
+      <span class="specialism-tag">Executive Support</span>
+    </div>
+  </article>
+
+  <article class="specialism-card">
+    <div class="specialism-img">
+      <img src="img/stock-8.jpg" alt="Business intelligence dashboard on computer display" loading="lazy">
+    </div>
+    <div class="specialism-body">
+      <h4>Commercial & Analytics</h4>
+      <p>Data-driven project managers, business developers, and commercial operations professionals.</p>
+      <span class="specialism-tag">Operations</span>
+    </div>
+  </article>
+</div>
+</section>
+
+<div class="workspace">
+<section class="panel" id="shortlist" aria-labelledby="shortlist-heading">
+<div class="panel-head">
+  <div>
+    <h3 id="shortlist-heading">The right conversation starts here.</h3>
+    <p>Employer portal · fictional candidates</p>
+  </div>
+  <button class="btn secondary" id="new-role" type="button">+ Add Role</button>
+</div>
+<div class="tabs" id="role-tabs" aria-label="Sample role filters">
+  <button class="tab" data-role="Office support" aria-pressed="true">Office support</button>
+  <button class="tab" data-role="Finance" aria-pressed="false">Finance</button>
+  <button class="tab" data-role="Executive assistant" aria-pressed="false">Executive assistant</button>
+</div>
+<div id="candidate-list"></div>
+<div class="panel-footer">
+  <span>Fit = shared skills ÷ role requirements. Illustrative matching algorithm.</span>
+  <button type="button" id="contract-open" style="border:0;background:none;color:var(--blue);font-size:11px;font-weight:600;padding:0">Draft Contract Summary ↗</button>
+</div>
+<div style="padding:16px 24px;border-top:1px solid var(--line);background:#F8FAFC">
+  <label for="role-search" style="font-size:11px;color:var(--muted);display:block;margin-bottom:6px;font-weight:600">Search sample candidates by name or skill</label>
+  <input id="role-search" type="search" placeholder="Search the shortlist…" style="width:100%;border:1px solid #CBD5E1;border-radius:6px;padding:9px 12px;background:white;font-size:12px;color:var(--ink)">
+</div>
+<div style="margin:0 24px 20px;padding:18px;background:var(--blue-light);border:1px solid var(--blue-border);border-radius:8px">
+  <span class="eyebrow" style="font-size:10px">Candidate Profile Preview</span>
+  <h3 id="profile-title" style="margin:6px 0;font-size:17px">From conversation to clarity.</h3>
+  <p id="profile-copy" style="font-size:12px;color:var(--muted);margin:0">Try the intake assistant above. The skills you mention will create a sample candidate profile and update this shortlist in real time.</p>
+</div>
+</section>
+
+<div class="right-column">
+<section class="panel" aria-labelledby="network-heading">
+<div class="panel-head">
+  <div>
+    <h3 id="network-heading">A clearer talent picture.</h3>
+    <p>Interactive 3D skills network visualization</p>
+  </div>
+  <span class="ai-icon" aria-hidden="true">⌘</span>
+</div>
+<div class="network" id="network" aria-label="Interactive three-dimensional skills network">
+<svg class="network-fallback" id="network-fallback" viewBox="0 0 340 210" role="img" aria-label="Connected skill nodes visualization">
+  <defs><radialGradient id="sphere" cx="50%" cy="50%" r="50%"><stop stop-color="#93C5FD"/><stop offset="1" stop-color="#1E40AF"/></radialGradient></defs>
+  <g stroke="#93C5FD" stroke-width="1.5" fill="none" opacity="0.6"><path d="M170 100 84 60 112 160 245 150 264 70 170 100 112 160M84 60 245 150M264 70 84 60M170 100 245 150"/></g>
+  <g fill="url(#sphere)"><circle cx="170" cy="100" r="22"/><circle cx="84" cy="60" r="13"/><circle cx="112" cy="160" r="10"/><circle cx="245" cy="150" r="16"/><circle cx="264" cy="70" r="11"/></g>
+</svg>
+<span class="node-label n1">Office support</span>
+<span class="node-label n2">Finance</span>
+<span class="node-label n3">Executive assistant</span>
+</div>
+<div class="network-note">Drag canvas to inspect spatial node connections</div>
+<div class="network-filters">
+  <button data-network="Office support">Office support</button>
+  <button data-network="Finance">Finance</button>
+  <button data-network="Executive assistant">Executive assistant</button>
+</div>
+<p class="network-detail" id="network-detail" aria-live="polite">Select a group above to view required skills.</p>
+</section>
+
+<section class="panel schedule" id="scheduler" aria-labelledby="schedule-heading">
+<div class="panel-head">
+  <div>
+    <h3 id="schedule-heading">Make time for the next step.</h3>
+    <p>Interview planner · sample availability</p>
+  </div>
+</div>
+<form class="schedule-body" id="booking-form">
+<div class="schedule-person">
+  <span class="initial" id="schedule-initial">AM</span>
+  <div>
+    <strong id="schedule-name">Alex Morgan</strong>
+    <p>Sample Candidate · London local time</p>
+  </div>
+</div>
+<label for="interview-date">Choose a date</label>
+<input id="interview-date" type="date" required>
+<div class="times" aria-label="Sample interview time slot">
+  <button type="button" data-time="09:30" aria-pressed="true">09:30</button>
+  <button type="button" data-time="11:00" aria-pressed="false">11:00</button>
+  <button type="button" data-time="14:30" aria-pressed="false">14:30</button>
+</div>
+<button class="btn primary wide" type="submit">Preview Interview Plan <span aria-hidden="true">↗</span></button>
+<p class="feedback" id="booking-feedback" role="status"></p>
+<div class="fine" style="margin-top:8px; color: var(--muted);">No external calendar connected. Demo state updates locally.</div>
+</form>
+</section>
+</div>
+</div>
+
+<section class="how" id="how" aria-labelledby="how-heading">
+<div class="section-head">
+  <div>
+    <span class="eyebrow">One Connected Journey</span>
+    <h2 id="how-heading" style="margin-top:6px">Less admin. More room for people.</h2>
+    <p>Proposed workflows for a modern Coby Philips client recruitment workspace.</p>
+  </div>
+</div>
+<div class="how-grid">
+  <article class="how-card">
+    <div class="how-image">
+      <img src="img/stock-5.jpg" alt="Professional planning role requirements at laptop workspace" loading="lazy">
+    </div>
+    <div class="how-body">
+      <span class="step">01 / CAPTURE</span>
+      <h3>Start with a conversation.</h3>
+      <p>Guided intake gathers requirements and key skills into a structured profile, reducing repetitive questionnaire filling.</p>
+    </div>
+  </article>
+
+  <article class="how-card">
+    <div class="how-image">
+      <img src="img/stock-1.jpg" alt="Recruitment consultation meeting between hiring managers" loading="lazy">
+    </div>
+    <div class="how-body">
+      <span class="step">02 / CONNECT</span>
+      <h3>See the fit. Keep judgment.</h3>
+      <p>Instantly evaluate candidate skill coverage. Consultants and hiring managers retain control of every shortlist decision.</p>
+    </div>
+  </article>
+
+  <article class="how-card">
+    <div class="how-image">
+      <img src="img/stock-7.jpg" alt="HR manager reviewing candidate dashboard on digital workstation" loading="lazy">
+    </div>
+    <div class="how-body">
+      <span class="step">03 / COORDINATE</span>
+      <h3>Keep the next step clear.</h3>
+      <p>Unify interview scheduling and contract drafts in one single platform, avoiding disconnected email threads.</p>
+    </div>
+  </article>
+</div>
+<p class="fine" style="margin-top:14px; color: var(--muted);">Photography is illustrative stock imagery, not Coby Philips staff, clients, or premises.</p>
+</section>
+
+<div class="bottom-grid">
+<section class="faq" aria-labelledby="faq-heading">
+  <h2 id="faq-heading">Frequently asked questions.</h2>
+  <details>
+    <summary>Is this the official Coby Philips portal?</summary>
+    <p>No. This is an independent digital design concept created by LeadSky for evaluation purposes. Coby Philips has not endorsed or launched this private concept.</p>
+  </details>
+  <details>
+    <summary>How does skill matching calculation work?</summary>
+    <p>In this prototype, candidate skill overlap is calculated by comparing user-entered or selected skills against fixed role requirement vectors. It is a keyword matching preview, not an automated hiring decision tool.</p>
+  </details>
+  <details>
+    <summary>What components are required for a live platform?</summary>
+    <p>A full production deployment requires authentication, encrypted data storage, GDPR compliance controls, database integration, live calendar booking APIs, and legal approval of contract templates.</p>
+  </details>
+  <details>
+    <summary>Is my data saved or transmitted?</summary>
+    <p>No. All candidate additions, search queries, and scheduling tests remain stored temporarily in browser memory and reset automatically upon page refresh.</p>
+  </details>
+</section>
+
+<section class="contact">
+  <span class="eyebrow">Coby Philips · London</span>
+  <h2>Prefer a direct conversation?</h2>
+  <p>Reach out to Coby Philips directly through their official public channels.</p>
+  <a href="tel:+442078411966">📞 +44 20 7841 1966 ↗</a>
+  <a href="mailto:info@cobyphilips.co.uk">✉ info@cobyphilips.co.uk ↗</a>
+  <a href="https://www.cobyphilips.co.uk/" target="_blank" rel="noopener">🌐 Visit official website ↗</a>
+  <p class="fine" style="margin-top:20px;color:#CBD5E1;margin-bottom:0">Public contact details provided for reference. Service availability subject to Coby Philips confirmation.</p>
+</section>
+</div>
+
+<footer class="footer">
+  <div>
+    <strong style="color:var(--ink)">Concept designed by LeadSky</strong>
+    <p>Independent recruitment workspace interface proposal created for Coby Philips.<br>All brand marks rendered as illustrative vector typography.</p>
+  </div>
+  <div class="credits">
+    Stock photo credits (Pixabay Content License):
+    <a href="https://pixabay.com/photos/people-business-meeting-1979261/" target="_blank" rel="noopener">089photoshootings</a>,
+    <a href="https://pixabay.com/photos/job-office-team-business-internet-5382501/" target="_blank" rel="noopener">RonaldCandonga</a>,
+    <a href="https://pixabay.com/photos/man-suit-success-business-career-7956041/" target="_blank" rel="noopener">itay-verchik</a>,
+    <a href="https://pixabay.com/photos/buildings-architecture-city-205986/" target="_blank" rel="noopener">Ichigo121212</a>,
+    <a href="https://pixabay.com/photos/entrepreneur-start-up-man-planning-593371/" target="_blank" rel="noopener">StartupStockPhotos</a>,
+    <a href="https://pixabay.com/photos/man-work-desk-business-person-597178/" target="_blank" rel="noopener">SnapwireSnaps</a>,
+    <a href="https://pixabay.com/photos/laptop-wordpress-wordpress-design-593673/" target="_blank" rel="noopener">27707</a>,
+    <a href="https://pixabay.com/photos/computer-summary-chart-business-767776/" target="_blank" rel="noopener">Lalmch</a>.
+  </div>
+</footer>
+</div>
+</main>
+</div>
+
+<dialog class="modal" id="role-modal" aria-labelledby="role-modal-title">
+<div class="modal-head">
+  <h2 id="role-modal-title">Add Sample Role</h2>
+  <button class="close" type="button" data-close aria-label="Close modal">×</button>
+</div>
+<form class="modal-body" id="role-form">
+  <div class="notice">This role will be created in your local browser demo.</div>
+  <label>Role Title
+    <input id="new-role-title" required maxlength="55" placeholder="e.g. Operations Manager">
+  </label>
+  <label>Required Skills (comma-separated)
+    <input id="new-role-skills" required maxlength="200" placeholder="e.g. Excel, Communication, Reporting">
+  </label>
+  <button class="btn primary wide" type="submit">Add Sample Role</button>
+  <p class="fine" style="margin:12px 0 0;text-align:center;color:var(--muted);">This is a demo form, nothing was sent.</p>
+</form>
+</dialog>
+
+<dialog class="modal" id="contract-modal" aria-labelledby="contract-title">
+<div class="modal-head">
+  <h2 id="contract-title">Draft Summary Preview</h2>
+  <button class="close" type="button" data-close aria-label="Close summary modal">×</button>
+</div>
+<div class="modal-body">
+  <div class="notice">Sample summary for evaluation purposes. Not a legally binding contract.</div>
+  <div class="contract-paper">
+    <span class="eyebrow" style="font-size:9px">Coby Philips / Demo Concept</span>
+    <h3>Role & Candidate Summary</h3>
+    <p><strong>Candidate:</strong> <span id="contract-name"></span></p>
+    <p><strong>Target Role:</strong> <span id="contract-role"></span></p>
+    <p><strong>Proposed Interview:</strong> <span id="contract-date"></span></p>
+    <p style="margin-top:14px;color:var(--muted);font-size:11px">Full contract terms, remuneration, notice periods, and statutory requirements are subject to formal agreement and legal review.</p>
+  </div>
+  <button class="btn primary wide" style="margin-top:18px" id="download-summary" type="button">Download Sample Summary (.txt) ↓</button>
+</div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+'use strict';
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+const roleSkills = {
+  'Office support': ['Excel', 'Diary management', 'Communication'],
+  'Finance': ['Excel', 'Accounting', 'Reporting'],
+  'Executive assistant': ['Diary management', 'Travel management', 'Communication']
+};
+
+const originalCandidates = [
+  { id: 1, name: 'Alex Morgan', initial: 'AM', label: 'Office support', skills: ['Excel', 'Diary management', 'Communication'], availability: 'Immediate' },
+  { id: 2, name: 'Jordan Ellis', initial: 'JE', label: 'Finance', skills: ['Excel', 'Accounting', 'Reporting'], availability: '2 Weeks Notice' },
+  { id: 3, name: 'Sam Taylor', initial: 'ST', label: 'Executive assistant', skills: ['Diary management', 'Travel management', 'Communication'], availability: '1 Month Notice' }
+];
+
+let candidates = originalCandidates.map(c => ({ ...c, skills: [...c.skills] }));
+let activeRole = 'Office support';
+let selectedId = 1;
+let selectedTime = '09:30';
+let bookings = 0;
+let intakeSkills = [];
+let chatStep = 0;
+let lastPlan = '';
+
+const safe = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+function calculateFit(c) {
+  const req = roleSkills[activeRole] || [];
+  if (!req.length) return 0;
+  const match = req.filter(s => c.skills.some(k => k.toLowerCase() === s.toLowerCase())).length;
+  return Math.round((match / req.length) * 100);
+}
+
+function renderCandidates() {
+  const q = $('#role-search').value.toLowerCase().trim();
+  const list = candidates
+    .filter(c => (c.name + ' ' + c.skills.join(' ')).toLowerCase().includes(q))
+    .sort((a, b) => calculateFit(b) - calculateFit(a));
+
+  $('#candidate-list').innerHTML = list.length ? list.map(c => `
+    <article class="candidate">
+      <div class="initial" aria-hidden="true">${safe(c.initial)}</div>
+      <div>
+        <h4>${safe(c.name)} <span style="font-size:9px;font-weight:500;color:#64748B">· SAMPLE RECORD</span></h4>
+        <p>${safe(c.label)} · Availability: ${safe(c.availability)}</p>
+        <div class="tags">${c.skills.map(s => `<span class="tag">${safe(s)}</span>`).join('')}</div>
+      </div>
+      <div class="fit">
+        <strong>${calculateFit(c)}%</strong>
+        <small>skill match</small>
+        <button type="button" data-select="${c.id}" aria-label="Select candidate ${safe(c.name)}">
+          ${selectedId === c.id ? 'Selected ✓' : 'Interview ↗'}
         </button>
       </div>
-    </div>
-  </header>
-
-  <!-- Mobile Full-Screen Menu Drawer -->
-  <div id="mobile-menu" class="fixed inset-0 bg-bg z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between p-6 md:hidden overflow-y-auto">
-    <div class="flex items-center justify-between border-b border-brand/10 pb-4">
-      <span class="font-heading text-lg font-bold text-brand truncate pr-2" id="mobile-menu-title">Aura & Wood Atelier</span>
-      <button id="menu-close" type="button" aria-label="Close menu" class="p-2 text-brand hover:text-accent min-h-[44px] min-w-[44px] flex items-center justify-center shrink-0">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
-    <nav class="flex flex-col space-y-6 text-center my-auto py-8">
-      <a href="#about" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">Atelier</a>
-      <a href="#items" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">Collections</a>
-      <a href="#gallery" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">Gallery</a>
-      <a href="#assistant" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">AI Assistant</a>
-      <a href="#faq" class="mobile-link font-heading text-2xl font-medium text-brand hover:text-accent">FAQ</a>
-    </nav>
-    <div class="text-center pb-4">
-      <a href="#assistant" id="mobile-cta" class="mobile-link inline-flex items-center justify-center w-full py-3.5 bg-brand text-bg text-sm font-semibold uppercase tracking-wider rounded text-center min-h-[44px]">
-        Consult AI Assistant
-      </a>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <section class="relative min-h-[75vh] sm:min-h-[80vh] flex items-center justify-center overflow-hidden py-12 lg:py-20">
-    <div id="canvas-container" class="absolute inset-0 z-0 pointer-events-none opacity-30 sm:opacity-75 max-w-[70vw] sm:max-w-none mx-auto"></div>
-    
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-      <div class="max-w-3xl">
-        <span id="hero-eyebrow" class="inline-block text-xs uppercase tracking-widest text-accent font-semibold mb-4 bg-surface/90 px-3 py-1 rounded border border-accent/20">
-          Master Joinery & Bespoke Design
-        </span>
-        <h1 id="hero-title" class="font-heading text-[clamp(30px,8vw,56px)] font-normal leading-tight text-brand mb-6">
-          Spaces shaped by grain, time, and touch.
-        </h1>
-        <p id="hero-subtitle" class="text-base sm:text-lg text-muted mb-8 leading-relaxed max-w-2xl">
-          We design and craft extraordinary kitchens, library walls, and architectural joinery for private residences across the United Kingdom.
-        </p>
-        <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4">
-          <a href="#assistant" id="hero-cta-primary" class="inline-flex items-center justify-center px-6 py-3.5 bg-brand text-bg text-[15px] font-semibold uppercase tracking-wider rounded hover:bg-brand/90 transition-all shadow-sm min-h-[48px]">
-            Consult an Artisan
-          </a>
-          <a href="#items" id="hero-cta-secondary" class="inline-flex items-center justify-center px-6 py-3.5 bg-surface text-brand border border-brand/20 text-[15px] font-semibold uppercase tracking-wider rounded hover:bg-surface/80 transition-all min-h-[48px]">
-            Explore Portfolio
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats Section -->
-  <section id="stats-section" class="border-y border-brand/10 bg-surface/50 py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div id="stats-grid" class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-3 block">The Atelier Philosophy</span>
-          <h2 id="about-title" class="font-heading text-[clamp(24px,6vw,40px)] text-brand mb-6 leading-snug">
-            Uncompromising timber selection meets precision architectural detail.
-          </h2>
-          <p id="about-text" class="text-muted text-base leading-relaxed mb-8">
-            Every board of European oak, American walnut, and London plane is hand-selected in our Clerkenwell studio for grain harmony and structural integrity.
-          </p>
-          <div id="points-container" class="space-y-4">
-          </div>
-        </div>
-        <div class="relative">
-          <div class="aspect-[4/5] rounded overflow-hidden shadow-xl bg-surface">
-            <img id="about-image" src="img/about.jpg" alt="Atelier Craftsmanship" class="w-full h-full object-cover" onerror="this.onerror=null; this.parentElement.classList.add('img-fallback'); this.style.display='none';">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AI Assistant Showcase -->
-  <section id="assistant" class="py-16 bg-surface border-y border-brand/10">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Interactive Studio Assistant</span>
-        <h2 id="ai-heading" class="font-heading text-[clamp(24px,6vw,40px)] text-brand mb-3">Meet Our AI Atelier Assistant</h2>
-        <p id="ai-subheading" class="text-muted text-sm sm:text-base">Ask questions instantly about timber specifications, lead times, or scheduling studio appointments.</p>
-      </div>
-
-      <div class="bg-bg rounded shadow-lg border border-brand/10 overflow-hidden flex flex-col h-[520px]">
-        <div class="bg-brand text-bg px-5 py-4 flex items-center justify-between">
-          <div class="flex items-center space-x-3">
-            <div class="w-2.5 h-2.5 rounded-full bg-emerald-400"></div>
-            <div>
-              <h3 id="assistant-name-display" class="font-heading text-lg font-medium text-bg">Atelier AI</h3>
-              <p class="text-[11px] text-bg/70">Online &bull; Instant Support</p>
-            </div>
-          </div>
-          <span class="text-[10px] uppercase tracking-wider bg-accent/30 px-2.5 py-1 rounded text-bg font-medium">Studio Demo</span>
-        </div>
-
-        <div id="chat-messages" class="flex-1 p-4 sm:p-6 overflow-y-auto space-y-4 bg-bg/50">
-        </div>
-
-        <div id="typing-indicator" class="px-6 py-2 hidden">
-          <div class="flex items-center space-x-2 text-muted text-xs italic">
-            <span>Atelier AI is checking studio records...</span>
-          </div>
-        </div>
-
-        <div id="quick-questions-container" class="px-4 py-3 bg-surface border-t border-brand/10 flex flex-wrap gap-2">
-        </div>
-
-        <form id="chat-form" class="p-3 sm:p-4 bg-surface border-t border-brand/10 flex items-center space-x-2">
-          <input type="text" id="chat-input" placeholder="Ask about timber, lead times, or visits..." class="flex-1 bg-bg border border-brand/20 rounded px-4 py-2.5 text-sm text-ink focus:outline-none focus:border-accent min-h-[44px]">
-          <button type="submit" aria-label="Send message" class="bg-brand text-bg px-5 py-2.5 rounded text-xs font-semibold uppercase tracking-wider hover:bg-brand/90 transition-all flex items-center justify-center min-h-[44px] min-w-[44px]">
-            Send
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Items / Collections Section -->
-  <section id="items" class="py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Bespoke Portfolio</span>
-          <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">Handcrafted Commissions</h2>
-        </div>
-      </div>
-      <div id="items-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      </div>
-    </div>
-  </section>
-
-  <!-- Steps Section -->
-  <section id="steps" class="py-16 bg-surface border-t border-brand/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Commission Journey</span>
-        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">From Timber to Installation</h2>
-      </div>
-      <div id="steps-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section id="gallery" class="py-16 lg:py-24">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Visual Archive</span>
-        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">Selected Details & Finishes</h2>
-      </div>
-      <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      </div>
-    </div>
-  </section>
-
-  <!-- Videos Section -->
-  <section id="videos-section" class="py-16 bg-brand text-bg">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Atelier Film</span>
-        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-bg">Joinery Craftsmanship</h2>
-      </div>
-      <div id="videos-container" class="grid grid-cols-1 gap-6">
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq" class="py-16 lg:py-24">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12">
-        <span class="text-xs uppercase tracking-widest text-accent font-semibold mb-2 block">Questions</span>
-        <h2 class="font-heading text-[clamp(24px,6vw,40px)] text-brand">Frequently Asked Questions</h2>
-      </div>
-      <div id="faq-container" class="space-y-4">
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-brand text-bg py-12 border-t border-brand/20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-        <div>
-          <h3 id="footer-brand-name" class="font-heading text-xl font-bold mb-3">Aura & Wood Atelier</h3>
-          <p id="footer-tagline" class="text-bg/70 text-xs leading-relaxed mb-4">Handcrafted Solid Wood Kitchens & Architectural Joinery</p>
-          <p id="footer-address" class="text-xs text-bg/60 mb-1"></p>
-          <p id="footer-hours" class="text-xs text-bg/60"></p>
-        </div>
-        <div>
-          <h4 class="font-heading text-base font-medium mb-3 text-accent">Direct Contact</h4>
-          <p class="text-xs text-bg/80 mb-1" id="footer-phone"></p>
-          <p class="text-xs text-bg/80 mb-4" id="footer-email"></p>
-          <div class="flex space-x-3">
-            <a id="footer-instagram" href="#" target="_blank" rel="noopener" class="text-xs uppercase tracking-wider bg-bg/10 px-3 py-2 rounded hover:bg-bg/20 transition-all min-h-[44px] flex items-center">Instagram</a>
-            <a id="footer-whatsapp" href="#" target="_blank" rel="noopener" class="text-xs uppercase tracking-wider bg-emerald-600 text-white px-3 py-2 rounded hover:bg-emerald-500 transition-all min-h-[44px] flex items-center">WhatsApp</a>
-          </div>
-        </div>
-        <div>
-          <h4 class="font-heading text-base font-medium mb-3 text-accent">Concept Credits</h4>
-          <div id="credits-container" class="text-xs text-bg/60 space-y-1 mb-4">
-          </div>
-        </div>
-      </div>
-      <div class="border-t border-bg/10 pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-bg/50">
-        <p id="copyright-text">&copy; 2026 Aura & Wood Atelier.</p>
-        <p class="mt-2 sm:mt-0">Concept by LeadSky</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating WhatsApp Button -->
-  <a id="whatsapp-float" href="#" target="_blank" rel="noopener" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-50 bg-emerald-600 text-white p-3.5 rounded-full shadow-xl hover:bg-emerald-500 transition-all flex items-center justify-center min-h-[44px] min-w-[44px]">
-    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-    </svg>
-  </a>
-
-  <!-- Script setup -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const dataEl = document.getElementById('site-data');
-      if (!dataEl) return;
-      let site;
-      try {
-        site = JSON.parse(dataEl.textContent);
-      } catch (e) {
-        console.error('Failed to parse site-data JSON', e);
-        return;
-      }
-
-      // 1. CSS Variables & Dynamic Fonts
-      if (site.colors) {
-        const r = document.documentElement;
-        if (site.colors.bg) r.style.setProperty('--bg', site.colors.bg);
-        if (site.colors.surface) r.style.setProperty('--surface', site.colors.surface);
-        if (site.colors.text) r.style.setProperty('--text', site.colors.text);
-        if (site.colors.muted) r.style.setProperty('--muted', site.colors.muted);
-        if (site.colors.brand) r.style.setProperty('--brand', site.colors.brand);
-        if (site.colors.accent) r.style.setProperty('--accent', site.colors.accent);
-      }
-
-      if (site.fonts && site.fonts.heading && site.fonts.body) {
-        const fontHead = encodeURIComponent(site.fonts.heading);
-        const fontBody = encodeURIComponent(site.fonts.body);
-        const fontLink = document.createElement('link');
-        fontLink.rel = 'stylesheet';
-        fontLink.href = `https://fonts.googleapis.com/css2?family=${fontHead}:wght@400;500;600;700&family=${fontBody}:wght@400;500;600&display=swap`;
-        document.head.appendChild(fontLink);
-        
-        const style = document.createElement('style');
-        style.textContent = `
-          body { font-family: '${site.fonts.body}', sans-serif; }
-          h1, h2, h3, h4, .font-heading { font-family: '${site.fonts.heading}', serif; }
-        `;
-        document.head.appendChild(style);
-      }
-
-      if (site.brand && site.brand.name) {
-        document.title = site.brand.name;
-      }
-
-      // 2. Banner
-      if (site.banner) {
-        const bannerEl = document.getElementById('banner-text');
-        if (bannerEl) bannerEl.textContent = site.banner;
-      }
-
-      // 3. Header & Footer Brand details
-      if (site.brand) {
-        const navName = document.getElementById('nav-brand-name');
-        if (navName) navName.textContent = site.brand.name;
-        const mobTitle = document.getElementById('mobile-menu-title');
-        if (mobTitle) mobTitle.textContent = site.brand.name;
-
-        const footName = document.getElementById('footer-brand-name');
-        if (footName) footName.textContent = site.brand.name;
-        const footTagline = document.getElementById('footer-tagline');
-        if (footTagline) footTagline.textContent = site.brand.tagline || '';
-        const footAddress = document.getElementById('footer-address');
-        if (footAddress) footAddress.textContent = site.brand.address || '';
-        const footHours = document.getElementById('footer-hours');
-        if (footHours) footHours.textContent = site.brand.hours || '';
-        const footPhone = document.getElementById('footer-phone');
-        if (footPhone) footPhone.textContent = 'Phone: ' + (site.brand.phone || '');
-        const footEmail = document.getElementById('footer-email');
-        if (footEmail) footEmail.textContent = 'Email: ' + (site.brand.email || '');
-
-        if (site.brand.instagram) {
-          const ig = document.getElementById('footer-instagram');
-          if (ig) ig.href = site.brand.instagram;
-        } else {
-          const ig = document.getElementById('footer-instagram');
-          if (ig) ig.style.display = 'none';
-        }
-
-        if (site.brand.whatsapp) {
-          const waFloat = document.getElementById('whatsapp-float');
-          if (waFloat) waFloat.href = `https://wa.me/${site.brand.whatsapp}?text=Hello%20${encodeURIComponent(site.brand.name)},%20I%20would%20like%20to%20enquire.`;
-          const footWa = document.getElementById('footer-whatsapp');
-          if (footWa) footWa.href = `https://wa.me/${site.brand.whatsapp}`;
-        } else {
-          const waFloat = document.getElementById('whatsapp-float');
-          if (waFloat) waFloat.style.display = 'none';
-          const footWa = document.getElementById('footer-whatsapp');
-          if (footWa) footWa.style.display = 'none';
-        }
-      }
-
-      // 4. Hero Content
-      if (site.hero) {
-        if (site.hero.eyebrow) document.getElementById('hero-eyebrow').textContent = site.hero.eyebrow;
-        if (site.hero.title) document.getElementById('hero-title').textContent = site.hero.title;
-        if (site.hero.subtitle) document.getElementById('hero-subtitle').textContent = site.hero.subtitle;
-        if (site.hero.cta_primary) document.getElementById('hero-cta-primary').textContent = site.hero.cta_primary;
-        if (site.hero.cta_secondary) document.getElementById('hero-cta-secondary').textContent = site.hero.cta_secondary;
-      }
-
-      // 5. Stats
-      const statsGrid = document.getElementById('stats-grid');
-      if (statsGrid && site.stats && site.stats.length > 0) {
-        statsGrid.innerHTML = site.stats.map(s => `
-          <div class="p-4">
-            <div class="font-heading text-3xl sm:text-4xl font-bold text-brand mb-1">${s.value}</div>
-            <div class="text-xs uppercase tracking-widest text-muted font-medium">${s.label}</div>
-          </div>
-        `).join('');
-      } else if (statsGrid) {
-        const stSec = document.getElementById('stats-section');
-        if (stSec) stSec.style.display = 'none';
-      }
-
-      // 6. About & Points
-      if (site.about) {
-        if (site.about.title) document.getElementById('about-title').textContent = site.about.title;
-        if (site.about.text) document.getElementById('about-text').textContent = site.about.text;
-        const imgEl = document.getElementById('about-image');
-        if (imgEl && site.about.image) imgEl.src = site.about.image;
-      }
-
-      const pointsContainer = document.getElementById('points-container');
-      if (pointsContainer && site.points && site.points.length > 0) {
-        pointsContainer.innerHTML = site.points.map(p => `
-          <div class="flex items-start space-x-3">
-            <div class="w-4 h-4 rounded-full bg-accent/20 flex items-center justify-center text-accent mt-1 shrink-0 text-xs">✓</div>
-            <div>
-              <h4 class="font-heading text-base font-medium text-brand">${p.title}</h4>
-              <p class="text-xs sm:text-sm text-muted">${p.text}</p>
-            </div>
-          </div>
-        `).join('');
-      }
-
-      // 7. Items
-      const itemsGrid = document.getElementById('items-grid');
-      if (itemsGrid && site.items && site.items.length > 0) {
-        const sym = site.brand.currency_symbol || '£';
-        itemsGrid.innerHTML = site.items.map(item => {
-          let priceDisplay = '';
-          if (item.price > 0) {
-            priceDisplay = sym + item.price.toLocaleString();
-          } else if (item.price_label) {
-            priceDisplay = item.price_label;
-          }
-          return `
-            <div class="bg-surface rounded overflow-hidden border border-brand/10 flex flex-col justify-between">
-              <div>
-                <div class="aspect-[16/10] overflow-hidden bg-brand/5 relative">
-                  <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover" loading="lazy" onerror="this.onerror=null; this.parentElement.classList.add('img-fallback'); this.style.display='none';">
-                  ${item.category ? `<span class="absolute top-3 left-3 bg-bg/90 text-brand text-[10px] uppercase tracking-wider px-2 py-0.5 rounded font-medium">${item.category}</span>` : ''}
-                </div>
-                <div class="p-5">
-                  <div class="flex justify-between items-baseline mb-2 gap-2">
-                    <h3 class="font-heading text-xl font-medium text-brand">${item.name}</h3>
-                    <span class="text-xs font-semibold text-accent shrink-0">${priceDisplay}</span>
-                  </div>
-                  <p class="text-xs sm:text-sm text-muted leading-relaxed mb-4">${item.description}</p>
-                </div>
-              </div>
-              <div class="px-5 pb-5 pt-0 flex items-center justify-between border-t border-brand/10 mt-2">
-                <span class="text-[11px] text-muted font-medium pt-3">Timeline: ${item.duration || 'Custom'}</span>
-                <a href="#assistant" class="text-xs uppercase tracking-wider font-semibold text-brand hover:text-accent pt-3 inline-flex items-center space-x-1">
-                  <span>Enquire</span>
-                </a>
-              </div>
-            </div>
-          `;
-        }).join('');
-      } else if (itemsGrid) {
-        const itSec = document.getElementById('items');
-        if (itSec) itSec.style.display = 'none';
-      }
-
-      // 8. Steps
-      const stepsGrid = document.getElementById('steps-grid');
-      if (stepsGrid && site.steps && site.steps.length > 0) {
-        stepsGrid.innerHTML = site.steps.map((st, idx) => `
-          <div class="bg-bg p-5 rounded border border-brand/10">
-            <div class="font-heading text-2xl text-accent mb-2">0${idx + 1}</div>
-            <h3 class="font-heading text-lg font-medium text-brand mb-1">${st.title}</h3>
-            <p class="text-xs text-muted leading-relaxed">${st.text}</p>
-          </div>
-        `).join('');
-      } else if (stepsGrid) {
-        const stSec = document.getElementById('steps');
-        if (stSec) stSec.style.display = 'none';
-      }
-
-      // 9. Gallery
-      const galleryGrid = document.getElementById('gallery-grid');
-      if (galleryGrid && site.gallery && site.gallery.length > 0) {
-        galleryGrid.innerHTML = site.gallery.map(g => `
-          <div class="group relative overflow-hidden rounded bg-surface aspect-square">
-            <img src="${g.image}" alt="${g.caption || 'Gallery detail'}" class="w-full h-full object-cover" loading="lazy" onerror="this.onerror=null; this.parentElement.classList.add('img-fallback'); this.style.display='none';">
-            <div class="absolute inset-0 bg-brand/70 opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
-              <p class="text-[10px] text-bg uppercase tracking-widest font-semibold mb-1">Detail</p>
-              <p class="text-xs text-bg/90 font-heading italic">${g.caption || ''}</p>
-            </div>
-          </div>
-        `).join('');
-      } else if (galleryGrid) {
-        const gSec = document.getElementById('gallery');
-        if (gSec) gSec.style.display = 'none';
-      }
-
-      // 10. Videos
-      const videosContainer = document.getElementById('videos-container');
-      if (videosContainer && site.videos && site.videos.length > 0) {
-        videosContainer.innerHTML = site.videos.map(v => `
-          <div class="relative aspect-[16/9] rounded overflow-hidden shadow-lg bg-black">
-            <button class="tt-play absolute inset-0 w-full h-full group focus:outline-none" data-player="${v.player}">
-              <img src="${v.poster}" alt="Video poster" class="w-full h-full object-cover opacity-80" onerror="this.onerror=null; this.parentElement.classList.add('img-fallback');">
-              <div class="absolute inset-0 flex items-center justify-center">
-                <div class="w-14 h-14 rounded-full bg-accent text-white flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
-                  <svg class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                </div>
-              </div>
-            </button>
-          </div>
-          ${v.link ? `<div class="text-center mt-2"><a href="${v.link}" target="_blank" rel="noopener" class="text-xs text-bg/70 underline">Open video in new tab</a></div>` : ''}
-        `).join('');
-
-        document.querySelectorAll('.tt-play').forEach(btn => {
-          btn.addEventListener('click', function() {
-            const playerUrl = this.getAttribute('data-player');
-            const parent = this.parentElement;
-            parent.innerHTML = `<iframe src="${playerUrl}?autoplay=1" class="w-full h-full border-0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
-          });
-        });
-      } else if (videosContainer) {
-        const vSec = document.getElementById('videos-section');
-        if (vSec) vSec.style.display = 'none';
-      }
-
-      // 11. FAQ Accordions
-      const faqContainer = document.getElementById('faq-container');
-      if (faqContainer && site.faq && site.faq.length > 0) {
-        faqContainer.innerHTML = site.faq.map(f => `
-          <details class="bg-surface rounded border border-brand/10 overflow-hidden group">
-            <summary class="p-4 sm:p-5 font-heading text-lg text-brand cursor-pointer flex justify-between items-center select-none">
-              <span class="pr-2">${f.q}</span>
-              <span class="transform group-open:rotate-180 transition-transform text-accent shrink-0">↓</span>
-            </summary>
-            <div class="px-4 sm:px-5 pb-5 text-xs sm:text-sm text-muted leading-relaxed border-t border-brand/10 pt-3">
-              ${f.a}
-            </div>
-          </details>
-        `).join('');
-      } else if (faqContainer) {
-        const fSec = document.getElementById('faq');
-        if (fSec) fSec.style.display = 'none';
-      }
-
-      // 12. Credits
-      const creditsContainer = document.getElementById('credits-container');
-      if (creditsContainer && site.credits && site.credits.length > 0) {
-        creditsContainer.innerHTML = site.credits.map(c => `<div><a href="${c.url || '#'}" target="_blank" rel="noopener" class="hover:underline">${c.text}</a></div>`).join('');
-      }
-
-      // 13. Mobile Menu Toggle Logic
-      const menuToggle = document.getElementById('menu-toggle');
-      const menuClose = document.getElementById('menu-close');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      if (menuToggle && mobileMenu) {
-        menuToggle.addEventListener('click', (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          mobileMenu.classList.remove('translate-x-full');
-          document.body.style.overflow = 'hidden';
-        });
-      }
-
-      if (menuClose && mobileMenu) {
-        menuClose.addEventListener('click', (e) => {
-          e.preventDefault();
-          mobileMenu.classList.add('translate-x-full');
-          document.body.style.overflow = '';
-        });
-      }
-
-      document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-          if (mobileMenu) {
-            mobileMenu.classList.add('translate-x-full');
-            document.body.style.overflow = '';
-          }
-        });
-      });
-
-      // 14. Chat Assistant Logic
-      const demo = site.demo || {};
-      const assistantName = demo.assistant_name || 'Atelier AI';
-      const greeting = demo.greeting || 'Hello, how may I assist you today?';
-      const quickQuestions = demo.quick_questions || [];
-      const scriptPairs = demo.script || [];
-
-      const nameDisplay = document.getElementById('assistant-name-display');
-      if (nameDisplay) nameDisplay.textContent = assistantName;
-
-      const chatMessages = document.getElementById('chat-messages');
-      const quickQuestionsContainer = document.getElementById('quick-questions-container');
-      const chatForm = document.getElementById('chat-form');
-      const chatInput = document.getElementById('chat-input');
-      const typingIndicator = document.getElementById('typing-indicator');
-
-      function appendMessage(sender, text) {
-        const isBot = sender === 'bot';
-        const msgDiv = document.createElement('div');
-        msgDiv.className = `flex ${isBot ? 'justify-start' : 'justify-end'} mb-3`;
-        msgDiv.innerHTML = `
-          <div class="max-w-[85%] rounded px-4 py-3 text-xs sm:text-sm ${isBot ? 'bg-surface text-brand border border-brand/10' : 'bg-brand text-bg'}">
-            ${isBot ? `<p class="text-[10px] uppercase tracking-wider text-accent font-semibold mb-1">${assistantName}</p>` : ''}
-            <p class="leading-relaxed">${text}</p>
-          </div>
-        `;
-        chatMessages.appendChild(msgDiv);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-      }
-
-      appendMessage('bot', greeting);
-
-      if (quickQuestionsContainer && quickQuestions.length > 0) {
-        quickQuestionsContainer.innerHTML = quickQuestions.map(q => `
-          <button type="button" class="quick-chip text-xs bg-bg hover:bg-brand hover:text-bg text-brand border border-brand/20 px-3 py-1.5 rounded transition-all min-h-[44px] flex items-center">
-            ${q}
-          </button>
-        `).join('');
-
-        document.querySelectorAll('.quick-chip').forEach(chip => {
-          chip.addEventListener('click', () => {
-            handleUserQuery(chip.textContent.trim());
-          });
-        });
-      }
-
-      function findAnswer(query) {
-        const qLower = query.toLowerCase();
-        for (let pair of scriptPairs) {
-          if (qLower.includes(pair.q.toLowerCase()) || pair.q.toLowerCase().includes(qLower)) {
-            return pair.a;
-          }
-        }
-        return "Thank you for your enquiry. Our master craftsmen will be delighted to cover this during your studio consultation.";
-      }
-
-      function handleUserQuery(query) {
-        appendMessage('user', query);
-        if (chatInput) chatInput.value = '';
-
-        if (typingIndicator) typingIndicator.classList.remove('hidden');
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-
-        setTimeout(() => {
-          if (typingIndicator) typingIndicator.classList.add('hidden');
-          appendMessage('bot', findAnswer(query));
-        }, 600);
-      }
-
-      if (chatForm) {
-        chatForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          const val = chatInput.value.trim();
-          if (!val) return;
-          handleUserQuery(val);
-        });
-      }
-
-      // 15. Three.js Interactive Scene supporting all listed shapes
-      const container = document.getElementById('canvas-container');
-      if (container && typeof THREE !== 'undefined') {
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-        camera.position.z = 7;
-
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        container.appendChild(renderer.domElement);
-
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
-        scene.add(ambientLight);
-
-        const pointLight = new THREE.PointLight(0x9c7c58, 2, 50);
-        pointLight.position.set(5, 5, 5);
-        scene.add(pointLight);
-
-        const shapeType = (site.hero && site.hero.shape3d) ? site.hero.shape3d : 'gem';
-        let geometry;
-
-        if (shapeType === 'braid' || shapeType === 'flower') {
-          geometry = new THREE.TorusKnotGeometry(1.2, 0.35, 64, 16);
-        } else if (shapeType === 'cake') {
-          geometry = new THREE.CylinderGeometry(1.4, 1.4, 1.2, 32);
-        } else if (shapeType === 'bottle') {
-          geometry = new THREE.CylinderGeometry(0.6, 1.2, 2.4, 32);
-        } else if (shapeType === 'tooth' || shapeType === 'scales') {
-          geometry = new THREE.ConeGeometry(1.4, 2.4, 16);
-        } else if (shapeType === 'orb') {
-          geometry = new THREE.SphereGeometry(1.5, 32, 32);
-        } else if (shapeType === 'wave') {
-          geometry = new THREE.TorusGeometry(1.4, 0.4, 16, 50);
-        } else if (shapeType === 'car') {
-          geometry = new THREE.BoxGeometry(2.2, 1.0, 1.4);
-        } else {
-          geometry = new THREE.IcosahedronGeometry(1.5, 0);
-        }
-
-        const brandColorHex = (site.colors && site.colors.brand) ? site.colors.brand : '#42382c';
-        const material = new THREE.MeshPhysicalMaterial({
-          color: new THREE.Color(brandColorHex),
-          metalness: 0.2,
-          roughness: 0.4,
-          transparent: true,
-          opacity: 0.8
-        });
-
-        const mesh = new THREE.Mesh(geometry, material);
-        scene.add(mesh);
-
-        const wireMat = new THREE.MeshBasicMaterial({
-          color: new THREE.Color((site.colors && site.colors.accent) ? site.colors.accent : '#9c7c58'),
-          wireframe: true,
-          transparent: true,
-          opacity: 0.3
-        });
-        const wireMesh = new THREE.Mesh(geometry, wireMat);
-        wireMesh.scale.set(1.02, 1.02, 1.02);
-        scene.add(wireMesh);
-
-        let mouseX = 0, mouseY = 0;
-        let targetX = 0, targetY = 0;
-
-        document.addEventListener('mousemove', (e) => {
-          mouseX = (e.clientX - window.innerWidth / 2) * 0.0008;
-          mouseY = (e.clientY - window.innerHeight / 2) * 0.0008;
-        });
-
-        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-        function animate() {
-          requestAnimationFrame(animate);
-          if (!prefersReduced) {
-            targetX += (mouseX - targetX) * 0.05;
-            targetY += (mouseY - targetY) * 0.05;
-            mesh.rotation.x += 0.003 + targetY;
-            mesh.rotation.y += 0.005 + targetX;
-            wireMesh.rotation.x = mesh.rotation.x;
-            wireMesh.rotation.y = mesh.rotation.y;
-          }
-          renderer.render(scene, camera);
-        }
-        animate();
-
-        window.addEventListener('resize', () => {
-          if (!container) return;
-          camera.aspect = container.clientWidth / container.clientHeight;
-          camera.updateProjectionMatrix();
-          renderer.setSize(container.clientWidth, container.clientHeight);
-        });
-      }
+    </article>
+  `).join('') : '<p class="empty">No matching sample candidates found.</p>';
+
+  $('#profile-count').textContent = candidates.length;
+  $('#role-stat').textContent = activeRole;
+
+  $$('[data-select]').forEach(btn => btn.addEventListener('click', () => {
+    selectedId = Number(btn.dataset.select);
+    updateSelectedCandidate();
+    renderCandidates();
+    $('#scheduler').scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'center' });
+  }));
+}
+
+function updateSelectedCandidate() {
+  const c = candidates.find(x => x.id === selectedId);
+  if (c) {
+    $('#schedule-name').textContent = c.name;
+    $('#schedule-initial').textContent = c.initial;
+    $('#booking-feedback').textContent = '';
+    lastPlan = '';
+  }
+}
+
+function selectRole(name) {
+  activeRole = name;
+  $$('[data-role]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.role === name)));
+  renderCandidates();
+}
+
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+$$('[data-role]').forEach(b => b.addEventListener('click', () => selectRole(b.dataset.role)));
+$('#role-search').addEventListener('input', renderCandidates);
+
+function appendMessage(text, isUser = false) {
+  const row = document.createElement('div');
+  row.className = 'chatrow' + (isUser ? ' user' : '');
+  if (!isUser) {
+    const icon = document.createElement('span');
+    icon.className = 'chat-icon';
+    icon.textContent = '✧';
+    icon.setAttribute('aria-hidden', 'true');
+    row.append(icon);
+  }
+  const bubble = document.createElement('div');
+  bubble.className = 'bubble';
+  bubble.textContent = text;
+  row.append(bubble);
+  $('#chat').append(row);
+  $('#chat').scrollTop = $('#chat').scrollHeight;
+}
+
+const skillMatchers = [
+  ['Excel', /\bexcel\b/i],
+  ['Diary management', /\b(diary|diaries|calendar)\b/i],
+  ['Communication', /\b(communication|customer|support|people|service)\b/i],
+  ['Accounting', /\b(accounting|accounts|bookkeeping|finance)\b/i],
+  ['Reporting', /\b(reporting|reports|analytics)\b/i],
+  ['Travel management', /\btravel\b/i]
+];
+
+function handleIntakeInput(text) {
+  appendMessage(text, true);
+  chatStep++;
+  const found = skillMatchers.filter(([, re]) => re.test(text)).map(([skill]) => skill);
+  intakeSkills = [...new Set([...intakeSkills, ...found])];
+
+  $('#skill-chips').innerHTML = intakeSkills.length
+    ? intakeSkills.map(s => `<span class="chip">${safe(s)}</span>`).join('')
+    : '<span class="chip">No matching key skills detected</span>';
+
+  if (intakeSkills.length) {
+    const userProfile = {
+      id: 99,
+      name: 'Sample User Profile',
+      initial: 'UP',
+      label: 'Interactive Intake Profile',
+      skills: [...intakeSkills],
+      availability: 'Immediate demo availability'
+    };
+    const idx = candidates.findIndex(x => x.id === 99);
+    if (idx < 0) candidates.push(userProfile);
+    else candidates[idx] = userProfile;
+
+    $('#profile-title').textContent = 'Your sample candidate profile is active.';
+    $('#profile-copy').textContent = 'Extracted skills: ' + intakeSkills.join(', ') + '. This profile has been added to the shortlist for role fit comparison.';
+    appendMessage(chatStep === 1
+      ? 'Skills captured: ' + intakeSkills.join(', ') + '. Your profile is now live in the talent shortlist below. What other roles or skills are you exploring?'
+      : 'Profile updated with: ' + intakeSkills.join(', ') + '. Switch roles in the shortlist panel to test match percentages.'
+    );
+  } else {
+    appendMessage('Assistant recommendation: Try mentioning skills such as Excel, diary management, accounting, reporting, or travel management.');
+  }
+  renderCandidates();
+}
+
+$('#chat-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const input = $('#chat-input');
+  const val = input.value.trim();
+  if (!val) return;
+  handleIntakeInput(val);
+  input.value = '';
+});
+
+$$('[data-prompt]').forEach(b => b.addEventListener('click', () => handleIntakeInput(b.dataset.prompt)));
+$('#start-demo').addEventListener('click', () => setTimeout(() => $('#chat-input').focus({ preventScroll: true }), 200));
+
+const now = new Date();
+const localDateStr = new Date(now.getTime() - now.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+$('#interview-date').min = localDateStr;
+$('#interview-date').value = localDateStr;
+
+$$('[data-time]').forEach(btn => btn.addEventListener('click', () => {
+  selectedTime = btn.dataset.time;
+  $$('[data-time]').forEach(x => x.setAttribute('aria-pressed', String(x === btn)));
+  $('#booking-feedback').textContent = '';
+  lastPlan = '';
+}));
+
+$('#booking-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const dateVal = $('#interview-date').value;
+  const c = candidates.find(x => x.id === selectedId);
+  const formattedDate = new Date(dateVal + 'T12:00:00').toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+  lastPlan = `${formattedDate} at ${selectedTime} (London Time)`;
+  bookings++;
+  $('#booking-count').textContent = bookings;
+  $('#booking-feedback').textContent = `Interview planned for ${c.name}: ${lastPlan}. This is a demo form, nothing was sent.`;
+});
+
+$$('[data-close]').forEach(b => b.addEventListener('click', () => b.closest('dialog').close()));
+$$('dialog').forEach(d => d.addEventListener('click', e => {
+  if (e.target === d) {
+    const rect = d.getBoundingClientRect();
+    if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) d.close();
+  }
+}));
+
+$('#new-role').addEventListener('click', () => $('#role-modal').showModal());
+$('#role-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const title = $('#new-role-title').value.trim();
+  const skills = $('#new-role-skills').value.split(',').map(s => s.trim()).filter(Boolean);
+  if (!title || !skills.length) return;
+
+  roleSkills[title] = [...new Set(skills)];
+  let btn = $$('[data-role]').find(x => x.dataset.role === title);
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'tab';
+    btn.dataset.role = title;
+    btn.textContent = title;
+    btn.setAttribute('aria-pressed', 'false');
+    btn.addEventListener('click', () => selectRole(title));
+    $('#role-tabs').append(btn);
+  }
+  selectRole(title);
+  $('#role-modal').close();
+  $('#role-form').reset();
+  $('#profile-title').textContent = 'Custom role added: ' + title;
+  $('#profile-copy').textContent = 'Role requirements configured for: ' + skills.join(', ') + '. This is a demo form, nothing was sent.';
+});
+
+$('#contract-open').addEventListener('click', () => {
+  const c = candidates.find(x => x.id === selectedId);
+  $('#contract-name').textContent = c ? c.name : 'N/A';
+  $('#contract-role').textContent = activeRole;
+  $('#contract-date').textContent = lastPlan || 'Not planned yet';
+  $('#contract-modal').showModal();
+});
+
+$('#download-summary').addEventListener('click', () => {
+  const c = candidates.find(x => x.id === selectedId);
+  const text = `COBY PHILIPS — RECRUITMENT WORKSPACE CONCEPT\nSAMPLE SUMMARY ONLY — NOT A CONTRACT\n\nCandidate Name: ${c ? c.name : 'N/A'}\nSelected Role: ${activeRole}\nInterview Slot: ${lastPlan || 'Not scheduled'}\n\nThis document is generated dynamically in browser memory for preview purposes.\nNo data was stored or transmitted.`;
+  const blob = new Blob([text], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'coby-philips-sample-summary.txt';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+
+$$('[data-network]').forEach(b => b.addEventListener('click', () => {
+  const roleKey = b.dataset.network;
+  selectRole(roleKey);
+  $('#network-detail').textContent = `${roleKey} · Required competencies: ${(roleSkills[roleKey] || []).join(', ')}.`;
+  if (window.highlightNetworkNode) window.highlightNetworkNode(roleKey);
+}));
+
+$('#reset').addEventListener('click', () => {
+  candidates = originalCandidates.map(c => ({ ...c, skills: [...c.skills] }));
+  selectedId = 1;
+  selectedTime = '09:30';
+  bookings = 0;
+  intakeSkills = [];
+  chatStep = 0;
+  lastPlan = '';
+
+  $$('[data-role]').forEach(b => {
+    if (!['Office support', 'Finance', 'Executive assistant'].includes(b.dataset.role)) {
+      delete roleSkills[b.dataset.role];
+      b.remove();
+    }
+  });
+
+  $('#chat').innerHTML = '';
+  appendMessage('Hello. Let’s put your next role into focus. What kind of work are you looking for, and which skills would you like to use? Please use sample details for this interactive test.');
+  $('#chat-input').value = '';
+  $('#skill-chips').innerHTML = '<span class="chip">Waiting for your input</span>';
+  $('#profile-title').textContent = 'From conversation to clarity.';
+  $('#profile-copy').textContent = 'Try the intake assistant above. The skills you mention will create a sample candidate profile and update this shortlist in real time.';
+  $('#role-search').value = '';
+  $('#booking-count').textContent = '0';
+  $('#interview-date').value = localDateStr;
+  $$('[data-time]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.time === selectedTime)));
+  $('#network-detail').textContent = 'Select a group above to view required skills.';
+  updateSelectedCandidate();
+  selectRole('Office support');
+});
+
+renderCandidates();
+
+// Three.js 3D Interactive Skills Network
+(function initSkillsNetwork() {
+  if (!window.THREE) return;
+  const container = $('#network');
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true, powerPreference: 'low-power' });
+  } catch (e) {
+    return;
+  }
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  container.prepend(renderer.domElement);
+  $('#network-fallback').style.display = 'none';
+  renderer.domElement.setAttribute('aria-hidden', 'true');
+  renderer.domElement.style.touchAction = 'pan-y';
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(38, 1, 0.1, 100);
+  camera.position.set(0, 0, 8.5);
+
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x475569, 1.2));
+  const dirLight = new THREE.DirectionalLight(0xffffff, 1.8);
+  dirLight.position.set(4, 6, 8);
+  scene.add(dirLight);
+
+  const group = new THREE.Group();
+  scene.add(group);
+
+  const nodePositions = [
+    [0, 0, 0],
+    [-1.8, 0.8, 0.2],
+    [1.7, 0.6, -0.4],
+    [-1.3, -1.1, -0.3],
+    [1.5, -0.9, 0.5],
+    [0.1, 1.3, -0.8],
+    [0.2, -0.4, 1.3]
+  ];
+
+  const geo = new THREE.SphereGeometry(1, 24, 24);
+  const nodes = [];
+
+  nodePositions.forEach((pos, idx) => {
+    const mat = new THREE.MeshStandardMaterial({
+      color: idx === 0 ? 0x1E40AF : idx % 2 === 0 ? 0x059669 : 0x3B82F6,
+      metalness: 0.3,
+      roughness: 0.2
     });
-  </script>
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.scale.setScalar(idx === 0 ? 0.38 : 0.14 + (idx % 3) * 0.04);
+    mesh.position.set(...pos);
+    group.add(mesh);
+    nodes.push(mesh);
+  });
+
+  const links = [[0, 1], [0, 2], [0, 3], [0, 4], [0, 5], [0, 6], [1, 3], [2, 4], [1, 5], [2, 5], [3, 6], [4, 6]];
+  links.forEach(([src, dst]) => {
+    const start = new THREE.Vector3(...nodePositions[src]);
+    const end = new THREE.Vector3(...nodePositions[dst]);
+    const delta = end.clone().sub(start);
+    const cylinder = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.012, 0.012, delta.length(), 6),
+      new THREE.MeshStandardMaterial({ color: 0x93C5FD, roughness: 0.6 })
+    );
+    cylinder.position.copy(start.add(end).multiplyScalar(0.5));
+    cylinder.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), delta.normalize());
+    group.add(cylinder);
+  });
+
+  let isVisible = true;
+  let isDragging = false;
+  let lastX = 0, lastY = 0;
+  let targetRotX = 0.1, targetRotY = -0.2;
+  let animId = 0;
+
+  function resize() {
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    renderer.setSize(w, h);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.render(scene, camera);
+  }
+
+  function animate() {
+    animId = 0;
+    if (!isVisible || document.hidden) return;
+    if (!reducedMotion && !isDragging) targetRotY += 0.0015;
+    group.rotation.y += (targetRotY - group.rotation.y) * 0.08;
+    group.rotation.x += (targetRotX - group.rotation.x) * 0.08;
+    renderer.render(scene, camera);
+    if (!reducedMotion) animId = requestAnimationFrame(animate);
+  }
+
+  function startAnim() {
+    if (!animId) animate();
+  }
+
+  new ResizeObserver(resize).observe(container);
+  new IntersectionObserver(entries => {
+    isVisible = entries[0].isIntersecting;
+    if (isVisible) startAnim();
+    else if (animId) { cancelAnimationFrame(animId); animId = 0; }
+  }).observe(container);
+
+  renderer.domElement.addEventListener('pointerdown', e => {
+    if (reducedMotion) return;
+    isDragging = true;
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+  renderer.domElement.addEventListener('pointermove', e => {
+    if (!isDragging || reducedMotion) return;
+    targetRotY += (e.clientX - lastX) * 0.008;
+    targetRotX = Math.max(-0.6, Math.min(0.6, targetRotX + (e.clientY - lastY) * 0.005));
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+  window.addEventListener('pointerup', () => isDragging = false);
+
+  window.highlightNetworkNode = roleName => {
+    const colorMap = { 'Office support': 1, 'Finance': 2, 'Executive assistant': 3 };
+    nodes.forEach((n, i) => n.material.color.setHex(i === 0 ? 0x1E40AF : 0x3B82F6));
+    const targetIdx = colorMap[roleName] || 1;
+    if (nodes[targetIdx]) nodes[targetIdx].material.color.setHex(0x059669);
+    if (!reducedMotion) targetRotY += 0.3;
+    renderer.render(scene, camera);
+  };
+
+  group.rotation.set(targetRotX, targetRotY, 0);
+  resize();
+  startAnim();
+})();
+
+// GSAP Subtle Scroll Trigger Animations
+if (window.gsap && !reducedMotion) {
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.from('.specialism-card', {
+    scrollTrigger: { trigger: '#specialisms', start: 'top 80%' },
+    opacity: 0,
+    y: 20,
+    duration: 0.6,
+    stagger: 0.1,
+    ease: 'power2.out'
+  });
+  gsap.from('.how-card', {
+    scrollTrigger: { trigger: '#how', start: 'top 80%' },
+    opacity: 0,
+    y: 20,
+    duration: 0.6,
+    stagger: 0.12,
+    ease: 'power2.out'
+  });
+}
+</script>
 </body>
 </html>
