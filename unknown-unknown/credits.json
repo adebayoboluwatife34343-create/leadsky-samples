@@ -1,67 +1,67 @@
 [
   {
     "file": "img/profile.jpg",
-    "kind": "their own photo (from their Tiktok)",
+    "kind": "their own photo",
     "use_as": "logo / profile picture",
-    "source": "https://www.tiktok.com/@_ritaa71"
+    "source": "https://x.com/GloryCassandra"
   },
   {
     "file": "img/stock-1.jpg",
     "kind": "stock photo",
-    "query": "hair braider",
-    "description": "pink hair, hairstyle, woman, makeup, cosmetics, hair flip, young woman, colored hair, fashion, female portrait, female, skin, bust, woman, woman, woman, woman, fashion, fashion, fashion, fashion, fashion",
-    "source": "https://pixabay.com/photos/pink-hair-hairstyle-woman-makeup-1450045/",
-    "photographer": "Stuchy",
+    "query": "caterer",
+    "description": "catering, airport, plane, ever, entry, hull, aviation, air traffic, vacations, arrival, rear, charge, meal, food, nourishment, enjoy the meal, airfield, dusseldorf, airport d\u00fcsseldorf, catering, catering, catering, catering, catering, airport, airport, airport, airfield",
+    "source": "https://pixabay.com/photos/catering-airport-plane-ever-entry-210403/",
+    "photographer": "falco",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-2.jpg",
     "kind": "stock photo",
-    "query": "hair braider",
-    "description": "woman, portrait, model, fashion, fashion model, style, stylish woman, young woman, hairstyle, curly hair, long hair, female, girl, smile, happy, smiling, happy girl, woman, woman, model, fashion, fashion, fashion, long hair, girl, girl, girl, girl, girl, smile, happy, happy",
-    "source": "https://pixabay.com/photos/woman-portrait-model-fashion-2593366/",
-    "photographer": "StockSnap",
+    "query": "caterer",
+    "description": "drinks, alcohol, glasses, champagne, wine, serving trays, alcoholic drinks, beverage, refreshment, catering, wedding, party, event, celebration, alcohol, alcohol, champagne, champagne, champagne, champagne, champagne, wine, wine, catering, catering, wedding, wedding, party, party, party, party, event, event, event",
+    "source": "https://pixabay.com/photos/drinks-alcohol-glasses-champagne-1283608/",
+    "photographer": "Pexels",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-3.jpg",
     "kind": "stock photo",
-    "query": "hair braider customer",
-    "description": "barber shop, job, work, iranian, occupation, iran, mashhad, men, hair, life, lifestyle, jorj barber, social documentary, stylist, persian, asian, canon photo, people, person, haircut, hairdresser's, mostafa meraji, photojournalism, real pictures, everyday, barber shop, barber shop, barber shop, barber shop, job, haircut, haircut, haircut, haircut, haircut",
-    "source": "https://pixabay.com/photos/barber-shop-job-work-iranian-6797761/",
-    "photographer": "mostafa_meraji",
+    "query": "caterer customer",
+    "description": "people, men, women, crowd, cook, bread, chef, baker, store, restaurant, fast food, chef, chef, chef, baker, baker, fast food, fast food, fast food, fast food, fast food",
+    "source": "https://pixabay.com/photos/people-men-women-crowd-cook-bread-2595757/",
+    "photographer": "StockSnap",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-4.jpg",
     "kind": "stock photo",
-    "query": "hair braider customer",
-    "description": "barber, clippers, fade haircut, barbershop, haircut, styling, grooming, hairstyle, professional, care, home barbering, ceramic blades, makeover, male, manual work, beard care, tool maintenance, salon, lighting, men's haircut",
-    "source": "https://pixabay.com/photos/barber-clippers-fade-haircut-10552936/",
-    "photographer": "louiscarter196",
+    "query": "caterer customer",
+    "description": "barber shop, iran, cosmetology, mashhad, people, job, work, life, lifestyle, everyday, occupation, social documentary, office, mostafa meraji, canon photos, young, men, business, jorj barber, makeup artist, stylist, style blogger, fashion blogger, persian, barbershop in iran, barber shop, barber shop, barber shop, barber shop, iran, iran, people, job, job, job, job, job, work, work, life, life, men, men, men, business, business",
+    "source": "https://pixabay.com/photos/barber-shop-iran-cosmetology-5212059/",
+    "photographer": "mostafa_meraji",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-5.jpg",
     "kind": "stock photo",
-    "query": "hair braider unknown",
-    "description": "woman, hair, portrait, flip, hair flip, colorful hair, young woman, fashion, style, stylish woman, colorful, female, girl, woman, hair, hair, hair, hair, hair, fashion",
-    "source": "https://pixabay.com/photos/woman-hair-portrait-flip-hair-flip-1869208/",
-    "photographer": "Pexels",
+    "query": "caterer unknown",
+    "description": "ufo, alien, guy, pozaziemianin, ufoludek, tunnel, light, stranger, alien civilization, newcomer, antennae, martian, strange, unfamiliar, outlandish, foreign, ufo, ufo, alien, alien, alien, alien, alien",
+    "source": "https://pixabay.com/photos/ufo-alien-guy-pozaziemianin-2413965/",
+    "photographer": "Pawel86",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-6.jpg",
     "kind": "stock photo",
-    "query": "hair braider unknown",
-    "description": "woman, portrait, black hair, long hair, makeup, cosmetics, face, girl, brunette, dark, young woman, modeling, model, pose, posing, studio photography, woman, black hair, black hair, black hair, long hair, long hair, long hair, long hair, long hair, makeup, makeup, makeup, face, face, brunette, model",
-    "source": "https://pixabay.com/photos/woman-portrait-black-hair-long-hair-2647691/",
-    "photographer": "JerzyG\u00f3recki",
+    "query": "caterer unknown",
+    "description": "fantasy, landscape, ufo, glacier, mystical, the atmosphere, mood, beautiful, hover, idyllic, bach, nature, heaven, romantic, composing, atmospheric, blue, photomontage, light, spaceship, aliens, alien intelligence, celestial bodies, sci fi, future, futuristic, alien, science fiction, expedition, unidentified flying object, alie, scary, people, arrival, ufo, ufo, ufo, ufo, ufo, spaceship, spaceship, spaceship, aliens, aliens, sci fi, future, alien, alien, alien, science fiction, science fiction",
+    "source": "https://pixabay.com/photos/fantasy-landscape-ufo-glacier-2700914/",
+    "photographer": "KELLEPICS",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }
