@@ -1,0 +1,62 @@
+[
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "restaurant",
+    "description": "restaurant, furniture, interiors, interior design, interior decoration, architecture, bar, building, chairs, hotel, indoors, seats, tables, restaurant, restaurant, restaurant, restaurant, restaurant, bar, hotel, hotel",
+    "source": "https://pixabay.com/photos/restaurant-furniture-interiors-1837150/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "restaurant",
+    "description": "new year's eve, salmon, fish, seafood, veggies, nature, salad, meal, dish, plate, food, cuisine, Tasmania, Strahan, Australia",
+    "source": "https://pixabay.com/photos/new-years-eve-salmon-fish-seafood-518032/",
+    "photographer": "cattalin",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "restaurant customer",
+    "description": "chef, cooking, street, costumer, restaurant, japan, tokyo, japanese, food, shinjuku, cook, chef, chef, chef, chef, chef, cooking, cooking, restaurant, restaurant, restaurant, japan, japan, tokyo, tokyo, japanese, cook",
+    "source": "https://pixabay.com/photos/chef-cooking-street-costumer-4807317/",
+    "photographer": "binmassam",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "restaurant customer",
+    "description": "outdoor dining, restaurant, bar, waiter, al fresco, city, customers, group, patrons, people, street, tables, chairs, restaurant, restaurant, restaurant, restaurant, restaurant",
+    "source": "https://pixabay.com/photos/outdoor-dining-restaurant-bar-1846137/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "restaurant Portsmouth",
+    "description": "portsmouth, old town, england, street, nature, cars, historic, sky, clouds, blue street, Portsmouth, United Kingdom, England",
+    "source": "https://pixabay.com/photos/portsmouth-old-town-england-street-713817/",
+    "photographer": "921563",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "restaurant Portsmouth",
+    "description": "portsmouth, england, nature, old town, street, buildings, sky, clouds, colours, Portsmouth, United Kingdom, England",
+    "source": "https://pixabay.com/photos/portsmouth-england-old-town-street-713856/",
+    "photographer": "921563",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
