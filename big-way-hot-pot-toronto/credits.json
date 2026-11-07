@@ -1,0 +1,69 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://cdn.prod.website-files.com/644f70cf65fb6d39a7cb223b/6a1147d5a0ca9c59885b3350_newlogo.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "restaurant",
+    "description": "restaurant, furniture, interiors, interior design, interior decoration, architecture, bar, building, chairs, hotel, indoors, seats, tables, restaurant, restaurant, restaurant, restaurant, restaurant, bar, hotel, hotel",
+    "source": "https://pixabay.com/photos/restaurant-furniture-interiors-1837150/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "restaurant",
+    "description": "new year's eve, salmon, fish, seafood, veggies, nature, salad, meal, dish, plate, food, cuisine, Tasmania, Strahan, Australia",
+    "source": "https://pixabay.com/photos/new-years-eve-salmon-fish-seafood-518032/",
+    "photographer": "cattalin",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "restaurant customer",
+    "description": "chef, cooking, street, costumer, restaurant, japan, tokyo, japanese, food, shinjuku, cook, chef, chef, chef, chef, chef, cooking, cooking, restaurant, restaurant, restaurant, japan, japan, tokyo, tokyo, japanese, cook",
+    "source": "https://pixabay.com/photos/chef-cooking-street-costumer-4807317/",
+    "photographer": "binmassam",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "restaurant customer",
+    "description": "outdoor dining, restaurant, bar, waiter, al fresco, city, customers, group, patrons, people, street, tables, chairs, restaurant, restaurant, restaurant, restaurant, restaurant",
+    "source": "https://pixabay.com/photos/outdoor-dining-restaurant-bar-1846137/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "restaurant Toronto",
+    "description": "niagara, canada, border area, road signs, confusing, highway, show, poster, billboards, billboard, billboard, billboard, billboard, billboard, billboard",
+    "source": "https://pixabay.com/photos/niagara-canada-border-area-992735/",
+    "photographer": "ptra",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "restaurant Toronto",
+    "description": "buildings, cn tower, river, waterfront, illuminated, city lights, nature, cityscape, skyline, skyscrapers, architecture, reflection, water reflection, mirroring, canada, night, night photography, ontario, toronto, water, calm waters",
+    "source": "https://pixabay.com/photos/buildings-cn-tower-river-waterfront-2297210/",
+    "photographer": "jameswheeler",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
