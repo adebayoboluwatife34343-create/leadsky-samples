@@ -1,0 +1,76 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://www.newlon.org.uk/wp-content/uploads/2019/01/newlon-icons-02.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "https://www.newlon.org.uk/wp-content/uploads/2017/03/newlonlogo4.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "property management",
+    "description": "real estate, investment, property, background, housing, concept, real estate, real estate, real estate, real estate, real estate",
+    "source": "https://pixabay.com/photos/real-estate-investment-property-6992673/",
+    "photographer": "OleksandrPidvalnyi",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "property management",
+    "description": "house, architecture, front yard, garage, home, house lights, illuminated, exterior, house exterior, home exterior, facade, real estate, windows, house, house, house, house, house, home, home, real estate",
+    "source": "https://pixabay.com/photos/house-architecture-front-yard-1836070/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "property management customer",
+    "description": "businesswoman, business, puzzle, organization, coach, coaching, success, startup, business people, profit, competence, experience, flexibility, knowledge, perfomance, ability, goal, quality, creativity, responsibility, strategy, service, professionalism, dynamics, reliability, team, concept, teamwork, silhouettes, man, woman, office, people, businessman, company, presentation, departments, areas, working groups, organization chart, unit, subject area, planning, leading position, trainer, coach, coaching, coaching, coaching, coaching, coaching",
+    "source": "https://pixabay.com/photos/businesswoman-business-puzzle-2822607/",
+    "photographer": "geralt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "property management customer",
+    "description": "house, garage, driveway, architecture, building, property, home, residential, suburb, real estate, exterior, facade, house exterior, home exterior, street, neighborhood street, residential area, house, house, house, house, house, home, home, real estate",
+    "source": "https://pixabay.com/photos/house-garage-driveway-architecture-1867187/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "property management London",
+    "description": "ferris wheel, london eye, river, ride, england, landmark, thames, architecture, uk, city, tourism, famous, attraction, symbol, capital, monument, united kingdom, london, london eye, london, london, london, london, london",
+    "source": "https://pixabay.com/photos/ferris-wheel-london-eye-river-ride-6547089/",
+    "photographer": "dimitrisvetsikas1969",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "property management London",
+    "description": "london, britain, london eye, sky, landmark, ferris wheel, tourism, nature, skyline, attraction, city, people",
+    "source": "https://pixabay.com/photos/london-britain-london-eye-sky-1572444/",
+    "photographer": "designerpoint",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
