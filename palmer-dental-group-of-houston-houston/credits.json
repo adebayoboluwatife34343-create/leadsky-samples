@@ -7,39 +7,45 @@
     "use_as": "their real logo"
   },
   {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/gregorypalmerdentist"
+  },
+  {
     "file": "img/stock-1.jpg",
     "kind": "stock photo",
-    "query": "dentist",
-    "description": "dentist, patient, dental care, medical, oral care, oral hygiene, dental hygiene, dental chair, dental clinic, dental practice, checking, oral health, dental health, examination, examine, dentist, dentist, dentist, dentist, dentist",
-    "source": "https://pixabay.com/photos/dentist-patient-dental-care-medical-428646/",
-    "photographer": "jarmoluk",
+    "query": "modern bright dental clinic interior operatory Houston",
+    "description": "dentist, dental office, dentistry, gray office, dentist, dentist, dentist, dentist, dentist, dental office, dentistry",
+    "source": "https://pixabay.com/photos/dentist-dental-office-dentistry-2530983/",
+    "photographer": "drshohmelian",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-2.jpg",
     "kind": "stock photo",
-    "query": "dentist",
-    "description": "doctor, medical, medicine, health, stetoscope, healthcare, stethoscope, healthy, hospital, diagnostic, medic, health-care, diagnosis, disease, care, nurse, clinical, clinic, mask, dentist, dental, female, treatment, doctor, doctor, doctor, doctor, doctor, medical, medical, health, health, healthcare, hospital, nurse, nurse, dentist, dentist, dentist, dental",
-    "source": "https://pixabay.com/photos/doctor-medical-medicine-health-563429/",
-    "photographer": "DarkoStojanovic",
+    "query": "modern bright dental clinic interior operatory Houston",
+    "description": "dentist, dental chair, clinic, medical, flatlay, dentist, dentist, dentist, dentist, dentist",
+    "source": "https://pixabay.com/photos/dentist-dental-chair-clinic-medical-2589771/",
+    "photographer": "StockSnap",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-3.jpg",
     "kind": "stock photo",
-    "query": "dentist customer",
-    "description": "dentist, operation, teeth, lamp, clinic, dental, medicine, dentistry, hygiene, doctor, gray doctors, gray medicine, gray teeth, gray lamp, dentist, dentist, dentist, teeth, doctor, doctor, doctor, doctor, doctor",
-    "source": "https://pixabay.com/photos/dentist-operation-teeth-lamp-4373290/",
-    "photographer": "Movidagrafica",
+    "query": "friendly dentist consultation smiling adult patient professional",
+    "description": "treatment, hospital, clinic, medicine, laboratory, diagnosis, patient, healthcare, hospital, hospital, hospital, hospital, hospital, patient, patient, patient, healthcare, healthcare, healthcare",
+    "source": "https://pixabay.com/photos/treatment-hospital-clinic-medicine-4099432/",
+    "photographer": "fernandozhiminaicela",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-4.jpg",
     "kind": "stock photo",
-    "query": "dentist customer",
+    "query": "friendly dentist consultation smiling adult patient professional",
     "description": "dentist, dental care, dentistry, teeth, doctor, health care, dentist, dentist, dentist, dentist, dentist, teeth, doctor, doctor",
     "source": "https://pixabay.com/photos/dentist-dental-care-dentistry-teeth-2530990/",
     "photographer": "drshohmelian",
@@ -49,20 +55,60 @@
   {
     "file": "img/stock-5.jpg",
     "kind": "stock photo",
-    "query": "dentist Houston",
-    "description": "rain drops, nature, surface, wet, water droplets, dropetals, glass surface, rain, water, drips, beading, United States, Texas, Houston",
-    "source": "https://pixabay.com/photos/rain-drops-surface-wet-1144448/",
-    "photographer": "Brett_Hondow",
+    "query": "close up dental examination light modern clean instruments",
+    "description": "dentist, operation, teeth, lamp, clinic, dental, medicine, dentistry, hygiene, doctor, gray doctors, gray medicine, gray teeth, gray lamp, dentist, dentist, dentist, teeth, doctor, doctor, doctor, doctor, doctor",
+    "source": "https://pixabay.com/photos/dentist-operation-teeth-lamp-4373290/",
+    "photographer": "Movidagrafica",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-6.jpg",
     "kind": "stock photo",
-    "query": "dentist Houston",
-    "description": "architecture, buildings, city, cityscape, downtown, skyline, skyscrapers, urban, modern, metropolitan, aerial view, city view, urban landscape, city, city, city, city, city, city view, United States, Texas, Houston",
-    "source": "https://pixabay.com/photos/architecture-buildings-city-1846657/",
-    "photographer": "Pexels",
+    "query": "close up dental examination light modern clean instruments",
+    "description": "toothbrush, toothpaste, dental care, clean, dental hygiene, oral hygiene, oral care, tube, paste, brushing, dentistry, toothbrush, toothbrush, toothbrush, toothpaste, toothpaste, toothpaste, toothpaste, toothpaste",
+    "source": "https://pixabay.com/photos/toothbrush-toothpaste-dental-care-571741/",
+    "photographer": "stevepb",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "custom sleep apnea dental oral appliance demonstration",
+    "description": "dentist, patient, dental care, medical, oral care, oral hygiene, dental hygiene, dental chair, dental clinic, dental practice, checking, oral health, dental health, examination, examine, dentist, dentist, dentist, dentist, dentist",
+    "source": "https://pixabay.com/photos/dentist-patient-dental-care-medical-428646/",
+    "photographer": "jarmoluk",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "custom sleep apnea dental oral appliance demonstration",
+    "description": "dentist, dental care, patient, doctor, dental check up, dental examination, dental clinic, dentistry, dentist, dentist, dentist, dentist, patient, doctor, doctor, doctor, doctor, doctor",
+    "source": "https://pixabay.com/photos/dentist-dental-care-patient-doctor-428645/",
+    "photographer": "jarmoluk",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "all on 4 dental implant restoration digital consultation",
+    "description": "dental prosthetics, metal base, dental technology, dental care, dental crowns, dental bridges, ceramic, set, dentist, implant, health, dentistry, dental laboratories, surgical dentistry, dental material, dental technician, dental repairs, dental prosthodontics, dental market",
+    "source": "https://pixabay.com/photos/dental-prosthetics-metal-base-10510087/",
+    "photographer": "RHDOSTOCKER",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "all on 4 dental implant restoration digital consultation",
+    "description": "dental implant, dental bridge, ceramic teeth, denture, dentures, dentistry, dental treatment, dental supplies, dental care, dental structure, dental technology, oral health, dental aesthetics, prosthetic dentistry, metal-ceramic, implantology, healthcare, dental laboratory, medical supplies",
+    "source": "https://pixabay.com/photos/dental-implant-dental-bridge-10510100/",
+    "photographer": "RHDOSTOCKER",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }
