@@ -1,0 +1,59 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://bright-dental.co.uk/wp-content/uploads/2017/04/header_logo.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "dentist",
+    "description": "dentist, patient, dental care, medical, oral care, oral hygiene, dental hygiene, dental chair, dental clinic, dental practice, checking, oral health, dental health, examination, examine, dentist, dentist, dentist, dentist, dentist",
+    "source": "https://pixabay.com/photos/dentist-patient-dental-care-medical-428646/",
+    "photographer": "jarmoluk",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "dentist",
+    "description": "dentist, operation, teeth, lamp, clinic, dental, medicine, dentistry, hygiene, doctor, gray doctors, gray medicine, gray teeth, gray lamp, dentist, dentist, dentist, teeth, doctor, doctor, doctor, doctor, doctor",
+    "source": "https://pixabay.com/photos/dentist-operation-teeth-lamp-4373290/",
+    "photographer": "Movidagrafica",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "dentist customer",
+    "description": "doctor, medical, medicine, health, stetoscope, healthcare, stethoscope, healthy, hospital, diagnostic, medic, health-care, diagnosis, disease, care, nurse, clinical, clinic, mask, dentist, dental, female, treatment, doctor, doctor, doctor, doctor, doctor, medical, medical, health, health, healthcare, hospital, nurse, nurse, dentist, dentist, dentist, dental",
+    "source": "https://pixabay.com/photos/doctor-medical-medicine-health-563429/",
+    "photographer": "DarkoStojanovic",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "dentist customer",
+    "description": "dentist, dental care, dentistry, teeth, doctor, health care, dentist, dentist, dentist, dentist, dentist, teeth, doctor, doctor",
+    "source": "https://pixabay.com/photos/dentist-dental-care-dentistry-teeth-2530990/",
+    "photographer": "drshohmelian",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "dentist London",
+    "description": "ferris wheel, london eye, river, ride, england, landmark, thames, architecture, uk, city, tourism, famous, attraction, symbol, capital, monument, united kingdom, london, london eye, london, london, london, london, london",
+    "source": "https://pixabay.com/photos/ferris-wheel-london-eye-river-ride-6547089/",
+    "photographer": "dimitrisvetsikas1969",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
