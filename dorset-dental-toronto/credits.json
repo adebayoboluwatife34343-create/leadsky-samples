@@ -1,0 +1,62 @@
+[
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "dentist",
+    "description": "dentist, patient, dental care, medical, oral care, oral hygiene, dental hygiene, dental chair, dental clinic, dental practice, checking, oral health, dental health, examination, examine, dentist, dentist, dentist, dentist, dentist",
+    "source": "https://pixabay.com/photos/dentist-patient-dental-care-medical-428646/",
+    "photographer": "jarmoluk",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "dentist",
+    "description": "dentist, operation, teeth, lamp, clinic, dental, medicine, dentistry, hygiene, doctor, gray doctors, gray medicine, gray teeth, gray lamp, dentist, dentist, dentist, teeth, doctor, doctor, doctor, doctor, doctor",
+    "source": "https://pixabay.com/photos/dentist-operation-teeth-lamp-4373290/",
+    "photographer": "Movidagrafica",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "dentist customer",
+    "description": "doctor, medical, medicine, health, stetoscope, healthcare, stethoscope, healthy, hospital, diagnostic, medic, health-care, diagnosis, disease, care, nurse, clinical, clinic, mask, dentist, dental, female, treatment, doctor, doctor, doctor, doctor, doctor, medical, medical, health, health, healthcare, hospital, nurse, nurse, dentist, dentist, dentist, dental",
+    "source": "https://pixabay.com/photos/doctor-medical-medicine-health-563429/",
+    "photographer": "DarkoStojanovic",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "dentist customer",
+    "description": "dentist, dental care, dentistry, teeth, doctor, health care, dentist, dentist, dentist, dentist, dentist, teeth, doctor, doctor",
+    "source": "https://pixabay.com/photos/dentist-dental-care-dentistry-teeth-2530990/",
+    "photographer": "drshohmelian",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "dentist Toronto",
+    "description": "buildings, cn tower, river, waterfront, illuminated, city lights, nature, cityscape, skyline, skyscrapers, architecture, reflection, water reflection, mirroring, canada, night, night photography, ontario, toronto, water, calm waters",
+    "source": "https://pixabay.com/photos/buildings-cn-tower-river-waterfront-2297210/",
+    "photographer": "jameswheeler",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "dentist Toronto",
+    "description": "toronto, skyline, sunset, dawn, panorama, nature, canada, sky, clouds, skyscrapers, cityscape",
+    "source": "https://pixabay.com/photos/toronto-skyline-sunset-dawn-3112508/",
+    "photographer": "jplenio",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
