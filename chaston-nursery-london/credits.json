@@ -1,0 +1,49 @@
+[
+  {
+    "file": "img/business-logo-1.jpg",
+    "kind": "business logo",
+    "source": "https://irp.cdn-website.com//84b051ab/dms3rep/multi/opt/chaston+nursery+and+preparatory+school+logo+trimmed+no+writing-1920w.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "kindergarten",
+    "description": "christmas background, child, tower, building blocks, blocks, wooden blocks, kindergarten, toy, children, clutter, architecture, to build, to play",
+    "source": "https://pixabay.com/photos/christmas-background-child-tower-1864718/",
+    "photographer": "FeeLoona",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "kindergarten",
+    "description": "crayons, coloring book, coloring, hand, colors, coloring materials, art materials, school supplies, child, playing, colorful, fun, kid, childhood, kindergarten, preschool, education, preschooler, drawing, creativity, creative, crayons, coloring, child, kindergarten, kindergarten, preschool, preschool, education, education, education, education, drawing, drawing, drawing, drawing, drawing",
+    "source": "https://pixabay.com/photos/crayons-coloring-book-coloring-hand-1445053/",
+    "photographer": "ponce_photography",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "kindergarten customer",
+    "description": "wooden cubes, abc, cubes, letters, toys, play, alphabets, abc, letters, letters, letters, letters, letters",
+    "source": "https://pixabay.com/photos/wooden-cubes-abc-cubes-letters-473703/",
+    "photographer": "blickpixel",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "kindergarten customer",
+    "description": "abacus, classroom, count, counter, kids, counting, math, mathematics, learn, learning, learning math, abacus, math, math, math, math, math, mathematics, learning",
+    "source": "https://pixabay.com/photos/abacus-classroom-count-counter-1866497/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
