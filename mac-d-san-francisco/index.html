@@ -1,0 +1,1654 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Mac'd</title>
+
+  <!-- SINGLE SOURCE OF TRUTH JSON DATA -->
+  <script id="site-data" type="application/json">{"brand": {"name": "Mac'd", "tagline": "Find us on Polk Street.", "logo": "", "city": "San Francisco", "country": "US", "currency": "USD", "currency_symbol": "$", "phone": "", "whatsapp": "", "email": "hello@getmacd.com", "instagram": "", "tiktok": "", "address": "2127 Polk Street San Francisco 94109", "hours": "Sunday–Thursday: 11:30 am–9:00 pm. Friday–Saturday: 11:30 am–midnight."}, "colors": {"bg": "#FAF5EC", "surface": "#FFFFFF", "text": "#28231E", "muted": "#665E54", "brand": "#92401F", "accent": "#E8B65C"}, "fonts": {"heading": "DM Serif Display", "body": "DM Sans"}, "hero": {"eyebrow": "MAC'D · SAN FRANCISCO", "title": "Your next stop on Polk Street.", "subtitle": "Find opening hours, get directions or send a dining enquiry. Visit Mac'd at 2127 Polk Street. Photo shown is an illustrative stock image.", "image": "img/stock-1.jpg", "cta_primary": "Plan your visit", "cta_secondary": "Send an enquiry", "shape3d": "wave"}, "stats": [], "about": {"title": "Find Mac'd in San Francisco.", "text": "Mac'd is a restaurant at 2127 Polk Street. Open from 11:30 am every day, with later closing hours on Friday and Saturday. For menu questions or visit enquiries, email hello@getmacd.com. The photo is illustrative stock photography and does not show Mac'd.", "image": "img/stock-4.jpg"}, "items": [{"name": "Sample main dish", "description": "An illustrative menu entry for this website concept. This is not a confirmed Mac'd dish.", "price": 19, "price_label": "Sample price", "duration": "", "image": "", "category": "Sample menu"}, {"name": "Sample side dish", "description": "A placeholder showing how a side could appear on the menu. Ask Mac'd for its current menu.", "price": 7, "price_label": "Sample price", "duration": "", "image": "", "category": "Sample menu"}, {"name": "Sample dessert", "description": "An illustrative dessert entry. Availability and the actual menu have not been confirmed.", "price": 9, "price_label": "Sample price", "duration": "", "image": "", "category": "Sample menu"}, {"name": "Sample soft drink", "description": "A sample drink entry for this concept. Ask Mac'd about available drinks and prices.", "price": 5, "price_label": "Sample price", "duration": "", "image": "", "category": "Sample menu"}], "gallery": [{"image": "img/stock-1.jpg", "caption": "Dining inspiration. Stock photo by Pexels; not Mac'd premises."}, {"image": "img/stock-4.jpg", "caption": "City dining inspiration. Stock photo by Pexels; not Mac'd premises or customers."}], "videos": [], "steps": [{"title": "Check the hours", "text": "Find the listed opening times before planning your visit."}, {"title": "Ask your question", "text": "Email Mac'd about the current menu or your planned visit. The concept form is for demonstration only."}, {"title": "Find your way", "text": "Head to 2127 Polk Street, San Francisco 94109."}], "points": [{"title": "A Polk Street address", "text": "Find Mac'd at 2127 Polk Street in San Francisco."}, {"title": "Open every day", "text": "Listed opening hours start at 11:30 am throughout the week."}, {"title": "Later weekend hours", "text": "Listed closing time is midnight on Friday and Saturday."}, {"title": "A direct email", "text": "Send menu and visit questions to hello@getmacd.com."}], "faq": [{"q": "Where is Mac'd?", "a": "The listed address is 2127 Polk Street, San Francisco 94109."}, {"q": "What are the opening hours?", "a": "Sunday through Thursday, 11:30 am–9:00 pm. Friday and Saturday, 11:30 am–midnight."}, {"q": "Is this the current Mac'd menu?", "a": "No. The menu entries and prices here are samples for this independent website concept. Email hello@getmacd.com for current menu information."}, {"q": "Can I make a booking here?", "a": "This concept does not confirm or send bookings. Email Mac'd to ask whether a booking is possible."}, {"q": "How can I ask about dietary needs?", "a": "Email hello@getmacd.com with your question. Ingredients, allergens and dietary options have not been confirmed for this concept."}, {"q": "Do these photos show Mac'd?", "a": "No. All photos used here are illustrative stock images."}], "demo": {"assistant_name": "Visit enquiry demo", "greeting": "Planning a visit to Mac'd? Explore the listed hours and address, or try the sample enquiry form. This demo cannot contact the restaurant.", "quick_questions": ["Where is Mac'd?", "What time do you close on Friday?", "How can I ask about the menu?", "Can I try the enquiry form?"], "script": [{"q": "Where is Mac'd?", "a": "2127 Polk Street, San Francisco 94109."}, {"q": "What time do you close on Friday?", "a": "The listed Friday closing time is midnight."}, {"q": "How can I ask about the menu?", "a": "Email hello@getmacd.com. The dishes and prices shown in this concept are samples."}, {"q": "Can I try the enquiry form?", "a": "Yes. Enter a name, email, enquiry topic and message. For a visit enquiry, you can also add a preferred date, time and party size. These details are for demonstration only."}, {"q": "Submit demo enquiry", "a": "This is a demo form, nothing was sent"}], "staff": [], "slots": [], "kpis": [], "columns": ["Name", "Email", "Enquiry topic", "Preferred date", "Preferred time", "Party size", "Message", "Status"], "records": [{"Name": "Sample guest", "Email": "guest@example.com", "Enquiry topic": "Menu question", "Preferred date": "", "Preferred time": "", "Party size": "", "Message": "Where can I find the current menu?", "Status": "Sample record only. Nothing sent."}, {"Name": "Demo guest", "Email": "visitor@example.com", "Enquiry topic": "Visit enquiry", "Preferred date": "", "Preferred time": "", "Party size": "", "Message": "Could you confirm whether bookings are available?", "Status": "Sample record only. Nothing sent."}], "options": []}, "banner": "Independent website concept by LeadSky for Mac'd. Not their official website.", "credits": [{"text": "Illustrative restaurant interior photo by Pexels on Pixabay.", "url": "https://pixabay.com/photos/restaurant-furniture-interiors-1837150/"}, {"text": "Illustrative outdoor dining photo by Pexels on Pixabay.", "url": "https://pixabay.com/photos/outdoor-dining-restaurant-bar-1846137/"}]}</script>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #FAF7F2;
+      --surface: #FFFFFF;
+      --text: #1F1B18;
+      --muted: #78716C;
+      --brand: #9A7B56;
+      --accent: #E8DFD5;
+      --font-heading: serif;
+      --font-body: sans-serif;
+      --radius: 6px;
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.03);
+      --shadow-md: 0 12px 32px rgba(0,0,0,0.06);
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    /* TOP CONCEPT BANNER */
+    .top-banner {
+      background: var(--text);
+      color: var(--bg);
+      font-size: 11px;
+      text-align: center;
+      padding: 6px 12px;
+      letter-spacing: 0.02em;
+      line-height: 1.35;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* PHONE-FIRST HEADER (Max 64px, 1 row) */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      height: 60px;
+      max-height: 64px;
+      background: rgba(250, 247, 242, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1rem;
+      gap: 8px;
+    }
+
+    .brand-logo-text {
+      font-family: var(--font-heading);
+      font-size: clamp(14px, 4vw, 19px);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 46vw;
+      flex-shrink: 1;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .btn-header-cta {
+      background: var(--brand);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 40px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      max-height: 40px;
+      border: none;
+    }
+
+    .btn-header-cta:hover {
+      opacity: 0.9;
+    }
+
+    .menu-toggle {
+      background: none;
+      border: none;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1101;
+      flex-shrink: 0;
+    }
+
+    .menu-toggle span {
+      width: 22px;
+      height: 2px;
+      background-color: var(--text);
+      transition: var(--transition);
+      display: block;
+    }
+
+    .menu-toggle.is-active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    .menu-toggle.is-active span:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.is-active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* FULL-SCREEN MOBILE OVERLAY MENU */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 1050;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 5rem 1.5rem 2.5rem;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      overflow-y: auto;
+    }
+
+    .mobile-menu.is-open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 12px;
+      left: 1.5rem;
+      right: 1.5rem;
+    }
+
+    .mobile-nav-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-top: 1rem;
+    }
+
+    .mobile-nav-links a {
+      font-family: var(--font-heading);
+      font-size: clamp(22px, 5.5vw, 32px);
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      padding-bottom: 0.5rem;
+      transition: var(--transition);
+      word-wrap: break-word;
+    }
+
+    .mobile-nav-links a:hover {
+      color: var(--brand);
+      padding-left: 6px;
+    }
+
+    /* DESKTOP NAV SUPPORTS */
+    .desktop-nav {
+      display: none;
+      gap: 1.75rem;
+      align-items: center;
+    }
+
+    .desktop-nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .desktop-nav a:hover {
+      color: var(--brand);
+    }
+
+    @media (min-width: 900px) {
+      .desktop-nav { display: flex; }
+      .menu-toggle { display: none; }
+    }
+
+    /* LAYOUT UTILITIES */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    .section-padding {
+      padding: clamp(3rem, 7vw, 5.5rem) 0;
+    }
+
+    .text-center { text-align: center; }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+      display: block;
+      word-wrap: break-word;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(24px, 6vw, 40px);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 0.85rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .section-desc {
+      color: var(--muted);
+      max-width: 620px;
+      margin: 0 auto 2.25rem;
+      font-size: clamp(15px, 2vw, 17px);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      position: relative;
+      min-height: calc(85vh - 60px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.25rem;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 30%, rgba(232, 223, 213, 0.4) 0%, transparent 70%);
+    }
+
+    #hero-canvas-container {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      max-width: 100vw;
+    }
+
+    @media (min-width: 768px) {
+      #hero-canvas-container { opacity: 0.65; }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-family: var(--font-heading);
+      font-size: clamp(30px, 8vw, 56px);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text);
+      margin-bottom: 1.15rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(15px, 2.5vw, 18px);
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 26px;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      border-radius: 40px;
+      text-decoration: none;
+      transition: var(--transition);
+      cursor: pointer;
+      border: 1px solid transparent;
+      min-height: 46px;
+      text-align: center;
+      word-wrap: break-word;
+    }
+
+    .btn-primary {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      opacity: 0.92;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+      border-color: rgba(0,0,0,0.18);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(0,0,0,0.03);
+      border-color: var(--text);
+    }
+
+    /* STATS STRIP */
+    .stats-section {
+      background: var(--surface);
+      border-top: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 2.25rem 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .stat-value {
+      font-family: var(--font-heading);
+      font-size: clamp(28px, 5vw, 42px);
+      color: var(--brand);
+      font-weight: 500;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+      word-wrap: break-word;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      word-wrap: break-word;
+    }
+
+    /* ABOUT SECTION */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    @media (min-width: 850px) {
+      .about-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .img-wrapper {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: var(--accent);
+      aspect-ratio: 4/3;
+      width: 100%;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .img-fallback {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      background: linear-gradient(135deg, var(--accent) 0%, var(--bg) 100%);
+      color: var(--brand);
+      padding: 1.5rem;
+      text-align: center;
+      word-wrap: break-word;
+    }
+
+    .img-fallback svg {
+      width: 42px;
+      height: 42px;
+      margin-bottom: 0.75rem;
+      stroke-width: 1.5;
+    }
+
+    /* SERVICES / ITEMS GRID */
+    .items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .item-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(0,0,0,0.04);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .item-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .item-card-img {
+      aspect-ratio: 16/10;
+      width: 100%;
+      overflow: hidden;
+      background: var(--accent);
+    }
+
+    .item-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .item-card-body {
+      padding: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .item-category {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+      word-wrap: break-word;
+    }
+
+    .item-title {
+      font-family: var(--font-heading);
+      font-size: 21px;
+      font-weight: 500;
+      line-height: 1.25;
+      margin-bottom: 0.5rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .item-desc {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .item-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 0.85rem;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      font-size: 14px;
+      gap: 8px;
+    }
+
+    .item-price {
+      font-weight: 600;
+      color: var(--text);
+      word-wrap: break-word;
+    }
+
+    .item-duration {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* PROCESS STEPS & WHY CHOOSE US */
+    .steps-grid, .points-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.35rem;
+    }
+
+    .step-card, .point-card {
+      background: var(--surface);
+      padding: 1.75rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,0.04);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-title, .point-title {
+      font-family: var(--font-heading);
+      font-size: 21px;
+      color: var(--text);
+      margin-bottom: 0.65rem;
+      word-wrap: break-word;
+    }
+
+    .step-text, .point-text {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.6;
+      word-wrap: break-word;
+    }
+
+    /* GALLERY GRID & NO-CUTOFF CAPTIONS */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--accent);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .gallery-img-container {
+      aspect-ratio: 4/3;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
+    }
+
+    .gallery-item:hover .gallery-img-container img {
+      transform: scale(1.04);
+    }
+
+    .gallery-caption {
+      padding: 0.75rem 1rem;
+      background: var(--surface);
+      color: var(--text);
+      font-size: 13px;
+      line-height: 1.45;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* VIDEO PLAYER CARD */
+    .video-card {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      margin: 0 auto;
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #000;
+      box-shadow: var(--shadow-md);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+    }
+
+    .tt-play {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: none;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .tt-play img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: opacity 0.3s;
+    }
+
+    .tt-play:hover img { opacity: 1; }
+
+    .play-icon-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .tt-play:hover .play-icon-overlay {
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+
+    .play-icon-overlay svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--text);
+      margin-left: 2px;
+    }
+
+    .video-open-link {
+      display: inline-block;
+      padding: 8px 12px;
+      font-size: 13px;
+      color: var(--brand);
+      text-decoration: underline;
+    }
+
+    /* FAQ ACCORDION - FULL HEIGHT OPEN */
+    .faq-list {
+      max-width: 760px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    details.faq-item {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,0.05);
+      padding: 1.15rem 1.35rem;
+      box-shadow: var(--shadow-sm);
+    }
+
+    summary.faq-question {
+      font-family: var(--font-heading);
+      font-size: clamp(18px, 4vw, 21px);
+      font-weight: 500;
+      color: var(--text);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      word-wrap: break-word;
+    }
+
+    summary.faq-question::-webkit-details-marker { display: none; }
+
+    summary.faq-question::after {
+      content: '+';
+      font-family: var(--font-body);
+      font-size: 22px;
+      color: var(--brand);
+      flex-shrink: 0;
+    }
+
+    details[open] summary.faq-question::after {
+      content: '−';
+    }
+
+    .faq-answer {
+      margin-top: 0.85rem;
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.65;
+      border-top: 1px solid rgba(0,0,0,0.04);
+      padding-top: 0.75rem;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* BOOKING & FORM SECTION */
+    .booking-wrapper {
+      background: var(--surface);
+      border-radius: var(--radius);
+      padding: clamp(1.5rem, 4vw, 3rem);
+      box-shadow: var(--shadow-md);
+      border: 1px solid rgba(0,0,0,0.04);
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .booking-form {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.15rem;
+    }
+
+    @media (min-width: 640px) {
+      .booking-form .col-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.15rem;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--text);
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(0,0,0,0.12);
+      background: var(--bg);
+      font-family: var(--font-body);
+      font-size: 15px;
+      color: var(--text);
+      transition: var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--brand);
+      background: #fff;
+    }
+
+    textarea.form-control {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    .demo-notice {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 0.75rem;
+      font-style: italic;
+    }
+
+    /* FOOTER */
+    .site-footer {
+      background: var(--text);
+      color: var(--bg);
+      padding: 3.5rem 0 2rem;
+      margin-top: 3.5rem;
+      font-size: 14px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .footer-brand {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      letter-spacing: 0.05em;
+      color: #fff;
+      margin-bottom: 0.65rem;
+      word-wrap: break-word;
+    }
+
+    .footer-title {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.85rem;
+      font-weight: 600;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.75);
+      text-decoration: none;
+      transition: var(--transition);
+      word-wrap: break-word;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      padding-top: 1.75rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+      word-wrap: break-word;
+    }
+
+    /* FLOATING ACTION BUTTONS */
+    .floating-actions {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      z-index: 990;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .float-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--surface);
+      color: var(--text);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border: 1px solid rgba(0,0,0,0.08);
+      transition: var(--transition);
+    }
+
+    .float-btn:hover {
+      transform: scale(1.06);
+    }
+
+    .float-btn.whatsapp-btn {
+      background: #25D366;
+      color: #fff;
+      border: none;
+    }
+
+    .float-btn svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+  </style>
+<style id='phone-safety'>canvas{pointer-events:none!important}@media(max-width:820px){canvas{opacity:.3!important}html,body{overflow-x:hidden}img,video{max-width:100%}}@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}</style></head>
+<body>
+
+  <!-- TOP CONCEPT BANNER -->
+  <div id="top-banner" class="top-banner"></div>
+
+  <!-- PHONE-FIRST MAIN HEADER -->
+  <header class="site-header">
+    <a href="#" class="brand-logo-text" id="brand-header-title"></a>
+
+    <div class="header-actions">
+      <a href="#booking" class="btn-header-cta" id="header-cta-btn">Book</a>
+      <button class="menu-toggle" id="menu-toggle-btn" aria-label="Toggle Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- DESKTOP NAV -->
+    <nav class="desktop-nav" id="desktop-nav-links"></nav>
+  </header>
+
+  <!-- FULL-SCREEN MOBILE OVERLAY MENU -->
+  <div class="mobile-menu" id="mobile-menu-overlay">
+    <div class="mobile-nav-links" id="mobile-nav-links"></div>
+    <div style="margin-top: 2rem;">
+      <a href="#booking" class="btn btn-primary" style="width: 100%; text-align: center;" id="mobile-menu-cta">Request Consultation</a>
+    </div>
+  </div>
+
+  <main>
+    <!-- HERO SECTION WITH INTERACTIVE 3D -->
+    <section class="hero-section" id="hero">
+      <div id="hero-canvas-container"></div>
+      <div class="hero-content">
+        <span class="eyebrow" id="hero-eyebrow"></span>
+        <h1 class="hero-title" id="hero-title"></h1>
+        <p class="hero-subtitle" id="hero-subtitle"></p>
+        <div class="hero-actions">
+          <a href="#booking" class="btn btn-primary" id="hero-primary-btn"></a>
+          <a href="#items-section" class="btn btn-secondary" id="hero-secondary-btn"></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section class="stats-section" id="stats-section">
+      <div class="container">
+        <div class="stats-grid" id="stats-grid"></div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="section-padding" id="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <span class="eyebrow">ABOUT US</span>
+            <h2 class="section-title" id="about-title"></h2>
+            <p class="section-desc" style="margin: 0 0 1.5rem 0; text-align: left;" id="about-text"></p>
+            <a href="#booking" class="btn btn-primary">Schedule Evaluation</a>
+          </div>
+          <div class="img-wrapper" id="about-img-container"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES / ITEMS SECTION -->
+    <section class="section-padding" id="items-section" style="background: rgba(0,0,0,0.015);">
+      <div class="container">
+        <div class="text-center">
+          <span class="eyebrow">OUR OFFERINGS</span>
+          <h2 class="section-title">Bespoke Treatments & Therapies</h2>
+          <p class="section-desc">Tailored protocols executed with clinical precision and complete anatomical consideration.</p>
+        </div>
+        <div class="items-grid" id="items-grid"></div>
+      </div>
+    </section>
+
+    <!-- PROCESS STEPS -->
+    <section class="section-padding" id="steps-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="eyebrow">THE PATIENT JOURNEY</span>
+          <h2 class="section-title">Structured Care Protocol</h2>
+          <p class="section-desc">How we guide your quiet transformation with complete discretion and expertise.</p>
+        </div>
+        <div class="steps-grid" id="steps-grid"></div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE US / POINTS -->
+    <section class="section-padding" id="points-section" style="background: rgba(0,0,0,0.015);">
+      <div class="container">
+        <div class="text-center">
+          <span class="eyebrow">DISTINCTION</span>
+          <h2 class="section-title">Why Choose Us</h2>
+          <p class="section-desc">Our uncompromising standards for safety, aesthetic integrity, and client wellness.</p>
+        </div>
+        <div class="points-grid" id="points-grid"></div>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="section-padding" id="gallery-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="eyebrow">SANCTUARY</span>
+          <h2 class="section-title">Clinic Portfolio & Environment</h2>
+        </div>
+        <div class="gallery-grid" id="gallery-grid"></div>
+      </div>
+    </section>
+
+    <!-- VIDEOS SECTION -->
+    <section class="section-padding" id="videos-section" style="display: none; background: rgba(0,0,0,0.015);">
+      <div class="container">
+        <div class="text-center">
+          <span class="eyebrow">MEDIA</span>
+          <h2 class="section-title">Video Demonstration</h2>
+        </div>
+        <div id="videos-container"></div>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section-padding" id="faq-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="eyebrow">ENQUIRIES</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-list" id="faq-list"></div>
+      </div>
+    </section>
+
+    <!-- BOOKING / DEMO FORM -->
+    <section class="section-padding" id="booking" style="background: rgba(0,0,0,0.015);">
+      <div class="container">
+        <div class="text-center">
+          <span class="eyebrow">CONSULTATION</span>
+          <h2 class="section-title">Request Your Private Appointment</h2>
+          <p class="section-desc">Begin your bespoke journey with our clinical team.</p>
+        </div>
+        <div class="booking-wrapper">
+          <form class="booking-form" id="consultation-form">
+            <div class="col-2">
+              <div class="form-group">
+                <label for="full-name">Full Name</label>
+                <input type="text" id="full-name" class="form-control" required placeholder="e.g. Eleanor Vance">
+              </div>
+              <div class="form-group">
+                <label for="email-address">Email Address</label>
+                <input type="email" id="email-address" class="form-control" required placeholder="name@example.com">
+              </div>
+            </div>
+            <div class="col-2">
+              <div class="form-group">
+                <label for="phone-number">Phone Number</label>
+                <input type="tel" id="phone-number" class="form-control" required placeholder="+44 7000 000000">
+              </div>
+              <div class="form-group">
+                <label for="service-select">Treatment of Interest</label>
+                <select id="service-select" class="form-control"></select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="notes">Notes or Questions</label>
+              <textarea id="notes" class="form-control" placeholder="Please mention any preferred dates or skin concerns..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: var(--radius);">Submit Request</button>
+            <p class="demo-notice">This is a demo form, nothing was sent.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand" id="footer-brand-name"></div>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px; max-width: 280px; word-wrap: break-word;" id="footer-tagline"></p>
+        </div>
+        <div>
+          <div class="footer-title">Contact & Suite</div>
+          <p style="color: rgba(255,255,255,0.7); line-height: 1.6; word-wrap: break-word;" id="footer-address"></p>
+          <p style="color: rgba(255,255,255,0.7); margin-top: 0.5rem; word-wrap: break-word;" id="footer-hours"></p>
+        </div>
+        <div>
+          <div class="footer-title">Direct Enquiries</div>
+          <ul class="footer-links">
+            <li><a href="#" id="footer-phone"></a></li>
+            <li><a href="#" id="footer-email"></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; <span id="year-span"></span> <span id="footer-copy-name"></span>. Concept by LeadSky.</div>
+        <div id="footer-credits" style="display:flex; gap:12px; flex-wrap:wrap;"></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTION BUTTONS (PHONE & WHATSAPP) -->
+  <div class="floating-actions" id="floating-actions"></div>
+
+  <!-- CORE JAVASCRIPT ENGINE -->
+  <script>
+    (function() {
+      // 1. READ SITE DATA JSON
+      const dataEl = document.getElementById('site-data');
+      if (!dataEl) return;
+      let SITE;
+      try {
+        SITE = JSON.parse(dataEl.textContent);
+      } catch (e) {
+        console.error("Invalid site-data JSON structure", e);
+        return;
+      }
+
+      // 2. DYNAMICALLY INJECT COLORS & FONTS
+      const root = document.documentElement;
+      if (SITE.colors) {
+        root.style.setProperty('--bg', SITE.colors.bg || '#FAF7F2');
+        root.style.setProperty('--surface', SITE.colors.surface || '#FFFFFF');
+        root.style.setProperty('--text', SITE.colors.text || '#1F1B18');
+        root.style.setProperty('--muted', SITE.colors.muted || '#78716C');
+        root.style.setProperty('--brand', SITE.colors.brand || '#9A7B56');
+        root.style.setProperty('--accent', SITE.colors.accent || '#E8DFD5');
+      }
+
+      if (SITE.fonts) {
+        const headingFont = SITE.fonts.heading || 'Cormorant Garamond';
+        const bodyFont = SITE.fonts.body || 'Plus Jakarta Sans';
+        
+        root.style.setProperty('--font-heading', `'${headingFont}', serif`);
+        root.style.setProperty('--font-body', `'${bodyFont}', sans-serif`);
+
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = `https://fonts.googleapis.com/css2?family=${encodeURIComponent(headingFont)}:wght@400;500;600&family=${encodeURIComponent(bodyFont)}:wght@400;500;600&display=swap`;
+        document.head.appendChild(link);
+      }
+
+      document.title = SITE.brand.name ? `${SITE.brand.name} — ${SITE.brand.tagline || ''}` : 'Independent Website Concept';
+
+      // UTILITY: FORMAT PRICE
+      function formatPrice(item) {
+        if (item.price && Number(item.price) > 0) {
+          const sym = SITE.brand.currency_symbol || '£';
+          return sym + Number(item.price).toLocaleString();
+        }
+        return item.price_label || '';
+      }
+
+      // UTILITY: IMAGE FALLBACK HANDLER
+      function createImgFallback(altText) {
+        const wrap = document.createElement('div');
+        wrap.className = 'img-fallback';
+        wrap.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <span style="font-size:12px; font-weight:500;">${altText || SITE.brand.name}</span>
+        `;
+        return wrap;
+      }
+
+      function attachImgWithFallback(container, src, alt) {
+        if (!src) {
+          container.appendChild(createImgFallback(alt));
+          return;
+        }
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = alt || '';
+        img.onerror = () => {
+          container.innerHTML = '';
+          container.appendChild(createImgFallback(alt));
+        };
+        container.appendChild(img);
+      }
+
+      // 3. POPULATE DOM FROM JSON
+      document.getElementById('top-banner').textContent = SITE.banner || '';
+      document.getElementById('brand-header-title').textContent = SITE.brand.name || '';
+      document.getElementById('header-cta-btn').textContent = SITE.hero.cta_primary || 'Book';
+
+      // Navigation Structure
+      const navSections = [
+        { name: 'About', id: '#about-section', show: !!SITE.about?.title },
+        { name: 'Treatments', id: '#items-section', show: (SITE.items?.length > 0) },
+        { name: 'Process', id: '#steps-section', show: (SITE.steps?.length > 0) },
+        { name: 'Sanctuary', id: '#gallery-section', show: (SITE.gallery?.length > 0) },
+        { name: 'FAQ', id: '#faq-section', show: (SITE.faq?.length > 0) }
+      ].filter(s => s.show);
+
+      const desktopNav = document.getElementById('desktop-nav-links');
+      const mobileNav = document.getElementById('mobile-nav-links');
+
+      navSections.forEach(s => {
+        const a1 = document.createElement('a');
+        a1.href = s.id;
+        a1.textContent = s.name;
+        desktopNav.appendChild(a1);
+
+        const a2 = document.createElement('a');
+        a2.href = s.id;
+        a2.textContent = s.name;
+        a2.onclick = () => closeMobileMenu();
+        mobileNav.appendChild(a2);
+      });
+
+      // Mobile Menu Actions
+      const menuBtn = document.getElementById('menu-toggle-btn');
+      const mobileMenu = document.getElementById('mobile-menu-overlay');
+      const mobileCta = document.getElementById('mobile-menu-cta');
+
+      function closeMobileMenu() {
+        mobileMenu.classList.remove('is-open');
+        menuBtn.classList.remove('is-active');
+        document.body.style.overflow = '';
+      }
+
+      function openMobileMenu() {
+        mobileMenu.classList.add('is-open');
+        menuBtn.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      menuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (mobileMenu.classList.contains('is-open')) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
+      
+      mobileCta.onclick = () => closeMobileMenu();
+
+      // Hero
+      document.getElementById('hero-eyebrow').textContent = SITE.hero.eyebrow || '';
+      document.getElementById('hero-title').textContent = SITE.hero.title || '';
+      document.getElementById('hero-subtitle').textContent = SITE.hero.subtitle || '';
+      document.getElementById('hero-primary-btn').textContent = SITE.hero.cta_primary || 'Book Now';
+      document.getElementById('hero-secondary-btn').textContent = SITE.hero.cta_secondary || 'Learn More';
+
+      // Stats
+      const statsSec = document.getElementById('stats-section');
+      const statsGrid = document.getElementById('stats-grid');
+      if (SITE.stats && SITE.stats.length > 0) {
+        SITE.stats.forEach(st => {
+          const div = document.createElement('div');
+          div.innerHTML = `<div class="stat-value">${st.value}</div><div class="stat-label">${st.label}</div>`;
+          statsGrid.appendChild(div);
+        });
+      } else {
+        statsSec.style.display = 'none';
+      }
+
+      // About
+      const aboutSec = document.getElementById('about-section');
+      if (SITE.about && SITE.about.title) {
+        document.getElementById('about-title').textContent = SITE.about.title;
+        document.getElementById('about-text').textContent = SITE.about.text;
+        attachImgWithFallback(document.getElementById('about-img-container'), SITE.about.image, SITE.about.title);
+      } else {
+        aboutSec.style.display = 'none';
+      }
+
+      // Items / Services & Form Options
+      const itemsSec = document.getElementById('items-section');
+      const itemsGrid = document.getElementById('items-grid');
+      const serviceSelect = document.getElementById('service-select');
+
+      if (SITE.items && SITE.items.length > 0) {
+        SITE.items.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'item-card';
+
+          const imgDiv = document.createElement('div');
+          imgDiv.className = 'item-card-img';
+          attachImgWithFallback(imgDiv, item.image, item.name);
+
+          const bodyDiv = document.createElement('div');
+          bodyDiv.className = 'item-card-body';
+          bodyDiv.innerHTML = `
+            ${item.category ? `<span class="item-category">${item.category}</span>` : ''}
+            <h3 class="item-title">${item.name}</h3>
+            <p class="item-desc">${item.description || ''}</p>
+            <div class="item-footer">
+              <span class="item-price">${formatPrice(item)}</span>
+              <span class="item-duration">${item.duration || ''}</span>
+            </div>
+          `;
+
+          card.appendChild(imgDiv);
+          card.appendChild(bodyDiv);
+          itemsGrid.appendChild(card);
+
+          // Form select option
+          const opt = document.createElement('option');
+          opt.value = item.name;
+          opt.textContent = `${item.name} (${formatPrice(item)})`;
+          serviceSelect.appendChild(opt);
+        });
+      } else {
+        itemsSec.style.display = 'none';
+      }
+
+      // Process Steps
+      const stepsSec = document.getElementById('steps-section');
+      const stepsGrid = document.getElementById('steps-grid');
+      if (SITE.steps && SITE.steps.length > 0) {
+        SITE.steps.forEach(st => {
+          const div = document.createElement('div');
+          div.className = 'step-card';
+          div.innerHTML = `<h3 class="step-title">${st.title}</h3><p class="step-text">${st.text}</p>`;
+          stepsGrid.appendChild(div);
+        });
+      } else {
+        stepsSec.style.display = 'none';
+      }
+
+      // Points / Why Choose Us
+      const pointsSec = document.getElementById('points-section');
+      const pointsGrid = document.getElementById('points-grid');
+      if (SITE.points && SITE.points.length > 0) {
+        SITE.points.forEach(pt => {
+          const div = document.createElement('div');
+          div.className = 'point-card';
+          div.innerHTML = `<h3 class="point-title">${pt.title}</h3><p class="point-text">${pt.text}</p>`;
+          pointsGrid.appendChild(div);
+        });
+      } else {
+        pointsSec.style.display = 'none';
+      }
+
+      // Gallery with full caption support
+      const galSec = document.getElementById('gallery-section');
+      const galGrid = document.getElementById('gallery-grid');
+      if (SITE.gallery && SITE.gallery.length > 0) {
+        SITE.gallery.forEach(g => {
+          const item = document.createElement('div');
+          item.className = 'gallery-item';
+
+          const imgContainer = document.createElement('div');
+          imgContainer.className = 'gallery-img-container';
+          attachImgWithFallback(imgContainer, g.image, g.caption);
+          item.appendChild(imgContainer);
+
+          if (g.caption) {
+            const cap = document.createElement('div');
+            cap.className = 'gallery-caption';
+            cap.textContent = g.caption;
+            item.appendChild(cap);
+          }
+          galGrid.appendChild(item);
+        });
+      } else {
+        galSec.style.display = 'none';
+      }
+
+      // Videos
+      const vidSec = document.getElementById('videos-section');
+      const vidContainer = document.getElementById('videos-container');
+      if (SITE.videos && SITE.videos.length > 0) {
+        vidSec.style.display = 'block';
+        SITE.videos.forEach(v => {
+          const card = document.createElement('div');
+          card.className = 'video-card';
+          card.innerHTML = `
+            <div class="video-wrapper">
+              <button class="tt-play" data-player="${v.player}">
+                <img src="${v.poster || ''}" alt="Video preview" onerror="this.style.display='none'">
+                <div class="play-icon-overlay">
+                  <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </button>
+            </div>
+            ${v.link ? `<a href="${v.link}" target="_blank" rel="noopener" class="video-open-link">Open video source</a>` : ''}
+          `;
+          const btn = card.querySelector('.tt-play');
+          const wrapper = card.querySelector('.video-wrapper');
+          btn.onclick = () => {
+            wrapper.innerHTML = `<iframe src="${v.player}?autoplay=1" style="width:100%; height:100%; border:none;" allow="autoplay; fullscreen"></iframe>`;
+          };
+          vidContainer.appendChild(card);
+        });
+      }
+
+      // FAQ Accordion
+      const faqSec = document.getElementById('faq-section');
+      const faqList = document.getElementById('faq-list');
+      if (SITE.faq && SITE.faq.length > 0) {
+        SITE.faq.forEach(f => {
+          const det = document.createElement('details');
+          det.className = 'faq-item';
+          det.innerHTML = `
+            <summary class="faq-question"><span>${f.q}</span></summary>
+            <div class="faq-answer">${f.a}</div>
+          `;
+          faqList.appendChild(det);
+        });
+      } else {
+        faqSec.style.display = 'none';
+      }
+
+      // Form Handling
+      const form = document.getElementById('consultation-form');
+      form.onsubmit = (e) => {
+        e.preventDefault();
+        alert('This is a demo form, nothing was sent.');
+        form.reset();
+      };
+
+      // Footer Data
+      document.getElementById('footer-brand-name').textContent = SITE.brand.name || '';
+      document.getElementById('footer-copy-name').textContent = SITE.brand.name || '';
+      document.getElementById('footer-tagline').textContent = SITE.brand.tagline || '';
+      document.getElementById('footer-address').textContent = SITE.brand.address || `${SITE.brand.city || ''}, ${SITE.brand.country || ''}`;
+      document.getElementById('footer-hours').textContent = SITE.brand.hours ? `Hours: ${SITE.brand.hours}` : '';
+      document.getElementById('year-span').textContent = new Date().getFullYear();
+
+      const phoneLink = document.getElementById('footer-phone');
+      if (SITE.brand.phone) {
+        phoneLink.textContent = SITE.brand.phone;
+        phoneLink.href = `tel:${SITE.brand.phone.replace(/\s+/g, '')}`;
+      } else {
+        phoneLink.parentElement.style.display = 'none';
+      }
+
+      const emailLink = document.getElementById('footer-email');
+      if (SITE.brand.email) {
+        emailLink.textContent = SITE.brand.email;
+        emailLink.href = `mailto:${SITE.brand.email}`;
+      } else {
+        emailLink.parentElement.style.display = 'none';
+      }
+
+      const creditsDiv = document.getElementById('footer-credits');
+      if (SITE.credits && SITE.credits.length > 0) {
+        SITE.credits.forEach(c => {
+          const a = document.createElement('a');
+          a.href = c.url || '#';
+          a.textContent = c.text;
+          a.target = '_blank';
+          a.rel = 'noopener';
+          a.style.color = 'inherit';
+          creditsDiv.appendChild(a);
+        });
+      }
+
+      // Floating Action Buttons (Phone & WhatsApp)
+      const floatContainer = document.getElementById('floating-actions');
+      if (SITE.brand.whatsapp) {
+        const wa = document.createElement('a');
+        wa.className = 'float-btn whatsapp-btn';
+        wa.href = `https://wa.me/${SITE.brand.whatsapp.replace(/\+/g, '')}`;
+        wa.target = '_blank';
+        wa.rel = 'noopener';
+        wa.setAttribute('aria-label', 'Contact on WhatsApp');
+        wa.innerHTML = `<svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>`;
+        floatContainer.appendChild(wa);
+      }
+
+      if (SITE.brand.phone) {
+        const ph = document.createElement('a');
+        ph.className = 'float-btn';
+        ph.href = `tel:${SITE.brand.phone.replace(/\s+/g, '')}`;
+        ph.setAttribute('aria-label', 'Call Us');
+        ph.innerHTML = `<svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>`;
+        floatContainer.appendChild(ph);
+      }
+
+      // 4. THREE.JS 3D SCENE GENERATOR FOR HERO
+      if (window.THREE && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        try {
+          const container = document.getElementById('hero-canvas-container');
+          const scene = new THREE.Scene();
+          const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+          camera.position.z = 6;
+
+          const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+          renderer.setSize(container.clientWidth, container.clientHeight);
+          renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          container.appendChild(renderer.domElement);
+
+          // Lights
+          const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+          scene.add(ambientLight);
+
+          const dirLight = new THREE.DirectionalLight(0xffffff, 1.2);
+          dirLight.position.set(5, 5, 5);
+          scene.add(dirLight);
+
+          // ES6 Curve Class for Wave Shape
+          class CustomWaveCurve extends THREE.Curve {
+            constructor(scale = 1) { super(); this.scale = scale; }
+            getPoint(t) {
+              const tx = (t - 0.5) * 3 * this.scale;
+              const ty = Math.sin(t * Math.PI * 4) * 0.45 * this.scale;
+              const tz = Math.cos(t * Math.PI * 4) * 0.45 * this.scale;
+              return new THREE.Vector3(tx, ty, tz);
+            }
+          }
+
+          // 3D Geometry Factory supporting all 10 shapes: braid, flower, cake, gem, tooth, scales, car, bottle, wave, orb
+          function getShapeGeometry(shapeName) {
+            const name = (shapeName || 'gem').toLowerCase();
+            switch (name) {
+              case 'braid':
+                return new THREE.TorusKnotGeometry(1.2, 0.3, 100, 16, 2, 3);
+              case 'flower':
+                return new THREE.TorusKnotGeometry(1.2, 0.35, 120, 16, 3, 7);
+              case 'cake':
+                return new THREE.CylinderGeometry(1.5, 1.5, 1.2, 32);
+              case 'tooth':
+                return new THREE.CylinderGeometry(1.4, 0.9, 2.2, 24);
+              case 'scales':
+                return new THREE.ConeGeometry(1.5, 2.5, 6);
+              case 'car':
+                return new THREE.BoxGeometry(2.4, 1.0, 1.4);
+              case 'bottle':
+                return new THREE.CylinderGeometry(0.5, 1.2, 2.8, 24);
+              case 'wave':
+                return new THREE.TubeGeometry(new CustomWaveCurve(1.2), 64, 0.35, 16, false);
+              case 'orb':
+                return new THREE.SphereGeometry(1.6, 32, 32);
+              case 'gem':
+              default:
+                return new THREE.IcosahedronGeometry(1.6, 0);
+            }
+          }
+
+          const geometry = getShapeGeometry(SITE.hero?.shape3d);
+          const brandColor = SITE.colors?.brand || '#9A7B56';
+
+          const wireMaterial = new THREE.MeshStandardMaterial({
+            color: new THREE.Color(brandColor),
+            wireframe: true,
+            roughness: 0.3,
+            metalness: 0.8
+          });
+
+          const coreMaterial = new THREE.MeshStandardMaterial({
+            color: new THREE.Color(brandColor),
+            transparent: true,
+            opacity: 0.15,
+            roughness: 0.1,
+            metalness: 0.9
+          });
+
+          const mesh = new THREE.Mesh(geometry, wireMaterial);
+          const coreMesh = new THREE.Mesh(geometry, coreMaterial);
+          coreMesh.scale.set(0.95, 0.95, 0.95);
+
+          const group = new THREE.Group();
+          group.add(mesh);
+          group.add(coreMesh);
+          scene.add(group);
+
+          let mouseX = 0, mouseY = 0;
+          window.addEventListener('pointermove', (e) => {
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 0.4;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 0.4;
+          });
+
+          let isAnimating = true;
+          function animate() {
+            if (!isAnimating) return;
+            requestAnimationFrame(animate);
+
+            group.rotation.y += 0.004;
+            group.rotation.x += 0.002;
+
+            group.rotation.y += (mouseX - group.rotation.y) * 0.05;
+            group.rotation.x += (mouseY - group.rotation.x) * 0.05;
+
+            renderer.render(scene, camera);
+          }
+
+          const observer = new IntersectionObserver((entries) => {
+            isAnimating = entries[0].isIntersecting;
+            if (isAnimating) animate();
+          });
+          observer.observe(document.getElementById('hero'));
+
+          window.addEventListener('resize', () => {
+            if (!container.clientWidth || !container.clientHeight) return;
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+          });
+
+          animate();
+        } catch (e) {
+          console.warn('3D Canvas fallback applied:', e);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
