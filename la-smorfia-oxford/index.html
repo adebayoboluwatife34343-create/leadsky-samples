@@ -4,652 +4,182 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#FAF7F2">
+<meta name="theme-color" content="#FFFCF6">
 <title>La Smorfia, Oxford — Independent Website Concept</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --paper:#FAF7F2;
-  --ink:#2C1810;
-  --red:#a83622;
-  --sand:#E6DEC8;
-  --green:#3e5b4d;
-  --line:#d8ccbc;
-  --muted:#4a3a30;
-  --serif:"Cormorant Garamond",Georgia,serif;
-  --sans:"Plus Jakarta Sans",Arial,sans-serif;
-}
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.65; }
-body.locked { overflow: hidden; }
-img { display: block; max-width: 100%; height: auto; }
-button, input, select, textarea { font: inherit; }
-a { color: inherit; text-decoration: none; }
-button, a { -webkit-tap-highlight-color: transparent; }
-button { cursor: pointer; background: none; border: none; padding: 0; }
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
-h1, h2, h3, p { margin: 0; }
-h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.05; }
-.wrap { width: min(1200px, calc(100% - 40px)); margin: 0 auto; }
-.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; }
-.concept { background: var(--ink); color: #fff; text-align: center; font-size: 10px; padding: 8px 16px; line-height: 1.5; }
-
-/* Header */
-.header { position: sticky; top: 0; z-index: 30; background: rgba(250,247,242,0.97); border-bottom: 1px solid var(--line); }
-.header-inner { height: 64px; display: flex; align-items: center; gap: 20px; }
-.brand { text-decoration: none; display: flex; gap: 8px; align-items: center; margin-right: auto; }
-.brand img { width: 34px; height: 34px; object-fit: contain; }
-.brand span { font-family: var(--serif); font-size: 26px; white-space: nowrap; }
-.desktop-nav { display: flex; gap: 26px; font-size: 12px; }
-.desktop-nav a { text-decoration: none; }
-.desktop-nav a:hover { color: var(--red); }
-.button { min-height: 44px; padding: 10px 20px; background: var(--red); color: #fff; border: 1px solid var(--red); display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; font-weight: 600; border-radius: 0; }
-.button:hover { background: var(--ink); border-color: var(--ink); }
-.button.outline { color: var(--ink); background: transparent; border-color: var(--line); }
-.button.outline:hover { background: var(--sand); }
-.menu-toggle { width: 40px; height: 40px; border: 1px solid var(--line); background: none; font-size: 20px; }
-.mobile-nav { border-top: 1px solid var(--line); padding: 16px 24px; }
-.mobile-nav a { display: block; text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--line); }
-
-/* Hero */
-.hero { position: relative; padding: 80px 0 70px; overflow: hidden; }
-.hero-bg { position: absolute; inset: 0; background: var(--sand); }
-.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.30) 100%); }
-.hero-content { position: relative; z-index: 3; }
-.hero-top { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
-.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); display: inline-block; }
-.location { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; color: #fff; }
-.hero h1 { font-size: clamp(48px, 11vw, 100px); color: #fff; margin-bottom: 14px; max-width: 100%; }
-.hero h1 span { display: block; font-size: clamp(18px, 3vw, 28px); font-weight: 400; color: #e8dcc8; margin-top: 8px; }
-.hero-desc { color: #fff; font-size: 15px; max-width: 520px; margin-bottom: 22px; }
-.hero-cta { background: #fff; color: var(--ink); border-color: #fff; }
-.hero-cta:hover { background: var(--red); border-color: var(--red); color: #fff; }
-
-/* Section headings */
-.section-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
-.section-head .eyebrow { color: var(--red); }
-.section-head h2 { font-size: clamp(32px, 6vw, 56px); margin-bottom: 0; }
-
-/* 3D Explorer */
-.explore { padding: 70px 0 50px; }
-.webgl-wrapper { position: relative; width: 100%; height: 520px; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: var(--paper); margin-bottom: 14px; }
-.webgl-container { width: 100%; height: 100%; display: block; }
-.webgl-fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
-.gallery { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 20px; }
-.fallback-card { flex: 0 0 auto; width: min(80vw, 260px); height: 220px; scroll-snap-align: center; border: 1px solid var(--line); background: var(--sand); position: relative; overflow: hidden; }
-.fallback-card img { width: 100%; height: 100%; object-fit: cover; }
-.fallback-card span { position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0,0,0,0.65); color: #fff; font-size: 12px; padding: 4px 8px; border-radius: 2px; }
-.explore-note { font-size: 11px; color: var(--muted); max-width: 700px; margin-top: 8px; }
-
-/* Menu */
-.menu { padding: 70px 0 50px; }
-.menu-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
-.menu-table thead { font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: #655346; }
-.menu-table th { border-bottom: 2px solid var(--ink); padding: 14px 10px; text-align: left; font-weight: 600; }
-.menu-table td { border-bottom: 1px solid var(--line); padding: 18px 10px; vertical-align: middle; }
-.menu-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 4px; border: 1px solid var(--line); background: var(--sand); }
-.menu-table td:first-child { width: 140px; padding-right: 16px; }
-.menu-table tr:last-child td { border-bottom: none; }
-.menu-note { margin-top: 26px; font-size: 12px; color: var(--muted); line-height: 1.6; }
-
-/* About */
-.about { padding: 70px 0; background: var(--paper); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
-.about-photo { position: relative; height: 420px; border: 1px solid var(--line); overflow: hidden; background: var(--sand); }
-.about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.photo-tag { position: absolute; left: 14px; bottom: 14px; background: rgba(0,0,0,0.7); color: #fff; font-size: 10px; padding: 5px 9px; border-radius: 3px; }
-.about-copy h2 { margin-bottom: 18px; font-size: clamp(32px, 6vw, 52px); }
-.about-copy p { font-size: 15px; max-width: 480px; margin-bottom: 20px; }
-
-/* Visit */
-.visit { padding: 70px 0; }
-.visit-head { margin-bottom: 34px; }
-.visit-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; margin-top: 24px; }
-.address { font-family: var(--serif); font-size: 34px; line-height: 1.25; margin-bottom: 16px; }
-.visit-info { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
-.hours-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 18px; }
-.hours-table td { border-bottom: 1px solid var(--line); padding: 13px 0; }
-.hours-table td:last-child { text-align: right; }
-.visit small { display: block; font-size: 11px; color: var(--muted); margin-top: 14px; }
-.contact-email { display: block; font-size: 14px; margin-top: 10px; overflow-wrap: anywhere; font-family: var(--serif); font-size: 26px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: transparent; }
-.contact-email:hover { text-decoration-color: var(--red); }
-
-/* FAQ */
-.faq { border-top: 1px solid var(--line); margin-top: 50px; padding-top: 30px; }
-.faq details { border-bottom: 1px solid var(--line); padding: 20px 0; }
-.faq summary { cursor: pointer; font-size: 15px; font-weight: 600; list-style: none; padding-right: 16px; }
-.faq details p { max-width: 700px; padding-top: 12px; font-size: 14px; color: var(--muted); }
-
-/* Footer */
-footer { background: var(--ink); color: var(--paper); padding: 50px 0 26px; }
-.footer-top { display: flex; flex-direction: column; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid #ffffff33; }
-.footer-name { font-family: var(--serif); font-size: 40px; }
-.footer-top p { font-size: 12px; max-width: 380px; line-height: 1.6; }
-.footer-bottom { display: flex; flex-direction: column; gap: 12px; padding-top: 20px; font-size: 10px; }
-.credits { margin-top: 20px; font-size: 10px; color: #e2cfbf; }
-.credits summary { cursor: pointer; color: #e2cfbf; }
-.credits p { margin-top: 10px; font-size: 11px; color: #c9b8ab; }
-.credits a { color: #e2cfbf; text-underline-offset: 3px; border-bottom: 1px solid transparent; }
-.credits a:hover { border-bottom-color: #e2cfbf; }
-
-/* Mobile contact bar */
-.mobile-contact { position: fixed; bottom: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr 1fr; background: var(--paper); z-index: 35; border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom); }
-.mobile-contact a { padding: 14px 10px; text-decoration: none; text-align: center; font-size: 12px; font-weight: 600; }
-.mobile-contact a:first-child { background: var(--red); color: #fff; }
-.mobile-contact a:last-child { color: var(--green); }
-
-/* Dialog */
-dialog { border: 0; padding: 0; background: var(--paper); color: var(--ink); max-height: 100dvh; position: fixed; inset: 0 0 0 auto; margin: 0; width: min(560px, 100%); height: 100dvh; max-width: 100%; box-shadow: -20px 0 80px rgba(0,0,0,0.25); overflow: auto; }
-dialog::backdrop { background: rgba(22,13,9,0.55); }
-.dialog-header { position: relative; padding: 20px; border-bottom: 1px solid var(--line); }
-.drawer-close { position: absolute; right: 16px; top: 16px; width: 40px; height: 40px; border-radius: 50%; background: var(--paper); font-size: 24px; line-height: 1; color: var(--ink); }
-.dialog-image { height: 220px; background: var(--sand); border-bottom: 1px solid var(--line); }
-.dialog-image img { width: 100%; height: 100%; object-fit: cover; }
-.dialog-content { padding: 24px; }
-.dialog-content h2 { font-size: 42px; margin: 10px 0 12px; }
-.dialog-content p { font-size: 14px; margin-bottom: 14px; }
-.dialog-note { background: var(--sand); padding: 12px; font-size: 11px; margin-bottom: 18px; border-radius: 3px; }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-label { display: block; font-size: 11px; font-weight: 600; margin-bottom: 4px; }
-input, select, textarea { width: 100%; border: 1px solid #b6a493; background: #fffdf9; color: var(--ink); padding: 10px; font-size: 13px; min-height: 44px; }
-.full { grid-column: 1 / -1; }
-textarea { resize: vertical; min-height: 80px; }
-.form-submit { width: 100%; margin-top: 10px; }
-.form-status { margin-top: 14px; background: var(--sand); padding: 12px; font-size: 12px; border-radius: 3px; }
-.drawer-phone { display: block; text-align: center; margin-top: 16px; font-size: 12px; font-weight: 600; }
-
-/* Responsive */
-@media (min-width: 761px) {
-  .desktop-nav { display: flex; }
-  .menu-toggle { display: none; }
-  .mobile-nav { display: none; }
-  .mobile-contact { display: none; }
-}
-@media (max-width: 760px) {
-  .desktop-nav { display: none; }
-  .header .button { padding: 8px 14px; font-size: 11px; min-height: 40px; }
-  .hero { padding: 64px 0 50px; }
-  .hero h1 { font-size: 56px; }
-  .hero-desc { font-size: 14px; }
-  .about-grid { grid-template-columns: 1fr; gap: 26px; }
-  .about-photo { height: 300px; }
-  .visit-grid { grid-template-columns: 1fr; gap: 28px; }
-  .webgl-wrapper { height: 360px; }
-  .explore { padding: 50px 0 30px; }
-  .menu { padding: 50px 0 30px; }
-  .about { padding: 50px 0 30px; }
-  .visit { padding: 50px 0 30px; }
-  footer { padding: 40px 0 80px; }
-  main#home { padding-bottom: 90px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation: none !important; transition: none !important; }
-}
+:root{--paper:#fffcf6;--ink:#482344;--red:#b83b2d;--lav:#e8dff0;--body:#29242a;--line:#d8cbd7;--muted:#665761}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--body);font:16px/1.6 Lato,sans-serif}button,input,textarea{font:inherit}a{color:inherit}button,a,input,textarea{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:default;opacity:.5}a,button{-webkit-tap-highlight-color:transparent} :focus-visible{outline:3px solid var(--red);outline-offset:5px}img{display:block;width:100%;height:100%;object-fit:cover}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:Fraunces,serif;font-weight:400;color:var(--ink)}h1{font-size:clamp(3.6rem,8vw,7.7rem);line-height:.98;letter-spacing:-.065em}h2{font-size:clamp(2.5rem,5vw,4.8rem);line-height:1.08;letter-spacing:-.045em}h3{font-size:1.6rem;line-height:1.2}.wrap{width:min(1280px,calc(100% - 80px));margin:auto}.concept{background:var(--ink);color:white;text-align:center;padding:8px 20px;font-size:11px;line-height:1.5;letter-spacing:.025em}.header{position:sticky;top:0;z-index:20;background:rgba(255,252,246,.97);border-bottom:1px solid var(--line)}.header-row{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}.brand{text-decoration:none;font-family:Fraunces,serif;font-size:27px;color:var(--ink);letter-spacing:-1px;white-space:nowrap}.nav{display:flex;align-items:center;gap:28px;font-size:13px}.nav a{text-decoration:none}.nav a:hover{color:var(--red)}.header-actions{display:flex;align-items:center;gap:20px}.small-link{font-size:13px;text-underline-offset:5px}.menu-toggle{display:none;background:none;border:1px solid var(--line);width:42px;height:42px;color:var(--ink);font-size:20px}.button{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:48px;padding:12px 23px;background:var(--ink);color:white;border:1px solid var(--ink);text-decoration:none;font-size:13px;font-weight:700;transition:background .2s,transform .2s}.button:hover{background:#65335e;transform:translateY(-2px)}.button.light{background:var(--paper);color:var(--ink);border-color:var(--paper)}.button.outline{background:transparent;color:var(--ink);border-color:var(--line)}.eyebrow{text-transform:uppercase;font-size:10px;font-weight:700;letter-spacing:.18em;color:var(--red);display:block;margin-bottom:20px}.opening{padding:48px 0 64px}.opening-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}.opening-top span:last-child{letter-spacing:.02em;text-transform:none}.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:stretch}.location{display:block;margin:18px 0 30px;font-size:14px;color:var(--muted)}.menu-heading{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:17px 0}.menu-heading h2{font-size:26px;letter-spacing:-.02em}.edition{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.menu-notice{padding:23px 0 22px;border-bottom:1px solid var(--line)}.menu-notice p{font-size:14px;color:var(--muted);max-width:42ch}.official-row{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;border-bottom:1px solid var(--line);text-decoration:none}.official-row strong{display:block;color:var(--ink);font-weight:400;font-family:Fraunces,serif;font-size:22px}.official-row small{display:block;color:var(--muted);font-size:12px}.arrow{font-size:25px;color:var(--red)}.hero-action{display:flex;align-items:center;gap:20px;margin-top:25px}.hero-action small{font-size:11px;line-height:1.5;color:var(--muted);max-width:140px}.hero-photo{position:relative;min-height:620px;margin:0;overflow:hidden;border-radius:180px 180px 0 0}.hero-photo img{position:absolute;inset:0;transition:transform 1s}.hero-photo:hover img{transform:scale(1.035)}.photo-label{position:absolute;bottom:18px;left:18px;background:var(--paper);color:var(--ink);font-size:10px;padding:7px 11px;letter-spacing:.03em}.section-rule{border-top:1px solid var(--line)}.selection-section{padding:65px 0 80px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:34px}.section-head p{max-width:340px;font-size:14px;color:var(--muted)}.selection-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:65px}.form-label{display:block;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:8px}.field{width:100%;background:white;border:1px solid var(--line);padding:13px 14px;border-radius:0;color:var(--body);min-width:0}.add-grid{display:grid;grid-template-columns:1fr 80px;gap:12px}.add-submit{margin-top:14px}.help{font-size:12px;color:var(--muted);margin-top:12px}.summary{background:#f1eaf2;padding:28px}.summary-top{display:flex;justify-content:space-between;align-items:center;gap:15px;padding-bottom:20px;border-bottom:1px solid #cdbdcd}.count{font-size:11px;text-transform:uppercase;letter-spacing:.08em}.empty{padding:28px 0;font-size:14px;color:var(--muted)}.selection-item{display:grid;grid-template-columns:24px 1fr auto;align-items:start;gap:10px;padding:18px 0;border-bottom:1px solid #d9ccdb}.selection-item input{width:18px;height:18px;accent-color:var(--ink);margin:5px 0 0}.dish-name{overflow-wrap:anywhere;font-size:15px}.quantity-controls{display:flex;align-items:center;gap:10px;margin-top:8px}.quantity-controls button{width:28px;height:28px;background:transparent;border:1px solid #bda7bc;color:var(--ink)}.remove{border:0;background:none;font-size:12px;color:var(--ink);text-decoration:underline;padding:5px}.summary-note{font-size:12px;color:var(--muted);margin:19px 0}.summary-actions{display:flex;flex-wrap:wrap;gap:10px}.copy-status{font-size:12px;color:var(--ink);min-height:20px;margin-top:10px}.copy-fallback{margin-top:12px}.copy-fallback textarea{height:150px}.story{background:var(--ink);color:var(--paper);padding:78px 0}.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}.story-photo{height:490px;margin:0;position:relative}.story h2{color:var(--paper);max-width:8ch}.story .eyebrow{color:#edb8a6}.story p{color:#eee2ec;max-width:36ch;margin:25px 0;font-size:16px}.story-address{font-size:12px;letter-spacing:.04em;border-top:1px solid #866380;padding-top:20px;display:block}.gallery-section{padding:85px 0}.gallery-grid{display:grid;grid-template-columns:1.25fr .8fr .8fr;gap:22px;align-items:start}.gallery-button{display:block;border:0;padding:0;background:none;text-align:left;width:100%;color:var(--ink)}.gallery-image{height:340px;overflow:hidden;position:relative}.gallery-button:nth-child(2){margin-top:75px}.gallery-button:nth-child(3) .gallery-image{height:260px}.gallery-image img{transition:transform .6s}.gallery-button:hover img{transform:scale(1.05)}.gallery-caption{display:flex;justify-content:space-between;gap:15px;padding-top:13px;font-size:12px}.gallery-caption span:last-child{color:var(--red)}.gallery-disclaimer{font-size:11px;color:var(--muted);margin-top:24px}.visit{padding:70px 0 85px;background:#eee7ef}.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px}.visit h2{max-width:9ch;margin-bottom:25px}.visit address{font-style:normal;font-size:18px;color:var(--ink);line-height:1.7;margin-bottom:25px}.contact-links{display:flex;flex-direction:column;gap:8px;font-size:14px}.contact-links a{text-underline-offset:4px;overflow-wrap:anywhere}.visit-side{padding-top:10px}.visit-side h3{margin-bottom:20px}.visit-side p{font-size:14px;max-width:46ch;color:var(--muted)}details{border-bottom:1px solid #cdbdcd;padding:19px 0}summary{cursor:pointer;color:var(--ink);font-size:14px;font-weight:700;padding-right:20px}details p{padding-top:13px}.visit-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}.footer{padding:32px 0 40px}.footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:20px}.footer-top p{font-size:12px}.footer details{padding:10px 0;border-color:var(--line)}.footer summary{font-size:11px;font-weight:400}.credits{font-size:11px;line-height:1.9;color:var(--muted);max-width:95ch}.credits a{text-underline-offset:3px}.footer-note{font-size:11px;color:var(--muted);margin-top:15px;max-width:100ch}.mobile-call{display:none}.lightbox{border:0;background:var(--paper);color:var(--ink);width:min(1000px,92vw);max-height:92vh;padding:20px}.lightbox::backdrop{background:rgba(29,14,28,.88)}.lightbox-bar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:15px}.lightbox-bar button,.lightbox-controls button{background:transparent;border:1px solid var(--line);padding:8px 16px;color:var(--ink);min-height:44px}.lightbox img{height:min(64vh,650px);object-fit:contain;background:#eee7ef}.lightbox-caption{font-size:12px;margin-top:10px}.lightbox-controls{display:flex;justify-content:space-between;margin-top:14px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}
+@media(min-width:1500px){.hero-photo{min-height:690px}}
+@media(max-width:1000px){.wrap{width:calc(100% - 48px)}.hero-grid{gap:35px}.nav{gap:16px}.header-actions .small-link{display:none}.story-grid,.visit-grid{gap:45px}.selection-grid{gap:30px}.hero-photo{min-height:590px}.gallery-image{height:280px}.gallery-button:nth-child(3) .gallery-image{height:220px}}
+@media(max-width:700px){html{scroll-padding-top:75px}.wrap{width:calc(100% - 36px)}.concept{font-size:9px;padding:6px 17px}.header-row{height:62px;gap:12px}.brand{font-size:23px}.header-actions{gap:16px}.header-actions .small-link{display:inline;font-size:12px}.menu-toggle{display:block;width:38px;height:38px}.nav{display:none;position:absolute;top:62px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:18px;box-shadow:0 14px 20px #4823440c}.nav.open{display:flex;flex-direction:column;align-items:stretch;gap:0}.nav a{padding:12px 10px;border-bottom:1px solid var(--line);font-size:16px}.opening{padding:24px 0 40px}.opening-top{margin-bottom:22px;font-size:9px}.opening-top span:last-child{font-size:10px}.hero-grid{grid-template-columns:1fr;gap:30px}h1{font-size:67px}.location{margin:12px 0 21px;font-size:12px}.menu-heading{padding:12px 0}.menu-heading h2{font-size:24px}.menu-notice{padding:16px 0}.menu-notice p{font-size:13px}.official-row{padding:14px 0}.official-row strong{font-size:20px}.official-row small{font-size:11px}.hero-action{margin-top:19px;gap:14px}.hero-action .button{padding:12px 16px;font-size:12px}.hero-action small{font-size:10px}.hero-photo{min-height:0;height:420px;border-radius:150px 150px 0 0}.section-head{display:block;margin-bottom:25px}.section-head p{margin-top:17px;font-size:13px;max-width:45ch}.eyebrow{margin-bottom:13px}.selection-section{padding:43px 0 45px}.selection-grid{grid-template-columns:1fr;gap:25px}.summary{padding:22px}.story{padding:45px 0}.story-grid{display:flex;flex-direction:column-reverse;gap:30px;align-items:stretch}.story h2{max-width:10ch;font-size:46px}.story p{font-size:14px;margin:20px 0}.story-photo{height:320px}.gallery-section{padding:45px 0}.gallery-grid{grid-template-columns:1fr 1fr;gap:20px 14px}.gallery-button:first-child{grid-column:1/-1}.gallery-button:nth-child(2){margin-top:0}.gallery-image{height:210px}.gallery-button:first-child .gallery-image{height:310px}.gallery-button:nth-child(3) .gallery-image{height:210px}.gallery-caption{font-size:11px;gap:5px}.visit{padding:45px 0}.visit-grid{grid-template-columns:1fr;gap:35px}.visit h2{font-size:46px;max-width:10ch}.visit address{font-size:17px}.footer{padding-bottom:100px}.footer-top{align-items:start}.footer-top .brand{font-size:24px}.footer-top p{font-size:10px;text-align:right}.mobile-call{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:19;background:var(--paper);border-top:1px solid var(--line);padding:10px 18px calc(10px + env(safe-area-inset-bottom));align-items:center;justify-content:space-between;gap:15px}.mobile-call span{font-size:11px;color:var(--muted)}.mobile-call a{background:var(--ink);color:white;text-decoration:none;padding:10px 30px;font-size:13px}.lightbox{padding:12px}.lightbox img{height:55vh}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 <div class="concept">Independent website concept by LeadSky for La Smorfia. Not their official website.</div>
-
 <header class="header">
-  <div class="wrap header-inner">
-    <a class="brand" href="#home" aria-label="La Smorfia home"><img src="img/business-logo-1.png" alt="La Smorfia logo" width="34" height="34"><span>La Smorfia</span></a>
-    <a class="button" href="tel:+447511819633">Call restaurant</a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">☰</button>
-  </div>
-</header>
-
-<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Mobile navigation">
-  <a href="#home">Home</a>
-  <a href="#explore">Explore the table</a>
-  <a href="#menu">Menu enquiries</a>
-  <a href="#about">About La Smorfia</a>
-  <a href="#visit">Visit us</a>
-  <a href="mailto:info@lasmorfiaoxford.com">Email La Smorfia</a>
+<div class="wrap header-row">
+<a class="brand" href="#menu" aria-label="La Smorfia, return to menu">La Smorfia<span aria-hidden="true" style="color:var(--red)">.</span></a>
+<nav class="nav" id="navigation" aria-label="Main navigation">
+<a href="#menu">Menu</a><a href="#selection">Your selection</a><a href="#story">Story</a><a href="#gallery">Gallery</a><a href="#visit">Visit</a>
 </nav>
+<div class="header-actions"><a class="small-link" href="#menu">Menu</a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation">☰</button></div>
+</div>
+</header>
+<main>
+<section class="opening wrap" id="menu" aria-labelledby="restaurant-name">
+<div class="opening-top"><span>Oxford · Cowley Road</span><span>A little time around the table.</span></div>
+<div class="hero-grid">
+<div>
+<h1 id="restaurant-name">La Smorfia</h1>
+<span class="location">Restaurant in Oxford · 247 Cowley Road</span>
+<div class="menu-heading"><h2>Let’s talk food.</h2><span class="edition">Menu & enquiries</span></div>
+<div class="menu-notice">
+<p>Start with the restaurant’s current menu, then put together the dishes you’d like to ask about.</p>
+</div>
+<a class="official-row" href="https://lasmorfiaoxford.com/" target="_blank" rel="noopener">
+<span><strong>The restaurant’s website</strong><small>Check published dishes, prices and availability</small></span><span class="arrow" aria-hidden="true">↗</span>
+</a>
+<div class="menu-notice"><p>Current dishes and prices were not supplied for this concept. They are not reproduced here to avoid showing an inaccurate menu.</p></div>
+<div class="hero-action"><a class="button" href="#selection">Build your enquiry <span aria-hidden="true">↗</span></a><small>A personal selection.<br>Not an order or booking.</small></div>
+</div>
+<figure class="hero-photo">
+<img src="img/stock-1.jpg" alt="Illustrative photograph of an Italian pizza served on a plate" width="1000" height="1200" fetchpriority="high">
+<figcaption class="photo-label">Italian food inspiration · stock photograph</figcaption>
+</figure>
+</div>
+</section>
 
-<main id="home">
-  <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-bg"><img src="img/stock-5.jpg" alt="Stock photograph of a traditional pizza oven, used as illustrative imagery only" width="1600" height="900" loading="eager"></div>
-    <div class="hero-overlay" aria-hidden="true"></div>
-    <div class="wrap hero-content">
-      <div class="hero-top"><span class="dot" aria-hidden="true"></span><span class="location">247 Cowley Road · Oxford</span></div>
-      <h1 id="hero-title">La Smorfia.<br><span>Italian restaurant on Cowley Road</span></h1>
-      <p class="hero-desc">Come to the table. Call to ask about the menu, book a table, or plan your visit.</p>
-      <a class="button hero-cta" href="tel:+447511819633">Call for a table</a>
-    </div>
-  </section>
+<section class="selection-section section-rule" id="selection" aria-labelledby="selection-title">
+<div class="wrap">
+<div class="section-head">
+<div><span class="eyebrow">Choose. Gather. Enquire.</span><h2 id="selection-title">For your table.</h2></div>
+<p>Add dish names from the restaurant’s current menu. Tick the items to include, adjust quantities, and copy your selection into an enquiry.</p>
+</div>
+<div class="selection-grid">
+<div>
+<form id="dish-form">
+<div class="add-grid">
+<div><label class="form-label" for="dish-name">Dish name from the current menu</label><input class="field" id="dish-name" maxlength="100" required autocomplete="off"></div>
+<div><label class="form-label" for="dish-quantity">Quantity</label><input class="field" id="dish-quantity" type="number" min="1" max="99" step="1" value="1" required></div>
+</div>
+<button class="button outline add-submit" type="submit">Add to selection <span aria-hidden="true">+</span></button>
+<p class="help">Use the exact published dish name. This tool does not verify menu items, dietary suitability or availability.</p>
+</form>
+<p class="help" style="margin-top:27px;border-top:1px solid var(--line);padding-top:18px">No prices are calculated because a verified priced menu is unavailable. Ask La Smorfia to confirm the cost directly.</p>
+</div>
+<div class="summary">
+<div class="summary-top"><h3>Your selection</h3><span class="count" id="item-count">0 items</span></div>
+<div id="selection-list"></div>
+<p class="empty" id="empty-state">Your table starts here. Add a dish from the current menu to begin.</p>
+<p class="summary-note">Private demonstration. Adding or copying a selection does not contact the restaurant, place an order or reserve a table.</p>
+<div class="summary-actions">
+<button class="button" id="copy-selection" type="button" disabled>Copy selection</button>
+<a class="button outline" href="mailto:info@lasmorfiaoxford.com">Open email ↗</a>
+</div>
+<p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+<div class="copy-fallback" id="copy-fallback" hidden><label class="form-label" for="copy-text">Select and copy your enquiry</label><textarea class="field" id="copy-text" readonly></textarea></div>
+</div>
+</div>
+</div>
+</section>
 
-  <section class="explore" id="explore" aria-labelledby="explore-title">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Explore the table</span>
-        <h2 id="explore-title">See what’s on the table</h2>
-      </div>
-      <div class="webgl-wrapper">
-        <div class="webgl-container" id="webgl-container"></div>
-        <div class="webgl-fallback" id="webgl-fallback" hidden>
-          <div class="gallery" role="region" aria-label="Food inspiration gallery. Scroll horizontally.">
-            <button class="fallback-card" data-dish="pizza"><img src="img/stock-1.jpg" alt="Stock photograph of pizza, illustrative only"><span>Pizza inspiration</span></button>
-            <button class="fallback-card" data-dish="pasta"><img src="img/stock-7.jpg" alt="Stock photograph of pasta, illustrative only"><span>Pasta inspiration</span></button>
-            <button class="fallback-card" data-dish="dessert"><img src="img/stock-11.jpg" alt="Stock photograph of tiramisu, illustrative only"><span>Dessert inspiration</span></button>
-            <button class="fallback-card" data-dish="drinks"><img src="img/stock-9.jpg" alt="Stock photograph of wine being poured, illustrative only"><span>Drinks inspiration</span></button>
-          </div>
-          <p class="fallback-note">Interactive 3D explorer unavailable on this device. Stock photography sets the mood.</p>
-        </div>
-      </div>
-      <p class="explore-note">Stock photography sets the mood for this independent concept. It does not show La Smorfia’s dishes, team or premises.</p>
-    </div>
-  </section>
+<section class="story" id="story" aria-labelledby="story-title">
+<div class="wrap story-grid">
+<figure class="story-photo"><img src="img/stock-2.jpg" alt="Illustrative photograph of pizza and wine set on a restaurant table" width="1000" height="1000" loading="lazy"><figcaption class="photo-label">Table inspiration · stock photograph</figcaption></figure>
+<div><span class="eyebrow">At La Smorfia</span><h2 id="story-title">Make room<br>for a meal.</h2><p>Find La Smorfia on Cowley Road in Oxford. Explore the restaurant’s current menu, plan your selection, and contact the restaurant directly to arrange your visit.</p><span class="story-address">247 Cowley Road<br>Oxford OX4 1XG</span><a class="button light" href="#visit" style="margin-top:25px">Find your way here <span aria-hidden="true">↗</span></a></div>
+</div>
+</section>
 
-  <section class="menu" id="menu" aria-labelledby="menu-title">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Menu enquiries</span>
-        <h2 id="menu-title">Start a conversation</h2>
-      </div>
-      <table class="menu-table">
-        <thead>
-          <tr><th scope="col">Category</th><th scope="col">Ask about</th><th scope="col">Next step</th></tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><img src="img/stock-1.jpg" alt="Stock photograph of pizza, illustrative only" class="menu-thumb" loading="lazy"></td>
-            <td>Pizza — current selection and toppings</td>
-            <td><button class="button" data-dish="pizza">Ask about pizza</button></td>
-          </tr>
-          <tr>
-            <td><img src="img/stock-8.jpg" alt="Stock photograph of plated pasta, illustrative only" class="menu-thumb" loading="lazy"></td>
-            <td>Pasta — current dishes and ingredients</td>
-            <td><button class="button" data-dish="pasta">Ask about pasta</button></td>
-          </tr>
-          <tr>
-            <td><img src="img/stock-12.jpg" alt="Stock photograph of dessert, illustrative only" class="menu-thumb" loading="lazy"></td>
-            <td>Desserts — something to finish your meal</td>
-            <td><button class="button" data-dish="dessert">Ask about desserts</button></td>
-          </tr>
-          <tr>
-            <td><img src="img/stock-10.jpg" alt="Stock photograph of chilled drinks, illustrative only" class="menu-thumb" loading="lazy"></td>
-            <td>Drinks — current selection and prices</td>
-            <td><button class="button" data-dish="drinks">Ask about drinks</button></td>
-          </tr>
-        </tbody>
-      </table>
-      <p class="menu-note">The current menu and prices are not verified for this concept. Please call La Smorfia for today’s dishes, prices and availability. If you have a food allergy or dietary requirement, speak directly with the restaurant before ordering.</p>
-      <p class="menu-note"><a href="tel:+447511819633">Ask the restaurant: +44 7511 819633 ↗</a></p>
-    </div>
-  </section>
+<section class="gallery-section wrap" id="gallery" aria-labelledby="gallery-title">
+<div class="section-head"><div><span class="eyebrow">A closer look</span><h2 id="gallery-title">An Italian mood.</h2></div><p>A photographic taste of the concept’s direction. These are illustrative stock images, not photographs of La Smorfia’s food or premises.</p></div>
+<div class="gallery-grid">
+<button class="gallery-button" type="button" data-gallery="0" aria-label="Enlarge illustrative pasta photograph"><div class="gallery-image"><img src="img/stock-3.jpg" alt="Illustrative close-up photograph of ravioli" width="900" height="700" loading="lazy"></div><span class="gallery-caption"><span>01 / Pasta, up close</span><span aria-hidden="true">↗</span></span></button>
+<button class="gallery-button" type="button" data-gallery="1" aria-label="Enlarge illustrative coffee photograph"><div class="gallery-image"><img src="img/stock-7.jpg" alt="Illustrative photograph of a cup of coffee" width="650" height="850" loading="lazy"></div><span class="gallery-caption"><span>02 / A coffee moment</span><span aria-hidden="true">↗</span></span></button>
+<button class="gallery-button" type="button" data-gallery="2" aria-label="Enlarge illustrative tiramisu photograph"><div class="gallery-image"><img src="img/stock-10.jpg" alt="Illustrative photograph of tiramisu dessert" width="650" height="700" loading="lazy"></div><span class="gallery-caption"><span>03 / Something sweet</span><span aria-hidden="true">↗</span></span></button>
+</div>
+<p class="gallery-disclaimer">Photography sets the mood; it does not establish what is currently on the menu. Select any image for a closer look.</p>
+</section>
 
-  <section class="about" id="about" aria-labelledby="about-title">
-    <div class="wrap about-grid">
-      <div class="about-photo">
-        <img src="img/stock-3.jpg" alt="Stock photograph of dough preparation in a flour-dusted kitchen, illustrative only" width="1000" height="900" loading="lazy">
-        <span class="photo-tag">Food inspiration · stock photography</span>
-      </div>
-      <div class="about-copy">
-        <span class="eyebrow">La Smorfia / Cowley Road</span>
-        <h2 id="about-title">Make time for dinner</h2>
-        <p>A meal with friends. A family catch-up. An evening with no rush to get home. Find La Smorfia at 247 Cowley Road, Oxford.</p>
-        <p>Call to discuss your table, ask about the menu and let the restaurant know any dietary requirements.</p>
-        <a class="button" href="#visit">Plan your visit</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="visit" id="visit" aria-labelledby="visit-title">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="eyebrow">Visit us</span>
-        <h2 id="visit-title">An Oxford evening, at your own pace.</h2>
-      </div>
-      <div class="visit-grid">
-        <div>
-          <p class="address">La Smorfia<br>247 Cowley Road<br>Oxford, OX4 1XG</p>
-          <div class="visit-info">
-            <a href="https://www.google.com/maps/search/?api=1&query=La+Smorfia+247+Cowley+Road+Oxford+OX4+1XG" target="_blank" rel="noopener" class="button outline">Get directions</a>
-            <a href="tel:+447511819633" class="button">Call for a table</a>
-          </div>
-          <a class="contact-email" href="mailto:info@lasmorfiaoxford.com">info@lasmorfiaoxford.com</a>
-        </div>
-        <div>
-          <table class="hours-table">
-            <caption class="eyebrow" style="text-align:left;padding-bottom:10px">Opening hours · Oxford local time</caption>
-            <tbody>
-              <tr><td>Monday — Thursday</td><td>17:00 — 22:00</td></tr>
-              <tr><td>Friday — Sunday</td><td>10:00 — 22:00</td></tr>
-            </tbody>
-          </table>
-          <a class="contact-email" href="tel:+447511819633">+44 7511 819633</a>
-          <small>Hours are based on the supplied business details. Please confirm bank holiday hours and table availability directly.</small>
-        </div>
-      </div>
-      <div class="faq">
-        <details>
-          <summary>How do I reserve a table?</summary>
-          <p>Call La Smorfia on <a href="tel:+447511819633">+44 7511 819633</a> or email <a href="mailto:info@lasmorfiaoxford.com">info@lasmorfiaoxford.com</a>. A table is only reserved once the restaurant confirms it. This concept does not accept live bookings.</p>
-        </details>
-        <details>
-          <summary>Where can I check the menu and prices?</summary>
-          <p>Ask the restaurant directly or visit <a href="https://lasmorfiaoxford.com/" target="_blank" rel="noopener">La Smorfia’s official website</a>. The photography and category enquiries on this concept are illustrative; they are not a verified menu, price list or promise of availability.</p>
-        </details>
-        <details>
-          <summary>What if I have an allergy or dietary requirement?</summary>
-          <p>Tell the restaurant about your requirements before ordering. Ask the team to confirm ingredients, preparation methods and any risk of cross-contact. This independent concept cannot verify allergen information or dietary suitability.</p>
-        </details>
-      </div>
-    </div>
-  </section>
+<section class="visit" id="visit" aria-labelledby="visit-title">
+<div class="wrap visit-grid">
+<div><span class="eyebrow">Oxford · OX4</span><h2 id="visit-title">See you on<br>Cowley Road.</h2><address>La Smorfia<br>247 Cowley Road<br>Oxford OX4 1XG</address><div class="contact-links"><a href="tel:+447511819633">+44 7511 819633</a><a href="mailto:info@lasmorfiaoxford.com">info@lasmorfiaoxford.com</a></div><div class="visit-actions"><a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=La+Smorfia+247+Cowley+Road+Oxford+OX4+1XG" target="_blank" rel="noopener">Get directions ↗</a><a class="button outline" href="https://lasmorfiaoxford.com/" target="_blank" rel="noopener">Official website ↗</a></div></div>
+<div class="visit-side">
+<h3>A few useful details.</h3>
+<details open><summary>When can I visit?</summary><p>The supplied business details list Monday–Thursday, 17:00–22:00, and Friday–Sunday, 10:00–22:00. These hours have not been independently verified for this concept. Please confirm directly before travelling.</p></details>
+<details><summary>Does my selection book a table or order food?</summary><p>No. This is an independent demonstration. The selection tool only helps you prepare an enquiry. Nothing is sent, ordered or reserved. Contact La Smorfia directly for confirmation.</p></details>
+<details><summary>Where can I check prices and dietary information?</summary><p>Check the restaurant’s official website or contact them directly for the current menu, prices, ingredients and allergen information. Do not rely on the illustrative photographs to identify dishes or ingredients.</p></details>
+<details><summary>How do I send my selection?</summary><p>Add the exact dish names from the current menu, tick the items you want to include and choose Copy selection. Open your email, paste the text, add your question and review it before sending. The website never sends it automatically.</p></details>
+</div>
+</div>
+</section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-top">
-      <div class="footer-name">La Smorfia.</div>
-      <p>247 Cowley Road, Oxford OX4 1XG<br><a href="https://lasmorfiaoxford.com/" target="_blank" rel="noopener">Visit the official restaurant website ↗</a></p>
-    </div>
-    <div class="footer-bottom"><span>Independent concept. No affiliation or endorsement implied.</span><span>Concept by LeadSky · © 2026</span></div>
-    <details class="credits">
-      <summary>Photography credits & concept permissions</summary>
-      <p>Illustrative photographs licensed under the Pixabay Content License: <a href="https://pixabay.com/photos/pizza-kitchen-pizzeria-food-tomato-5275191/" target="_blank" rel="noopener">pizza — MatteoPhotoPro2020</a>; <a href="https://pixabay.com/photos/pasta-italian-cuisine-dish-3547078/" target="_blank" rel="noopener">pasta — RitaE</a>; <a href="https://pixabay.com/photos/tiramisu-pastry-baked-sweets-7030032/" target="_blank" rel="noopener">tiramisu — yousafbhutta</a>; <a href="https://pixabay.com/photos/wine-glass-drink-tasting-hand-1952051/" target="_blank" rel="noopener">wine — JillWellington</a>; <a href="https://pixabay.com/photos/new-year-background-dough-cook-943245/" target="_blank" rel="noopener">dough preparation — ClickerHappy</a>; <a href="https://pixabay.com/photos/pizza-oven-restaurant-meal-yummy-6478478/" target="_blank" rel="noopener">pizza oven — px_steven_be</a>. These images do not depict the restaurant’s own food, staff or premises.</p>
-      <p>Logo source: <a href="https://lasmorfiaoxford.com/wp-content/uploads/2023/07/logo_400.png" target="_blank" rel="noopener">La Smorfia’s website</a>. Permission for public reuse is not confirmed; owner approval is required before launch.</p>
-    </details>
-  </div>
+<footer class="footer wrap">
+<div class="footer-top"><a class="brand" href="#menu">La Smorfia.</a><p>Oxford, around the table.<br>Concept by LeadSky</p></div>
+<details><summary>Photography credits & concept notes</summary><div class="credits" style="padding-top:12px">Illustrative stock photography from Pixabay, supplied under the Pixabay Content License: <a href="https://pixabay.com/photos/plate-pizza-dish-meal-italian-2802332/" target="_blank" rel="noopener">pizza — Engin_Akyurt</a>; <a href="https://pixabay.com/photos/eat-pizza-drink-restaurant-wine-1237431/" target="_blank" rel="noopener">table setting — garten-gg</a>; <a href="https://pixabay.com/photos/ravioli-mouth-pockets-pasta-noodles-9641574/" target="_blank" rel="noopener">ravioli — theskytales</a>; <a href="https://pixabay.com/photos/coffee-cappuccino-latte-espresso-4334647/" target="_blank" rel="noopener">coffee — 13027327</a>; <a href="https://pixabay.com/photos/tiramisu-pastry-baked-sweets-7030032/" target="_blank" rel="noopener">tiramisu — yousafbhutta</a>. Photographs do not depict the restaurant’s actual dishes, premises or team.</div></details>
+<p class="footer-note">Independent private website concept by LeadSky. No endorsement or client relationship is implied. Business information was supplied for this concept and has not been independently checked. A verified priced menu is required before a menu board and indicative totals can be published.</p>
 </footer>
+<div class="mobile-call"><span>La Smorfia · Oxford<br>Enquire directly</span><a href="tel:+447511819633">Call restaurant ↗</a></div>
 
-<div class="mobile-contact" aria-label="Contact the restaurant">
-  <a href="tel:+447511819633">Call restaurant ↗</a>
-  <a href="https://wa.me/447511819633" target="_blank" rel="noopener" aria-label="Try contacting the restaurant number on WhatsApp">WhatsApp ↗</a>
-</div>
-
-<dialog id="dish-dialog" aria-labelledby="drawer-title">
-  <div class="dialog-header">
-    <button class="drawer-close" aria-label="Close enquiry">×</button>
-  </div>
-  <div class="dialog-image">
-    <img id="drawer-photo" src="img/stock-2.jpg" alt="Stock photograph of pizza, illustrative only" width="900" height="600" loading="lazy">
-  </div>
-  <div class="dialog-content">
-    <span class="eyebrow">Explore & enquire · Independent concept</span>
-    <h2 id="drawer-title">Pizza</h2>
-    <p id="drawer-description"></p>
-    <p class="dialog-note">Illustrative photograph, not a confirmed menu item. Ask the restaurant for ingredients, allergens, prices and availability.</p>
-    <h3>Ask about your visit.</h3>
-    <p style="margin-bottom:18px">Try the enquiry experience below. This preview does not send a message or reserve a table.</p>
-    <form id="enquiry-form">
-      <div class="form-grid">
-        <label class="full">Your name<input name="name" autocomplete="name" maxlength="100" required></label>
-        <label class="full">Email address<input name="email" type="email" autocomplete="email" maxlength="200" required></label>
-        <label>Preferred date<input name="date" type="date" id="visit-date" required></label>
-        <label>Guests<select name="guests" required><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7 or more</option></select></label>
-        <label class="full">Your question<textarea name="message" id="enquiry-message" maxlength="2000" required></textarea></label>
-      </div>
-      <button class="button form-submit" type="submit">Preview enquiry</button>
-      <p class="form-status" id="form-status" role="status" tabindex="-1"></p>
-    </form>
-    <a class="drawer-phone" href="tel:+447511819633">For a real enquiry, call +44 7511 819633</a>
-    <p style="font-size:10px;margin-top:16px;color:var(--muted)">The WhatsApp link uses the supplied business phone number. WhatsApp availability has not been verified.</p>
-  </div>
+<dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-title">
+<div class="lightbox-bar"><span id="lightbox-title">A closer look</span><button id="lightbox-close" type="button" aria-label="Close photograph">Close ×</button></div>
+<img id="lightbox-image" alt="" width="1000" height="750">
+<p class="lightbox-caption" id="lightbox-caption"></p>
+<div class="lightbox-controls"><button type="button" id="previous-photo" aria-label="Previous photograph">← Previous</button><button type="button" id="next-photo" aria-label="Next photograph">Next →</button></div>
 </dialog>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script>
 (function(){
-  "use strict";
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-  // Mobile nav
-  const toggle = document.querySelector(".menu-toggle");
-  const nav = document.getElementById("mobile-nav");
-  if (toggle && nav) {
-    toggle.addEventListener("click", () => {
-      const expanded = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!expanded));
-      toggle.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
-      toggle.textContent = expanded ? "☰" : "×";
-      nav.hidden = expanded;
-    });
-    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
-      nav.hidden = true;
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Open navigation");
-      toggle.textContent = "☰";
-    }));
-    document.addEventListener("keydown", e => {
-      if (e.key === "Escape" && !nav.hidden) {
-        nav.hidden = true;
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open navigation");
-        toggle.textContent = "☰";
-        toggle.focus();
-      }
-    });
-  }
-
-  // Three.js interactive table explorer
-  const container = document.getElementById("webgl-container");
-  const fallback = document.getElementById("webgl-fallback");
-  let renderer, camera, scene, group, raycaster, pointer;
-  let animId, isPaused = false, isDragging = false, isAutoRotating = !reduced.matches;
-  let targetAngle = 0, currentAngle = 0, startPointerX = 0, startAngle = 0, tapStart = 0;
-
-  const items = [
-    { img: "img/stock-1.jpg", label: "Pizza", category: "pizza" },
-    { img: "img/stock-7.jpg", label: "Pasta", category: "pasta" },
-    { img: "img/stock-11.jpg", label: "Dessert", category: "dessert" },
-    { img: "img/stock-9.jpg", label: "Drinks", category: "drinks" },
-    { img: "img/stock-5.jpg", label: "Wood oven", category: "oven" },
-    { img: "img/stock-6.jpg", label: "Pizzeria", category: "pizzeria" }
-  ];
-
-  function initThree() {
-    if (!container) return;
-    try {
-      const test = document.createElement("canvas");
-      if (!test.getContext("webgl")) throw new Error("no webgl");
-    } catch (e) {
-      container.style.display = "none";
-      if (fallback) fallback.hidden = false;
-      return;
-    }
-
-    scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xfaf7f2);
-
-    camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 100);
-    camera.position.set(0, 0.4, 4.4);
-
-    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    container.appendChild(renderer.domElement);
-
-    const ambient = new THREE.AmbientLight(0xffffff, 0.5);
-    scene.add(ambient);
-    const dir = new THREE.DirectionalLight(0xffffff, 0.9);
-    dir.position.set(2, 5, 3);
-    scene.add(dir);
-
-    group = new THREE.Group();
-    scene.add(group);
-
-    raycaster = new THREE.Raycaster();
-    pointer = new THREE.Vector2();
-
-    const loader = new THREE.TextureLoader();
-    let loaded = 0, failed = 0;
-
-    items.forEach((item, i) => {
-      const angle = (i / items.length) * Math.PI * 2;
-      loader.load(
-        item.img,
-        (texture) => {
-          const geometry = new THREE.PlaneGeometry(1.3, 1.75);
-          const material = new THREE.MeshStandardMaterial({ map: texture, roughness: 0.45, metalness: 0.05 });
-          const mesh = new THREE.Mesh(geometry, material);
-          const radius = 2.0;
-          mesh.position.set(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
-          mesh.lookAt(0, 0, 0);
-          mesh.userData = { label: item.label, category: item.category };
-          group.add(mesh);
-          loaded++;
-          if (loaded + failed === items.length) startLoop();
-        },
-        undefined,
-        (err) => {
-          failed++;
-          if (loaded + failed === items.length) {
-            if (failed === items.length) {
-              container.style.display = "none";
-              if (fallback) fallback.hidden = false;
-            } else {
-              startLoop();
-            }
-          }
-        }
-      );
-    });
-
-    window.addEventListener("resize", onResize);
-
-    container.addEventListener("pointerdown", (e) => {
-      if (e.button !== 0) return;
-      isDragging = true;
-      isAutoRotating = false;
-      startPointerX = e.clientX;
-      startAngle = currentAngle;
-      tapStart = e.timeStamp;
-    }, { passive: false });
-
-    window.addEventListener("pointermove", (e) => {
-      if (!isDragging) return;
-      const dx = e.clientX - startPointerX;
-      targetAngle = startAngle + dx * 0.004;
-    }, { passive: false });
-
-    window.addEventListener("pointerup", (e) => {
-      if (!isDragging) return;
-      isDragging = false;
-      if (e.timeStamp - tapStart < 250) {
-        const rect = renderer.domElement.getBoundingClientRect();
-        pointer.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
-        pointer.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
-        raycaster.setFromCamera(pointer, camera);
-        const intersects = raycaster.intersectObjects(group.children, true);
-        if (intersects.length > 0) {
-          const data = intersects[0].object.userData;
-          openDrawer(data.category, data.label);
-        }
-      }
-    });
-  }
-
-  function startLoop() {
-    if (!renderer) return;
-    animate();
-  }
-
-  function onResize() {
-    if (!camera || !renderer || !container) return;
-    camera.aspect = container.clientWidth / container.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.clientWidth, container.clientHeight);
-  }
-
-  function animate() {
-    if (isPaused || !renderer) return;
-    if (!isDragging && isAutoRotating) targetAngle += 0.0015;
-    currentAngle += (targetAngle - currentAngle) * 0.04;
-    group.rotation.y = currentAngle;
-    renderer.render(scene, camera);
-    animId = requestAnimationFrame(animate);
-  }
-
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      isPaused = !entry.isIntersecting;
-      if (!isPaused) animate();
-    });
-  }, { threshold: 0.05 });
-
-  const exploreSection = document.getElementById("explore");
-  if (exploreSection) obs.observe(exploreSection);
-
-  initThree();
-
-  // Dialog drawer
-  const dialog = document.getElementById("dish-dialog");
-  const form = document.getElementById("enquiry-form");
-  const status = document.getElementById("form-status");
-  const drawerTitle = document.getElementById("drawer-title");
-  const drawerPhoto = document.getElementById("drawer-photo");
-  const drawerDesc = document.getElementById("drawer-description");
-  const messageField = document.getElementById("enquiry-message");
-
-  const data = {
-    pizza: { title: "Pizza", image: "img/stock-2.jpg", alt: "Stock photograph of pizza, illustrative only", description: "Ask La Smorfia about the current pizza selection, available toppings and prices. The photograph is food inspiration, rather than a verified dish from the restaurant.", question: "I'd like to ask about your current pizza menu and table availability." },
-    pasta: { title: "Pasta", image: "img/stock-8.jpg", alt: "Stock photograph of plated pasta, illustrative only", description: "Find out which pasta dishes are currently available. Ask the restaurant about sauces, ingredients and any dietary requirements before ordering.", question: "I'd like to ask about your current pasta dishes and table availability." },
-    dessert: { title: "Desserts", image: "img/stock-12.jpg", alt: "Stock photograph of dessert slice, illustrative only", description: "Ask what is available to finish your meal. Dessert choices, ingredients and prices should be confirmed directly with La Smorfia.", question: "I'd like to ask about your current desserts and table availability." },
-    drinks: { title: "Drinks", image: "img/stock-10.jpg", alt: "Stock photograph of chilled drinks, illustrative only", description: "Ask about the current drinks selection and prices. The photograph illustrates the mood of this concept and does not represent confirmed products at La Smorfia.", question: "I'd like to ask about your drinks selection and table availability." }
-  };
-
-  function openDrawer(category, label) {
-    const item = data[category];
-    if (!item) return;
-    form.reset();
-    if (status) status.textContent = "";
-    drawerTitle.textContent = item.title;
-    drawerPhoto.src = item.image;
-    drawerPhoto.alt = item.alt;
-    drawerDesc.textContent = item.description;
-    messageField.value = item.question;
-    dialog.showModal();
-    document.body.classList.add("locked");
-  }
-
-  function closeDialog() { dialog.close(); }
-
-  const closeBtn = dialog.querySelector(".drawer-close");
-  if (closeBtn) closeBtn.addEventListener("click", closeDialog);
-  dialog.addEventListener("click", (e) => {
-    if (e.target === dialog) {
-      const r = dialog.getBoundingClientRect();
-      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeDialog();
-    }
-  });
-  dialog.addEventListener("close", () => { document.body.classList.remove("locked"); });
-
-  // Demo form
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const name = form.elements.name;
-      name.setCustomValidity(name.value.trim() ? "" : "Please enter your name.");
-      const message = form.elements.message;
-      message.setCustomValidity(message.value.trim() ? "" : "Please enter your question.");
-      const date = document.getElementById("visit-date");
-      date.setCustomValidity(date.value && date.value < date.min ? "Please choose today or a future date." : "");
-      if (!form.reportValidity()) return;
-      status.textContent = "This is a demo form, nothing was sent.";
-      status.focus();
-    });
-    form.addEventListener("input", (e) => {
-      if (e.target.setCustomValidity) e.target.setCustomValidity("");
-      status.textContent = "";
-    });
-  }
-
-  // GSAP reveals only below the first screen; hero stays visible immediately
-  gsap.registerPlugin(ScrollTrigger);
-  if (!reduced.matches) {
-    gsap.from(".menu", { y: 40, opacity: 0, duration: 0.8, ease: "power2.out", scrollTrigger: { trigger: ".menu", start: "top 80%" } });
-    gsap.from(".about", { y: 40, opacity: 0, duration: 0.8, ease: "power2.out", scrollTrigger: { trigger: ".about", start: "top 80%" } });
-    gsap.from(".visit", { y: 40, opacity: 0, duration: 0.8, ease: "power2.out", scrollTrigger: { trigger: ".visit", start: "top 80%" } });
-  }
+'use strict';
+const toggle=document.querySelector('.menu-toggle'),nav=document.getElementById('navigation');
+function closeMenu(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation');toggle.textContent='☰'}
+toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';nav.classList.toggle('open',open);toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');toggle.textContent=open?'×':'☰'});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav.classList.contains('open')){closeMenu();toggle.focus()}});
+document.addEventListener('click',e=>{if(!document.querySelector('.header').contains(e.target))closeMenu()});
+const form=document.getElementById('dish-form'),list=document.getElementById('selection-list'),empty=document.getElementById('empty-state'),count=document.getElementById('item-count'),copy=document.getElementById('copy-selection'),status=document.getElementById('copy-status'),fallback=document.getElementById('copy-fallback');
+let items=[],nextId=1;
+function selected(){return items.filter(i=>i.checked)}
+function updateCount(){const n=selected().reduce((s,i)=>s+i.quantity,0);count.textContent=n+' item'+(n===1?'':'s');copy.disabled=!n;status.textContent='';fallback.hidden=true}
+function render(){
+list.replaceChildren();empty.hidden=items.length>0;
+items.forEach(item=>{
+const row=document.createElement('div');row.className='selection-item';
+const check=document.createElement('input');check.type='checkbox';check.checked=item.checked;check.setAttribute('aria-label','Include '+item.name);check.addEventListener('change',()=>{item.checked=check.checked;updateCount()});
+const content=document.createElement('div'),name=document.createElement('span');name.className='dish-name';name.textContent=item.name;content.append(name);
+const controls=document.createElement('div');controls.className='quantity-controls';
+const minus=document.createElement('button');minus.type='button';minus.textContent='−';minus.setAttribute('aria-label','Reduce quantity of '+item.name);minus.disabled=item.quantity<=1;
+const qty=document.createElement('span');qty.textContent=item.quantity;qty.setAttribute('aria-label','Quantity '+item.quantity);
+const plus=document.createElement('button');plus.type='button';plus.textContent='+';plus.setAttribute('aria-label','Increase quantity of '+item.name);plus.disabled=item.quantity>=99;
+minus.addEventListener('click',()=>{item.quantity--;qty.textContent=item.quantity;qty.setAttribute('aria-label','Quantity '+item.quantity);minus.disabled=item.quantity<=1;plus.disabled=false;updateCount()});
+plus.addEventListener('click',()=>{item.quantity++;qty.textContent=item.quantity;qty.setAttribute('aria-label','Quantity '+item.quantity);plus.disabled=item.quantity>=99;minus.disabled=false;updateCount()});
+controls.append(minus,qty,plus);content.append(controls);
+const remove=document.createElement('button');remove.type='button';remove.className='remove';remove.textContent='Remove';remove.setAttribute('aria-label','Remove '+item.name);remove.addEventListener('click',()=>{items=items.filter(i=>i.id!==item.id);render();document.getElementById('dish-name').focus()});
+row.append(check,content,remove);list.append(row)
+});updateCount()
+}
+form.addEventListener('submit',e=>{e.preventDefault();const input=document.getElementById('dish-name'),quantity=document.getElementById('dish-quantity');input.setCustomValidity('');if(!input.value.trim()){input.setCustomValidity('Enter a dish name from the current menu.');input.reportValidity();return}if(!form.reportValidity())return;items.push({id:nextId++,name:input.value.trim(),quantity:Number(quantity.value),checked:true});render();form.reset();quantity.value=1;input.focus();status.textContent='Added to your local selection. Nothing was sent.'});
+document.getElementById('dish-name').addEventListener('input',e=>e.target.setCustomValidity(''));
+copy.addEventListener('click',async()=>{const text='Hello La Smorfia,\n\nI would like to enquire about the following selection:\n\n'+selected().map(i=>i.quantity+' × '+i.name).join('\n')+'\n\nPlease confirm current prices and availability. This is an enquiry, not a confirmed order or booking.\n\nThank you.';
+document.getElementById('copy-text').value=text;
+try{if(!navigator.clipboard||!window.isSecureContext)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(text);status.textContent='Selection copied. Paste it into your email and review before sending.'}catch(e){fallback.hidden=false;document.getElementById('copy-text').focus();document.getElementById('copy-text').select();status.textContent='Copy the selected text below. Nothing has been sent.'}
+});
+const gallery=[
+{src:'img/stock-3.jpg',alt:'Illustrative close-up photograph of ravioli',caption:'Pasta, up close · Illustrative stock photography by theskytales / Pixabay.'},
+{src:'img/stock-7.jpg',alt:'Illustrative photograph of a cup of coffee',caption:'A coffee moment · Illustrative stock photography by 13027327 / Pixabay.'},
+{src:'img/stock-10.jpg',alt:'Illustrative photograph of tiramisu dessert',caption:'Something sweet · Illustrative stock photography by yousafbhutta / Pixabay.'}
+];
+const dialog=document.getElementById('lightbox');let index=0,opener=null;
+function showPhoto(){const photo=gallery[index],image=document.getElementById('lightbox-image');image.src=photo.src;image.alt=photo.alt;document.getElementById('lightbox-caption').textContent=photo.caption}
+document.querySelectorAll('[data-gallery]').forEach(button=>button.addEventListener('click',()=>{index=Number(button.dataset.gallery);opener=button;showPhoto();dialog.showModal();document.getElementById('lightbox-close').focus()}));
+document.getElementById('lightbox-close').addEventListener('click',()=>dialog.close());
+document.getElementById('previous-photo').addEventListener('click',()=>{index=(index+gallery.length-1)%gallery.length;showPhoto()});
+document.getElementById('next-photo').addEventListener('click',()=>{index=(index+1)%gallery.length;showPhoto()});
+dialog.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();index=(index+1)%gallery.length;showPhoto()}if(e.key==='ArrowLeft'){e.preventDefault();index=(index+gallery.length-1)%gallery.length;showPhoto()}});
+dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
+dialog.addEventListener('close',()=>{if(opener)opener.focus()});
+render();
 })();
 </script>
 </body>
