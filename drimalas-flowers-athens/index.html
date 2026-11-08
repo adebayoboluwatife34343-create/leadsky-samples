@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBF8F4">
+<title>Drimalas Flowers — A floral enquiry, beautifully simple</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FBF8F4;--ink:#2E2323;--plum:#6B4A6A;--rose:#D8A7B1;--line:#E8DED3;--muted:#695c60;--white:#fffdfa}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 Outfit,sans-serif}button,input,textarea{font:inherit}button,a,input,textarea{-webkit-tap-highlight-color:transparent}a{color:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.5}button,a{touch-action:manipulation}:focus-visible{outline:3px solid var(--plum);outline-offset:5px}img{display:block;width:100%;object-fit:cover}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:400;line-height:1.08}button{color:inherit}a{text-underline-offset:4px}.banner{padding:9px 18px;text-align:center;background:var(--plum);color:white;font-size:11px;line-height:1.45}.header{position:sticky;top:0;z-index:30;background:rgba(251,248,244,.97);border-bottom:1px solid var(--line)}.header-inner{max-width:1440px;margin:auto;padding:15px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{font:500 20px Fraunces,serif;text-decoration:none;white-space:nowrap}.menu-button{display:flex;align-items:center;gap:17px;border:1px solid var(--line);border-radius:50px;background:transparent;padding:8px 17px;font-size:13px}.menu-symbol{font-size:20px;line-height:1}.wrap{max-width:1320px;margin:auto;padding:0 5%}.eyebrow{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.18em;color:var(--plum)}.opening{padding-top:24px}.opening-top{display:flex;justify-content:space-between;align-items:end;gap:25px;padding-bottom:23px}.opening-top h1{font-size:clamp(35px,5vw,70px);letter-spacing:-.045em;max-width:770px;margin-top:10px}.opening-top .aside{max-width:210px;font-size:14px;color:var(--muted)}.hero-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.hero-photo{position:relative;margin:0;overflow:hidden;min-height:620px;background:var(--line)}.hero-photo img{height:100%;position:absolute;inset:0;object-position:center}.photo-label{position:absolute;left:20px;bottom:20px;background:var(--paper);padding:8px 12px;font-size:11px;border-radius:2px}.board{padding:33px 38px;background:#f1ebe5;display:flex;flex-direction:column}.board-head{display:flex;align-items:start;justify-content:space-between;gap:16px;margin-bottom:17px}.board h2{font-size:34px;letter-spacing:-.025em}.board-mark{font:italic 29px Fraunces;color:var(--plum)}.board-note{font-size:13px;color:var(--muted);max-width:400px;margin-bottom:18px}.choice{position:relative;display:grid;grid-template-columns:23px 1fr auto;gap:13px;align-items:center;padding:20px 0;border-top:1px solid #d6c9bd;cursor:pointer}.choice input{appearance:none;width:21px;height:21px;margin:0;border:1px solid #9a8594;border-radius:50%;display:grid;place-content:center;background:transparent;cursor:pointer}.choice input:checked{background:var(--plum);border-color:var(--plum)}.choice input:checked:after{content:"✓";font-size:13px;color:white}.choice strong{display:block;font:400 23px Fraunces;line-height:1.2}.choice small{display:block;font-size:12px;color:var(--muted);margin-top:5px}.price{font-size:12px;text-align:right;line-height:1.4;max-width:75px}.board-footer{font-size:11px;color:var(--muted);padding-top:10px;margin-top:auto}.button{display:inline-flex;align-items:center;justify-content:center;gap:18px;padding:13px 22px;border:1px solid var(--plum);background:var(--plum);color:white;text-decoration:none;border-radius:3px;font-size:14px;transition:background .2s,transform .2s}.button:hover{background:#523651}.button:active{transform:translateY(1px)}.button.secondary{background:transparent;color:var(--plum)}.quote-bar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;border-bottom:1px solid var(--line)}.quote-bar strong{font-weight:500}.quote-bar p{font-size:12px;color:var(--muted);margin-top:3px}.quote-actions{display:flex;align-items:center;gap:20px}.text-button{background:none;border:0;text-decoration:underline;font-size:12px;padding:10px}.section{padding-top:100px;padding-bottom:100px}.story{display:grid;grid-template-columns:.9fr 1fr;gap:10%;align-items:center}.story-image{position:relative;padding:0 34px 30px 0}.story-image img{height:490px;border-radius:180px 180px 3px 3px}.story-image:after{content:"";position:absolute;inset:28px 0 0 28px;border:1px solid #cbb8c5;border-radius:180px 180px 3px 3px;z-index:-1}.story h2{font-size:clamp(38px,4.5vw,62px);letter-spacing:-.04em;margin:17px 0 24px}.story p{max-width:430px;color:var(--muted);margin-bottom:20px}.story .location{margin-top:30px;border-top:1px solid var(--line);padding-top:20px;font-size:13px;display:flex;gap:18px}.location span:first-child{color:var(--plum)}.gallery-section{background:#eee5e9;padding:74px 0 83px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:34px}.section-title h2{font-size:clamp(39px,5vw,64px);letter-spacing:-.04em;margin-top:12px}.section-title p{max-width:310px;font-size:13px;color:var(--muted)}.gallery{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:24px;align-items:start}.gallery-item{padding:0;border:0;background:none;text-align:left;width:100%}.gallery-item:nth-child(2){margin-top:55px}.gallery-item .image-wrap{display:block;overflow:hidden;position:relative}.gallery-item img{height:350px;transition:transform .7s cubic-bezier(.2,.7,.2,1)}.gallery-item:nth-child(2) img{height:420px}.gallery-item:hover img{transform:scale(1.045)}.gallery-caption{display:flex;justify-content:space-between;padding-top:13px;font-size:14px}.gallery-caption i{font-style:normal}.gallery-foot{margin-top:30px;font-size:11px;color:var(--muted)}.contact{display:grid;grid-template-columns:1fr 1fr;gap:10%}.contact h2{font-size:clamp(40px,5vw,65px);letter-spacing:-.04em;margin:13px 0 25px}.contact p{color:var(--muted);max-width:400px}.contact-links{margin:32px 0;display:grid;gap:13px}.contact-links a{font-size:18px;overflow-wrap:anywhere}.address{border-top:1px solid var(--line);padding-top:22px}.address a{display:inline-block;margin-top:14px;font-size:13px}.contact-form{padding:30px;background:#f1ebe5;border:1px solid var(--line)}.contact-form h3{font-size:29px}.form-note{font-size:12px!important;margin:10px 0 23px!important}.field{display:block;font-size:12px;margin:16px 0}.field input,.field textarea{display:block;width:100%;margin-top:7px;padding:12px;background:var(--white);color:var(--ink);border:1px solid #baaeb5;border-radius:2px}.field textarea{resize:vertical;min-height:110px}.status{font-size:13px;margin-top:16px;color:var(--plum)}.footer{border-top:1px solid var(--line);padding:30px 0 95px}.footer-top{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer small{font-size:11px;color:var(--muted)}.credits{margin-top:25px;font-size:10px;color:var(--muted);max-width:950px;line-height:1.9}.credits a{white-space:normal}.mobile-bar{display:none}.overlay{position:fixed;inset:0;background:rgba(30,20,29,.48);z-index:80;display:none}.overlay.open{display:flex}.nav-panel{width:100%;background:var(--paper);display:flex;flex-direction:column;padding:25px 7%;overflow:auto}.panel-top{display:flex;align-items:center;justify-content:space-between}.close{background:transparent;border:1px solid #b8a8b2;border-radius:50%;width:43px;height:43px;font-size:25px;line-height:1}.nav-links{display:grid;margin:auto 0;gap:16px;padding:50px 0}.nav-links a{font:400 clamp(35px,6vw,70px) Fraunces;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:13px}.nav-links a span{font:12px Outfit;color:var(--plum);margin-right:25px}.nav-bottom{font-size:13px;color:var(--muted)}dialog{border:0;border-radius:5px;padding:0;background:var(--paper);color:var(--ink);max-width:min(600px,92vw);width:100%;max-height:90dvh;overflow:auto}dialog::backdrop{background:rgba(30,20,29,.7)}.dialog-content{padding:28px}.dialog-head{display:flex;justify-content:space-between;gap:20px;align-items:start;margin-bottom:20px}.dialog-head h2{font-size:34px}.selection-list{padding:0;list-style:none;font-size:14px}.selection-list li{padding:10px 0;border-bottom:1px solid var(--line)}.lightbox{max-width:min(1000px,94vw);background:var(--paper)}.lightbox img{height:min(67dvh,700px);object-fit:contain;background:#eee5e9}.lightbox-footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:15px 20px;font-size:13px}.reveal{transition:opacity .7s,transform .7s}.reveal.pending{opacity:0;transform:translateY(22px)}
+@media(min-width:1100px){.quote-bar{position:sticky;bottom:0;background:var(--paper);z-index:25;padding:17px 22px;border:1px solid var(--line);box-shadow:0 -5px 22px #2e232308}}
+@media(max-width:760px){.banner{font-size:10px;padding:7px 15px}.header-inner{padding:12px 5%}.brand{font-size:18px}.opening{padding-top:21px}.opening-top{display:block;padding-bottom:20px}.opening-top h1{font-size:38px;max-width:340px;margin-top:7px}.opening-top .aside{max-width:none;font-size:12px;margin-top:12px}.hero-grid{grid-template-columns:1fr}.hero-photo{min-height:185px;height:185px;order:2}.hero-photo img{object-position:center 48%}.photo-label{left:12px;bottom:12px;font-size:9px;padding:5px 8px}.board{padding:23px 19px;order:1}.board-head{margin-bottom:10px}.board h2{font-size:29px}.board-note{font-size:12px;margin-bottom:12px}.choice{padding:15px 0;gap:10px}.choice strong{font-size:21px}.choice small{font-size:11px}.price{font-size:11px}.board-footer{font-size:10px}.quote-bar{align-items:start;padding:20px 0}.quote-actions{gap:7px}.quote-bar .text-button{display:none}.quote-bar .button{white-space:nowrap;padding:11px 14px;font-size:12px}.quote-bar strong{font-size:13px}.quote-bar p{max-width:170px;font-size:11px}.section{padding-top:62px;padding-bottom:62px}.story{grid-template-columns:1fr;gap:35px}.story-image{padding-right:22px;padding-bottom:20px}.story-image img{height:350px}.story-image:after{inset:20px 0 0 20px}.story h2{font-size:42px}.story p{font-size:15px}.gallery-section{padding:55px 0}.section-title{display:block}.section-title p{margin-top:20px}.gallery{grid-template-columns:1fr 1fr;gap:24px 14px}.gallery-item:nth-child(2){margin-top:35px}.gallery-item img,.gallery-item:nth-child(2) img{height:230px}.gallery-item:last-child{grid-column:1/-1;max-width:82%;margin-top:-12px}.gallery-item:last-child img{height:300px}.gallery-caption{font-size:12px}.contact{grid-template-columns:1fr;gap:35px}.contact h2{font-size:44px}.contact-form{padding:23px}.footer-top{align-items:start;flex-direction:column;gap:10px}.mobile-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:40;background:var(--paper);padding:10px 5% max(10px,env(safe-area-inset-bottom));gap:10px;border-top:1px solid #d7cbd2;box-shadow:0 -6px 24px #2e232308}.mobile-bar a,.mobile-bar button{flex:1;font-size:13px;padding:11px;text-align:center;border-radius:3px}.mobile-bar a{border:1px solid var(--plum);color:var(--plum);text-decoration:none}.mobile-bar button{border:1px solid var(--plum);background:var(--plum);color:white}.footer{padding-bottom:115px}.dialog-content{padding:22px}.dialog-head h2{font-size:30px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal.pending{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="banner">Independent website concept by LeadSky for Drimalas Flowers. Not their official website.</div>
+<header class="header">
+<div class="header-inner">
+<a class="brand" href="#top">Drimalas Flowers<span style="color:var(--plum)">.</span></a>
+<button class="menu-button" id="menuOpen" aria-expanded="false" aria-controls="navigation">Menu <span class="menu-symbol" aria-hidden="true">☰</span></button>
+</div>
+</header>
+<main id="top">
+<section class="opening wrap" aria-labelledby="mainTitle">
+<div class="opening-top">
+<div><p class="eyebrow">Drimalas Flowers · Piraeus, Athens</p><h1 id="mainTitle">Flowers for what<br>you want to say.</h1></div>
+<p class="aside">Choose your floral preferences.<br>Ask the shop for a personal quote.</p>
+</div>
+<div class="hero-grid">
+<figure class="hero-photo">
+<img src="img/stock-4.jpg" alt="Pink rose bouquet seen from above, used as floral inspiration" width="1000" height="1200" fetchpriority="high">
+<figcaption class="photo-label">A little floral inspiration · stock photograph</figcaption>
+</figure>
+<div class="board">
+<div class="board-head"><h2>Your floral wish list</h2><span class="board-mark" aria-hidden="true">D.</span></div>
+<p class="board-note">Tick what you have in mind. The shop’s product list and prices have not been supplied; these are enquiry preferences, not a confirmed collection.</p>
+<div id="choices">
+<label class="choice"><input type="checkbox" value="A mixed bouquet"><span><strong>A mixed bouquet</strong><small>A mix of flowers and colour</small></span><span class="price">Request<br>€ quote</span></label>
+<label class="choice"><input type="checkbox" value="A rose-led arrangement"><span><strong>Something with roses</strong><small>Ask about colours and availability</small></span><span class="price">Request<br>€ quote</span></label>
+<label class="choice"><input type="checkbox" value="Seasonal flowers"><span><strong>Seasonal flowers</strong><small>Ask what is available at the shop</small></span><span class="price">Request<br>€ quote</span></label>
+<label class="choice"><input type="checkbox" value="Flowers for an occasion"><span><strong>A special occasion</strong><small>Share the date and what you have in mind</small></span><span class="price">Request<br>€ quote</span></label>
+</div>
+<p class="board-footer">Availability, arrangement details and prices must be confirmed directly with Drimalas Flowers. No payment is taken here.</p>
+</div>
+</div>
+<div class="quote-bar" aria-label="Your quote summary">
+<div aria-live="polite"><strong id="selectionCount">Your wish list is waiting</strong><p id="quoteTotal">Prices on request · no estimated total</p></div>
+<div class="quote-actions"><button class="text-button" id="clearChoices" disabled>Clear selection</button><button class="button" id="quoteOpen">Build an enquiry <span aria-hidden="true">↗</span></button></div>
+</div>
+</section>
+
+<section class="section wrap story" id="story">
+<div class="story-image reveal"><img src="img/stock-10.jpg" alt="Pink tulips and green leaves, an illustrative stock photograph" width="700" height="900" loading="lazy"></div>
+<div class="reveal">
+<p class="eyebrow">A local connection</p>
+<h2>A thoughtful gesture.<br>A shop in Piraeus.</h2>
+<p>Drimalas Flowers is a florist in Piraeus, Athens. This concept brings the shop’s contact details and a simple floral enquiry into one place.</p>
+<p>Have a colour, an occasion or a budget in mind? Put your thoughts together, then contact the shop to discuss what is possible.</p>
+<a href="#contact" class="button secondary">Talk flowers with the shop <span aria-hidden="true">↗</span></a>
+<div class="location"><span>Find the shop</span><span>86 Ηρώων Πολυτεχνείου<br>Πειραιάς 18536</span></div>
+</div>
+</section>
+
+<section class="gallery-section" id="gallery">
+<div class="wrap">
+<div class="section-title reveal"><div><p class="eyebrow">Colour, texture & a little inspiration</p><h2>What catches your eye?</h2></div><p>A visual starting point for your enquiry. These stock photographs show floral ideas, not arrangements made by Drimalas Flowers.</p></div>
+<div class="gallery">
+<button class="gallery-item reveal" data-image="img/stock-6.jpg" data-caption="A colourful mix of tulips — inspiration photograph by Anelka." aria-label="Enlarge colourful tulip inspiration">
+<span class="image-wrap"><img src="img/stock-6.jpg" alt="A colourful arrangement of tulips" width="600" height="800" loading="lazy"></span><span class="gallery-caption">A brighter palette <i aria-hidden="true">↗</i></span>
+</button>
+<button class="gallery-item reveal" data-image="img/stock-9.jpg" data-caption="Soft pink floral detail — inspiration photograph by ArtTower." aria-label="Enlarge soft pink floral inspiration">
+<span class="image-wrap"><img src="img/stock-9.jpg" alt="Soft pink roses and delicate floral details" width="700" height="900" loading="lazy"></span><span class="gallery-caption">Soft & romantic <i aria-hidden="true">↗</i></span>
+</button>
+<button class="gallery-item reveal" data-image="img/stock-1.jpg" data-caption="Blue love-in-a-mist flowers — inspiration photograph by Couleur." aria-label="Enlarge blue flower inspiration">
+<span class="image-wrap"><img src="img/stock-1.jpg" alt="Blue love-in-a-mist flowers with fine green foliage" width="600" height="800" loading="lazy"></span><span class="gallery-caption">Something unexpected <i aria-hidden="true">↗</i></span>
+</button>
+</div>
+<p class="gallery-foot">Tap a photograph for a closer look. Flowers pictured are not a promise of stock or availability.</p>
+</div>
+</section>
+
+<section class="section wrap contact" id="contact">
+<div class="reveal">
+<p class="eyebrow">From an idea to an enquiry</p>
+<h2>Let’s start<br>with flowers.</h2>
+<p>For current prices, opening hours, availability and any delivery arrangements, please contact Drimalas Flowers directly.</p>
+<div class="contact-links"><a href="tel:+306989078351">+30 698 907 8351 ↗</a><a href="mailto:flowersdrimalas@yahoo.gr">flowersdrimalas@yahoo.gr ↗</a></div>
+<div class="address"><p>86 Ηρώων Πολυτεχνείου<br>Πειραιάς 18536, Greece</p><a href="https://www.google.com/maps/search/?api=1&query=86+Iroon+Polytechniou+Piraeus+18536+Greece" target="_blank" rel="noopener noreferrer">Open the supplied address in Google Maps ↗</a></div>
+</div>
+<form class="contact-form reveal" id="contactForm">
+<h3>A note to the shop</h3>
+<p class="form-note">Try the enquiry form. This private concept does not send messages. Use the phone or email link to contact the business.</p>
+<label class="field">Your name<input name="name" autocomplete="name" required maxlength="100"></label>
+<label class="field">Your email<input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+<label class="field">What do you have in mind?<textarea name="message" required maxlength="3000"></textarea></label>
+<button class="button" type="submit">Preview enquiry <span aria-hidden="true">↗</span></button>
+<p class="status" role="status"></p>
+</form>
+</section>
+</main>
+
+<footer class="footer">
+<div class="wrap">
+<div class="footer-top"><a class="brand" href="#top">Drimalas Flowers.</a><small>Independent concept by LeadSky · Not the official website</small></div>
+<p class="credits">Illustrative stock photography, used under the Pixabay Content License:
+<a href="https://pixabay.com/photos/bunch-of-flowers-bouquet-of-roses-1482257/" target="_blank" rel="noopener noreferrer">cocoparisienne — rose bouquet</a> ·
+<a href="https://pixabay.com/photos/tulip-flower-nature-plant-floral-3366301/" target="_blank" rel="noopener noreferrer">Marisa04 — pink tulips</a> ·
+<a href="https://pixabay.com/photos/flowers-tulips-bouquet-cut-flowers-429041/" target="_blank" rel="noopener noreferrer">Anelka — colourful tulips</a> ·
+<a href="https://pixabay.com/photos/bouquet-flowers-roses-142876/" target="_blank" rel="noopener noreferrer">ArtTower — floral bouquet</a> ·
+<a href="https://pixabay.com/photos/love-in-a-mist-flowers-blue-flowers-3451767/" target="_blank" rel="noopener noreferrer">Couleur — blue flowers</a>.
+Photographs do not depict the business’s own work, staff or premises. Concept by LeadSky.</p>
+</div>
+</footer>
+
+<div class="mobile-bar"><a href="tel:+306989078351">Call the shop ↗</a><button id="mobileQuote">Your enquiry <span id="mobileCount">(0)</span></button></div>
+
+<div class="overlay" id="navigation" role="dialog" aria-modal="true" aria-label="Website navigation" hidden>
+<div class="nav-panel">
+<div class="panel-top"><span class="brand">Drimalas Flowers.</span><button class="close" id="menuClose" aria-label="Close menu">×</button></div>
+<nav class="nav-links"><a href="#top"><span>01</span>The wish list</a><a href="#story"><span>02</span>In Piraeus</a><a href="#gallery"><span>03</span>Floral inspiration</a><a href="#contact"><span>04</span>Contact the shop</a></nav>
+<p class="nav-bottom">Independent website concept by LeadSky.</p>
+</div>
+</div>
+
+<dialog id="quoteDialog" aria-labelledby="quoteTitle">
+<div class="dialog-content">
+<div class="dialog-head"><div><p class="eyebrow">Your floral preferences</p><h2 id="quoteTitle">Make it personal.</h2></div><button class="close" data-close="quoteDialog" aria-label="Close enquiry">×</button></div>
+<ul class="selection-list" id="selectionList"></ul>
+<p class="form-note">Prices and availability are confirmed by the shop. This form demonstrates the enquiry process; nothing is sent.</p>
+<form id="quoteForm">
+<label class="field">Your name<input name="name" autocomplete="name" required maxlength="100"></label>
+<label class="field">Your email<input name="email" type="email" autocomplete="email" required maxlength="200"></label>
+<label class="field">Preferred date, if you have one<input name="date" type="date"></label>
+<label class="field">Your budget in euros, if you wish<input name="budget" type="number" min="1" step="1" inputmode="numeric"></label>
+<label class="field">Colours, occasion or other details<textarea name="details" required maxlength="3000"></textarea></label>
+<button class="button" type="submit">Preview quote request <span aria-hidden="true">↗</span></button>
+<p class="status" role="status"></p>
+<a id="emailDraft" class="button secondary" hidden>Open email draft ↗</a>
+<p id="emailHelp" class="form-note" hidden>Opens your email app with your enquiry. Review it there and choose whether to send it.</p>
+</form>
+</div>
+</dialog>
+
+<dialog class="lightbox" id="imageDialog" aria-labelledby="imageCaption">
+<img id="largeImage" alt="" width="1000" height="900">
+<div class="lightbox-footer"><p id="imageCaption"></p><button class="close" data-close="imageDialog" aria-label="Close photograph">×</button></div>
+</dialog>
+
+<script>
+(function(){
+'use strict';
+const $=s=>document.querySelector(s);
+const checks=[...document.querySelectorAll('#choices input')];
+const selected=()=>checks.filter(c=>c.checked).map(c=>c.value);
+const quoteDialog=$('#quoteDialog');
+const quoteForm=$('#quoteForm');
+const emailDraft=$('#emailDraft');
+let lastFocus=null;
+function resetDraft(){
+ emailDraft.hidden=true;emailDraft.style.display='none';
+ $('#emailHelp').hidden=true;quoteForm.querySelector('.status').textContent='';
+}
+function update(){
+ const items=selected(),n=items.length;
+ $('#selectionCount').textContent=n?n+' floral '+(n===1?'preference':'preferences')+' selected':'Your wish list is waiting';
+ $('#mobileCount').textContent='('+n+')';
+ $('#clearChoices').disabled=!n;
+ resetDraft();
+}
+checks.forEach(c=>c.addEventListener('change',update));
+$('#clearChoices').addEventListener('click',()=>{checks.forEach(c=>c.checked=false);update()});
+function openQuote(){
+ lastFocus=document.activeElement;
+ const items=selected(),list=$('#selectionList');list.replaceChildren();
+ (items.length?items:['No preferences selected. Describe your idea below.']).forEach(item=>{
+ const li=document.createElement('li');li.textContent=item;list.append(li);
+ });
+ resetDraft();quoteDialog.showModal();
+}
+$('#quoteOpen').addEventListener('click',openQuote);
+$('#mobileQuote').addEventListener('click',openQuote);
+quoteForm.addEventListener('input',resetDraft);
+quoteForm.addEventListener('submit',e=>{
+ e.preventDefault();
+ if(!quoteForm.reportValidity())return;
+ quoteForm.querySelector('.status').textContent='This is a demo form, nothing was sent.';
+ const d=new FormData(quoteForm),items=selected();
+ const body='Hello Drimalas Flowers,\n\nI would like to ask about flowers.\n\nPreferences: '+(items.join(', ')||'Please see my details below.')+'\nPreferred date: '+(d.get('date')||'Flexible')+'\nBudget: '+(d.get('budget')?'€'+d.get('budget'):'Please advise')+'\n\n'+d.get('details')+'\n\n'+d.get('name')+'\n'+d.get('email')+'\n\nPrepared using an independent LeadSky website concept.';
+ emailDraft.href='mailto:flowersdrimalas@yahoo.gr?subject='+encodeURIComponent('Floral enquiry')+'&body='+encodeURIComponent(body);
+ emailDraft.hidden=false;emailDraft.style.display='inline-flex';$('#emailHelp').hidden=false;
+});
+$('#contactForm').addEventListener('submit',e=>{
+ e.preventDefault();if(!e.target.reportValidity())return;
+ e.target.querySelector('.status').textContent='This is a demo form, nothing was sent.';
+});
+document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.close).close()));
+document.querySelectorAll('dialog').forEach(d=>{
+ d.addEventListener('click',e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}});
+ d.addEventListener('close',()=>{if(lastFocus)lastFocus.focus()});
+});
+document.querySelectorAll('.gallery-item').forEach(b=>b.addEventListener('click',()=>{
+ lastFocus=b;$('#largeImage').src=b.dataset.image;$('#largeImage').alt=b.querySelector('img').alt;
+ $('#imageCaption').textContent=b.dataset.caption;$('#imageDialog').showModal();
+}));
+const menu=$('#navigation'),menuOpen=$('#menuOpen');
+function closeMenu(){menu.classList.remove('open');menu.hidden=true;menuOpen.setAttribute('aria-expanded','false');document.body.style.overflow='';menuOpen.focus()}
+menuOpen.addEventListener('click',()=>{menu.hidden=false;menu.classList.add('open');menuOpen.setAttribute('aria-expanded','true');document.body.style.overflow='hidden';$('#menuClose').focus()});
+$('#menuClose').addEventListener('click',closeMenu);
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+menu.addEventListener('keydown',e=>{
+ if(e.key==='Escape'){closeMenu();return}
+ if(e.key==='Tab'){
+ const focusable=[...menu.querySelectorAll('button,a')],first=focusable[0],last=focusable[focusable.length-1];
+ if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+ else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+ }
+});
+const motion=matchMedia('(prefers-reduced-motion: reduce)');
+if(!motion.matches&&'IntersectionObserver' in window){
+ const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove('pending');observer.unobserve(entry.target)}}),{threshold:.08});
+ document.querySelectorAll('.reveal').forEach(el=>{if(el.getBoundingClientRect().top>innerHeight){el.classList.add('pending');observer.observe(el)}});
+ motion.addEventListener('change',()=>{if(motion.matches)document.querySelectorAll('.pending').forEach(el=>el.classList.remove('pending'))});
+}
+update();
+})();
+</script>
+</body>
+</html>
