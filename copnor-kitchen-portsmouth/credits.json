@@ -9,7 +9,67 @@
   {
     "file": "img/stock-1.jpg",
     "kind": "stock photo",
-    "query": "cafe",
+    "query": "Pexels daylight neighbourhood cafe window table vertical",
+    "description": "ikea, table, dining, nature, chair, lamp, plant, natural, lifestyle, life, live, living, room, restaurant, simple, white",
+    "source": "https://pixabay.com/photos/ikea-table-dining-chair-lamp-4048225/",
+    "photographer": "tianya1223",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels daylight neighbourhood cafe window table vertical",
+    "description": "cafe, building, greece, karpathos island, nature, facade, architecture, chairs, tables, front, windows, door, restaurant, empty, closed, street, outdoors, summer, mediterranean, hd wallpaper",
+    "source": "https://pixabay.com/photos/cafe-building-greece-3537801/",
+    "photographer": "analogicus",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay freshly prepared coffee ceramic cup natural light",
+    "description": "coffee, beans, cup, cup of coffee, coffee cup, black coffee, coffee beans, aroma, hot coffee, caffeine, coffee icon, drink, beverage, hot drink, hot beverage, cafe, coffee, coffee, coffee, coffee, coffee",
+    "source": "https://pixabay.com/photos/coffee-beans-cup-cup-of-coffee-15994/",
+    "photographer": "PublicDomainPictures",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay freshly prepared coffee ceramic cup natural light",
+    "description": "coffee, coffee beans, cup, coffee cup, caffeine, coffee seeds, coffee, coffee, coffee, coffee, coffee",
+    "source": "https://pixabay.com/photos/coffee-coffee-beans-cup-coffee-cup-171653/",
+    "photographer": "Christoph",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pexels coffee preparation espresso machine close up",
+    "description": "barista, coffee, preparation, pouring, brewed, caffeine, drink, beverage, espresso, work, girl, woman, coffee shop, cafe, restaurant, barista, barista, coffee shop, coffee shop, coffee shop, coffee shop, coffee shop, cafe, cafe, restaurant",
+    "source": "https://pixabay.com/photos/barista-coffee-preparation-pouring-6197867/",
+    "photographer": "20926038",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pexels coffee preparation espresso machine close up",
+    "description": "cafe, barista, coffee shop, counter, coffee machine, caffeine, interior design, interior decoration, indoors, menu, coffee menu, cafe, cafe, cafe, cafe, cafe, coffee shop, coffee shop, coffee shop, coffee shop, menu",
+    "source": "https://pixabay.com/photos/cafe-barista-coffee-shop-counter-1869656/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels cafe table window warm daylight portrait",
     "description": "cat's cafe, mac wallpaper, cat, desktop backgrounds, interior, full hd wallpaper, windows wallpaper, hd wallpaper, free background, laptop wallpaper, animal, table, wallpaper hd, pet, rest, 4k wallpaper, relax, wallpaper 4k, free wallpaper, 4k wallpaper 1920x1080, cool backgrounds, beautiful wallpaper, wallpaper, cafe",
     "source": "https://pixabay.com/photos/cats-cafe-cat-interior-table-rest-4697753/",
     "photographer": "ALEXNEWWORLD",
@@ -17,52 +77,32 @@
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
-    "file": "img/stock-2.jpg",
+    "file": "img/stock-8.jpg",
     "kind": "stock photo",
-    "query": "cafe",
-    "description": "coffee, cup, caffeine, drink, latte, latte art, coffee cup, morning coffee, coffee break, hot coffee, beverage, hot, mug, rustic, saucer, table, wooden table, coffee, coffee, coffee, coffee, coffee, table, table",
-    "source": "https://pixabay.com/photos/coffee-cup-caffeine-drink-latte-2179028/",
+    "query": "Pexels cafe table window warm daylight portrait",
+    "description": "tea, hot, cup, table, tea-time, break, herbal, nature, leaf, tea cup, beverage",
+    "source": "https://pixabay.com/photos/tea-hot-cup-table-tea-time-break-2356764/",
+    "photographer": "dungthuyvunguyen",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay cafe entrance exterior daylight no people",
+    "description": "buildings, city, coffee shop, doors, street, urban, coffee shop, coffee shop, coffee shop, coffee shop, coffee shop, street, street",
+    "source": "https://pixabay.com/photos/buildings-city-coffee-shop-doors-1836478/",
     "photographer": "Pexels",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
-    "file": "img/stock-3.jpg",
+    "file": "img/stock-10.jpg",
     "kind": "stock photo",
-    "query": "cafe customer",
-    "description": "outdoor dining, restaurant, bar, waiter, al fresco, city, customers, group, patrons, people, street, tables, chairs, restaurant, restaurant, restaurant, restaurant, restaurant",
-    "source": "https://pixabay.com/photos/outdoor-dining-restaurant-bar-1846137/",
-    "photographer": "Pexels",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-4.jpg",
-    "kind": "stock photo",
-    "query": "cafe customer",
-    "description": "bmw, motorcycle, vehicle, ride, bike, motorbike, speed, travel, vintage, transportation, motorcycle, bike, bike, bike, bike, bike",
-    "source": "https://pixabay.com/photos/bmw-motorcycle-vehicle-ride-bike-1313343/",
-    "photographer": "Monoar_CGI_Artist",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-5.jpg",
-    "kind": "stock photo",
-    "query": "cafe Portsmouth",
-    "description": "portsmouth, england, nature, old town, street, buildings, sky, clouds, colours, Portsmouth, United Kingdom, England",
-    "source": "https://pixabay.com/photos/portsmouth-england-old-town-street-713856/",
-    "photographer": "921563",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-6.jpg",
-    "kind": "stock photo",
-    "query": "cafe Portsmouth",
-    "description": "portsmouth, old town, england, street, nature, cars, historic, sky, clouds, blue street, Portsmouth, United Kingdom, England",
-    "source": "https://pixabay.com/photos/portsmouth-old-town-england-street-713817/",
-    "photographer": "921563",
+    "query": "Pixabay cafe entrance exterior daylight no people",
+    "description": "door, window, wooden, blue, entrance, wall, house, architecture, traditional, street, paralimni, cyprus, door, door, door, door, door, window, wall, wall, house, house, house, street, street",
+    "source": "https://pixabay.com/photos/door-window-wooden-blue-entrance-2096367/",
+    "photographer": "dimitrisvetsikas1969",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }
