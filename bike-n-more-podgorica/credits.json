@@ -1,0 +1,116 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://www.bikenmore.me/images/logo.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "https://www.bikenmore.me/og-image.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bicycle side profile natural daylight landscape",
+    "description": "beautiful, woman, sad, beauty, girl, love sick, lonely, model, pose, portrait, bridge, sad girl, outdoors",
+    "source": "https://pixabay.com/photos/beautiful-woman-sad-beauty-girl-6126170/",
+    "photographer": "CaiHuuThanh",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bicycle side profile natural daylight landscape",
+    "description": "girl, bicycle, bike, sunset, silhouette, woman, cycling, female silhouette, nature, dusk, twilight, bicycle wheels, vehicle, transportation",
+    "source": "https://pixabay.com/photos/girl-bicycle-bike-sunset-1906405/",
+    "photographer": "zhivko",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay bicycle drivetrain chain cassette close up",
+    "description": "gears, bicycle, chain, transmission, metal, bike, mechanics, mechanical, cogwheel, monochrome, black and white, gears, bicycle, bicycle, bicycle, bicycle, chain, metal, bike, bike, bike, bike, bike, mechanical",
+    "source": "https://pixabay.com/photos/gears-bicycle-chain-transmission-2291916/",
+    "photographer": "661512",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay bicycle drivetrain chain cassette close up",
+    "description": "road bike, gear, vintage, bottom bracket, close up, chain, bicycle, technology, circuit, bicycle, bicycle, bicycle, bicycle, bicycle",
+    "source": "https://pixabay.com/photos/road-bike-gear-vintage-594164/",
+    "photographer": "markusspiske",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pexels cyclist quiet paved road green landscape",
+    "description": "man, riding, cycling, bike, exercise, republic of korea, landscape, cycling, cycling, cycling, cycling, cycling, exercise, landscape",
+    "source": "https://pixabay.com/photos/man-riding-cycling-bike-exercise-8046025/",
+    "photographer": "KIMDAEJEUNG",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pexels cyclist quiet paved road green landscape",
+    "description": "avenue, trees, path, nature, landscape, park, green, castle, dusseldorf, summer, cyclist, nature, park, park, park, park, park, castle, castle, dusseldorf",
+    "source": "https://pixabay.com/photos/avenue-trees-path-nature-landscape-5314089/",
+    "photographer": "652234",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bicycle handlebars brake lever detail",
+    "description": "bicycle, handlebar, to go biking, sports, bike tour, leisure time, handlebar, to go biking, to go biking, to go biking, to go biking, to go biking",
+    "source": "https://pixabay.com/photos/bicycle-handlebar-to-go-biking-5262093/",
+    "photographer": "matthiasboeckel",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bicycle handlebars brake lever detail",
+    "description": "bicycle, handlebar, wheel, to go biking, sports, bike tour, cyclist",
+    "source": "https://pixabay.com/photos/bicycle-handlebar-wheel-4719017/",
+    "photographer": "matthiasboeckel",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay bicycle parked urban street daylight",
+    "description": "bike, bicycle, street, urban, pavement, footpath, side walk, retro, shop, orange bike, city",
+    "source": "https://pixabay.com/photos/bike-bicycle-street-urban-pavement-8337261/",
+    "photographer": "pen_ash",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay bicycle parked urban street daylight",
+    "description": "bicycle, wall, brick, city, building, house, outdoor, blue, transport, bicycle, bicycle, bicycle, bicycle, bicycle, wall, wall, house, house",
+    "source": "https://pixabay.com/photos/bicycle-wall-brick-city-building-4426751/",
+    "photographer": "Dimhou",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]

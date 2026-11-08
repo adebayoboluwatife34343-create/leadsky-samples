@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F6F3EB">
+<title>Bike'n More — Bicikli u Podgorici | LeadSky koncept</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F6F3EB;--pine:#183F35;--orange:#B74725;--sage:#DCE4D6;--ink:#252D28;--line:#c7cbc1;--display:"Archivo Black",sans-serif;--body:"IBM Plex Sans",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6}body.locked{overflow:hidden}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit}button{font:inherit}button,a{touch-action:manipulation}button{cursor:pointer}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:5px}img{display:block;width:100%;height:100%;object-fit:cover}figure{margin:0}h1,h2,h3,p{margin:0}button{color:inherit}::selection{background:var(--pine);color:white}
+.notice{padding:8px 20px;text-align:center;background:var(--pine);color:#fff;font-size:11px;line-height:1.5}
+.header{position:sticky;top:0;z-index:20;background:var(--paper);border-bottom:1px solid var(--line)}.header-inner{height:70px;max-width:1600px;margin:auto;padding:0 4%;display:flex;align-items:center;gap:28px}.brand{font-family:var(--display);font-size:20px;text-decoration:none;letter-spacing:-1px;white-space:nowrap}.header-location{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-right:auto}.header-contact{background:var(--pine);color:white;padding:9px 18px;text-decoration:none;font-size:13px;font-weight:600;border-radius:2px}.menu-toggle{width:44px;height:44px;border:1px solid var(--line);background:transparent;display:grid;place-content:center;gap:5px}.menu-toggle span{height:2px;width:19px;background:var(--pine);transition:transform .2s}.menu-toggle[aria-expanded=true] span:first-child{transform:translateY(3.5px) rotate(45deg)}.menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-3.5px) rotate(-45deg)}.nav{position:absolute;top:100%;right:0;left:0;background:var(--paper);border-bottom:1px solid var(--line);padding:25px 6%;box-shadow:0 18px 24px #183f3510}.nav[hidden]{display:none}.nav a{display:block;text-decoration:none;font-size:clamp(24px,4vw,44px);padding:8px 0;border-bottom:1px solid var(--line)}.nav a:hover{color:var(--orange)}
+.cover{position:relative;min-height:640px;height:calc(100svh - 104px);max-height:1000px;background:var(--pine);isolation:isolate;overflow:hidden;color:white}.cover>img{position:absolute;inset:0;z-index:-2;object-position:center 57%}.cover:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.58),rgba(0,0,0,.55) 40%,rgba(0,0,0,.78))}.cover-inner{height:100%;padding:35px 4% 28px;display:flex;flex-direction:column;max-width:1700px;margin:auto}.cover-top{display:flex;justify-content:space-between;font-size:11px;letter-spacing:2px;text-transform:uppercase;border-top:1px solid #ffffff80;padding-top:14px}.cover h1{font-family:var(--display);font-size:clamp(70px,12.3vw,200px);font-weight:400;line-height:1.05;letter-spacing:-.065em;margin-top:34px;white-space:nowrap}.cover-copy{margin-top:auto;padding-top:45px;max-width:560px}.cover h2{font-size:clamp(34px,4.5vw,68px);line-height:1.06;letter-spacing:-2px;font-weight:500}.cover-copy p{margin:18px 0 25px;max-width:350px;color:#fff;font-size:17px}.button{display:inline-flex;align-items:center;justify-content:space-between;gap:38px;min-height:50px;padding:13px 22px;background:var(--paper);color:var(--pine);font-weight:600;text-decoration:none;border:1px solid transparent;transition:background .2s,color .2s}.button:hover{background:var(--sage)}.arrow{font-size:22px;line-height:1}.cover-bottom{display:flex;align-items:end;justify-content:space-between;margin-top:35px;gap:20px;font-size:11px;letter-spacing:.04em}.cover-bottom a{text-underline-offset:5px}.cover-bottom span{max-width:250px}
+.wrap{max-width:1500px;margin:auto;padding:0 6%}.editorial-intro{padding:80px 0 70px;display:grid;grid-template-columns:1fr 2fr;gap:50px}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:600;display:flex;gap:14px;align-items:center}.eyebrow:before{content:"";height:7px;width:7px;background:var(--orange);border-radius:50%;flex-shrink:0}.intro-statement{font-size:clamp(30px,4.4vw,64px);line-height:1.16;letter-spacing:-2px;font-weight:500;max-width:950px}.intro-statement em{font-style:normal;color:var(--orange)}
+.wide-photo{height:clamp(340px,53vw,680px);position:relative;overflow:hidden}.wide-photo img{transition:transform 1s cubic-bezier(.2,.6,.2,1)}.wide-photo:hover img{transform:scale(1.025)}.caption{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--line);font-size:11px;letter-spacing:.04em}.caption span:last-child{text-align:right}.story-copy{padding:52px 0 92px;display:grid;grid-template-columns:1fr 1fr;gap:10%}.story-title{font-size:clamp(33px,4.2vw,58px);line-height:1.1;letter-spacing:-1.8px;font-weight:500;max-width:490px}.copy{max-width:470px}.copy p+p{margin-top:18px}.text-link{display:inline-flex;gap:30px;margin-top:25px;font-weight:600;text-decoration:none;border-bottom:1px solid var(--pine);padding-bottom:5px;color:var(--pine)}.text-link:hover{color:var(--orange)}
+.detail-story{background:var(--sage);padding:80px 6%;display:grid;grid-template-columns:1fr 1.25fr;gap:9%;align-items:center}.detail-content{max-width:440px;justify-self:end}.detail-content h2{font-size:clamp(36px,4.5vw,65px);line-height:1.08;letter-spacing:-2px;font-weight:500;margin:30px 0 24px}.detail-content p{max-width:360px}.detail-image{max-width:740px;width:100%}.detail-image .image-window{height:550px;overflow:hidden}.detail-image img{filter:sepia(.14)}.detail-image figcaption{font-size:11px;line-height:1.5;margin-top:13px}
+.journal{padding-top:100px;padding-bottom:100px}.journal-heading{display:flex;justify-content:space-between;align-items:end;gap:35px;margin:24px 0 36px}.journal-heading h2{font-family:var(--display);font-size:clamp(44px,7vw,106px);line-height:1;letter-spacing:-.055em;font-weight:400}.journal-heading p{font-size:15px;max-width:300px}.filter-row{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:45px}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{background:transparent;border:1px solid transparent;padding:8px 16px;border-radius:30px;font-size:14px;min-height:42px}.filter[aria-pressed=true]{background:var(--pine);color:white}.filter:hover{border-color:var(--pine)}.result-count{font-size:12px;white-space:nowrap}
+.journal-entry{margin-bottom:62px;display:grid;grid-template-columns:80px 1fr;column-gap:20px}.journal-entry[hidden]{display:none}.entry-number{font-size:13px;padding-top:8px;color:var(--orange);border-top:1px solid var(--orange);align-self:start}.photo-button{display:block;width:100%;border:0;padding:0;background:var(--pine);overflow:hidden;position:relative;text-align:left}.photo-button img{height:490px;transition:transform .65s cubic-bezier(.2,.6,.2,1)}.photo-button:hover img{transform:scale(1.035)}.photo-button:after{content:"↗";position:absolute;right:18px;bottom:18px;display:grid;place-items:center;width:47px;height:47px;background:var(--paper);color:var(--pine);border-radius:50%;font-size:24px;transition:background .2s}.photo-button:hover:after{background:var(--sage)}.entry-meta{display:flex;justify-content:space-between;gap:24px;padding-top:15px}.entry-meta h3{font-size:22px;font-weight:500;letter-spacing:-.4px}.entry-meta p{font-size:11px;margin-top:4px}.entry-category{font-size:11px;text-transform:uppercase;letter-spacing:1px;padding-top:6px;white-space:nowrap}.journal-entry:nth-child(even){padding-left:12%}.journal-entry:nth-child(even) .photo-button img{height:410px}.journal-entry:last-child{margin-bottom:0}
+.contact{background:var(--pine);color:var(--paper);padding:65px 6% 35px}.contact-main{display:grid;grid-template-columns:1.1fr 1fr;gap:10%;max-width:1320px;margin:auto}.contact h2{font-size:clamp(42px,5vw,76px);line-height:1.07;letter-spacing:-2.5px;font-weight:500;margin:20px 0 28px}.contact .eyebrow:before{background:#e7b8a2}.contact .button{margin-top:10px}.contact-details{align-self:end;display:grid;grid-template-columns:1fr;gap:22px}.contact-details small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:2px;color:#d7e2d6;margin-bottom:6px}.contact-details a{text-underline-offset:5px;overflow-wrap:anywhere}.contact-details address{font-style:normal}.contact-end{border-top:1px solid #ffffff40;margin:45px auto 0;max-width:1320px;padding-top:23px;display:flex;justify-content:space-between;gap:20px;font-size:12px}.credits{padding:26px 6% 95px;font-size:11px;color:#4a544b;max-width:1500px;margin:auto}.credits details{margin-top:10px}.credits summary{cursor:pointer;display:inline-block;text-decoration:underline;text-underline-offset:3px}.credit-links{max-width:1000px;margin-top:12px;line-height:2}.credit-links a{margin-right:12px}.mobile-call{display:none}
+dialog{border:0;padding:0;width:min(1200px,96vw);max-width:1200px;max-height:94svh;background:var(--paper);color:var(--ink);overflow:auto}dialog::backdrop{background:#091a15eF}.lightbox-top{display:flex;justify-content:space-between;align-items:center;padding:12px 18px}.lightbox-top span{font-size:12px}.close-button{border:1px solid var(--line);background:transparent;width:44px;height:44px;font-size:25px}.lightbox-image{width:100%;height:min(65svh,740px);object-fit:contain;background:#11261f}.lightbox-bottom{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:20px}.lightbox-bottom h2{font-size:21px;font-weight:500}.lightbox-bottom p{font-size:12px;margin-top:5px}.lightbox-controls{display:flex;gap:8px}.lightbox-controls button{width:46px;height:46px;border:1px solid var(--line);background:transparent;font-size:23px}.lightbox-controls button:hover,.close-button:hover{background:var(--sage)}.lightbox-image.changing{animation:crossfade .22s ease-out}@keyframes crossfade{from{opacity:.5}to{opacity:1}}
+@media(min-width:1000px){.reveal{clip-path:inset(0);transition:clip-path .85s cubic-bezier(.2,.7,.2,1)}.reveal.waiting{clip-path:inset(0 0 9% 0)}}
+@media(max-width:800px){.header-location{display:none}.brand{margin-right:auto}.header-inner{gap:12px;height:62px}.cover{height:720px;min-height:600px}.cover h1{font-size:12.1vw;margin-top:34px}.editorial-intro{grid-template-columns:1fr;gap:25px;padding:55px 0 40px}.intro-statement{letter-spacing:-1px}.story-copy{gap:35px;padding:35px 0 65px}.detail-story{gap:6%;padding-top:55px;padding-bottom:55px}.detail-image .image-window{height:430px}.detail-content h2{letter-spacing:-1px}.journal{padding-top:65px;padding-bottom:65px}.journal-heading{align-items:start;flex-direction:column;gap:20px}.journal-heading p{max-width:440px}.journal-entry{grid-template-columns:38px 1fr;gap:12px}.journal-entry:nth-child(even){padding-left:5%}.photo-button img{height:370px}.journal-entry:nth-child(even) .photo-button img{height:330px}.contact-main{gap:40px}.contact h2{letter-spacing:-1.5px}}
+@media(max-width:540px){body{font-size:16px}.notice{font-size:10px;padding:7px 16px}.header-inner{padding:0 18px;gap:10px;height:60px}.brand{font-size:17px;letter-spacing:-.7px}.header-contact{padding:8px 12px;font-size:12px}.menu-toggle{height:38px;width:38px}.cover{height:calc(90svh - 100px);min-height:535px;max-height:740px}.cover-inner{padding:24px 21px}.cover-top{font-size:9px;letter-spacing:1.3px}.cover h1{font-size:clamp(39px,12vw,65px);letter-spacing:-.065em;margin-top:30px}.cover>img{object-position:47% center}.cover-copy{padding-top:32px}.cover h2{font-size:43px;letter-spacing:-1.6px;max-width:270px}.cover-copy p{font-size:15px;max-width:270px;margin:15px 0 22px}.cover-bottom{font-size:10px;margin-top:26px}.cover-bottom span{max-width:190px}.cover-bottom a{white-space:nowrap}.wrap{padding:0 21px}.eyebrow{font-size:10px;letter-spacing:1.5px}.intro-statement{font-size:32px;line-height:1.23}.wide-photo{height:370px}.caption{font-size:10px;gap:15px}.caption span:last-child{max-width:135px}.story-copy{grid-template-columns:1fr;gap:23px}.story-title{font-size:36px;max-width:310px}.copy{max-width:none}.detail-story{padding:42px 21px;display:flex;flex-direction:column;gap:35px}.detail-content{max-width:none}.detail-content h2{font-size:42px;margin:24px 0 20px}.detail-content p{max-width:none}.detail-image .image-window{height:340px}.journal-heading h2{font-size:55px}.filter-row{align-items:start;flex-direction:column;gap:10px;margin-bottom:32px;padding:12px 0}.filters{gap:3px}.filter{padding:7px 13px}.result-count{padding-left:13px}.journal-entry,.journal-entry:nth-child(even){padding-left:0;grid-template-columns:26px 1fr;gap:10px;margin-bottom:38px}.entry-number{font-size:10px}.photo-button img,.journal-entry:nth-child(even) .photo-button img{height:300px}.entry-meta{gap:10px;flex-direction:column}.entry-meta h3{font-size:21px;line-height:1.2}.entry-category{padding:0;font-size:9px;letter-spacing:1.3px}.photo-button:after{width:38px;height:38px;right:12px;bottom:12px;font-size:20px}.contact{padding:45px 21px 28px}.contact-main{grid-template-columns:1fr;gap:35px}.contact h2{font-size:49px}.contact-details{gap:20px}.contact-end{font-size:11px;flex-wrap:wrap;margin-top:30px}.credits{padding:23px 21px 100px}.mobile-call{position:fixed;bottom:12px;left:18px;right:18px;z-index:25;display:flex;justify-content:space-between;align-items:center;background:var(--orange);color:#fff;padding:13px 20px;box-shadow:0 5px 24px #0003;text-decoration:none;border:1px solid #ffffff40;min-height:50px;font-size:14px;font-weight:600}.mobile-call span:last-child{font-size:12px;font-weight:400}.lightbox-bottom{padding:15px;gap:12px}.lightbox-bottom h2{font-size:17px}.lightbox-controls button{width:40px;height:44px}.lightbox-image{height:55svh}.lightbox-controls{gap:4px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal.waiting{clip-path:none}.photo-button:hover img,.wide-photo:hover img{transform:none}}
+</style>
+</head>
+<body>
+<div class="notice" lang="en">Independent website concept by LeadSky for Bike'n More. Not their official website.</div>
+<header class="header">
+<div class="header-inner">
+<a class="brand" href="#pocetak" aria-label="Bike'n More — početak">Bike'n More<span style="color:var(--orange)">.</span></a>
+<span class="header-location">Podgorica · Crna Gora</span>
+<a class="header-contact" href="#kontakt">Kontakt ↗</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label="Otvori meni"><span></span><span></span></button>
+</div>
+<nav class="nav" id="navigation" aria-label="Glavna navigacija" hidden>
+<a href="#pocetak">Početak <span aria-hidden="true">↗</span></a>
+<a href="#prica">Biciklistička priča</a>
+<a href="#detalji">Izbliza</a>
+<a href="#journal">Foto dnevnik</a>
+<a href="#kontakt">Kontakt</a>
+</nav>
+</header>
+<main>
+<section class="cover" id="pocetak" aria-labelledby="cover-name">
+<img src="img/stock-9.jpg" alt="Narandžasti bicikl parkiran na gradskoj ulici — ilustrativna stock fotografija" width="1920" height="1280" fetchpriority="high">
+<div class="cover-inner">
+<div class="cover-top"><span>Na dva točka.</span><span>Podgorica, ME</span></div>
+<h1 id="cover-name">Bike'n More</h1>
+<div class="cover-copy">
+<h2>Bicikli u<br>Podgorici.</h2>
+<p>Za sljedeću vožnju, počnite razgovorom. Obratite se direktno Bike'n More.</p>
+<a class="button" href="#kontakt">Kontakt <span class="arrow" aria-hidden="true">↗</span></a>
+</div>
+<div class="cover-bottom"><span>Fotografija za inspiraciju.<br>Nije prikaz ponude ili lokacije.</span><a href="#prica">Istražite priču ↓</a></div>
+</div>
+</section>
+
+<section class="wrap" id="prica" aria-labelledby="story-heading">
+<div class="editorial-intro">
+<p class="eyebrow">01 / Biciklistička priča</p>
+<h2 class="intro-statement" id="story-heading">Drugi pogled na grad.<br>Drugačiji <em>ritam dana.</em></h2>
+</div>
+<figure>
+<div class="wide-photo reveal"><img src="img/stock-6.jpg" alt="Zelena aleja sa stazom kroz drveće — biciklistička inspiracija, nije lokacija poslovnice" width="1600" height="1067" loading="lazy"></div>
+<figcaption class="caption"><span>INSPIRACIJA / Put kroz zelenilo</span><span>Stock fotografija · 652234 / Pixabay</span></figcaption>
+</figure>
+<div class="story-copy">
+<h3 class="story-title">Vaš sljedeći pravac počinje ovdje.</h3>
+<div class="copy"><p>Bike'n More je biciklistička adresa u Podgorici. Pronađite ih u Ulici bratstva i jedinstva 55 ili se javite telefonom.</p><p>Za aktuelnu ponudu i dostupnost bicikala, pitajte direktno. Tako dobijate informacije koje su vam potrebne prije dolaska.</p><a class="text-link" href="tel:+38268182028">Pozovite Bike'n More <span aria-hidden="true">↗</span></a></div>
+</div>
+</section>
+
+<section class="detail-story" id="detalji" aria-labelledby="details-heading">
+<div class="detail-content">
+<p class="eyebrow">02 / Izbliza</p>
+<h2 id="details-heading">Mali detalji.<br>Cijela vožnja.</h2>
+<p>Lanac, zupčanici, upravljač. Izbliza, bicikl otkriva sasvim drugu perspektivu.</p>
+<p style="margin-top:18px">Ovaj fotografski izbor istražuje biciklizam. Za informacije o proizvodima i uslugama Bike'n More, javite se njihovom timu.</p>
+<a class="text-link" href="#journal">Otvorite foto dnevnik <span aria-hidden="true">↓</span></a>
+</div>
+<figure class="detail-image">
+<div class="image-window reveal"><img src="img/stock-3.jpg" alt="Crno-bijeli detalj biciklističkog lanca i zupčanika" width="1200" height="1200" loading="lazy"></div>
+<figcaption>STUDIJA DETALJA / Ilustrativna stock fotografija.<br>661512 / Pixabay. Nije prikaz inventara ili servisnih radova.</figcaption>
+</figure>
+</section>
+
+<section class="journal wrap" id="journal" aria-labelledby="journal-heading">
+<p class="eyebrow">03 / Vizuelne bilješke</p>
+<div class="journal-heading"><h2 id="journal-heading">Foto dnevnik.</h2><p>Grad, otvoren put i detalji između. Izaberite temu. Otvorite fotografiju za bliži pogled.</p></div>
+<div class="filter-row">
+<div class="filters" role="group" aria-label="Filtriraj fotografije">
+<button class="filter" data-filter="all" aria-pressed="true">Sve</button>
+<button class="filter" data-filter="grad" aria-pressed="false">Grad</button>
+<button class="filter" data-filter="detalji" aria-pressed="false">Detalji</button>
+<button class="filter" data-filter="voznja" aria-pressed="false">Vožnja</button>
+</div>
+<p class="result-count" aria-live="polite" aria-atomic="true">6 fotografija</p>
+</div>
+<div class="journal-list">
+<article class="journal-entry" data-category="grad">
+<span class="entry-number" aria-hidden="true">01</span>
+<div><button class="photo-button" data-title="Bicikl i gradske teksture" data-credit="Dimhou" data-source="https://pixabay.com/photos/bicycle-wall-brick-city-building-4426751/" aria-label="Otvori fotografiju: Bicikl i gradske teksture"><img src="img/stock-10.jpg" alt="Bicikl uz zid zgrade u gradu" width="1400" height="933" loading="lazy"></button><div class="entry-meta"><div><h3>Bicikl i gradske teksture</h3><p>Stock inspiracija · Dimhou / Pixabay</p></div><span class="entry-category">Grad / 01</span></div></div>
+</article>
+<article class="journal-entry" data-category="detalji">
+<span class="entry-number" aria-hidden="true">02</span>
+<div><button class="photo-button" data-title="Mehanika u fokusu" data-credit="markusspiske" data-source="https://pixabay.com/photos/road-bike-gear-vintage-594164/" aria-label="Otvori fotografiju: Mehanika u fokusu"><img src="img/stock-4.jpg" alt="Detalj pogona i lanca bicikla" width="1400" height="933" loading="lazy"></button><div class="entry-meta"><div><h3>Mehanika u fokusu</h3><p>Stock inspiracija · markusspiske / Pixabay</p></div><span class="entry-category">Detalji / 02</span></div></div>
+</article>
+<article class="journal-entry" data-category="voznja">
+<span class="entry-number" aria-hidden="true">03</span>
+<div><button class="photo-button" data-title="U ritmu pedala" data-credit="KIMDAEJEUNG" data-source="https://pixabay.com/photos/man-riding-cycling-bike-exercise-8046025/" aria-label="Otvori fotografiju: U ritmu pedala"><img src="img/stock-5.jpg" alt="Biciklista u vožnji kroz otvoreni predio" width="1400" height="933" loading="lazy"></button><div class="entry-meta"><div><h3>U ritmu pedala</h3><p>Stock inspiracija · KIMDAEJEUNG / Pixabay</p></div><span class="entry-category">Vožnja / 03</span></div></div>
+</article>
+<article class="journal-entry" data-category="detalji">
+<span class="entry-number" aria-hidden="true">04</span>
+<div><button class="photo-button" data-title="Pogled sa upravljača" data-credit="matthiasboeckel" data-source="https://pixabay.com/photos/bicycle-handlebar-to-go-biking-5262093/" aria-label="Otvori fotografiju: Pogled sa upravljača"><img src="img/stock-7.jpg" alt="Upravljač bicikla i ručice kočnica izbliza" width="1400" height="933" loading="lazy"></button><div class="entry-meta"><div><h3>Pogled sa upravljača</h3><p>Stock inspiracija · matthiasboeckel / Pixabay</p></div><span class="entry-category">Detalji / 04</span></div></div>
+</article>
+<article class="journal-entry" data-category="voznja">
+<span class="entry-number" aria-hidden="true">05</span>
+<div><button class="photo-button" data-title="Kad dan uspori" data-credit="zhivko" data-source="https://pixabay.com/photos/girl-bicycle-bike-sunset-1906405/" aria-label="Otvori fotografiju: Kad dan uspori"><img src="img/stock-2.jpg" alt="Silueta osobe sa biciklom u zalazak sunca" width="1400" height="933" loading="lazy"></button><div class="entry-meta"><div><h3>Kad dan uspori</h3><p>Stock inspiracija · zhivko / Pixabay</p></div><span class="entry-category">Vožnja / 05</span></div></div>
+</article>
+<article class="journal-entry" data-category="detalji">
+<span class="entry-number" aria-hidden="true">06</span>
+<div><button class="photo-button" data-title="Linije koje vode" data-credit="matthiasboeckel" data-source="https://pixabay.com/photos/bicycle-handlebar-wheel-4719017/" aria-label="Otvori fotografiju: Linije koje vode"><img src="img/stock-8.jpg" alt="Fotografski detalj upravljača i točka bicikla" width="1400" height="933" loading="lazy"></button><div class="entry-meta"><div><h3>Linije koje vode</h3><p>Stock inspiracija · matthiasboeckel / Pixabay</p></div><span class="entry-category">Detalji / 06</span></div></div>
+</article>
+</div>
+<p style="font-size:12px;max-width:600px;margin-top:35px;border-top:1px solid var(--line);padding-top:18px">Sve fotografije u dnevniku su ilustrativne stock fotografije. Ne prikazuju proizvode, zaposlene, poslovnicu ili radove Bike'n More.</p>
+</section>
+
+<section class="contact" id="kontakt" aria-labelledby="contact-heading">
+<div class="contact-main">
+<div><p class="eyebrow">Bike'n More / Podgorica</p><h2 id="contact-heading">Vidimo se<br>na dva točka.</h2><a class="button" href="tel:+38268182028">Pozovite nas <span class="arrow" aria-hidden="true">↗</span></a></div>
+<div class="contact-details">
+<div><small>Telefon</small><a href="tel:+38268182028">+382 68 182 028</a></div>
+<div><small>E-mail</small><a href="mailto:info@bikenmore.me">info@bikenmore.me</a></div>
+<div><small>Adresa</small><address>Bratstva i jedinstva 55<br>81000 Podgorica, Crna Gora</address><a href="https://www.google.com/maps/search/?api=1&amp;query=Bike%27n%20More%2055%20Bratstva%20i%20Jedinstva%20Podgorica" target="_blank" rel="noopener noreferrer" style="font-size:13px;display:inline-block;margin-top:7px">Otvorite mapu ↗</a></div>
+</div>
+</div>
+<div class="contact-end"><span>Za aktuelnu ponudu i radno vrijeme, pozovite prije dolaska.</span><a href="https://www.bikenmore.me/" target="_blank" rel="noopener noreferrer">Zvanični sajt ↗</a></div>
+</section>
+</main>
+<footer class="credits">
+<div style="display:flex;justify-content:space-between;gap:20px"><span>Concept by LeadSky</span><span>Independent concept · Not an official website</span></div>
+<details><summary>Photo credits &amp; image permissions</summary>
+<div class="credit-links" lang="en">Illustrative photography under the Pixabay Content License. Images do not represent Bike'n More's premises, staff, inventory or work.
+<br>
+<a href="https://pixabay.com/photos/bike-bicycle-street-urban-pavement-8337261/" target="_blank" rel="noopener noreferrer">Cover: pen_ash / Pixabay</a>
+<a href="https://pixabay.com/photos/avenue-trees-path-nature-landscape-5314089/" target="_blank" rel="noopener noreferrer">Tree avenue: 652234 / Pixabay</a>
+<a href="https://pixabay.com/photos/gears-bicycle-chain-transmission-2291916/" target="_blank" rel="noopener noreferrer">Chain detail: 661512 / Pixabay</a>
+<a href="https://pixabay.com/photos/bicycle-wall-brick-city-building-4426751/" target="_blank" rel="noopener noreferrer">City bicycle: Dimhou / Pixabay</a>
+<a href="https://pixabay.com/photos/road-bike-gear-vintage-594164/" target="_blank" rel="noopener noreferrer">Drivetrain: markusspiske / Pixabay</a>
+<a href="https://pixabay.com/photos/man-riding-cycling-bike-exercise-8046025/" target="_blank" rel="noopener noreferrer">Cyclist: KIMDAEJEUNG / Pixabay</a>
+<a href="https://pixabay.com/photos/bicycle-handlebar-to-go-biking-5262093/" target="_blank" rel="noopener noreferrer">Handlebars: matthiasboeckel / Pixabay</a>
+<a href="https://pixabay.com/photos/girl-bicycle-bike-sunset-1906405/" target="_blank" rel="noopener noreferrer">Sunset: zhivko / Pixabay</a>
+<a href="https://pixabay.com/photos/bicycle-handlebar-wheel-4719017/" target="_blank" rel="noopener noreferrer">Wheel detail: matthiasboeckel / Pixabay</a>
+<a href="https://pixabay.com/service/license-summary/" target="_blank" rel="noopener noreferrer">Pixabay licence</a>
+</div>
+</details>
+</footer>
+<a class="mobile-call" href="tel:+38268182028"><span>Pozovite Bike'n More ↗</span><span>+382 68 182 028</span></a>
+
+<dialog id="lightbox" aria-labelledby="lightbox-title" aria-describedby="lightbox-description">
+<div class="lightbox-top"><span id="lightbox-position" aria-live="polite"></span><button class="close-button" aria-label="Zatvori fotografiju">×</button></div>
+<img class="lightbox-image" alt="" width="1400" height="933">
+<div class="lightbox-bottom">
+<div><h2 id="lightbox-title"></h2><p id="lightbox-description">Ilustrativna stock fotografija. Nije prikaz poslovanja Bike'n More.</p><p><a id="lightbox-credit" href="https://pixabay.com/" target="_blank" rel="noopener noreferrer">Izvor fotografije</a></p></div>
+<div class="lightbox-controls"><button id="previous" aria-label="Prethodna fotografija">←</button><button id="next" aria-label="Sljedeća fotografija">→</button></div>
+</div>
+</dialog>
+
+<script>
+(()=>{
+"use strict";
+const menuButton=document.querySelector(".menu-toggle"),navigation=document.querySelector(".nav");
+function closeMenu(){menuButton.setAttribute("aria-expanded","false");menuButton.setAttribute("aria-label","Otvori meni");navigation.hidden=true}
+menuButton.addEventListener("click",()=>{const opening=menuButton.getAttribute("aria-expanded")!=="true";menuButton.setAttribute("aria-expanded",String(opening));menuButton.setAttribute("aria-label",opening?"Zatvori meni":"Otvori meni");navigation.hidden=!opening});
+navigation.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+document.addEventListener("click",e=>{if(!e.target.closest(".header"))closeMenu()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!navigation.hidden){closeMenu();menuButton.focus()}});
+
+const entries=[...document.querySelectorAll(".journal-entry")],filters=[...document.querySelectorAll(".filter")],count=document.querySelector(".result-count");
+filters.forEach(button=>button.addEventListener("click",()=>{
+filters.forEach(b=>b.setAttribute("aria-pressed",String(b===button)));
+entries.forEach(entry=>entry.hidden=button.dataset.filter!=="all"&&entry.dataset.category!==button.dataset.filter);
+const total=entries.filter(e=>!e.hidden).length;count.textContent=total+" "+(total===1?"fotografija":total<5?"fotografije":"fotografija");
+}));
+
+const dialog=document.getElementById("lightbox"),large=dialog.querySelector(".lightbox-image"),title=document.getElementById("lightbox-title"),credit=document.getElementById("lightbox-credit"),position=document.getElementById("lightbox-position");
+let active=[],current=0,opener=null;
+function render(){
+const button=active[current],image=button.querySelector("img");
+large.src=image.getAttribute("src");large.alt=image.alt;
+title.textContent=button.dataset.title;credit.textContent=button.dataset.credit+" / Pixabay ↗";credit.href=button.dataset.source;
+position.textContent=String(current+1).padStart(2,"0")+" / "+String(active.length).padStart(2,"0");
+large.classList.remove("changing");void large.offsetWidth;large.classList.add("changing");
+}
+function step(n){current=(current+n+active.length)%active.length;render()}
+document.querySelectorAll(".photo-button").forEach(button=>button.addEventListener("click",()=>{
+opener=button;active=entries.filter(e=>!e.hidden).map(e=>e.querySelector(".photo-button"));current=active.indexOf(button);render();dialog.showModal();document.body.classList.add("locked");dialog.querySelector(".close-button").focus();
+}));
+dialog.querySelector(".close-button").addEventListener("click",()=>dialog.close());
+document.getElementById("previous").addEventListener("click",()=>step(-1));
+document.getElementById("next").addEventListener("click",()=>step(1));
+dialog.addEventListener("close",()=>{document.body.classList.remove("locked");if(opener)opener.focus({preventScroll:true})});
+dialog.addEventListener("click",e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close()}});
+dialog.addEventListener("keydown",e=>{
+if(e.key==="ArrowRight"){e.preventDefault();step(1)}
+if(e.key==="ArrowLeft"){e.preventDefault();step(-1)}
+if(e.key==="Tab"){
+const elements=[...dialog.querySelectorAll("button,a[href]")],first=elements[0],last=elements[elements.length-1];
+if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+}
+});
+let startX=0,startY=0;
+large.addEventListener("touchstart",e=>{startX=e.changedTouches[0].clientX;startY=e.changedTouches[0].clientY},{passive:true});
+large.addEventListener("touchend",e=>{const dx=e.changedTouches[0].clientX-startX,dy=e.changedTouches[0].clientY-startY;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5)step(dx<0?1:-1)},{passive:true});
+
+const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+if("IntersectionObserver" in window&&!reduced.matches){
+const observer=new IntersectionObserver(items=>items.forEach(item=>{if(item.isIntersecting){item.target.classList.remove("waiting");observer.unobserve(item.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>{el.classList.add("waiting");observer.observe(el)});
+reduced.addEventListener("change",e=>{if(e.matches){document.querySelectorAll(".waiting").forEach(el=>el.classList.remove("waiting"));observer.disconnect()}});
+}
+})();
+</script>
+</body>
+</html>
