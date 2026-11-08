@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFF8DF">
+<title>Taqueria Danny · Louisville · Independent Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fff8df;--red:#ac291f;--green:#26382d;--gold:#e8bc50;--line:rgba(38,56,45,.23);--display:"Barlow Condensed",Impact,sans-serif;--body:"Public Sans",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:110px}body{margin:0;background:var(--paper);color:var(--green);font-family:var(--body);font-size:15px;line-height:1.65}button,a{-webkit-tap-highlight-color:transparent}button,input{font:inherit}button,a{touch-action:manipulation}a{color:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}a:focus-visible,button:focus-visible{outline:3px solid var(--gold);outline-offset:5px}::selection{background:var(--gold);color:var(--green)}.notice{padding:7px 18px;background:var(--green);color:var(--paper);font-size:10px;line-height:1.5;text-align:center;position:relative;z-index:30}.header{height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 4%;border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:25}.brand{text-decoration:none;font-family:var(--display);font-size:27px;font-weight:800;letter-spacing:-.5px;white-space:nowrap}.brand span{color:var(--red)}.header-actions{display:flex;align-items:center;gap:19px}.small-cta{font-size:12px;font-weight:700;text-decoration:none;border-bottom:1px solid var(--red);padding:6px 0;color:var(--red)}.menu-toggle{border:1px solid var(--line);background:none;width:42px;height:38px;display:grid;place-content:center;gap:5px}.menu-toggle i{display:block;width:17px;height:2px;background:var(--green);transition:transform .25s}.menu-toggle[aria-expanded=true] i:first-child{transform:translateY(3.5px) rotate(45deg)}.menu-toggle[aria-expanded=true] i:last-child{transform:translateY(-3.5px) rotate(-45deg)}.menu{position:absolute;top:68px;right:0;background:var(--green);color:var(--paper);width:min(430px,100%);padding:25px 32px 32px;box-shadow:0 20px 35px #0002}.menu[hidden]{display:none}.menu a{display:flex;justify-content:space-between;text-decoration:none;font-family:var(--display);font-size:34px;border-bottom:1px solid #fff4;padding:9px 0}.menu small{font-family:var(--body);font-size:11px;align-self:center}
+.photo-side{position:fixed;left:0;top:68px;bottom:0;width:48%;background:var(--green);overflow:hidden;z-index:0}.photo-side img{position:absolute;width:100%;height:100%;object-fit:cover;transition:opacity .8s ease;opacity:0}.photo-side img.active{opacity:1}.photo-shade{position:absolute;inset:0;background:linear-gradient(transparent 50%,rgba(0,0,0,.7))}.photo-label{position:absolute;bottom:39px;left:9%;right:9%;color:white;display:flex;justify-content:space-between;align-items:end;gap:25px}.photo-label strong{font-family:var(--display);font-size:42px;line-height:1}.photo-label small{font-size:10px;max-width:150px;text-align:right;line-height:1.6}.photo-index{position:absolute;top:34px;left:9%;background:var(--paper);padding:7px 13px;font-size:10px;font-weight:700;letter-spacing:2px}
+main{margin-left:48%;position:relative}.chapter{padding:70px 10%;border-bottom:1px solid var(--line);scroll-margin-top:68px}.chapter-label{display:flex;align-items:center;gap:15px;font-size:10px;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:32px}.chapter-label span{font-family:var(--display);font-size:21px;letter-spacing:0}.chapter-label:after{content:"";height:1px;background:currentColor;opacity:.3;flex:1;margin-left:10px}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--display);font-weight:700;line-height:.95;letter-spacing:-1px}h1{font-size:clamp(70px,7.8vw,124px);margin-bottom:28px}h1 em{font-style:normal;color:var(--red)}h2{font-size:clamp(49px,5vw,76px);margin-bottom:24px}h3{font-size:36px;margin-bottom:12px}.intro{min-height:calc(100svh - 100px);display:flex;flex-direction:column;justify-content:center;padding-top:50px;padding-bottom:42px}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700}.intro p{max-width:340px;font-size:16px}.button{border:1px solid var(--red);background:var(--red);color:#fff8df;display:inline-flex;justify-content:space-between;align-items:center;gap:30px;padding:16px 22px;text-decoration:none;font-weight:700;font-size:13px;min-height:52px;transition:background .2s,transform .2s;align-self:flex-start}.button:hover{background:#872018;transform:translateY(-2px)}.button .arrow{font-size:21px;line-height:1}.intro-foot{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px;margin-top:45px;gap:12px;font-size:10px;letter-spacing:1px;text-transform:uppercase}.mobile-hero{display:none}.intro .chapter-label{margin-bottom:27px}.lede{max-width:380px;margin-bottom:29px}.food-feature{margin:35px 0 25px}.food-feature img{width:100%;aspect-ratio:1.35;object-fit:cover;display:block}.food-caption{padding-top:12px;font-size:10px;display:flex;justify-content:space-between;gap:20px}.editorial-note{border-left:3px solid var(--red);padding-left:19px;font-size:13px;margin-top:28px}.food-link{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--green);padding:15px 0;text-decoration:none;font-weight:700;font-size:13px}.quiz-section{background:var(--red);color:var(--paper)}.quiz-section .chapter-label{color:var(--paper)}.quiz-section h2{max-width:350px}.quiz-intro{font-size:13px;opacity:.95;max-width:370px}.quiz{margin-top:36px}.quiz-status{display:flex;justify-content:space-between;font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:13px}.progress{height:3px;background:#fff3;margin-bottom:28px;overflow:hidden}.progress span{display:block;height:100%;background:var(--gold);width:33.333%;transition:width .35s}.question{font-size:34px;line-height:1.05;letter-spacing:0;margin-bottom:20px}.answers{display:grid;gap:10px}.answer{width:100%;border:1px solid #fff6;background:transparent;color:var(--paper);padding:16px;text-align:left;display:flex;align-items:center;gap:15px;font-size:13px;transition:background .2s,color .2s}.answer:before{content:"";width:16px;height:16px;border:1px solid currentColor;border-radius:50%;flex-shrink:0}.answer:hover{background:#ffffff13}.answer[aria-pressed=true]{background:var(--paper);color:var(--red);border-color:var(--paper)}.answer[aria-pressed=true]:before{background:var(--red);box-shadow:inset 0 0 0 4px var(--paper)}.quiz-nav{display:flex;align-items:center;justify-content:space-between;margin-top:24px;gap:15px}.text-button{background:none;border:0;color:inherit;text-decoration:underline;text-underline-offset:5px;padding:10px 0;font-size:12px}.next{background:var(--paper);color:var(--red);border-color:var(--paper);min-height:48px}.next:hover{background:var(--gold);color:var(--green)}.quiz-disclosure{font-size:10px;line-height:1.6;margin-top:25px;margin-bottom:0}.result img{width:100%;aspect-ratio:1.7;object-fit:cover;margin-bottom:19px}.result h3{font-size:43px}.result p{font-size:13px}.result .button{background:var(--paper);color:var(--red);border-color:var(--paper)}.result-actions{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}.visit-grid{display:grid;gap:0;margin-top:30px}.visit-row{padding:20px 0;border-top:1px solid var(--line)}.visit-row small{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:7px}.visit-row a{font-size:20px;text-decoration:none;font-weight:600}.visit-row a:hover{text-decoration:underline}.visit-row p{margin-bottom:0;font-size:14px}.visit-art{width:100%;aspect-ratio:2;object-fit:cover;margin:25px 0 5px}.faq{margin-top:27px}details{border-top:1px solid var(--line);padding:16px 0}summary{font-size:13px;font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}summary:after{content:"+";font-size:20px;line-height:1}details[open] summary:after{content:"−"}details p{font-size:12px;margin:15px 0 0}footer{padding:35px 10% 45px;font-size:10px;line-height:1.8;background:#f3eacc}footer strong{font-size:13px}footer p{margin:12px 0}footer details{padding:10px 0}footer summary{font-size:10px}footer ul{padding-left:17px}footer a{text-underline-offset:3px}.mobile-bar{display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.reveal{transition:opacity .65s,transform .65s}.js .reveal.waiting{opacity:0;transform:translateY(22px)}[hidden]{display:none!important}
+@media(min-width:1450px){.chapter{padding-left:13%;padding-right:13%}.intro{min-height:850px}.photo-label strong{font-size:60px}}
+@media(max-width:900px) and (min-width:701px){.chapter{padding-left:7%;padding-right:7%}h1{font-size:78px}.header{padding-inline:25px}.photo-side{width:44%}main{margin-left:44%}}
+@media(max-width:700px){html{scroll-padding-top:75px}.notice{font-size:9px;padding:6px 13px}.header{height:60px;padding:0 20px}.brand{font-size:25px}.header-actions{gap:16px}.menu{top:60px}.photo-side{display:none}main{margin-left:0}.chapter{padding:45px 25px;scroll-margin-top:60px}.intro{min-height:0;padding-top:26px;padding-bottom:0;display:block}.intro .chapter-label{margin-bottom:16px;font-size:9px}.intro .eyebrow{font-size:10px;margin-bottom:12px}h1{font-size:77px;line-height:.88;margin-bottom:19px;letter-spacing:-1px}h1 em{display:block}.intro p{font-size:14px;line-height:1.6;margin-bottom:20px;max-width:310px}.button{min-height:49px;padding:13px 20px;font-size:12px}.intro-foot{margin-top:26px;padding-top:14px;font-size:9px;margin-bottom:19px}.mobile-hero{display:block;margin:0 -25px;position:relative}.mobile-hero img{display:block;width:100%;height:300px;object-fit:cover}.mobile-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.8));padding:38px 25px 17px;color:white;display:flex;justify-content:space-between;align-items:end;font-size:9px}.mobile-caption strong{font-family:var(--display);font-size:25px}.chapter-label{margin-bottom:23px}h2{font-size:57px}.lede{font-size:14px}.food-feature{margin-top:25px}.food-feature img{aspect-ratio:1.3}.quiz-section{padding-top:42px;padding-bottom:42px}.quiz-section h2{max-width:300px}.question{font-size:32px}.answer{min-height:58px}.visit-row a{font-size:19px}.visit-art{aspect-ratio:1.8}footer{padding:30px 25px 105px}.mobile-bar{position:fixed;bottom:0;left:0;right:0;display:grid;grid-template-columns:1fr 1fr;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line);gap:10px;z-index:24}.mobile-bar a{text-align:center;text-decoration:none;font-size:12px;font-weight:700;padding:11px;background:var(--red);color:var(--paper)}.mobile-bar a:last-child{background:var(--green)}.result-actions{align-items:flex-start}.visit-grid{margin-top:24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.js .reveal.waiting{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="notice">Independent website concept by LeadSky for Taqueria Danny. Not their official website.</div>
+<header class="header">
+<a class="brand" href="#start" aria-label="Taqueria Danny, start">TAQUERIA <span>DANNY</span></a>
+<div class="header-actions">
+<a class="small-cta" href="#match">Find my match ↗</a>
+<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation"><i></i><i></i></button>
+</div>
+<nav class="menu" id="navigation" aria-label="Main navigation" hidden>
+<a href="#start"><small>01</small>Start <span>↗</span></a>
+<a href="#food"><small>02</small>Food <span>↗</span></a>
+<a href="#match"><small>03</small>Find your match <span>↗</span></a>
+<a href="#visit"><small>04</small>Visit <span>↗</span></a>
+</nav>
+</header>
+<aside class="photo-side" aria-label="Illustrative food photography">
+<img src="img/stock-1.jpg" alt="Illustrative photograph of tacos with lime on a rustic table" class="active" id="scene-a" width="1200" height="1600" fetchpriority="high">
+<img src="img/stock-4.jpg" alt="Illustrative close-up of filled tacos" id="scene-b" width="1200" height="1600" loading="lazy">
+<div class="photo-shade"></div>
+<div class="photo-index">LOUISVILLE, KENTUCKY</div>
+<div class="photo-label"><strong>A LITTLE<br>FOOD FOR THOUGHT.</strong><small>Food photography is illustrative.<br>Not Taqueria Danny’s dishes.</small></div>
+</aside>
+<main>
+<section id="start" class="chapter intro" data-scene="img/stock-1.jpg">
+<div class="chapter-label"><span>01</span> A taste of Louisville</div>
+<p class="eyebrow">Mexican food · Louisville</p>
+<h1>TAQUERIA<br><em>DANNY.</em></h1>
+<p>Not sure what you’re in the mood for? Start with three quick questions. Then take your appetite to Danny’s.</p>
+<a class="button" href="#match">Find your match <span class="arrow" aria-hidden="true">↗</span></a>
+<div class="intro-foot"><span>Your next bite starts here</span><span>Explore ↓</span></div>
+<div class="mobile-hero">
+<img src="img/stock-1.jpg" width="800" height="650" alt="Illustrative stock photograph of tacos and fresh lime" fetchpriority="high">
+<div class="mobile-caption"><strong>GOOD FOOD. YOUR MOOD.</strong><span>Illustrative photography</span></div>
+</div>
+</section>
+
+<section id="food" class="chapter" data-scene="img/stock-4.jpg">
+<div class="chapter-label"><span>02</span> Food for thought</div>
+<div class="reveal">
+<h2>LET YOUR<br>APPETITE LEAD.</h2>
+<p class="lede">A quick bite or a slower lunch? A familiar favourite or something different? Start with what sounds good to you.</p>
+<figure class="food-feature">
+<img src="img/stock-2.jpg" width="900" height="680" loading="lazy" alt="Illustrative photograph of a filled tortilla with salsa">
+<figcaption class="food-caption"><span>A little inspiration for your next meal.</span><span>Stock photograph</span></figcaption>
+</figure>
+<div class="editorial-note">These photographs set the mood. For Taqueria Danny’s current dishes, prices and availability, check the restaurant’s website or call directly.</div>
+<a class="food-link" href="https://taqueria-danny.square.site/" target="_blank" rel="noopener">Explore the current website <span aria-hidden="true">↗</span></a>
+</div>
+</section>
+
+<section id="match" class="chapter quiz-section" data-scene="img/stock-4.jpg">
+<div class="chapter-label"><span>03</span> A little help deciding</div>
+<h2>THREE ANSWERS.<br>YOUR FOOD MOOD.</h2>
+<p class="quiz-intro">Find a starting point for your next meal. We’ll match your mood, then help you ask Danny’s what’s available.</p>
+<div class="quiz" id="quiz">
+<div id="questions">
+<div class="quiz-status"><span id="step-label">Question 01 / 03</span><span>Your appetite, your rules</span></div>
+<div class="progress" role="progressbar" aria-label="Quiz progress" aria-valuemin="0" aria-valuemax="3" aria-valuenow="1"><span id="progress-fill"></span></div>
+<h3 class="question" id="question-title" tabindex="-1">How are you eating today?</h3>
+<div class="answers" id="answers" role="group" aria-labelledby="question-title">
+<button class="answer" data-value="quick" aria-pressed="false">A quick bite, then I’m on my way</button>
+<button class="answer" data-value="pause" aria-pressed="false">Taking a proper lunch break</button>
+<button class="answer" data-value="company" aria-pressed="false">Making time for food and company</button>
+</div>
+<div class="quiz-nav">
+<button class="text-button" id="back" disabled>← Back</button>
+<button class="button next" id="next" disabled>Next question <span aria-hidden="true">→</span></button>
+</div>
+</div>
+<div class="result" id="result" hidden tabindex="-1" aria-live="polite"></div>
+<p class="quiz-disclosure">A food-mood quiz, not a live menu. Recommendations are dining suggestions, not confirmed dishes or dietary advice. Ask the restaurant about ingredients, allergens and availability.</p>
+<noscript><p>The interactive quiz needs JavaScript. You can still <a href="tel:+15027159859">call Taqueria Danny</a> or explore the current website.</p></noscript>
+</div>
+</section>
+
+<section id="visit" class="chapter" data-scene="img/stock-1.jpg">
+<div class="chapter-label"><span>04</span> From screen to supper</div>
+<div class="reveal">
+<h2>NEXT STOP:<br>DANNY’S.</h2>
+<p class="lede">In Louisville and thinking about your next meal? Call Taqueria Danny for current menu details, opening hours and directions.</p>
+<div class="visit-grid">
+<div class="visit-row"><small>Call the restaurant</small><a href="tel:+15027159859">+1 (502) 715-9859 ↗</a></div>
+<div class="visit-row"><small>Find out more</small><a href="https://taqueria-danny.square.site/" target="_blank" rel="noopener">Taqueria Danny’s website ↗</a></div>
+<div class="visit-row"><small>Location</small><p>Louisville, United States</p></div>
+</div>
+<img class="visit-art" src="img/stock-8.jpg" width="900" height="500" loading="lazy" alt="Illustrative stock photograph of tortillas cooking on a griddle, not the restaurant’s kitchen">
+<p style="font-size:10px;margin-top:7px">Tortilla-making inspiration. Stock photograph, not Danny’s kitchen.</p>
+<div class="faq">
+<details><summary>Can I order on this page?</summary><p>This is an independent design concept. It does not accept orders, reservations or payments. Visit Taqueria Danny’s existing website or call the restaurant to ask about ordering.</p></details>
+<details><summary>Where can I check the menu and hours?</summary><p>Use the restaurant’s website above or call +1 (502) 715-9859. Current menu items, prices, opening hours and the street address have not been confirmed for this concept.</p></details>
+<details><summary>Are these photographs from Taqueria Danny?</summary><p>No. All food images are licensed illustrative stock photography. They do not show the restaurant’s dishes, team, premises or kitchen.</p></details>
+</div>
+</div>
+</section>
+<footer>
+<strong>TAQUERIA DANNY · LOUISVILLE</strong>
+<p>Independent website concept. No affiliation or endorsement implied.<br>Concept by LeadSky.</p>
+<details><summary>Photography &amp; source credits</summary>
+<p>Illustrative stock photography supplied under the Pixabay Content License. Images are not representations of Taqueria Danny’s food or premises.</p>
+<ul>
+<li>JaimeAP — <a href="https://pixabay.com/photos/tacos-beef-corn-tortillas-lime-7759107/" target="_blank" rel="noopener">Tacos with lime</a></li>
+<li>JaimeAP — <a href="https://pixabay.com/photos/tortilla-food-meal-taco-salsa-3041938/" target="_blank" rel="noopener">Tortilla and salsa</a></li>
+<li>MacourtMedia — <a href="https://pixabay.com/photos/tacos-meat-food-restaurant-7994117/" target="_blank" rel="noopener">Tacos</a></li>
+<li>mfuente — <a href="https://pixabay.com/photos/costa-rica-tortilla-kitchen-food-7417791/" target="_blank" rel="noopener">Tortillas on a griddle</a></li>
+</ul>
+</details>
+<a href="#start">Back to the beginning ↑</a>
+</footer>
+</main>
+<div class="mobile-bar" aria-label="Quick actions"><a href="#match">Find your match ↗</a><a href="tel:+15027159859">Call Danny’s ↗</a></div>
+<script>
+(function(){
+"use strict";
+document.documentElement.classList.add("js");
+const toggle=document.querySelector(".menu-toggle"),menu=document.querySelector(".menu");
+function closeMenu(returnFocus){menu.hidden=true;toggle.setAttribute("aria-expanded","false");toggle.setAttribute("aria-label","Open navigation");if(returnFocus)toggle.focus()}
+toggle.addEventListener("click",()=>{const opening=menu.hidden;menu.hidden=!opening;toggle.setAttribute("aria-expanded",String(opening));toggle.setAttribute("aria-label",opening?"Close navigation":"Open navigation")});
+menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>closeMenu(false)));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!menu.hidden)closeMenu(true)});
+document.addEventListener("click",e=>{if(!menu.hidden&&!e.target.closest(".header"))closeMenu(false)});
+const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+if("IntersectionObserver" in window){
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove("waiting");revealObserver.unobserve(entry.target)}}),{threshold:.08});
+document.querySelectorAll(".reveal").forEach(el=>{if(!reduced.matches){el.classList.add("waiting");revealObserver.observe(el)}});
+const sceneA=document.getElementById("scene-a"),sceneB=document.getElementById("scene-b");
+const sceneObserver=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting&&window.innerWidth>700){const second=entry.target.dataset.scene==="img/stock-4.jpg";sceneA.classList.toggle("active",!second);sceneB.classList.toggle("active",second)}})},{rootMargin:"-25% 0px -45% 0px",threshold:0});
+document.querySelectorAll("[data-scene]").forEach(el=>sceneObserver.observe(el));
+}
+const questions=[
+{title:"How are you eating today?",answers:[["quick","A quick bite, then I’m on my way"],["pause","Taking a proper lunch break"],["company","Making time for food and company"]]},
+{title:"What kind of food mood?",answers:[["familiar","Something familiar and comforting"],["curious","Something I haven’t tried before"],["help","I’d like the restaurant’s suggestion"]]},
+{title:"How hungry are you?",answers:[["light","Just a little hungry"],["meal","Ready for a meal"],["big","I’ve worked up an appetite"]]}
+];
+let step=0,choices=[null,null,null];
+try{const saved=JSON.parse(sessionStorage.getItem("danny-mood-v1"));if(Array.isArray(saved)&&saved.length===3)choices=saved.map((v,i)=>questions[i].answers.some(a=>a[0]===v)?v:null)}catch(e){}
+const answers=document.getElementById("answers"),title=document.getElementById("question-title"),next=document.getElementById("next"),back=document.getElementById("back"),questionPanel=document.getElementById("questions"),result=document.getElementById("result");
+function save(){try{sessionStorage.setItem("danny-mood-v1",JSON.stringify(choices))}catch(e){}}
+function render(focus){
+questionPanel.hidden=false;result.hidden=true;
+document.getElementById("step-label").textContent="Question 0"+(step+1)+" / 03";
+document.getElementById("progress-fill").style.width=((step+1)/3*100)+"%";
+document.querySelector(".progress").setAttribute("aria-valuenow",String(step+1));
+title.textContent=questions[step].title;
+answers.replaceChildren();
+questions[step].answers.forEach(([value,label])=>{const button=document.createElement("button");button.className="answer";button.type="button";button.dataset.value=value;button.textContent=label;button.setAttribute("aria-pressed",String(choices[step]===value));button.addEventListener("click",()=>{choices[step]=value;save();answers.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));next.disabled=false});answers.appendChild(button)});
+back.disabled=step===0;next.disabled=!choices[step];
+next.innerHTML=step===2?'See my match <span aria-hidden="true">↗</span>':'Next question <span aria-hidden="true">→</span>';
+if(focus)title.focus({preventScroll:true});
+}
+function showResult(){
+const appetite=choices[2],mood=choices[1],occasion=choices[0];
+const heading=appetite==="light"?"THE LITTLE-BITE MOOD.":appetite==="big"?"THE PROPERLY-HUNGRY MOOD.":"THE LUNCH-BREAK MOOD.";
+const first=appetite==="light"?"Ask Danny’s which smaller options are available today.":appetite==="big"?"Ask Danny’s which current dishes they recommend for a bigger appetite.":"Ask Danny’s what they recommend for a satisfying meal today.";
+const second=mood==="curious"?"Mention that you’d like to try something new.":mood==="familiar"?"Tell them you’re in the mood for something familiar.":"Let the restaurant guide you through its current options.";
+const third=occasion==="quick"?"If you’re short on time, check preparation times before ordering.":occasion==="company"?"If you’re coming with others, ask about seating and ordering options.":"Check opening hours before heading over.";
+result.innerHTML='<p class="eyebrow">Your food-mood match</p><h3>'+heading+'</h3><p>'+first+" "+second+" "+third+'</p><div class="result-actions"><a class="button" href="tel:+15027159859">Call about your match <span aria-hidden="true">↗</span></a><button class="text-button" id="restart">Start again ↺</button></div><p style="font-size:10px;margin:18px 0 0">This is a dining suggestion. No specific menu item or availability is confirmed.</p>';
+questionPanel.hidden=true;result.hidden=false;result.focus({preventScroll:true});
+document.getElementById("restart").addEventListener("click",()=>{choices=[null,null,null];step=0;save();render(true)});
+}
+next.addEventListener("click",()=>{if(!choices[step])return;if(step<2){step++;render(true)}else showResult()});
+back.addEventListener("click",()=>{if(step>0){step--;render(true)}});
+render(false);
+})();
+</script>
+</body>
+</html>
