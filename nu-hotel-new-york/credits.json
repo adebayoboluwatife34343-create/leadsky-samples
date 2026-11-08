@@ -1,0 +1,116 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://www.nuhotelbrooklyn.com/skins/skin-prodnuhotelbrooklyn/assets/desktop/images/ic-logo.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "https://d3e5p5wlt8r9gb.cloudfront.net/nuhotelbrooklyn.com-1039608083/cms/cache/v2/69a9cf78df9f1.jpg/1200x630/fit/80/e24ac72a593c16c3fe853e6523aa70dc.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "brooklyn luxury boutique hotel loft room with modern decor",
+    "description": "architecture, building, room, interior, chair, white, wood, plant, nature, tiles, floor",
+    "source": "https://pixabay.com/photos/architecture-building-room-interior-2576906/",
+    "photographer": "StockSnap",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "brooklyn luxury boutique hotel loft room with modern decor",
+    "description": "chairs, floor, furniture, indoors, interior design, lamp, parquet, room, tables, windows, rug, interiors, home interior, home furniture, interior decoration, home, house, floor, interior design, room, room, home, home, home, house, house, house, house, house",
+    "source": "https://pixabay.com/photos/chairs-floor-furniture-indoors-2181947/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "artistic hotel suite with wall mural and king bed",
+    "description": "bedroom, hotel room, bed, bed sheets, beddings, pillows, interiors, interior decoration, interior design, white sheets, wall art, lodging, hotel, room, bedroom, bedroom, bedroom, hotel room, bed, bed, hotel, hotel, hotel, hotel, hotel, room, room",
+    "source": "https://pixabay.com/photos/bedroom-hotel-room-bed-bed-sheets-1285156/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "artistic hotel suite with wall mural and king bed",
+    "description": "bed, hotel, luxurious, bedroom, hotel room, relax, vacation, hotel, hotel, hotel, hotel, hotel, bedroom, hotel room",
+    "source": "https://pixabay.com/photos/bed-hotel-luxurious-bedroom-4416515/",
+    "photographer": "Engin_Akyurt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "modern boutique hotel bathroom with clean design",
+    "description": "bedroom, indoors, interior design, hotel, furniture, room, bedroom, bedroom, bedroom, hotel, hotel, hotel, hotel, hotel",
+    "source": "https://pixabay.com/photos/bedroom-indoors-interior-design-3475656/",
+    "photographer": "3534679",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "modern boutique hotel bathroom with clean design",
+    "description": "bathroom, faucet, sink, tap water, shower, bathing, water, home, nature, design, interior, hotel, interior design, clean, hygiene, modern, bathroom sink, stainless steel",
+    "source": "https://pixabay.com/photos/bathroom-faucet-sink-tap-water-8688132/",
+    "photographer": "mowbraycourthotel",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "downtown brooklyn street view dusk cozy cafe",
+    "description": "dumbo, manhattan bridge, nyc, new york city, bridge, architecture, city, building, america, usa, urban, brooklyn, ny, travel, street photography, streets, infrastructures, manhattan bridge, nyc, america, usa, usa, usa, brooklyn, brooklyn, brooklyn, brooklyn, brooklyn, street photography",
+    "source": "https://pixabay.com/photos/dumbo-manhattan-bridge-nyc-5212670/",
+    "photographer": "kokygonzalez",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "downtown brooklyn street view dusk cozy cafe",
+    "description": "bridge, manhattan, architecture, new york, typical, view, photography, bridge, bridge, manhattan, manhattan, manhattan, new york, new york, new york, new york, new york, photography, photography, photography",
+    "source": "https://pixabay.com/photos/bridge-manhattan-architecture-7930004/",
+    "photographer": "Jmtd",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "hotel room service breakfast tray gourmet coffee",
+    "description": "hotel, hotel rooms, home, decoration, relax, mood, room, bed, double bed, tourist, boudoir, hotel, hotel, hotel, hotel, hotel",
+    "source": "https://pixabay.com/photos/hotel-hotel-rooms-home-decoration-1749602/",
+    "photographer": "ManuelaJaeger",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "hotel room service breakfast tray gourmet coffee",
+    "description": "coffee, beans, coffee beans, roasted, caffeine, brown, laptop wallpaper, wallpaper 4k, cool backgrounds, aroma, aromatic, hd wallpaper, enjoyment, free wallpaper, yummy, luxury items, free background, seeks, beautiful wallpaper, drink, 4k wallpaper, espresso, cappuccino, full hd wallpaper, tomorrow, 4k wallpaper 1920x1080, morning ritual, desktop backgrounds, gourmet, close up, wallpaper hd, food, windows wallpaper, coffee shop, mac wallpaper, background, wallpaper, fragrance",
+    "source": "https://pixabay.com/photos/coffee-beans-coffee-beans-roasted-5149246/",
+    "photographer": "butterflystroke",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
