@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FAF7F0">
+<title>Local Color Flowers · Baltimore · Independent Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FAF7F0;--plum:#612D4B;--green:#314C3D;--lilac:#E9DFF0;--ink:#242B25;--muted:#62665D;--line:#DCDCD0;--white:#fffdf9;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:15px;line-height:1.6;padding-bottom:82px}
+button,input,a{-webkit-tap-highlight-color:transparent}
+button,input{font:inherit}
+button,a{touch-action:manipulation}
+button{cursor:pointer}
+a{color:inherit;text-underline-offset:4px}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--plum);outline-offset:4px}
+button{color:inherit}
+img{display:block;max-width:100%;object-fit:cover}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:Fraunces,serif;font-weight:400}
+button{border:0}
+.wrap{width:min(1360px,calc(100% - 64px));margin:auto}
+.notice{padding:8px 20px;background:var(--lilac);text-align:center;font-size:11px;line-height:1.5;color:#4c2940}
+.header{position:sticky;top:0;z-index:15;background:rgba(250,247,240,.97);border-bottom:1px solid var(--line)}
+.header-inner{height:72px;display:flex;align-items:center;gap:24px}
+.brand{text-decoration:none;font-family:Fraunces,serif;font-size:23px;letter-spacing:-.8px;white-space:nowrap}
+.brand-dot{color:var(--plum)}
+.desktop-nav{display:flex;gap:26px;margin-left:auto;font-size:13px}
+.desktop-nav a{text-decoration:none}
+.header-call{border:1px solid var(--green);padding:8px 18px;text-decoration:none;border-radius:3px;font-size:13px;white-space:nowrap}
+.menu-button{background:none;font-size:13px;padding:10px 0 10px 8px;display:flex;gap:9px;align-items:center}
+.menu-icon{font-size:21px;line-height:1}
+.menu-panel{border-top:1px solid var(--line);padding:14px 0 22px}
+.menu-panel[hidden]{display:none}
+.menu-panel a{display:block;padding:10px 0;text-decoration:none;font-size:18px}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;margin-top:28px;background:#eeeade;min-height:250px;border-radius:4px;overflow:hidden}
+.hero-copy{padding:32px 40px;align-self:center}
+.eyebrow{text-transform:uppercase;font-size:10px;font-weight:700;letter-spacing:1.9px;color:var(--green)}
+h1{font-size:clamp(35px,3.6vw,53px);letter-spacing:-1.6px;line-height:1.08;margin:10px 0}
+.hero-copy>p:not(.eyebrow){font-size:14px;color:#4e574c;max-width:340px;margin-bottom:20px}
+.primary{display:inline-flex;align-items:center;justify-content:center;gap:24px;background:var(--plum);color:white;border-radius:3px;padding:12px 20px;text-decoration:none;font-size:13px;font-weight:500;min-height:46px}
+.primary:hover{background:#482037}
+.hero-visual{position:relative;min-height:250px}
+.hero-visual img{width:100%;height:100%;position:absolute;object-position:center 48%}
+.photo-label{position:absolute;bottom:12px;right:12px;background:var(--paper);padding:4px 9px;font-size:10px;color:var(--green);border-radius:2px}
+.catalogue{padding-top:44px}
+.section-top{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px}
+h2{font-size:36px;letter-spacing:-1px;line-height:1.15}
+.section-top p{font-size:13px;color:var(--muted);max-width:410px;margin-top:9px}
+.collection-note{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;color:var(--green);white-space:nowrap}
+.controls{display:flex;gap:20px;align-items:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0;margin-bottom:25px}
+.tabs{display:flex;gap:7px;overflow:auto;scrollbar-width:thin;flex:1;padding:3px}
+.tab{padding:9px 15px;border-radius:30px;background:transparent;white-space:nowrap;font-size:12px;min-height:40px}
+.tab[aria-pressed=true]{background:var(--green);color:#fff}
+.tab:hover:not([aria-pressed=true]){background:#ececE1}
+.search{display:flex;align-items:center;border:1px solid #b8beaf;border-radius:3px;background:var(--white);padding:0 12px;gap:9px;width:235px}
+.search input{width:100%;border:0;background:transparent;min-height:42px;outline:none;font-size:12px;color:var(--ink)}
+.search:focus-within{outline:2px solid var(--plum);outline-offset:2px}
+.result-line{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:14px;gap:16px}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:30px 20px}
+.card{min-width:0;animation:appear .35s var(--ease)}
+.card-button{display:block;width:100%;padding:0;background:none;text-align:left}
+.card-image{aspect-ratio:4/5;position:relative;overflow:hidden;background:#eeeadd;border-radius:3px}
+.card-image img{width:100%;height:100%;transition:transform .65s var(--ease)}
+.card-button:hover img,.card-button:focus-visible img{transform:scale(1.045)}
+.quick{position:absolute;bottom:12px;left:12px;right:12px;background:var(--white);border-radius:2px;display:flex;justify-content:space-between;padding:9px 12px;font-size:11px;opacity:0;transform:translateY(5px);transition:opacity .2s,transform .2s}
+.card-button:hover .quick,.card-button:focus-visible .quick{opacity:1;transform:none}
+.card-info{display:flex;align-items:start;gap:8px;justify-content:space-between;padding-top:13px}
+.card h3{font-size:21px;line-height:1.2;letter-spacing:-.4px}
+.card small{display:block;font-size:10px;color:var(--muted);margin-top:5px}
+.card-arrow{border:1px solid var(--line);border-radius:50%;width:28px;height:28px;display:grid;place-items:center;flex-shrink:0;font-size:16px}
+.empty{text-align:center;padding:50px 20px;border:1px solid var(--line);grid-column:1/-1}
+.empty button{margin-top:16px;text-decoration:underline;background:none;color:var(--plum)}
+.catalogue-foot{margin-top:32px;padding:15px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted);display:flex;justify-content:space-between;gap:20px}
+.info{margin-top:58px;padding:34px 0 38px;border-top:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr 1fr;gap:45px}
+.info h2{font-size:30px;margin-top:8px}
+.info h3{font-size:21px;margin-bottom:10px}
+.info p,.info a{font-size:13px}
+.info p{color:var(--muted)}
+.info-links{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;color:var(--green)}
+.enquiry{background:var(--plum);color:var(--paper);padding:38px 42px;display:flex;align-items:center;justify-content:space-between;gap:30px;border-radius:4px}
+.enquiry h2{font-size:37px;margin-bottom:10px}
+.enquiry p{font-size:13px;max-width:460px;color:#f1e4ed}
+.enquiry a{display:inline-flex;white-space:nowrap;background:var(--paper);color:var(--plum);padding:12px 20px;border-radius:3px;text-decoration:none;font-size:13px}
+footer{padding:30px 0 24px}
+.footer-line{display:flex;justify-content:space-between;gap:20px;font-size:11px;color:var(--muted)}
+footer details{font-size:10px;color:var(--muted);margin-top:18px;max-width:900px}
+footer summary{cursor:pointer;padding:6px 0}
+.credits{display:flex;gap:6px 18px;flex-wrap:wrap;margin:8px 0}
+.basket-bar{position:fixed;bottom:0;left:0;right:0;background:var(--green);color:white;z-index:20;padding:12px 0 calc(12px + env(safe-area-inset-bottom))}
+.basket-inner{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.basket-open{display:flex;align-items:center;gap:12px;background:none;color:white;text-align:left;padding:0;flex:1;min-height:40px}
+.count{display:grid;place-items:center;background:#e9dfef;color:var(--plum);border-radius:50%;width:32px;height:32px;font-weight:700;font-size:12px}
+.basket-title{font-size:12px;line-height:1.4}
+.basket-title small{display:block;font-size:10px;color:#e1e7dd}
+.basket-action{font-size:12px;margin-left:auto}
+.bar-call{color:var(--green);background:var(--paper);padding:9px 18px;text-decoration:none;border-radius:3px;font-size:12px;white-space:nowrap}
+dialog{border:0;border-radius:6px;padding:0;background:var(--paper);color:var(--ink);width:min(800px,calc(100% - 32px));max-height:90dvh;overflow:auto;box-shadow:0 25px 90px #1b1d1b40}
+dialog::backdrop{background:rgba(25,31,26,.65);backdrop-filter:blur(4px)}
+.dialog-close{position:absolute;right:12px;top:12px;z-index:2;background:var(--paper);border:1px solid var(--line);border-radius:50%;width:42px;height:42px;font-size:25px}
+.quick-layout{display:grid;grid-template-columns:1fr 1fr}
+.modal-image{width:100%;height:100%;min-height:420px;object-fit:cover}
+.modal-copy{padding:65px 30px 30px;align-self:center}
+.modal-copy h2{font-size:37px;margin:12px 0 18px}
+.modal-copy p{font-size:13px;color:var(--muted);margin-bottom:18px}
+.stock-note{border-top:1px solid var(--line);padding-top:16px;font-size:11px!important}
+.modal-copy .primary{width:100%}
+#basketDialog{width:min(560px,calc(100% - 28px))}
+.basket-content{padding:38px 28px 28px}
+.basket-content h2{padding-right:30px;font-size:32px}
+.basket-explainer{font-size:12px;color:var(--muted);margin:14px 0 22px}
+.saved-row{display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);padding:14px 0}
+.saved-row img{width:56px;height:65px;border-radius:2px}
+.saved-row h3{font-size:19px}
+.saved-row small{font-size:10px;color:var(--muted)}
+.remove{margin-left:auto;font-size:11px;padding:10px;background:none;text-decoration:underline;color:var(--plum)}
+.basket-bottom{border-top:1px solid var(--line);padding-top:20px}
+.basket-bottom .primary{width:100%}
+.basket-bottom .primary:disabled{opacity:.55;cursor:default}
+.basket-bottom p{font-size:11px;margin-top:12px;color:var(--muted)}
+#copyStatus{font-size:12px;color:var(--green);min-height:24px;margin-top:10px}
+.manual-copy{width:100%;height:140px;font:12px "DM Sans",sans-serif;padding:10px;border:1px solid var(--line);margin-top:10px}
+.toast{position:fixed;bottom:95px;left:50%;transform:translateX(-50%);background:var(--plum);color:white;z-index:40;padding:9px 18px;border-radius:30px;font-size:12px;pointer-events:none;text-align:center;width:max-content;max-width:90%}
+.toast:empty{display:none}
+.skip{position:fixed;top:-100px;left:15px;z-index:99;background:white;padding:10px}
+.skip:focus{top:10px}
+@keyframes appear{from{opacity:.5;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media(min-width:1500px){.grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:900px){
+.wrap{width:calc(100% - 40px)}
+.desktop-nav{display:none}
+.header-call{margin-left:auto}
+.hero-copy{padding:28px}
+.hero{grid-template-columns:1.2fr 1fr}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 16px}
+.controls{flex-wrap:wrap;gap:12px}.tabs{width:100%;flex-basis:100%}.search{width:100%}
+.info{gap:25px;grid-template-columns:1fr 1fr}.info-intro{grid-column:1/-1}
+.enquiry{padding:30px}.enquiry h2{font-size:30px}
+}
+@media(max-width:600px){
+body{padding-bottom:90px}
+.wrap{width:calc(100% - 32px)}
+.notice{font-size:9px;padding:6px 16px}
+.header-inner{height:58px;gap:12px}
+.brand{font-size:18px;letter-spacing:-.7px}
+.header-call{font-size:11px;padding:6px 11px}
+.menu-button{font-size:0;gap:0;padding:10px 0 10px 3px}
+.menu-icon{font-size:23px}
+.hero{margin-top:16px;min-height:213px;grid-template-columns:1fr 105px}
+.hero-copy{padding:21px 17px}
+.eyebrow{font-size:9px;letter-spacing:1.4px}
+h1{font-size:31px;letter-spacing:-1.2px;margin:8px 0}
+.hero-copy>p:not(.eyebrow){font-size:11px;margin-bottom:14px;line-height:1.5}
+.hero .primary{min-height:42px;padding:9px 13px;font-size:11px;gap:17px}
+.hero-visual{min-height:213px}
+.photo-label{font-size:8px;bottom:7px;right:6px;padding:3px 5px}
+.hero-visual img{object-position:52% center}
+.catalogue{padding-top:27px}
+.section-top{margin-bottom:16px;display:block}
+h2{font-size:29px}
+.section-top p{font-size:11px;line-height:1.6;margin-top:7px}
+.collection-note{display:none}
+.controls{padding:10px 0;margin-bottom:16px;gap:10px}
+.tab{font-size:11px;padding:8px 13px;min-height:40px}
+.search input{min-height:40px}
+.result-line{font-size:10px;margin-bottom:12px}
+.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:23px 12px}
+.card-image{aspect-ratio:3/4}
+.card h3{font-size:18px;letter-spacing:-.4px}
+.card-info{padding-top:10px}
+.card small{font-size:9px;line-height:1.5}
+.card-arrow{width:24px;height:24px;font-size:14px}
+.quick{display:none}
+.catalogue-foot{font-size:10px;display:block;margin-top:24px}
+.catalogue-foot span{display:block;margin-top:4px}
+.info{margin-top:30px;padding-top:25px;gap:25px 16px}
+.info h2{font-size:27px}.info h3{font-size:19px}.info p,.info a{font-size:11px}
+.info-links{gap:12px;margin-top:10px}
+.enquiry{display:block;padding:25px 22px}
+.enquiry h2{font-size:29px}.enquiry p{font-size:11px}.enquiry a{margin-top:20px;font-size:12px}
+.footer-line{font-size:9px;align-items:start}.footer-line span:first-child{max-width:210px}
+footer details{font-size:9px}
+.basket-bar{padding-top:9px;padding-bottom:calc(9px + env(safe-area-inset-bottom))}
+.basket-title{font-size:11px}.basket-title small{font-size:9px}
+.basket-action{font-size:11px}.bar-call{font-size:11px;padding:9px 12px}.basket-inner{gap:12px}.basket-open{gap:9px}
+.count{width:28px;height:28px;flex-shrink:0}
+.quick-layout{display:block}
+.modal-image{height:260px;min-height:0}
+.modal-copy{padding:24px}
+.modal-copy h2{font-size:31px;margin:8px 0 13px}
+.basket-content{padding:35px 20px 24px}
+.basket-content h2{font-size:29px}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation:none!important;transition:none!important}
+.card-button:hover img,.card-button:focus-visible img{transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#flowers">Skip to floral inspiration</a>
+<div class="notice">Independent website concept by LeadSky for Local Color Flowers. Not their official website.</div>
+
+<header class="header">
+<div class="wrap header-inner">
+<a class="brand" href="#top" aria-label="Local Color Flowers home">Local Color Flowers<span class="brand-dot">.</span></a>
+<nav class="desktop-nav" aria-label="Primary navigation">
+<a href="#flowers">Explore flowers</a>
+<a href="#visit">Find us</a>
+<a href="#enquire">Get in touch</a>
+</nav>
+<a class="header-call" href="tel:+14102621494">Call</a>
+<button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="menuPanel" aria-label="Open navigation menu">Menu <span class="menu-icon" aria-hidden="true">☰</span></button>
+</div>
+<nav class="menu-panel" id="menuPanel" aria-label="Full navigation" hidden>
+<div class="wrap">
+<a href="#flowers">Explore floral inspiration</a>
+<a href="#visit">Location & contact</a>
+<a href="#enquire">Make an enquiry</a>
+<button class="primary" id="menuBasket">View inspiration basket</button>
+</div>
+</nav>
+</header>
+
+<main id="top">
+<div class="wrap">
+<section class="hero" aria-labelledby="heroTitle">
+<div class="hero-copy">
+<p class="eyebrow">Baltimore, Maryland</p>
+<h1 id="heroTitle">Local Color Flowers</h1>
+<p>Flowers in Baltimore.<br>Find a colour, a feeling, a starting point.</p>
+<a class="primary" href="#flowers">Browse flowers <span aria-hidden="true">↗</span></a>
+</div>
+<div class="hero-visual">
+<img src="img/stock-9.jpg" alt="A garden-inspired floral still life outdoors" width="700" height="450" fetchpriority="high">
+<span class="photo-label">Stock inspiration</span>
+</div>
+</section>
+
+<section class="catalogue" id="flowers" aria-labelledby="collectionTitle">
+<div class="section-top">
+<div>
+<p class="eyebrow" style="margin-bottom:8px">The inspiration wall</p>
+<h2 id="collectionTitle">A little colour goes a long way.</h2>
+<p>Explore floral colours and forms. These stock photographs are inspiration, not Local Color Flowers products or confirmed availability.</p>
+</div>
+<span class="collection-note">Look closer. Save what speaks to you.</span>
+</div>
+
+<div class="controls">
+<div class="tabs" role="group" aria-label="Filter floral inspiration">
+<button class="tab" data-filter="all" aria-pressed="true">All flowers</button>
+<button class="tab" data-filter="roses" aria-pressed="false">Roses</button>
+<button class="tab" data-filter="tulips" aria-pressed="false">Tulips</button>
+<button class="tab" data-filter="details" aria-pressed="false">Garden details</button>
+</div>
+<label class="search"><span aria-hidden="true">⌕</span><input type="search" id="search" placeholder="Search colour or flower…" aria-label="Search floral inspiration"></label>
+</div>
+<div class="result-line">
+<span id="resultCount" role="status" aria-live="polite">6 floral studies</span>
+<span>Select a photograph to explore</span>
+</div>
+<div class="grid" id="grid"></div>
+<div class="catalogue-foot">
+<p>Inspiration only. No prices, stock availability or purchasing options are implied.</p>
+<span>Save a few favourites → start a conversation.</span>
+</div>
+</section>
+
+<section class="info" id="visit" aria-labelledby="visitTitle">
+<div class="info-intro">
+<p class="eyebrow">From screen to conversation</p>
+<h2 id="visitTitle">Let’s talk flowers.</h2>
+</div>
+<div>
+<h3>Local Color Flowers</h3>
+<p>3100 Brentwood Avenue<br>Baltimore, MD 21218</p>
+<div class="info-links">
+<a href="https://www.google.com/maps/search/?api=1&query=3100+Brentwood+Avenue+Baltimore+21218" target="_blank" rel="noopener">View map ↗</a>
+</div>
+</div>
+<div>
+<h3>A more personal next step.</h3>
+<p>Contact the business to discuss floral options, current availability and arrangements before visiting.</p>
+<div class="info-links">
+<a href="tel:+14102621494">410-262-1494</a>
+<a href="http://www.locoflo.com/" target="_blank" rel="noopener">Business website ↗</a>
+</div>
+</div>
+</section>
+
+<section class="enquiry" id="enquire" aria-labelledby="enquiryTitle">
+<div>
+<h2 id="enquiryTitle">Found your kind of colour?</h2>
+<p>Save your favourites in the inspiration basket. Copy your notes, then contact Local Color Flowers to ask what’s possible.</p>
+</div>
+<a href="tel:+14102621494">Talk flowers · Call ↗</a>
+</section>
+
+<footer>
+<div class="footer-line">
+<span>Local Color Flowers · Baltimore<br>Independent concept. No orders are placed here.</span>
+<span>Concept by LeadSky</span>
+</div>
+<details>
+<summary>Photography credits & concept notes</summary>
+<p>Illustrative stock imagery from Pixabay, used under the Pixabay Content License. These images do not show the business’s work, staff or premises. No business endorsement is implied.</p>
+<div class="credits">
+<a href="https://pixabay.com/photos/purple-roses-purple-flowers-bouquet-7133816/" target="_blank" rel="noopener">Purple roses · Farbsynthese</a>
+<a href="https://pixabay.com/photos/tulips-flowers-red-tulips-petals-3515181/" target="_blank" rel="noopener">Red tulips · susan-lu4esm</a>
+<a href="https://pixabay.com/photos/roses-red-roses-vase-flower-vase-821705/" target="_blank" rel="noopener">Roses in glass · congerdesign</a>
+<a href="https://pixabay.com/photos/tulips-flowers-petals-blooms-8544741/" target="_blank" rel="noopener">Tulip colours · JohnyVid</a>
+<a href="https://pixabay.com/photos/flower-forest-nature-spring-botany-7870220/" target="_blank" rel="noopener">Woodland bloom · 강춘성</a>
+<a href="https://pixabay.com/photos/flower-marigold-droplets-orange-10536882/" target="_blank" rel="noopener">Marigold detail · Myriams-Fotos</a>
+<a href="https://pixabay.com/photos/summer-still-life-garden-outdoors-783347/" target="_blank" rel="noopener">Garden still life · JillWellington</a>
+<a href="https://pixabay.com/service/license-summary/" target="_blank" rel="noopener">Pixabay licence</a>
+</div>
+<p>This demo uses the supplied business contact information. Current hours, offerings, fulfilment and website status have not been independently verified. Basket selections last only for this page session. No message, payment, reservation or order is sent.</p>
+</details>
+</footer>
+</div>
+</main>
+
+<aside class="basket-bar" aria-label="Inspiration basket">
+<div class="wrap basket-inner">
+<button class="basket-open" id="basketOpen" aria-haspopup="dialog">
+<span class="count" id="basketCount">0</span>
+<span class="basket-title">Your inspiration basket<small>Demo selections · no orders</small></span>
+<span class="basket-action">View <span aria-hidden="true">↗</span></span>
+</button>
+<a class="bar-call" href="tel:+14102621494">Call</a>
+</div>
+</aside>
+
+<dialog id="quickDialog" aria-labelledby="quickTitle">
+<button class="dialog-close" data-close="quickDialog" aria-label="Close floral quick view">×</button>
+<div class="quick-layout">
+<img class="modal-image" id="quickImage" src="img/stock-1.jpg" alt="Purple rose bouquet" width="600" height="750">
+<div class="modal-copy">
+<p class="eyebrow">Floral inspiration · stock photograph</p>
+<h2 id="quickTitle">Purple roses</h2>
+<p id="quickDescription"></p>
+<p class="stock-note">A visual reference, not a confirmed Local Color Flowers product. Ask the business about flower choices and availability.</p>
+<button class="primary" id="saveButton">Save inspiration <span aria-hidden="true">+</span></button>
+</div>
+</div>
+</dialog>
+
+<dialog id="basketDialog" aria-labelledby="basketTitle">
+<button class="dialog-close" data-close="basketDialog" aria-label="Close inspiration basket">×</button>
+<div class="basket-content">
+<p class="eyebrow" style="margin-bottom:8px">Your colour notes</p>
+<h2 id="basketTitle">Inspiration basket</h2>
+<p class="basket-explainer">A collection of visual references for your enquiry. These are stock photographs, not products for sale. No order, payment or reservation occurs.</p>
+<div id="savedItems"></div>
+<div class="basket-bottom">
+<button class="primary" id="copyButton">Copy selection summary <span aria-hidden="true">↗</span></button>
+<p>Copying does not send an enquiry. Contact the business separately to discuss your ideas.</p>
+<p id="copyStatus" role="status" aria-live="polite"></p>
+<textarea class="manual-copy" id="manualCopy" aria-label="Selection summary to copy manually" readonly hidden></textarea>
+</div>
+</div>
+</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+"use strict";
+const items=[
+{id:1,title:"Purple roses",category:"roses",tone:"Violet · gathered blooms",image:"img/stock-1.jpg",alt:"A bouquet of purple roses with layered petals",description:"Layers of violet petals and the generous shape of a rose bouquet. Save this reference if purple tones catch your eye.",keywords:"purple violet lilac bouquet roses"},
+{id:2,title:"Red tulips",category:"tulips",tone:"Scarlet · clean silhouettes",image:"img/stock-2.jpg",alt:"Red tulips with green leaves against a light background",description:"Bright red petals and fresh green leaves. A reference for strong colour and the distinctive shape of tulips.",keywords:"red scarlet green spring tulips"},
+{id:3,title:"Roses in glass",category:"roses",tone:"Red · vase arrangement",image:"img/stock-3.jpg",alt:"Red roses arranged in a glass vase",description:"Red roses gathered in a clear glass vase. Save the colour combination or the idea of flowers displayed in glass.",keywords:"red roses vase glass arrangement"},
+{id:4,title:"Tulip colours",category:"tulips",tone:"Mixed colour · spring petals",image:"img/stock-4.jpg",alt:"Colourful tulip flowers with open petals",description:"A study of tulip petals and lively spring colour. Use this photograph as a starting point for a conversation about your preferences.",keywords:"colour colorful mixed tulips spring petals"},
+{id:5,title:"Woodland bloom",category:"details",tone:"Natural detail · garden mood",image:"img/stock-5.jpg",alt:"A flower photographed in a natural woodland setting",description:"A closer look at a bloom in its natural setting. Save this reference for its garden atmosphere and organic detail.",keywords:"forest woodland garden natural flower bloom"},
+{id:6,title:"Marigold detail",category:"details",tone:"Orange · textured petals",image:"img/stock-6.jpg",alt:"An orange marigold with droplets on its petals",description:"Warm orange petals, intricate texture and tiny droplets. A close-up reference for colour and flower detail, not a specific arrangement.",keywords:"orange marigold droplets warm macro detail"}
+];
+const $=id=>document.getElementById(id);
+let filter="all",search="",active=null,saved=new Set(),toastTimer,lastFocus=null;
+const grid=$("grid"),quick=$("quickDialog"),basket=$("basketDialog");
+function render(){
+const shown=items.filter(i=>(filter==="all"||i.category===filter)&&(`${i.title} ${i.tone} ${i.keywords}`).toLowerCase().includes(search));
+$("resultCount").textContent=shown.length+" floral "+(shown.length===1?"study":"studies");
+grid.replaceChildren();
+shown.forEach((item,index)=>{
+const card=document.createElement("article");
+card.className="card";
+card.innerHTML=`<button class="card-button" aria-label="Explore ${item.title}"><div class="card-image"><img src="${item.image}" alt="${item.alt}" width="480" height="600" loading="${index<2?"eager":"lazy"}"><span class="quick">Explore this reference <span aria-hidden="true">↗</span></span></div><div class="card-info"><div><h3>${item.title}</h3><small>${item.tone}</small></div><span class="card-arrow" aria-hidden="true">↗</span></div></button>`;
+card.querySelector("button").addEventListener("click",()=>openQuick(item));
+grid.append(card);
+});
+if(!shown.length){
+const empty=document.createElement("div");
+empty.className="empty";
+empty.innerHTML="<h3>No matching flowers yet.</h3><p>Try a colour, “roses” or “tulips”.</p><button>Reset search & filters</button>";
+empty.querySelector("button").onclick=()=>{
+search="";filter="all";$("search").value="";updateTabs();render();$("search").focus();
+};
+grid.append(empty);
+}
+}
+function updateTabs(){document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.filter===filter)));}
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{filter=b.dataset.filter;updateTabs();render();});
+$("search").addEventListener("input",e=>{search=e.target.value.trim().toLowerCase();render();});
+function openDialog(dialog){
+lastFocus=document.activeElement;
+dialog.showModal();
+document.body.style.overflow="hidden";
+dialog.querySelector(".dialog-close").focus();
+}
+function closeDialog(dialog){dialog.close();}
+[quick,basket].forEach(dialog=>{
+dialog.addEventListener("close",()=>{
+document.body.style.overflow="";
+if(lastFocus&&lastFocus.isConnected)lastFocus.focus();
+});
+dialog.addEventListener("click",e=>{
+if(e.target===dialog){
+const r=dialog.getBoundingClientRect();
+if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog(dialog);
+}
+});
+dialog.addEventListener("keydown",e=>{
+if(e.key!=="Tab")return;
+const controls=[...dialog.querySelectorAll('button:not([disabled]),a[href],textarea:not([hidden])')].filter(el=>el.getClientRects().length);
+const first=controls[0],last=controls[controls.length-1];
+if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+});
+});
+document.querySelectorAll("[data-close]").forEach(b=>b.onclick=()=>closeDialog($(b.dataset.close)));
+function openQuick(item){
+active=item;
+$("quickTitle").textContent=item.title;
+$("quickDescription").textContent=item.description;
+$("quickImage").src=item.image;
+$("quickImage").alt=item.alt;
+updateSave();
+openDialog(quick);
+}
+function updateSave(){
+const isSaved=saved.has(active.id);
+$("saveButton").textContent=isSaved?"Saved to inspiration basket ✓":"Save inspiration +";
+$("saveButton").setAttribute("aria-pressed",String(isSaved));
+}
+function toast(text){
+clearTimeout(toastTimer);$("toast").textContent=text;
+toastTimer=setTimeout(()=>{$("toast").textContent="";},2600);
+}
+$("saveButton").onclick=()=>{
+if(saved.has(active.id)){toast("Already in your inspiration basket.");return;}
+saved.add(active.id);updateSave();updateBasket();toast("Inspiration saved. No order placed.");
+};
+function updateBasket(){
+$("basketCount").textContent=saved.size;
+$("basketOpen").setAttribute("aria-label",`View inspiration basket, ${saved.size} saved references`);
+}
+function renderBasket(){
+$("savedItems").replaceChildren();
+$("copyStatus").textContent="";
+$("manualCopy").hidden=true;
+if(!saved.size){
+const p=document.createElement("p");p.className="basket-explainer";
+p.textContent="Your basket is ready for a little colour. Open a photograph and choose “Save inspiration”.";
+$("savedItems").append(p);
+}
+items.filter(i=>saved.has(i.id)).forEach(item=>{
+const row=document.createElement("div");row.className="saved-row";
+row.innerHTML=`<img src="${item.image}" alt="${item.alt}" width="56" height="65"><div><h3>${item.title}</h3><small>Stock inspiration · not merchandise</small></div><button class="remove" aria-label="Remove ${item.title}">Remove</button>`;
+row.querySelector("button").onclick=()=>{
+saved.delete(item.id);updateBasket();renderBasket();
+const next=$("savedItems").querySelector("button")||$("basketDialog").querySelector(".dialog-close");
+next.focus();
+};
+$("savedItems").append(row);
+});
+$("copyButton").disabled=!saved.size;
+}
+function openBasket(){renderBasket();openDialog(basket);}
+$("basketOpen").onclick=openBasket;
+$("menuBasket").onclick=()=>{closeMenu();openBasket();};
+$("copyButton").onclick=async()=>{
+const text="Floral inspiration for an enquiry with Local Color Flowers, Baltimore:\n\n"+
+items.filter(i=>saved.has(i.id)).map(i=>`• ${i.title} — ${i.tone}`).join("\n")+
+"\n\nThese are stock-image references from an independent website concept, not confirmed business products. Please advise on current floral options and availability. No order or reservation has been made.";
+try{
+if(!navigator.clipboard||!window.isSecureContext)throw new Error("Clipboard unavailable");
+await navigator.clipboard.writeText(text);
+$("copyStatus").textContent="Summary copied. Nothing was sent.";
+}catch(e){
+$("manualCopy").value=text;$("manualCopy").hidden=false;
+$("manualCopy").focus();$("manualCopy").select();
+$("copyStatus").textContent="Automatic copying is unavailable. Select and copy the summary below. Nothing was sent.";
+}
+};
+function closeMenu(){
+$("menuPanel").hidden=true;
+$("menuButton").setAttribute("aria-expanded","false");
+$("menuButton").setAttribute("aria-label","Open navigation menu");
+}
+$("menuButton").onclick=()=>{
+const open=$("menuPanel").hidden;
+$("menuPanel").hidden=!open;
+$("menuButton").setAttribute("aria-expanded",String(open));
+$("menuButton").setAttribute("aria-label",open?"Close navigation menu":"Open navigation menu");
+};
+$("menuPanel").querySelectorAll("a").forEach(a=>a.onclick=closeMenu);
+document.addEventListener("keydown",e=>{
+if(e.key==="Escape"&&!$("menuPanel").hidden){closeMenu();$("menuButton").focus();}
+});
+document.addEventListener("click",e=>{
+if(!$("menuPanel").hidden&&!e.target.closest(".header"))closeMenu();
+});
+render();updateBasket();
+})();
+</script>
+</body>
+</html>
