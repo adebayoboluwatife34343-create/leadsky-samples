@@ -1,0 +1,656 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FAF7F2">
+<title>La Smorfia, Oxford — Independent Website Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FAF7F2;
+  --ink:#2C1810;
+  --red:#a83622;
+  --sand:#E6DEC8;
+  --green:#3e5b4d;
+  --line:#d8ccbc;
+  --muted:#4a3a30;
+  --serif:"Cormorant Garamond",Georgia,serif;
+  --sans:"Plus Jakarta Sans",Arial,sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.65; }
+body.locked { overflow: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+button, input, select, textarea { font: inherit; }
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; background: none; border: none; padding: 0; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--green); outline-offset: 3px; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; line-height: 1.05; }
+.wrap { width: min(1200px, calc(100% - 40px)); margin: 0 auto; }
+.eyebrow { font-size: 11px; text-transform: uppercase; letter-spacing: 0.18em; font-weight: 700; }
+.concept { background: var(--ink); color: #fff; text-align: center; font-size: 10px; padding: 8px 16px; line-height: 1.5; }
+
+/* Header */
+.header { position: sticky; top: 0; z-index: 30; background: rgba(250,247,242,0.97); border-bottom: 1px solid var(--line); }
+.header-inner { height: 64px; display: flex; align-items: center; gap: 20px; }
+.brand { text-decoration: none; display: flex; gap: 8px; align-items: center; margin-right: auto; }
+.brand img { width: 34px; height: 34px; object-fit: contain; }
+.brand span { font-family: var(--serif); font-size: 26px; white-space: nowrap; }
+.desktop-nav { display: flex; gap: 26px; font-size: 12px; }
+.desktop-nav a { text-decoration: none; }
+.desktop-nav a:hover { color: var(--red); }
+.button { min-height: 44px; padding: 10px 20px; background: var(--red); color: #fff; border: 1px solid var(--red); display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; font-weight: 600; border-radius: 0; }
+.button:hover { background: var(--ink); border-color: var(--ink); }
+.button.outline { color: var(--ink); background: transparent; border-color: var(--line); }
+.button.outline:hover { background: var(--sand); }
+.menu-toggle { width: 40px; height: 40px; border: 1px solid var(--line); background: none; font-size: 20px; }
+.mobile-nav { border-top: 1px solid var(--line); padding: 16px 24px; }
+.mobile-nav a { display: block; text-decoration: none; padding: 14px 0; border-bottom: 1px solid var(--line); }
+
+/* Hero */
+.hero { position: relative; padding: 80px 0 70px; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background: var(--sand); }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.45) 50%, rgba(0,0,0,0.30) 100%); }
+.hero-content { position: relative; z-index: 3; }
+.hero-top { display: flex; gap: 12px; align-items: center; margin-bottom: 10px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); display: inline-block; }
+.location { font-size: 12px; font-weight: 600; letter-spacing: 0.05em; color: #fff; }
+.hero h1 { font-size: clamp(48px, 11vw, 100px); color: #fff; margin-bottom: 14px; max-width: 100%; }
+.hero h1 span { display: block; font-size: clamp(18px, 3vw, 28px); font-weight: 400; color: #e8dcc8; margin-top: 8px; }
+.hero-desc { color: #fff; font-size: 15px; max-width: 520px; margin-bottom: 22px; }
+.hero-cta { background: #fff; color: var(--ink); border-color: #fff; }
+.hero-cta:hover { background: var(--red); border-color: var(--red); color: #fff; }
+
+/* Section headings */
+.section-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 30px; }
+.section-head .eyebrow { color: var(--red); }
+.section-head h2 { font-size: clamp(32px, 6vw, 56px); margin-bottom: 0; }
+
+/* 3D Explorer */
+.explore { padding: 70px 0 50px; }
+.webgl-wrapper { position: relative; width: 100%; height: 520px; border: 1px solid var(--line); border-radius: 4px; overflow: hidden; background: var(--paper); margin-bottom: 14px; }
+.webgl-container { width: 100%; height: 100%; display: block; }
+.webgl-fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+.gallery { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 20px; }
+.fallback-card { flex: 0 0 auto; width: min(80vw, 260px); height: 220px; scroll-snap-align: center; border: 1px solid var(--line); background: var(--sand); position: relative; overflow: hidden; }
+.fallback-card img { width: 100%; height: 100%; object-fit: cover; }
+.fallback-card span { position: absolute; bottom: 10px; left: 10px; right: 10px; background: rgba(0,0,0,0.65); color: #fff; font-size: 12px; padding: 4px 8px; border-radius: 2px; }
+.explore-note { font-size: 11px; color: var(--muted); max-width: 700px; margin-top: 8px; }
+
+/* Menu */
+.menu { padding: 70px 0 50px; }
+.menu-table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+.menu-table thead { font-size: 10px; text-transform: uppercase; letter-spacing: 0.14em; color: #655346; }
+.menu-table th { border-bottom: 2px solid var(--ink); padding: 14px 10px; text-align: left; font-weight: 600; }
+.menu-table td { border-bottom: 1px solid var(--line); padding: 18px 10px; vertical-align: middle; }
+.menu-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 4px; border: 1px solid var(--line); background: var(--sand); }
+.menu-table td:first-child { width: 140px; padding-right: 16px; }
+.menu-table tr:last-child td { border-bottom: none; }
+.menu-note { margin-top: 26px; font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+/* About */
+.about { padding: 70px 0; background: var(--paper); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.about-photo { position: relative; height: 420px; border: 1px solid var(--line); overflow: hidden; background: var(--sand); }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.photo-tag { position: absolute; left: 14px; bottom: 14px; background: rgba(0,0,0,0.7); color: #fff; font-size: 10px; padding: 5px 9px; border-radius: 3px; }
+.about-copy h2 { margin-bottom: 18px; font-size: clamp(32px, 6vw, 52px); }
+.about-copy p { font-size: 15px; max-width: 480px; margin-bottom: 20px; }
+
+/* Visit */
+.visit { padding: 70px 0; }
+.visit-head { margin-bottom: 34px; }
+.visit-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; margin-top: 24px; }
+.address { font-family: var(--serif); font-size: 34px; line-height: 1.25; margin-bottom: 16px; }
+.visit-info { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.hours-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 18px; }
+.hours-table td { border-bottom: 1px solid var(--line); padding: 13px 0; }
+.hours-table td:last-child { text-align: right; }
+.visit small { display: block; font-size: 11px; color: var(--muted); margin-top: 14px; }
+.contact-email { display: block; font-size: 14px; margin-top: 10px; overflow-wrap: anywhere; font-family: var(--serif); font-size: 26px; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: transparent; }
+.contact-email:hover { text-decoration-color: var(--red); }
+
+/* FAQ */
+.faq { border-top: 1px solid var(--line); margin-top: 50px; padding-top: 30px; }
+.faq details { border-bottom: 1px solid var(--line); padding: 20px 0; }
+.faq summary { cursor: pointer; font-size: 15px; font-weight: 600; list-style: none; padding-right: 16px; }
+.faq details p { max-width: 700px; padding-top: 12px; font-size: 14px; color: var(--muted); }
+
+/* Footer */
+footer { background: var(--ink); color: var(--paper); padding: 50px 0 26px; }
+.footer-top { display: flex; flex-direction: column; gap: 16px; padding-bottom: 24px; border-bottom: 1px solid #ffffff33; }
+.footer-name { font-family: var(--serif); font-size: 40px; }
+.footer-top p { font-size: 12px; max-width: 380px; line-height: 1.6; }
+.footer-bottom { display: flex; flex-direction: column; gap: 12px; padding-top: 20px; font-size: 10px; }
+.credits { margin-top: 20px; font-size: 10px; color: #e2cfbf; }
+.credits summary { cursor: pointer; color: #e2cfbf; }
+.credits p { margin-top: 10px; font-size: 11px; color: #c9b8ab; }
+.credits a { color: #e2cfbf; text-underline-offset: 3px; border-bottom: 1px solid transparent; }
+.credits a:hover { border-bottom-color: #e2cfbf; }
+
+/* Mobile contact bar */
+.mobile-contact { position: fixed; bottom: 0; left: 0; right: 0; display: grid; grid-template-columns: 1fr 1fr; background: var(--paper); z-index: 35; border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom); }
+.mobile-contact a { padding: 14px 10px; text-decoration: none; text-align: center; font-size: 12px; font-weight: 600; }
+.mobile-contact a:first-child { background: var(--red); color: #fff; }
+.mobile-contact a:last-child { color: var(--green); }
+
+/* Dialog */
+dialog { border: 0; padding: 0; background: var(--paper); color: var(--ink); max-height: 100dvh; position: fixed; inset: 0 0 0 auto; margin: 0; width: min(560px, 100%); height: 100dvh; max-width: 100%; box-shadow: -20px 0 80px rgba(0,0,0,0.25); overflow: auto; }
+dialog::backdrop { background: rgba(22,13,9,0.55); }
+.dialog-header { position: relative; padding: 20px; border-bottom: 1px solid var(--line); }
+.drawer-close { position: absolute; right: 16px; top: 16px; width: 40px; height: 40px; border-radius: 50%; background: var(--paper); font-size: 24px; line-height: 1; color: var(--ink); }
+.dialog-image { height: 220px; background: var(--sand); border-bottom: 1px solid var(--line); }
+.dialog-image img { width: 100%; height: 100%; object-fit: cover; }
+.dialog-content { padding: 24px; }
+.dialog-content h2 { font-size: 42px; margin: 10px 0 12px; }
+.dialog-content p { font-size: 14px; margin-bottom: 14px; }
+.dialog-note { background: var(--sand); padding: 12px; font-size: 11px; margin-bottom: 18px; border-radius: 3px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+label { display: block; font-size: 11px; font-weight: 600; margin-bottom: 4px; }
+input, select, textarea { width: 100%; border: 1px solid #b6a493; background: #fffdf9; color: var(--ink); padding: 10px; font-size: 13px; min-height: 44px; }
+.full { grid-column: 1 / -1; }
+textarea { resize: vertical; min-height: 80px; }
+.form-submit { width: 100%; margin-top: 10px; }
+.form-status { margin-top: 14px; background: var(--sand); padding: 12px; font-size: 12px; border-radius: 3px; }
+.drawer-phone { display: block; text-align: center; margin-top: 16px; font-size: 12px; font-weight: 600; }
+
+/* Responsive */
+@media (min-width: 761px) {
+  .desktop-nav { display: flex; }
+  .menu-toggle { display: none; }
+  .mobile-nav { display: none; }
+  .mobile-contact { display: none; }
+}
+@media (max-width: 760px) {
+  .desktop-nav { display: none; }
+  .header .button { padding: 8px 14px; font-size: 11px; min-height: 40px; }
+  .hero { padding: 64px 0 50px; }
+  .hero h1 { font-size: 56px; }
+  .hero-desc { font-size: 14px; }
+  .about-grid { grid-template-columns: 1fr; gap: 26px; }
+  .about-photo { height: 300px; }
+  .visit-grid { grid-template-columns: 1fr; gap: 28px; }
+  .webgl-wrapper { height: 360px; }
+  .explore { padding: 50px 0 30px; }
+  .menu { padding: 50px 0 30px; }
+  .about { padding: 50px 0 30px; }
+  .visit { padding: 50px 0 30px; }
+  footer { padding: 40px 0 80px; }
+  main#home { padding-bottom: 90px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+<div class="concept">Independent website concept by LeadSky for La Smorfia. Not their official website.</div>
+
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#home" aria-label="La Smorfia home"><img src="img/business-logo-1.png" alt="La Smorfia logo" width="34" height="34"><span>La Smorfia</span></a>
+    <a class="button" href="tel:+447511819633">Call restaurant</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation">☰</button>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="mobile-nav" hidden aria-label="Mobile navigation">
+  <a href="#home">Home</a>
+  <a href="#explore">Explore the table</a>
+  <a href="#menu">Menu enquiries</a>
+  <a href="#about">About La Smorfia</a>
+  <a href="#visit">Visit us</a>
+  <a href="mailto:info@lasmorfiaoxford.com">Email La Smorfia</a>
+</nav>
+
+<main id="home">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg"><img src="img/stock-5.jpg" alt="Stock photograph of a traditional pizza oven, used as illustrative imagery only" width="1600" height="900" loading="eager"></div>
+    <div class="hero-overlay" aria-hidden="true"></div>
+    <div class="wrap hero-content">
+      <div class="hero-top"><span class="dot" aria-hidden="true"></span><span class="location">247 Cowley Road · Oxford</span></div>
+      <h1 id="hero-title">La Smorfia.<br><span>Italian restaurant on Cowley Road</span></h1>
+      <p class="hero-desc">Come to the table. Call to ask about the menu, book a table, or plan your visit.</p>
+      <a class="button hero-cta" href="tel:+447511819633">Call for a table</a>
+    </div>
+  </section>
+
+  <section class="explore" id="explore" aria-labelledby="explore-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Explore the table</span>
+        <h2 id="explore-title">See what’s on the table</h2>
+      </div>
+      <div class="webgl-wrapper">
+        <div class="webgl-container" id="webgl-container"></div>
+        <div class="webgl-fallback" id="webgl-fallback" hidden>
+          <div class="gallery" role="region" aria-label="Food inspiration gallery. Scroll horizontally.">
+            <button class="fallback-card" data-dish="pizza"><img src="img/stock-1.jpg" alt="Stock photograph of pizza, illustrative only"><span>Pizza inspiration</span></button>
+            <button class="fallback-card" data-dish="pasta"><img src="img/stock-7.jpg" alt="Stock photograph of pasta, illustrative only"><span>Pasta inspiration</span></button>
+            <button class="fallback-card" data-dish="dessert"><img src="img/stock-11.jpg" alt="Stock photograph of tiramisu, illustrative only"><span>Dessert inspiration</span></button>
+            <button class="fallback-card" data-dish="drinks"><img src="img/stock-9.jpg" alt="Stock photograph of wine being poured, illustrative only"><span>Drinks inspiration</span></button>
+          </div>
+          <p class="fallback-note">Interactive 3D explorer unavailable on this device. Stock photography sets the mood.</p>
+        </div>
+      </div>
+      <p class="explore-note">Stock photography sets the mood for this independent concept. It does not show La Smorfia’s dishes, team or premises.</p>
+    </div>
+  </section>
+
+  <section class="menu" id="menu" aria-labelledby="menu-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Menu enquiries</span>
+        <h2 id="menu-title">Start a conversation</h2>
+      </div>
+      <table class="menu-table">
+        <thead>
+          <tr><th scope="col">Category</th><th scope="col">Ask about</th><th scope="col">Next step</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><img src="img/stock-1.jpg" alt="Stock photograph of pizza, illustrative only" class="menu-thumb" loading="lazy"></td>
+            <td>Pizza — current selection and toppings</td>
+            <td><button class="button" data-dish="pizza">Ask about pizza</button></td>
+          </tr>
+          <tr>
+            <td><img src="img/stock-8.jpg" alt="Stock photograph of plated pasta, illustrative only" class="menu-thumb" loading="lazy"></td>
+            <td>Pasta — current dishes and ingredients</td>
+            <td><button class="button" data-dish="pasta">Ask about pasta</button></td>
+          </tr>
+          <tr>
+            <td><img src="img/stock-12.jpg" alt="Stock photograph of dessert, illustrative only" class="menu-thumb" loading="lazy"></td>
+            <td>Desserts — something to finish your meal</td>
+            <td><button class="button" data-dish="dessert">Ask about desserts</button></td>
+          </tr>
+          <tr>
+            <td><img src="img/stock-10.jpg" alt="Stock photograph of chilled drinks, illustrative only" class="menu-thumb" loading="lazy"></td>
+            <td>Drinks — current selection and prices</td>
+            <td><button class="button" data-dish="drinks">Ask about drinks</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="menu-note">The current menu and prices are not verified for this concept. Please call La Smorfia for today’s dishes, prices and availability. If you have a food allergy or dietary requirement, speak directly with the restaurant before ordering.</p>
+      <p class="menu-note"><a href="tel:+447511819633">Ask the restaurant: +44 7511 819633 ↗</a></p>
+    </div>
+  </section>
+
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="wrap about-grid">
+      <div class="about-photo">
+        <img src="img/stock-3.jpg" alt="Stock photograph of dough preparation in a flour-dusted kitchen, illustrative only" width="1000" height="900" loading="lazy">
+        <span class="photo-tag">Food inspiration · stock photography</span>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">La Smorfia / Cowley Road</span>
+        <h2 id="about-title">Make time for dinner</h2>
+        <p>A meal with friends. A family catch-up. An evening with no rush to get home. Find La Smorfia at 247 Cowley Road, Oxford.</p>
+        <p>Call to discuss your table, ask about the menu and let the restaurant know any dietary requirements.</p>
+        <a class="button" href="#visit">Plan your visit</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit" id="visit" aria-labelledby="visit-title">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Visit us</span>
+        <h2 id="visit-title">An Oxford evening, at your own pace.</h2>
+      </div>
+      <div class="visit-grid">
+        <div>
+          <p class="address">La Smorfia<br>247 Cowley Road<br>Oxford, OX4 1XG</p>
+          <div class="visit-info">
+            <a href="https://www.google.com/maps/search/?api=1&query=La+Smorfia+247+Cowley+Road+Oxford+OX4+1XG" target="_blank" rel="noopener" class="button outline">Get directions</a>
+            <a href="tel:+447511819633" class="button">Call for a table</a>
+          </div>
+          <a class="contact-email" href="mailto:info@lasmorfiaoxford.com">info@lasmorfiaoxford.com</a>
+        </div>
+        <div>
+          <table class="hours-table">
+            <caption class="eyebrow" style="text-align:left;padding-bottom:10px">Opening hours · Oxford local time</caption>
+            <tbody>
+              <tr><td>Monday — Thursday</td><td>17:00 — 22:00</td></tr>
+              <tr><td>Friday — Sunday</td><td>10:00 — 22:00</td></tr>
+            </tbody>
+          </table>
+          <a class="contact-email" href="tel:+447511819633">+44 7511 819633</a>
+          <small>Hours are based on the supplied business details. Please confirm bank holiday hours and table availability directly.</small>
+        </div>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>How do I reserve a table?</summary>
+          <p>Call La Smorfia on <a href="tel:+447511819633">+44 7511 819633</a> or email <a href="mailto:info@lasmorfiaoxford.com">info@lasmorfiaoxford.com</a>. A table is only reserved once the restaurant confirms it. This concept does not accept live bookings.</p>
+        </details>
+        <details>
+          <summary>Where can I check the menu and prices?</summary>
+          <p>Ask the restaurant directly or visit <a href="https://lasmorfiaoxford.com/" target="_blank" rel="noopener">La Smorfia’s official website</a>. The photography and category enquiries on this concept are illustrative; they are not a verified menu, price list or promise of availability.</p>
+        </details>
+        <details>
+          <summary>What if I have an allergy or dietary requirement?</summary>
+          <p>Tell the restaurant about your requirements before ordering. Ask the team to confirm ingredients, preparation methods and any risk of cross-contact. This independent concept cannot verify allergen information or dietary suitability.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-name">La Smorfia.</div>
+      <p>247 Cowley Road, Oxford OX4 1XG<br><a href="https://lasmorfiaoxford.com/" target="_blank" rel="noopener">Visit the official restaurant website ↗</a></p>
+    </div>
+    <div class="footer-bottom"><span>Independent concept. No affiliation or endorsement implied.</span><span>Concept by LeadSky · © 2026</span></div>
+    <details class="credits">
+      <summary>Photography credits & concept permissions</summary>
+      <p>Illustrative photographs licensed under the Pixabay Content License: <a href="https://pixabay.com/photos/pizza-kitchen-pizzeria-food-tomato-5275191/" target="_blank" rel="noopener">pizza — MatteoPhotoPro2020</a>; <a href="https://pixabay.com/photos/pasta-italian-cuisine-dish-3547078/" target="_blank" rel="noopener">pasta — RitaE</a>; <a href="https://pixabay.com/photos/tiramisu-pastry-baked-sweets-7030032/" target="_blank" rel="noopener">tiramisu — yousafbhutta</a>; <a href="https://pixabay.com/photos/wine-glass-drink-tasting-hand-1952051/" target="_blank" rel="noopener">wine — JillWellington</a>; <a href="https://pixabay.com/photos/new-year-background-dough-cook-943245/" target="_blank" rel="noopener">dough preparation — ClickerHappy</a>; <a href="https://pixabay.com/photos/pizza-oven-restaurant-meal-yummy-6478478/" target="_blank" rel="noopener">pizza oven — px_steven_be</a>. These images do not depict the restaurant’s own food, staff or premises.</p>
+      <p>Logo source: <a href="https://lasmorfiaoxford.com/wp-content/uploads/2023/07/logo_400.png" target="_blank" rel="noopener">La Smorfia’s website</a>. Permission for public reuse is not confirmed; owner approval is required before launch.</p>
+    </details>
+  </div>
+</footer>
+
+<div class="mobile-contact" aria-label="Contact the restaurant">
+  <a href="tel:+447511819633">Call restaurant ↗</a>
+  <a href="https://wa.me/447511819633" target="_blank" rel="noopener" aria-label="Try contacting the restaurant number on WhatsApp">WhatsApp ↗</a>
+</div>
+
+<dialog id="dish-dialog" aria-labelledby="drawer-title">
+  <div class="dialog-header">
+    <button class="drawer-close" aria-label="Close enquiry">×</button>
+  </div>
+  <div class="dialog-image">
+    <img id="drawer-photo" src="img/stock-2.jpg" alt="Stock photograph of pizza, illustrative only" width="900" height="600" loading="lazy">
+  </div>
+  <div class="dialog-content">
+    <span class="eyebrow">Explore & enquire · Independent concept</span>
+    <h2 id="drawer-title">Pizza</h2>
+    <p id="drawer-description"></p>
+    <p class="dialog-note">Illustrative photograph, not a confirmed menu item. Ask the restaurant for ingredients, allergens, prices and availability.</p>
+    <h3>Ask about your visit.</h3>
+    <p style="margin-bottom:18px">Try the enquiry experience below. This preview does not send a message or reserve a table.</p>
+    <form id="enquiry-form">
+      <div class="form-grid">
+        <label class="full">Your name<input name="name" autocomplete="name" maxlength="100" required></label>
+        <label class="full">Email address<input name="email" type="email" autocomplete="email" maxlength="200" required></label>
+        <label>Preferred date<input name="date" type="date" id="visit-date" required></label>
+        <label>Guests<select name="guests" required><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7 or more</option></select></label>
+        <label class="full">Your question<textarea name="message" id="enquiry-message" maxlength="2000" required></textarea></label>
+      </div>
+      <button class="button form-submit" type="submit">Preview enquiry</button>
+      <p class="form-status" id="form-status" role="status" tabindex="-1"></p>
+    </form>
+    <a class="drawer-phone" href="tel:+447511819633">For a real enquiry, call +44 7511 819633</a>
+    <p style="font-size:10px;margin-top:16px;color:var(--muted)">The WhatsApp link uses the supplied business phone number. WhatsApp availability has not been verified.</p>
+  </div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  // Mobile nav
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.getElementById("mobile-nav");
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      toggle.setAttribute("aria-label", expanded ? "Open navigation" : "Close navigation");
+      toggle.textContent = expanded ? "☰" : "×";
+      nav.hidden = expanded;
+    });
+    nav.querySelectorAll("a").forEach(a => a.addEventListener("click", () => {
+      nav.hidden = true;
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open navigation");
+      toggle.textContent = "☰";
+    }));
+    document.addEventListener("keydown", e => {
+      if (e.key === "Escape" && !nav.hidden) {
+        nav.hidden = true;
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation");
+        toggle.textContent = "☰";
+        toggle.focus();
+      }
+    });
+  }
+
+  // Three.js interactive table explorer
+  const container = document.getElementById("webgl-container");
+  const fallback = document.getElementById("webgl-fallback");
+  let renderer, camera, scene, group, raycaster, pointer;
+  let animId, isPaused = false, isDragging = false, isAutoRotating = !reduced.matches;
+  let targetAngle = 0, currentAngle = 0, startPointerX = 0, startAngle = 0, tapStart = 0;
+
+  const items = [
+    { img: "img/stock-1.jpg", label: "Pizza", category: "pizza" },
+    { img: "img/stock-7.jpg", label: "Pasta", category: "pasta" },
+    { img: "img/stock-11.jpg", label: "Dessert", category: "dessert" },
+    { img: "img/stock-9.jpg", label: "Drinks", category: "drinks" },
+    { img: "img/stock-5.jpg", label: "Wood oven", category: "oven" },
+    { img: "img/stock-6.jpg", label: "Pizzeria", category: "pizzeria" }
+  ];
+
+  function initThree() {
+    if (!container) return;
+    try {
+      const test = document.createElement("canvas");
+      if (!test.getContext("webgl")) throw new Error("no webgl");
+    } catch (e) {
+      container.style.display = "none";
+      if (fallback) fallback.hidden = false;
+      return;
+    }
+
+    scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xfaf7f2);
+
+    camera = new THREE.PerspectiveCamera(40, container.clientWidth / container.clientHeight, 0.1, 100);
+    camera.position.set(0, 0.4, 4.4);
+
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    container.appendChild(renderer.domElement);
+
+    const ambient = new THREE.AmbientLight(0xffffff, 0.5);
+    scene.add(ambient);
+    const dir = new THREE.DirectionalLight(0xffffff, 0.9);
+    dir.position.set(2, 5, 3);
+    scene.add(dir);
+
+    group = new THREE.Group();
+    scene.add(group);
+
+    raycaster = new THREE.Raycaster();
+    pointer = new THREE.Vector2();
+
+    const loader = new THREE.TextureLoader();
+    let loaded = 0, failed = 0;
+
+    items.forEach((item, i) => {
+      const angle = (i / items.length) * Math.PI * 2;
+      loader.load(
+        item.img,
+        (texture) => {
+          const geometry = new THREE.PlaneGeometry(1.3, 1.75);
+          const material = new THREE.MeshStandardMaterial({ map: texture, roughness: 0.45, metalness: 0.05 });
+          const mesh = new THREE.Mesh(geometry, material);
+          const radius = 2.0;
+          mesh.position.set(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
+          mesh.lookAt(0, 0, 0);
+          mesh.userData = { label: item.label, category: item.category };
+          group.add(mesh);
+          loaded++;
+          if (loaded + failed === items.length) startLoop();
+        },
+        undefined,
+        (err) => {
+          failed++;
+          if (loaded + failed === items.length) {
+            if (failed === items.length) {
+              container.style.display = "none";
+              if (fallback) fallback.hidden = false;
+            } else {
+              startLoop();
+            }
+          }
+        }
+      );
+    });
+
+    window.addEventListener("resize", onResize);
+
+    container.addEventListener("pointerdown", (e) => {
+      if (e.button !== 0) return;
+      isDragging = true;
+      isAutoRotating = false;
+      startPointerX = e.clientX;
+      startAngle = currentAngle;
+      tapStart = e.timeStamp;
+    }, { passive: false });
+
+    window.addEventListener("pointermove", (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - startPointerX;
+      targetAngle = startAngle + dx * 0.004;
+    }, { passive: false });
+
+    window.addEventListener("pointerup", (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      if (e.timeStamp - tapStart < 250) {
+        const rect = renderer.domElement.getBoundingClientRect();
+        pointer.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+        pointer.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
+        raycaster.setFromCamera(pointer, camera);
+        const intersects = raycaster.intersectObjects(group.children, true);
+        if (intersects.length > 0) {
+          const data = intersects[0].object.userData;
+          openDrawer(data.category, data.label);
+        }
+      }
+    });
+  }
+
+  function startLoop() {
+    if (!renderer) return;
+    animate();
+  }
+
+  function onResize() {
+    if (!camera || !renderer || !container) return;
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  }
+
+  function animate() {
+    if (isPaused || !renderer) return;
+    if (!isDragging && isAutoRotating) targetAngle += 0.0015;
+    currentAngle += (targetAngle - currentAngle) * 0.04;
+    group.rotation.y = currentAngle;
+    renderer.render(scene, camera);
+    animId = requestAnimationFrame(animate);
+  }
+
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      isPaused = !entry.isIntersecting;
+      if (!isPaused) animate();
+    });
+  }, { threshold: 0.05 });
+
+  const exploreSection = document.getElementById("explore");
+  if (exploreSection) obs.observe(exploreSection);
+
+  initThree();
+
+  // Dialog drawer
+  const dialog = document.getElementById("dish-dialog");
+  const form = document.getElementById("enquiry-form");
+  const status = document.getElementById("form-status");
+  const drawerTitle = document.getElementById("drawer-title");
+  const drawerPhoto = document.getElementById("drawer-photo");
+  const drawerDesc = document.getElementById("drawer-description");
+  const messageField = document.getElementById("enquiry-message");
+
+  const data = {
+    pizza: { title: "Pizza", image: "img/stock-2.jpg", alt: "Stock photograph of pizza, illustrative only", description: "Ask La Smorfia about the current pizza selection, available toppings and prices. The photograph is food inspiration, rather than a verified dish from the restaurant.", question: "I'd like to ask about your current pizza menu and table availability." },
+    pasta: { title: "Pasta", image: "img/stock-8.jpg", alt: "Stock photograph of plated pasta, illustrative only", description: "Find out which pasta dishes are currently available. Ask the restaurant about sauces, ingredients and any dietary requirements before ordering.", question: "I'd like to ask about your current pasta dishes and table availability." },
+    dessert: { title: "Desserts", image: "img/stock-12.jpg", alt: "Stock photograph of dessert slice, illustrative only", description: "Ask what is available to finish your meal. Dessert choices, ingredients and prices should be confirmed directly with La Smorfia.", question: "I'd like to ask about your current desserts and table availability." },
+    drinks: { title: "Drinks", image: "img/stock-10.jpg", alt: "Stock photograph of chilled drinks, illustrative only", description: "Ask about the current drinks selection and prices. The photograph illustrates the mood of this concept and does not represent confirmed products at La Smorfia.", question: "I'd like to ask about your drinks selection and table availability." }
+  };
+
+  function openDrawer(category, label) {
+    const item = data[category];
+    if (!item) return;
+    form.reset();
+    if (status) status.textContent = "";
+    drawerTitle.textContent = item.title;
+    drawerPhoto.src = item.image;
+    drawerPhoto.alt = item.alt;
+    drawerDesc.textContent = item.description;
+    messageField.value = item.question;
+    dialog.showModal();
+    document.body.classList.add("locked");
+  }
+
+  function closeDialog() { dialog.close(); }
+
+  const closeBtn = dialog.querySelector(".drawer-close");
+  if (closeBtn) closeBtn.addEventListener("click", closeDialog);
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) {
+      const r = dialog.getBoundingClientRect();
+      if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) closeDialog();
+    }
+  });
+  dialog.addEventListener("close", () => { document.body.classList.remove("locked"); });
+
+  // Demo form
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const name = form.elements.name;
+      name.setCustomValidity(name.value.trim() ? "" : "Please enter your name.");
+      const message = form.elements.message;
+      message.setCustomValidity(message.value.trim() ? "" : "Please enter your question.");
+      const date = document.getElementById("visit-date");
+      date.setCustomValidity(date.value && date.value < date.min ? "Please choose today or a future date." : "");
+      if (!form.reportValidity()) return;
+      status.textContent = "This is a demo form, nothing was sent.";
+      status.focus();
+    });
+    form.addEventListener("input", (e) => {
+      if (e.target.setCustomValidity) e.target.setCustomValidity("");
+      status.textContent = "";
+    });
+  }
+
+  // GSAP reveals only below the first screen; hero stays visible immediately
+  gsap.registerPlugin(ScrollTrigger);
+  if (!reduced.matches) {
+    gsap.from(".menu", { y: 40, opacity: 0, duration: 0.8, ease: "power2.out", scrollTrigger: { trigger: ".menu", start: "top 80%" } });
+    gsap.from(".about", { y: 40, opacity: 0, duration: 0.8, ease: "power2.out", scrollTrigger: { trigger: ".about", start: "top 80%" } });
+    gsap.from(".visit", { y: 40, opacity: 0, duration: 0.8, ease: "power2.out", scrollTrigger: { trigger: ".visit", start: "top 80%" } });
+  }
+})();
+</script>
+</body>
+</html>

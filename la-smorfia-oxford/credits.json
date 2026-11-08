@@ -1,0 +1,129 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://lasmorfiaoxford.com/wp-content/uploads/2023/07/logo_400.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "authentic neapolitan wood fired pizza fresh basil buffalo mozzarella",
+    "description": "pizza, kitchen, pizzeria, food, tomato, pasta, flour, nutrition, to eat, diet, sano, cook, lunch, traditional, restaurant, pizza, pizza, pizza, pizza, pizza",
+    "source": "https://pixabay.com/photos/pizza-kitchen-pizzeria-food-tomato-5275191/",
+    "photographer": "MatteoPhotoPro2020",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "authentic neapolitan wood fired pizza fresh basil buffalo mozzarella",
+    "description": "gourmet pizza, wood-fired pizza, neapolitan pizza, slice of pizza, melted mozzarella, tomato sauce, fresh basil leaves, olive oil drizzle, sea salt crystals, wooden serving board, pizza cutter, pizza oven background, log fire, rustic restaurant, italian food, classic margherita, crispy crust, garlic in background, copper pans, oven background",
+    "source": "https://pixabay.com/photos/gourmet-pizza-wood-fired-pizza-10331659/",
+    "photographer": "tehzeebkazmii",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "artisan pizza chef stretching dough rustic italian kitchen",
+    "description": "new year background, dough, cook, recipe, italian, flour, kitchen, preparation, white, ingredient, bakery, homemade, preparing, cuisine, pastry, bread, baking, pizza, traditional",
+    "source": "https://pixabay.com/photos/new-year-background-dough-cook-943245/",
+    "photographer": "ClickerHappy",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "artisan pizza chef stretching dough rustic italian kitchen",
+    "description": "pasta, food, cook, italy, wheat, carbohydrates, handmade, preparation, pasta, pasta, pasta, pasta, pasta",
+    "source": "https://pixabay.com/photos/pasta-food-cook-italy-wheat-4227341/",
+    "photographer": "giulioperricone",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "traditional neapolitan pizzeria oven flames rustic dining table",
+    "description": "pizza, oven, restaurant, meal, yummy, italian, food, having lunch, dinner, food photography, tasty, pizzeria, nourishment",
+    "source": "https://pixabay.com/photos/pizza-oven-restaurant-meal-yummy-6478478/",
+    "photographer": "px_steven_be",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "traditional neapolitan pizzeria oven flames rustic dining table",
+    "description": "pizza, pizzeria, food, alimentari, restaurant, to eat, gastronomy, italian, kitchen, cook, fire, dishes, pizza, pizza, pizza, pizza, pizza",
+    "source": "https://pixabay.com/photos/pizza-pizzeria-food-alimentari-2810589/",
+    "photographer": "SalvatoreMonetti",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "fresh Italian pasta tagliatelle truffle mushrooms parmesan cheese",
+    "description": "pasta, italian cuisine, dish, spaghetti, noodles, starter, scampi, parmesan, cheese, food, pasta, pasta, pasta, pasta, pasta, spaghetti",
+    "source": "https://pixabay.com/photos/pasta-italian-cuisine-dish-3547078/",
+    "photographer": "RitaE",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "fresh Italian pasta tagliatelle truffle mushrooms parmesan cheese",
+    "description": "food, dish, cheese, salad, garnish, plate, pasta, pasta, pasta, pasta, pasta, pasta",
+    "source": "https://pixabay.com/photos/food-dish-cheese-salad-garnish-8151625/",
+    "photographer": "kifotofotografia",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "cozy italian restaurant dining table wine glasses oxford",
+    "description": "wine, cool backgrounds, full hd wallpaper, laptop wallpaper, glass, 4k wallpaper 1920x1080, drink, desktop backgrounds, tasting, hand, 4k wallpaper, free wallpaper, windows wallpaper, pouring, beautiful wallpaper, dinner, wine tour, wallpaper 4k, mac wallpaper, wallpaper hd, free background, hd wallpaper, wine tasting, wineglass, party, celebration, wallpaper",
+    "source": "https://pixabay.com/photos/wine-glass-drink-tasting-hand-1952051/",
+    "photographer": "JillWellington",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "cozy italian restaurant dining table wine glasses oxford",
+    "description": "champagne, restaurant, ice, gastronomy, drink, glass, party, the ceremony, wedding, alcohol, champagne, champagne, champagne, champagne, champagne, restaurant, party",
+    "source": "https://pixabay.com/photos/champagne-restaurant-ice-gastronomy-4736380/",
+    "photographer": "lubovlisitsa",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-11.jpg",
+    "kind": "stock photo",
+    "query": "tiramisu Italian dessert cocoa powder luxury plating",
+    "description": "tiramisu, pastry, baked, sweets, dessert, food, cook, baking, italian, tiramisu, tiramisu, tiramisu, tiramisu, tiramisu, food, baking, baking",
+    "source": "https://pixabay.com/photos/tiramisu-pastry-baked-sweets-7030032/",
+    "photographer": "yousafbhutta",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-12.jpg",
+    "kind": "stock photo",
+    "query": "tiramisu Italian dessert cocoa powder luxury plating",
+    "description": "cake, piece, plate, dessert, pastry, sweet, chocolate, cake slice, piece of cake, confectionery, bake, food, delicious, sweets, calories, eat, food photography, cake, cake, cake, cake, cake, dessert, food, food",
+    "source": "https://pixabay.com/photos/cake-piece-plate-dessert-pastry-1971552/",
+    "photographer": "Daria-Yakovleva",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
