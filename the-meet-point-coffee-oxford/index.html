@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FAF7F2">
+<title>The Meet Point Coffee — Oxford | Independent Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FAF7F2;--ink:#1C1917;--rust:#9A3412;--amber:#D97706;--sand:#F3EDE2;--line:#d9cebf;--muted:#65594e;--serif:"Playfair Display",Georgia,serif;--sans:"Outfit",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:140px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}body.locked{overflow:hidden}button,input,textarea,select{font:inherit}a{color:inherit}button,a,input,textarea,select{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid var(--rust);outline-offset:5px}button{color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08}button{border:0}a{text-decoration:none}.wrap{width:min(1320px,calc(100% - 80px));margin-inline:auto}.concept{background:var(--rust);color:white;text-align:center;font-size:11px;padding:7px 16px;line-height:1.45;letter-spacing:.02em}.header{height:80px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);background:var(--paper);position:relative;z-index:15}.brand{font-weight:600;font-size:20px;letter-spacing:-.7px;white-space:nowrap}.brand b{color:var(--rust);font-weight:600}.header-right{display:flex;align-items:center;gap:30px}.location{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}.btn{display:inline-flex;align-items:center;justify-content:center;gap:16px;background:var(--rust);color:white;padding:13px 23px;border-radius:3px;font-size:13px;font-weight:500;transition:background .2s,transform .2s;min-height:46px}.btn:hover{background:#74270e;transform:translateY(-2px)}.btn.light{background:var(--paper);color:var(--ink);border:1px solid var(--line)}.menu-toggle{background:none;width:44px;height:44px;display:grid;place-content:center;gap:6px}.menu-toggle span{width:22px;height:1px;background:var(--ink);display:block}.nav-panel{position:absolute;top:80px;right:0;background:var(--paper);padding:24px;width:280px;border:1px solid var(--line);box-shadow:0 20px 40px #1c191712}.nav-panel[hidden]{display:none}.nav-panel a{display:block;padding:12px;border-bottom:1px solid var(--line)}.intro{padding:54px 0 36px;display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:end}.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--rust);display:flex;align-items:center;gap:10px;margin-bottom:18px}.eyebrow:before{content:"";width:24px;height:1px;background:currentColor}h1{font-size:clamp(48px,5.6vw,83px);letter-spacing:-3px}h1 em,h2 em{color:var(--rust);font-weight:500}.intro-side{max-width:380px;justify-self:end}.intro-side p{font-size:16px;color:var(--muted);margin-bottom:22px}.intro-actions{display:flex;align-items:center;gap:20px}.status{display:inline-flex;align-items:center;gap:7px;font-size:12px;margin-top:18px;color:var(--ink)}.status:before{content:"";height:6px;width:6px;border-radius:50%;background:var(--rust)}.showcase-shell{position:relative}.showcase{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 max(40px,calc((100vw - 1320px)/2)) 0;overscroll-behavior-x:contain}.showcase::-webkit-scrollbar{display:none}.slide{flex:0 0:min(74vw,1040px);flex-basis:min(74vw,1040px);height:485px;position:relative;scroll-snap-align:center;overflow:hidden;background:var(--sand);border-radius:3px}.slide img{transition:transform 1s cubic-bezier(.2,.6,.3,1)}.slide:hover img{transform:scale(1.035)}.slide:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.82),rgba(0,0,0,.56) 22%,transparent 68%);pointer-events:none}.slide-content{position:absolute;z-index:1;bottom:30px;left:34px;right:34px;color:white;display:flex;align-items:end;justify-content:space-between;gap:20px}.slide-content h2{font-size:44px;letter-spacing:-1px}.slide-content p{font-size:12px;margin-bottom:8px;letter-spacing:.11em;text-transform:uppercase}.photo-tag{position:absolute;top:18px;left:20px;background:var(--paper);color:var(--ink);padding:5px 10px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;z-index:1}.round{width:46px;height:46px;border:1px solid #ffffff88;border-radius:50%;background:#faf7f2;color:var(--ink);font-size:22px;flex-shrink:0;transition:transform .2s}.round:hover{transform:translateX(3px)}.gallery-bottom{display:flex;align-items:center;justify-content:space-between;padding-block:19px 31px;font-size:11px;color:var(--muted)}.gallery-controls{display:flex;gap:8px;align-items:center}.gallery-controls button{background:transparent;width:38px;height:34px;border:1px solid var(--line);font-size:18px;color:var(--ink)}.count{margin:0 15px;font-variant-numeric:tabular-nums}.gallery-hint{letter-spacing:.12em;text-transform:uppercase}.index{position:sticky;top:0;background:var(--paper);z-index:10;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.index-inner{display:flex;align-items:center;justify-content:space-between;gap:25px;min-height:66px}.index-label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.14em;white-space:nowrap}.categories{display:flex;gap:32px;overflow:auto;scrollbar-width:none}.categories button{background:none;padding:22px 0 19px;color:var(--muted);white-space:nowrap;font-size:13px;border-bottom:3px solid transparent}.categories button[aria-selected="true"]{color:var(--rust);border-color:var(--rust)}.menu-section{padding:85px 0 90px}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:38px}h2{font-size:clamp(38px,4.2vw,60px);letter-spacing:-1.6px}.section-heading>p{max-width:340px;font-size:14px;color:var(--muted)}.menu-grid{display:grid;grid-template-columns:.85fr 1.35fr;gap:70px;align-items:start}.menu-photo{height:470px;position:sticky;top:95px;border-radius:3px;overflow:hidden}.menu-photo span{position:absolute;bottom:18px;left:18px;background:var(--paper);font-size:10px;padding:5px 9px;letter-spacing:.08em;text-transform:uppercase}.menu-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.menu-title h3{font-size:30px}.menu-title>span{font-size:11px;color:var(--muted)}table{border-collapse:collapse;width:100%}th{text-align:left;font-weight:500;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding-bottom:12px;border-bottom:1px solid var(--ink)}th:last-child,td:last-child{text-align:right}td{border-bottom:1px solid var(--line);padding:0}td.price{font-size:12px;color:var(--muted);white-space:nowrap}td button{background:none;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:20px 20px 20px 0;font-size:17px}td button:hover{color:var(--rust)}td button span{color:var(--rust);font-size:21px}.menu-note{font-size:12px;color:var(--ink);margin-top:24px;line-height:1.7}.menu-note strong{color:var(--rust);font-weight:500}.enquiry-link{background:none;padding:0 0 4px;border-bottom:1px solid var(--rust);color:var(--rust);font-size:13px;margin-top:23px}.story{background:var(--sand);padding:76px 0}.story-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center}.story-pictures{display:grid;grid-template-columns:1.25fr .75fr;gap:17px;align-items:end}.story-pictures figure{margin:0;height:390px;overflow:hidden}.story-pictures figure:last-child{height:260px;margin-bottom:-30px}.story-copy p{color:var(--muted);margin-top:24px;max-width:410px}.story-copy .small{font-size:11px;border-top:1px solid var(--line);padding-top:17px;margin-top:28px}.find{padding:95px 0 75px}.find-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;margin-top:40px}.visit-card{display:grid;grid-template-columns:1fr 1fr;gap:32px}.detail-label{font-size:10px;text-transform:uppercase;letter-spacing:.15em;color:var(--rust);margin-bottom:10px}.visit-card address{font-style:normal;font-size:19px;line-height:1.6}.visit-card p{font-size:17px}.visit-contact{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;display:flex;flex-direction:column;gap:8px;font-size:14px}.visit-contact a{text-decoration:underline;text-underline-offset:4px}.directions-panel{background:var(--sand);padding:30px;display:flex;flex-direction:column;justify-content:space-between;gap:25px;border-left:3px solid var(--rust)}.directions-panel h3{font-size:30px}.directions-panel p{color:var(--muted);font-size:14px;margin-top:14px}.directions-panel .btn{align-self:start}.footer{border-top:1px solid var(--line);padding:28px 0 35px;font-size:11px;color:var(--muted)}.footer-top{display:flex;justify-content:space-between;gap:20px}.footer details{margin-top:20px}.footer summary{cursor:pointer}.credits{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:12px}.credits a{text-decoration:underline}.mobile-bar{display:none}.drawer-backdrop{position:fixed;inset:0;background:#1c19176b;z-index:50;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s}.drawer-backdrop.open{opacity:1;visibility:visible}.drawer{position:absolute;right:0;top:0;bottom:0;width:min(520px,100%);background:var(--paper);overflow-y:auto;transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.7,.3,1);overscroll-behavior:contain}.open .drawer{transform:translateX(0)}.drawer-top{position:sticky;top:0;background:var(--paper);z-index:2;padding:16px 26px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);font-size:11px;text-transform:uppercase;letter-spacing:.1em}.close{font-size:27px;width:40px;height:40px;background:transparent}.drawer-image{height:230px;position:relative}.drawer-image span{position:absolute;bottom:12px;left:20px;background:var(--paper);padding:3px 8px;font-size:10px}.drawer-body{padding:30px}.drawer h2{font-size:38px;margin-bottom:15px}.drawer-description{font-size:14px;color:var(--muted)}.drawer-disclaimer{background:var(--sand);padding:14px;font-size:12px;margin:22px 0}.field{margin:17px 0}.field label{display:block;font-size:12px;font-weight:500;margin-bottom:7px}.field input,.field textarea,.field select{width:100%;border:1px solid #b6a898;background:transparent;border-radius:2px;padding:12px;color:var(--ink)}.field textarea{min-height:100px;resize:vertical}.form-title{font-family:var(--serif);font-size:25px;margin-top:27px}.form-help{font-size:11px;color:var(--muted);margin-top:12px}.form-result{margin-top:18px;background:var(--sand);border-left:3px solid var(--rust);padding:15px;font-size:14px}.drawer form .btn{width:100%}.skip{position:absolute;left:12px;top:-100px;z-index:100;background:var(--paper);padding:10px}.skip:focus{top:10px}
+@media(min-width:1500px){.slide{height:550px}}
+@media(max-width:900px){.wrap{width:calc(100% - 44px)}.location{display:none}.header-right{gap:15px}.intro{gap:25px}.intro-side{max-width:300px}h1{font-size:60px}.slide{flex-basis:85vw;height:420px}.showcase{padding-inline:22px}.menu-grid{gap:35px;grid-template-columns:.8fr 1.2fr}.menu-photo{height:410px}.story-grid{gap:35px}.story-pictures figure{height:320px}.story-pictures figure:last-child{height:220px}.find-grid{gap:35px}.categories{gap:23px}.index-label{display:none}}
+@media(max-width:600px){html{scroll-padding-top:80px}.wrap{width:calc(100% - 36px)}.concept{font-size:9px;padding:6px 16px}.header{height:65px;gap:8px}.brand{font-size:15px;letter-spacing:-.45px}.header-right{gap:5px}.header .btn{padding:9px 12px;font-size:11px;min-height:36px}.menu-toggle{width:34px}.nav-panel{top:65px;width:100%}.intro{display:block;padding:29px 0 25px}.eyebrow{font-size:9px;margin-bottom:13px;letter-spacing:.14em}h1{font-size:49px;letter-spacing:-2px;line-height:1.02}.intro-side{max-width:none;margin-top:17px}.intro-side p{font-size:13px;line-height:1.6;max-width:310px;margin-bottom:16px}.intro-actions{gap:15px}.intro-actions .btn{padding:11px 17px;min-height:43px;font-size:12px}.status{font-size:10px;margin-top:12px}.showcase{gap:12px;padding-inline:18px}.slide{flex-basis:calc(100vw - 44px);height:345px}.slide-content{left:23px;right:22px;bottom:23px}.slide-content h2{font-size:34px}.slide-content p{font-size:9px}.round{width:39px;height:39px}.photo-tag{font-size:8px;left:14px;top:14px}.gallery-bottom{padding:14px 0 22px}.gallery-hint{font-size:9px;letter-spacing:.08em}.count{margin-inline:5px;font-size:10px}.gallery-controls button{width:31px;height:30px}.index-inner{min-height:58px}.categories{width:100%;justify-content:space-between;gap:22px}.categories button{font-size:11px;padding:18px 0 15px}.menu-section{padding:43px 0 48px}.section-heading{display:block;margin-bottom:25px}h2{font-size:39px;letter-spacing:-1.2px}.section-heading>p{margin-top:16px;font-size:12px;max-width:310px}.menu-grid{display:flex;flex-direction:column;gap:26px}.menu-photo{position:relative;top:auto;width:100%;height:225px}.menu-content{width:100%}.menu-title h3{font-size:27px}.menu-title>span{font-size:10px}td button{font-size:16px;padding-block:19px}td.price{font-size:11px}.menu-note{font-size:11px}.story{padding:43px 0 48px}.story-grid{display:flex;flex-direction:column;gap:48px}.story-pictures{width:100%;gap:12px}.story-pictures figure{height:270px}.story-pictures figure:last-child{height:190px;margin-bottom:-17px}.story-copy p{font-size:14px;margin-top:19px}.story-copy .small{font-size:10px}.find{padding:47px 0}.find-grid{grid-template-columns:1fr;gap:30px;margin-top:27px}.visit-card{gap:20px}.visit-card address{font-size:16px}.visit-card p{font-size:15px}.detail-label{font-size:9px}.visit-contact{font-size:13px}.directions-panel{padding:25px}.directions-panel h3{font-size:28px}.footer{padding:25px 0 95px;font-size:10px}.footer-top{display:block}.footer-top p+p{margin-top:8px}.mobile-bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;bottom:0;left:0;right:0;background:var(--paper);z-index:20;border-top:1px solid var(--line);padding:9px 16px calc(9px + env(safe-area-inset-bottom));gap:10px}.mobile-bar a{font-size:12px;min-height:42px;display:flex;align-items:center;justify-content:center;border:1px solid var(--rust);color:var(--rust);border-radius:2px}.mobile-bar a:first-child{background:var(--rust);color:white}.drawer-body{padding:24px}.drawer-image{height:200px}.drawer h2{font-size:34px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.slide:hover img{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="concept">Independent website concept by LeadSky for The Meet Point Coffee. Not their official website.</div>
+<header class="header wrap">
+<a href="#main" class="brand" aria-label="The Meet Point Coffee home">the meet point<b>.</b></a>
+<div class="header-right">
+<span class="location">Summertown · Oxford</span>
+<button class="btn" data-enquiry="A visit to the café">Enquire <span aria-hidden="true">↗</span></button>
+<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation"><span></span><span></span></button>
+</div>
+<nav id="navigation" class="nav-panel" hidden aria-label="Main navigation">
+<a href="#showcase">Take a look</a><a href="#menu">Menu enquiries</a><a href="#story">A moment in Oxford</a><a href="#visit">Find the café</a><a href="https://www.meetpointcoffee.co.uk/" target="_blank" rel="noopener">Official website ↗</a>
+</nav>
+</header>
+<main id="main">
+<section class="intro wrap">
+<div><div class="eyebrow">The Meet Point Coffee · Oxford</div><h1>Good company.<br><em>A coffee moment.</em></h1></div>
+<div class="intro-side">
+<p>Make The Meet Point Coffee your next stop in Summertown. Find us at 3–5 Middle Way, Oxford.</p>
+<div class="intro-actions"><button class="btn" id="menu-cta">Explore the menu <span aria-hidden="true">↘</span></button><a href="#visit" style="font-size:12px;text-decoration:underline;text-underline-offset:5px">Find us</a></div>
+<div class="status" id="open-status">Every day · 07:00–19:00</div>
+</div>
+</section>
+<section id="showcase" class="showcase-shell" aria-label="Coffee inspiration photo showcase">
+<div class="showcase" id="gallery" tabindex="0" aria-label="Photo gallery. Scroll horizontally or use the arrow buttons.">
+<article class="slide">
+<img src="img/stock-1.jpg" alt="Illustrative stock photograph of a cup of coffee" width="1200" height="800" fetchpriority="high">
+<span class="photo-tag">Coffee inspiration · stock photography</span>
+<div class="slide-content"><div><p>01 / A little pause</p><h2>Meet over coffee.</h2></div><button class="round" data-item="Coffee" aria-label="Enquire about coffee">↗</button></div>
+</article>
+<article class="slide">
+<img src="img/stock-3.jpg" alt="Illustrative stock photograph of a display of pastries and croissants" width="1200" height="800" loading="lazy">
+<span class="photo-tag">Pastry inspiration · stock photography</span>
+<div class="slide-content"><div><p>02 / Something to savour</p><h2>The slower morning.</h2></div><button class="round" data-item="Pastries" aria-label="Enquire about pastries">↗</button></div>
+</article>
+<article class="slide">
+<img src="img/stock-6.jpg" alt="Illustrative stock photograph of avocado toast topped with a poached egg" width="1200" height="800" loading="lazy">
+<span class="photo-tag">Brunch inspiration · stock photography</span>
+<div class="slide-content"><div><p>03 / Make time for lunch</p><h2>A catch-up, unhurried.</h2></div><button class="round" data-item="Brunch" aria-label="Enquire about brunch options">↗</button></div>
+</article>
+<article class="slide">
+<img src="img/stock-8.jpg" alt="Illustrative stock photograph of a coffee cup beside a journal on a table; not the café's premises" width="1200" height="800" loading="lazy">
+<span class="photo-tag">Atmosphere inspiration · stock photography</span>
+<div class="slide-content"><div><p>04 / Your Oxford moment</p><h2>A break in the day.</h2></div><button class="round" data-enquiry="A visit to the café" aria-label="Enquire about visiting">↗</button></div>
+</article>
+</div>
+<div class="gallery-bottom wrap"><span class="gallery-hint">A little inspiration. Swipe to explore →</span><div class="gallery-controls"><span class="count" id="gallery-count" aria-live="polite">01 — 04</span><button id="previous" aria-label="Previous photograph">←</button><button id="next" aria-label="Next photograph">→</button></div></div>
+</section>
+<div class="index">
+<div class="index-inner wrap"><span class="index-label">Find your moment</span><div class="categories" role="tablist" aria-label="Menu enquiry categories">
+<button role="tab" id="tab-coffee" aria-selected="true" aria-controls="menu-panel" data-category="coffee">Coffee</button>
+<button role="tab" id="tab-brunch" aria-selected="false" aria-controls="menu-panel" tabindex="-1" data-category="brunch">Brunch</button>
+<button role="tab" id="tab-pastries" aria-selected="false" aria-controls="menu-panel" tabindex="-1" data-category="pastries">Pastries</button>
+<button role="tab" id="tab-tea" aria-selected="false" aria-controls="menu-panel" tabindex="-1" data-category="tea">Tea & more</button>
+</div></div>
+</div>
+<section id="menu" class="menu-section wrap">
+<div class="section-heading"><div><div class="eyebrow">Something on your mind?</div><h2>Find your <em>usual.</em><br>Or ask for something new.</h2></div><p>A simple way to start a menu enquiry. Select a topic below to ask the café about its current choices and prices.</p></div>
+<div class="menu-grid">
+<div class="menu-photo"><img id="category-image" src="img/stock-2.jpg" alt="Illustrative stock photograph of a cappuccino" width="700" height="850" loading="lazy"><span>Illustrative stock photography</span></div>
+<div class="menu-content" id="menu-panel" role="tabpanel" aria-labelledby="tab-coffee">
+<div class="menu-title"><h3 id="category-title">Coffee, your way.</h3><span>Tap a topic to enquire ↗</span></div>
+<table aria-label="Menu enquiry topics and pricing information"><thead><tr><th scope="col">Ask the café about</th><th scope="col">Price</th></tr></thead><tbody id="menu-rows">
+<tr><td><button data-item="Coffee">Coffee <span aria-hidden="true">↗</span></button></td><td class="price">Ask the café</td></tr>
+<tr><td><button data-item="Milk alternatives">Milk alternatives <span aria-hidden="true">↗</span></button></td><td class="price">Ask the café</td></tr>
+<tr><td><button data-item="Decaffeinated options">Decaffeinated options <span aria-hidden="true">↗</span></button></td><td class="price">Ask the café</td></tr>
+</tbody></table>
+<p class="menu-note"><strong>A note on this concept.</strong> These are enquiry topics, not a verified café menu. The current dishes, drinks, prices, ingredients and dietary information must be confirmed directly with The Meet Point Coffee. Photographs are illustrative.</p>
+<button class="enquiry-link" data-enquiry="The current menu and prices">Ask about the current menu <span aria-hidden="true">↗</span></button>
+</div>
+</div>
+</section>
+<section id="story" class="story">
+<div class="story-grid wrap">
+<div class="story-pictures"><figure><img src="img/stock-7.jpg" alt="Illustrative stock photograph of coffee on a table; not the café's premises" width="700" height="900" loading="lazy"></figure><figure><img src="img/stock-4.jpg" alt="Illustrative stock photograph of a croissant, a drink and a newspaper" width="500" height="700" loading="lazy"></figure></div>
+<div class="story-copy"><div class="eyebrow">Make a little time</div><h2>Less rushing.<br><em>More meeting.</em></h2><p>A coffee before the day gets going. A pause between plans. A reason to catch up in Oxford.</p><p>Find The Meet Point Coffee on Middle Way in Summertown, open every day from 07:00 to 19:00.</p><a class="enquiry-link" href="#visit">Make your way here ↗</a><p class="small">An independent visual concept. These stock photographs suggest a mood; they do not show the café, its products or its team.</p></div>
+</div>
+</section>
+<section class="find wrap" id="visit">
+<div class="eyebrow">Summertown, Oxford</div><h2>Your next stop.<br><em>The Meet Point Coffee.</em></h2>
+<div class="find-grid">
+<div><div class="visit-card"><div><div class="detail-label">Come and find us</div><address>3–5 Middle Way<br>Oxford<br>OX2 7LH</address></div><div><div class="detail-label">Opening hours</div><p>Monday–Sunday<br>07:00–19:00</p><span class="status" id="visit-status">Hours shown in UK time</span></div></div>
+<div class="visit-contact"><a href="tel:+447444719511">+44 7444 719511</a><a href="mailto:hello@meetpointcoffee.co.uk">hello@meetpointcoffee.co.uk</a><a href="https://www.meetpointcoffee.co.uk/" target="_blank" rel="noopener">Visit the official website ↗</a></div></div>
+<div class="directions-panel"><div><div class="detail-label">A place to meet in Oxford</div><h3>See you on Middle Way.</h3><p>Open the address in Google Maps for an interactive map and directions from your location.</p></div><a class="btn" href="https://www.google.com/maps/search/?api=1&query=The%20Meet%20Point%20Coffee%203-5%20Middle%20Way%20Oxford%20OX2%207LH" target="_blank" rel="noopener">Get directions <span aria-hidden="true">↗</span></a></div>
+</div>
+</section>
+</main>
+<footer class="footer">
+<div class="wrap"><div class="footer-top"><p>the meet point. · Oxford</p><p>Concept by LeadSky · Independent proposal, not the official café website.</p></div>
+<details><summary>Photography & permissions</summary><p>Illustrative stock photographs supplied under the Pixabay Content License. They do not depict this business's premises, staff or confirmed menu.</p><div class="credits"><a href="https://pixabay.com/photos/coffee-cup-caffeine-espresso-4618705/" target="_blank" rel="noopener">Coffee — 13758299 / Pixabay</a><a href="https://pixabay.com/photos/coffee-caffeine-cafe-food-drink-5037804/" target="_blank" rel="noopener">Cappuccino — JessicaKwok / Pixabay</a><a href="https://pixabay.com/photos/breads-pastries-croissants-1867459/" target="_blank" rel="noopener">Pastries — Pexels / Pixabay</a><a href="https://pixabay.com/photos/bread-croissant-food-breakfast-cup-18987/" target="_blank" rel="noopener">Breakfast — PublicDomainPictures / Pixabay</a><a href="https://pixabay.com/photos/smashed-avocado-on-toast-avocado-4488463/" target="_blank" rel="noopener">Toast — pen_ash / Pixabay</a><a href="https://pixabay.com/photos/cup-coffee-table-drinks-beverage-6878196/" target="_blank" rel="noopener">Coffee table — CUN_CUN / Pixabay</a><a href="https://pixabay.com/photos/coffee-cup-table-drink-beverage-2847957/" target="_blank" rel="noopener">Coffee break — 6689062 / Pixabay</a><a href="https://pixabay.com/photos/cafe-coffee-juice-cappuccino-food-5097128/" target="_blank" rel="noopener">Drinks — KIMDAEJEUNG / Pixabay</a></div></details>
+</div>
+</footer>
+<div class="mobile-bar"><a href="tel:+447444719511">Call the café ↗</a><a href="https://www.google.com/maps/search/?api=1&query=The%20Meet%20Point%20Coffee%203-5%20Middle%20Way%20Oxford%20OX2%207LH" target="_blank" rel="noopener">Directions ↗</a></div>
+<div class="drawer-backdrop" id="drawer-backdrop" inert>
+<section class="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" tabindex="-1">
+<div class="drawer-top"><span>A little enquiry</span><button class="close" aria-label="Close enquiry drawer">×</button></div>
+<div class="drawer-image"><img id="drawer-img" src="img/stock-2.jpg" alt="Illustrative stock photograph of coffee" width="700" height="450"><span>Illustrative stock photograph</span></div>
+<div class="drawer-body">
+<div class="eyebrow">The Meet Point Coffee</div><h2 id="drawer-title">Coffee</h2>
+<p class="drawer-description" id="drawer-description">Ask the café about its current coffee choices, prices and preparation options.</p>
+<div class="drawer-disclaimer">Menu availability, ingredients, allergens and dietary suitability are not verified in this concept. Please confirm directly with the café before ordering.</div>
+<h3 class="form-title">What would you like to know?</h3>
+<form id="enquiry-form">
+<div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required maxlength="100"></div>
+<div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required maxlength="200"></div>
+<div class="field"><label for="enquiry-type">Enquiry about</label><select id="enquiry-type" name="type"><option>Current choices and prices</option><option>Ingredients or dietary needs</option><option>A planned visit</option><option>Something else</option></select></div>
+<div class="field"><label for="message">Your question or preferences</label><textarea id="message" name="message" required maxlength="2000" aria-describedby="form-help"></textarea></div>
+<button class="btn" type="submit">Preview demo enquiry <span aria-hidden="true">↗</span></button>
+<p class="form-help" id="form-help">This demo does not send messages, reserve tables or place orders. To contact the café, call <a href="tel:+447444719511" style="text-decoration:underline">+44 7444 719511</a>.</p>
+<div class="form-result" id="form-result" role="status" hidden>This is a demo form, nothing was sent.</div>
+</form>
+</div>
+</section>
+</div>
+<script>
+(()=>{
+'use strict';
+const $=s=>document.querySelector(s);
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+const categories={
+coffee:{title:'Coffee, your way.',image:'img/stock-2.jpg',alt:'Illustrative stock photograph of a cappuccino',items:['Coffee','Milk alternatives','Decaffeinated options']},
+brunch:{title:'Make time for brunch.',image:'img/stock-6.jpg',alt:'Illustrative stock photograph of avocado toast and a poached egg',items:['Brunch','Current food choices','Dietary requirements']},
+pastries:{title:'A little something extra.',image:'img/stock-3.jpg',alt:'Illustrative stock photograph of pastries in a display',items:['Pastries','Today’s availability','Allergen information']},
+tea:{title:'Another kind of pause.',image:'img/stock-9.jpg',alt:'Illustrative stock photograph of café drinks',items:['Tea','Cold drinks','Other drink options']}
+};
+const descriptions={
+'Coffee':'Ask the café about its current coffee choices, prices and preparation options.',
+'Milk alternatives':'Ask which milk alternatives are currently available, including any extra charges and allergen information.',
+'Decaffeinated options':'Ask about current decaffeinated drinks and how they can be prepared.',
+'Brunch':'Ask whether brunch is currently served, what is available and when to visit.',
+'Current food choices':'Ask the café for its current food menu and prices.',
+'Dietary requirements':'Tell the café what you need and ask it to confirm ingredients, preparation and dietary suitability.',
+'Pastries':'Ask the café about its current pastry selection, availability and prices.',
+'Today’s availability':'Ask what is available on the day you plan to visit.',
+'Allergen information':'Ask the café directly about ingredients, allergens and cross-contact before ordering.',
+'Tea':'Ask which teas are currently available and how much they cost.',
+'Cold drinks':'Ask about the café’s current cold drink choices and prices.',
+'Other drink options':'Ask the café about drinks beyond coffee.',
+'A visit to the café':'Planning a visit to Middle Way? Ask the café any questions before you set off.',
+'The current menu and prices':'Ask the café for the latest menu, prices and availability.'
+};
+let selectedCategory='coffee',lastFocus=null;
+const backdrop=$('#drawer-backdrop'),drawer=backdrop.querySelector('.drawer');
+function openDrawer(topic){
+lastFocus=document.activeElement;
+const cat=Object.values(categories).find(c=>c.items.includes(topic))||categories[selectedCategory];
+$('#drawer-title').textContent=topic;
+$('#drawer-description').textContent=descriptions[topic]||'Ask the café about this topic before your visit.';
+$('#drawer-img').src=cat.image;$('#drawer-img').alt=cat.alt;
+$('#enquiry-form').reset();$('#form-result').hidden=true;
+$('#message').value='Hello, I would like to ask about '+topic.toLowerCase()+'.';
+backdrop.inert=false;backdrop.classList.add('open');document.body.classList.add('locked');
+drawer.scrollTop=0;backdrop.querySelector('.close').focus();
+}
+function closeDrawer(){backdrop.classList.remove('open');backdrop.inert=true;document.body.classList.remove('locked');lastFocus?.focus();}
+document.addEventListener('click',e=>{
+const item=e.target.closest('[data-item]'),enquiry=e.target.closest('[data-enquiry]');
+if(item)openDrawer(item.dataset.item);else if(enquiry)openDrawer(enquiry.dataset.enquiry);
+});
+backdrop.querySelector('.close').addEventListener('click',closeDrawer);
+backdrop.addEventListener('click',e=>{if(e.target===backdrop)closeDrawer();});
+document.addEventListener('keydown',e=>{
+if(!backdrop.classList.contains('open'))return;
+if(e.key==='Escape')closeDrawer();
+if(e.key==='Tab'){
+const focusable=[...drawer.querySelectorAll('a[href],button,input,select,textarea,[tabindex="0"]')].filter(el=>!el.disabled&&el.getClientRects().length);
+const first=focusable[0],last=focusable[focusable.length-1];
+if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+}
+});
+$('#enquiry-form').addEventListener('submit',e=>{e.preventDefault();if(!e.currentTarget.reportValidity())return;$('#form-result').hidden=false;$('#form-result').scrollIntoView({block:'nearest',behavior:reduced.matches?'instant':'smooth'});});
+const navToggle=$('.menu-toggle'),nav=$('#navigation');
+function closeNav(){nav.hidden=true;navToggle.setAttribute('aria-expanded','false');navToggle.setAttribute('aria-label','Open navigation');}
+navToggle.addEventListener('click',()=>{const isOpen=navToggle.getAttribute('aria-expanded')==='true';nav.hidden=isOpen;navToggle.setAttribute('aria-expanded',String(!isOpen));navToggle.setAttribute('aria-label',isOpen?'Open navigation':'Close navigation');});
+nav.addEventListener('click',e=>{if(e.target.closest('a'))closeNav();});
+document.addEventListener('click',e=>{if(!e.target.closest('.header'))closeNav();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!nav.hidden){closeNav();navToggle.focus();}});
+const tabs=[...document.querySelectorAll('[data-category]')];
+function chooseCategory(key,scroll){
+selectedCategory=key;const data=categories[key];
+tabs.forEach(t=>{const active=t.dataset.category===key;t.setAttribute('aria-selected',String(active));t.tabIndex=active?0:-1;});
+$('#category-title').textContent=data.title;$('#category-image').src=data.image;$('#category-image').alt=data.alt;
+$('#menu-panel').setAttribute('aria-labelledby','tab-'+key);
+$('#menu-rows').replaceChildren(...data.items.map(item=>{
+const tr=document.createElement('tr'),td=document.createElement('td'),price=document.createElement('td'),button=document.createElement('button'),arrow=document.createElement('span');
+button.dataset.item=item;button.append(document.createTextNode(item));arrow.textContent='↗';arrow.setAttribute('aria-hidden','true');button.append(arrow);td.append(button);price.className='price';price.textContent='Ask the café';tr.append(td,price);return tr;
+}));
+if(scroll)$('#menu').scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'start'});
+}
+tabs.forEach((tab,i)=>{
+tab.addEventListener('click',()=>chooseCategory(tab.dataset.category,true));
+tab.addEventListener('keydown',e=>{
+let index;
+if(e.key==='ArrowRight')index=(i+1)%tabs.length;
+if(e.key==='ArrowLeft')index=(i-1+tabs.length)%tabs.length;
+if(e.key==='Home')index=0;
+if(e.key==='End')index=tabs.length-1;
+if(index!==undefined){e.preventDefault();chooseCategory(tabs[index].dataset.category,false);tabs[index].focus();}
+});
+});
+$('#menu-cta').addEventListener('click',()=>{$('#menu').scrollIntoView({behavior:reduced.matches?'instant':'smooth'});});
+const gallery=$('#gallery'),slides=[...gallery.children];let activeSlide=0,scheduled=false;
+function galleryUpdate(){
+const center=gallery.getBoundingClientRect().left+gallery.clientWidth/2;
+activeSlide=slides.reduce((best,slide,i)=>Math.abs(slide.getBoundingClientRect().left+slide.clientWidth/2-center)<Math.abs(slides[best].getBoundingClientRect().left+slides[best].clientWidth/2-center)?i:best,0);
+$('#gallery-count').textContent=String(activeSlide+1).padStart(2,'0')+' — 04';
+$('#previous').disabled=activeSlide===0;$('#next').disabled=activeSlide===slides.length-1;
+$('#previous').style.opacity=activeSlide===0?'.35':'1';$('#next').style.opacity=activeSlide===slides.length-1?'.35':'1';scheduled=false;
+}
+function goTo(index){const slide=slides[Math.max(0,Math.min(index,slides.length-1))];gallery.scrollTo({left:slide.offsetLeft-(gallery.clientWidth-slide.clientWidth)/2,behavior:reduced.matches?'instant':'smooth'});}
+$('#previous').addEventListener('click',()=>goTo(activeSlide-1));$('#next').addEventListener('click',()=>goTo(activeSlide+1));
+gallery.addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(galleryUpdate);}},{passive:true});
+gallery.addEventListener('keydown',e=>{if(e.target!==gallery)return;if(e.key==='ArrowRight'){e.preventDefault();goTo(activeSlide+1);}if(e.key==='ArrowLeft'){e.preventDefault();goTo(activeSlide-1);}});
+let drag=null;
+gallery.addEventListener('pointerdown',e=>{if(e.pointerType!=='mouse'||e.target.closest('button'))return;drag={x:e.clientX,left:gallery.scrollLeft,moved:false};});
+window.addEventListener('pointermove',e=>{if(!drag)return;if(Math.abs(e.clientX-drag.x)>5){drag.moved=true;gallery.style.scrollSnapType='none';gallery.scrollLeft=drag.left-(e.clientX-drag.x);}});
+window.addEventListener('pointerup',()=>{if(drag?.moved){gallery.style.scrollSnapType='';galleryUpdate();goTo(activeSlide);}drag=null;});
+function updateHours(){
+const parts=new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/London',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+const minute=Number(parts.find(p=>p.type==='hour').value)*60+Number(parts.find(p=>p.type==='minute').value);
+const text=minute>=420&&minute<1140?'Open today until 19:00 · UK time':'Closed now · Opens at 07:00 · UK time';
+$('#open-status').textContent=text;$('#visit-status').textContent=text;
+}
+updateHours();setInterval(updateHours,60000);galleryUpdate();window.addEventListener('resize',galleryUpdate);
+})();
+</script>
+</body>
+</html>
