@@ -1,0 +1,1372 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FDFBF7">
+<title>Brooklyn Martial Arts — Member Platform Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FDFBF7;
+  --ink:#181D26;
+  --red:#C82323;
+  --muted:#546075;
+  --line:#E2E8F0;
+  --soft:#F4F6F9;
+  --navy:#111827;
+  --green:#126B40;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Plus Jakarta Sans",sans-serif;
+  font-size:14px;
+  line-height:1.55;
+}
+button,input,select{font:inherit}
+button,a,input,select{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{
+  outline:3px solid var(--red);
+  outline-offset:2px;
+}
+button{border:0}
+button:disabled{opacity:.5;cursor:not-allowed}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3,.brand{font-family:Syne,sans-serif}
+h1{font-size:clamp(26px,5.5vw,40px);line-height:1.1;letter-spacing:-0.8px;margin-bottom:12px}
+h2{font-size:clamp(22px,4vw,30px);line-height:1.15;letter-spacing:-0.4px;margin-bottom:12px}
+h3{font-size:18px;line-height:1.2}
+p{color:var(--muted);font-size:14px}
+
+.concept{
+  padding:8px 14px;
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  font-size:11px;
+  line-height:1.4;
+}
+
+.wrap{max-width:1180px;margin:auto;padding:0 20px}
+
+/* Slim header - one row only */
+.header{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:rgba(253,251,247,.96);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  height:56px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  font-size:17px;
+  line-height:1.05;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.brand-mark{
+  width:30px;height:30px;
+  display:grid;place-items:center;
+  background:var(--red);color:white;
+  transform:skew(-6deg);
+  font-size:16px;
+  font-weight:800;
+}
+.nav{
+  display:none;
+  position:absolute;
+  top:56px;
+  left:0;right:0;
+  background:var(--bg);
+  padding:16px 20px;
+  border-bottom:1px solid var(--line);
+  box-shadow:0 12px 24px rgba(0,0,0,0.05);
+}
+.nav.open{display:flex;flex-direction:column;gap:6px}
+.nav a,.nav button{
+  background:none;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:700;
+  padding:12px 0;
+  color:var(--ink);
+  text-align:left;
+  border:0;
+  width:100%;
+}
+.nav .active{color:var(--red)}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-height:40px;
+  padding:8px 16px;
+  background:var(--red);
+  color:white;
+  border:1px solid var(--red);
+  border-radius:6px;
+  font-weight:700;
+  font-size:13px;
+  text-decoration:none;
+}
+.btn.secondary{
+  background:white;
+  color:var(--ink);
+  border-color:var(--line);
+}
+.btn.secondary:hover{background:var(--soft)}
+.btn.dark{background:var(--navy);border-color:var(--navy)}
+.btn.full{width:100%}
+.menu-toggle{
+  display:block;
+  background:none;
+  font-size:20px;
+  padding:6px;
+  line-height:1;
+}
+
+/* Hero */
+.hero{
+  padding:24px 0 34px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  text-align:center;
+}
+.eyebrow{
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:var(--red);
+}
+.hero h1{margin-bottom:10px}
+.hero p{max-width:620px;margin:0 auto 18px;font-size:14px;color:var(--muted)}
+.hero-actions{display:flex;flex-direction:column;gap:10px;width:100%}
+.hero-actions .btn{font-size:15px;padding:12px 20px}
+.hero-visual{
+  width:100%;
+  height:300px;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,0.08);
+  background:var(--soft);
+}
+.hero-visual img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.hero-caption{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:16px;color:white;
+  background:linear-gradient(180deg,rgba(0,0,0,.7),rgba(0,0,0,.25));
+}
+.hero-caption strong{font-family:Syne;font-size:18px;display:block}
+.hero-caption small{font-size:11px;color:#e2e8f0;margin-top:4px}
+
+/* Programs / catalogue */
+.workspace{padding:30px 0}
+.work-heading{display:flex;flex-direction:column;gap:10px;align-items:flex-start;margin-bottom:18px}
+.sample-badge{
+  font-size:10px;
+  border:1px solid #cbd5e1;
+  background:white;
+  border-radius:4px;
+  padding:4px 8px;
+  color:var(--muted);
+  font-weight:700;
+  white-space:nowrap;
+}
+.tools{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px}
+.tab{
+  background:white;
+  border:1px solid var(--line);
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:6px;
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.tab.selected{color:white;background:var(--ink);border-color:var(--ink)}
+.search{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  border:1px solid var(--line);
+  background:white;
+  border-radius:6px;
+  padding:0 12px;
+}
+.search input{
+  width:100%;
+  border:0;
+  background:transparent;
+  padding:10px 0;
+  outline:none;
+  font-size:13px;
+}
+.catalogue-layout{display:grid;gap:18px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  transition:box-shadow .2s,transform .2s;
+}
+.card:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,0.07)}
+.card-image{
+  height:170px;
+  position:relative;
+  overflow:hidden;
+  background:var(--soft);
+}
+.card-image img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-label{
+  position:absolute;bottom:8px;left:8px;
+  background:rgba(17,24,39,0.8);
+  color:white;
+  padding:3px 7px;
+  border-radius:4px;
+  font-size:9px;
+}
+.card-body{padding:16px}
+.card-top{
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:8px;
+  font-size:10px;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  font-weight:700;
+}
+.available{color:var(--green);font-weight:700}
+.card h3{font-size:17px;margin-bottom:6px}
+.card p{font-size:12px;line-height:1.6;margin-bottom:16px;color:var(--muted)}
+.card-foot{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding-top:12px;
+  border-top:1px solid var(--line);
+  gap:6px;
+}
+.card-foot span{font-size:12px;color:var(--ink);font-weight:700}
+.card-foot button{
+  background:none;
+  color:var(--red);
+  font-weight:800;
+  font-size:12px;
+  padding:4px 0;
+}
+
+/* Sticky basket (desktop) */
+.basket{
+  position:sticky;
+  top:76px;
+  border:1px solid var(--line);
+  background:white;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+.basket-head{
+  padding:14px 16px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+.basket-head h3{font-size:15px;margin:0}
+.counter{
+  background:var(--soft);
+  border-radius:50%;
+  width:24px;height:24px;
+  display:grid;place-items:center;
+  font-size:10px;font-weight:700;
+}
+.basket-body{padding:14px 16px}
+.basket-item{
+  border-bottom:1px solid var(--line);
+  padding:10px 0;
+  font-size:12px;
+}
+.basket-item strong{display:block;color:var(--ink)}
+.basket-item small{color:var(--muted)}
+.text-button{
+  background:none;
+  text-decoration:underline;
+  font-size:12px;
+  color:var(--muted);
+  padding:4px 0;
+}
+.basket-total{
+  display:flex;
+  justify-content:space-between;
+  margin:14px 0;
+  font-size:13px;
+  font-weight:800;
+}
+.fine{font-size:11px;color:var(--muted);line-height:1.6}
+
+/* Steps */
+.steps{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:16px;
+  margin:30px 0;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:24px 0;
+}
+.step{display:flex;gap:10px;align-items:flex-start}
+.step b{font:700 20px Syne;color:var(--red);min-width:28px}
+.step strong{display:block;font-size:13px;color:var(--ink)}
+.step p{font-size:12px;margin:4px 0 0;color:var(--muted)}
+
+/* Portal */
+.portal-section{padding:30px 0}
+.section-heading{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:flex-start;
+  margin-bottom:18px;
+}
+.section-heading p{margin:0;font-size:13px}
+.segmented{
+  display:flex;
+  gap:3px;
+  background:var(--line);
+  padding:3px;
+  border-radius:6px;
+}
+.segmented button{
+  background:none;
+  padding:8px 14px;
+  font-size:12px;
+  font-weight:700;
+  border-radius:4px;
+  color:var(--muted);
+}
+.segmented button.selected{
+  background:white;
+  box-shadow:0 2px 6px rgba(0,0,0,0.06);
+  color:var(--ink);
+}
+.portal{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:20px;
+}
+.portal-top{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  margin-bottom:16px;
+}
+.portal-top h3{font-size:17px;margin:0}
+.portal-top p{font-size:12px;margin:0;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px}
+.stat{
+  background:var(--soft);
+  border-radius:8px;
+  padding:14px;
+}
+.stat strong{font:700 22px Syne;display:block;color:var(--ink)}
+.stat span{font-size:11px;color:var(--muted)}
+.table-wrap{overflow-x:auto;margin-bottom:18px}
+table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}
+th{
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--muted);
+  padding:10px;
+  background:var(--soft);
+  font-weight:700;
+}
+td{padding:12px 10px;border-bottom:1px solid var(--line)}
+td button{
+  border:1px solid var(--line);
+  background:white;
+  padding:6px 10px;
+  border-radius:4px;
+  font-size:11px;
+  font-weight:600;
+}
+td input{width:70px;padding:6px;border:1px solid var(--line);border-radius:4px;background:white}
+.status{
+  display:inline-block;
+  font-size:10px;
+  padding:3px 8px;
+  background:#e2f4e8;
+  color:#126B40;
+  border-radius:4px;
+  font-weight:700;
+}
+.status.wait{background:#fef3c7;color:#92400e}
+.portal-empty{
+  padding:24px;
+  background:var(--soft);
+  border-radius:8px;
+  text-align:center;
+}
+.portal-empty p{font-size:12px;margin:8px 0 16px}
+.staff-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+
+/* Story */
+.story{
+  display:flex;
+  flex-direction:column;
+  border-radius:10px;
+  overflow:hidden;
+  background:white;
+  border:1px solid var(--line);
+  margin:10px 0 40px;
+}
+.story img{width:100%;height:260px;object-fit:cover;display:block}
+.story-copy{padding:26px}
+.story-copy h2{font-size:24px;margin-bottom:12px}
+.story-copy p{font-size:13px;line-height:1.7;margin-bottom:12px}
+.story-copy a{font-size:13px;font-weight:700;color:var(--red)}
+
+/* Photo credits */
+.photo-credits-section{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:24px;
+  margin-bottom:40px;
+}
+.photo-credits-section h3{font-size:16px;margin-bottom:12px}
+.photo-gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.photo-credit-card{
+  background:var(--soft);
+  border-radius:6px;
+  overflow:hidden;
+  font-size:11px;
+}
+.photo-credit-card img{width:100%;height:110px;object-fit:cover;display:block}
+.photo-credit-card div{padding:10px}
+.photo-credit-card a{color:var(--red);text-decoration:none;font-weight:700}
+
+/* Footer */
+.footer{
+  border-top:1px solid var(--line);
+  padding:30px 0 100px;
+  background:white;
+}
+.footer-top{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  font-size:12px;
+  margin-bottom:16px;
+}
+.credits{
+  font-size:10px;
+  color:var(--muted);
+  line-height:1.7;
+}
+.credits a{
+  color:var(--ink);
+  text-decoration:underline;
+}
+
+/* Chat */
+.chat-launch{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:40;
+  box-shadow:0 8px 24px rgba(0,0,0,0.12);
+  border-radius:50px;
+  font-size:12px;
+  padding:10px 16px;
+}
+.chat{
+  position:fixed;
+  right:20px;
+  bottom:80px;
+  width:330px;
+  max-width:calc(100vw - 40px);
+  background:white;
+  border:1px solid var(--line);
+  box-shadow:0 20px 60px rgba(0,0,0,0.15);
+  border-radius:12px;
+  z-index:50;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  height:420px;
+}
+.chat-header{
+  background:var(--navy);
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  padding:14px 16px;
+}
+.chat-header strong{font-family:Syne}
+.chat-header small{display:block;font-size:10px;color:#9ca3af;margin-top:2px}
+.close{background:none;color:inherit;font-size:24px;line-height:1;padding:2px 8px}
+.messages{
+  flex:1;
+  overflow:auto;
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.message{
+  font-size:12px;
+  line-height:1.5;
+  border-radius:8px;
+  padding:10px 12px;
+  background:var(--soft);
+  max-width:90%;
+  white-space:pre-line;
+}
+.message.user{
+  background:var(--navy);
+  color:white;
+  align-self:flex-end;
+}
+.chat-prompts{
+  display:flex;
+  gap:6px;
+  padding:0 16px 10px;
+  flex-wrap:wrap;
+}
+.chat-prompts button{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:20px;
+  font-size:11px;
+  padding:6px 12px;
+  font-weight:600;
+}
+.chat-form{
+  display:flex;
+  border-top:1px solid var(--line);
+  padding:10px;
+  gap:8px;
+}
+.chat-form input{width:100%;border:0;padding:8px;font-size:12px;background:transparent;outline:none}
+.chat-form button{background:var(--red);color:white;border-radius:6px;padding:8px 14px;font-weight:700}
+
+/* Mobile bottom bar */
+.mobile-bar{
+  display:none;
+  position:fixed;
+  bottom:0;
+  left:0;right:0;
+  z-index:45;
+  background:white;
+  border-top:1px solid var(--line);
+  padding:8px 16px max(8px,env(safe-area-inset-bottom));
+  gap:10px;
+  align-items:center;
+}
+.mobile-bar a{
+  font-weight:700;
+  text-decoration:none;
+  font-size:12px;
+  padding:8px 14px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  flex:1;
+  text-align:center;
+}
+.mobile-bar button{
+  background:var(--red);
+  color:white;
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:12px;
+  font-weight:700;
+}
+
+/* Dialogs */
+dialog{
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:0;
+  width:92%;
+  max-width:460px;
+  max-height:85dvh;
+  overflow:auto;
+  color:var(--ink);
+  box-shadow:0 25px 80px rgba(0,0,0,0.2);
+}
+dialog::backdrop{background:rgba(17,24,39,0.55);backdrop-filter:blur(3px)}
+.dialog-top{
+  padding:16px 20px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.dialog-top h2{font-size:19px;margin:0}
+.dialog-content{padding:20px}
+.dialog-photo{width:100%;height:150px;object-fit:cover;border-radius:8px;margin-bottom:14px;display:block}
+.field{display:block;margin:12px 0;font-weight:700;font-size:12px}
+.field input,.field select{
+  display:block;
+  width:100%;
+  margin-top:6px;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:white;
+  color:var(--ink);
+}
+.date-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.date-option{
+  border:1px solid var(--line);
+  border-radius:6px;
+  background:white;
+  padding:10px 6px;
+  font-size:12px;
+  font-weight:600;
+  text-align:center;
+}
+.date-option.selected{border-color:var(--red);background:#fdf2f2;color:var(--red)}
+.date-option small{display:block;color:var(--muted);font-size:10px;margin-top:4px;font-weight:400}
+.summary-line{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:12px}
+.notice{
+  background:#fffbeb;
+  border:1px solid #fde68a;
+  color:#92400e;
+  padding:12px;
+  border-radius:6px;
+  font-size:11px;
+  margin:12px 0;
+}
+.toast{
+  position:fixed;
+  bottom:24px;
+  left:50%;
+  transform:translateX(-50%);
+  max-width:calc(100vw - 30px);
+  padding:12px 18px;
+  background:var(--navy);
+  color:white;
+  border-radius:6px;
+  z-index:100;
+  font-size:12px;
+  box-shadow:0 8px 30px rgba(0,0,0,0.2);
+  text-align:center;
+}
+.hidden,[hidden]{display:none!important}
+
+/* Desktop enhancements */
+@media(min-width:701px){
+  .header-inner{height:64px}
+  .hero{
+    flex-direction:row;
+    text-align:left;
+    align-items:center;
+    gap:26px;
+    padding:40px 0 60px;
+  }
+  .hero > div:first-child{flex:1}
+  .hero-actions{align-items:flex-start;flex-direction:row}
+  .hero-actions .btn{width:auto}
+  .hero-visual{
+    flex:0 0 420px;
+    height:380px;
+  }
+  .hero-caption{position:static;transform:none;padding:20px;background:none}
+  .hero-caption::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.65)0%,rgba(0,0,0,0)55%);
+  }
+  .hero-caption > *{position:relative;z-index:1}
+  .catalogue-layout{grid-template-columns:minmax(0,1fr) 300px;gap:26px}
+  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .portal-section{padding:48px 0}
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .story{
+    flex-direction:row;
+    margin:10px 0 60px;
+  }
+  .story img{width:45%;height:auto;min-height:340px}
+  .story-copy{width:55%;padding:40px}
+  .photo-gallery-grid{grid-template-columns:repeat(4,1fr)}
+  .basket{position:sticky}
+  .mobile-bar{display:none}
+  .chat{bottom:84px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="concept">Independent website concept by LeadSky for Brooklyn Martial Arts. Not their official website.</div>
+
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="Brooklyn Martial Arts home"><span class="brand-mark" aria-hidden="true">B</span>Brooklyn Martial Arts</a>
+
+    <nav class="nav" id="navigation" aria-label="Main navigation">
+      <a class="active" href="#programs">Find a class</a>
+      <button type="button" data-portal="member">My training</button>
+      <button type="button" data-portal="staff">Staff view</button>
+      <a href="#about">The school</a>
+    </nav>
+
+    <a class="btn" href="tel:+17184039026">Call</a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-controls="navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div class="eyebrow">Downtown Brooklyn, New York</div>
+        <h1 id="hero-title">Train without the back-and-forth.</h1>
+        <p>A member platform concept for Brooklyn Martial Arts. Browse classes, build your enrollment, and manage your training in one place.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#programs">Browse classes ↗</a>
+          <a class="btn secondary" href="tel:+17184039026">Call the school ↗</a>
+        </div>
+        <p class="hero-note" style="margin:0;text-align:center;font-size:12px;">All schedules and fees shown are illustrative sample data for this demo.</p>
+      </div>
+      <div class="hero-visual">
+        <img src="img/stock-2.jpg" alt="Illustrative stock photograph of Brazilian Jiu-Jitsu training — not the Brooklyn facility" width="800" height="600" fetchpriority="high">
+        <div class="hero-caption"><strong>Make room for your next move.</strong><small>Illustrative stock photography · not the Brooklyn facility</small></div>
+      </div>
+    </section>
+
+    <section class="workspace" id="programs" aria-labelledby="program-title">
+      <div class="work-heading">
+        <h2 id="program-title">Find your time on the mat.</h2>
+        <span class="badge">SAMPLE SCHEDULE &amp; FEES</span>
+      </div>
+      <div class="tools">
+        <div class="tabs" id="categories" role="group" aria-label="Filter programs"></div>
+        <label class="search"><span aria-hidden="true">🔍</span><input id="search" type="search" placeholder="Search a program…" aria-label="Search programs"></label>
+      </div>
+      <div class="catalogue-layout">
+        <div class="grid" id="catalogue" aria-live="polite"></div>
+        <aside class="basket" id="basket" aria-label="Enrollment basket">
+          <div class="basket-head">
+            <h3>Your training basket</h3>
+            <span class="counter" id="basketCount">0</span>
+          </div>
+          <div class="basket-body">
+            <div id="basketItems"></div>
+            <div class="basket-total"><span>Sample total</span><span id="basketTotal">$0</span></div>
+            <button class="btn full" id="reviewBasket">Review enrollment ↗</button>
+            <p class="fine">A private product demonstration. No real class reservations or payments.</p>
+          </div>
+        </aside>
+      </div>
+
+      <div class="steps" aria-label="How this platform works">
+        <div class="step"><b>01</b><div><strong>Choose your session</strong><p>One searchable schedule instead of a phone exchange.</p></div></div>
+        <div class="step"><b>02</b><div><strong>Review your enrollment</strong><p>See session choices and sample fees together.</p></div></div>
+        <div class="step"><b>03</b><div><strong>Keep everyone in sync</strong><p>Explore member bookings, capacity, and staff reminders.</p></div></div>
+      </div>
+    </section>
+
+    <section class="portal-section" id="portal" aria-labelledby="portal-title">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">On both sides of the front desk</div>
+          <h2 id="portal-title">One schedule. Less chasing.</h2>
+          <p>Switch roles to explore the same sample enrollment data.</p>
+        </div>
+        <div class="segmented" role="group" aria-label="Portal role">
+          <button class="selected" id="memberTab" aria-pressed="true">Member</button>
+          <button id="staffTab" aria-pressed="false">Staff</button>
+        </div>
+      </div>
+      <div class="portal" id="portalContent"></div>
+    </section>
+
+    <section class="story" id="about" aria-labelledby="about-title">
+      <img src="img/stock-7.jpg" alt="Illustrative stock photograph of martial arts practice outdoors — not a Brooklyn Martial Arts instructor" width="700" height="460" loading="lazy">
+      <div class="story-copy">
+        <div class="eyebrow">Built around Brooklyn Martial Arts</div>
+        <h2 id="about-title">The school stays personal.<br>The admin gets simpler.</h2>
+        <p>Brooklyn Martial Arts offers Kids Martial Arts, Brazilian Jiu-Jitsu, Muay Thai, Judo, MMA, and Fitness Kickboxing in Downtown Brooklyn.</p>
+        <p>This concept brings class selection, enrollment, and member communication together while keeping the school’s teaching at the centre.</p>
+        <p style="margin-top:16px;"><a href="https://brooklynmartialarts.com/" target="_blank" rel="noopener">Visit the official school website ↗</a></p>
+        <p class="fine">Photography is illustrative. This is an independent proposal, with no implied endorsement.</p>
+      </div>
+    </section>
+
+    <section class="photo-credits-section">
+      <h3>Photo Credits</h3>
+      <p style="font-size:11px;margin-bottom:12px;color:var(--muted)">Illustrative stock photographs licensed via Pixabay Content License. Not the business’s own staff, premises, or work.</p>
+      <div class="photo-gallery-grid">
+        <div class="photo-credit-card">
+          <img src="img/stock-1.jpg" alt="BJJ Sparring stock photo by GoldBJJ" loading="lazy">
+          <div><strong>BJJ Sparring</strong><br><a href="https://pixabay.com/photos/bjj-jiu-jitsu-jiu-jitsu-jiujitsu-8111390/" target="_blank" rel="noopener">GoldBJJ · Pixabay</a></div>
+        </div>
+        <div class="photo-credit-card">
+          <img src="img/stock-3.jpg" alt="Kids Martial Arts stock photo by stevepb" loading="lazy">
+          <div><strong>Kids Class</strong><br><a href="https://pixabay.com/photos/karate-martial-arts-sport-belt-1665606/" target="_blank" rel="noopener">stevepb · Pixabay</a></div>
+        </div>
+        <div class="photo-credit-card">
+          <img src="img/stock-5.jpg" alt="Muay Thai Training stock photo by southernmen" loading="lazy">
+          <div><strong>Muay Thai</strong><br><a href="https://pixabay.com/photos/muay-thai-training-fighter-man-7028717/" target="_blank" rel="noopener">southernmen · Pixabay</a></div>
+        </div>
+        <div class="photo-credit-card">
+          <img src="img/stock-8.jpg" alt="Self Defense stock photo by innamykytas" loading="lazy">
+          <div><strong>Judo / Self Defense</strong><br><a href="https://pixabay.com/photos/self-defense-karate-taekwondo-fight-5904589/" target="_blank" rel="noopener">innamykytas · Pixabay</a></div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <strong>Brooklyn Martial Arts · Platform concept</strong>
+      <div>
+        <a href="tel:+17184039026">+1 718-403-9026</a> &nbsp;/&nbsp;
+        <a href="mailto:info@brooklynmartialarts.com">Email the school</a>
+      </div>
+      <span>Concept by LeadSky</span>
+    </div>
+    <div class="credits">
+      All class times, availability, student records, and prices in this demo are illustrative sample data, not school offers. No information is sent or charged. The lettermark is concept typography, not an official logo.
+      <br><br>
+      Photo credits · Pixabay Content License:
+      <a href="https://pixabay.com/photos/bjj-jiu-jitsu-jiu-jitsu-jiujitsu-8111390/" target="_blank" rel="noopener">GoldBJJ — BJJ</a>
+      <a href="https://pixabay.com/photos/men-jiu-jitsu-jujutsu-sports-8151667/" target="_blank" rel="noopener">GoldBJJ — grappling</a>
+      <a href="https://pixabay.com/photos/karate-martial-arts-sport-belt-1665606/" target="_blank" rel="noopener">stevepb — martial arts</a>
+      <a href="https://pixabay.com/photos/karate-uniform-athletes-sitting-1665747/" target="_blank" rel="noopener">stevepb — uniform</a>
+      <a href="https://pixabay.com/photos/muay-thai-training-fighter-man-7028717/" target="_blank" rel="noopener">southernmen — Muay Thai</a>
+      <a href="https://pixabay.com/photos/self-defense-karate-taekwondo-fight-5904589/" target="_blank" rel="noopener">innamykytas — training</a>
+      <a href="https://pixabay.com/photos/karate-sunset-fight-sports-2578819/" target="_blank" rel="noopener">klimkin — outdoor practice</a>
+      <a href="https://pixabay.com/photos/children-river-attack-martial-arts-1822701/" target="_blank" rel="noopener">sasint — children martial arts</a>
+    </div>
+  </div>
+</footer>
+
+<button class="btn dark chat-launch" id="chatToggle" aria-expanded="false" aria-controls="chatPanel">✦ Ask the training assistant</button>
+
+<section class="chat" id="chatPanel" hidden aria-label="Training assistant demo">
+  <div class="chat-header">
+    <div>
+      <strong>Training assistant</strong>
+      <small>Scripted demo · not live AI or school advice</small>
+    </div>
+    <button class="close" id="chatClose" aria-label="Close chat">×</button>
+  </div>
+  <div class="messages" id="messages" role="log" aria-live="polite">
+    <div class="message">Hi! I can help you explore programs, sample schedules, and the demo enrollment flow. What would you like to know?</div>
+  </div>
+  <div class="chat-prompts">
+    <button data-question="What programs are available?">Programs</button>
+    <button data-question="How do I book a class?">Book a class</button>
+    <button data-question="What gear do I need?">Training gear</button>
+  </div>
+  <form class="chat-form" id="chatForm">
+    <input id="chatInput" aria-label="Your question" placeholder="Ask about your next session…" required maxlength="300">
+    <button aria-label="Send demo question">↑</button>
+  </form>
+</section>
+
+<div class="mobile-bar">
+  <a href="tel:+17184039026">📞 Call</a>
+  <a href="https://wa.me/17184039026" target="_blank" rel="noopener">WhatsApp</a>
+  <button id="mobileBasket">Basket · <span id="mobileCount">0</span></button>
+</div>
+
+<dialog id="classDialog" aria-labelledby="classTitle">
+  <div class="dialog-top"><h2 id="classTitle">Choose a session</h2><button class="close" data-close="classDialog" aria-label="Close class details">×</button></div>
+  <div class="dialog-content" id="classDetails"></div>
+</dialog>
+
+<dialog id="checkoutDialog" aria-labelledby="checkoutTitle">
+  <div class="dialog-top"><h2 id="checkoutTitle">Review your enrollment</h2><button class="close" data-close="checkoutDialog" aria-label="Close enrollment summary">×</button></div>
+  <div class="dialog-content" id="checkoutContent"></div>
+</dialog>
+
+<dialog id="noticeDialog" aria-labelledby="noticeTitle">
+  <div class="dialog-top"><h2 id="noticeTitle">Member communication</h2><button class="close" data-close="noticeDialog" aria-label="Close communication preview">×</button></div>
+  <div class="dialog-content" id="noticeContent"></div>
+</dialog>
+
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+
+const programs = [
+  {id:"kids",name:"Kids Martial Arts",category:"Kids",image:"img/stock-3.jpg",alt:"Illustrative stock photograph of young martial artists in uniform — not Brooklyn Martial Arts students",tag:"Youth training",description:"A structured martial arts program for younger students.",time:"4:00 PM",duration:45,fee:20,capacity:10,enrolled:7},
+  {id:"bjj",name:"Brazilian Jiu-Jitsu",category:"BJJ",image:"img/stock-1.jpg",alt:"Illustrative stock photograph of Brazilian Jiu-Jitsu grappling — not Brooklyn Martial Arts students",tag:"Grappling",description:"Focused, on-the-mat training.",time:"6:00 PM",duration:60,fee:25,capacity:12,enrolled:8},
+  {id:"thai",name:"Muay Thai",category:"Muay Thai",image:"img/stock-5.jpg",alt:"Illustrative stock photograph of a fighter training on a heavy bag — not Brooklyn Martial Arts students",tag:"Striking",description:"Striking practice and physical conditioning.",time:"7:00 PM",duration:60,fee:25,capacity:12,enrolled:10},
+  {id:"judo",name:"Judo",category:"Judo",image:"img/stock-8.jpg",alt:"Illustrative stock photograph of partnered martial arts technique practice — not Brooklyn Martial Arts students",tag:"Partner practice",description:"A sample session for this Brooklyn Martial Arts program.",time:"5:30 PM",duration:60,fee:25,capacity:10,enrolled:10},
+  {id:"mma",name:"MMA",category:"MMA",image:"img/stock-4.jpg",alt:"Illustrative stock photograph of martial artists seated in uniform — not an MMA class at the school",tag:"Mixed martial arts",description:"A place on the sample schedule.",time:"7:30 PM",duration:60,fee:25,capacity:10,enrolled:6}
+];
+
+let category = "All";
+let basket = [];
+let bookings = [];
+let role = "member";
+let currentProgram = null;
+let selectedDate = 0;
+let toastTimer;
+let reminders = false;
+const attendance = new Set();
+
+const categories = ["All","Kids","BJJ","Muay Thai","Judo","MMA"];
+
+const money = n => new Intl.NumberFormat("en-US",{style:"currency",currency:"USD",maximumFractionDigits:0}).format(n);
+const escapeHTML = s => String(s).replace(/[&<>"']/g,c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function dates(){
+  return [1,2,3].map(n => {
+    const d = new Date();
+    d.setHours(12,0,0,0);
+    d.setDate(d.getDate()+n);
+    return {key:d.toISOString().slice(0,10),label:d.toLocaleDateString("en-US",{weekday:"short",month:"short",day:"numeric"})};
+  });
+}
+const scheduleDates = dates();
+const slots = Object.fromEntries(programs.flatMap(p => scheduleDates.map(d => [p.id+"-"+d.key,{capacity:p.capacity,enrolled:p.enrolled}])));
+
+function remaining(p,date){
+  let s = slots[p.id+"-"+date];
+  return Math.max(0, s.capacity - s.enrolled);
+}
+
+function toast(text){
+  clearTimeout(toastTimer);
+  $("toast").textContent = text;
+  $("toast").hidden = false;
+  toastTimer = setTimeout(() => { $("toast").hidden = true; }, 4500);
+}
+
+function renderCategories(){
+  $("categories").innerHTML = categories.map(c =>
+    `<button class="tab ${category===c?"selected":""}" aria-pressed="${category===c}" data-category="${c}">${c==="All"?"All programs":c}</button>`
+  ).join("");
+}
+
+function renderCatalogue(){
+  const term = $("search").value.toLowerCase().trim();
+  const list = programs.filter(p =>
+    (category==="All" || p.category===category) &&
+    (p.name+" "+p.description+" "+p.tag).toLowerCase().includes(term)
+  );
+  $("catalogue").innerHTML = list.length ?
+    list.map(p => {
+      let free = remaining(p, scheduleDates[0].key);
+      return `<article class="card">
+        <div class="card-image"><img src="${p.image}" alt="${p.alt}" width="450" height="320" loading="lazy"><span class="photo-label">Illustrative stock photo</span></div>
+        <div class="card-body">
+          <div class="card-top"><span>${p.tag}</span><span class="available">${free?free+" sample spots":"Sample waitlist"}</span></div>
+          <h3>${p.name}</h3>
+          <p>${p.description}</p>
+          <div class="card-foot"><span>${p.duration} min · ${money(p.fee)} sample trial</span><button data-view="${p.id}" aria-label="View ${p.name} sessions">View sessions ↗</button></div>
+        </div>
+      </article>`;
+    }).join("") :
+    `<div class="empty-results" style="grid-column:1/-1;border:1px dashed var(--line);padding:40px;text-align:center;background:white;border-radius:10px"><h3>No matching programs</h3><p>Try another search or show all programs.</p><button class="btn secondary" id="resetSearch">Reset filters</button></div>`;
+}
+
+function renderBasket(){
+  $("basketCount").textContent = basket.length;
+  $("mobileCount").textContent = basket.length;
+  $("basketTotal").textContent = money(basket.reduce((s,b) => s+(b.waitlist?0:b.amount),0));
+  $("basketItems").innerHTML = basket.length ?
+    basket.map((b,i) => `<div class="basket-item"><div><strong>${b.program.name}</strong><small>${b.date.label} · ${b.program.time}<br>${b.waitlist?"Waitlist · no fee":b.plan==="monthly"?"Sample monthly enrollment":"Sample trial"} · ${money(b.waitlist?0:b.amount)}</small></div><button class="text-button" data-remove="${i}" aria-label="Remove ${b.program.name}">Remove</button></div>`).join("") :
+    `<p class="basket-empty"><strong>Start with a session.</strong> Your chosen classes will appear here.</p>`;
+  $("reviewBasket").disabled = !basket.length;
+}
+
+function showClass(id){
+  currentProgram = programs.find(p => p.id===id);
+  selectedDate = 0;
+  const p = currentProgram;
+  $("classTitle").textContent = p.name;
+  $("classDetails").innerHTML = `
+    <img class="dialog-photo" src="${p.image}" alt="${p.alt}" width="600" height="230">
+    <div class="eyebrow">Sample class calendar · not the live timetable</div>
+    <p>${p.description} Sessions below last ${p.duration} minutes. Instructor assignments and suitability should be confirmed with the school.</p>
+    <fieldset style="border:0;padding:0;margin:0"><legend style="font-size:11px;font-weight:700">Choose a sample date</legend>
+      <div class="date-options">${scheduleDates.map((d,i) => `<button type="button" class="date-option ${i===0?"selected":""}" data-date="${i}" aria-pressed="${i===0}">${d.label}<br><strong>${p.time}</strong><small>${remaining(p,d.key)} sample spots</small></button>`).join("")}</div>
+    </fieldset>
+    <label class="field">Enrollment option<select id="plan"><option value="trial">Single trial — ${money(p.fee)} (sample)</option><option value="monthly">Monthly program — $120 (sample)</option></select></label>
+    <div id="classPrice" class="summary-line"></div>
+    <p class="fine">Fees are invented solely for testing this calculator. They are not Brooklyn Martial Arts prices. A monthly choice reserves this selected sample session only.</p>
+    <button class="btn full" id="addClass"></button>
+  `;
+  updateClassPrice();
+  $("classDialog").showModal();
+}
+
+function updateClassPrice(){
+  const p = currentProgram;
+  const free = remaining(p, scheduleDates[selectedDate].key);
+  const monthly = $("plan").value === "monthly";
+  $("classPrice").innerHTML = `<span>${free?"Sample enrollment total":"Waitlist request · no charge"}</span><strong>${money(free?(monthly?120:p.fee):0)}</strong>`;
+  $("addClass").textContent = free ? "Add to training basket ↗" : "Add to sample waitlist ↗";
+}
+
+function addClass(){
+  const p = currentProgram;
+  const d = scheduleDates[selectedDate];
+  if([...basket,...bookings].some(b => b.program.id===p.id && b.date.key===d.key)){
+    toast("This session is already in your basket or member record.");
+    return;
+  }
+  basket.push({program:p,date:d,plan:$("plan").value,amount:$("plan").value==="monthly"?120:p.fee,waitlist:remaining(p,d.key)===0});
+  renderBasket();
+  $("classDialog").close();
+  toast(p.name + " added to your demo basket.");
+}
+
+function showCheckout(){
+  if(!basket.length){ toast("Choose a class session first."); return; }
+  $("checkoutContent").innerHTML = `
+    <div class="eyebrow">Demo basket summary</div>
+    <p>Review your choices. No payment details are collected.</p>
+    ${basket.map(b => `<div class="summary-line"><span><strong>${b.program.name}</strong><br>${b.date.label} · ${b.program.time}<br><small>${b.waitlist?"Waitlist request":b.plan==="monthly"?"Monthly program · sample":"Trial class · sample"}</small></span><strong>${money(b.waitlist?0:b.amount)}</strong></div>`).join("")}
+    <div class="summary-line"><strong>Sample total</strong><strong>${money(basket.reduce((s,b) => s+(b.waitlist?0:b.amount),0))}</strong></div>
+    <form id="enrollmentForm">
+      <label class="field">Student name<input name="student" required minlength="2" maxlength="70" autocomplete="off" placeholder="Enter a name to test the flow"></label>
+      <label class="field">Email for the demo record<input name="email" type="email" required maxlength="120" autocomplete="off" placeholder="you@example.com"></label>
+      <label style="display:flex;gap:9px;font-size:11px;margin:18px 0;align-items:flex-start"><input type="checkbox" required> I understand this is a demo. No class is reserved, no message is sent and no payment is processed.</label>
+      <button class="btn full">Create sample enrollment ↗</button>
+    </form>
+    <p class="fine">Names and emails stay only in this page’s memory and disappear on refresh.</p>
+  `;
+  $("checkoutDialog").showModal();
+}
+
+function completeEnrollment(event){
+  event.preventDefault();
+  const form = event.target;
+  const student = form.elements.student.value.trim();
+  if(student.length < 2){
+    form.elements.student.setCustomValidity("Enter at least two non-space characters.");
+    form.elements.student.reportValidity();
+    form.elements.student.oninput = () => form.elements.student.setCustomValidity("");
+    return;
+  }
+  basket.forEach(b => {
+    const free = remaining(b.program, b.date.key);
+    b.waitlist = free === 0;
+    if(!b.waitlist) slots[b.program.id+"-"+b.date.key].enrolled++;
+    bookings.push({...b,student,email:form.elements.email.value,id:Date.now()+Math.random(),payment:b.waitlist?"No fee":"Not charged"});
+  });
+  basket = [];
+  renderBasket();
+  renderCatalogue();
+  renderPortal();
+  $("checkoutContent").innerHTML = `<div class="eyebrow">Sample record created</div><h3>Your demo enrollment is ready to explore.</h3><div class="notice">This is a demo form, nothing was sent.</div><p>No class has been reserved and no payment has been taken. Your sample choices now appear in My training and Staff view.</p><button class="btn full" id="goMember">View my sample training ↗</button>`;
+}
+
+function setRole(value){
+  role = value;
+  renderPortal();
+  $("memberTab").classList.toggle("selected", role==="member");
+  $("staffTab").classList.toggle("selected", role==="staff");
+  $("memberTab").setAttribute("aria-pressed", role==="member");
+  $("staffTab").setAttribute("aria-pressed", role==="staff");
+}
+
+function renderPortal(){
+  if(role==="member"){
+    const active = bookings.filter(b => !b.waitlist);
+    $("portalContent").innerHTML = `
+      <div class="portal-top"><div><h3>Your training, in one place.</h3><p>Sample member workspace · no real account or login</p></div><span class="sample-badge">MEMBER DEMO</span></div>
+      <div class="stats">
+        <div class="stat"><strong>${active.length}</strong><span>Sample reservations</span></div>
+        <div class="stat"><strong>${bookings.filter(b=>b.waitlist).length}</strong><span>Sample waitlists</span></div>
+        <div class="stat"><strong>${attendance.size}</strong><span>Sample attendances</span></div>
+      </div>
+      ${bookings.length ? `<div class="table-wrap"><table><thead><tr><th>Program / student</th><th>Sample session</th><th>Status</th><th>Payment</th><th>Manage</th></tr></thead><tbody>${bookings.map(b => `<tr><td><strong>${b.program.name}</strong><br>${escapeHTML(b.student)}</td><td>${b.date.label}<br>${b.program.time}</td><td><span class="status ${b.waitlist?"wait":""}">${b.waitlist?"Waitlisted":attendance.has(b.id)?"Attended · sample":"Reserved · sample"}</span></td><td>${b.payment}<br>${money(b.waitlist?0:b.amount)} sample</td><td><button data-cancel="${b.id}">Cancel</button></td></tr>`).join("")}</tbody></table></div>` : `<div class="portal-empty"><strong>No sample enrollments yet.</strong><p>Choose a program above and complete the demo basket summary to see your record here.</p><a class="btn secondary" href="#programs">Explore sessions ↗</a></div>`}
+      <p class="fine" style="margin:18px 0 0">Attendance is updated from Staff view. Payment amounts are sample fee records; no online payment integration is connected.</p>
+    `;
+  } else {
+    const d = scheduleDates[0];
+    $("portalContent").innerHTML = `
+      <div class="portal-top"><div><h3>Front desk, without the paper trail.</h3><p>Sample staff workspace · ${d.label}</p></div><span class="sample-badge">STAFF DEMO</span></div>
+      <div class="stats">
+        <div class="stat"><strong>${bookings.length}</strong><span>New demo enrollments</span></div>
+        <div class="stat"><strong>${bookings.filter(b=>b.waitlist).length}</strong><span>Waitlist requests</span></div>
+        <div class="stat"><strong>${reminders?"On":"Off"}</strong><span>Sample auto-reminders</span></div>
+      </div>
+      <label class="field" style="max-width:250px">Session date<select id="staffDate">${scheduleDates.map(x => `<option value="${x.key}">${x.label}</option>`).join("")}</select></label>
+      <div id="capacityTable"></div>
+      <h3 style="font-size:18px;margin:25px 0 12px">Enrollment &amp; attendance</h3>
+      ${bookings.length ? `<div class="table-wrap"><table><thead><tr><th>Student / program</th><th>Status</th><th>Attendance / waitlist</th></tr></thead><tbody>${bookings.map(b => `<tr><td><strong>${escapeHTML(b.student)}</strong><br>${b.program.name} · ${b.date.label}</td><td>${b.waitlist?"Sample waitlist":b.payment}</td><td>${b.waitlist?`<button data-promote="${b.id}">Offer available spot</button>`:`<button data-attend="${b.id}">${attendance.has(b.id)?"Undo attendance":"Mark attended"}</button>`}</td></tr>`).join("")}</tbody></table></div>` : `<p class="fine">Complete an enrollment in the catalogue to test attendance and waitlist management here.</p>`}
+      <div class="staff-actions">
+        <button class="btn secondary" id="toggleReminders">${reminders?"Disable":"Enable"} demo reminders</button>
+        <button class="btn dark" id="previewReminder">Preview a reminder</button>
+        <button class="text-button" id="resetDemo">Reset all sample activity</button>
+      </div>
+      <p class="fine" style="margin-top:14px">This view demonstrates staff controls without authentication. Reminders are previews only. A production platform needs secure roles, live scheduling, payment processing, and notification integrations.</p>
+    `;
+    renderCapacity(d.key);
+  }
+}
+
+function renderCapacity(key){
+  $("capacityTable").innerHTML = `<div class="table-wrap"><table><thead><tr><th>Program</th><th>Time</th><th>Enrolled</th><th>Capacity</th><th>Open spots</th></tr></thead><tbody>${programs.map(p => {
+    const s = slots[p.id+"-"+key];
+    return `<tr><td><strong>${p.name}</strong></td><td>${p.time}</td><td>${s.enrolled} sample</td><td><input type="number" aria-label="${p.name} sample capacity" min="${s.enrolled}" max="50" value="${s.capacity}" data-capacity="${p.id}" data-day="${key}"></td><td>${remaining(p,key)}</td></tr>`;
+  }).join("")}</tbody></table></div>`;
+}
+
+function cancelBooking(id){
+  const b = bookings.find(x => x.id===id);
+  if(!b && !b.waitlist) slots[b.program.id+"-"+b.date.key].enrolled--;
+  attendance.delete(id);
+  bookings = bookings.filter(x => x.id!==id);
+  renderPortal();
+  renderCatalogue();
+  toast("Sample enrollment cancelled. Capacity updated.");
+}
+
+function reminderPreview(){
+  const b = bookings.find(b => !b.waitlist);
+  $("noticeContent").innerHTML = `<div class="eyebrow">Notification preview · nothing sent</div><h3>Your next training session</h3><p>${b?`Hi ${escapeHTML(b.student)}, your sample ${b.program.name} session is on ${b.date.label} at ${b.program.time}.`:"Create a sample enrollment first to generate a reminder using its selected program and date."}</p><div class="notice">This is a demo form, nothing was sent.</div><p class="fine">A production reminder would use the school’s confirmed timetable and a member’s notification preferences.</p><button class="btn secondary full" data-close="noticeDialog">Close preview</button>`;
+  $("noticeDialog").showModal();
+}
+
+function answer(question){
+  const q = question.toLowerCase();
+  if(/price|cost|fee|pay|membership/.test(q)) return "This demo uses $20 for a Kids Martial Arts trial, $25 for other listed trials, and $120 for a monthly option. These are sample amounts, not the school’s prices. No money is charged. Ask the school for current fees: +1 718-403-9026.";
+  if(/gear|wear|bring|belt/.test(q)) return "Equipment requirements and belt progression depend on the program. This demo does not include verified school guidance. Please contact Brooklyn Martial Arts at +1 718-403-9026 or info@brooklynmartialarts.com before your first visit.";
+  if(/kid|child|youth|parent/.test(q)) return "Brooklyn Martial Arts offers Kids Martial Arts. Choose the Kids tab to explore a sample session. Confirm age requirements, current times, and suitability directly with the school.";
+  if(/book|enroll|reserve|trial/.test(q)) return "Open a program’s “View sessions”, choose a sample date and enrollment option, then add it to your basket. Review the basket and create a sample enrollment. It appears in My training. Nothing is sent, booked, or charged.";
+  if(/schedule|time|when|calendar|open/.test(q)) return "The catalogue contains three upcoming sample dates per program. They are not the school’s live timetable. Brooklyn Martial Arts states it is open seven days a week; contact the school for confirmed class times.";
+  if(/wait|full|capacity/.test(q)) return "A full sample session can be added as a waitlist request at no charge. Staff view lets you increase its capacity and offer a spot. These changes apply only inside this demo.";
+  if(/cancel|attendance|staff/.test(q)) return "My training lets you cancel a sample enrollment. Staff view lets you edit class capacity, mark attendance, manage waitlists, and preview reminders. The two views share the same sample records.";
+  if(/where|location|address/.test(q)) return "Brooklyn Martial Arts is in Downtown Brooklyn, New York. A street address is not included in this concept. Visit brooklynmartialarts.com or call +1 718-403-9026 for confirmed directions.";
+  if(/program|class|bjj|judo|mma|thai|kickbox/.test(q)) return "The school lists Kids Martial Arts, Brazilian Jiu-Jitsu, Muay Thai, Judo, MMA, and Fitness Kickboxing. This demo catalogue includes five of those programs. Use its category tabs or search to find a session.";
+  return "I can explain programs, sample schedules, fees, gear, enrollment, or waitlists. This assistant uses scripted replies, not live AI. For school-specific questions, contact info@brooklynmartialarts.com.";
+}
+
+function sendQuestion(q){
+  const messages = $("messages");
+  const user = document.createElement("div");
+  user.className = "message user";
+  user.textContent = q;
+  messages.appendChild(user);
+  const reply = document.createElement("div");
+  reply.className = "message";
+  reply.textContent = answer(q);
+  messages.appendChild(reply);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function toggleChat(open){
+  $("chatPanel").hidden = !open;
+  $("chatToggle").setAttribute("aria-expanded", open);
+  if(open) $("chatInput").focus(); else $("chatToggle").focus();
+}
+
+/* Event listeners */
+$("categories").addEventListener("click", e => {
+  const b = e.target.closest("[data-category]");
+  if(!b) return;
+  category = b.dataset.category;
+  renderCategories();
+  renderCatalogue();
+});
+$("search").addEventListener("input", renderCatalogue);
+$("catalogue").addEventListener("click", e => {
+  const b = e.target.closest("[data-view]");
+  if(b) showClass(b.dataset.view);
+  if(e.target.id === "resetSearch"){
+    category = "All";
+    $("search").value = "";
+    renderCategories();
+    renderCatalogue();
+  }
+});
+$("classDetails").addEventListener("click", e => {
+  const b = e.target.closest("[data-date]");
+  if(b){
+    selectedDate = Number(b.dataset.date);
+    document.querySelectorAll("[data-date]").forEach(x => {
+      x.classList.toggle("selected", x === b);
+      x.setAttribute("aria-pressed", x === b);
+    });
+    updateClassPrice();
+  }
+  if(e.target.id === "addClass") addClass();
+});
+$("classDetails").addEventListener("change", e => {
+  if(e.target.id === "plan") updateClassPrice();
+});
+$("basketItems").addEventListener("click", e => {
+  const b = e.target.closest("[data-remove]");
+  if(b){
+    basket.splice(Number(b.dataset.remove), 1);
+    renderBasket();
+  }
+});
+$("reviewBasket").addEventListener("click", showCheckout);
+$("mobileBasket").addEventListener("click", () => {
+  if(basket.length) showCheckout();
+  else {
+    $("basket").scrollIntoView({behavior:"smooth",block:"center"});
+    toast("Choose a class to start your basket.");
+  }
+});
+$("checkoutContent").addEventListener("submit", e => {
+  if(e.target.id === "enrollmentForm") completeEnrollment(e);
+});
+$("checkoutContent").addEventListener("click", e => {
+  if(e.target.id === "goMember"){
+    $("checkoutDialog").close();
+    setRole("member");
+    $("portal").scrollIntoView({behavior:"smooth"});
+  }
+});
+$("memberTab").addEventListener("click", () => setRole("member"));
+$("staffTab").addEventListener("click", () => setRole("staff"));
+document.querySelectorAll("[data-portal]").forEach(b => b.addEventListener("click", () => {
+  setRole(b.dataset.portal);
+  $("portal").scrollIntoView({behavior:"smooth"});
+  closeMenu();
+}));
+$("portalContent").addEventListener("change", e => {
+  if(e.target.id === "staffDate") renderCapacity(e.target.value);
+  if(e.target.dataset.capacity){
+    const input = e.target;
+    const s = slots[input.dataset.capacity+"-"+input.dataset.day];
+    const value = Number(input.value);
+    if(!Number.isInteger(value) || value < s.enrolled || value > 50){
+      input.value = s.capacity;
+      toast("Capacity must be a whole number between enrollment and 50.");
+      return;
+    }
+    s.capacity = value;
+    renderCapacity(input.dataset.day);
+    renderCatalogue();
+    toast("Sample capacity updated.");
+  }
+});
+$("portalContent").addEventListener("click", e => {
+  const b = e.target.closest("button");
+  if(!b) return;
+  if(b.dataset.cancel) cancelBooking(Number(b.dataset.cancel));
+  if(b.dataset.attend){
+    const id = Number(b.dataset.attend);
+    attendance.has(id) ? attendance.delete(id) : attendance.add(id);
+    renderPortal();
+    toast("Sample attendance updated.");
+  }
+  if(b.dataset.promote){
+    const item = bookings.find(x => x.id === Number(b.dataset.promote));
+    if(!remaining(item.program, item.date.key)){
+      toast("No open spot yet. Increase capacity or cancel an enrollment.");
+      return;
+    }
+    item.waitlist = false;
+    item.payment = "Not charged";
+    slots[item.program.id+"-"+item.date.key].enrolled++;
+    renderPortal();
+    renderCatalogue();
+    toast("Sample waitlist member moved to reserved. Nothing was sent.");
+  }
+  if(b.id === "toggleReminders"){
+    reminders = !reminders;
+    renderPortal();
+    toast("Demo reminders " + (reminders ? "enabled. No messages will be sent." : "disabled."));
+  }
+  if(b.id === "previewReminder") reminderPreview();
+  if(b.id === "resetDemo"){
+    basket = [];
+    bookings = [];
+    attendance.clear();
+    reminders = false;
+    programs.forEach(p => scheduleDates.forEach(d => slots[p.id+"-"+d.key] = {capacity:p.capacity,enrolled:p.enrolled}));
+    renderBasket();
+    renderPortal();
+    renderCatalogue();
+    toast("All sample activity reset.");
+  }
+});
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-close]");
+  if(b) $(b.dataset.close).close();
+});
+document.querySelectorAll("dialog").forEach(d => d.addEventListener("click", e => {
+  if(e.target === d){
+    const r = d.getBoundingClientRect();
+    if(e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) d.close();
+  }
+}));
+$("chatToggle").addEventListener("click", () => toggleChat($("chatPanel").hidden));
+$("chatClose").addEventListener("click", () => toggleChat(false));
+$("chatForm").addEventListener("submit", e => {
+  e.preventDefault();
+  const q = $("chatInput").value.trim();
+  if(q){
+    sendQuestion(q);
+    $("chatInput").value = "";
+  }
+});
+document.querySelectorAll("[data-question]").forEach(b => b.addEventListener("click", () => sendQuestion(b.dataset.question)));
+
+function closeMenu(){
+  $("navigation").classList.remove("open");
+  $("menuToggle").setAttribute("aria-expanded","false");
+  $("menuToggle").setAttribute("aria-label","Open menu");
+}
+$("menuToggle").addEventListener("click", () => {
+  const open = $("navigation").classList.toggle("open");
+  $("menuToggle").setAttribute("aria-expanded", open);
+  $("menuToggle").setAttribute("aria-label", open ? "Close menu" : "Open menu");
+});
+document.querySelectorAll(".nav a").forEach(a => a.addEventListener("click", closeMenu));
+document.addEventListener("keydown", e => {
+  if(e.key === "Escape"){
+    closeMenu();
+    if(!$("chatPanel").hidden) toggleChat(false);
+  }
+});
+
+renderCategories();
+renderCatalogue();
+renderBasket();
+renderPortal();
+</script>
+</body>
+</html>
