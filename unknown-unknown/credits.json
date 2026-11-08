@@ -1,67 +1,107 @@
 [
   {
     "file": "img/profile.jpg",
-    "kind": "their own photo",
+    "kind": "their own photo (from their Instagram)",
     "use_as": "logo / profile picture",
-    "source": "https://x.com/GloryCassandra"
+    "source": "https://www.instagram.com/inkbyellen"
   },
   {
     "file": "img/stock-1.jpg",
     "kind": "stock photo",
-    "query": "caterer",
-    "description": "catering, airport, plane, ever, entry, hull, aviation, air traffic, vacations, arrival, rear, charge, meal, food, nourishment, enjoy the meal, airfield, dusseldorf, airport d\u00fcsseldorf, catering, catering, catering, catering, catering, airport, airport, airport, airfield",
-    "source": "https://pixabay.com/photos/catering-airport-plane-ever-entry-210403/",
-    "photographer": "falco",
+    "query": "Pexels fine line floral tattoo forearm close up",
+    "description": "tattoo, tattoo artist, arm, tattoo, tattoo, tattoo, tattoo, tattoo",
+    "source": "https://pixabay.com/photos/tattoo-tattoo-artist-arm-3268988/",
+    "photographer": "ilovetattoos",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-2.jpg",
     "kind": "stock photo",
-    "query": "caterer",
-    "description": "drinks, alcohol, glasses, champagne, wine, serving trays, alcoholic drinks, beverage, refreshment, catering, wedding, party, event, celebration, alcohol, alcohol, champagne, champagne, champagne, champagne, champagne, wine, wine, catering, catering, wedding, wedding, party, party, party, party, event, event, event",
-    "source": "https://pixabay.com/photos/drinks-alcohol-glasses-champagne-1283608/",
-    "photographer": "Pexels",
+    "query": "Pexels fine line floral tattoo forearm close up",
+    "description": "flower, tulip, flower background, white tulip, full hd wallpaper, blossom, floral background, 4k wallpaper, bloom, free wallpaper, petals, 4k wallpaper 1920x1080, beautiful flowers, nature wallpaper, flora, beautiful nature, background, nature, nature background, white flower, windows wallpaper, black background, cool backgrounds, close up, flower wallpaper, wallpaper 4k, laptop wallpaper, beautiful wallpaper, tulip wallpaper, white, hd background, desktop backgrounds, hd wallpaper, free background, wallpaper hd, mac wallpaper",
+    "source": "https://pixabay.com/photos/flower-tulip-white-tulip-blossom-8559381/",
+    "photographer": "neelam279",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-3.jpg",
     "kind": "stock photo",
-    "query": "caterer customer",
-    "description": "people, men, women, crowd, cook, bread, chef, baker, store, restaurant, fast food, chef, chef, chef, baker, baker, fast food, fast food, fast food, fast food, fast food",
-    "source": "https://pixabay.com/photos/people-men-women-crowd-cook-bread-2595757/",
-    "photographer": "StockSnap",
+    "query": "Pixabay botanical flower tattoo skin detail",
+    "description": "fashion, wallpaper hd, free background, desktop backgrounds, female, beauty, mac wallpaper, girl, woman, beautiful, windows wallpaper, laptop wallpaper, white, young, hd wallpaper, style, legs, beautiful wallpaper, background, 4k wallpaper, 4k wallpaper 1920x1080, design, free wallpaper, color, cool backgrounds, hand, model, body, relax, women, casual, adult, dress, modern, wallpaper 4k, full hd wallpaper, accessory, wedding",
+    "source": "https://pixabay.com/photos/fashion-female-beauty-girl-woman-5043026/",
+    "photographer": "MeeNee",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-4.jpg",
     "kind": "stock photo",
-    "query": "caterer customer",
-    "description": "barber shop, iran, cosmetology, mashhad, people, job, work, life, lifestyle, everyday, occupation, social documentary, office, mostafa meraji, canon photos, young, men, business, jorj barber, makeup artist, stylist, style blogger, fashion blogger, persian, barbershop in iran, barber shop, barber shop, barber shop, barber shop, iran, iran, people, job, job, job, job, job, work, work, life, life, men, men, men, business, business",
-    "source": "https://pixabay.com/photos/barber-shop-iran-cosmetology-5212059/",
-    "photographer": "mostafa_meraji",
+    "query": "Pixabay botanical flower tattoo skin detail",
+    "description": "hands, holding, adults, bracelets, jewelries, accessories, accessorize, couple, lovers, man, woman, holding hands, love, partners, people, skin, togetherness, touch, feel, hold, hands, holding hands, holding hands, holding hands, holding hands, holding hands",
+    "source": "https://pixabay.com/photos/hands-holding-adults-bracelets-1867428/",
+    "photographer": "Pexels",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-5.jpg",
     "kind": "stock photo",
-    "query": "caterer unknown",
-    "description": "ufo, alien, guy, pozaziemianin, ufoludek, tunnel, light, stranger, alien civilization, newcomer, antennae, martian, strange, unfamiliar, outlandish, foreign, ufo, ufo, alien, alien, alien, alien, alien",
-    "source": "https://pixabay.com/photos/ufo-alien-guy-pozaziemianin-2413965/",
-    "photographer": "Pawel86",
+    "query": "Pexels delicate rose tattoo wrist natural light",
+    "description": "cup, rose blossom, dishes, teacup, blossom, bloom, nature, summer, sun, summer, summer, summer, summer, summer",
+    "source": "https://pixabay.com/photos/cup-rose-blossom-dishes-teacup-8102791/",
+    "photographer": "beasternchen",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
     "file": "img/stock-6.jpg",
     "kind": "stock photo",
-    "query": "caterer unknown",
-    "description": "fantasy, landscape, ufo, glacier, mystical, the atmosphere, mood, beautiful, hover, idyllic, bach, nature, heaven, romantic, composing, atmospheric, blue, photomontage, light, spaceship, aliens, alien intelligence, celestial bodies, sci fi, future, futuristic, alien, science fiction, expedition, unidentified flying object, alie, scary, people, arrival, ufo, ufo, ufo, ufo, ufo, spaceship, spaceship, spaceship, aliens, aliens, sci fi, future, alien, alien, alien, science fiction, science fiction",
-    "source": "https://pixabay.com/photos/fantasy-landscape-ufo-glacier-2700914/",
-    "photographer": "KELLEPICS",
+    "query": "Pexels delicate rose tattoo wrist natural light",
+    "description": "rose, gold yellow rose, rosa xanthina, rose flower, blossom, bloom, petals, rose bush, stamens, incidence of light, bloom, rose blossom, yellow, bright",
+    "source": "https://pixabay.com/photos/rose-gold-yellow-rose-rosa-xanthina-5094723/",
+    "photographer": "Nennieinszweidrei",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels tattoo artist gloved hands fine line work",
+    "description": "tattoo, ink, tattoo pen, tattoo machine, body art, skill, tattoo, tattoo, tattoo machine, tattoo machine, tattoo machine, tattoo machine, tattoo machine",
+    "source": "https://pixabay.com/photos/tattoo-ink-tattoo-pen-7027595/",
+    "photographer": "Pic_Panther",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels tattoo artist gloved hands fine line work",
+    "description": "lab, experiment, test, chemistry, test tubes, laboratory, hands, gloves, surgical gloves, blood samples, lab, lab, lab, lab, lab, chemistry, laboratory, laboratory, laboratory, laboratory",
+    "source": "https://pixabay.com/photos/lab-experiment-test-chemistry-3498584/",
+    "photographer": "fernandozhiminaicela",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay floral tattoo shoulder close up",
+    "description": "people, man, woman, body, tattoo, art, couple, back, gray art, gray body, man, tattoo, tattoo, tattoo, art, couple, couple, couple, couple, couple",
+    "source": "https://pixabay.com/photos/people-man-woman-body-tattoo-art-2576110/",
+    "photographer": "StockSnap",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay floral tattoo shoulder close up",
+    "description": "close up, art, portrait, young, dirty, unclean, woman, skin, female, young woman, modeling, pose, posing, art, art, art, art, portrait, woman, woman, skin, skin, skin, skin, skin",
+    "source": "https://pixabay.com/photos/close-up-art-portrait-young-dirty-1721060/",
+    "photographer": "Mark_Mook_Fotografie",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }
