@@ -2,733 +2,246 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#f8fafc">
-<title>Dent Punisher n Sound Lab — El Paso | LeadSky Concept</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<meta name="theme-color" content="#FAF6EF">
+<title>Dent Punisher n Sound Lab · Independent Website Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f8fafc;--ink:#0f172a;--amber:#d97706;--amber-gold:#fbbf24;--line:#e2e8f0;--muted:#475569;--ease:cubic-bezier(.22,1,.36,1)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;padding-bottom:90px}
-button,input,textarea,select{font:inherit}
-a{color:inherit}
-button,a,input,textarea{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
-button{cursor:pointer;color:inherit}
-button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--amber-gold);outline-offset:3px}
-button:disabled{cursor:default}
-h1,h2,h3,p,dl,dt,dd,ul,li{margin:0;padding:0}
-h1,h2,h3,.brand{font-family:Outfit,sans-serif}
-button svg,a svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;flex-shrink:0}
-
-.concept{background:#020617;text-align:center;padding:8px 14px;font-size:11px;line-height:1.4;color:#94a3b8;border-bottom:1px solid #1e293b}
-.header{height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 5vw;background:var(--paper);position:relative;z-index:30;border-bottom:1px solid var(--line)}
-.brand{text-decoration:none;font-size:17px;font-weight:700;letter-spacing:-.5px;white-space:nowrap;color:var(--ink)}
-.brand .mark{color:var(--amber)}
-.header-actions{display:flex;align-items:center;gap:20px}
-.location-tag{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:600}
-.header-call{font-size:12px;font-weight:700;text-decoration:none;border-bottom:1.5px solid var(--ink);padding-bottom:2px}
-.menu-toggle{width:38px;height:38px;border:1px solid #cbd5e1;background:transparent;border-radius:50%;display:grid;place-items:center}
-.menu-toggle span,.menu-toggle span:after{width:14px;height:2px;background:var(--ink);display:block;position:relative;border-radius:1px}
-.menu-toggle span:after{content:"";position:absolute;top:5px}
-.menu{position:absolute;right:5vw;top:60px;background:var(--paper);padding:16px;width:290px;box-shadow:0 20px 50px rgba(0,0,0,.2);border:1px solid var(--line);border-radius:6px;z-index:40}
-[hidden]{display:none!important}
-.menu button,.menu a{display:block;width:100%;text-align:left;padding:12px 10px;text-decoration:none;background:none;border:0;border-bottom:1px solid var(--line);font-size:14px;font-weight:500}
-.menu button{text-align:left;width:100%}
-
-.story{position:relative;min-height:660px;height:calc(100svh - 100px);max-height:1200px;overflow:hidden;background:#090d14;color:white;isolation:isolate}
-.slide{position:absolute;inset:0;visibility:hidden;opacity:0;transition:opacity .6s var(--ease),visibility .6s;overflow:hidden}
-.slide.active{visibility:visible;opacity:1;z-index:1}
-.slide>.photo{position:absolute;width:100%;height:100%;object-fit:cover;inset:0;transform:scale(1.03);transition:transform 7s linear}
-.slide.active>.photo{transform:scale(1)}
-.slide:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.65) 55%,rgba(0,0,0,0.3) 100%),linear-gradient(0deg,rgba(0,0,0,0.88) 0%,transparent 60%);z-index:1}
-
-.slide-content{position:relative;z-index:2;max-width:820px;padding:clamp(80px,13vh,150px) 8vw 200px;box-sizing:content-box}
-.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;gap:12px;margin-bottom:20px;font-weight:600;color:#f3f4f6}
-.eyebrow:before{content:"";width:26px;height:2px;background:var(--amber-gold)}
-h1,h2{font-size:clamp(46px,7.2vw,96px);font-weight:700;letter-spacing:-.04em;line-height:1.02;max-width:800px;color:#ffffff}
-.accent{color:var(--amber-gold)}
-.description{font-size:clamp(15px,1.5vw,18px);line-height:1.65;max-width:460px;margin-top:22px;color:#f1f5f9;text-shadow:0 1px 3px rgba(0,0,0,0.8)}
-.primary{display:inline-flex;align-items:center;justify-content:center;gap:14px;background:var(--amber-gold);color:#0f172a;text-decoration:none;border:0;padding:16px 24px;font-weight:700;font-size:13px;margin-top:28px;border-radius:4px;min-height:50px;transition:background .2s,transform .2s}
-.primary:hover{background:#fde68a;transform:translateY(-2px)}
-.small-link{display:inline-flex;align-items:center;gap:6px;margin-left:20px;color:#ffffff;font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:5px}
-
-.progress{position:absolute;top:22px;left:8vw;right:8vw;z-index:10;display:flex;gap:8px}
-.progress button{border:0;background:rgba(255,255,255,0.25);height:3px;padding:0;flex:1;position:relative}
-.progress button:before{content:"";position:absolute;inset:-10px 0}
-.progress button i{display:block;background:var(--amber-gold);height:100%;width:0;transition:width .5s var(--ease)}
-.progress button.past i,.progress button.current i{width:100%}
-.story-label{position:absolute;z-index:10;top:38px;right:8vw;font-size:10px;letter-spacing:1.8px;text-transform:uppercase;color:#e2e8f0;font-weight:600}
-.mobile-hint{display:none}
-
-/* 3D Speaker Container inside Slide 2 */
-.3d-wrapper{position:absolute;right:6vw;top:50%;transform:translateY(-55%);width:min(420px,40vw);height:380px;z-index:3;pointer-events:auto;background:rgba(15,23,42,0.65);border:1px solid rgba(255,255,255,0.15);backdrop-filter:blur(10px);border-radius:12px;padding:16px;display:flex;flex-direction:column;align-items:center}
-#three-container{width:100%;height:270px;position:relative;cursor:grab;background:#0f172a;border-radius:6px;overflow:hidden}
-#three-container:active{cursor:grabbing}
-.three-fallback{width:100%;height:100%;background:linear-gradient(135deg,#1e293b,#0f172a);display:grid;place-items:center;color:#94a3b8;font-size:12px;border-radius:6px}
-.3d-controls{width:100%;display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:8px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.1)}
-.3d-btn{background:var(--amber-gold);border:1px solid var(--amber-gold);color:#0f172a;padding:8px 14px;border-radius:4px;font-size:11px;font-weight:700;letter-spacing:0.5px;text-transform:uppercase;transition:all 0.2s}
-.3d-btn:hover{background:#f59e0b;color:#0f172a}
-.3d-tag{font-size:10px;color:#e2e8f0;letter-spacing:1px;text-transform:uppercase;font-weight:600}
-
-.story-bottom{position:absolute;left:8vw;right:8vw;bottom:95px;z-index:10;display:flex;justify-content:space-between;align-items:flex-end;gap:20px}
-.chapters{display:flex;gap:24px}
-.chapter{border:0;background:none;color:#e2e8f0;text-align:left;padding:8px 0;font-size:11px;font-weight:600;transition:color .2s}
-.chapter span{display:block;font-size:10px;letter-spacing:1px;margin-bottom:6px;color:#ffffff}
-.chapter[aria-current=true]{color:#ffffff}
-.chapter[aria-current=true]:after{content:"";display:block;background:var(--amber-gold);width:20px;height:2px;margin-top:8px}
-.controls{display:flex;align-items:center;gap:10px}
-.counter{font-size:12px;margin-right:12px;font-variant-numeric:tabular-nums;color:#e2e8f0;font-weight:600}
-.round{width:42px;height:42px;border:1px solid rgba(255,255,255,0.4);background:rgba(15,23,42,0.6);color:#fff;border-radius:50%;display:grid;place-items:center;transition:background .2s}
-.round:hover{background:rgba(255,255,255,0.25)}
-
-.contact-bar{position:fixed;z-index:50;left:0;right:0;bottom:0;border-top:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:space-between;padding:12px 8vw;background:rgba(9,13,20,0.92);backdrop-filter:blur(12px)}
-.contact-note{font-size:11px;line-height:1.5;color:#cbd5e1}
-.contact-note strong{display:block;color:#ffffff;font-size:13px;font-weight:600}
-.contact-buttons{display:flex;gap:10px}
-.contact-buttons a{display:flex;align-items:center;justify-content:center;gap:8px;border-radius:4px;text-decoration:none;padding:12px 20px;font-size:12px;font-weight:700;min-height:44px}
-.call{background:var(--amber-gold);color:#0f172a}
-.whatsapp{background:#ffffff;color:#0f172a}
-.stock-note{position:absolute;z-index:2;right:8vw;bottom:165px;color:#cbd5e1;font-size:9px;max-width:200px;text-align:right;line-height:1.5;background:rgba(0,0,0,0.4);padding:6px 10px;border-radius:4px}
-
-.hours{margin-top:22px;display:grid;grid-template-columns:auto auto;gap:8px 30px;max-width:360px;font-size:14px;line-height:1.6}
-.hours dt{color:#cbd5e1;font-weight:500}
-.hours dd{margin:0;color:#ffffff;font-weight:600}
-.address{font-size:16px;line-height:1.65;margin-top:20px;color:#f8fafc}
-
-/* Services Capabilities Drawer Section */
-.capabilities{background:#f1f5f9;padding:60px 8vw;border-top:1px solid var(--line)}
-.cap-head{max-width:600px;margin-bottom:40px}
-.cap-head h3{font-size:28px;letter-spacing:-0.5px;color:var(--ink);margin-bottom:10px}
-.cap-head p{font-size:14px;color:var(--muted);line-height:1.6}
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.service-card{background:#ffffff;border-radius:8px;overflow:hidden;border:1px solid var(--line);box-shadow:0 4px 12px rgba(0,0,0,0.03);display:flex;flex-direction:column}
-.service-card img{width:100%;height:180px;object-fit:cover;display:block}
-.card-body{padding:20px;flex:1;display:flex;flex-direction:column}
-.card-body h4{font-size:18px;font-family:Outfit,sans-serif;margin-bottom:8px;color:var(--ink)}
-.card-body p{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px}
-.card-body .card-action{margin-top:auto;font-size:12px;font-weight:700;color:var(--amber);text-decoration:none;display:inline-flex;align-items:center;gap:6px}
-
-.footer{display:flex;flex-direction:column;gap:16px;padding:24px 5vw;font-size:11px;color:var(--muted);align-items:center;background:var(--paper);border-top:1px solid var(--line)}
-.footer button{background:none;border:0;padding:4px;color:var(--muted);font-size:11px;text-decoration:underline;text-underline-offset:3px}
-.footer p{line-height:1.6;text-align:left}
-.footer-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
-.footer-credits{font-size:10px;line-height:1.5;color:var(--muted)}
-.footer-credits a{color:var(--amber);font-weight:600;text-decoration:underline}
-
-dialog{border:0;padding:0;border-radius:10px;width:min(540px,calc(100% - 28px));max-height:88svh;background:var(--paper);color:var(--ink);box-shadow:0 25px 80px rgba(0,0,0,0.35)}
-dialog::backdrop{background:rgba(15,23,42,0.75);backdrop-filter:blur(6px)}
-.dialog-inner{padding:28px}
-.dialog-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}
-.dialog-heading h2{font-size:26px;letter-spacing:-.5px}
-.close{border:1px solid #cbd5e1;background:white;border-radius:50%;width:34px;height:34px;flex-shrink:0;font-size:20px;line-height:1;display:grid;place-items:center}
-.intro{font-size:13px;line-height:1.6;color:var(--muted);margin-bottom:18px}
-label{font-size:12px;font-weight:700;display:block;margin-top:16px;color:var(--ink)}
-input,textarea,select{display:block;width:100%;padding:12px;background:white;border:1px solid #cbd5e1;border-radius:5px;margin-top:6px;color:var(--ink);font-size:14px}
-textarea{min-height:90px;resize:vertical}
-input[type=file]{font-size:12px}
-.privacy{font-size:11px;line-height:1.5;color:var(--muted);margin-top:12px}
-.result{padding:14px;background:#fef3c7;color:#78350f;font-size:13px;line-height:1.5;margin-top:16px;border-radius:5px;border:1px solid #fde68a}
-.preview{margin-top:14px;max-height:150px;max-width:100%;object-fit:contain;border-radius:4px}
-.credits{padding-left:18px;font-size:12px;line-height:1.7;color:var(--ink)}
-.credits li{margin:10px 0}
-.credits a{color:var(--amber);font-weight:600}
-.dialog-inner>.primary{width:100%;margin-top:20px}
-
-@media(max-width:1024px){
-.3d-wrapper{position:relative;right:auto;top:auto;transform:none;width:100%;height:300px;margin-top:20px}
-#three-container{height:210px}
-.slide-content{padding-top:100px;padding-bottom:220px}
-}
-@media(max-width:900px){
-.chapters{gap:16px}
-.chapter{font-size:10px}
-.contact-note{display:none}
-.contact-bar{justify-content:center}
-.contact-buttons{width:100%;max-width:480px}
-.contact-buttons a{flex:1}
-.stock-note{bottom:170px}
-.location-tag{display:none}
-}
-@media(max-width:600px){
-.header{height:56px;padding:0 16px}
-.brand{font-size:15px}
-.header-actions{gap:10px}
-.header-call{font-size:11px}
-.menu-toggle{width:34px;height:34px}
-.menu{right:16px;top:52px}
-.story{height:calc(100svh - 94px);min-height:620px}
-.slide-content{padding:100px 20px 230px}
-h1,h2{font-size:clamp(38px,11vw,64px);line-height:1.04}
-.eyebrow{font-size:9px;letter-spacing:1.5px;margin-bottom:16px}
-.description{font-size:14px;line-height:1.6;margin-top:18px}
-.primary{margin-top:22px;padding:14px 18px;font-size:12px}
-.small-link{margin-left:12px;font-size:12px}
-.progress{left:20px;right:20px;top:18px}
-.story-label{top:36px;right:20px;font-size:8px}
-.mobile-hint{display:block;position:absolute;z-index:10;left:20px;top:36px;font-size:8px;letter-spacing:1.4px;text-transform:uppercase;color:#e2e8f0;font-weight:600}
-.story-bottom{left:20px;right:20px;bottom:108px}
-.chapters{display:none}
-.controls{width:100%;justify-content:flex-end}
-.counter{margin-right:auto;font-size:12px}
-.round{width:38px;height:38px}
-.contact-bar{padding:12px 16px calc(12px + env(safe-area-inset-bottom))}
-.stock-note{bottom:170px;right:20px;font-size:8px;max-width:150px}
-.footer{padding:20px 20px 100px;align-items:flex-start}
-.footer-actions{gap:12px}
-.hours{font-size:13px;gap:6px 20px}
-.address{font-size:14px}
-.3d-wrapper{height:270px;padding:12px}
-#three-container{height:180px}
-}
-@media(prefers-reduced-motion:reduce){
-*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-.slide>.photo{transform:none!important}
-}
+:root{--paper:#FAF6EF;--ink:#35263D;--orange:#B94316;--line:#D8CEBF;--sand:#E8DED0;--white:#fff;--muted:#685D66;--display:"Chakra Petch",sans-serif;--body:"Source Sans 3",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5}button,input,textarea{font:inherit}button,a,input,textarea{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}button{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--orange);outline-offset:5px}button{color:inherit}img{display:block;width:100%;object-fit:cover}button:disabled{cursor:default;opacity:.65}[hidden]{display:none!important}.wrap{width:min(1360px,calc(100% - 80px));margin:auto}.notice{background:var(--ink);color:white;text-align:center;font-size:12px;padding:8px 18px;letter-spacing:.02em}.header{background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}.header-inner{height:76px;display:flex;align-items:center;gap:30px}.brand{text-decoration:none;display:flex;align-items:center;gap:11px;margin-right:auto}.brand-mark{display:grid;place-items:center;width:38px;height:38px;background:var(--orange);color:white;font:700 18px var(--display);clip-path:polygon(0 0,100% 0,100% 72%,72% 100%,0 100%)}.brand-text{font:700 17px/1.15 var(--display)}.brand-text small{display:block;font:600 10px var(--body);letter-spacing:.15em;margin-top:3px}.header-link{font-size:14px;text-decoration:none;font-weight:600}.header-link:hover{text-decoration:underline}.menu-button{height:40px;border:1px solid var(--line);background:transparent;padding:0 14px;display:flex;align-items:center;gap:12px;font-size:14px}.menu-icon{width:16px;height:10px;border-block:2px solid currentColor}.nav-panel{position:absolute;right:40px;top:66px;width:280px;background:white;border:1px solid var(--line);box-shadow:0 15px 40px #35263d18;padding:12px}.nav-panel a{display:block;text-decoration:none;padding:14px;border-bottom:1px solid var(--line)}.nav-panel a:last-child{border:0}.nav-panel a:hover{background:var(--paper)}
+.hero{padding:44px 0 35px;display:grid;grid-template-columns:1.65fr 1fr;gap:50px;align-items:center}.eyebrow{font:600 11px var(--display);letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:9px}.dot{height:7px;width:7px;background:var(--orange);display:inline-block}.hero h1{font:600 clamp(34px,4.4vw,64px)/1.03 var(--display);letter-spacing:-.055em;margin:15px 0}.hero h1 span{color:var(--orange)}.hero-copy{margin:0 0 20px;font-size:18px}.primary{background:var(--orange);border:1px solid var(--orange);color:white;display:inline-flex;align-items:center;justify-content:center;gap:25px;padding:12px 20px;text-decoration:none;font-weight:600;font-size:15px;transition:background .2s,transform .2s}.primary:hover{background:#91330f;transform:translateY(-2px)}.hero-photo{position:relative;height:222px;border-radius:2px;overflow:hidden}.hero-photo img{height:100%;object-position:center 58%}.photo-label{position:absolute;left:12px;bottom:12px;background:var(--paper);padding:5px 9px;font:600 10px var(--display);letter-spacing:.09em}.hero-photo::before{content:"";position:absolute;inset:12px;border:1px solid #ffffff70;pointer-events:none}
+.wall-head{border-top:1px solid var(--line);padding-top:26px;display:flex;align-items:flex-end;justify-content:space-between;gap:20px}.wall-title{font:600 30px var(--display);letter-spacing:-.035em;margin:0}.wall-sub{font-size:14px;color:var(--muted);margin:5px 0 0;max-width:570px}.issue{font:600 11px var(--display);letter-spacing:.1em;white-space:nowrap}.controls{display:flex;justify-content:space-between;gap:24px;align-items:center;margin-top:24px}.tabs{display:flex;gap:5px;flex-wrap:wrap}.tab{border:1px solid var(--line);background:transparent;min-height:44px;padding:9px 18px;font-size:14px;font-weight:600;transition:background .18s,color .18s}.tab[aria-pressed=true]{background:var(--ink);color:white;border-color:var(--ink)}.search-wrap{position:relative;width:330px}.search-wrap span{position:absolute;left:14px;top:9px;font-size:22px;line-height:1}.search-wrap input{border:1px solid var(--line);background:white;width:100%;height:44px;padding:8px 14px 8px 40px;border-radius:0;font-size:15px}.result-line{display:flex;align-items:center;justify-content:space-between;margin:16px 0 17px;font-size:12px;color:var(--muted)}.reset{border:0;border-bottom:1px solid currentColor;background:transparent;padding:1px;color:var(--ink);font-size:12px}.catalogue{display:grid;grid-template-columns:repeat(3,1fr);gap:27px 20px;padding-bottom:40px}.tile{min-width:0}.tile-button{padding:0;background:transparent;border:0;text-align:left;width:100%;display:block}.tile-image{aspect-ratio:1.39;overflow:hidden;position:relative;background:var(--sand)}.tile-image img{height:100%;transition:transform .55s cubic-bezier(.2,.7,.2,1);filter:saturate(.8)}.tile-button:hover img{transform:scale(1.045)}.tile-number{position:absolute;top:10px;left:10px;background:var(--paper);padding:4px 7px;font:600 10px var(--display);letter-spacing:.06em}.quick{position:absolute;bottom:10px;right:10px;background:white;color:var(--ink);height:33px;padding:6px 10px;font-size:12px;font-weight:600;box-shadow:0 2px 8px #0001}.tile-meta{display:flex;align-items:center;justify-content:space-between;margin-top:12px;font:600 10px var(--display);letter-spacing:.12em;text-transform:uppercase}.tile-meta span:last-child{color:var(--muted);font-family:var(--body);letter-spacing:.03em;font-weight:400}.tile h3{font:600 22px/1.2 var(--display);letter-spacing:-.025em;margin:6px 0}.tile-desc{font-size:14px;margin:0;color:var(--muted)}.empty{padding:55px 15px;text-align:center;border:1px dashed var(--line);margin-bottom:35px}.empty h3{font:600 25px var(--display)}.reference-note{border-top:1px solid var(--line);padding:16px 0 32px;font-size:13px;color:var(--muted);display:flex;gap:15px;align-items:flex-start}.reference-note b{font:600 11px var(--display);border:1px solid var(--line);padding:3px 7px;color:var(--ink);white-space:nowrap}
+.basket-bar{position:sticky;bottom:0;z-index:15;background:var(--ink);color:white;padding:14px 0;box-shadow:0 -5px 20px #35263d0c}.basket-inner{display:flex;align-items:center;gap:17px}.basket-count{width:31px;height:31px;background:#ffffff1c;display:grid;place-items:center;font:600 14px var(--display)}.basket-text{font-size:14px;margin-right:auto}.basket-text small{font-size:11px;color:#e1d5e5;display:block}.basket-review{color:white;text-decoration:none;font-size:14px;border-bottom:1px solid #bcaac2;padding:4px 0}.basket-clear{color:#e1d5e5;border:0;background:transparent;font-size:12px}.summary{padding:65px 0;display:grid;grid-template-columns:.8fr 1.2fr;gap:80px}.summary h2{font:600 42px/1.1 var(--display);letter-spacing:-.04em;margin:14px 0}.summary-intro p{color:var(--muted);max-width:340px}.step{font:600 11px var(--display);letter-spacing:.13em}.summary-form{background:white;border:1px solid var(--line);padding:28px}.summary-form h3{font:600 22px var(--display);margin:0 0 18px}.selection-list{padding:0;list-style:none;margin:0 0 22px}.selection-list li{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}.remove{border:0;background:var(--paper);padding:5px 9px;font-size:12px}.selection-empty{font-size:14px;color:var(--muted);padding:12px 0 18px;border-bottom:1px solid var(--line)}label.field-label{display:block;font-size:14px;font-weight:600;margin:17px 0 6px}.optional{font-weight:400;color:var(--muted)}.summary-form input,.summary-form textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:0;background:var(--paper);color:var(--ink)}textarea{resize:vertical;min-height:100px}.demo-note{font-size:12px;color:var(--muted);margin:14px 0 18px}.summary-form .primary{width:100%}.feedback{font-size:13px;margin:12px 0 0;min-height:20px}.output-label{font-size:13px;display:block;margin-top:20px}.copy-output{width:100%;min-height:155px;margin-top:6px;font-size:13px!important;background:white!important}.copy-button{background:var(--ink);color:white;border:0;padding:10px 16px;font-size:14px;margin-top:10px}
+.contact{background:var(--ink);color:var(--paper);padding:48px 0 28px}.contact-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:50px;padding-bottom:37px}.contact h2{font:600 36px/1.1 var(--display);letter-spacing:-.03em;margin:10px 0 16px}.contact-label{font:500 10px var(--display);letter-spacing:.15em;text-transform:uppercase;color:#d9c8df}.contact p{font-size:14px}.contact a{color:inherit;text-underline-offset:5px}.contact-phone{font:500 24px var(--display);text-decoration:none}.contact .detail{margin:10px 0}.verification{font-size:12px!important;color:#d9c8df;max-width:410px}.footer-bottom{border-top:1px solid #ffffff30;padding-top:20px;display:flex;justify-content:space-between;gap:25px;font-size:12px;color:#dfd2e4}.credits{font-size:11px;margin-top:18px;color:#dfd2e4;max-width:950px}.credits summary{cursor:pointer;padding:5px 0}.credits p{font-size:11px}.mobile-actions{display:none}
+dialog{padding:0;border:1px solid var(--line);max-width:850px;width:calc(100% - 36px);max-height:90dvh;background:var(--paper);color:var(--ink);overflow:auto;box-shadow:0 25px 100px #0004}dialog::backdrop{background:#24192bbf;backdrop-filter:blur(5px)}.modal-grid{display:grid;grid-template-columns:1fr 1fr}.modal-photo{min-height:380px;height:100%;object-fit:cover}.modal-content{padding:45px 30px 28px;position:relative}.modal-close{position:absolute;top:10px;right:12px;background:white;border:1px solid var(--line);width:34px;height:34px;font-size:24px;line-height:1}.modal-content h2{font:600 33px/1.1 var(--display);letter-spacing:-.04em;margin:15px 0}.modal-content p{font-size:15px}.modal-content .primary{width:100%;margin-top:20px}.modal-disclosure{font-size:12px!important;color:var(--muted);border-top:1px solid var(--line);padding-top:15px;margin-top:22px}.toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%);background:white;border:1px solid var(--line);box-shadow:0 5px 25px #35263d20;z-index:50;padding:10px 20px;font-size:14px;width:max-content;max-width:90%;text-align:center}
+@media(min-width:1450px){.catalogue{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:1000px){.wrap{width:calc(100% - 48px)}.hero{gap:25px}.hero h1{font-size:44px}.hero-photo{height:210px}.summary{gap:35px}.contact-top{gap:25px}.catalogue{gap:25px 16px}.tile h3{font-size:20px}}
+@media(max-width:700px){html{scroll-padding-top:75px}.wrap{width:calc(100% - 32px)}.notice{font-size:10px;line-height:1.35;padding:7px 15px}.header-inner{height:59px;gap:12px}.brand{gap:7px}.brand-mark{width:27px;height:29px;font-size:13px;flex-shrink:0}.brand-text{font-size:11px;letter-spacing:-.02em}.brand-text small{font-size:8px;letter-spacing:.08em}.header-link{font-size:12px}.menu-button{width:34px;padding:8px;height:34px;justify-content:center}.menu-label{display:none}.nav-panel{right:16px;top:53px;width:min(310px,calc(100vw - 32px))}.hero{padding:24px 0 23px;gap:0;display:block;position:relative}.eyebrow{font-size:9px;letter-spacing:.09em}.hero h1{font-size:36px;max-width:340px;margin:11px 0 10px}.hero-copy{font-size:15px;margin-bottom:15px}.primary{padding:10px 16px;font-size:14px;min-height:44px}.hero-photo{display:none}.wall-head{padding-top:18px;align-items:center}.wall-title{font-size:25px}.wall-sub{font-size:12px;line-height:1.4;max-width:290px}.issue{display:none}.controls{flex-direction:column-reverse;align-items:stretch;gap:12px;margin-top:17px}.search-wrap{width:100%}.tabs{gap:5px}.tab{flex:1;padding:8px 9px;font-size:13px}.result-line{font-size:11px;margin:11px 0 13px}.catalogue{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 12px;padding-bottom:25px}.tile-image{aspect-ratio:1}.tile-number{font-size:9px;top:7px;left:7px;padding:3px 5px}.quick{bottom:7px;right:7px;padding:4px 7px;height:auto;font-size:10px}.tile-meta{font-size:8px;letter-spacing:.05em;margin-top:10px}.tile-meta span:last-child{font-size:8px}.tile h3{font-size:18px;line-height:1.15;margin:6px 0}.tile-desc{font-size:12px;line-height:1.35}.reference-note{font-size:11px;gap:9px;padding-bottom:23px}.reference-note b{font-size:9px}.basket-bar{bottom:55px;padding:10px 0}.basket-inner{gap:9px}.basket-text{font-size:12px}.basket-text small{font-size:10px}.basket-clear{font-size:11px;padding:8px}.basket-review{font-size:12px}.basket-count{width:26px;height:28px}.summary{display:block;padding:35px 0}.summary h2{font-size:33px;margin:10px 0}.summary-intro p{font-size:14px;max-width:none;margin-bottom:23px}.summary-form{padding:20px}.contact{padding:32px 0 85px}.contact-top{grid-template-columns:1fr 1fr;gap:22px}.contact-brand{grid-column:1/-1}.contact h2{font-size:30px}.contact-phone{font-size:22px}.contact p{font-size:13px}.footer-bottom{font-size:10px;gap:15px}.mobile-actions{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:25;background:var(--paper);border-top:1px solid var(--line);height:55px;align-items:center;padding-bottom:env(safe-area-inset-bottom)}.mobile-actions a{flex:1;text-align:center;font-size:13px;text-decoration:none;font-weight:600;padding:14px 5px}.mobile-actions a+a{border-left:1px solid var(--line)}.mobile-actions a:first-child{color:var(--orange)}.modal-grid{display:block}.modal-photo{min-height:0;height:210px}.modal-content{padding:25px 22px}.modal-content h2{font-size:29px}.modal-close{position:fixed;top:12px;right:12px}.toast{bottom:130px;font-size:12px}.contact-label{font-size:9px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.tile-button:hover img,.primary:hover{transform:none}}
 </style>
 </head>
 <body>
-
-<div class="concept">Independent website concept by LeadSky for Dent Punisher n Sound Lab. Not their official website.</div>
-
+<div class="notice">Independent website concept by LeadSky for Dent Punisher n Sound Lab. Not their official website.</div>
 <header class="header">
-<a class="brand" href="#story" aria-label="Dent Punisher n Sound Lab, home slide">Dent Punisher <span class="mark">n</span> Sound Lab<span class="mark">.</span></a>
-<div class="header-actions">
-<span class="location-tag">El Paso, Texas</span>
-<a class="header-call" href="tel:+19154974291">Call shop ↗</a>
-<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="menu"><span></span></button>
-</div>
-<nav id="menu" class="menu" aria-label="Main navigation" hidden>
-<button type="button" data-go="0">01 — Workshop Overview</button>
-<button type="button" data-go="1">02 — Sound Lab & 3D Demo</button>
-<button type="button" data-go="2">03 — Acoustic Soundproofing</button>
-<button type="button" data-go="3">04 — Dent Repair & Shop Location</button>
-<button type="button" data-go="4">05 — Custom Audio & Wiring</button>
-<a href="#capabilities" onclick="closeMenu()">Browse All Capabilities</a>
-<a href="tel:+19154974291">Call (915) 497-4291</a>
-<button type="button" data-quote style="color:var(--amber);font-weight:700">Photo Enquiry Demo</button>
+<div class="wrap header-inner">
+<a class="brand" href="#" aria-label="Dent Punisher n Sound Lab home">
+<span class="brand-mark" aria-hidden="true">DP</span>
+<span class="brand-text">Dent Punisher <span aria-hidden="true">/</span> Sound Lab<small>EL PASO, TEXAS</small></span>
+</a>
+<a class="header-link" href="#wall">Browse</a>
+<button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation"><span class="menu-label">Menu</span><span class="menu-icon" aria-hidden="true"></span></button>
+<nav class="nav-panel" id="navigation" aria-label="Main navigation" hidden>
+<a href="#wall">Browse the wall</a><a href="#enquiry">Your enquiry basket</a><a href="#contact">Contact & location</a><a href="#credits">Photography credits</a>
 </nav>
+</div>
 </header>
-
 <main>
-<section class="story" id="story" aria-roledescription="carousel" aria-label="Explore Dent Punisher n Sound Lab">
-<div class="progress" aria-label="Choose a story slide">
-<button class="current" data-go="0" aria-label="Story 1: Workshop Overview" aria-current="true"><i></i></button>
-<button data-go="1" aria-label="Story 2: Sound Lab & 3D Demo"><i></i></button>
-<button data-go="2" aria-label="Story 3: Acoustic Soundproofing"><i></i></button>
-<button data-go="3" aria-label="Story 4: Dent Repair & Location"><i></i></button>
-<button data-go="4" aria-label="Story 5: Custom Audio & Wiring"><i></i></button>
+<section class="wrap hero" aria-labelledby="heroTitle">
+<div>
+<div class="eyebrow"><span class="dot"></span>Bodywork questions. Sound-system ideas.</div>
+<h1 id="heroTitle">Dent Punisher<br><span>n Sound Lab.</span></h1>
+<p class="hero-copy">Dent repair & car audio · El Paso</p>
+<a class="primary" href="#wall">Browse the wall <span aria-hidden="true">↗</span></a>
 </div>
-
-<span class="mobile-hint">Swipe or tap arrows to navigate</span>
-<span class="story-label">El Paso, TX · Commerce Ave</span>
-
-<!-- SLIDE 1 -->
-<article class="slide active" aria-label="1 of 5: Workshop Overview">
-<img class="photo" src="img/stock-7.jpg" alt="Illustrative stock photograph of an automotive workshop bay with vehicles" fetchpriority="high" width="1920" height="1280">
-<div class="slide-content">
-<p class="eyebrow">Dent Punisher n Sound Lab · El Paso</p>
-<h1>Your vehicle.<br>Your sound.<br><span class="accent">Crafted in El Paso.</span></h1>
-<p class="description">Automotive body repair, paintless dent service, and custom sound system engineering at 6800 Commerce Avenue.</p>
-<a class="primary" href="tel:+19154974291">Call (915) 497-4291 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-<a class="small-link" href="#capabilities">View capabilities</a>
-</div>
-</article>
-
-<!-- SLIDE 2: INTERACTIVE 3D SUBWOOFER -->
-<article class="slide" aria-label="2 of 5: Sound Lab & 3D Interactive Demo" inert aria-hidden="true">
-<img class="photo" src="img/stock-3.jpg" alt="Illustrative stock photograph of classic red car taillights and rear detail" loading="lazy" width="1920" height="1280">
-<div class="slide-content">
-<p class="eyebrow">02 / Interactive Sound Lab</p>
-<h2>Make your drive<br><span class="accent">hit every note.</span></h2>
-<p class="description">Explore sound system upgrades designed specifically for your car's interior dynamics and speaker placements.</p>
-<button class="primary" data-quote>Request sound demo <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-
-<div class="3d-wrapper">
-<div class="3d-tag">Interactive 3D Subwoofer Model</div>
-<div id="three-container" aria-label="Interactive 3D Subwoofer graphic preview">
-<div id="three-fallback" class="three-fallback" hidden>3D model unavailable</div>
-</div>
-<div class="3d-controls">
-<button class="3d-btn" type="button" id="pulse-btn">Test Bass Pulse</button>
-<span style="font-size:11px;color:#cbd5e1">Drag to rotate 3D cone</span>
-</div>
-</div>
-</div>
-</article>
-
-<!-- SLIDE 3 -->
-<article class="slide" aria-label="3 of 5: Acoustic Soundproofing" inert aria-hidden="true">
-<img class="photo" src="img/stock-5.jpg" alt="Illustrative stock photograph showing acoustic sound dampening foam material" loading="lazy" width="1920" height="1280">
-<div class="slide-content">
-<p class="eyebrow">03 / Soundproofing & Damping</p>
-<h2>More music.<br><span class="accent">Zero road noise.</span></h2>
-<p class="description">Eliminate cabin rattles, tire hum, and vibration with professional interior sound insulation for true studio clarity.</p>
-<button class="primary" data-quote>Prepare a photo enquiry <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
-</div>
-</article>
-
-<!-- SLIDE 4 -->
-<article class="slide" aria-label="4 of 5: Dent Repair & Location" inert aria-hidden="true">
-<img class="photo" src="img/stock-8.jpg" alt="Illustrative stock photograph of a technician performing vehicle repair work" loading="lazy" width="1920" height="1280">
-<div class="slide-content">
-<p class="eyebrow">04 / Shop Location & Hours</p>
-<h2>Visit the shop<br><span class="accent">in El Paso.</span></h2>
-<p class="address">6800 Commerce Avenue<br>El Paso, TX 79915</p>
-<dl class="hours">
-<dt>Monday – Friday</dt><dd>9:00 am – 6:00 pm</dd>
-<dt>Saturday</dt><dd>9:00 am – 3:00 pm</dd>
-</dl>
-<a class="primary" href="https://www.google.com/maps/search/?api=1&amp;query=6800+Commerce+Avenue+El+Paso+TX+79915" target="_blank" rel="noopener noreferrer">Get directions <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
-<a class="small-link" href="tel:+19154974291">Call shop directly</a>
-</div>
-</article>
-
-<!-- SLIDE 5 -->
-<article class="slide" aria-label="5 of 5: Custom Wiring & Audio" inert aria-hidden="true">
-<img class="photo" src="img/stock-4.jpg" alt="Illustrative stock photograph of custom engine and chrome automotive detail" loading="lazy" width="1920" height="1280">
-<div class="slide-content">
-<p class="eyebrow">05 / Custom Engineering</p>
-<h2>Got a repair<br>or upgrade<br><span class="accent">in mind?</span></h2>
-<p class="description">Call Dent Punisher n Sound Lab to discuss your vehicle layout, custom sub enclosures, or paintless dent removal.</p>
-<a class="primary" href="tel:+19154974291">Call (915) 497-4291 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-<button class="small-link" data-quote style="border:0;background:none;color:#ffffff;text-decoration:underline;cursor:pointer">Try photo enquiry demo</button>
-</div>
-</article>
-
-<p class="stock-note">Illustrative stock photos.<br>Not actual shop or staff.</p>
-
-<div class="story-bottom">
-<nav class="chapters" aria-label="Story chapters">
-<button class="chapter" data-go="0" aria-current="true"><span>01</span>Overview</button>
-<button class="chapter" data-go="1"><span>02</span>Sound Lab 3D</button>
-<button class="chapter" data-go="2"><span>03</span>Soundproofing</button>
-<button class="chapter" data-go="3"><span>04</span>Shop Location</button>
-<button class="chapter" data-go="4"><span>05</span>Custom Audio</button>
-</nav>
-
-<div class="controls">
-<span class="counter" aria-live="polite" aria-atomic="true">01 / 05</span>
-<button class="round" id="previous" type="button" aria-label="Previous story slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
-<button class="round" id="next" type="button" aria-label="Next story slide"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
-</div>
+<div class="hero-photo">
+<img src="img/stock-10.jpg" alt="Classic Mercedes-Benz vehicle in atmospheric light; illustrative stock photography" width="800" height="450" fetchpriority="high">
+<span class="photo-label">AUTOMOTIVE REFERENCE / 01</span>
 </div>
 </section>
 
-<div class="contact-bar">
-<p class="contact-note"><strong>Dent Punisher n Sound Lab</strong>6800 Commerce Avenue · El Paso, TX 79915</p>
-<div class="contact-buttons">
-<a class="call" href="tel:+19154974291"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 3 3 5-2 2c1.5 3 3 4.5 6 6l2-2 5 3-1 4C10 22 2 14 3 4Z"/></svg>Call (915) 497-4291</a>
-<a class="whatsapp" href="https://wa.me/19154974291" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp conversation (unverified)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a9 9 0 0 1-13.3 8L3 21l1.5-4.7A9 9 0 1 1 21 11.5Z"/><path d="m8 7 2 3-1 1c1 2 2 3 4 4l1-1 3 2"/></svg>WhatsApp ↗</a>
+<section class="wrap" id="wall" aria-labelledby="wallTitle">
+<div class="wall-head">
+<div><h2 class="wall-title" id="wallTitle">What’s on your mind?</h2><p class="wall-sub">Explore an enquiry topic. Take a closer look. Build a shortlist to discuss with the shop.</p></div>
+<span class="issue">THE ENQUIRY WALL / EL PASO</span>
+</div>
+<div class="controls">
+<div class="tabs" role="group" aria-label="Filter enquiry topics">
+<button class="tab" data-category="all" aria-pressed="true">All topics</button>
+<button class="tab" data-category="dent" aria-pressed="false">Dent repair</button>
+<button class="tab" data-category="audio" aria-pressed="false">Car audio</button>
+</div>
+<div class="search-wrap"><label class="sr-only" for="search" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">Search enquiry topics</label><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search the wall…" autocomplete="off"></div>
+</div>
+<div class="result-line"><span id="resultCount" role="status" aria-live="polite">6 enquiry topics</span><button class="reset" id="reset">Reset filters</button></div>
+<div class="catalogue" id="catalogue"></div>
+<div class="empty" id="empty" hidden><h3>No topics match that search.</h3><p>Try “dent”, “audio” or “vehicle”.</p><button class="primary" id="emptyReset">Show all topics <span aria-hidden="true">↗</span></button></div>
+<div class="reference-note"><b>REFERENCE ONLY</b><span>All photographs are illustrative stock images, not this business’s work, staff, premises or inventory. Topics help prepare an enquiry; exact services and suitability must be confirmed with the business.</span></div>
+</section>
+
+<div class="basket-bar" aria-label="Running enquiry basket">
+<div class="wrap basket-inner">
+<span class="basket-count" id="basketCount">0</span>
+<div class="basket-text">Your enquiry basket<small>Ideas to discuss. No purchase.</small></div>
+<button class="basket-clear" id="clearBasket" hidden>Clear</button>
+<a class="basket-review" href="#enquiry">Review <span aria-hidden="true">↗</span></a>
 </div>
 </div>
 
-<!-- SERVICES GRID SHOWCASE USING ALL STOCK IMAGES -->
-<section class="capabilities" id="capabilities">
-<div class="cap-head">
-<h3>Services & Capabilities</h3>
-<p>From precision paintless dent correction to high-output audio amplification and soundproofing, here is what we cover at our El Paso bay.</p>
+<section class="wrap summary" id="enquiry" aria-labelledby="summaryTitle">
+<div class="summary-intro">
+<span class="step">YOUR NEXT STEP / A CLEARER CONVERSATION</span>
+<h2 id="summaryTitle">Bring your ideas.<br>Start a conversation.</h2>
+<p>Collect the topics that fit your vehicle. Add a little context, then prepare a summary you can use when contacting the shop.</p>
+<p>No prices, bookings or payments here. This private concept helps you organise an enquiry.</p>
 </div>
-<div class="services-grid">
-<div class="service-card">
-<img src="img/stock-1.jpg" alt="Technician inspecting vehicle body work with reflection board">
-<div class="card-body">
-<h4>Paintless Dent Repair</h4>
-<p>Remove door dings and body creases without harming original factory paint finishes.</p>
-<button class="card-action" type="button" data-quote>Enquire about dent repair ↗</button>
+<form class="summary-form" id="summaryForm">
+<h3>Your shortlist</h3>
+<p class="selection-empty" id="selectionEmpty">Your basket is empty. Browse the wall to add a topic, or describe your question below.</p>
+<ul class="selection-list" id="selectionList"></ul>
+<label class="field-label" for="vehicle">Your vehicle <span class="optional">· optional</span></label>
+<input id="vehicle" name="vehicle" maxlength="120" placeholder="Year, make and model">
+<label class="field-label" for="request">What would you like to discuss? <span class="optional">· optional</span></label>
+<textarea id="request" name="request" maxlength="1500" placeholder="Tell us what you’ve noticed or what you have in mind."></textarea>
+<p class="demo-note">Demo basket summary only. Your details stay in this page and are not sent to the business.</p>
+<button class="primary" type="submit">Prepare my summary <span aria-hidden="true">↗</span></button>
+<p class="feedback" id="formFeedback" role="status" aria-live="polite"></p>
+<div id="summaryOutput" hidden>
+<label class="output-label" for="copyText">Your summary — ready to select or copy</label>
+<textarea class="copy-output" id="copyText" readonly></textarea>
+<button class="copy-button" id="copyButton" type="button">Copy summary</button>
+<p class="feedback" id="copyFeedback" role="status" aria-live="polite"></p>
 </div>
-</div>
-
-<div class="service-card">
-<img src="img/stock-6.jpg" alt="Industrial wiring system and tube harness setup">
-<div class="card-body">
-<h4>Custom Audio Wiring</h4>
-<p>Clean power distribution, heavy-gauge copper wiring runs, and clean fused signal paths.</p>
-<button class="card-action" type="button" data-quote>Enquire about wiring ↗</button>
-</div>
-</div>
-
-<div class="service-card">
-<img src="img/stock-2.jpg" alt="Automotive electrical technician at work">
-<div class="card-body">
-<h4>Acoustic Integration</h4>
-<p>Precision speaker staging, digital signal processor tuning, and component matching.</p>
-<button class="card-action" type="button" data-quote>Enquire about sound systems ↗</button>
-</div>
-</div>
-</div>
+</form>
 </section>
 </main>
 
-<footer class="footer">
-<div class="footer-copy">
-<p><strong>Concept by LeadSky</strong> · Independent preview design for Dent Punisher n Sound Lab.</p>
-<p class="footer-credits">Illustrative stock photos: <a href="https://pixabay.com/photos/car-accident-totalled-car-crash-1660670/" target="_blank" rel="noopener noreferrer">Akent879</a>, <a href="https://pixabay.com/photos/man-engineer-bike-cyclist-male-8499961/" target="_blank" rel="noopener noreferrer">This_is_Engineering</a>, <a href="https://pixabay.com/photos/car-classic-tail-lights-1846103/" target="_blank" rel="noopener noreferrer">Pexels</a>, <a href="https://pixabay.com/photos/automobile-vehicle-chrome-ride-3116534/" target="_blank" rel="noopener noreferrer">sick-street-photography</a>, <a href="https://pixabay.com/photos/acoustics-acoustic-foam-sound-wave-2467024/" target="_blank" rel="noopener noreferrer">emiliox</a>, <a href="https://pixabay.com/photos/pipe-system-tube-construction-site-7768312/" target="_blank" rel="noopener noreferrer">Kranich17</a>, <a href="https://pixabay.com/photos/auto-car-garage-auto-shop-vintage-1868726/" target="_blank" rel="noopener noreferrer">Pexels</a>, <a href="https://pixabay.com/photos/man-car-repair-car-repair-362150/" target="_blank" rel="noopener noreferrer">RyanMcGuire</a> (Pixabay). Not actual shop photos.</p>
+<footer class="contact" id="contact">
+<div class="wrap">
+<div class="contact-top">
+<div class="contact-brand">
+<span class="contact-label">DENT PUNISHER N SOUND LAB / EL PASO</span>
+<h2>Let’s talk about<br>your vehicle.</h2>
+<a class="contact-phone" href="tel:+19154974291">915-497-4291 ↗</a>
+<p class="verification">Contact and location details are supplied for this independent concept and have not been independently verified. Confirm directly before visiting.</p>
 </div>
-<div class="footer-actions">
-<button id="credits-open" type="button">Photo credits & licenses</button>
-<button data-quote type="button">Photo enquiry demo</button>
+<div>
+<span class="contact-label">LOCATION</span>
+<p class="detail">6800 Commerce Avenue<br>El Paso, TX 79915</p>
+<a href="https://www.google.com/maps/search/?api=1&amp;query=6800+Commerce+Avenue+El+Paso+TX+79915" target="_blank" rel="noopener noreferrer">View address on map ↗</a>
+</div>
+<div>
+<span class="contact-label">BEFORE YOU VISIT</span>
+<p class="detail">Call to confirm opening hours, available services and whether your vehicle needs an in-person assessment.</p>
+<p>No appointment is made through this concept.</p>
+</div>
+</div>
+<div class="footer-bottom"><span>Concept by LeadSky</span><span>Independent proposal. No business endorsement implied.</span></div>
+<details class="credits" id="credits">
+<summary>Photography & concept notes</summary>
+<p>Illustrative photographs used under the <a href="https://pixabay.com/service/license-summary/" target="_blank" rel="noopener noreferrer">Pixabay Content License</a>, as identified in the supplied asset record. These images do not show Dent Punisher n Sound Lab’s projects, people or premises.</p>
+<p>
+<a href="https://pixabay.com/photos/car-vehicle-man-7232127/" target="_blank" rel="noopener noreferrer">Dewesoft · vehicle inspection</a> /
+<a href="https://pixabay.com/photos/car-accident-totalled-car-crash-1660670/" target="_blank" rel="noopener noreferrer">Akent879 · vehicle damage</a> /
+<a href="https://pixabay.com/photos/auto-car-garage-auto-shop-vintage-1868726/" target="_blank" rel="noopener noreferrer">Pexels · automotive workshop</a> /
+<a href="https://pixabay.com/photos/man-car-repair-car-repair-362150/" target="_blank" rel="noopener noreferrer">RyanMcGuire · vehicle repair</a> /
+<a href="https://pixabay.com/photos/door-door-handle-auto-air-intake-4833820/" target="_blank" rel="noopener noreferrer">Zotx · automotive door detail</a> /
+<a href="https://pixabay.com/photos/vintage-car-steering-wheel-turquoise-852239/" target="_blank" rel="noopener noreferrer">JillWellington · vintage dashboard</a> /
+<a href="https://pixabay.com/photos/mercedes-benz-antiquity-retro-5377019/" target="_blank" rel="noopener noreferrer">MartinPhotography · classic vehicle</a>.
+</p>
+<p>Catalogue entries are discussion topics, not confirmed service listings or products for sale. This demo does not transmit enquiries, process payments or book appointments.</p>
+</details>
 </div>
 </footer>
+<nav class="mobile-actions" aria-label="Quick actions"><a href="tel:+19154974291">Call the shop ↗</a><a href="#enquiry">Your basket <span id="mobileCount">(0)</span></a></nav>
 
-<!-- PHOTO ENQUIRY MODAL -->
-<dialog id="quote-dialog" aria-labelledby="quote-title">
-<div class="dialog-inner">
-<div class="dialog-heading">
-<h2 id="quote-title">Show what you have in mind.</h2>
-<button class="close" data-close type="button" aria-label="Close dialog">×</button>
+<dialog id="quickView" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+<div class="modal-grid">
+<img class="modal-photo" id="modalImage" src="img/stock-1.jpg" alt="" width="600" height="700">
+<div class="modal-content">
+<button class="modal-close" id="modalClose" aria-label="Close quick view">×</button>
+<span class="eyebrow" id="modalCategory"></span>
+<h2 id="modalTitle"></h2>
+<p id="modalDescription"></p>
+<p id="modalPrompt"></p>
+<button class="primary" id="modalAdd">Add to enquiry <span aria-hidden="true">+</span></button>
+<p class="modal-disclosure">Illustrative stock photograph. This is an enquiry topic, not a confirmed service, completed project or item for sale. Discuss availability with the business.</p>
 </div>
-<p class="intro">Try preparing a vehicle repair or audio enquiry demo. Photos remain strictly local to your browser session. Call the shop for actual quotes.</p>
-<form id="quote-form">
-<label for="vehicle">Your vehicle</label>
-<input id="vehicle" name="vehicle" autocomplete="off" required maxlength="100" placeholder="e.g. 2021 Ford F-150 / Chevy Camaro">
-
-<label for="service-type">Primary focus</label>
-<select id="service-type" name="service-type">
-<option>Sound System Upgrade</option>
-<option>Paintless Dent Repair</option>
-<option>Soundproofing & Noise Reduction</option>
-<option>Custom Subwoofer Enclosure</option>
-<option>General Vehicle Service</option>
-</select>
-
-<label for="details">What would you like to discuss?</label>
-<textarea id="details" name="details" required maxlength="1200" placeholder="Describe dents, desired sound output, or speaker upgrades."></textarea>
-
-<label for="photo">Vehicle photo (optional)</label>
-<input id="photo" name="photo" type="file" accept="image/jpeg,image/png,image/webp">
-<img id="photo-preview" class="preview" alt="Local preview of uploaded vehicle photo" hidden>
-<p class="privacy">JPG, PNG, or WebP up to 10MB. Files stay local on this device.</p>
-
-<button class="primary" type="submit">Submit Demo Enquiry <span aria-hidden="true">↗</span></button>
-<p id="form-status" class="result" role="status" hidden></p>
-</form>
 </div>
 </dialog>
-
-<!-- CREDITS MODAL -->
-<dialog id="credits-dialog" aria-labelledby="credits-title">
-<div class="dialog-inner">
-<div class="dialog-heading">
-<h2 id="credits-title">Stock Photo Credits</h2>
-<button class="close" data-close type="button" aria-label="Close dialog">×</button>
-</div>
-<p class="intro">All images used in this concept are illustrative stock photos under commercial licenses. They do not represent the shop's actual premises, staff, or past projects.</p>
-<ul class="credits">
-<li>Dent Repair / Accident Car — Akent879 (<a href="https://pixabay.com/photos/car-accident-totalled-car-crash-1660670/" target="_blank" rel="noopener noreferrer">Pixabay Source</a>)</li>
-<li>Technician / Engineer — This_is_Engineering (<a href="https://pixabay.com/photos/man-engineer-bike-cyclist-male-8499961/" target="_blank" rel="noopener noreferrer">Pixabay Source</a>)</li>
-<li>Classic Red Car Rear — Pexels (<a href="https://pixabay.com/photos/car-classic-tail-lights-1846103/" target="_blank" rel="noopener noreferrer">Pixabay Source</a>)</li>
-<li>Classic Automobile Details — sick-street-photography (<a href="https://pixabay.com/photos/automobile-vehicle-chrome-ride-3116534/" target="_blank" rel="noopener noreferrer">Pixabay Source</a>)</li>
-<li>Acoustic Sound Foam — emiliox (<a href="https://pixabay.com/photos/acoustics-acoustic-foam-sound-wave-2467024/" target="_blank" rel="noopener noreferrer">Pixabay Source</a>)</li>
-<li>Pipes & Cable System — Kranich17 (<a href="https://pixabay.com/photos/pipe-system-tube-construction-site-7768312/" target="_blank" rel="noopener noreferrer">Pixabay Source</a>)</li>
-<li>Auto Repair Shop Bay — Pexels (<a href="https://pixabay.com/photos/auto-car-garage-auto-shop-vintage-1868726/" target="_blank" rel="noopener noreferrer">Pixabay Source</a>)</li>
-<li>Garage Mechanic — RyanMcGuire (<a href="https://pixabay.com/photos/man-car-repair-car-repair-362150/" target="_blank" rel="noopener noreferrer">Pixabay Source</a>)</li>
-</ul>
-<p class="intro" style="margin-top:16px">Independent digital strategy concept created by LeadSky.</p>
-</div>
-</dialog>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script>
-(()=>{
-'use strict';
-
-/* Carousel & Navigation Logic */
-const slides = [...document.querySelectorAll('.slide')];
-const story = document.querySelector('.story');
-const counter = document.querySelector('.counter');
-const menu = document.querySelector('#menu');
-const menuToggle = document.querySelector('.menu-toggle');
-let current = 0, startX = 0, startY = 0, previewURL = null;
-
-function closeMenu(){
-  menu.hidden = true;
-  menuToggle.setAttribute('aria-expanded','false');
-  menuToggle.setAttribute('aria-label','Open navigation');
+"use strict";
+const topics=[
+{id:"dent",category:"dent",label:"Dent repair",title:"A dent to discuss",description:"A closer look starts with a conversation.",image:"img/stock-1.jpg",alt:"Person beside a vehicle with automotive testing equipment; illustrative stock photo",detail:"Have a dent you would like the shop to assess? Add this topic to your enquiry and describe the affected area.",prompt:"Useful context: your vehicle, the panel involved and when you first noticed the dent."},
+{id:"damage",category:"dent",label:"Dent repair",title:"Damage assessment",description:"Find out what the next step could be.",image:"img/stock-2.jpg",alt:"Accident-damaged vehicle shown as a reference for a damage enquiry",detail:"Not sure whether the damage is within the shop’s scope? Prepare a question before arranging a visit. This concept does not imply that collision or structural repairs are offered.",prompt:"Useful context: what happened, which area is affected and what you want assessed. Contact the business to confirm suitability."},
+{id:"approach",category:"dent",label:"Dent repair",title:"Repair options",description:"Ask about an approach for your vehicle.",image:"img/stock-3.jpg",alt:"Vintage automotive workshop and equipment; illustrative stock photography",detail:"Use this topic to ask what repair options may be appropriate for your vehicle. A method or outcome cannot be confirmed through this demo.",prompt:"Useful context: the panel, any visible paint damage and questions you would like answered."},
+{id:"visit",category:"dent",label:"Dent repair",title:"Before your visit",description:"Prepare the details worth discussing.",image:"img/stock-4.jpg",alt:"Person working on a vintage vehicle in a garage; illustrative stock photograph",detail:"Have a general dent-repair question before bringing your vehicle in? Collect it here so it is ready for your conversation.",prompt:"Ask whether an assessment is needed, what information to bring and how to arrange a suitable time."},
+{id:"audio",category:"audio",label:"Car audio",title:"Your sound-system idea",description:"Tell the shop what you want to change.",image:"img/stock-5.jpg",alt:"Close-up of a sports car door and intake; automotive reference photo, not an audio installation",detail:"Thinking about a change to your vehicle’s sound? Add your goals to the enquiry. Equipment, compatibility and installation services require confirmation.",prompt:"Useful context: your vehicle, what you currently have and what you would like to hear differently."},
+{id:"dashboard",category:"audio",label:"Car audio",title:"Dashboard & audio",description:"A conversation about fit and function.",image:"img/stock-9.jpg",alt:"Turquoise vintage vehicle dashboard and steering wheel; illustrative stock photo",detail:"Bring a dashboard or audio-integration question to the shop. This reference image shows a vehicle interior, not equipment supplied or installed by the business.",prompt:"Useful context: your existing system, dashboard layout and the functions you want to keep or explore."}
+];
+const $=id=>document.getElementById(id);
+let category="all",selected=new Set(),current=null,lastFocus=null,toastTimer;
+function renderWall(){
+const q=$("search").value.trim().toLowerCase();
+const filtered=topics.filter(t=>(category==="all"||t.category===category)&&(`${t.title} ${t.label} ${t.description} ${t.detail}`.toLowerCase().includes(q)));
+$("catalogue").replaceChildren();
+filtered.forEach(t=>{
+const article=document.createElement("article");article.className="tile";
+article.innerHTML=`<button class="tile-button" type="button" aria-label="Quick view: ${t.title}"><div class="tile-image"><img src="${t.image}" alt="${t.alt}" width="600" height="450" ${topics.indexOf(t)>1?'loading="lazy"':'loading="eager"'}><span class="tile-number">0${topics.indexOf(t)+1}</span><span class="quick">Quick view ↗</span></div><div class="tile-meta"><span>${t.label}</span><span>Reference image</span></div><h3>${t.title}</h3><p class="tile-desc">${t.description}</p></button>`;
+article.querySelector("button").addEventListener("click",()=>openTopic(t));$("catalogue").append(article);
+});
+$("resultCount").textContent=`${filtered.length} enquiry topic${filtered.length===1?"":"s"}`;
+$("empty").hidden=filtered.length!==0;
 }
-
-function go(index){
-  current = (index + slides.length) % slides.length;
-  slides.forEach((slide, i) => {
-    const active = (i === current);
-    slide.classList.toggle('active', active);
-    slide.inert = !active;
-    slide.setAttribute('aria-hidden', String(!active));
-  });
-
-  document.querySelectorAll('[data-go]').forEach(button => {
-    const idx = Number(button.dataset.go);
-    if(idx === current) button.setAttribute('aria-current','true');
-    else button.removeAttribute('aria-current');
-    button.classList.toggle('current', idx === current);
-    button.classList.toggle('past', idx < current);
-  });
-
-  counter.textContent = String(current + 1).padStart(2,'0') + ' / 05';
-  closeMenu();
+function resetFilters(){category="all";$("search").value="";document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-pressed",b.dataset.category==="all"));renderWall()}
+document.querySelectorAll(".tab").forEach(b=>b.addEventListener("click",()=>{category=b.dataset.category;document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-pressed",x===b));renderWall()}));
+$("search").addEventListener("input",renderWall);$("reset").addEventListener("click",resetFilters);$("emptyReset").addEventListener("click",resetFilters);
+function announce(message){clearTimeout(toastTimer);$("toast").textContent=message;$("toast").hidden=false;toastTimer=setTimeout(()=>$("toast").hidden=true,2600)}
+function updateBasket(){
+const n=selected.size;$("basketCount").textContent=n;$("mobileCount").textContent=`(${n})`;$("clearBasket").hidden=!n;$("selectionEmpty").hidden=!!n;
+$("selectionList").replaceChildren();
+topics.filter(t=>selected.has(t.id)).forEach(t=>{
+const li=document.createElement("li"),name=document.createElement("span"),remove=document.createElement("button");
+name.textContent=t.title;remove.type="button";remove.className="remove";remove.textContent="Remove";remove.setAttribute("aria-label",`Remove ${t.title} from enquiry`);
+remove.addEventListener("click",()=>{selected.delete(t.id);updateBasket();announce(`${t.title} removed`);const next=$("selectionList").querySelector("button");if(next)next.focus();else $("vehicle").focus()});
+li.append(name,remove);$("selectionList").append(li);
+});
+$("summaryOutput").hidden=true;$("formFeedback").textContent="";
+if(current)updateModalButton();
 }
-
-window.closeMenu = closeMenu;
-
-document.querySelectorAll('[data-go]').forEach(button => button.addEventListener('click', () => go(Number(button.dataset.go))));
-document.querySelector('.brand').addEventListener('click', (event) => { event.preventDefault(); go(0); });
-document.querySelector('#previous').addEventListener('click', () => go(current - 1));
-document.querySelector('#next').addEventListener('click', () => go(current + 1));
-
-menuToggle.addEventListener('click', () => {
-  const open = menu.hidden;
-  menu.hidden = !open;
-  menuToggle.setAttribute('aria-expanded', String(open));
-  menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
-});
-
-document.addEventListener('click', event => {
-  if(!menu.hidden && !menu.contains(event.target) && !menuToggle.contains(event.target)) closeMenu();
-});
-
-document.addEventListener('keydown', event => {
-  if(event.key === 'Escape') closeMenu();
-  if(document.querySelector('dialog[open]') || !menu.hidden || /INPUT|TEXTAREA|SELECT/.test(event.target.tagName)) return;
-  if(event.key === 'ArrowRight'){ event.preventDefault(); go(current + 1); }
-  if(event.key === 'ArrowLeft'){ event.preventDefault(); go(current - 1); }
-});
-
-story.addEventListener('touchstart', event => {
-  startX = event.changedTouches[0].clientX;
-  startY = event.changedTouches[0].clientY;
-}, {passive:true});
-
-story.addEventListener('touchend', event => {
-  if(event.target.closest('button,a,input,textarea,select,.3d-wrapper')) return;
-  const dx = event.changedTouches[0].clientX - startX;
-  const dy = event.changedTouches[0].clientY - startY;
-  if(Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 1.5) go(current + (dx < 0 ? 1 : -1));
-}, {passive:true});
-
-/* Dialog Modals */
-const quote = document.querySelector('#quote-dialog');
-const credits = document.querySelector('#credits-dialog');
-
-document.querySelectorAll('[data-quote]').forEach(button => button.addEventListener('click', () => { closeMenu(); quote.showModal(); }));
-document.querySelector('#credits-open').addEventListener('click', () => credits.showModal());
-document.querySelectorAll('[data-close]').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));
-
-document.querySelectorAll('dialog').forEach(dialog => {
-  dialog.addEventListener('click', event => {
-    if(event.target !== dialog) return;
-    const rect = dialog.getBoundingClientRect();
-    if(event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
-  });
-});
-
-/* Form Handling */
-const photo = document.querySelector('#photo');
-const preview = document.querySelector('#photo-preview');
-const status = document.querySelector('#form-status');
-
-photo.addEventListener('change', () => {
-  photo.setCustomValidity('');
-  preview.hidden = true;
-  preview.removeAttribute('src');
-  if(previewURL){ URL.revokeObjectURL(previewURL); previewURL = null; }
-  const file = photo.files[0];
-  if(!file) return;
-
-  if(!['image/jpeg','image/png','image/webp'].includes(file.type) || file.size > 10*1024*1024){
-    photo.setCustomValidity('Please select a valid JPG, PNG, or WebP image under 10 MB.');
-    photo.reportValidity();
-    return;
-  }
-  previewURL = URL.createObjectURL(file);
-  preview.src = previewURL;
-  preview.hidden = false;
-});
-
-document.querySelector('#quote-form').addEventListener('submit', event => {
-  event.preventDefault();
-  status.textContent = 'This is a demo form, nothing was sent. To contact Dent Punisher n Sound Lab, please call (915) 497-4291.';
-  status.hidden = false;
-});
-
-window.addEventListener('pagehide', () => { if(previewURL) URL.revokeObjectURL(previewURL); });
-
-/* THREE.JS 3D SUBWOOFER SCENE IMPLEMENTATION */
-function initThreeScene() {
-  const container = document.getElementById('three-container');
-  const fallback = document.getElementById('three-fallback');
-  if(!container) return;
-
-  // WebGL support check
-  let webglSupported = false;
-  try {
-    const probe = document.createElement('canvas');
-    webglSupported = !!(window.WebGLRenderingContext && (probe.getContext('webgl') || probe.getContext('experimental-webgl')));
-  } catch(e) {}
-
-  if(!webglSupported || typeof THREE === 'undefined'){
-    if(fallback) fallback.hidden = false;
-    return;
-  }
-
-  if(fallback) fallback.hidden = true;
-
-  let width = container.clientWidth;
-  let height = container.clientHeight;
-
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
-  camera.position.set(0, 0, 6.5);
-
-  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-  renderer.setSize(width, height);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  container.appendChild(renderer.domElement);
-
-  // Lights
-  const ambientLight = new THREE.AmbientLight(0xffffff, 0.7);
-  scene.add(ambientLight);
-
-  const keyLight = new THREE.DirectionalLight(0xfbbf24, 1.4);
-  keyLight.position.set(4, 4, 5);
-  scene.add(keyLight);
-
-  const rimLight = new THREE.PointLight(0x38bdf8, 2, 10);
-  rimLight.position.set(-4, -2, 3);
-  scene.add(rimLight);
-
-  // Subwoofer 3D Assembly
-  const subGroup = new THREE.Group();
-
-  // Outer Metal Ring Frame
-  const frameGeo = new THREE.TorusGeometry(1.9, 0.15, 16, 60);
-  const frameMat = new THREE.MeshStandardMaterial({ color: 0x1e293b, metalness: 0.9, roughness: 0.2 });
-  const frameMesh = new THREE.Mesh(frameGeo, frameMat);
-  subGroup.add(frameMesh);
-
-  // Rubber Surround Ring
-  const surroundGeo = new THREE.TorusGeometry(1.55, 0.22, 16, 60);
-  const surroundMat = new THREE.MeshStandardMaterial({ color: 0x0f172a, roughness: 0.85 });
-  const surroundMesh = new THREE.Mesh(surroundGeo, surroundMat);
-  surroundMesh.position.z = 0.08;
-  subGroup.add(surroundMesh);
-
-  // Main Speaker Cone
-  const coneGeo = new THREE.ConeGeometry(1.35, 0.75, 32, 1, true);
-  const coneMat = new THREE.MeshStandardMaterial({ color: 0x334155, metalness: 0.4, roughness: 0.4, side: THREE.DoubleSide });
-  const coneMesh = new THREE.Mesh(coneGeo, coneMat);
-  coneMesh.rotation.x = Math.PI / 2;
-  coneMesh.position.z = -0.25;
-  subGroup.add(coneMesh);
-
-  // Center Dust Cap (Gold Metallic)
-  const capGeo = new THREE.SphereGeometry(0.55, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.5);
-  const capMat = new THREE.MeshStandardMaterial({ color: 0xd97706, metalness: 0.95, roughness: 0.15 });
-  const capMesh = new THREE.Mesh(capGeo, capMat);
-  capMesh.rotation.x = -Math.PI / 2;
-  capMesh.position.z = 0.12;
-  subGroup.add(capMesh);
-
-  // Soundwave Particle Ring
-  const pCount = 90;
-  const pGeo = new THREE.BufferGeometry();
-  const pPos = new Float32Array(pCount * 3);
-  for(let i = 0; i < pCount; i++){
-    const angle = (i / pCount) * Math.PI * 2;
-    const radius = 2.2 + (Math.random() * 0.3);
-    pPos[i*3] = Math.cos(angle) * radius;
-    pPos[i*3+1] = Math.sin(angle) * radius;
-    pPos[i*3+2] = (Math.random() - 0.5) * 0.4;
-  }
-  pGeo.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
-  const pMat = new THREE.PointsMaterial({ size: 0.07, color: 0xfbbf24, transparent: true, opacity: 0.85 });
-  const particles = new THREE.Points(pGeo, pMat);
-  subGroup.add(particles);
-
-  scene.add(subGroup);
-
-  // Touch / Drag Controls
-  let isDragging = false;
-  let prevMouse = { x: 0, y: 0 };
-
-  container.addEventListener('pointerdown', e => {
-    isDragging = true;
-    prevMouse = { x: e.clientX, y: e.clientY };
-  });
-
-  window.addEventListener('pointermove', e => {
-    if(!isDragging) return;
-    const dx = e.clientX - prevMouse.x;
-    const dy = e.clientY - prevMouse.y;
-    subGroup.rotation.y += dx * 0.01;
-    subGroup.rotation.x += dy * 0.01;
-    prevMouse = { x: e.clientX, y: e.clientY };
-  });
-
-  window.addEventListener('pointerup', () => { isDragging = false; });
-
-  // Bass Pulse Animation Trigger
-  let pulseEnergy = 0;
-  const pulseBtn = document.getElementById('pulse-btn');
-  if(pulseBtn){
-    pulseBtn.addEventListener('click', () => {
-      pulseEnergy = 1.0;
-      if(typeof gsap !== 'undefined'){
-        gsap.to(subGroup.scale, { x: 1.12, y: 1.12, z: 1.12, duration: 0.12, yoyo: true, repeat: 3, ease: "power2.out" });
-      }
-    });
-  }
-
-  // Animation Loop
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const clock = new THREE.Clock();
-  let isVisible = true;
-
-  function renderLoop() {
-    if(prefersReduced || !isVisible) return;
-    requestAnimationFrame(renderLoop);
-    const elapsed = clock.getElapsedTime();
-
-    if(!isDragging){
-      subGroup.rotation.y = Math.sin(elapsed * 0.6) * 0.25;
-      subGroup.rotation.x = Math.cos(elapsed * 0.4) * 0.15;
-    }
-
-    const pulseOffset = Math.sin(elapsed * 14) * (0.05 + pulseEnergy * 0.12);
-    coneMesh.position.z = -0.25 + pulseOffset;
-    capMesh.position.z = 0.12 + pulseOffset;
-    particles.rotation.z = elapsed * 0.3;
-
-    if(pulseEnergy > 0) pulseEnergy -= 0.02;
-
-    renderer.render(scene, camera);
-  }
-
-  // Initial render (covers reduced-motion static case too)
-  renderer.render(scene, camera);
-  if(!prefersReduced) renderLoop();
-
-  // Resize handling
-  window.addEventListener('resize', () => {
-    if(!container) return;
-    width = container.clientWidth;
-    height = container.clientHeight;
-    camera.aspect = width / height;
-    camera.updateProjectionMatrix();
-    renderer.setSize(width, height);
-  });
-
-  // Pause rendering when canvas is off-screen
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { isVisible = e.isIntersecting; });
-  }, { threshold: 0.1 });
-  observer.observe(container);
+$("clearBasket").addEventListener("click",()=>{selected.clear();updateBasket();announce("Enquiry basket cleared");document.querySelector(".basket-review").focus()});
+function updateModalButton(){const added=selected.has(current.id);$("modalAdd").disabled=added;$("modalAdd").textContent=added?"Added to your enquiry ✓":"Add to enquiry +"}
+function openTopic(t){
+current=t;lastFocus=document.activeElement;
+$("modalImage").src=t.image;$("modalImage").alt=t.alt;$("modalCategory").textContent=`${t.label} / enquiry topic`;
+$("modalTitle").textContent=t.title;$("modalDescription").textContent=t.detail;$("modalPrompt").textContent=t.prompt;updateModalButton();
+$("quickView").showModal();document.body.style.overflow="hidden";$("modalClose").focus();
 }
-
-window.addEventListener('DOMContentLoaded', initThreeScene);
-
-})();
+function closeTopic(){$("quickView").close()}
+$("modalClose").addEventListener("click",closeTopic);
+$("quickView").addEventListener("close",()=>{document.body.style.overflow="";if(lastFocus&&lastFocus.isConnected)lastFocus.focus()});
+$("quickView").addEventListener("click",e=>{if(e.target===$("quickView")){const r=$("quickView").getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeTopic()}});
+$("quickView").addEventListener("keydown",e=>{
+if(e.key!=="Tab")return;
+const focusable=[...$("quickView").querySelectorAll("button:not(:disabled),a[href],input,textarea")];
+const first=focusable[0],last=focusable[focusable.length-1];
+if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+});
+$("modalAdd").addEventListener("click",()=>{if(!current||selected.has(current.id))return;selected.add(current.id);updateBasket();closeTopic();announce(`${current.title} added to your enquiry`)});
+function menuState(open){$("navigation").hidden=!open;$("menuButton").setAttribute("aria-expanded",String(open));$("menuButton").setAttribute("aria-label",open?"Close navigation":"Open navigation")}
+$("menuButton").addEventListener("click",()=>menuState($("navigation").hidden));
+$("navigation").querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{menuState(false);const target=document.querySelector(a.getAttribute("href"));if(target){if(target.tagName==="DETAILS")target.open=true;target.setAttribute("tabindex","-1");target.focus({preventScroll:true})}}));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("navigation").hidden){menuState(false);$("menuButton").focus()}});
+document.addEventListener("click",e=>{if(!e.target.closest(".header"))menuState(false)});
+document.addEventListener("focusin",e=>{if(!e.target.closest(".header")&&!$("navigation").hidden)menuState(false)});
+$("summaryForm").addEventListener("submit",e=>{
+e.preventDefault();if(!$("summaryForm").reportValidity())return;
+const vehicle=$("vehicle").value.trim(),request=$("request").value.trim();
+if(!selected.size&&!request){$("formFeedback").textContent="Add an enquiry topic or describe your question first.";$("request").focus();return}
+const items=topics.filter(t=>selected.has(t.id)).map(t=>`• ${t.title}`).join("\n");
+$("copyText").value=`Enquiry notes for Dent Punisher n Sound Lab\n\n${items?"Topics to discuss:\n"+items+"\n\n":""}${vehicle?"Vehicle: "+vehicle+"\n\n":""}${request?"My question:\n"+request+"\n\n":""}Prepared using an independent LeadSky concept. No enquiry has been sent, no price agreed and no appointment booked.`;
+$("summaryOutput").hidden=false;$("copyFeedback").textContent="";$("formFeedback").textContent="This is a demo form, nothing was sent.";
+$("copyText").focus();
+});
+["vehicle","request"].forEach(id=>$(id).addEventListener("input",()=>{$("summaryOutput").hidden=true;$("formFeedback").textContent=""}));
+$("copyButton").addEventListener("click",async()=>{
+try{if(!navigator.clipboard)throw new Error("Unavailable");await navigator.clipboard.writeText($("copyText").value);$("copyFeedback").textContent="Summary copied. Nothing has been sent."}
+catch(e){$("copyText").focus();$("copyText").select();$("copyFeedback").textContent="Automatic copying is unavailable. The summary is selected; use your device’s Copy command."}
+});
+renderWall();updateBasket();
 </script>
 </body>
 </html>

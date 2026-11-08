@@ -2,7 +2,17 @@
   {
     "file": "img/stock-1.jpg",
     "kind": "stock photo",
-    "query": "paintless dent repair technician using reflection light board on car door",
+    "query": "paintless dent repair technician inspecting car door close up",
+    "description": "car, vehicle, man, car wallpapers, data acquisition system, daq",
+    "source": "https://pixabay.com/photos/car-vehicle-man-7232127/",
+    "photographer": "Dewesoft",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "paintless dent repair technician inspecting car door close up",
     "description": "car accident, totalled, car, crash, accident, car wallpapers, auto, broken, wreck, auto accident",
     "source": "https://pixabay.com/photos/car-accident-totalled-car-crash-1660670/",
     "photographer": "Akent879",
@@ -10,59 +20,9 @@
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
-    "file": "img/stock-2.jpg",
-    "kind": "stock photo",
-    "query": "paintless dent repair technician using reflection light board on car door",
-    "description": "man, engineer, bike, cyclist, male, man, man, man, man, man, male",
-    "source": "https://pixabay.com/photos/man-engineer-bike-cyclist-male-8499961/",
-    "photographer": "This_is_Engineering",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
     "file": "img/stock-3.jpg",
     "kind": "stock photo",
-    "query": "custom car audio subwoofer amplifier installation trunk neon detail",
-    "description": "car, classic, tail lights, brake lights, old, red car, car rear, vehicle, transportation, car wallpapers, automobile, automotive, close up, chrome, retro, vintage",
-    "source": "https://pixabay.com/photos/car-classic-tail-lights-1846103/",
-    "photographer": "Pexels",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-4.jpg",
-    "kind": "stock photo",
-    "query": "custom car audio subwoofer amplifier installation trunk neon detail",
-    "description": "automobile, vehicle, chrome, ride, wheel, classic, engine, headlights, perfomance, glittering, retro, antique car, old car, retro look, hub cap, hot rod, usa, v8, big block, engine, engine, engine, engine, engine",
-    "source": "https://pixabay.com/photos/automobile-vehicle-chrome-ride-3116534/",
-    "photographer": "sick-street-photography",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-5.jpg",
-    "kind": "stock photo",
-    "query": "auto soundproofing insulation damping material installation car interior",
-    "description": "acoustics, acoustic foam, sound wave, nap, absorber, sound absorber, acoustic foam, acoustic foam, acoustic foam, acoustic foam, acoustic foam, sound wave, sound wave, sound wave, sound wave",
-    "source": "https://pixabay.com/photos/acoustics-acoustic-foam-sound-wave-2467024/",
-    "photographer": "emiliox",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-6.jpg",
-    "kind": "stock photo",
-    "query": "auto soundproofing insulation damping material installation car interior",
-    "description": "pipe system, tube, construction site, light, cable, industry, system, connection, flow through, embarrassed, plug-in system, round, circles, channel, industry, industry, industry, industry, industry, circles, circles",
-    "source": "https://pixabay.com/photos/pipe-system-tube-construction-site-7768312/",
-    "photographer": "Kranich17",
-    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
-    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
-  },
-  {
-    "file": "img/stock-7.jpg",
-    "kind": "stock photo",
-    "query": "modern car repair workshop body shop el paso texas clean bay",
+    "query": "automotive dent repair tools on workshop bench",
     "description": "auto, car, garage, auto shop, car wallpapers, vintage, vehicle, antique, automobile, automotive, classic, equipment, fix, mechanic, nostalgia, repair, retro, sepia, service, repair shop, tools, transportation, workshop",
     "source": "https://pixabay.com/photos/auto-car-garage-auto-shop-vintage-1868726/",
     "photographer": "Pexels",
@@ -70,12 +30,92 @@
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   },
   {
-    "file": "img/stock-8.jpg",
+    "file": "img/stock-4.jpg",
     "kind": "stock photo",
-    "query": "modern car repair workshop body shop el paso texas clean bay",
+    "query": "automotive dent repair tools on workshop bench",
     "description": "man, car, repair, car repair, car workshop, repair shop, repairs, car wallpapers, garage, mechanic, vw beetle, volkswagen, beetle, automotive, workshop, tools, supplies, monochrome, black and white",
     "source": "https://pixabay.com/photos/man-car-repair-car-repair-362150/",
     "photographer": "RyanMcGuire",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "car audio speaker installation door panel close up",
+    "description": "door, door handle, auto, air intake, gt4, porsche, car wallpapers, car",
+    "source": "https://pixabay.com/photos/door-door-handle-auto-air-intake-4833820/",
+    "photographer": "Zotx",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "car audio speaker installation door panel close up",
+    "description": "door, entrance, facade, archway, arch, blue door, wooden, portal, door, door, door, door, door",
+    "source": "https://pixabay.com/photos/door-entrance-facade-archway-arch-681835/",
+    "photographer": "seth0s",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "vehicle subwoofer enclosure installation trunk",
+    "description": "elephants, pachyderm, mammal, animal, wildlife, nature, cub, indian elephant, zoo, zoo hagenbeck",
+    "source": "https://pixabay.com/photos/elephants-pachyderm-mammal-animal-4270753/",
+    "photographer": "minka2507",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "vehicle subwoofer enclosure installation trunk",
+    "description": "vehicle, transport, automobile, antique car, nostalgia, oldtimer car, travel, vacations, ride, old car, classic, tire, car tire, rims, top, suitcase, rarity, fender, old car, old car, old car, old car, old car",
+    "source": "https://pixabay.com/photos/vehicle-transport-automobile-2132360/",
+    "photographer": "garten-gg",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "car dashboard stereo installation hands detail",
+    "description": "vintage car, steering wheel, turquoise, interior, dashboard, old, automobile, auto, retro, classic, transportation, automotive, vehicle, vintage car, vintage car, steering wheel, steering wheel, steering wheel, steering wheel, turquoise, turquoise, interior, dashboard, auto, auto, auto, auto, retro, retro, retro, retro, retro, automotive",
+    "source": "https://pixabay.com/photos/vintage-car-steering-wheel-turquoise-852239/",
+    "photographer": "JillWellington",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "car dashboard stereo installation hands detail",
+    "description": "mercedes benz, antiquity, retro, automobile, night, traffic, antique car, vehicle, classic, vintage, luxury, 300 sl, mercedes benz, vintage, vintage, vintage, vintage, vintage",
+    "source": "https://pixabay.com/photos/mercedes-benz-antiquity-retro-5377019/",
+    "photographer": "MartinPhotography",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-11.jpg",
+    "kind": "stock photo",
+    "query": "automotive body panel inspection reflection workshop",
+    "description": "solar, panel, solar panels, solar energy, rooftop, man, worker, solar, solar, solar, solar, solar, solar panels, solar panels, solar panels, solar panels, solar panels, solar energy, solar energy, solar energy, worker",
+    "source": "https://pixabay.com/photos/solar-panel-solar-panels-8499901/",
+    "photographer": "This_is_Engineering",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-12.jpg",
+    "kind": "stock photo",
+    "query": "automotive body panel inspection reflection workshop",
+    "description": "glasses, optician, ophthalmologist, eye, ophthalmology, optics, glasses frame, see, reading glasses",
+    "source": "https://pixabay.com/photos/glasses-optician-ophthalmologist-9864287/",
+    "photographer": "Henning_W",
     "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
     "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
   }
