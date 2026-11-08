@@ -1,1392 +1,207 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <title>Thai Town Restaurant | Vancouver | Authentic Northern Thai Flavours</title>
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Three.js and GSAP -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
-  <style>
-    :root {
-      --bg-color: #faf6f0;
-      --bg-alt: #f0e6d8;
-      --text-main: #3a2e2b;
-      --brand: #c87d32;
-      --brand-hover: #b06b29;
-      --accent: #2e4a3d;
-      --accent-light: #3d6150;
-      --white: #ffffff;
-      --font-serif: 'Cormorant Garamond', serif;
-      --font-sans: 'Plus Jakarta Sans', sans-serif;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Demo Banner */
-    .demo-banner {
-      background: var(--text-main);
-      color: var(--bg-color);
-      font-size: 0.85rem;
-      text-align: center;
-      padding: 0.5rem 1rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      position: relative;
-      z-index: 1000;
-    }
-
-    /* Navigation */
-    .site-nav {
-      position: sticky;
-      top: 0;
-      background: rgba(250, 246, 240, 0.9);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(200, 125, 50, 0.15);
-      z-index: 999;
-      transition: all 0.3s ease;
-    }
-
-    .nav-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand-logo {
-      font-family: var(--font-serif);
-      font-size: 1.6rem;
-      font-weight: 700;
-      color: var(--text-main);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .brand-logo span {
-      color: var(--brand);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: var(--text-main);
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.95rem;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--brand);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.75rem 1.75rem;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-decoration: none;
-      transition: all 0.25s ease;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary {
-      background-color: var(--brand);
-      color: var(--white);
-    }
-
-    .btn-primary:hover {
-      background-color: var(--brand-hover);
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      background-color: transparent;
-      border: 1.5px solid var(--text-main);
-      color: var(--text-main);
-    }
-
-    .btn-outline:hover {
-      background-color: var(--text-main);
-      color: var(--bg-color);
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 0.5rem;
-    }
-
-    .mobile-menu-btn span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--text-main);
-      margin: 5px 0;
-      transition: 0.3s;
-    }
-
-    /* Hero Section */
-    .hero-section {
-      padding: 4rem 2rem 6rem;
-      max-width: 1280px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--brand);
-    }
-
-    .hero-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.8rem, 5vw, 4.2rem);
-      line-height: 1.1;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .hero-description {
-      font-size: 1.1rem;
-      color: #5c4b47;
-      max-width: 540px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .hero-image-wrapper {
-      position: relative;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(58, 46, 43, 0.12);
-      aspect-ratio: 4/3;
-    }
-
-    .hero-image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.6s ease;
-    }
-
-    .hero-image-wrapper:hover img {
-      transform: scale(1.03);
-    }
-
-    /* 3D Section / Interactive Showcase */
-    .interactive-showcase {
-      background-color: var(--bg-alt);
-      padding: 5rem 2rem;
-      border-top: 1px solid rgba(200, 125, 50, 0.1);
-      border-bottom: 1px solid rgba(200, 125, 50, 0.1);
-    }
-
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 3rem;
-    }
-
-    .section-eyebrow {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--brand);
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      display: block;
-    }
-
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.2rem, 3.5vw, 3rem);
-      font-weight: 700;
-      color: var(--text-main);
-      line-height: 1.2;
-    }
-
-    .showcase-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .canvas-container {
-      width: 100%;
-      height: 400px;
-      background: radial-gradient(circle, #fcf8f2 0%, var(--bg-alt) 100%);
-      border-radius: 12px;
-      position: relative;
-      overflow: hidden;
-      box-shadow: inset 0 2px 10px rgba(0,0,0,0.03);
-    }
-
-    .canvas-container canvas {
-      display: block;
-      width: 100% !important;
-      height: 100% !important;
-    }
-
-    .canvas-fallback {
-      position: absolute;
-      inset: 0;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-alt);
-      color: var(--text-main);
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-    }
-
-    .showcase-text h3 {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: var(--text-main);
-    }
-
-    .showcase-text p {
-      color: #5c4b47;
-      margin-bottom: 1.5rem;
-    }
-
-    /* About & Heritage */
-    .about-section {
-      padding: 6rem 2rem;
-      max-width: 1280px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .about-images {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
-    .about-img-card {
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 15px 30px rgba(58, 46, 43, 0.08);
-    }
-
-    .about-img-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .about-img-card:nth-child(2) {
-      margin-top: 3rem;
-    }
-
-    .about-content h2 {
-      font-family: var(--font-serif);
-      font-size: clamp(2.2rem, 3.5vw, 3rem);
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-
-    .about-content p {
-      color: #5c4b47;
-      margin-bottom: 1.2rem;
-    }
-
-    .features-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .feature-item {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--accent);
-    }
-
-    .feature-item svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--brand);
-      flex-shrink: 0;
-    }
-
-    /* Menu Section */
-    .menu-section {
-      padding: 6rem 2rem;
-      background-color: var(--bg-alt);
-    }
-
-    .menu-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-    }
-
-    .menu-tab {
-      padding: 0.75rem 1.5rem;
-      background: transparent;
-      border: 1px solid rgba(58, 46, 43, 0.2);
-      border-radius: 30px;
-      font-family: var(--font-sans);
-      font-weight: 600;
-      font-size: 0.95rem;
-      color: var(--text-main);
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .menu-tab.active, .menu-tab:hover {
-      background: var(--text-main);
-      color: var(--bg-color);
-      border-color: var(--text-main);
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2rem;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .menu-card {
-      background: var(--bg-color);
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(58, 46, 43, 0.06);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .menu-card-img {
-      height: 220px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .menu-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
-
-    .menu-card:hover .menu-card-img img {
-      transform: scale(1.05);
-    }
-
-    .menu-card-content {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .menu-card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.75rem;
-    }
-
-    .menu-card-title {
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
-    .menu-card-price {
-      font-weight: 700;
-      color: var(--brand);
-      font-size: 1.1rem;
-    }
-
-    .menu-card-desc {
-      color: #5c4b47;
-      font-size: 0.95rem;
-      margin-bottom: 1.5rem;
-      flex-grow: 1;
-    }
-
-    .menu-card-tag {
-      display: inline-block;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 0.25rem 0.75rem;
-      background: rgba(200, 125, 50, 0.15);
-      color: var(--brand);
-      border-radius: 20px;
-      font-weight: 600;
-      align-self: flex-start;
-    }
-
-    /* Atmosphere Gallery */
-    .atmosphere-section {
-      padding: 6rem 2rem;
-      max-width: 1280px;
-      margin: 0 auto;
-    }
-
-    .atmosphere-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
-
-    .atmosphere-img {
-      border-radius: 8px;
-      overflow: hidden;
-      height: 320px;
-      box-shadow: 0 10px 25px rgba(58, 46, 43, 0.08);
-      position: relative;
-    }
-
-    .atmosphere-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .atmosphere-img:hover img {
-      transform: scale(1.05);
-    }
-
-    .atmosphere-img:nth-child(2) {
-      grid-row: span 2;
-      height: calc(640px + 1.5rem);
-    }
-
-    /* Reservations & Location Section */
-    .reservation-location {
-      background-color: var(--bg-alt);
-      padding: 6rem 2rem;
-    }
-
-    .res-loc-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      max-width: 1280px;
-      margin: 0 auto;
-      align-items: stretch;
-    }
-
-    .res-card, .loc-card {
-      background: var(--bg-color);
-      padding: 3rem;
-      border-radius: 12px;
-      box-shadow: 0 15px 35px rgba(58, 46, 43, 0.06);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    label {
-      display: block;
-      font-weight: 600;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-      color: var(--text-main);
-    }
-
-    input, select, textarea {
-      width: 100%;
-      padding: 0.85rem 1rem;
-      border: 1px solid rgba(58, 46, 43, 0.2);
-      border-radius: 4px;
-      background: var(--bg-color);
-      font-family: var(--font-sans);
-      font-size: 1rem;
-      color: var(--text-main);
-      transition: border-color 0.2s ease;
-    }
-
-    input:focus, select:focus, textarea:focus {
-      outline: none;
-      border-color: var(--brand);
-    }
-
-    .form-notice {
-      font-size: 0.85rem;
-      color: #7a6864;
-      margin-top: 1rem;
-      text-align: center;
-    }
-
-    .loc-details {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .loc-item {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-
-    .loc-icon {
-      width: 24px;
-      height: 24px;
-      fill: var(--brand);
-      flex-shrink: 0;
-      margin-top: 0.2rem;
-    }
-
-    .loc-text h4 {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 0.2rem;
-    }
-
-    .loc-text p {
-      color: #5c4b47;
-      font-size: 0.95rem;
-    }
-
-    .map-placeholder {
-      width: 100%;
-      height: 200px;
-      border-radius: 8px;
-      overflow: hidden;
-      background: #e5ded4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    .map-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      opacity: 0.85;
-    }
-
-    .map-overlay-text {
-      position: absolute;
-      background: rgba(58, 46, 43, 0.85);
-      color: var(--white);
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .map-overlay-text:hover {
-      background: var(--text-main);
-    }
-
-    /* Footer */
-    footer {
-      background: var(--text-main);
-      color: var(--bg-color);
-      padding: 4rem 2rem 2rem;
-    }
-
-    .footer-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      gap: 4rem;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .footer-brand p {
-      color: #c5b8b4;
-      max-width: 360px;
-      margin-top: 1rem;
-      font-size: 0.95rem;
-    }
-
-    .footer-col h5 {
-      font-family: var(--font-serif);
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-      color: var(--white);
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .footer-links a {
-      color: #c5b8b4;
-      text-decoration: none;
-      transition: color 0.2s;
-      font-size: 0.95rem;
-    }
-
-    .footer-links a:hover {
-      color: var(--brand);
-    }
-
-    .footer-bottom {
-      max-width: 1280px;
-      margin: 2rem auto 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.85rem;
-      color: #9c8e8a;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .credits-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.3rem;
-    }
-
-    .credits-list a {
-      color: var(--brand);
-      text-decoration: none;
-    }
-
-    .credits-list a:hover {
-      text-decoration: underline;
-    }
-
-    /* Media Queries */
-    @media (max-width: 968px) {
-      .hero-section, .about-section, .showcase-grid, .res-loc-grid, .footer-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .hero-image-wrapper {
-        order: -1;
-      }
-      .nav-links {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
-      .atmosphere-grid {
-        grid-template-columns: 1fr;
-      }
-      .atmosphere-img:nth-child(2) {
-        grid-row: span 1;
-        height: 320px;
-      }
-    }
-
-    /* Mobile Navigation Drawer */
-    .mobile-drawer {
-      position: fixed;
-      inset: 0;
-      background: var(--bg-color);
-      z-index: 1000;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 2rem;
-      transform: translateX(100%);
-      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .mobile-drawer.open {
-      transform: translateX(0);
-    }
-
-    .mobile-drawer-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 2rem;
-      background: none;
-      border: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: var(--text-main);
-    }
-
-    .mobile-drawer-links {
-      list-style: none;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .mobile-drawer-links a {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      color: var(--text-main);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    /* Accessibility / Reduced Motion */
-    @media (prefers-reduced-motion: reduce) {
-      * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFFCF7">
+<title>Thai Town Restaurant · Vancouver · Independent Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fffcf7;--plum:#462044;--orange:#b84924;--orchid:#f0e6f2;--ink:#292329;--line:#dfd5db;--muted:#685c66}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 'Public Sans',sans-serif}button,input{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:4px}button{color:inherit}button:disabled{cursor:default;opacity:.45}h1,h2,h3,p{margin:0}h1,h2,h3,.brand,.display{font-family:'Bricolage Grotesque',sans-serif}button,a{touch-action:manipulation}.notice{padding:9px 20px;background:var(--plum);color:white;text-align:center;font-size:11px;line-height:1.5}.wrap{max-width:1400px;margin:auto;padding-inline:5%}.header{position:sticky;top:0;background:rgba(255,252,247,.97);z-index:20;border-bottom:1px solid var(--line)}.header-inner{height:76px;display:flex;align-items:center;gap:30px}.brand{text-decoration:none;font-size:24px;font-weight:800;letter-spacing:-1px;white-space:nowrap;color:var(--plum)}.brand span{color:var(--orange)}.desktop-links{display:flex;gap:28px;margin-left:auto;font-size:13px}.desktop-links a{text-decoration:none}.small-call{background:var(--plum);color:white;text-decoration:none;padding:11px 19px;border-radius:6px;font-size:13px;font-weight:600}.menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:6px;width:42px;height:42px;font-size:20px}.mobile-nav{padding:14px 5% 22px;border-top:1px solid var(--line)}.mobile-nav a{display:block;padding:12px 0;text-decoration:none}.hero{padding-top:32px}.hero-line{display:flex;justify-content:space-between;align-items:center;gap:28px;margin-bottom:25px}.eyebrow{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--orange);margin-bottom:9px}h1{font-size:clamp(36px,4.2vw,64px);line-height:1.02;color:var(--plum);letter-spacing:-2.5px}.hero-sub{margin-top:12px;color:var(--muted)}.button{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:46px;padding:12px 22px;border:0;border-radius:6px;background:var(--plum);color:white;text-decoration:none;font-weight:600;font-size:13px}.button:hover{background:#63305f}.button.orange{background:var(--orange)}.banner{position:relative;height:230px;border-radius:10px;overflow:hidden;background:var(--orchid)}.banner img{width:100%;height:100%;object-fit:cover;object-position:50% 55%}.photo-label{position:absolute;bottom:14px;left:17px;padding:6px 10px;background:var(--paper);color:var(--plum);font-size:10px;border-radius:3px}.hero-caption{display:flex;justify-content:space-between;gap:16px;font-size:11px;color:var(--muted);padding:11px 0 25px;border-bottom:1px solid var(--line)}.catalogue{padding-top:34px;padding-bottom:70px}.catalogue-top{display:flex;justify-content:space-between;gap:25px;align-items:flex-end;margin-bottom:20px}h2{font-size:34px;letter-spacing:-1.1px;color:var(--plum);line-height:1.1}.section-note{max-width:610px;color:var(--muted);font-size:12px;margin-top:10px}.searchbox{position:relative;min-width:290px}.searchbox input{width:100%;height:48px;border:1px solid var(--line);border-radius:6px;background:white;padding:0 16px 0 40px;color:var(--ink)}.search-icon{position:absolute;left:15px;top:12px;font-size:19px}.tools{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);margin-bottom:25px;gap:15px}.tabs{display:flex;gap:25px;overflow:auto;scrollbar-width:thin}.tab{position:relative;white-space:nowrap;border:0;background:none;padding:15px 0;color:var(--muted);font-size:13px;min-height:48px}.tab[aria-pressed=true]{color:var(--plum);font-weight:700}.tab:after{content:"";position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--orange);transform:scaleX(0);transition:transform .22s}.tab[aria-pressed=true]:after{transform:scaleX(1)}.count{white-space:nowrap;color:var(--muted);font-size:11px}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px 22px}.card{min-width:0}.photo-button{display:block;border:0;background:var(--orchid);padding:0;position:relative;width:100%;aspect-ratio:1.22;border-radius:8px;overflow:hidden}.photo-button img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.2,.7,.3,1)}.photo-button:hover img,.photo-button:focus-visible img{transform:scale(1.055)}.quick{position:absolute;right:10px;bottom:10px;background:var(--paper);border-radius:50%;width:33px;height:33px;display:grid;place-items:center;font-size:19px;color:var(--plum)}.card-meta{font-size:9px;text-transform:uppercase;letter-spacing:1.1px;color:var(--orange);margin-top:14px;font-weight:700}.card h3{font-size:21px;line-height:1.15;letter-spacing:-.5px;color:var(--plum);margin-top:6px}.card p{font-size:12px;color:var(--muted);margin-top:7px}.card-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:14px;gap:8px}.reference{font-size:10px;color:var(--muted)}.add{width:35px;height:35px;border:1px solid var(--line);border-radius:50%;background:transparent;font-size:21px;flex-shrink:0}.add:hover{background:var(--plum);color:white}.empty{padding:45px;text-align:center;background:var(--orchid);border-radius:8px;grid-column:1/-1}.empty p{margin-bottom:20px}.shortlist{padding:35px;border:1px solid var(--line);border-radius:10px;margin-bottom:55px;background:#f8f2f7}.summary-heading{display:flex;justify-content:space-between;align-items:center;gap:20px}.text-button{border:0;background:none;color:var(--plum);text-decoration:underline;font-size:12px;min-height:44px}.summary-list{margin:22px 0}.summary-row{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}.summary-name{font-weight:600;flex:1}.quantity{display:flex;align-items:center;gap:12px}.quantity button{height:36px;width:36px;border:1px solid #c9b8c8;border-radius:50%;background:var(--paper)}.summary-empty{font-size:13px;color:var(--muted)}.demo-note{font-size:12px;color:var(--muted);max-width:710px}.visit{background:var(--plum);color:var(--paper);padding:57px 0}.visit-grid{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:50px}.visit .eyebrow{color:#f8bc9e}.visit h2{color:var(--paper);font-size:40px}.visit h3{font-size:16px;margin-bottom:13px}.visit p{font-size:13px;color:#e5d7e4}.visit a{display:inline-block;margin-top:16px;text-underline-offset:5px}.visit .phone{font-family:'Bricolage Grotesque';font-size:23px;text-decoration:none}.visit small{display:block;color:#e5d7e4;margin-top:12px;font-size:11px}.footer{padding-top:27px;padding-bottom:115px;font-size:11px;color:var(--muted)}.footer-line{display:flex;justify-content:space-between;gap:20px}.footer details{margin-top:18px}.footer summary{cursor:pointer;min-height:32px}.credits{display:flex;flex-wrap:wrap;gap:7px 18px;margin-top:8px}.credits a{font-size:10px}.basket-strip{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);width:min(640px,90%);background:var(--plum);color:white;z-index:25;display:flex;align-items:center;gap:15px;padding:13px 16px;border:1px solid #795777;border-radius:9px;box-shadow:0 10px 35px #46204426}.basket-number{display:grid;place-items:center;width:33px;height:33px;background:#674564;border-radius:5px;font-size:13px}.basket-copy{flex:1;font-size:12px}.basket-copy small{display:block;color:#e7d6e5;font-size:10px}.basket-strip a{font-size:12px;text-decoration:none;border-bottom:1px solid #cbb8c9;padding:6px 0}.mobile-call{display:none}dialog{padding:0;border:0;border-radius:12px;width:min(780px,92vw);max-height:90dvh;background:var(--paper);color:var(--ink);overflow:auto;box-shadow:0 20px 100px #0004}dialog::backdrop{background:rgba(31,14,30,.65)}.modal-inner{display:grid;grid-template-columns:1fr 1fr;position:relative}.modal-photo{width:100%;height:100%;min-height:400px;object-fit:cover}.modal-content{padding:40px 28px 28px}.modal-content h2{font-size:32px;margin:12px 0}.modal-content p{font-size:13px;color:var(--muted);margin-bottom:18px}.close{position:absolute;right:12px;top:12px;width:36px;height:36px;border:1px solid var(--line);background:var(--paper);border-radius:50%;font-size:23px;z-index:1}.modal-content .quantity{margin:22px 0}.modal-content .button{width:100%}.modal-label{font-size:10px;color:var(--orange);text-transform:uppercase;letter-spacing:1px}.toast{position:fixed;top:90px;left:50%;transform:translateX(-50%);background:var(--plum);color:white;border-radius:6px;padding:12px 20px;z-index:60;font-size:12px;box-shadow:0 5px 25px #0002;pointer-events:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}[hidden]{display:none!important}
+@media(min-width:1400px){.banner{height:260px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.visit-grid{gap:25px}.catalogue-top{align-items:flex-start}.searchbox{min-width:240px}.brand{font-size:21px}.desktop-links{gap:18px}}
+@media(max-width:650px){.wrap{padding-inline:18px}.notice{font-size:9px;padding:7px 14px}.header-inner{height:61px;gap:9px}.brand{font-size:18px;letter-spacing:-.7px;margin-right:auto}.brand span{display:none}.desktop-links{display:none}.small-call{padding:10px 12px;font-size:11px}.menu-toggle{display:block;flex-shrink:0}.hero{padding-top:22px}.hero-line{align-items:flex-start;gap:8px;margin-bottom:17px;flex-wrap:wrap}.eyebrow{font-size:9px;letter-spacing:1.6px;margin-bottom:7px}h1{font-size:36px;letter-spacing:-1.7px;max-width:320px}.hero-sub{font-size:12px;margin-top:8px}.hero-line .button{margin-top:6px;min-height:41px;padding:10px 16px;font-size:12px}.banner{height:125px;border-radius:7px}.photo-label{bottom:8px;left:9px;font-size:8px;padding:4px 7px}.hero-caption{font-size:9px;padding-bottom:18px}.hero-caption span:last-child{display:none}.catalogue{padding-top:23px;padding-bottom:32px}.catalogue-top{display:block;margin-bottom:8px}h2{font-size:29px}.section-note{font-size:11px;line-height:1.55;margin-top:8px}.searchbox{margin-top:16px;width:100%}.searchbox input{height:45px;font-size:13px}.tools{display:block;margin-bottom:19px}.tabs{gap:24px}.tab{font-size:12px}.count{display:block;margin:8px 0 12px;font-size:10px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:25px 13px}.photo-button{aspect-ratio:1.03;border-radius:6px}.quick{width:27px;height:27px;font-size:16px;bottom:7px;right:7px}.card-meta{font-size:8px;letter-spacing:.7px;margin-top:10px}.card h3{font-size:19px;line-height:1.1;margin-top:5px}.card p{font-size:10px;line-height:1.5}.card-bottom{margin-top:10px}.reference{font-size:9px}.add{width:33px;height:33px}.shortlist{padding:22px 17px;margin-bottom:30px}.shortlist h2{font-size:25px}.summary-name{font-size:12px}.summary-row{gap:9px}.quantity{gap:9px}.quantity button{width:34px;height:34px}.summary-heading{gap:8px}.demo-note{font-size:11px}.visit{padding:35px 0}.visit-grid{grid-template-columns:1fr;gap:27px}.visit h2{font-size:36px}.visit h3{margin-bottom:7px}.visit a{margin-top:9px}.footer{padding-bottom:160px}.footer-line{font-size:10px}.basket-strip{width:calc(100% - 20px);bottom:64px;padding:9px 12px;border-radius:7px;gap:10px}.basket-copy{font-size:11px}.basket-strip a{font-size:11px}.mobile-call{position:fixed;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;min-height:56px;padding:10px 20px calc(10px + env(safe-area-inset-bottom));z-index:30;background:var(--paper);border-top:1px solid var(--line);color:var(--plum);text-decoration:none;font-size:12px;font-weight:700}.mobile-call span:last-child{color:var(--orange)}.modal-inner{grid-template-columns:1fr}.modal-photo{height:210px;min-height:0}.modal-content{padding:23px}.modal-content h2{font-size:28px}.modal-content p{font-size:12px}.toast{top:85px;width:max-content;max-width:90%;text-align:center}.empty{padding:25px 12px}.footer details{font-size:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+</style>
 </head>
 <body>
+<div class="notice">Independent website concept by LeadSky for Thai Town Restaurant. Not their official website.</div>
+<header class="header">
+<div class="wrap header-inner">
+<a class="brand" href="#home">Thai Town<span> ·</span></a>
+<nav class="desktop-links" aria-label="Main navigation"><a href="#menu">Explore dishes</a><a href="#shortlist">Meal shortlist</a><a href="#visit">Find us</a></nav>
+<a class="small-call" href="tel:+16044284588">Call restaurant ↗</a>
+<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+</div>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden><a href="#home">Thai Town Restaurant</a><a href="#menu">Explore dishes</a><a href="#shortlist">Your meal shortlist</a><a href="#visit">Address & contact</a></nav>
+</header>
 
-  <!-- Demo Banner -->
-  <div class="demo-banner">
-    Independent website concept by LeadSky for Thai Town Restaurant. Not their official website.
-  </div>
+<main id="home">
+<section class="hero wrap" aria-labelledby="main-title">
+<div class="hero-line">
+<div><p class="eyebrow">Vancouver · Granville Street</p><h1 id="main-title">Thai Town Restaurant</h1><p class="hero-sub">Thai restaurant in Vancouver.</p></div>
+<a href="#menu" class="button">Browse dishes <span aria-hidden="true">↓</span></a>
+</div>
+<div class="banner"><img src="img/stock-1.jpg" alt="Reference photograph of Thai food wrapped in a delicate egg net" width="1400" height="400" fetchpriority="high"><span class="photo-label">Thai food reference photography · not restaurant dishes</span></div>
+<div class="hero-caption"><span>1065 Granville Street, Vancouver</span><span>A little inspiration for your next meal.</span></div>
+</section>
 
-  <!-- Navigation -->
-  <nav class="site-nav">
-    <div class="nav-container">
-      <a href="#" class="brand-logo">THAI TOWN <span>// VANCOUVER</span></a>
-      <ul class="nav-links">
-        <li><a href="#about">Our Story</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#atmosphere">Atmosphere</a></li>
-        <li><a href="#location">Location</a></li>
-        <li><a href="#reservations" class="btn btn-primary" style="padding: 0.5rem 1.25rem;">Reserve Table</a></li>
-      </ul>
-      <button class="mobile-menu-btn" aria-label="Toggle navigation menu" onclick="toggleMobileMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </nav>
+<section class="catalogue wrap" id="menu" aria-labelledby="menu-title">
+<div class="catalogue-top">
+<div><p class="eyebrow">The browsing table</p><h2 id="menu-title">Find your next craving.</h2><p class="section-note">An illustrative Thai-food catalogue for this independent concept. These dishes and categories are not a verified Thai Town menu. Save ideas, then call the restaurant for its current menu, prices and availability.</p></div>
+<div class="searchbox"><span class="search-icon" aria-hidden="true">⌕</span><label class="sr-only" for="search">Search reference dishes</label><input id="search" type="search" placeholder="Noodles, curry, something sweet…" autocomplete="off"></div>
+</div>
+<div class="tools"><div class="tabs" role="group" aria-label="Filter reference photography"></div><span class="count" id="result-count" aria-live="polite"></span></div>
+<div class="grid" id="dish-grid"></div>
+</section>
 
-  <!-- Mobile Drawer -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <button class="mobile-drawer-close" aria-label="Close menu" onclick="toggleMobileMenu()">&times;</button>
-    <ul class="mobile-drawer-links">
-      <li><a href="#about" onclick="toggleMobileMenu()">Our Story</a></li>
-      <li><a href="#menu" onclick="toggleMobileMenu()">Menu</a></li>
-      <li><a href="#atmosphere" onclick="toggleMobileMenu()">Atmosphere</a></li>
-      <li><a href="#location" onclick="toggleMobileMenu()">Location</a></li>
-      <li><a href="#reservations" onclick="toggleMobileMenu()">Reservations</a></li>
-    </ul>
-    <a href="tel:+16044284588" class="btn btn-primary" style="margin-top: 1rem;">Call +1 604-428-4588</a>
-  </div>
+<section class="wrap" id="shortlist" aria-labelledby="shortlist-title">
+<div class="shortlist">
+<div class="summary-heading"><div><p class="eyebrow">A meal, in the making</p><h2 id="shortlist-title">Your inspiration shortlist.</h2></div><button class="text-button" id="clear-basket" hidden>Clear all</button></div>
+<div class="summary-list" id="summary-list"></div>
+<p class="demo-note">Demo only. Nothing is ordered, reserved or sent. This shortlist contains reference dishes, not confirmed restaurant offerings. No prices or totals are shown because a current published menu has not been verified.</p>
+</div>
+</section>
 
-  <!-- Hero Section -->
-  <header class="hero-section">
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-        1065 Granville Street, Vancouver
-      </div>
-      <h1 class="hero-title">Authentic Northern Thai Flavours on Granville St</h1>
-      <p class="hero-description">Handcrafted curries, fragrant jasmine rice, and aromatic street-kitchen specialties prepared fresh daily in the heart of Vancouver.</p>
-      <div class="hero-actions">
-        <a href="#reservations" class="btn btn-primary">Reserve a Table</a>
-        <a href="#menu" class="btn btn-outline">View Full Menu</a>
-      </div>
-    </div>
-    <div class="hero-image-wrapper">
-      <img src="img/stock-1.jpg" alt="Traditional Thai khao soi noodles in ceramic bowl with fresh herbs and spices">
-    </div>
-  </header>
+<section class="visit" id="visit" aria-labelledby="visit-title">
+<div class="wrap visit-grid">
+<div><p class="eyebrow">Thai Town · Vancouver</p><h2 id="visit-title">Make a plan.<br>Give them a call.</h2></div>
+<div><h3>On Granville Street</h3><p>1065 Granville Street<br>Vancouver, BC V6Z 1L4<br>Canada</p><a href="https://www.google.com/maps/search/?api=1&amp;query=1065+Granville+Street+Vancouver+V6Z1L4" target="_blank" rel="noopener">Get directions ↗</a></div>
+<div><h3>Speak to the restaurant</h3><a class="phone" href="tel:+16044284588">604-428-4588 ↗</a><small>Call to confirm opening hours, the current menu, prices and dietary requirements.</small><a href="https://www.thaitownvancouver.com/" target="_blank" rel="noopener">Listed restaurant website ↗</a></div>
+</div>
+</section>
+</main>
 
-  <!-- Interactive 3D Showcase Section -->
-  <section class="interactive-showcase">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Artisanal Craftsmanship</span>
-        <h2 class="section-title">The Culinary Experience</h2>
-      </div>
-      <div class="showcase-grid">
-        <div class="canvas-container" id="canvasContainer">
-          <div class="canvas-fallback" id="canvasFallback">
-            <span>Traditional Thai Culinary Vessel</span>
-          </div>
-        </div>
-        <div class="showcase-text">
-          <h3>Rooted in Tradition</h3>
-          <p>Every dish at Thai Town Restaurant is built upon authentic aromatic foundations—balancing fresh galangal, lemongrass, kaffir lime leaves, and hand-ground chillies.</p>
-          <p>Located conveniently on Granville Street, we invite you to experience the true warmth of Lan Na hospitality right here in Vancouver.</p>
-          <a href="tel:+16044284588" class="btn btn-primary" style="margin-top: 1rem;">Tap to Call: +1 604-428-4588</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<footer class="footer wrap">
+<div class="footer-line"><span>Independent concept. No affiliation or endorsement.</span><span>Concept by <strong>LeadSky</strong></span></div>
+<details><summary>Reference photography & credits</summary><p>All food photographs are illustrative stock, not Thai Town's food, premises or work. Supplied under the Pixabay Content License. Images do not establish ingredients, portions or dietary suitability.</p>
+<div class="credits">
+<a href="https://pixabay.com/photos/egg-net-thai-food-ingredient-3545650/" target="_blank" rel="noopener">Egg net · Huahom / Pixabay</a>
+<a href="https://pixabay.com/photos/pad-thai-thai-food-thailand-4034040/" target="_blank" rel="noopener">Pad Thai · ctwtn / Pixabay</a>
+<a href="https://pixabay.com/photos/green-curry-thai-food-spices-herbs-6386360/" target="_blank" rel="noopener">Green curry · thepassenger / Pixabay</a>
+<a href="https://pixabay.com/photos/green-curry-thai-food-2457236/" target="_blank" rel="noopener">Green curry · Huahom / Pixabay</a>
+<a href="https://pixabay.com/photos/spicy-prawn-soup-hot-and-sour-soup-2251015/" target="_blank" rel="noopener">Prawn soup · Waratharn / Pixabay</a>
+<a href="https://pixabay.com/photos/spicy-prawn-soup-hot-and-sour-soup-2253075/" target="_blank" rel="noopener">Hot & sour soup · Waratharn / Pixabay</a>
+<a href="https://pixabay.com/photos/spring-roll-roll-food-vietnamese-6760871/" target="_blank" rel="noopener">Fresh rolls · phamkhanhquynhtrang / Pixabay</a>
+<a href="https://pixabay.com/photos/egg-roll-spring-roll-asian-chinese-4255184/" target="_blank" rel="noopener">Spring rolls · ctwtn / Pixabay</a>
+<a href="https://pixabay.com/photos/meal-asian-rice-thailand-asia-2371065/" target="_blank" rel="noopener">Basil & rice · VinaConstanze / Pixabay</a>
+<a href="https://pixabay.com/photos/rice-white-rice-basmati-foodie-7200984/" target="_blank" rel="noopener">Rice plate · viarami / Pixabay</a>
+<a href="https://pixabay.com/photos/mango-sticky-rice-mango-thai-dessert-3604851/" target="_blank" rel="noopener">Mango sticky rice · Huahom / Pixabay</a>
+<a href="https://pixabay.com/photos/mango-breakfast-food-healthy-9999944/" target="_blank" rel="noopener">Mango · winarti67 / Pixabay</a>
+<a href="https://pixabay.com/service/license-summary/" target="_blank" rel="noopener">Pixabay licence</a>
+</div>
+</details>
+</footer>
 
-  <!-- About & Heritage Section -->
-  <section class="about-section" id="about">
-    <div class="about-images">
-      <div class="about-img-card">
-        <img src="img/stock-4.jpg" alt="Fresh green curry paste ingredients including garlic, spices, and green chili">
-      </div>
-      <div class="about-img-card">
-        <img src="img/stock-7.jpg" alt="Chef preparing aromatic stir fry in a hot wok with fresh basil">
-      </div>
-    </div>
-    <div class="about-content">
-      <span class="section-eyebrow">Our Kitchen Philosophy</span>
-      <h2>A True Taste of Thailand in Vancouver</h2>
-      <p>Thai Town Restaurant brings the vibrant, comforting street-kitchen heritage of Thailand to downtown Vancouver. Our recipes honor traditional preparation methods, ensuring every curry, noodle dish, and appetizer sings with authentic balance.</p>
-      <p>Whether you are joining us for a cozy dinner on Granville Street or ordering takeout for an evening at home, we prepare each order with uncompromising dedication to quality and flavor.</p>
-      
-      <div class="features-list">
-        <div class="feature-item">
-          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-          Fresh Aromatic Herbs
-        </div>
-        <div class="feature-item">
-          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-          Authentic Family Recipes
-        </div>
-        <div class="feature-item">
-          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-          Granville St Location
-        </div>
-        <div class="feature-item">
-          <svg viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
-          Dine-In & Takeout
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="basket-strip" aria-label="Demo meal shortlist">
+<span class="basket-number" id="basket-count">0</span><div class="basket-copy">Your meal shortlist<small>Inspiration only · no order placed</small></div><a href="#shortlist">View shortlist ↗</a>
+</div>
+<a class="mobile-call" href="tel:+16044284588"><span>Call Thai Town Restaurant</span><span>604-428-4588 ↗</span></a>
+<div id="toast" class="toast" role="status" hidden></div>
 
-  <!-- Menu Section -->
-  <section class="menu-section" id="menu">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-eyebrow">Discover Our Offerings</span>
-        <h2 class="section-title">Interactive Menu Preview</h2>
-      </div>
+<dialog id="quick-view" aria-labelledby="modal-title" aria-describedby="modal-description">
+<div class="modal-inner">
+<button class="close" id="close-modal" aria-label="Close dish details">×</button>
+<img class="modal-photo" id="modal-photo" src="img/stock-2.jpg" alt="" width="600" height="650">
+<div class="modal-content">
+<span class="modal-label" id="modal-category"></span><h2 id="modal-title"></h2>
+<p id="modal-description"></p>
+<p>Reference photography only. This dish is not confirmed on Thai Town's menu. Ask the restaurant about ingredients, dietary requirements and availability.</p>
+<div class="quantity"><button id="modal-minus" aria-label="Decrease reference dish quantity">−</button><output id="modal-quantity" aria-label="Quantity">1</output><button id="modal-plus" aria-label="Increase reference dish quantity">+</button></div>
+<button class="button orange" id="modal-add">Add to demo shortlist <span aria-hidden="true">+</span></button>
+<p style="font-size:10px;margin:13px 0 0">Nothing is sent. No order or payment is taken.</p>
+</div>
+</div>
+</dialog>
 
-      <div class="menu-tabs">
-        <button class="menu-tab active" onclick="filterMenu('all', event)">All Specialties</button>
-        <button class="menu-tab" onclick="filterMenu('starters', event)">Starters</button>
-        <button class="menu-tab" onclick="filterMenu('mains', event)">Curries & Mains</button>
-        <button class="menu-tab" onclick="filterMenu('desserts', event)">Desserts</button>
-      </div>
-
-      <div class="menu-grid" id="menuGrid">
-        <!-- Item 1 -->
-        <div class="menu-card" data-category="mains">
-          <div class="menu-card-img">
-            <img src="img/stock-1.jpg" alt="Traditional northern Thai Khao Soi noodles">
-          </div>
-          <div class="menu-card-content">
-            <div class="menu-card-header">
-              <h3 class="menu-card-title">Khao Soi Curry</h3>
-              <span class="menu-card-price">$18.50</span>
-            </div>
-            <p class="menu-card-desc">Northern Thai coconut curry noodle soup with tender chicken, crispy egg noodles, shallots, pickled mustard greens, and fresh lime.</p>
-            <span class="menu-card-tag">Chef's Specialty</span>
-          </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="menu-card" data-category="starters">
-          <div class="menu-card-img">
-            <img src="img/stock-3.jpg" alt="Fresh crispy spring rolls with sweet chili dipping sauce">
-          </div>
-          <div class="menu-card-content">
-            <div class="menu-card-header">
-              <h3 class="menu-card-title">Crispy Spring Rolls</h3>
-              <span class="menu-card-price">$12.00</span>
-            </div>
-            <p class="menu-card-desc">Golden crispy rolls filled with glass noodles, cabbage, and carrots, served with house-made sweet chili dipping sauce.</p>
-            <span class="menu-card-tag">Starter</span>
-          </div>
-        </div>
-
-        <!-- Item 3 -->
-        <div class="menu-card" data-category="mains">
-          <div class="menu-card-img">
-            <img src="img/stock-2.jpg" alt="Rich aromatic herbal noodle and vegetable dish">
-          </div>
-          <div class="menu-card-content">
-            <div class="menu-card-header">
-              <h3 class="menu-card-title">Green Curry</h3>
-              <span class="menu-card-price">$17.50</span>
-            </div>
-            <p class="menu-card-desc">Vibrant green curry paste simmered in rich coconut milk with bamboo shoots, bell peppers, Thai basil, and your choice of protein.</p>
-            <span class="menu-card-tag">Classic Curry</span>
-          </div>
-        </div>
-
-        <!-- Item 4 -->
-        <div class="menu-card" data-category="mains">
-          <div class="menu-card-img">
-            <img src="img/stock-7.jpg" alt="Stir fry wok dish with fresh basil">
-          </div>
-          <div class="menu-card-content">
-            <div class="menu-card-header">
-              <h3 class="menu-card-title">Pad Kra Pao</h3>
-              <span class="menu-card-price">$17.00</span>
-            </div>
-            <p class="menu-card-desc">Wok-fried minced chicken or pork with fresh garlic, Thai chilies, green beans, and fragrant holy basil served over jasmine rice.</p>
-            <span class="menu-card-tag">Street Favorite</span>
-          </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="menu-card" data-category="desserts">
-          <div class="menu-card-img">
-            <img src="img/stock-10.jpg" alt="Fresh mango sticky rice dessert with toasted sesame seeds">
-          </div>
-          <div class="menu-card-content">
-            <div class="menu-card-header">
-              <h3 class="menu-card-title">Mango Sticky Rice</h3>
-              <span class="menu-card-price">$11.00</span>
-            </div>
-            <p class="menu-card-desc">Sweet warm sticky rice infused with rich coconut milk, served alongside fresh ripe mango slices and toasted sesame seeds.</p>
-            <span class="menu-card-tag">Dessert</span>
-          </div>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="menu-card" data-category="starters">
-          <div class="menu-card-img">
-            <img src="img/stock-4.jpg" alt="Aromatic Thai herb ingredients and seasoning paste">
-          </div>
-          <div class="menu-card-content">
-            <div class="menu-card-header">
-              <h3 class="menu-card-title">Tom Yum Soup</h3>
-              <span class="menu-card-price">$14.00</span>
-            </div>
-            <p class="menu-card-desc">Hot and sour aromatic broth infused with lemongrass, galangal, kaffir lime leaves, mushrooms, and fresh lime juice.</p>
-            <span class="menu-card-tag">Soup</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Atmosphere Gallery -->
-  <section class="atmosphere-section" id="atmosphere">
-    <div class="section-header">
-      <span class="section-eyebrow">Warm Hospitality</span>
-      <h2 class="section-title">Dining Room Atmosphere</h2>
-    </div>
-    <div class="atmosphere-grid">
-      <div class="atmosphere-img">
-        <img src="img/stock-5.jpg" alt="Warm wooden restaurant interior with soft glowing lantern lighting">
-      </div>
-      <div class="atmosphere-img">
-        <img src="img/stock-6.jpg" alt="Illuminated traditional lantern background decoration in dining room">
-      </div>
-      <div class="atmosphere-img">
-        <img src="img/stock-8.jpg" alt="Chef focused on preparing authentic culinary creations">
-      </div>
-    </div>
-  </section>
-
-  <!-- Reservations & Location Section -->
-  <section class="reservation-location" id="reservations">
-    <div class="res-loc-grid">
-      <!-- Reservation Form Card -->
-      <div class="res-card">
-        <div>
-          <span class="section-eyebrow">Plan Your Visit</span>
-          <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem;">Reserve a Table</h2>
-          <form id="reservationForm" onsubmit="handleReservation(event)">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="resName">Full Name</label>
-                <input type="text" id="resName" required placeholder="Jane Doe">
-              </div>
-              <div class="form-group">
-                <label for="resPhone">Phone Number</label>
-                <input type="tel" id="resPhone" required placeholder="+1 (604) 000-0000">
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="resDate">Date</label>
-                <input type="date" id="resDate" required>
-              </div>
-              <div class="form-group">
-                <label for="resTime">Time</label>
-                <select id="resTime" required>
-                  <option value="">Select Time</option>
-                  <option value="17:00">5:00 PM</option>
-                  <option value="17:30">5:30 PM</option>
-                  <option value="18:00">6:00 PM</option>
-                  <option value="18:30">6:30 PM</option>
-                  <option value="19:00">7:00 PM</option>
-                  <option value="19:30">7:30 PM</option>
-                  <option value="20:00">8:00 PM</option>
-                  <option value="20:30">8:30 PM</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="resGuests">Number of Guests</label>
-              <select id="resGuests" required>
-                <option value="1">1 Guest</option>
-                <option value="2" selected>2 Guests</option>
-                <option value="3">3 Guests</option>
-                <option value="4">4 Guests</option>
-                <option value="5">5+ Guests</option>
-              </select>
-            </div>
-            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Confirm Reservation Request</button>
-            <div class="form-notice" id="formNotice">This is a demo form, nothing was sent.</div>
-          </form>
-        </div>
-      </div>
-
-      <!-- Location & Hours Card -->
-      <div class="loc-card" id="location">
-        <div>
-          <span class="section-eyebrow">Find Us</span>
-          <h2 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem;">Location & Hours</h2>
-          
-          <div class="loc-details">
-            <div class="loc-item">
-              <svg class="loc-icon" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-              <div class="loc-text">
-                <h4>Address</h4>
-                <p>1065 Granville Street, Vancouver, BC V6Z 1L4</p>
-              </div>
-            </div>
-
-            <div class="loc-item">
-              <svg class="loc-icon" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-              <div class="loc-text">
-                <h4>Direct Phone</h4>
-                <p><a href="tel:+16044284588" style="color: var(--brand); text-decoration: none; font-weight: 600;">+1 604-428-4588</a></p>
-              </div>
-            </div>
-
-            <div class="loc-item">
-              <svg class="loc-icon" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
-              <div class="loc-text">
-                <h4>Hours</h4>
-                <p>Open Daily: 11:30 AM – 10:00 PM</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="map-placeholder">
-          <img src="img/stock-5.jpg" alt="Vancouver Granville Street location preview">
-          <a href="https://maps.google.com/?q=1065+Granville+Street+Vancouver+V6Z1L4" target="_blank" rel="noopener noreferrer" class="map-overlay-text">Open in Google Maps</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-container">
-      <div class="footer-brand">
-        <a href="#" class="brand-logo" style="color: var(--white);">THAI TOWN <span>// VANCOUVER</span></a>
-        <p>Authentic Northern Thai cuisine prepared daily with fresh aromatic herbs, located at 1065 Granville Street in Vancouver.</p>
-      </div>
-      <div class="footer-col">
-        <h5>Navigation</h5>
-        <ul class="footer-links">
-          <li><a href="#about">Our Story</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#atmosphere">Atmosphere</a></li>
-          <li><a href="#reservations">Reservations</a></li>
-          <li><a href="#location">Location & Hours</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h5>Contact</h5>
-        <ul class="footer-links">
-          <li><a href="tel:+16044284588">+1 604-428-4588</a></li>
-          <li><a href="#location">1065 Granville St, Vancouver</a></li>
-          <li><a href="#reservations">Book a Table</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div>&copy; Thai Town Restaurant. All rights reserved. Independent website concept by LeadSky.</div>
-      <div class="credits-list">
-        <span>Stock photos via <a href="https://pixabay.com" target="_blank" rel="noopener">Pixabay</a> (Huahom, joannawielgosz, phamkhanhquynhtrang, niamhoshea, wal_172619, josuedersoir, Pexels, jeisons11, winarti67)</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- JavaScript Implementation -->
-  <script>
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-      const drawer = document.getElementById('mobileDrawer');
-      drawer.classList.toggle('open');
-    }
-
-    // Menu Filtering
-    function filterMenu(category, event) {
-      const buttons = document.querySelectorAll('.menu-tab');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
-
-      const cards = document.querySelectorAll('.menu-card');
-      cards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    // Reservation Form Demo Handler
-    function handleReservation(event) {
-      event.preventDefault();
-      const notice = document.getElementById('formNotice');
-      notice.style.color = 'var(--brand)';
-      notice.textContent = "Reservation request received! This is a demo form, nothing was sent.";
-      document.getElementById('reservationForm').reset();
-    }
-
-    // Three.js Interactive Brass Serving Bowl Scene
-    let scene, camera, renderer, bowlMesh, steamParticles;
-    let container = document.getElementById('canvasContainer');
-    let isWebGLSupported = true;
-
-    try {
-      scene = new THREE.Scene();
-      camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
-      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-      renderer.setSize(container.clientWidth, container.clientHeight);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-      container.appendChild(renderer.domElement);
-    } catch (e) {
-      isWebGLSupported = false;
-    }
-
-    if (isWebGLSupported) {
-      // Lighting
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
-      scene.add(ambientLight);
-
-      const pointLight = new THREE.DirectionalLight(0xfff5e6, 1.5);
-      pointLight.position.set(5, 10, 7);
-      scene.add(pointLight);
-
-      const warmLight = new THREE.PointLight(0xc87d32, 2, 10);
-      warmLight.position.set(-3, -2, 3);
-      scene.add(warmLight);
-
-      // Create polished brass traditional Thai serving bowl / vessel geometry
-      const bowlGroup = new THREE.Group();
-      
-      const bowlGeometry = new THREE.SphereGeometry(1.8, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.55);
-      const bowlMaterial = new THREE.MeshStandardMaterial({
-        color: 0xd4af37,
-        metalness: 0.85,
-        roughness: 0.2,
-        side: THREE.DoubleSide
-      });
-      const bowl = new THREE.Mesh(bowlGeometry, bowlMaterial);
-      bowl.rotation.x = Math.PI;
-      bowlGroup.add(bowl);
-
-      // Add inner curry content representation
-      const contentsGeometry = new THREE.SphereGeometry(1.7, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.35);
-      const contentsMaterial = new THREE.MeshStandardMaterial({
-        color: 0xc87d32,
-        roughness: 0.6
-      });
-      const contents = new THREE.Mesh(contentsGeometry, contentsMaterial);
-      contents.rotation.x = Math.PI;
-      contents.position.y = -0.2;
-      bowlGroup.add(contents);
-
-      scene.add(bowlGroup);
-      bowlGroup.position.y = -0.3;
-
-      camera.position.z = 5.5;
-
-      // Mouse interaction variables
-      let mouseX = 0;
-      let mouseY = 0;
-      let targetRotationX = 0;
-      let targetRotationY = 0;
-
-      container.addEventListener('mousemove', (event) => {
-        const rect = container.getBoundingClientRect();
-        mouseX = ((event.clientX - rect.left) / container.clientWidth) * 2 - 1;
-        mouseY = -((event.clientY - rect.top) / container.clientHeight) * 2 + 1;
-      });
-
-      // Animation loop
-      function animateThree() {
-        requestAnimationFrame(animateThree);
-
-        targetRotationY = mouseX * 0.6;
-        targetRotationX = mouseY * 0.4;
-
-        bowlGroup.rotation.y += (targetRotationY - bowlGroup.rotation.y) * 0.05;
-        bowlGroup.rotation.x += (targetRotationX - bowlGroup.rotation.x) * 0.05;
-
-        // Gentle idle rotation
-        bowlGroup.rotation.y += 0.003;
-
-        renderer.render(scene, camera);
-      }
-
-      animateThree();
-
-      // Resize handler
-      window.addEventListener('resize', () => {
-        if (!container) return;
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-      });
-
-    } else {
-      document.getElementById('canvasFallback').style.display = 'flex';
-    }
-
-    // GSAP Scroll Animations
-    if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-
-      gsap.from('.hero-content > *', {
-        opacity: 0,
-        y: 30,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: 'power2.out'
-      });
-
-      gsap.from('.hero-image-wrapper', {
-        opacity: 0,
-        scale: 0.95,
-        duration: 1,
-        ease: 'power2.out',
-        delay: 0.2
-      });
-
-      gsap.utils.toArray('.menu-card').forEach((card, i) => {
-        gsap.from(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
-          },
-          opacity: 0,
-          y: 40,
-          duration: 0.6,
-          delay: (i % 3) * 0.1,
-          ease: 'power2.out'
-        });
-      });
-    }
-  </script>
+<script>
+'use strict';
+const dishes=[
+{id:2,name:'Pad Thai',category:'Noodles',description:'A closer look at a Thai noodle classic.',alt:'Reference photograph of a Pad Thai noodle dish'},
+{id:3,name:'Green curry',category:'Curries',description:'Curry inspiration for your meal shortlist.',alt:'Reference photograph of Thai green curry'},
+{id:4,name:'Green curry, another view',category:'Curries',description:'Explore another green curry presentation.',alt:'Reference photograph of a green curry dish'},
+{id:5,name:'Spicy prawn soup',category:'Soups',description:'Hot-and-sour soup inspiration.',alt:'Reference photograph of spicy prawn soup'},
+{id:6,name:'Hot & sour prawn soup',category:'Soups',description:'Another perspective on a Thai soup.',alt:'Reference photograph of hot and sour prawn soup'},
+{id:7,name:'Fresh spring rolls',category:'Rolls',description:'Fresh-roll reference photography.',alt:'Reference photograph of Vietnamese-style fresh spring rolls'},
+{id:8,name:'Fried spring rolls',category:'Rolls',description:'A crisp-roll idea to explore.',alt:'Reference photograph of fried spring rolls'},
+{id:9,name:'Basil & rice plate',category:'Rice',description:'Rice-plate inspiration for the table.',alt:'Reference photograph of a Thai basil and rice meal'},
+{id:10,name:'Rice & minced meat',category:'Rice',description:'A rice dish shown as food inspiration.',alt:'Reference photograph of rice and minced meat'},
+{id:11,name:'Mango sticky rice',category:'Sweet',description:'A Thai dessert to inspire your shortlist.',alt:'Reference photograph of mango sticky rice'},
+{id:12,name:'Mango plate',category:'Sweet',description:'A bright mango reference to finish.',alt:'Reference photograph of a mango dish'}
+];
+const categories=['All dishes','Noodles','Curries','Soups','Rolls','Rice','Sweet'];
+const basket=new Map();
+let active='All dishes',selected=null,quantity=1,opener=null,toastTimer;
+const $=s=>document.querySelector(s);
+const grid=$('#dish-grid'),dialog=$('#quick-view');
+categories.forEach(category=>{
+const button=document.createElement('button');
+button.className='tab';button.textContent=category;button.setAttribute('aria-pressed',String(category===active));
+button.onclick=()=>{active=category;document.querySelectorAll('.tab').forEach(tab=>tab.setAttribute('aria-pressed',String(tab.textContent===active)));renderGrid();};
+$('.tabs').append(button);
+});
+function renderGrid(){
+const term=$('#search').value.trim().toLowerCase();
+const visible=dishes.filter(d=>(active==='All dishes'||d.category===active)&&`${d.name} ${d.description} ${d.category}`.toLowerCase().includes(term));
+grid.replaceChildren();
+$('#result-count').textContent=`${visible.length} reference ${visible.length===1?'dish':'dishes'}`;
+visible.forEach(d=>{
+const card=document.createElement('article');card.className='card';
+card.innerHTML=`<button class="photo-button" aria-label="Explore ${d.name} reference"><img src="img/stock-${d.id}.jpg" alt="${d.alt}" width="500" height="420" loading="lazy"><span class="quick" aria-hidden="true">↗</span></button><div class="card-meta">${d.category} · Reference dish</div><h3>${d.name}</h3><p>${d.description}</p><div class="card-bottom"><span class="reference">Illustrative stock photo</span><button class="add" aria-label="Add ${d.name} to demo shortlist">+</button></div>`;
+card.querySelector('.photo-button').onclick=e=>openDish(d,e.currentTarget);
+card.querySelector('.add').onclick=()=>addDish(d.id,1);
+grid.append(card);
+});
+if(!visible.length){
+const empty=document.createElement('div');empty.className='empty';
+empty.innerHTML='<p>No reference dishes match your search.</p><button class="button">Show all dishes</button>';
+empty.querySelector('button').onclick=()=>{$('#search').value='';active='All dishes';document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-pressed',String(t.textContent===active)));renderGrid();$('#search').focus();};
+grid.append(empty);
+}
+}
+function toast(message){clearTimeout(toastTimer);$('#toast').textContent=message;$('#toast').hidden=false;toastTimer=setTimeout(()=>$('#toast').hidden=true,2600);}
+function addDish(id,amount){basket.set(id,(basket.get(id)||0)+amount);renderBasket();toast('Added to demo shortlist. Nothing was sent.');}
+function renderBasket(focusTarget){
+const list=$('#summary-list');list.replaceChildren();
+let total=0;
+basket.forEach((amount,id)=>{
+total+=amount;
+const d=dishes.find(item=>item.id===id),row=document.createElement('div');
+row.className='summary-row';
+row.innerHTML=`<span class="summary-name">${d.name}</span><div class="quantity"><button data-focus="minus-${id}" aria-label="Remove one ${d.name}">−</button><output aria-label="${d.name} quantity">${amount}</output><button data-focus="plus-${id}" aria-label="Add one ${d.name}">+</button></div><button class="text-button" data-focus="remove-${id}" aria-label="Remove ${d.name} from shortlist">Remove</button>`;
+row.querySelector(`[data-focus="minus-${id}"]`).onclick=()=>{if(amount===1)basket.delete(id);else basket.set(id,amount-1);renderBasket(`minus-${id}`);};
+row.querySelector(`[data-focus="plus-${id}"]`).onclick=()=>{basket.set(id,amount+1);renderBasket(`plus-${id}`);};
+row.querySelector(`[data-focus="remove-${id}"]`).onclick=()=>{basket.delete(id);renderBasket(`remove-${id}`);};
+list.append(row);
+});
+if(!total){const p=document.createElement('p');p.className='summary-empty';p.textContent='Pick a reference dish above to start a meal shortlist. No account needed.';list.append(p);}
+$('#basket-count').textContent=total;
+$('#clear-basket').hidden=!total;
+if(focusTarget){const target=document.querySelector(`[data-focus="${focusTarget}"]`)||list.querySelector('button')||$('#menu-title');if(!target.hasAttribute('tabindex')&&target.tagName!=='BUTTON')target.tabIndex=-1;target.focus({preventScroll:true});}
+}
+function openDish(d,trigger){
+selected=d;quantity=1;opener=trigger;
+$('#modal-title').textContent=d.name;
+$('#modal-category').textContent=`${d.category} · reference dish`;
+$('#modal-description').textContent=d.description;
+$('#modal-photo').src=`img/stock-${d.id}.jpg`;$('#modal-photo').alt=d.alt;
+updateQuantity();dialog.showModal();document.body.style.overflow='hidden';$('#close-modal').focus();
+}
+function updateQuantity(){$('#modal-quantity').textContent=quantity;$('#modal-minus').disabled=quantity<=1;$('#modal-plus').disabled=quantity>=20;}
+function closeModal(){dialog.close();}
+$('#modal-minus').onclick=()=>{quantity=Math.max(1,quantity-1);updateQuantity();};
+$('#modal-plus').onclick=()=>{quantity=Math.min(20,quantity+1);updateQuantity();};
+$('#modal-add').onclick=()=>{addDish(selected.id,quantity);closeModal();};
+$('#close-modal').onclick=closeModal;
+dialog.addEventListener('close',()=>{document.body.style.overflow='';if(opener&&opener.isConnected)opener.focus({preventScroll:true});});
+dialog.addEventListener('click',event=>{const rect=dialog.getBoundingClientRect();if(event.target===dialog&&(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom))closeModal();});
+dialog.addEventListener('keydown',event=>{
+if(event.key!=='Tab')return;
+const focusable=[...dialog.querySelectorAll('button:not(:disabled),a[href],input')];
+const first=focusable[0],last=focusable[focusable.length-1];
+if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+});
+$('#clear-basket').onclick=()=>{basket.clear();renderBasket();toast('Demo shortlist cleared.');$('#shortlist-title').tabIndex=-1;$('#shortlist-title').focus({preventScroll:true});};
+$('#search').addEventListener('input',renderGrid);
+const menuButton=$('.menu-toggle'),mobileNav=$('#mobile-nav');
+function closeMenu(){mobileNav.hidden=true;menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');menuButton.textContent='☰';}
+menuButton.onclick=()=>{const open=mobileNav.hidden;mobileNav.hidden=!open;menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');menuButton.textContent=open?'×':'☰';};
+mobileNav.querySelectorAll('a').forEach(a=>a.onclick=closeMenu);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!mobileNav.hidden){closeMenu();menuButton.focus();}});
+renderGrid();renderBasket();
+</script>
 </body>
 </html>
