@@ -1,0 +1,109 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://www.elliman.com/images/de-logo-gray.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "luxury penthouses New York City interior design floor to ceiling windows",
+    "description": "york minster, cathedral, interior, ceiling, architecture, christianity, landmark, church of saint peter, york, england, york minster, york minster, cathedral, cathedral, cathedral, cathedral, ceiling, ceiling, ceiling, ceiling, ceiling, christianity, york, england, england",
+    "source": "https://pixabay.com/photos/york-minster-cathedral-interior-5897525/",
+    "photographer": "iankelsall1",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "luxury penthouses New York City interior design floor to ceiling windows",
+    "description": "lost places, abandoned, room, old, empty, interiors, floor, vintage, aged, dirty, concrete, stained, walls, ceiling, windows, room, room, room, room, room, floor",
+    "source": "https://pixabay.com/photos/lost-places-abandoned-room-old-597166/",
+    "photographer": "SnapwireSnaps",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "modern high end architecture Manhattan skyline dusk",
+    "description": "sunset, city, buildings, skyscrapers, cityscape, skyline, street, traffic, commute, commuters, urban landscape, urban, people, office buildings, downtown, manhattan, dusk, nature, new york, architecture, towers, road",
+    "source": "https://pixabay.com/photos/sunset-city-buildings-skyscrapers-569093/",
+    "photographer": "Life-Of-Pix",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "modern high end architecture Manhattan skyline dusk",
+    "description": "skyscapers, new york, buildings, nyc, manhattan, city, architecture, urban, new york, new york, new york, new york, new york, manhattan",
+    "source": "https://pixabay.com/photos/skyscapers-new-york-buildings-nyc-3381431/",
+    "photographer": "maitelli",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "luxury living room Tribeca interior architectural design",
+    "description": "dining room, living room, modern, white, bright, windows, interior design, window, apartment, room, furniture, table, chairs, contemporary, indoors, inside, interior, clean, architecture, zoom background, blue background, blue window, blue room, blue zoom, blue table, blue design, blue interior, blue clean, dining room, dining room, living room, living room, living room, living room, living room, windows, interior design, interior design, window, apartment, apartment, apartment, apartment, room, furniture, table, interior, zoom background",
+    "source": "https://pixabay.com/photos/dining-room-living-room-modern-3108037/",
+    "photographer": "jeanvdmeulen",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "luxury living room Tribeca interior architectural design",
+    "description": "home, interiors, kitchen, kitchen counter, kitchen countertop, countertop, living room, house, home furniture, home interior, house interior, design, interior design, home, kitchen, kitchen, kitchen, kitchen, kitchen, living room, house, house, house, house, house interior, interior design",
+    "source": "https://pixabay.com/photos/home-interiors-kitchen-2486092/",
+    "photographer": "user32212",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "sleek modern skyscraper exterior sunset city lights",
+    "description": "facade, glass, reflection, building, surface, contemporary architecture, modern architecture, building, building, building, building, building",
+    "source": "https://pixabay.com/photos/facade-glass-reflection-building-7607939/",
+    "photographer": "wal_172619",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "sleek modern skyscraper exterior sunset city lights",
+    "description": "buildings, city, illuminated, city lights, skyline, skyscrapers, urban, urban landscape, metropolitan, frankfurt, germany, panorama, cityscape, downtown, modern, architecture, sunset, nature, dusk",
+    "source": "https://pixabay.com/photos/buildings-city-illuminated-1804481/",
+    "photographer": "12019",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "professional real estate advisor consulting client luxury office",
+    "description": "businessman, consulting, business, meeting, conference, meet, parley, conversation, convention, colloquium, reading, success, team, teamwork, profit, marketing, plan, innovation, sale, goals, strategy, customer, buyer, seller, support, help, performance, options, ideas, can, competence, presentation, businessman, consulting, consulting, consulting, consulting, consulting, meeting, meeting, meeting, meeting, success, team, team, marketing, marketing, marketing, innovation, customer, customer, customer, support, support, help, help, presentation",
+    "source": "https://pixabay.com/photos/businessman-consulting-business-2606509/",
+    "photographer": "geralt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "professional real estate advisor consulting client luxury office",
+    "description": "kitchen, dining, interior, home, room, interior design, modern, furniture, architecture, wood, floor, luxury, decor, decoration, real estate, bright, counter, style, contemporary, brown home, brown kitchen, brown wood, brown room, brown design, brown interior, kitchen, kitchen, kitchen, kitchen, kitchen, home, real estate, real estate, real estate",
+    "source": "https://pixabay.com/photos/kitchen-dining-interior-home-room-2400367/",
+    "photographer": "jessebridgewater",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
