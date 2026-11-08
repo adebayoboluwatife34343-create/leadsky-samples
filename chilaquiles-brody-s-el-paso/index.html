@@ -4,208 +4,407 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<meta name="theme-color" content="#FFF9F0">
-<title>Chilaquiles Brody´s — Plan your visit | Independent concept</title>
-<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#FFF8E5">
+<title>Chilaquiles Brody´s — A little taste of the story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Nunito+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#FFF9F0;--ink:#3E2723;--rust:#C45525;--rust-dark:#9b3918;--sand:#F2D8B2;--white:#fff;--muted:#6e5850;--line:#e8dacb;--serif:"Alegreya",Georgia,serif;--sans:"Lato",Arial,sans-serif}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);line-height:1.6}button,a{-webkit-tap-highlight-color:transparent}button,input,select{font:inherit}a{color:inherit}button{cursor:pointer}img{display:block;width:100%;height:100%;object-fit:cover}button,a{touch-action:manipulation}a:focus-visible,button:focus-visible{outline:3px solid var(--rust);outline-offset:5px}::selection{background:var(--sand)}.concept{background:var(--ink);color:white;text-align:center;padding:8px 16px;font-size:11px;line-height:1.5}.header{position:sticky;top:0;background:rgba(255,249,240,.97);z-index:30;border-bottom:1px solid var(--line)}.nav{max-width:1240px;margin:auto;min-height:68px;padding:10px 24px;display:flex;gap:18px;align-items:center}.brand{font:700 23px/1 var(--serif);text-decoration:none;white-space:nowrap}.brand small{font:700 9px var(--sans);letter-spacing:.2em;display:block;margin-top:7px}.navlinks{display:flex;gap:28px;margin-left:auto;align-items:center;font-size:13px}.navlinks a{text-decoration:none}.navlinks a:hover{color:var(--rust-dark)}.button{display:inline-flex;justify-content:center;align-items:center;gap:12px;min-height:48px;padding:12px 22px;background:var(--rust-dark);color:white;text-decoration:none;border:1px solid transparent;border-radius:3px;font-weight:700;font-size:13px;transition:background .2s,transform .2s}.button:hover{background:var(--ink);transform:translateY(-2px)}.button:active{transform:scale(.98)}.button.light{background:var(--cream);color:var(--ink)}.button.outline{background:transparent;border-color:var(--line);color:var(--ink)}.nav-cta{min-height:40px;padding:8px 16px;margin-left:10px}.toggle{display:none;width:42px;height:42px;background:none;border:1px solid var(--line);border-radius:3px;color:var(--ink)}.toggle span{display:block;width:17px;height:1px;background:currentColor;margin:5px auto}.hero{max-width:1240px;margin:30px auto 0;padding:0 24px;display:grid;grid-template-columns:1.1fr 1fr;gap:24px;min-height:590px}.hero-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:42px 36px 46px 10px}.eyebrow{font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;display:block}.location-label{display:flex;align-items:center;gap:9px;color:var(--rust-dark)}.dot{width:7px;height:7px;background:var(--rust);border-radius:50%;display:inline-block}h1,h2,h3,p{margin:0}h1{font:500 clamp(56px,6.5vw,88px)/.98 var(--serif);letter-spacing:-.045em;margin:25px 0}h1 em{font-weight:400;color:var(--rust-dark)}.hero-copy>p{font-size:16px;max-width:350px;color:var(--muted);margin-bottom:26px}.hero-actions{display:flex;gap:15px;align-items:center;flex-wrap:wrap}.text-link{text-underline-offset:5px;font-size:13px;font-weight:700}.hours-note{font-size:12px;margin-top:26px;padding-top:20px;border-top:1px solid var(--line);width:100%;color:var(--muted)}.hero-photo{position:relative;overflow:hidden;border-radius:180px 180px 5px 5px;min-height:520px;background:var(--sand)}.hero-photo img{position:absolute;inset:0;transition:transform .8s}.hero-photo:hover img{transform:scale(1.035)}.photo-caption{position:absolute;bottom:0;left:0;right:0;padding:50px 24px 22px;background:linear-gradient(transparent,rgba(0,0,0,.8));color:white;font-size:11px}.photo-caption strong{display:block;font:500 25px var(--serif);margin-bottom:3px}.wrapper{max-width:1152px;margin:auto}.section{padding:86px 24px}.section-label{color:var(--rust-dark);margin-bottom:12px}h2{font:500 clamp(37px,4.5vw,56px)/1.08 var(--serif);letter-spacing:-.025em}.section-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:34px}.section-heading p{font-size:14px;color:var(--muted);max-width:310px}.local{padding-top:65px}.local-grid{display:grid;grid-template-columns:1.15fr 1fr;border:1px solid var(--line);background:white;border-radius:6px;overflow:hidden}.address-panel{padding:40px;background:#f3e8d6;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;min-height:360px;position:relative}.address-panel .number{font:500 85px/.9 var(--serif);letter-spacing:-.05em;margin:27px 0 8px;color:var(--rust-dark)}.address-panel h3{font:500 28px/1.15 var(--serif);max-width:300px;margin-bottom:8px}.address-panel p{font-size:13px}.address-panel .text-link{margin-top:25px}.pin{position:absolute;right:30px;top:35px;width:45px;height:45px;border-radius:50%;border:1px solid #c7a884;display:grid;place-items:center;color:var(--rust-dark)}.pin svg{width:20px;height:20px}.local-info{padding:36px 40px;display:flex;flex-direction:column;justify-content:center}.detail{padding:18px 0;border-bottom:1px solid var(--line)}.detail:last-child{border:0}.detail .eyebrow{color:var(--muted);margin-bottom:6px}.detail p,.detail a{font-size:16px}.detail a{text-decoration-thickness:1px;text-underline-offset:4px}.data-note{font-size:11px;color:var(--muted);margin-top:14px;max-width:700px}.planner-section{background:var(--rust-dark);color:white;padding:66px 24px}.planner{display:grid;grid-template-columns:.9fr 1.1fr;gap:75px;align-items:center}.planner .eyebrow{color:#ffe2c4;margin-bottom:15px}.planner h2{max-width:360px}.planner-intro{max-width:320px;font-size:14px;color:#ffeadb;margin-top:20px}.planner-box{background:var(--cream);color:var(--ink);padding:30px;border-radius:5px}.day-heading{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}.day-heading label{font-size:12px;font-weight:700}.day-heading span{font-size:11px;color:var(--muted)}.days{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}.day{padding:12px 0;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--ink);font-size:12px;min-height:44px;transition:background .2s,color .2s}.day[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:white}.day:hover{border-color:var(--rust)}.planner-result{padding:26px 0;min-height:130px;border-bottom:1px solid var(--line);margin-bottom:20px}.planner-result .status{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--muted)}.planner-result strong{font:500 34px/1.2 var(--serif);display:block;margin-top:7px}.planner-result p{font-size:12px;color:var(--muted);margin-top:6px}.planner-buttons{display:flex;gap:8px}.planner-buttons .button{flex:1;padding:10px;font-size:12px}.result-change{animation:slide .25s ease both}@keyframes slide{from{opacity:.4;transform:translateY(7px)}to{opacity:1;transform:none}}.menu-list{border-top:1px solid var(--line)}.menu-row{display:grid;grid-template-columns:140px 1fr auto;gap:30px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}.menu-photo{height:110px;border-radius:4px;overflow:hidden}.menu-photo img{transition:transform .5s}.menu-row:hover img{transform:scale(1.06)}.menu-row h3{font:500 30px/1.2 var(--serif);margin-bottom:8px}.menu-row p{font-size:14px;color:var(--muted);max-width:540px}.row-number{font:400 24px var(--serif);color:#937363}.menu-disclaimer{background:#f5ecdf;padding:16px 20px;font-size:12px;margin-top:23px;border-left:2px solid var(--rust)}.story{padding-top:0}.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}.story-image{height:350px;position:relative;border-radius:5px;overflow:hidden}.story-content p{font-size:15px;color:var(--muted);margin-top:20px;max-width:410px}.story-content .text-link{display:inline-block;margin-top:24px}.faq{border-top:1px solid var(--line);padding-top:30px;margin-top:42px}details{border-bottom:1px solid var(--line);padding:16px 0}summary{cursor:pointer;font-size:14px;font-weight:700;list-style:none;display:flex;gap:16px;justify-content:space-between}summary::-webkit-details-marker{display:none}summary::after{content:"+";color:var(--rust-dark);font-size:20px;line-height:1}details[open] summary::after{content:"−"}details p{font-size:13px;color:var(--muted);padding:12px 20px 0 0;max-width:700px}.footer{background:#f2e7d6;padding:45px 24px 25px}.footer-main{display:flex;justify-content:space-between;gap:35px;padding-bottom:30px}.footer-brand{font:600 30px var(--serif)}.footer p{font-size:12px;margin-top:8px}.footer-links{display:flex;gap:25px;align-items:start;font-size:12px}.credits{border-top:1px solid #dbccba;padding-top:20px;font-size:10px;color:var(--muted)}.credits a{text-underline-offset:3px}.credits p{font-size:10px}.mobile-bar{display:none}.skip{position:fixed;top:10px;left:10px;z-index:100;background:white;padding:10px;transform:translateY(-200%)}.skip:focus{transform:none}.reveal{opacity:1}
-@media(min-width:850px){.js-motion .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}.js-motion .reveal.visible{opacity:1;transform:none}}
-@media(max-width:850px){.navlinks{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);padding:20px 24px 26px;border-bottom:1px solid var(--line)}.navlinks.open{display:flex;flex-direction:column;align-items:stretch;gap:0}.navlinks a{padding:12px 0}.nav-cta{margin-left:auto}.toggle{display:block;flex-shrink:0}.hero{gap:20px;min-height:490px}.hero-copy{padding:30px 0}.hero-photo{min-height:450px;border-radius:140px 140px 4px 4px}h1{font-size:62px}.planner{gap:35px}.local-info,.address-panel{padding:28px}.story-grid{gap:35px}.section{padding:60px 24px}.story{padding-top:0}}
-@media(max-width:600px){html{scroll-padding-top:80px}.concept{font-size:9px;padding:7px 18px}.nav{padding:10px 16px;min-height:62px;gap:9px}.brand{font-size:18px}.brand small{display:none}.nav-cta{min-height:36px;padding:8px 12px;font-size:11px}.toggle{width:36px;height:36px}.hero{display:flex;flex-direction:column;padding:0;margin:0;gap:0;position:relative;min-height:510px;isolation:isolate;background:var(--ink)}.hero-photo{position:absolute;inset:0;min-height:0;border-radius:0;z-index:-2}.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.79),rgba(0,0,0,.58))}.hero-photo img{object-position:48% center}.hero-photo .photo-caption{bottom:0;padding:14px 22px;background:rgba(0,0,0,.65);font-size:9px}.hero-photo .photo-caption strong{display:none}.hero-copy{color:white;padding:39px 23px 65px;justify-content:flex-start;min-height:510px}.location-label{color:white;font-size:9px}.location-label .dot{background:var(--sand)}h1{font-size:62px;max-width:330px;line-height:.98;margin:24px 0 18px}h1 em{color:#ffe1b9}.hero-copy>p{color:#fff4e8;font-size:14px;max-width:290px;margin-bottom:23px}.hero .button{background:var(--cream);color:var(--ink)}.hero .text-link{color:white;font-size:12px}.hours-note{margin-top:22px;padding-top:13px;border-color:#ffffff50;color:white;font-size:11px}.section{padding:46px 20px}.section-heading{display:block;margin-bottom:26px}.section-heading p{margin-top:15px;max-width:100%;font-size:13px}h2{font-size:39px}.local-grid{grid-template-columns:1fr}.address-panel{min-height:280px;padding:26px}.address-panel .number{font-size:68px;margin-top:24px}.address-panel h3{font-size:26px;max-width:240px}.local-info{padding:10px 26px}.detail{padding:16px 0}.detail p,.detail a{font-size:14px}.data-note{font-size:10px;line-height:1.6}.planner-section{padding:43px 20px}.planner{grid-template-columns:1fr;gap:26px}.planner h2{max-width:290px}.planner-intro{font-size:13px;margin-top:14px}.planner-box{padding:21px 17px}.days{gap:4px}.day{font-size:11px}.planner-result strong{font-size:30px}.planner-buttons .button{min-height:46px;font-size:11px}.menu-row{grid-template-columns:85px 1fr;gap:17px;padding:20px 0}.menu-photo{height:95px}.menu-row h3{font-size:26px;margin-bottom:5px}.menu-row p{font-size:12px;line-height:1.6}.row-number{display:none}.menu-disclaimer{padding:14px;font-size:11px}.story{padding-top:0}.story-grid{display:flex;flex-direction:column-reverse;gap:25px;align-items:stretch}.story-content p{font-size:14px}.story-image{height:230px}.faq{margin-top:30px}summary{font-size:13px}details p{font-size:12px}.footer{padding:32px 20px 94px}.footer-main{display:block}.footer-links{margin-top:22px;gap:21px}.mobile-bar{position:fixed;bottom:0;left:0;right:0;z-index:40;display:grid;grid-template-columns:1fr 1fr;background:var(--cream);border-top:1px solid var(--line);padding:9px 12px calc(9px + env(safe-area-inset-bottom));gap:9px}.mobile-bar a{min-height:43px;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-size:12px;font-weight:700;border:1px solid var(--line);border-radius:3px}.mobile-bar a:last-child{background:var(--rust-dark);color:white;border-color:var(--rust-dark)}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js-motion .reveal{opacity:1;transform:none}}
+:root{--cream:#FFF8E5;--teal:#124B48;--red:#B83F46;--mint:#DCECE1;--ink:#292D27;--ease:cubic-bezier(.22,.68,.15,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:"Nunito Sans",sans-serif;-webkit-font-smoothing:antialiased}
+button,a{-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+button{font:inherit;cursor:pointer}
+button,a{touch-action:manipulation}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #e0ad43;outline-offset:5px}
+button{border:0}
+.skip{position:fixed;left:12px;top:-100px;z-index:100;background:var(--cream);padding:14px;color:var(--teal)}
+.skip:focus{top:12px}
+.concept{padding:9px 20px;text-align:center;font-size:10px;line-height:1.5;color:var(--teal);border-bottom:1px solid #124b4825}
+.header{height:68px;position:sticky;top:0;z-index:30;background:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;border-bottom:1px solid #124b4820}
+.brand{text-decoration:none;font-family:"Barlow Condensed",sans-serif;font-size:25px;font-weight:700;letter-spacing:-.4px;color:var(--teal)}
+.brand small{font-family:"Nunito Sans",sans-serif;font-size:9px;letter-spacing:2px;text-transform:uppercase;display:block;font-weight:800;margin-top:1px}
+.header-right{display:flex;align-items:center;gap:24px}
+.header-explore{text-decoration:none;font-size:12px;font-weight:800}
+.menu-toggle{display:flex;gap:10px;align-items:center;background:none;color:var(--teal);font-size:12px;font-weight:800;padding:12px 0 12px 12px}
+.menu-icon{display:grid;gap:5px;width:22px}
+.menu-icon i{display:block;height:2px;background:currentColor;transition:transform .25s}
+.menu-toggle[aria-expanded=true] .menu-icon i:first-child{transform:translateY(3.5px) rotate(45deg)}
+.menu-toggle[aria-expanded=true] .menu-icon i:last-child{transform:translateY(-3.5px) rotate(-45deg)}
+.menu{position:fixed;z-index:29;top:68px;right:0;width:min(480px,100%);padding:35px 6vw 42px;background:var(--cream);box-shadow:0 22px 40px #122f3020}
+.menu[hidden]{display:none}
+.menu a{display:flex;align-items:center;gap:20px;padding:18px 0;border-bottom:1px solid #124b4825;text-decoration:none;font-family:"Barlow Condensed",sans-serif;font-size:33px;color:var(--teal)}
+.menu a span{font-family:"Nunito Sans",sans-serif;font-size:11px}
+.menu p{font-size:12px;line-height:1.7;margin:24px 0 0}
+main{padding:0 14px}
+.story{position:relative;isolation:isolate;min-height:calc(100svh - 68px);margin-bottom:14px;overflow:hidden;color:white;display:flex;align-items:flex-end;scroll-margin-top:78px;background:#263530}
+.story:first-child{min-height:calc(100svh - 115px)}
+.story-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3}
+.story:after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(180deg,rgba(0,0,0,.56),rgba(0,0,0,.57) 35%,rgba(0,0,0,.82))}
+#opening .story-image{object-position:50% 50%}
+#flavour .story-image{object-position:50% 45%}
+#visit .story-image{object-position:50% 50%}
+.chapter-top{position:absolute;top:30px;left:4.5vw;right:4.5vw;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.chapter-top .edition{letter-spacing:1px;text-align:right}
+.story-content{width:100%;padding:105px 8vw 40px 4.5vw}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;line-height:1.6;letter-spacing:2px;text-transform:uppercase;font-weight:800;margin:0 0 20px}
+.eyebrow:before{content:"";display:block;width:28px;height:1px;background:currentColor}
+h1,h2,h3,p{margin-top:0}
+h1,h2{font-family:"Barlow Condensed",sans-serif;font-weight:600;letter-spacing:-.025em;line-height:.9}
+h1{font-size:clamp(76px,11vw,166px);margin-bottom:24px;max-width:900px}
+h1 span{display:block}
+h2{font-size:clamp(70px,9vw,132px);max-width:800px;margin-bottom:25px}
+.hero-description{font-size:16px;max-width:390px;line-height:1.7;margin-bottom:26px}
+.primary{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;min-height:52px;padding:15px 22px;background:var(--cream);color:var(--teal);font-size:13px;font-weight:800;text-decoration:none;border-radius:3px;transition:background .2s,transform .2s}
+.primary:hover{background:var(--mint);transform:translateY(-2px)}
+.primary .arrow{font-size:21px;font-weight:400}
+.chapter-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;border-top:1px solid #ffffff55;margin-top:48px;padding-top:19px}
+.photo-note{font-size:10px;line-height:1.6;max-width:260px;margin:0}
+.story-controls{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.step{display:grid;place-items:center;width:44px;height:44px;border:1px solid #ffffff80;border-radius:50%;background:transparent;color:#fff;font-size:23px;transition:background .2s,color .2s}
+.step:hover{background:var(--cream);color:var(--teal)}
+.step:disabled{opacity:.3;cursor:default}
+.step:disabled:hover{background:none;color:#fff}
+.chapter-counter{font-size:11px;margin:0 9px;letter-spacing:2px}
+.progress{position:fixed;right:25px;top:50%;transform:translateY(-50%);z-index:20;display:grid;gap:9px;padding:12px 8px;background:var(--cream);border-radius:30px;box-shadow:0 3px 20px #0002}
+.progress a{width:24px;height:35px;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.progress a:after{content:"";height:26px;width:2px;border-radius:4px;background:#124b4845;transition:height .25s,width .25s,background .25s}
+.progress a[aria-current=true]:after{height:35px;width:4px;background:var(--red)}
+.details{max-width:470px;margin-top:28px;border:1px solid #ffffff70;border-radius:3px;overflow:hidden}
+.details summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;font-size:13px;font-weight:800;padding:18px 20px;background:#0003}
+.details summary::-webkit-details-marker{display:none}
+.details summary:after{content:"+";font-size:24px;line-height:1}
+.details[open] summary:after{content:"−"}
+.details-body{background:var(--cream);color:var(--ink);padding:24px;font-size:14px;line-height:1.8}
+.details-body p:last-child{margin-bottom:0}
+.visit-card{background:var(--cream);color:var(--ink);max-width:510px;padding:28px;border-radius:3px}
+.visit-card .kicker{font-size:10px;letter-spacing:2px;font-weight:800;color:var(--teal);margin-bottom:15px;text-transform:uppercase}
+.visit-card address{font-style:normal;font-size:19px;font-weight:700;line-height:1.5;max-width:350px;margin-bottom:22px}
+.visit-card .directions{display:inline-flex;gap:25px;font-size:12px;font-weight:800;text-underline-offset:5px;color:var(--teal)}
+.visit-card details{margin-top:24px;border-top:1px solid #124b4830}
+.visit-card summary{list-style:none;padding:17px 0 0;font-size:13px;font-weight:800;cursor:pointer;display:flex;justify-content:space-between;gap:20px}
+.visit-card summary::-webkit-details-marker{display:none}
+.visit-card summary:after{content:"+";font-size:20px}
+.visit-card details[open] summary:after{content:"−"}
+.visit-info{padding-top:20px;font-size:13px;line-height:1.8}
+.visit-info dl{margin:0}
+.visit-info dt{font-weight:800}
+.visit-info dd{margin:0 0 15px}
+.visit-info p{font-size:11px;margin-bottom:0}
+.contact{background:var(--teal);color:var(--cream);padding:65px 5vw 38px;margin-bottom:14px}
+.contact-top{display:flex;justify-content:space-between;align-items:flex-end;gap:35px}
+.contact h2{font-size:clamp(55px,7vw,100px);margin:0;max-width:700px}
+.contact-copy{max-width:320px}
+.contact-copy p{font-size:14px;line-height:1.8}
+.contact-number{display:inline-block;margin-top:20px;text-decoration:none;font-family:"Barlow Condensed",sans-serif;font-size:29px}
+.footer-line{margin-top:60px;padding-top:24px;border-top:1px solid #ffffff40;display:flex;justify-content:space-between;gap:28px;font-size:11px;line-height:1.8}
+.footer-line p{max-width:560px;margin-bottom:0}
+.credits{max-width:560px;margin-top:20px;font-size:10px;line-height:1.9}
+.credits summary{cursor:pointer;min-height:35px}
+.credits a{text-underline-offset:3px}
+.floating-call{position:fixed;right:34px;bottom:24px;z-index:25;display:flex;align-items:center;gap:15px;padding:15px 22px;border-radius:40px;background:var(--red);color:white;text-decoration:none;box-shadow:0 6px 28px #0003;border:1px solid #ffffff50;transition:transform .2s,background .2s}
+.floating-call:hover{transform:translateY(-3px);background:#9e3037}
+.floating-call svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.8}
+.floating-call span{font-size:12px;font-weight:800}
+.page-end{height:80px}
+@media(min-width:1000px){
+.story-content{padding-right:12vw}
+#flavour .story-content{padding-left:36vw}
+#visit .story-content{display:grid;grid-template-columns:1fr 1fr;gap:28px 5vw;align-items:end}
+#visit .chapter-bottom{grid-column:1/-1}
+#visit .visit-card{justify-self:end;width:100%}
+}
+@media(max-width:600px){
+html{scroll-padding-top:70px}
+.concept{font-size:9px;padding:7px 15px}
+.header{height:60px;padding:0 19px}
+.brand{font-size:21px}
+.brand small{display:none}
+.header-right{gap:17px}
+.header-explore{font-size:11px}
+.menu-toggle{font-size:0;gap:0;padding:14px 0 14px 7px}
+.menu{top:60px;padding:22px 25px 30px}
+main{padding:0 7px}
+.story{min-height:calc(100svh - 67px);margin-bottom:7px;scroll-margin-top:67px}
+.story:first-child{min-height:calc(100svh - 107px)}
+.chapter-top{top:22px;left:22px;right:22px;font-size:9px;letter-spacing:1.6px}
+.chapter-top .edition{max-width:100px;font-size:8px;line-height:1.6}
+.story-content{padding:100px 43px 105px 22px}
+h1{font-size:clamp(65px,19vw,92px);margin-bottom:20px}
+h2{font-size:clamp(60px,17vw,90px);margin-bottom:25px}
+.eyebrow{font-size:9px;letter-spacing:1.5px;margin-bottom:17px}
+.hero-description{font-size:13px;line-height:1.7;max-width:265px;margin-bottom:23px}
+.primary{font-size:12px;min-height:49px;padding:13px 18px;gap:26px}
+.chapter-bottom{margin-top:28px;padding-top:17px;gap:10px}
+.photo-note{font-size:8px;max-width:145px}
+.step{width:38px;height:38px;font-size:20px}
+.chapter-counter{display:none}
+.story-controls{gap:7px}
+.progress{right:10px;gap:4px;padding:8px 3px}
+.progress a{height:30px;width:18px}
+.progress a:after{height:20px}
+.progress a[aria-current=true]:after{height:27px}
+.details summary{padding:15px;font-size:12px}
+.details-body{padding:19px;font-size:13px}
+.visit-card{padding:21px}
+.visit-card address{font-size:17px}
+.contact{padding:42px 23px 30px;margin-bottom:7px}
+.contact-top{display:block}
+.contact h2{font-size:61px;margin-bottom:30px}
+.contact-copy p{font-size:13px}
+.footer-line{display:block;margin-top:40px}
+.footer-line p+ p{margin-top:20px}
+.floating-call{bottom:14px;right:17px;left:17px;justify-content:center;padding:15px}
+.floating-call span{font-size:13px}
+.page-end{height:76px}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*:before,*:after{animation:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#opening">Skip to the story</a>
 <div class="concept">Independent website concept by LeadSky for Chilaquiles Brody´s. Not their official website.</div>
 <header class="header">
-<nav class="nav" aria-label="Main navigation">
-<a class="brand" href="#main">Chilaquiles Brody´s<small>PLAN A VISIT · JUÁREZ</small></a>
-<div class="navlinks" id="navlinks">
-<a href="#location">Find us</a>
-<a href="#planner">Hours &amp; visits</a>
-<a href="#menu">Menu information</a>
-<a href="#contact">Contact</a>
+<a class="brand" href="#opening" aria-label="Chilaquiles Brody’s, opening story">Brody´s<small>Chilaquiles</small></a>
+<div class="header-right">
+<a class="header-explore" href="#flavour">Explore ↘</a>
+<button class="menu-toggle" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation">Menu <span class="menu-icon" aria-hidden="true"><i></i><i></i></span></button>
 </div>
-<a class="button nav-cta" href="#menu">Menu</a>
-<button class="toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navlinks"><span></span><span></span></button>
-</nav>
 </header>
-<main id="main">
-<section class="hero" aria-labelledby="hero-title">
-<div class="hero-copy">
-<span class="eyebrow location-label"><span class="dot"></span>Juárez · El Paso border region</span>
-<h1 id="hero-title">Chilaquiles<br>Brody´s.<br><em>Find your way.</em></h1>
-<p>A restaurant in Juárez. Find the address, check the listed hours and call before heading over.</p>
-<div class="hero-actions">
-<a class="button" href="#planner">Plan your visit <span aria-hidden="true">↗</span></a>
-<a class="text-link" href="#location">Find the location</a>
-</div>
-<div class="hours-note">Listed hours &nbsp;·&nbsp; Thursday–Saturday, 9 am–midnight</div>
-</div>
-<div class="hero-photo">
-<img src="img/stock-5.jpg" width="1100" height="1400" alt="Illustrative stock photograph of tortillas being cooked on a comal" fetchpriority="high">
-<div class="photo-caption"><strong>A little appetite. A simple plan.</strong>Illustrative food photography · not photographed at Brody´s</div>
-</div>
-</section>
-
-<section class="section local" id="location" aria-labelledby="location-title">
-<div class="wrapper">
-<div class="section-heading reveal">
-<div><span class="eyebrow section-label">01 / The place</span><h2 id="location-title">Start with where.</h2></div>
-<p>The supplied address is in Juárez, Mexico. Use it to plan your route, then call to confirm the details.</p>
-</div>
-<div class="local-grid reveal">
-<div class="address-panel">
-<span class="eyebrow">Your destination</span>
-<span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.3"/></svg></span>
-<div><div class="number">13015</div><h3>Calle Vía De La Cabaña Norte</h3><p>Juárez 32472 · Mexico</p></div>
-<a class="text-link directions" href="https://www.google.com/maps/search/?api=1&amp;query=13015%20Calle%20Via%20De%20La%20Cabana%20Norte%20Juarez%2032472%20Mexico" target="_blank" rel="noopener noreferrer">Find this address on Google Maps ↗</a>
-</div>
-<div class="local-info">
-<div class="detail"><span class="eyebrow">Restaurant</span><p>Chilaquiles Brody´s</p></div>
-<div class="detail"><span class="eyebrow">Listed opening hours</span><p>Thursday–Saturday<br>09:00–24:00</p></div>
-<div class="detail"><span class="eyebrow">Call before you go</span><a href="tel:+526566580969">+52 656 658 0969</a></div>
-</div>
-</div>
-<p class="data-note">Address, telephone and hours are supplied for this independent concept and have not been independently verified. The address is in Mexico, rather than El Paso, Texas.</p>
-</div>
-</section>
-
-<section class="planner-section" id="planner" aria-labelledby="planner-title">
-<div class="wrapper planner">
-<div>
-<span class="eyebrow">02 / Make a little plan</span>
-<h2 id="planner-title">Which day<br>are you thinking?</h2>
-<p class="planner-intro">Pick a day to see the supplied schedule. Call to confirm hours, the menu and availability before travelling.</p>
-</div>
-<div class="planner-box">
-<div class="day-heading"><span id="day-label">Choose your day</span><span>Weekly hours</span></div>
-<div class="days" role="group" aria-labelledby="day-label">
-<button class="day" data-day="0" type="button" aria-pressed="false" aria-label="Monday">Mon</button>
-<button class="day" data-day="1" type="button" aria-pressed="false" aria-label="Tuesday">Tue</button>
-<button class="day" data-day="2" type="button" aria-pressed="false" aria-label="Wednesday">Wed</button>
-<button class="day" data-day="3" type="button" aria-pressed="true" aria-label="Thursday">Thu</button>
-<button class="day" data-day="4" type="button" aria-pressed="false" aria-label="Friday">Fri</button>
-<button class="day" data-day="5" type="button" aria-pressed="false" aria-label="Saturday">Sat</button>
-<button class="day" data-day="6" type="button" aria-pressed="false" aria-label="Sunday">Sun</button>
-</div>
-<div class="planner-result" id="visit-result" aria-live="polite" aria-atomic="true">
-<span class="status">Thursday · listed hours</span>
-<strong>9 am — midnight</strong>
-<p>Call ahead to confirm your visit.</p>
-</div>
-<div class="planner-buttons">
-<a class="button" href="tel:+526566580969">Call the restaurant ↗</a>
-<a class="button outline" href="https://www.google.com/maps/search/?api=1&amp;query=13015%20Calle%20Via%20De%20La%20Cabana%20Norte%20Juarez%2032472%20Mexico" target="_blank" rel="noopener noreferrer">Get directions ↗</a>
-</div>
-</div>
-</div>
-</section>
-
-<section class="section" id="menu" aria-labelledby="menu-title">
-<div class="wrapper">
-<div class="section-heading reveal">
-<div><span class="eyebrow section-label">03 / Before you order</span><h2 id="menu-title">The menu starts<br>with a conversation.</h2></div>
-<p>A verified menu and prices were not supplied. Call Brody´s for current dishes, drinks and ordering options.</p>
-</div>
-<div class="menu-list">
-<article class="menu-row reveal">
-<div class="menu-photo"><img src="img/stock-6.jpg" width="400" height="300" alt="Illustrative stock photograph of tortilla preparation, not a Brody´s dish" loading="lazy"></div>
-<div><h3>Ask about chilaquiles.</h3><p>Find out which preparations are on the current menu and what comes with your order.</p></div>
-<span class="row-number" aria-hidden="true">01</span>
-</article>
-<article class="menu-row reveal">
-<div class="menu-photo"><img src="img/stock-2.jpg" width="400" height="300" alt="Illustrative stock photograph of a green condiment in a bowl" loading="lazy"></div>
-<div><h3>Find your flavour.</h3><p>Check available sauces, ingredients and dietary questions directly with the restaurant.</p></div>
-<span class="row-number" aria-hidden="true">02</span>
-</article>
-<article class="menu-row reveal">
-<div class="menu-photo"><img src="img/stock-9.jpg" width="400" height="300" alt="Illustrative stock photograph of a cup of coffee and coffee beans" loading="lazy"></div>
-<div><h3>Something to drink?</h3><p>Ask about today’s drinks, prices and any options to take away.</p></div>
-<span class="row-number" aria-hidden="true">03</span>
-</article>
-</div>
-<div class="menu-disclaimer">These photographs set the mood only. They do not show Brody´s food or confirm items available to order. <a href="tel:+526566580969">Call for the current menu.</a></div>
-</div>
-</section>
-
-<section class="section story" id="about" aria-labelledby="about-title">
-<div class="wrapper">
-<div class="story-grid">
-<div class="story-image reveal">
-<img src="img/stock-7.jpg" width="1000" height="650" alt="Stock photograph of El Paso city lights at night, shown as regional context" loading="lazy">
-<div class="photo-caption">El Paso at night · regional stock photography</div>
-</div>
-<div class="story-content reveal">
-<span class="eyebrow section-label">04 / Around the border</span>
-<h2 id="about-title">Two cities.<br>One clear destination.</h2>
-<p>Looking for Chilaquiles Brody´s in the El Paso–Juárez region? The address supplied for this restaurant is in Juárez.</p>
-<p>Check your route and any border-crossing requirements before travelling from El Paso. For restaurant details, a quick call is the best next step.</p>
-<a class="text-link" href="#location">See the full address ↑</a>
-</div>
-</div>
-<div class="faq">
-<details><summary>What are the opening hours?</summary><p>The supplied schedule lists Thursday, Friday and Saturday from 09:00 to 24:00. Hours for Sunday through Wednesday were not supplied. Holiday changes have not been verified. Please call +52 656 658 0969 before visiting.</p></details>
-<details><summary>Is the restaurant in El Paso or Juárez?</summary><p>The lead information mentions the El Paso–Juárez region, but the supplied address is 13015 Calle Vía De La Cabaña Norte, Juárez 32472, Mexico. The directions link searches that address; it is not a verified business map listing.</p></details>
-<details><summary>Can I book or order through this website?</summary><p>No. This is an independent website concept. It does not accept reservations, payments or food orders. The call link opens your device’s dialler so you can ask the restaurant directly about its current services.</p></details>
-<details><summary>Are these photos from the restaurant?</summary><p>No. All photographs shown here are illustrative stock images from Pixabay. They are not photographs of Brody´s dishes, team or premises. Source links and photographer credits are listed below.</p></details>
-</div>
-</div>
-</section>
-</main>
-<footer class="footer" id="contact">
-<div class="wrapper">
-<div class="footer-main">
-<div><div class="footer-brand">Chilaquiles Brody´s</div><p>13015 Calle Vía De La Cabaña Norte · Juárez 32472, Mexico</p><p>Listed hours: Thursday–Saturday · 09:00–24:00</p><p><a href="tel:+526566580969">+52 656 658 0969</a></p></div>
-<div class="footer-links"><a href="#planner">Plan a visit</a><a href="#menu">Menu information</a><a href="#main">Back to top ↑</a></div>
-</div>
-<div class="credits">
-<div>Concept by LeadSky · Independent proposal. No affiliation or endorsement implied.</div>
-<p>Illustrative stock photography, supplied under the Pixabay Content License:
-<a href="https://pixabay.com/photos/costa-rica-tortilla-kitchen-food-7417794/" target="_blank" rel="noopener noreferrer">mfuente — tortilla preparation</a> ·
-<a href="https://pixabay.com/photos/costa-rica-tortilla-kitchen-food-7417791/" target="_blank" rel="noopener noreferrer">mfuente — comal</a> ·
-<a href="https://pixabay.com/photos/green-paste-spice-garlic-bowl-8667981/" target="_blank" rel="noopener noreferrer">niamhoshea — green condiment</a> ·
-<a href="https://pixabay.com/photos/coffee-coffee-cup-cup-drink-beans-2714970/" target="_blank" rel="noopener noreferrer">cocoparisienne — coffee</a> ·
-<a href="https://pixabay.com/photos/el-paso-night-city-lights-1180356/" target="_blank" rel="noopener noreferrer">BBlanck — El Paso</a>.
-</p>
-</div>
-</div>
-</footer>
-<nav class="mobile-bar" aria-label="Quick contact">
-<a href="tel:+526566580969">Call Brody´s ↗</a>
-<a href="https://wa.me/526566580969" target="_blank" rel="noopener noreferrer" aria-label="Try WhatsApp for the supplied phone number; availability is unverified">WhatsApp ↗</a>
+<nav class="menu" id="navigation" aria-label="Main navigation" hidden>
+<a href="#opening"><span>01</span> The opening</a>
+<a href="#flavour"><span>02</span> Food, in focus</a>
+<a href="#visit"><span>03</span> Plan your visit</a>
+<a href="#contact"><span>↗</span> Contact Brody´s</a>
+<p>A private design concept. All food photographs are illustrative stock images, not photographs of the restaurant’s dishes.</p>
 </nav>
+
+<nav class="progress" aria-label="Story chapters">
+<a href="#opening" aria-label="Chapter 1: The opening" aria-current="true"></a>
+<a href="#flavour" aria-label="Chapter 2: Food, in focus"></a>
+<a href="#visit" aria-label="Chapter 3: Plan your visit"></a>
+</nav>
+
+<main>
+<section class="story" id="opening" aria-labelledby="hero-title">
+<img class="story-image" src="img/stock-5.jpg" alt="Illustrative Mexican food with tortillas and salsa; not a dish photographed at Brody’s" fetchpriority="high" decoding="async">
+<div class="chapter-top"><span>A story worth exploring</span><span class="edition">The Brody´s concept</span></div>
+<div class="story-content">
+<p class="eyebrow">Chilaquiles · Restaurant</p>
+<h1 id="hero-title"><span>Chilaquiles</span><span>Brody´s.</span></h1>
+<p class="hero-description">Get to know the name. Find the visiting details. Call Brody´s for the current menu.</p>
+<a class="primary" href="#flavour">Explore the story <span class="arrow" aria-hidden="true">↘</span></a>
+<div class="chapter-bottom">
+<p class="photo-note">A visual introduction.<br>Illustrative stock food photography.</p>
+<div class="story-controls">
+<span class="chapter-counter">01 / 03</span>
+<button class="step" disabled aria-label="No previous chapter">←</button>
+<button class="step" data-next="flavour" aria-label="Next chapter: Food, in focus">→</button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="story" id="flavour" aria-labelledby="flavour-title">
+<img class="story-image" src="img/stock-10.jpg" alt="Illustrative close-up of a red pepper being sliced on a chopping board" loading="lazy" decoding="async">
+<div class="chapter-top"><span>02 / Food, in focus</span><span class="edition">An illustrative food story</span></div>
+<div class="story-content">
+<p class="eyebrow">Before you choose</p>
+<h2 id="flavour-title">Start with<br>the menu.</h2>
+<p class="hero-description">Your next step is simple: ask Brody´s what’s on the menu today.</p>
+<details class="details">
+<summary>Looking for food details?</summary>
+<div class="details-body">
+<p>For the current dishes, prices and availability, contact Chilaquiles Brody´s directly.</p>
+<p>This independent concept does not reproduce a verified menu. The photographs set the visual direction; they do not show the restaurant’s actual food or ingredients.</p>
+<a href="tel:+526566580969">Call +52 656 658 0969 ↗</a>
+</div>
+</details>
+<div class="chapter-bottom">
+<p class="photo-note">A closer look at colour and texture.<br>Illustrative ingredient photography.</p>
+<div class="story-controls">
+<span class="chapter-counter">02 / 03</span>
+<button class="step" data-next="opening" aria-label="Previous chapter: The opening">←</button>
+<button class="step" data-next="visit" aria-label="Next chapter: Plan your visit">→</button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="story" id="visit" aria-labelledby="visit-title">
+<img class="story-image" src="img/stock-6.jpg" alt="Illustrative photograph of Mexican tacos on a table; not the restaurant’s menu or premises" loading="lazy" decoding="async">
+<div class="chapter-top"><span>03 / Make a plan</span><span class="edition">Keep the details close</span></div>
+<div class="story-content">
+<div>
+<p class="eyebrow">Chilaquiles Brody´s</p>
+<h2 id="visit-title">See you<br>at the table?</h2>
+<p class="hero-description">Find the supplied visiting details here. A quick call is the best way to check before setting off.</p>
+</div>
+<div class="visit-card">
+<p class="kicker">Plan your visit</p>
+<address>13015 Calle Vía De La Cabaña Norte<br>Juarez 32472</address>
+<a class="directions" href="https://www.google.com/maps/search/?api=1&amp;query=13015%20Calle%20V%C3%ADa%20De%20La%20Caba%C3%B1a%20Norte%20Juarez%2032472" target="_blank" rel="noopener noreferrer">Search this address on Maps <span aria-hidden="true">↗</span></a>
+<details>
+<summary>Hours &amp; contact details</summary>
+<div class="visit-info">
+<dl>
+<dt>Listed opening hours</dt>
+<dd>Thursday–Saturday<br>09:00–00:00</dd>
+<dt>Telephone</dt>
+<dd><a href="tel:+526566580969">+52 656 658 0969</a></dd>
+</dl>
+<p>Details supplied for this concept have not been independently verified. Call to confirm the location and hours. The map link searches the supplied address; it is not a verified business pin.</p>
+</div>
+</details>
+</div>
+<div class="chapter-bottom">
+<p class="photo-note">Illustrative food photography.<br>Not a photograph of the premises.</p>
+<div class="story-controls">
+<span class="chapter-counter">03 / 03</span>
+<button class="step" data-next="flavour" aria-label="Previous chapter: Food, in focus">←</button>
+<button class="step" data-next="contact" aria-label="Continue to contact details">↘</button>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="contact" id="contact">
+<div class="contact-top">
+<div>
+<p class="eyebrow">A direct connection</p>
+<h2>Good plans start<br>with a call.</h2>
+</div>
+<div class="contact-copy">
+<p>Ask about the menu, confirm the visiting details, and speak directly with Chilaquiles Brody´s.</p>
+<a class="primary" href="tel:+526566580969">Call Brody´s <span class="arrow" aria-hidden="true">↗</span></a>
+<br>
+<a class="contact-number" href="tel:+526566580969">+52 656 658 0969</a>
+</div>
+</div>
+<div class="footer-line">
+<p>Independent website concept by LeadSky for Chilaquiles Brody´s. Not their official website. No endorsement or client relationship is implied. All photographs are illustrative stock images, not the restaurant’s dishes, team or premises.</p>
+<p>Concept by LeadSky<br><a href="#opening">Back to the opening ↑</a></p>
+</div>
+<details class="credits">
+<summary>Photography credits &amp; usage</summary>
+<p>Photographs supplied under the Pixabay Content License, permitting commercial use. Credits:</p>
+<p>
+<a href="https://pixabay.com/photos/food-mexican-tacos-mexican-food-2580200/" target="_blank" rel="noopener noreferrer">Opening food photograph — marcelokato / Pixabay</a><br>
+<a href="https://pixabay.com/photos/bell-pepper-slicing-culinary-569070/" target="_blank" rel="noopener noreferrer">Pepper preparation — JESHOOTS-com / Pixabay</a><br>
+<a href="https://pixabay.com/photos/tacos-meat-tortilla-sauce-meal-5798443/" target="_blank" rel="noopener noreferrer">Table food photograph — adoproducciones / Pixabay</a><br>
+<a href="https://pixabay.com/service/license-summary/" target="_blank" rel="noopener noreferrer">Pixabay Content License</a>
+</p>
+</details>
+</footer>
+</main>
+
+<a class="floating-call" href="tel:+526566580969" aria-label="Call Chilaquiles Brody’s at +52 656 658 0969">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-5-2-2 2a14 14 0 0 1-7-7l2-2-2-5Z" stroke-linejoin="round"/></svg>
+<span>Call Chilaquiles Brody´s</span>
+</a>
+<div class="page-end" aria-hidden="true"></div>
+
 <script>
-(function(){
-const toggle=document.querySelector('.toggle');
-const links=document.getElementById('navlinks');
-function closeMenu(){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open navigation');links.classList.remove('open')}
-toggle.addEventListener('click',function(){const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');links.classList.toggle('open',open)});
-links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu)});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&toggle.getAttribute('aria-expanded')==='true'){closeMenu();toggle.focus()}});
-document.addEventListener('click',function(e){if(!e.target.closest('.nav'))closeMenu()});
-const days=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-const result=document.getElementById('visit-result');
-document.querySelectorAll('.day').forEach(function(button){
-button.addEventListener('click',function(){
-document.querySelectorAll('.day').forEach(function(b){b.setAttribute('aria-pressed',String(b===button))});
-const day=Number(button.dataset.day),listed=day>=3&&day<=5;
-result.replaceChildren();
-const status=document.createElement('span');status.className='status';status.textContent=days[day]+(listed?' · listed hours':' · please confirm');
-const title=document.createElement('strong');title.textContent=listed?'9 am — midnight':'Hours not supplied';
-const note=document.createElement('p');note.textContent=listed?'Call ahead to confirm your visit.':'No opening hours were provided for this day. Please call.';
-result.append(status,title,note);
-result.classList.remove('result-change');void result.offsetWidth;result.classList.add('result-change');
-});
-});
-const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
-if('IntersectionObserver' in window&&!reduced.matches){
-const observer=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}})},{threshold:.1});
-document.querySelectorAll('.reveal').forEach(function(el){observer.observe(el)});
-document.documentElement.classList.add('js-motion');
+(() => {
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.menu');
+const header = document.querySelector('.header');
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+const chapters = [...document.querySelectorAll('.story')];
+const markers = [...document.querySelectorAll('.progress a')];
+
+function positionMenu() {
+menu.style.top = header.getBoundingClientRect().bottom + 'px';
 }
+
+function closeMenu(restoreFocus = false) {
+menu.hidden = true;
+toggle.setAttribute('aria-expanded', 'false');
+toggle.setAttribute('aria-label', 'Open navigation');
+if (restoreFocus) toggle.focus();
+}
+
+toggle.addEventListener('click', () => {
+const opening = menu.hidden;
+menu.hidden = !opening;
+toggle.setAttribute('aria-expanded', String(opening));
+toggle.setAttribute('aria-label', opening ? 'Close navigation' : 'Open navigation');
+positionMenu();
+});
+
+document.addEventListener('keydown', event => {
+if (event.key === 'Escape' && !menu.hidden) closeMenu(true);
+});
+
+document.addEventListener('click', event => {
+if (!menu.hidden && !menu.contains(event.target) && !toggle.contains(event.target)) closeMenu();
+});
+
+function goTo(id, moveFocus = false) {
+const target = document.getElementById(id);
+if (!target) return;
+closeMenu();
+target.scrollIntoView({behavior: reduced.matches ? 'instant' : 'smooth', block:'start'});
+if (moveFocus) {
+const heading = target.querySelector('h1,h2');
+if (heading) {
+heading.setAttribute('tabindex', '-1');
+heading.focus({preventScroll:true});
+heading.addEventListener('blur', () => heading.removeAttribute('tabindex'), {once:true});
+}
+}
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+link.addEventListener('click', event => {
+const id = link.getAttribute('href').slice(1);
+if (document.getElementById(id)) {
+event.preventDefault();
+goTo(id, true);
+}
+});
+});
+
+document.querySelectorAll('[data-next]').forEach(button => {
+button.addEventListener('click', () => goTo(button.dataset.next, true));
+});
+
+let scheduled = false;
+function updateProgress() {
+const reference = window.innerHeight * .45;
+let active = 0;
+let nearest = Infinity;
+chapters.forEach((chapter, index) => {
+const rect = chapter.getBoundingClientRect();
+const distance = rect.top <= reference && rect.bottom >= reference ? 0 : Math.min(Math.abs(rect.top-reference),Math.abs(rect.bottom-reference));
+if (distance < nearest) {
+nearest = distance;
+active = index;
+}
+});
+markers.forEach((marker,index) => {
+if (index === active) marker.setAttribute('aria-current','true');
+else marker.removeAttribute('aria-current');
+});
+if (!menu.hidden) positionMenu();
+scheduled = false;
+}
+window.addEventListener('scroll', () => {
+if (!scheduled) {
+scheduled = true;
+requestAnimationFrame(updateProgress);
+}
+}, {passive:true});
+window.addEventListener('resize', () => {
+positionMenu();
+updateProgress();
+});
+updateProgress();
 })();
 </script>
 </body>
