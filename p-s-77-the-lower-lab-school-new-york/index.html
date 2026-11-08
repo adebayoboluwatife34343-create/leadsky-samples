@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lower Lab Family Hub · Independent Product Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fafafa;
+  --ink:#0f172a;
+  --blue:#1e40af;
+  --pale:#edf2fc;
+  --gold:#b45309;
+  --line:#dce2ec;
+  --muted:#334155;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Plus Jakarta Sans',Arial,sans-serif
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:14px;line-height:1.65}
+button,input,select,textarea{font:inherit}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+button{cursor:pointer}
+a{color:var(--blue)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
+button{border:0}
+img{display:block;width:100%;object-fit:cover}
+h1,h2,h3,p{margin-top:0}
+h1,h2{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.045em}
+h1{font-size:clamp(38px,5.3vw,72px);max-width:800px;margin-bottom:18px}
+h2{font-size:clamp(31px,4vw,48px)}
+h3{font-size:17px;line-height:1.35}
+p{color:var(--muted)}
+.wrap{width:min(1190px,calc(100% - 48px));margin:auto}
+.notice{background:#dbeafe;color:#1e3a8a;text-align:center;font-size:11px;font-weight:600;padding:9px 20px;line-height:1.5}
+.header{position:sticky;top:0;z-index:20;background:rgba(250,250,250,.97);border-bottom:1px solid var(--line)}
+.navrow{height:76px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:800;line-height:1.2}
+.brand img{width:43px;height:43px;object-fit:contain}
+.brand small{font-size:10px;display:block;color:var(--muted);font-weight:600;margin-top:4px}
+.navlinks{display:flex;align-items:center;gap:26px}
+.navlinks a{font-size:12px;text-decoration:none;color:var(--muted);font-weight:600}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:10px;text-decoration:none;background:var(--blue);color:white;padding:13px 20px;border-radius:8px;font-size:12px;font-weight:700;line-height:1.5;transition:background .2s,transform .2s}
+.btn:hover{background:#1d4ed8;transform:translateY(-2px)}
+.btn.light{background:white;color:var(--blue);border:1px solid var(--line)}
+.btn.small{padding:10px 14px}
+.menu{display:none;border:1px solid var(--line);background:transparent;border-radius:7px;width:39px;height:39px;font-size:19px}
+.eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);display:flex;align-items:center;gap:9px;margin-bottom:18px}
+.eyebrow:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.hero{padding:49px 0 0}
+.hero-top{display:flex;align-items:end;justify-content:space-between;gap:32px}
+.hero-copy{max-width:760px}
+.hero-copy>p{font-size:15px;max-width:570px}
+.hero-aside{max-width:230px;border-left:1px solid var(--line);padding-left:22px;margin-bottom:24px;font-size:12px}
+.hero-aside strong{display:block;color:var(--ink);margin-bottom:7px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 30px}
+.comparison{height:405px;position:relative;overflow:hidden;border-radius:16px;background:#dfe6ef;isolation:isolate;--split:48%}
+.scene{position:absolute;inset:0}
+.scene>img{height:100%;object-position:center 43%}
+.scene:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,19,40,.79),rgba(8,19,40,.56))}
+.after{clip-path:inset(0 0 0 var(--split))}
+.after:after{background:linear-gradient(90deg,rgba(13,33,77,.68),rgba(13,33,77,.56))}
+.scene-copy{position:absolute;z-index:1;top:30px;left:30px;color:#fff;max-width:310px;padding-right:15px}
+.scene-copy p{color:#ffffff;font-size:12px;margin-bottom:12px}
+.scene-copy h3{font-family:var(--serif);font-size:31px;font-weight:400;line-height:1.12;margin:12px 0}
+.scene-copy .tag{background:#ffffff;color:var(--ink);display:inline-block;font-size:9px;letter-spacing:.1em;font-weight:800;padding:5px 10px;border-radius:4px;isolation:isolate}
+.after .scene-copy{left:auto;right:15px;width:calc(50% - 15px);max-width:310px}
+.mini-stack{display:grid;gap:6px;margin-top:14px}
+.mini-stack span{padding:8px 10px;background:rgba(255,255,255,.95);color:var(--ink);border-radius:5px;font-size:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.split-line{position:absolute;top:0;bottom:0;left:var(--split);width:2px;background:white;z-index:3;pointer-events:none}
+.handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:47px;height:47px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center;box-shadow:0 4px 20px #0003;font-size:20px}
+.compare-range{position:absolute;inset:0;opacity:0;width:100%;height:100%;margin:0;cursor:ew-resize;z-index:5}
+.comparison:focus-within{outline:3px solid var(--gold);outline-offset:4px}
+.caption{display:flex;justify-content:space-between;gap:15px;font-size:11px;font-weight:600;color:var(--muted);padding:12px 0}
+.section{padding:70px 0;border-bottom:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:30px}
+.section-head h2{margin-bottom:0;max-width:600px}
+.section-head p{max-width:330px;font-size:12px;margin-bottom:0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{border-top:2px solid var(--line);padding-top:20px;position:relative}
+.step .num{font-family:var(--serif);font-size:32px;color:var(--blue)}
+.step h3{margin:10px 0}
+.step p{font-size:12px}
+.step button{background:none;padding:0;color:var(--blue);font-weight:700;font-size:11px;border-bottom:1px solid #bcc9e5}
+.estimate{display:grid;grid-template-columns:1.1fr 1fr;gap:50px}
+.calculator{background:#edf2fc;padding:28px;border-radius:12px}
+.calculator label{display:flex;justify-content:space-between;gap:10px;font-size:12px;font-weight:700;margin-bottom:12px;color:var(--ink)}
+.calculator input[type=range]{width:100%;accent-color:var(--blue);margin-bottom:25px}
+.calc-fields{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{margin-bottom:17px}
+.field label{font-size:11px;font-weight:700;display:block;margin-bottom:7px;color:var(--ink)}
+.field input,.field select,.field textarea{width:100%;border:1px solid #94a3b8;border-radius:7px;padding:11px;background:#fff;color:var(--ink);min-width:0}
+.field textarea{min-height:85px;resize:vertical}
+.metric{font-family:var(--serif);font-size:54px;line-height:1.1;color:var(--blue)}
+.metric small{font-family:var(--sans);font-size:12px;font-weight:600}
+.subtle{font-size:12px;font-weight:500;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:12px;text-align:left}
+th,td{padding:15px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;font-weight:700;color:var(--ink);letter-spacing:.06em;text-transform:uppercase}
+td:last-child,th:last-child{text-align:right}
+.price-note{padding:17px;background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;margin-top:20px;font-size:12px;font-weight:600;color:#78350f}
+.portal-section{background:#f0f3f9}
+.portal{display:grid;grid-template-columns:220px 1fr;border:1px solid #d5deed;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 20px 65px #2338630c}
+.sidebar{background:#1e3a8a;color:white;padding:25px 18px;display:flex;flex-direction:column}
+.sidebar h3{font-size:15px;margin:5px 0}
+.sidebar p{color:#d6e1f8;font-size:10px}
+.side-tabs{display:flex;flex-direction:column;gap:5px;margin:20px 0}
+.side-tabs button{background:transparent;color:#e0e8fa;text-align:left;padding:12px;border-radius:7px;font-size:12px;font-weight:600}
+.side-tabs button[aria-selected=true]{background:white;color:#1e3a8a;font-weight:800}
+.sidebar .side-foot{margin-top:auto;padding-top:30px;font-size:10px;color:#d6e1f8}
+.workspace{padding:28px;min-width:0;min-height:510px}
+.workspace-top{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid var(--line);padding-bottom:18px;margin-bottom:22px}
+.workspace-top strong{font-size:12px}
+.pill{display:inline-block;background:#dcfce7;color:#166534;padding:5px 9px;font-size:9px;font-weight:800;border-radius:5px}
+.pill.sample{color:#92400e;background:#fef3c7}
+.panel[hidden]{display:none}
+.panel h3{font-family:var(--serif);font-size:28px;font-weight:500;margin-bottom:7px}
+.panel-intro{font-size:12px;margin-bottom:22px}
+.dashboard-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
+.photo-card{border-radius:9px;overflow:hidden;border:1px solid var(--line)}
+.photo-card img{height:156px}
+.photo-card .card-body{padding:16px}
+.photo-card h4{margin:0 0 8px;font-size:13px}
+.photo-card p{font-size:12px;color:#1e293b;font-weight:500;margin-bottom:0}
+.list-row{display:flex;justify-content:space-between;gap:15px;padding:13px 0;border-bottom:1px solid var(--line);font-size:12px}
+.list-row small{display:block;color:var(--muted);font-size:10px;font-weight:600}
+.status-card{background:#f3f6fc;border-radius:9px;padding:18px;margin-bottom:15px}
+.status-card strong{font-size:12px}
+.status-card p{font-size:11px;margin:7px 0}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.full{grid-column:1/-1}
+.drop{display:block;border:1px dashed #64748b;background:#f4f7fd;padding:20px;border-radius:8px;margin:10px 0 17px;font-size:12px;font-weight:600;color:var(--ink)}
+.drop input{display:block;max-width:100%;margin-top:12px;font-size:11px}
+.feedback{font-size:12px;font-weight:600;color:#166534;background:#dcfce7;padding:12px;border-radius:6px;margin-top:12px}
+.feedback:empty{display:none}
+.chatbooking{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.widget{border:1px solid var(--line);border-radius:12px;background:white;overflow:hidden}
+.widget-head{padding:19px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}
+.widget-head h3{margin:0;font-size:14px}
+.chatlog{height:290px;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}
+.bubble{max-width:92%;padding:12px 15px;border-radius:12px 12px 12px 2px;background:#eef2fa;color:#1e293b;font-weight:500;font-size:12px;white-space:pre-line}
+.bubble.user{align-self:flex-end;background:var(--blue);color:#fff;border-radius:12px 12px 2px 12px}
+.prompts{padding:0 20px 12px;display:flex;gap:6px;flex-wrap:wrap}
+.prompts button{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 10px;color:var(--blue);font-size:10px;font-weight:600}
+.chat-form{display:flex;border-top:1px solid var(--line);padding:13px;gap:8px}
+.chat-form input{min-width:0;flex:1;border:0;padding:8px;font-size:12px}
+.calendar-body{padding:20px}
+.month{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.month button{background:#eef2fa;color:var(--blue);border-radius:5px;width:31px;height:31px}
+.month strong{font-size:13px}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+.calendar span{text-align:center;font-size:10px;font-weight:700;color:var(--muted);padding:5px 0}
+.calendar button{aspect-ratio:1.2;background:#f2f5fa;border-radius:5px;font-size:11px;color:var(--ink);font-weight:600}
+.calendar button:disabled{opacity:.35;cursor:default}
+.calendar button.selected,.slots button.selected{background:var(--blue);color:white}
+.slots{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}
+.slots button{border:1px solid var(--line);padding:7px 11px;background:white;border-radius:5px;font-size:11px;font-weight:600}
+.booking-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.booking-fields .field{margin-bottom:10px}
+.resource{display:flex;gap:15px;align-items:center;border:1px solid var(--line);padding:12px;border-radius:9px;margin-bottom:14px}
+.resource img{width:94px;height:75px;border-radius:5px}
+.resource h4{font-size:12px;margin:0 0 5px}
+.resource p{font-size:11px;margin:0}
+.admin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:22px}
+.admin-stat{background:#f2f5fa;padding:16px;border-radius:8px}
+.admin-stat strong{display:block;font-size:27px;font-family:var(--serif);font-weight:500}
+.admin-stat span{font-size:11px;font-weight:600;color:var(--muted)}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:12px}
+.toolbar input,.toolbar select{padding:9px;border:1px solid var(--line);border-radius:5px;font-size:11px;min-width:0}
+.table-scroll{overflow-x:auto}
+.table-scroll table{min-width:400px}
+.closing{padding:45px 0;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.closing h2{font-size:32px;margin-bottom:10px}
+.closing p{font-size:12px;margin:0}
+.footer{background:#edf1f8;padding:27px 0 35px;font-size:11px;font-weight:500;color:var(--muted)}
+.footer-inner{display:flex;justify-content:space-between;gap:30px}
+.footer a{color:#1e40af;font-weight:600}
+.credits{max-width:550px}
+.bottom-bar{display:none}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:white;padding:14px 22px;border-radius:9px;z-index:60;font-size:12px;width:max-content;max-width:90vw;box-shadow:0 8px 30px #0003}
+.toast[hidden]{display:none}
+dialog{border:1px solid var(--line);border-radius:15px;padding:30px;max-width:470px;width:calc(100% - 36px);color:var(--ink)}
+dialog::backdrop{background:rgba(15,23,42,.55)}
+dialog h2{font-size:30px}
+dialog p{font-size:13px}
+.reveal{transition:transform .5s,box-shadow .5s}
+.reveal:hover{transform:translateY(-3px)}
+@media(min-width:1000px){.hero h1 em{display:block;font-weight:400;color:var(--blue)}}
+@media(max-width:900px){.navlinks{gap:15px}.hero-aside{display:none}.steps{grid-template-columns:1fr 1fr}.estimate{gap:25px}.portal{grid-template-columns:175px 1fr}.workspace{padding:21px}.dashboard-grid{grid-template-columns:1fr}.photo-card img{height:120px}.chatbooking{gap:15px}.navlinks>a:first-child{display:none}}
+@media(max-width:640px){.wrap{width:calc(100% - 32px)}.notice{font-size:10px;padding:7px 13px}.navrow{height:62px;gap:8px}.brand{font-size:12px;gap:7px;white-space:nowrap}.brand img{width:31px;height:31px}.brand small{display:none}.header .btn{font-size:10px;padding:9px 10px}.menu{display:block;flex-shrink:0}.navlinks{display:none;position:absolute;top:62px;left:0;right:0;background:white;border-bottom:1px solid var(--line);padding:20px;flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a,.navlinks>a:first-child{display:block;padding:13px;font-size:13px}.hero{padding-top:30px}.eyebrow{font-size:9px;margin-bottom:14px;letter-spacing:.11em}h1{font-size:34px;letter-spacing:-.05em;margin-bottom:16px}.hero-copy>p{font-size:12px;line-height:1.8}.actions{margin:20px 0;gap:8px}.actions .btn{padding:11px 13px;font-size:11px}.comparison{height:300px;border-radius:10px}.scene-copy{top:15px;left:12px;right:12px;max-width:none}.scene-copy h3{font-size:19px;margin-top:8px;line-height:1.15}.scene-copy p{font-size:10px;margin-bottom:6px}.after .scene-copy{left:12px;right:12px;width:auto;max-width:none}.scene-copy .tag{font-size:8px;padding:3px 6px}.mini-stack span{font-size:9px;padding:6px 8px}.mini-stack{gap:4px;margin-top:8px}.caption{font-size:10px;line-height:1.5}.caption span:last-child{max-width:160px;text-align:right}.section{padding:42px 0}.section-head{display:block;margin-bottom:24px}.section-head p{margin-top:15px}.section-head h2{font-size:28px}.steps{gap:20px 16px}.step h3{font-size:14px}.step p{font-size:11px}.step .num{font-size:28px}.estimate{grid-template-columns:1fr;gap:25px}.calculator{padding:22px}.metric{font-size:46px}.portal{display:block}.sidebar{padding:17px}.sidebar>h3,.sidebar>p,.side-foot{display:none}.side-tabs{display:flex;flex-direction:row;overflow-x:auto;margin:0;gap:4px;padding-bottom:2px}.side-tabs button{white-space:nowrap;font-size:10px;padding:9px 11px}.workspace{padding:18px;min-height:500px}.workspace-top{font-size:10px}.workspace-top strong{font-size:11px}.workspace-top .pill{font-size:8px}.panel h3{font-size:22px}.form-grid{grid-template-columns:1fr}.chatbooking{grid-template-columns:1fr;gap:20px}.chatlog{height:265px}.booking-fields{grid-template-columns:1fr 1fr}.admin-stat{padding:11px}.admin-stat strong{font-size:22px}.admin-stat span{font-size:9px}.closing{align-items:start;flex-direction:column;padding:32px 0}.footer{padding-bottom:95px}.footer-inner{display:block}.credits{margin-top:20px}.bottom-bar{display:flex;position:fixed;bottom:0;left:0;right:0;padding:10px 16px max(10px,env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);z-index:25;gap:9px}.bottom-bar a{flex:1;padding:10px;font-size:11px}.toast{bottom:83px}.resource img{width:74px;height:80px}.calc-fields{gap:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.btn:hover,.reveal:hover{transform:none}.chatlog{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="notice">Independent website concept by LeadSky for P.S. 77 - The Lower Lab School. Not their official website.</div>
+<header class="header">
+<div class="wrap navrow">
+<a class="brand" href="#top"><img src="img/business-logo-1.png" alt="The Lower Lab School logo"><span>Lower Lab <small>PS 77 · Family Hub concept</small></span></a>
+<nav class="navlinks" id="navigation" aria-label="Main navigation">
+<a href="#process">The process</a><a href="#estimate">Cost & time</a><a href="#portal">Family portal</a><a href="#assistant">Ask & plan</a><a href="tel:+12124272798">212.427.2798 ↗</a>
+</nav>
+<a class="btn small" href="#portal">Try the portal ↗</a>
+<button class="menu" id="menuButton" aria-label="Open navigation" aria-expanded="false" aria-controls="navigation">☰</button>
+</div>
+</header>
+<main id="top">
+<section class="hero wrap">
+<div class="hero-top">
+<div class="hero-copy">
+<div class="eyebrow">PS 77 · New York · Interactive product concept</div>
+<h1>Less paperwork.<br><em>More time for learning.</em></h1>
+<p>A proposed family hub for The Lower Lab School. Bring admissions questions, documents, meeting requests and classroom updates into one clear place.</p>
+<div class="actions"><a class="btn" href="#portal" data-open="application">Try a sample application <span>↗</span></a><a class="btn light" href="#assistant">Ask the demo assistant</a></div>
+</div>
+<div class="hero-aside"><strong>Live… Love… LAB!</strong><p>A family-first concept for the NYCDOE District 2 Gifted & Talented public elementary school serving Kindergarten through Fifth Grade.</p></div>
+</div>
+<div class="comparison" id="comparison">
+<div class="scene before">
+<img src="img/stock-1.jpg" alt="Illustrative stock photograph of children writing together" fetchpriority="high">
+<div class="scene-copy"><span class="tag">01 / SEPARATE STEPS</span><h3>Questions here.<br>Documents there.</h3><p>A fragmented family journey concept.</p><div class="mini-stack"><span>Admissions info</span><span>Email follow-ups</span><span>Phone enquiries</span></div></div>
+</div>
+<div class="scene after">
+<img src="img/stock-2.jpg" alt="Illustrative stock photograph of a child learning in a classroom" fetchpriority="high">
+<div class="scene-copy"><span class="tag">02 / PROPOSED HUB</span><h3>One place.<br>Clear next step.</h3><p>Connected experience via sample records.</p><div class="mini-stack"><span>✓ Application checklist</span><span>✓ Meeting requests</span><span>✓ Family updates</span></div></div>
+</div>
+<div class="split-line"><span class="handle" aria-hidden="true">↔</span></div>
+<input class="compare-range" id="comparisonRange" type="range" min="10" max="90" value="48" aria-label="Compare separate steps with the proposed family hub" aria-valuetext="48 percent separate steps">
+</div>
+<div class="caption"><span>↔ Drag to compare · Arrow keys also work</span><span>Concept comparison · Illustrative stock photography</span></div>
+</section>
+
+<section class="section wrap" id="process">
+<div class="section-head"><div><div class="eyebrow">01 / A clearer family journey</div><h2>From first question<br>to the next school day.</h2></div><p>Click through the proposed workflow. Official admissions decisions and eligibility stay with NYCDOE and the school.</p></div>
+<div class="steps">
+<article class="step"><span class="num">01</span><h3>Ask. Then plan.</h3><p>Find school information and choose a sample tour or meeting request.</p><button data-scroll="assistant">Ask a question ↗</button></article>
+<article class="step"><span class="num">02</span><h3>A guided checklist.</h3><p>Complete a sample intake and test the document selection flow.</p><button data-tab="application">Open application ↗</button></article>
+<article class="step"><span class="num">03</span><h3>Keep staff in the loop.</h3><p>See a simulated review queue. DOE verification is a future integration, not a live connection.</p><button data-tab="admin">See staff view ↗</button></article>
+<article class="step"><span class="num">04</span><h3>Stay connected.</h3><p>Explore sample schedules, classroom resources and family updates.</p><button data-tab="overview">Explore family view ↗</button></article>
+</div>
+</section>
+
+<section class="section wrap" id="estimate">
+<div class="section-head"><div><div class="eyebrow">02 / Transparent planning</div><h2>Make the workload visible.</h2></div><p>Adjust the assumptions. This estimates administrative effort, not school performance, guaranteed savings or admissions fees.</p></div>
+<div class="estimate">
+<div class="calculator">
+<label for="families">Family enquiries per cycle <output id="familiesOutput">120</output></label>
+<input id="families" type="range" min="10" max="500" step="10" value="120">
+<div class="calc-fields">
+<div class="field"><label for="beforeMinutes">Manual minutes / enquiry</label><input id="beforeMinutes" type="number" min="0" max="120" value="20"></div>
+<div class="field"><label for="afterMinutes">Portal minutes / enquiry</label><input id="afterMinutes" type="number" min="0" max="120" value="8"></div>
+</div>
+<div class="metric"><output id="hoursSaved">24</output> <small>hours potentially freed</small></div>
+<p class="subtle" style="margin:12px 0 0">Illustrative assumptions: enquiry volume × minutes reduced ÷ 60. Change the inputs to reflect a real workflow.</p>
+</div>
+<div>
+<table><caption style="text-align:left;font-weight:700;margin-bottom:10px;color:var(--ink)">Price & implementation planning</caption><thead><tr><th>Item</th><th>Planning basis</th></tr></thead><tbody>
+<tr><td>Private interactive concept</td><td>No payment in this demo</td></tr>
+<tr><td>Production portal & staff tools</td><td>Scope and quote required</td></tr>
+<tr><td>SSO, NYCDOE data & security review</td><td>Approval and integration scoping</td></tr>
+<tr><td>Hosting, support & maintenance</td><td>To be agreed</td></tr>
+</tbody></table>
+<div class="field" style="margin-top:18px"><label for="hourly">Assumed staff cost per hour (USD)</label><input id="hourly" type="number" min="0" max="1000" value="30"></div>
+<div class="list-row"><strong>Illustrative staff-time value</strong><strong id="costValue">$720 / cycle</strong></div>
+<div class="price-note">This is a service planning estimate. It is not a school fee, a vendor quote or a claim about Lower Lab’s staffing costs.</div>
+</div>
+</div>
+</section>
+
+<section class="section portal-section" id="portal">
+<div class="wrap">
+<div class="section-head"><div><div class="eyebrow">03 / Click inside the concept</div><h2>A school day.<br>One shared starting point.</h2></div><p>No account needed. Every student, record, date and classroom message below is sample data. Nothing connects to school systems.</p></div>
+<div class="portal">
+<aside class="sidebar">
+<h3>Lower Lab Family Hub</h3><p>PS 77 · Parent & staff sandbox</p>
+<div class="side-tabs" role="tablist" aria-label="Portal screens">
+<button role="tab" id="tab-overview" aria-selected="true" aria-controls="panel-overview" data-panel="overview">Overview</button>
+<button role="tab" id="tab-application" aria-selected="false" aria-controls="panel-application" data-panel="application">Admissions checklist</button>
+<button role="tab" id="tab-schedule" aria-selected="false" aria-controls="panel-schedule" data-panel="schedule">School day</button>
+<button role="tab" id="tab-resources" aria-selected="false" aria-controls="panel-resources" data-panel="resources">Classroom & messages</button>
+<button role="tab" id="tab-admin" aria-selected="false" aria-controls="panel-admin" data-panel="admin">Staff review</button>
+</div>
+<div class="side-foot">Prototype session<br>No real sign-in or student data.<br><button class="btn light small" id="resetDemo" style="margin-top:12px">Reset sample activity</button></div>
+</aside>
+<div class="workspace">
+<div class="workspace-top"><strong id="screenTitle">Family overview</strong><span class="pill sample">SAMPLE DATA · NOT CONNECTED</span></div>
+<div class="panel" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview">
+<h3>A little more clarity, every day.</h3><p class="panel-intro">Sample family: River Family · Sample learner: Alex · Grade 2</p>
+<div class="dashboard-grid">
+<div class="photo-card"><img src="img/stock-9.jpg" alt="Illustrative stock photograph of an open book in a library" loading="lazy" width="600" height="350"><div class="card-body"><h4>Classroom, within reach.</h4><p>Reading resources, daily plans and updates belong together.</p><button class="btn small light" data-tab="resources" style="margin-top:14px">View sample classroom ↗</button></div></div>
+<div>
+<div class="status-card"><strong>Your sample application</strong><p id="overviewStatus">Not started. Explore the guided admissions checklist.</p><button class="btn small" data-tab="application">Open checklist</button></div>
+<div class="list-row"><span>Next meeting request<small id="meetingSummary">No sample request selected</small></span><a href="#booking">Choose a date ↗</a></div>
+<div class="list-row"><span>Student information<small>Schedule, attendance and report preview</small></span><button class="btn light small" data-tab="schedule">View</button></div>
+</div>
+</div>
+</div>
+<div class="panel" id="panel-application" role="tabpanel" aria-labelledby="tab-application" hidden>
+<h3>Your next step, clearly laid out.</h3><p class="panel-intro">Sample school intake—not an official NYCDOE application. Use fictional details only. Do not select actual student documents.</p>
+<form id="applicationForm">
+<div class="form-grid">
+<div class="field"><label for="guardian">Sample parent / guardian name</label><input id="guardian" required maxlength="80" value="River Family" autocomplete="off"></div>
+<div class="field"><label for="student">Sample learner name</label><input id="student" required maxlength="80" value="Alex" autocomplete="off"></div>
+<div class="field"><label for="grade">Grade of interest</label><select id="grade"><option>Kindergarten</option><option>Grade 1</option><option selected>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option></select></div>
+<div class="field"><label for="sampleEmail">Sample contact email</label><input type="email" id="sampleEmail" value="family@example.com" required autocomplete="off"></div>
+</div>
+<label class="drop" id="dropZone"><strong>Document locker · local selection preview</strong><br>Select fictional files to test the checklist. Files are never uploaded or read; only their names appear during this session.<input type="file" id="documents" multiple accept=".pdf,.png,.jpg,.jpeg"><span id="fileList" style="display:block;margin-top:9px;color:var(--muted)">No files selected. Document requirements must be confirmed with the school.</span></label>
+<label style="display:flex;gap:9px;font-size:12px;font-weight:600;margin-bottom:17px;color:var(--ink)"><input type="checkbox" required> I am using fictional information and understand this is not an admissions application.</label>
+<button class="btn" type="submit">Save sample for staff review ↗</button>
+<div id="applicationFeedback" class="feedback" role="status"></div>
+</form>
+</div>
+<div class="panel" id="panel-schedule" role="tabpanel" aria-labelledby="tab-schedule" hidden>
+<h3>Alex’s school day.</h3><p class="panel-intro">Grade 2 · Entirely fictional timetable and learning records.</p>
+<div class="toolbar"><button class="btn small" id="daySchedule">Daily schedule</button><button class="btn small light" id="reportToggle">Report & attendance</button></div>
+<div id="scheduleContent">
+<div class="list-row"><span>Reading & writing<small>Sample classroom activity</small></span><strong>9:00 AM</strong></div>
+<div class="list-row"><span>Mathematics<small>Sample classroom activity</small></span><strong>10:00 AM</strong></div>
+<div class="list-row"><span>Lunch & movement<small>Sample schedule only</small></span><strong>11:30 AM</strong></div>
+<div class="list-row"><span>Science exploration<small>Sample classroom activity</small></span><strong>1:00 PM</strong></div>
+</div>
+<div id="reportContent" hidden><div class="status-card"><strong>Sample attendance: present</strong><p>Fictional daily record. No school attendance system is connected.</p></div><table><thead><tr><th>Learning area</th><th>Sample progress</th></tr></thead><tbody><tr><td>Reading</td><td>Developing confidence</td></tr><tr><td>Mathematics</td><td>Exploring new strategies</td></tr><tr><td>Science</td><td>Asking thoughtful questions</td></tr></tbody></table><p class="subtle" style="margin-top:15px">Demonstration language only. This is not PS 77’s reporting scale or an official report card.</p></div>
+</div>
+<div class="panel" id="panel-resources" role="tabpanel" aria-labelledby="tab-resources" hidden>
+<h3>Keep the conversation together.</h3><p class="panel-intro">Fictional classroom resources and a local-only message preview.</p>
+<div class="resource"><img src="img/stock-8.jpg" alt="Illustrative stock photograph of library bookshelves" loading="lazy" width="200" height="160"><div><h4>Sample class post · Reading together</h4><p>Choose a book and talk about a favourite moment.</p><button class="btn light small" id="readingPrompt" style="margin-top:8px">Open reading prompts</button></div></div>
+<div id="readingDetails" class="status-card" hidden><strong>Three questions to try</strong><p>What happened first? Which character would you like to meet? What would you change about the ending?</p></div>
+<form id="messageForm"><div class="field"><label for="messageTopic">Message topic</label><select id="messageTopic"><option>Classroom question</option><option>Meeting request</option><option>Resource question</option></select></div><div class="field"><label for="teacherMessage">Sample message to the classroom team</label><textarea id="teacherMessage" required maxlength="1000" placeholder="Write a fictional classroom question."></textarea></div><button class="btn small">Preview message</button><div class="feedback" id="messageFeedback" role="status"></div></form>
+</div>
+<div class="panel" id="panel-admin" role="tabpanel" aria-labelledby="tab-admin" hidden>
+<h3>A clearer review queue.</h3><p class="panel-intro">Staff sandbox · Fictional records only. Status changes update the demo in this page.</p>
+<div class="admin-grid"><div class="admin-stat"><strong id="queueCount">3</strong><span>Sample records</span></div><div class="admin-stat"><strong id="reviewCount">2</strong><span>Awaiting review</span></div><div class="admin-stat"><strong id="tourCount">0</strong><span>Meeting requests</span></div></div>
+<div class="toolbar"><input id="recordSearch" aria-label="Search sample applications" placeholder="Find a sample learner"><select id="statusFilter" aria-label="Filter application status"><option value="all">All statuses</option><option value="Awaiting review">Awaiting review</option><option value="Reviewed">Reviewed</option></select><button class="btn small light" id="exportRecords">Export sample CSV</button></div>
+<div class="table-scroll"><table><thead><tr><th>Sample learner</th><th>Grade</th><th>Status</th><th>Action</th></tr></thead><tbody id="adminRecords"></tbody></table></div>
+<div class="status-card" style="margin-top:18px"><strong>NYCDOE connection: not configured</strong><p>Production would require authorised data access, identity verification, role-based permissions and a school-approved privacy and security review. No SSO or DOE verification is simulated as successful.</p></div>
+</div>
+</div>
+</div>
+<p class="subtle" style="margin:16px 0 0">Session-only sandbox. Refreshing clears changes. No passwords, student records or document contents are collected.</p>
+</div>
+</section>
+
+<section class="section wrap" id="assistant">
+<div class="section-head"><div><div class="eyebrow">04 / Questions & next steps</div><h2>A helpful first stop.<br>A human when it matters.</h2></div><p>The assistant uses scripted replies based on the supplied school facts. It cannot determine eligibility or reserve a real appointment.</p></div>
+<div class="chatbooking">
+<div class="widget">
+<div class="widget-head"><h3>Lower Lab admissions assistant</h3><span class="pill sample">SCRIPTED DEMO</span></div>
+<div class="chatlog" id="chatlog" role="log" aria-live="polite" aria-label="Assistant conversation"><div class="bubble">Hello! I can help with school information, the sample checklist or a meeting request. Please do not share personal student information.</div></div>
+<div class="prompts"><button data-question="Who can apply?">Admissions</button><button data-question="What documents do I need?">Documents</button><button data-question="Can I book a tour?">Tour request</button><button data-question="How do I contact the school?">Contact staff</button></div>
+<form class="chat-form" id="chatForm"><input id="chatInput" aria-label="Your question" required maxlength="350" placeholder="Ask about the school…"><button class="btn small" type="submit">Send ↗</button></form>
+</div>
+<div class="widget" id="booking">
+<div class="widget-head"><h3>Try a tour or meeting request</h3><span class="pill sample">SAMPLE AVAILABILITY</span></div>
+<div class="calendar-body">
+<div class="month"><button id="prevMonth" aria-label="Previous month">‹</button><strong id="monthLabel"></strong><button id="nextMonth" aria-label="Next month">›</button></div>
+<div class="calendar" id="calendar" aria-label="Sample appointment dates"></div>
+<div id="slots" class="slots"></div>
+<p id="selectedDate" class="subtle">Choose a highlighted weekday. All dates are fictional availability.</p>
+<form id="bookingForm">
+<div class="booking-fields"><div class="field"><label for="meetingType">Request type</label><select id="meetingType"><option>School tour enquiry</option><option>Admissions question</option><option>Parent meeting</option></select></div><div class="field"><label for="bookingEmail">Sample email</label><input id="bookingEmail" type="email" required value="family@example.com" autocomplete="off"></div></div>
+<button class="btn small" type="submit">Preview meeting request ↗</button>
+<p class="subtle" style="margin:10px 0 0">No real availability is shown. No appointment is reserved.</p>
+<div class="feedback" id="bookingFeedback" role="status"></div>
+</form>
+</div>
+</div>
+</div>
+</section>
+<section class="wrap closing">
+<div><div class="eyebrow">The real school, the right channel</div><h2>Questions for Lower Lab?</h2><p>The Lower Lab School | PS 77 · 1700 3rd Ave. New York, NY 10128</p></div>
+<div class="actions" style="margin:0"><a class="btn" href="tel:+12124272798">Call 212.427.2798</a><a class="btn light" href="https://lowerlab.org/" target="_blank" rel="noopener">Official school website ↗</a></div>
+</section>
+</main>
+<footer class="footer">
+<div class="wrap footer-inner">
+<div><strong>Concept by LeadSky</strong><br>Independent, private product proposal. No school endorsement.<br><a href="https://www.google.com/maps/search/?api=1&query=1700+3rd+Ave+New+York+NY+10128" target="_blank" rel="noopener">View school address on map ↗</a></div>
+<div class="credits">School logo: <a href="https://lowerlab.org/wp-content/uploads/2024/09/cropped-untitled-design-2.png" target="_blank" rel="noopener">Lower Lab website</a>; permission for public reuse must be confirmed.<br>Illustrative stock photography, not Lower Lab pupils or premises. Pixabay Content License:
+<a href="https://pixabay.com/photos/merry-christmas-kids-girls-writing-1093758/" target="_blank" rel="noopener">klimkin</a>,
+<a href="https://pixabay.com/photos/education-student-boy-classroom-3670453/" target="_blank" rel="noopener">JhonDL</a>,
+<a href="https://pixabay.com/photos/open-book-library-education-read-1428428/" target="_blank" rel="noopener">lil_foot_</a>,
+<a href="https://pixabay.com/photos/library-books-bookshelves-bookcases-1147815/" target="_blank" rel="noopener">ElasticComputeFarm</a>.
+<br>Production integrations, accessibility testing and school approval remain required.</div>
+</div>
+</footer>
+<div class="bottom-bar"><a class="btn light" href="tel:+12124272798">Call school</a><a class="btn" href="#assistant">Ask / request a tour ↗</a></div>
+<div id="toast" class="toast" role="status" hidden></div>
+<dialog id="requestDialog" aria-labelledby="dialogTitle"><span class="pill sample">LOCAL PREVIEW ONLY</span><h2 id="dialogTitle" style="margin-top:18px">Your request preview.</h2><p id="requestDetails"></p><p><strong>This is a demo form, nothing was sent.</strong> No booking is confirmed. Contact the school for actual arrangements.</p><button class="btn" id="closeDialog">Back to the demo</button></dialog>
+<script>
+'use strict';
+const $=s=>document.querySelector(s);
+const $$=s=>Array.from(document.querySelectorAll(s));
+const titles={overview:'Family overview',application:'Admissions checklist',schedule:'School day & records',resources:'Classroom & messages',admin:'Staff review queue'};
+let records=[
+{name:'Alex · sample',grade:'Grade 2',status:'Awaiting review'},
+{name:'Jamie · sample',grade:'Kindergarten',status:'Awaiting review'},
+{name:'Sam · sample',grade:'Grade 4',status:'Reviewed'}
+];
+let applicationSaved=false,requestCount=0,toastTimer;
+function toast(text){$('#toast').textContent=text;$('#toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').hidden=true,4500)}
+$('#menuButton').addEventListener('click',()=>{
+const open=$('#navigation').classList.toggle('open');$('#menuButton').setAttribute('aria-expanded',open);$('#menuButton').setAttribute('aria-label',open?'Close navigation':'Open navigation');$('#menuButton').textContent=open?'×':'☰';
+});
+$$('#navigation a').forEach(a=>a.addEventListener('click',()=>{$('#navigation').classList.remove('open');$('#menuButton').setAttribute('aria-expanded','false');$('#menuButton').textContent='☰'}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('#navigation').classList.remove('open');$('#menuButton').setAttribute('aria-expanded','false');$('#menuButton').textContent='☰'}});
+$('#comparisonRange').addEventListener('input',e=>{$('#comparison').style.setProperty('--split',e.target.value+'%');e.target.setAttribute('aria-valuetext',e.target.value+' percent separate steps')});
+function openTab(name,scroll=false){
+$$('[data-panel]').forEach(b=>{const active=b.dataset.panel===name;b.setAttribute('aria-selected',active);b.tabIndex=active?0:-1});
+$$('.panel').forEach(p=>p.hidden=p.id!=='panel-'+name);
+$('#screenTitle').textContent=titles[name];
+if(scroll)$('#portal').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+}
+$$('[data-panel]').forEach((b,i)=>{b.addEventListener('click',()=>openTab(b.dataset.panel));b.addEventListener('keydown',e=>{const tabs=$$('[data-panel]');let n;if(e.key==='ArrowRight'||e.key==='ArrowDown')n=(i+1)%tabs.length;if(e.key==='ArrowLeft'||e.key==='ArrowUp')n=(i+tabs.length-1)%tabs.length;if(e.key==='Home')n=0;if(e.key==='End')n=tabs.length-1;if(n!==undefined){e.preventDefault();tabs[n].focus();openTab(tabs[n].dataset.panel)}})});
+$$('[data-tab]').forEach(b=>b.addEventListener('click',()=>openTab(b.dataset.tab,true)));
+$$('[data-open]').forEach(b=>b.addEventListener('click',()=>openTab(b.dataset.open)));
+$$('[data-scroll]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.scroll).scrollIntoView()));
+openTab('overview');
+function updateEstimate(){
+const n=Number($('#families').value),before=Math.max(0,Number($('#beforeMinutes').value)||0),after=Math.max(0,Number($('#afterMinutes').value)||0),rate=Math.max(0,Number($('#hourly').value)||0);
+const hours=Math.max(0,n*(before-after)/60);
+$('#familiesOutput').value=n;$('#hoursSaved').value=hours.toLocaleString('en-US',{maximumFractionDigits:1});
+$('#costValue').textContent=hours*rate===0?'$0 / cycle':(hours*rate).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0})+' / cycle';
+}
+['families','beforeMinutes','afterMinutes','hourly'].forEach(id=>$('#'+id).addEventListener('input',updateEstimate));
+updateEstimate();
+let files=[];
+function showFiles(list){files=Array.from(list);$('#fileList').textContent=files.length?files.map(f=>f.name+' ('+Math.ceil(f.size/1024)+' KB)').join(' · '):'No files selected. Document requirements must be confirmed with the school.'}
+$('#documents').addEventListener('change',e=>showFiles(e.target.files));
+$('#dropZone').addEventListener('dragover',e=>{e.preventDefault();$('#dropZone').style.borderColor='#1e40af'});
+$('#dropZone').addEventListener('dragleave',()=>$('#dropZone').style.borderColor='');
+$('#dropZone').addEventListener('drop',e=>{e.preventDefault();$('#dropZone').style.borderColor='';showFiles(e.dataTransfer.files)});
+$('#applicationForm').addEventListener('submit',e=>{
+e.preventDefault();
+const item={name:$('#student').value.trim()+' · sample',grade:$('#grade').value,status:'Awaiting review',local:true};
+records=records.filter(r=>!r.local);records.unshift(item);applicationSaved=true;
+$('#applicationFeedback').textContent='This is a demo form, nothing was sent. Your sample intake is now visible in Staff review. '+files.length+' file name(s) listed locally; no documents uploaded.';
+$('#overviewStatus').textContent='Sample intake saved locally · Awaiting staff review.';
+renderRecords();
+});
+function renderRecords(){
+$('#queueCount').textContent=records.length;$('#reviewCount').textContent=records.filter(r=>r.status==='Awaiting review').length;$('#tourCount').textContent=requestCount;
+const term=$('#recordSearch').value.toLowerCase(),filter=$('#statusFilter').value,body=$('#adminRecords');body.replaceChildren();
+records.forEach((r,index)=>{
+if(!r.name.toLowerCase().includes(term)||(filter!=='all'&&r.status!==filter))return;
+const tr=document.createElement('tr');
+[r.name,r.grade,r.status].forEach(t=>{const td=document.createElement('td');td.textContent=t;tr.append(td)});
+const cell=document.createElement('td'),button=document.createElement('button');button.className='btn small light';button.textContent=r.status==='Reviewed'?'Reopen':'Mark reviewed';button.setAttribute('aria-label',button.textContent+' '+r.name);
+button.addEventListener('click',()=>{r.status=r.status==='Reviewed'?'Awaiting review':'Reviewed';if(r.local)$('#overviewStatus').textContent='Sample intake · '+r.status+'.';renderRecords();toast('Sample record updated locally. No school record changed.')});cell.append(button);tr.append(cell);body.append(tr);
+});
+if(!body.children.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=4;td.textContent='No matching sample records. Try another search or status.';tr.append(td);body.append(tr)}
+}
+$('#recordSearch').addEventListener('input',renderRecords);$('#statusFilter').addEventListener('change',renderRecords);
+$('#exportRecords').addEventListener('click',()=>{
+const quote=x=>'"'+String(x).replace(/"/g,'""').replace(/^[=+@\t\r-]/,"'")+'"';
+const csv='Sample learner,Grade,Sample status\n'+records.map(r=>[r.name,r.grade,r.status].map(quote).join(',')).join('\n');
+const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8;'}));const a=document.createElement('a');a.href=url;a.download='lower-lab-fictional-demo-records.csv';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Fictional sample records exported. No school data included.');
+});
+$('#reportToggle').addEventListener('click',()=>{$('#scheduleContent').hidden=true;$('#reportContent').hidden=false;$('#reportToggle').classList.remove('light');$('#daySchedule').classList.add('light')});
+$('#daySchedule').addEventListener('click',()=>{$('#scheduleContent').hidden=false;$('#reportContent').hidden=true;$('#daySchedule').classList.remove('light');$('#reportToggle').classList.add('light')});
+$('#readingPrompt').setAttribute('aria-expanded','false');
+$('#readingPrompt').addEventListener('click',()=>{const open=$('#readingDetails').hidden;$('#readingDetails').hidden=!open;$('#readingPrompt').setAttribute('aria-expanded',open);$('#readingPrompt').textContent=open?'Close reading prompts':'Open reading prompts'});
+$('#messageForm').addEventListener('submit',e=>{e.preventDefault();$('#messageFeedback').textContent='This is a demo form, nothing was sent. Local preview — '+$('#messageTopic').value+': '+$('#teacherMessage').value});
+function addBubble(text,type){const b=document.createElement('div');b.className='bubble'+(type?' user':'');b.textContent=text;$('#chatlog').append(b);$('#chatlog').scrollTop=$('#chatlog').scrollHeight}
+function answer(question){
+const q=question.toLowerCase();
+if(/document|birth|residen|upload/.test(q))return 'The demo document locker lets you select fictional files locally. We do not have a verified current admissions document list. Confirm requirements through the official school website or office. Nothing in this demo is uploaded.';
+if(/tour|book|meeting|visit|appointment/.test(q))return 'Use the sample calendar beside this chat to preview a tour enquiry or parent meeting request. These are fictional slots; no appointment is reserved. For actual arrangements, call the school office at 212.427.2798.';
+if(/eligib|apply|admission|gifted|district|test/.test(q))return 'Lower Lab (PS 77) is an NYCDOE District 2 Gifted & Talented public elementary school serving Kindergarten through Fifth Grade. This demo cannot confirm eligibility, deadlines, testing or placement. Check the official Admissions section at lowerlab.org and current NYCDOE guidance. The portal checklist here is a concept, not an official application.';
+if(/where|address|location/.test(q))return 'The Lower Lab School | PS 77 is at 1700 3rd Ave., New York, NY 10128. The school office number is 212.427.2798.';
+if(/fee|price|cost|pay/.test(q))return 'Lower Lab is a public elementary school. This concept does not collect fees or payments. The planning estimator models administrative time only; it is not a school price list or a production quote.';
+if(/contact|human|staff|phone|email/.test(q))return 'For verified school information, call the office at 212.427.2798 or visit lowerlab.org. This chat cannot forward messages to staff. Do not share confidential student information here.';
+if(/grade|schedule|report|parent|portal/.test(q))return 'Open the Family Portal to explore a fictional Grade 2 schedule, sample learning records, classroom resources and a local message preview. No student information system is connected.';
+if(/hours|open|deadline/.test(q))return 'Current office hours and admissions deadlines are not verified in the supplied information. Please check lowerlab.org or call 212.427.2798 rather than rely on a guessed date.';
+return 'I can help with school location, admissions guidance, the sample document checklist and meeting requests. I use scripted replies, not live AI or school records. For anything specific to your child, contact the school office at 212.427.2798.';
+}
+function ask(q){if(!q.trim())return;addBubble(q,true);addBubble(answer(q),false)}
+$('#chatForm').addEventListener('submit',e=>{e.preventDefault();ask($('#chatInput').value);$('#chatInput').value=''});
+$$('[data-question]').forEach(b=>b.addEventListener('click',()=>ask(b.dataset.question)));
+let viewDate=new Date(2026,10,1),chosenDate=null,chosenTime=null;
+function renderCalendar(){
+$('#monthLabel').textContent=viewDate.toLocaleDateString('en-US',{month:'long',year:'numeric'});
+const cal=$('#calendar');cal.replaceChildren();
+['S','M','T','W','T','F','S'].forEach((d,i)=>{const span=document.createElement('span');span.textContent=d;span.setAttribute('aria-label',['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][i]);cal.append(span)});
+const first=new Date(viewDate.getFullYear(),viewDate.getMonth(),1).getDay(),count=new Date(viewDate.getFullYear(),viewDate.getMonth()+1,0).getDate();
+for(let i=0;i<first;i++){const s=document.createElement('span');s.setAttribute('aria-hidden','true');cal.append(s)}
+for(let d=1;d<=count;d++){
+const date=new Date(viewDate.getFullYear(),viewDate.getMonth(),d),b=document.createElement('button');b.textContent=d;
+b.disabled=date.getDay()===0||date.getDay()===6;b.setAttribute('aria-label',date.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})+' — sample availability');
+const selected=chosenDate&&date.toDateString()===chosenDate.toDateString();b.classList.toggle('selected',!!selected);b.setAttribute('aria-pressed',!!selected);
+b.addEventListener('click',()=>{chosenDate=date;chosenTime=null;renderCalendar();renderSlots();$('#selectedDate').textContent=date.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'})+' · Choose a sample time.'});cal.append(b);
+}
+}
+function renderSlots(){
+$('#slots').replaceChildren();if(!chosenDate)return;
+['9:00 AM','11:00 AM','2:00 PM'].forEach(t=>{const b=document.createElement('button');b.type='button';b.textContent=t;b.setAttribute('aria-pressed',t===chosenTime);b.classList.toggle('selected',t===chosenTime);b.addEventListener('click',()=>{chosenTime=t;renderSlots()});$('#slots').append(b)});
+}
+$('#prevMonth').addEventListener('click',()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()-1,1);renderCalendar()});
+$('#nextMonth').addEventListener('click',()=>{viewDate=new Date(viewDate.getFullYear(),viewDate.getMonth()+1,1);renderCalendar()});
+$('#bookingForm').addEventListener('submit',e=>{
+e.preventDefault();if(!chosenDate||!chosenTime){$('#bookingFeedback').textContent='Choose a sample date and time first. Nothing was sent.';return}
+const detail=$('#meetingType').value+' · '+chosenDate.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})+' · '+chosenTime+' (New York time).';
+$('#requestDetails').textContent=detail;$('#requestDialog').showModal();$('#bookingFeedback').textContent='This is a demo form, nothing was sent. Request preview saved to this session only.';$('#meetingSummary').textContent=detail;requestCount++;renderRecords();
+});
+$('#closeDialog').addEventListener('click',()=>$('#requestDialog').close());
+$('#requestDialog').addEventListener('click',e=>{if(e.target===$('#requestDialog')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close()}});
+$('#resetDemo').addEventListener('click',()=>{
+records=[{name:'Alex · sample',grade:'Grade 2',status:'Awaiting review'},{name:'Jamie · sample',grade:'Kindergarten',status:'Awaiting review'},{name:'Sam · sample',grade:'Grade 4',status:'Reviewed'}];requestCount=0;applicationSaved=false;files=[];$('#applicationForm').reset();$('#documents').value='';showFiles([]);$('#messageForm').reset();$('#bookingForm').reset();['applicationFeedback','messageFeedback','bookingFeedback'].forEach(id=>$('#'+id).textContent='');$('#overviewStatus').textContent='Not started. Explore the guided admissions checklist.';$('#meetingSummary').textContent='No sample request selected';$('#recordSearch').value='';$('#statusFilter').value='all';chosenDate=null;chosenTime=null;renderCalendar();renderSlots();$('#selectedDate').textContent='Choose a highlighted weekday. All dates are fictional availability.';renderRecords();openTab('overview');toast('Sample activity reset.');
+});
+renderCalendar();renderRecords();
+</script>
+</body>
+</html>
