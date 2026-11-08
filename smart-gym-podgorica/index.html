@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F3F7FC">
+<title>Smart Gym · Podgorica | Independent Website Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F3F7FC;--blue:#173FC4;--ink:#14213D;--ice:#DDEBFA;--white:#fff;--line:#cbd5e5;--header:72px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:94px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Manrope,sans-serif;font-size:15px;line-height:1.65}
+body.locked{overflow:hidden}
+button,input,textarea{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+a{color:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible,[tabindex]:focus-visible{outline:3px solid #ed8b23;outline-offset:5px}
+button{color:inherit}
+.banner{padding:9px 20px;text-align:center;background:var(--ice);font-size:10px;line-height:1.5;font-weight:600}
+.header{height:var(--header);padding:0 5%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;background:rgba(243,247,252,.97);backdrop-filter:blur(14px);z-index:30;border-bottom:1px solid var(--line)}
+.brand{text-decoration:none;font-family:"Barlow Condensed",sans-serif;font-size:29px;font-weight:800;letter-spacing:-.8px;white-space:nowrap}
+.brand span{color:var(--blue)}
+.header-actions{display:flex;align-items:center;gap:22px}
+.header-link{font-size:12px;font-weight:800;text-decoration:none}
+.menu-button{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:transparent;display:grid;place-content:center;gap:5px}
+.menu-button span{display:block;width:17px;height:2px;background:var(--ink)}
+.menu{position:fixed;inset:0;background:var(--paper);z-index:70;padding:28px 6%;display:none;overflow:auto}
+.menu.open{display:block}
+.menu-top{display:flex;justify-content:space-between;align-items:center}
+.close{background:transparent;border:1px solid var(--line);border-radius:50%;width:44px;height:44px;font-size:25px;line-height:1}
+.menu nav{display:grid;margin:60px 0 30px}
+.menu nav a{font-family:"Barlow Condensed",sans-serif;font-size:clamp(40px,7vw,80px);text-decoration:none;border-bottom:1px solid var(--line);padding:12px 0}
+.label{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:800}
+.hero{padding:54px 5% 38px;position:relative}
+.hero-top{display:flex;justify-content:space-between;align-items:center;gap:20px;color:var(--blue)}
+.hero-top .location{display:flex;align-items:center;gap:8px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--blue)}
+.hero h1{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:clamp(92px,16.5vw,250px);line-height:.86;letter-spacing:-.025em;color:var(--blue);margin:30px 0}
+.hero-bottom{display:flex;align-items:center;justify-content:space-between;gap:30px}
+.hero-description{font-size:clamp(17px,2vw,24px);line-height:1.45;margin:0;max-width:440px}
+.button{min-height:50px;padding:14px 23px;border:1px solid var(--blue);background:var(--blue);color:white;text-decoration:none;display:inline-flex;justify-content:center;align-items:center;gap:26px;font-size:12px;font-weight:800;border-radius:3px}
+.button .arrow{font-size:22px;line-height:1}
+.button:hover{background:#102e96}
+.hero-note{font-size:10px;color:#4c5b73;margin:25px 0 0}
+.showcase{padding-bottom:65px;position:relative}
+.index{position:sticky;top:var(--header);z-index:20;background:var(--paper);border-block:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:12px 5%;gap:18px}
+.index-label{font-size:10px;font-weight:800;letter-spacing:1px;white-space:nowrap}
+.index-tabs{display:flex;gap:7px}
+.index-tabs button{min-height:44px;padding:8px 17px;border:1px solid transparent;background:transparent;font-size:11px;font-weight:700;white-space:nowrap;border-radius:30px}
+.index-tabs button[aria-current=true]{background:var(--blue);color:white}
+.gallery{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px 5% 12px;scroll-padding-left:5vw;scrollbar-width:thin;scrollbar-color:var(--blue) var(--ice);overscroll-behavior-x:contain}
+.slide{flex:0 0 78%;scroll-snap-align:start;min-width:0}
+.photo-wrap{position:relative;overflow:hidden;background:var(--ice);aspect-ratio:1.95}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.slide:hover .photo-wrap img{transform:scale(1.025)}
+.photo-number{position:absolute;left:22px;top:20px;background:var(--paper);padding:5px 12px;font-size:11px;font-weight:800;letter-spacing:1px}
+.photo-credit{position:absolute;bottom:16px;left:18px;background:rgba(0,0,0,.7);color:white;padding:5px 10px;font-size:9px;letter-spacing:.5px}
+.slide-caption{width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:18px 0 20px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.caption-title{font-family:"Barlow Condensed",sans-serif;font-size:clamp(28px,3vw,46px);font-weight:600;line-height:1.1}
+.caption-sub{display:block;font-family:Manrope,sans-serif;font-size:11px;font-weight:500;margin-top:8px;color:#4c5b73}
+.circle-arrow{width:46px;height:46px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;font-size:23px;flex-shrink:0;transition:background .2s,color .2s}
+.slide-caption:hover .circle-arrow{background:var(--blue);color:white;border-color:var(--blue)}
+.gallery-bottom{display:flex;justify-content:space-between;align-items:center;padding:18px 5% 0;gap:25px}
+.gallery-bottom p{font-size:11px;margin:0;color:#4c5b73}
+.gallery-controls{display:flex;align-items:center;gap:16px;white-space:nowrap}
+.gallery-controls button{width:44px;height:44px;border:1px solid var(--line);background:transparent;border-radius:50%;font-size:20px}
+.gallery-controls button:disabled{opacity:.35;cursor:default}
+.counter{font-size:10px;letter-spacing:1px;font-weight:800}
+.section{padding:70px 5%;border-top:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:1fr 1.35fr;gap:40px;align-items:start;margin-bottom:35px}
+h2{font-family:"Barlow Condensed",sans-serif;font-weight:600;font-size:clamp(45px,6vw,82px);line-height:.97;letter-spacing:-.5px;margin:12px 0 0}
+.section-head p{max-width:500px;margin:18px 0 0;color:#4c5b73;font-size:14px}
+.membership{background:white}
+.membership-inner{display:grid;grid-template-columns:.85fr 1.3fr;gap:7%}
+.membership-image{width:100%;height:100%;min-height:340px;max-height:490px;object-fit:cover}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:24px 0}
+caption{text-align:left;font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:800;padding-bottom:15px}
+th{text-align:left;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#52617a;padding:14px 0;border-top:1px solid var(--ink)}
+td{padding:18px 0;border-top:1px solid var(--line)}
+th:last-child,td:last-child{text-align:right;padding-left:20px}
+.small{font-size:11px;color:#52617a}
+.text-link{font-size:12px;font-weight:800;text-underline-offset:5px;display:inline-block;padding:10px 0;color:var(--blue)}
+.visit-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:8%}
+.visit-photo{width:100%;height:100%;min-height:420px;object-fit:cover}
+.visit-details{padding:8px 0}
+.detail-row{padding:21px 0;border-bottom:1px solid var(--line)}
+.detail-row .label{color:#52617a;display:block;margin-bottom:8px}
+.detail-row p{margin:0;font-size:17px;line-height:1.55}
+.detail-row a{text-underline-offset:5px}
+.visit-disclaimer{margin:16px 0 0;font-size:11px;color:#52617a}
+.enquiry{background:var(--blue);color:white;display:grid;grid-template-columns:1.2fr 1fr;gap:8%;align-items:center;padding-block:75px}
+.enquiry h2{font-size:clamp(60px,8vw,115px)}
+.enquiry p{max-width:390px;color:#e0e9ff;font-size:14px;margin:20px 0 28px}
+.enquiry .button{background:white;color:var(--blue);border-color:white}
+.enquiry-image{aspect-ratio:1.1;overflow:hidden}
+.enquiry-image img{width:100%;height:100%;object-fit:cover;display:block}
+.footer{padding:35px 5% 90px}
+.footer-top{display:flex;justify-content:space-between;gap:30px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:28px}
+.footer-top p{font-size:11px;max-width:390px;margin:0}
+.footer-bottom{display:flex;justify-content:space-between;gap:25px;font-size:10px;padding-top:22px}
+.credits summary{cursor:pointer;padding:7px 0;min-height:36px}
+.credits ul{padding-left:16px;max-width:500px}
+.credits li{margin-bottom:6px}
+.mobile-contact{display:none}
+dialog{border:0;margin:0 0 0 auto;padding:0;width:min(560px,100%);height:100dvh;max-height:100dvh;max-width:100%;background:var(--paper);color:var(--ink);overflow-y:auto;overscroll-behavior:contain}
+dialog::backdrop{background:rgba(11,24,49,.55);backdrop-filter:blur(4px)}
+dialog[open]{animation:drawer-in .3s ease-out}
+@keyframes drawer-in{from{transform:translateX(100%)}to{transform:translateX(0)}}
+.drawer-top{display:flex;align-items:center;justify-content:space-between;padding:18px 25px;position:sticky;top:0;background:var(--paper);z-index:2;border-bottom:1px solid var(--line)}
+.drawer-image{width:100%;height:190px;object-fit:cover;display:block}
+.drawer-body{padding:25px}
+.drawer-body h2{font-size:50px;margin:8px 0 16px}
+.drawer-body p{font-size:13px}
+.drawer-body .small{font-size:10px}
+form{margin-top:25px}
+label.field{display:block;font-size:11px;font-weight:800;margin:17px 0 7px}
+input,textarea{width:100%;border:1px solid #9baac2;background:white;border-radius:2px;padding:12px;color:var(--ink);font-size:14px}
+textarea{resize:vertical;min-height:100px}
+.form-notice{padding:12px;background:var(--ice);font-size:11px!important}
+form .button{width:100%;margin-top:18px}
+.result{margin-top:22px;padding:18px;border:1px solid var(--blue);background:white}
+.result[hidden]{display:none}
+.result p{margin-top:0}
+.result textarea{font-size:12px;min-height:170px}
+.result button{margin-top:12px}
+.result .email-link{display:block;font-weight:800;margin-top:15px;text-underline-offset:4px;font-size:12px}
+@media(min-width:1500px){.hero,.section,.header,.index,.footer{padding-left:max(5%,calc((100vw - 1440px)/2));padding-right:max(5%,calc((100vw - 1440px)/2))}}
+@media(max-width:760px){
+:root{--header:64px}
+.banner{font-size:9px;padding:8px 16px}
+.header{padding-inline:20px}
+.brand{font-size:26px}
+.header-actions{gap:17px}
+.hero{padding:32px 20px 24px}
+.hero-top{font-size:9px;letter-spacing:1.3px}
+.hero-top .edition{display:none}
+.hero h1{font-size:clamp(88px,23vw,170px);margin:24px 0 20px;line-height:.9}
+.hero-bottom{display:block}
+.hero-description{font-size:18px;max-width:280px}
+.hero .button{margin-top:22px;min-height:48px}
+.hero-note{margin-top:18px;font-size:9px;max-width:310px}
+.index{padding:9px 20px;gap:8px}
+.index-label{display:none}
+.index-tabs{width:100%;justify-content:space-between;gap:2px}
+.index-tabs button{padding:8px 12px;font-size:10px}
+.gallery{gap:14px;padding:16px 20px 10px;scroll-padding-left:20px}
+.slide{flex-basis:88%}
+.photo-wrap{aspect-ratio:1.12}
+.photo-number{left:14px;top:14px}
+.photo-credit{left:12px;bottom:12px;font-size:8px}
+.slide-caption{padding:16px 0}
+.caption-title{font-size:31px}
+.caption-sub{font-size:10px;max-width:220px;line-height:1.5}
+.circle-arrow{width:40px;height:40px}
+.gallery-bottom{padding:15px 20px 0;align-items:flex-start;gap:12px}
+.gallery-bottom p{font-size:10px;max-width:180px}
+.gallery-controls{gap:8px}
+.gallery-controls button{width:44px;height:44px}
+.counter{font-size:9px}
+.showcase{padding-bottom:35px}
+.section{padding:40px 20px}
+.section-head{grid-template-columns:1fr;gap:0;margin-bottom:25px}
+h2{font-size:53px}
+.section-head p{font-size:13px}
+.membership-inner{display:flex;flex-direction:column-reverse;gap:25px}
+.membership-image{height:220px;min-height:0}
+.membership-inner h2{max-width:290px}
+table{font-size:12px}
+.visit-grid{grid-template-columns:1fr;gap:22px}
+.visit-photo{height:250px;min-height:0}
+.visit-details{padding:0}
+.detail-row{padding:17px 0}
+.detail-row p{font-size:15px}
+.enquiry{grid-template-columns:1fr;gap:30px;padding-block:43px}
+.enquiry h2{font-size:72px}
+.enquiry p{font-size:13px}
+.enquiry-image{aspect-ratio:1.5}
+.footer{padding:30px 20px 100px}
+.footer-top,.footer-bottom{display:block}
+.footer-top .brand{display:block;margin-bottom:15px}
+.footer-bottom>span{display:block;margin-bottom:12px}
+.mobile-contact{position:fixed;bottom:0;left:0;right:0;display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border-top:1px solid var(--line);padding:8px 12px calc(8px + env(safe-area-inset-bottom));gap:8px;z-index:35}
+.mobile-contact a,.mobile-contact button{height:44px;border:1px solid var(--blue);border-radius:3px;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--blue);color:white;text-decoration:none;font-size:11px;font-weight:800}
+.mobile-contact button{background:white;color:var(--blue)}
+dialog{width:100%}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.slide:hover .photo-wrap img{transform:none}}
+</style>
+</head>
+<body>
+<div class="banner">Independent website concept by LeadSky for Smart Gym. Not their official website.</div>
+<header class="header">
+<a class="brand" href="#top" aria-label="Smart Gym, top of page">SMART<span>GYM</span></a>
+<div class="header-actions">
+<a class="header-link" href="#explore">Explore ↗</a>
+<button class="menu-button" id="menuOpen" aria-label="Open navigation" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</div>
+</header>
+
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Site navigation" hidden>
+<div class="menu-top"><span class="brand">SMART<span>GYM</span></span><button class="close" id="menuClose" aria-label="Close navigation">×</button></div>
+<nav aria-label="Main navigation">
+<a href="#top">01 / Start here</a>
+<a href="#explore">02 / Explore</a>
+<a href="#membership">03 / Membership</a>
+<a href="#visit">04 / Plan your visit</a>
+<a href="#enquiry">05 / Get in touch</a>
+</nav>
+<p class="small">An independent concept for Smart Gym, Podgorica.</p>
+</div>
+
+<main id="top">
+<section class="hero" aria-labelledby="heroTitle">
+<div class="hero-top label"><span class="location"><span class="dot"></span> Podgorica, Montenegro</span><span class="edition">A little more movement.</span></div>
+<h1 id="heroTitle">SMART GYM</h1>
+<div class="hero-bottom">
+<p class="hero-description">Fitness centre in Podgorica.<br>Your next move starts here.</p>
+<a class="button" href="#explore">Explore the gym <span class="arrow" aria-hidden="true">↗</span></a>
+</div>
+<p class="hero-note">Independent concept. All training photographs are illustrative stock, not Smart Gym’s facilities or members.</p>
+</section>
+
+<section class="showcase" id="explore" aria-label="Explore training interests">
+<div class="index">
+<span class="index-label">EXPLORE /</span>
+<div class="index-tabs" aria-label="Training interest index">
+<button data-slide="0" aria-current="true">01 / Strength</button>
+<button data-slide="1" aria-current="false">02 / Free weights</button>
+<button data-slide="2" aria-current="false">03 / Your routine</button>
+</div>
+</div>
+<div class="gallery" id="gallery" tabindex="0" aria-label="Training inspiration gallery. Swipe or use arrow keys.">
+<article class="slide" aria-label="1 of 3: Strength">
+<div class="photo-wrap">
+<img src="img/stock-2.jpg" width="1500" height="1000" alt="Illustrative stock photograph of a woman training with dumbbells" fetchpriority="high">
+<span class="photo-number">01 / 03</span><span class="photo-credit">ILLUSTRATIVE TRAINING PHOTOGRAPHY</span>
+</div>
+<button class="slide-caption" data-topic="0" aria-haspopup="dialog">
+<span class="caption-title">Find your strength.<span class="caption-sub">Explore your training interests. Ask what’s available.</span></span><span class="circle-arrow" aria-hidden="true">↗</span>
+</button>
+</article>
+<article class="slide" aria-label="2 of 3: Free weights">
+<div class="photo-wrap">
+<img src="img/stock-5.jpg" width="1500" height="1000" alt="Illustrative stock photograph of a row of gym dumbbells" loading="lazy">
+<span class="photo-number">02 / 03</span><span class="photo-credit">ILLUSTRATIVE TRAINING PHOTOGRAPHY</span>
+</div>
+<button class="slide-caption" data-topic="1" aria-haspopup="dialog">
+<span class="caption-title">Make every rep count.<span class="caption-sub">Ask about equipment and training space.</span></span><span class="circle-arrow" aria-hidden="true">↗</span>
+</button>
+</article>
+<article class="slide" aria-label="3 of 3: Your routine">
+<div class="photo-wrap">
+<img src="img/stock-3.jpg" width="1500" height="1000" alt="Illustrative stock photograph of an athlete lifting a barbell" loading="lazy">
+<span class="photo-number">03 / 03</span><span class="photo-credit">ILLUSTRATIVE TRAINING PHOTOGRAPHY</span>
+</div>
+<button class="slide-caption" data-topic="2" aria-haspopup="dialog">
+<span class="caption-title">A routine that fits.<span class="caption-sub">Start with a question about joining.</span></span><span class="circle-arrow" aria-hidden="true">↗</span>
+</button>
+</article>
+</div>
+<div class="gallery-bottom">
+<p>Swipe to explore. Tap a caption to prepare an enquiry.<br>Training topics shown are interests, not confirmed services.</p>
+<div class="gallery-controls">
+<span class="counter" id="position" aria-live="polite" aria-atomic="true">01 / 03</span>
+<button id="previous" aria-label="Previous photograph" disabled>←</button>
+<button id="next" aria-label="Next photograph">→</button>
+</div>
+</div>
+</section>
+
+<section class="section membership" id="membership" aria-labelledby="membershipTitle">
+<div class="membership-inner">
+<img class="membership-image" src="img/stock-4.jpg" width="1000" height="1000" alt="Illustrative stock photograph of dumbbells arranged on a gym rack" loading="lazy">
+<div>
+<span class="label">01 / Membership</span>
+<h2 id="membershipTitle">First, find<br>your fit.</h2>
+<p>Ask Smart Gym for current membership options, prices and what’s included before you visit.</p>
+<table>
+<caption>Membership information</caption>
+<thead><tr><th scope="col">Your question</th><th scope="col">Next step</th></tr></thead>
+<tbody>
+<tr><td>Current membership options</td><td>Ask the gym</td></tr>
+<tr><td>Prices in EUR</td><td>Request current rates</td></tr>
+<tr><td>Access and inclusions</td><td>Confirm before joining</td></tr>
+</tbody>
+</table>
+<p class="small">Verified membership names and prices were not supplied for this concept.</p>
+<button class="button" data-topic="3" aria-haspopup="dialog">Ask about membership <span aria-hidden="true">↗</span></button>
+</div>
+</div>
+</section>
+
+<section class="section" id="visit" aria-labelledby="visitTitle">
+<div class="section-head">
+<div><span class="label">02 / Podgorica</span><h2 id="visitTitle">Make your<br>next move.</h2></div>
+<p>A place to start: the supplied business listing’s address, weekday hours and contact details. Check directly with Smart Gym before travelling.</p>
+</div>
+<div class="visit-grid">
+<img class="visit-photo" src="img/stock-9.jpg" width="1200" height="900" alt="Illustrative stock photograph of weight-training equipment; not Smart Gym premises" loading="lazy">
+<div class="visit-details">
+<div class="detail-row"><span class="label">Listed address</span><p>19/11 Šeika Zaida<br>Podgorica 81000, Montenegro</p><a class="text-link" href="https://www.google.com/maps/search/?api=1&amp;query=19%2F11%20%C5%A0eika%20Zaida%20Podgorica%2081000" target="_blank" rel="noopener noreferrer">Look up the address ↗</a></div>
+<div class="detail-row"><span class="label">Listed weekday hours</span><p>Monday–Friday <strong>07:15–21:00</strong></p><p class="small">Confirm current opening times directly with the gym.</p></div>
+<div class="detail-row"><span class="label">Get in touch</span><p><a href="tel:+38267619400">+382 67 619 400</a></p><a class="text-link" href="mailto:smartgympg@gmail.com">smartgympg@gmail.com ↗</a></div>
+<p class="visit-disclaimer">These details come from the supplied lead listing and have not been independently confirmed. The map link searches the address; it is not a verified map pin.</p>
+</div>
+</div>
+</section>
+
+<section class="section enquiry" id="enquiry" aria-labelledby="enquiryTitle">
+<div>
+<span class="label">03 / Take the next step</span>
+<h2 id="enquiryTitle">LET’S TALK<br>TRAINING.</h2>
+<p>Interested in joining Smart Gym? Prepare your questions about membership, equipment or visiting, then contact the gym directly.</p>
+<button class="button" data-topic="3" aria-haspopup="dialog">Prepare an enquiry <span class="arrow" aria-hidden="true">↗</span></button>
+</div>
+<div class="enquiry-image"><img src="img/stock-10.jpg" width="1000" height="1000" alt="Illustrative stock photograph of gym weights and strength-training equipment" loading="lazy"></div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="footer-top">
+<a class="brand" href="#top">SMART<span>GYM</span></a>
+<p>Independent website concept by LeadSky for Smart Gym. Not their official website. No affiliation or endorsement is implied.</p>
+</div>
+<div class="footer-bottom">
+<span>Concept by <strong>LeadSky</strong> · Podgorica, Montenegro</span>
+<details class="credits"><summary>Photography &amp; usage credits</summary>
+<p>Illustrative stock photography only. These images do not depict Smart Gym’s premises, equipment, staff or members. Supplied under the Pixabay Content License.</p>
+<ul>
+<li><a href="https://pixabay.com/photos/training-muscles-arms-blonde-828726/" target="_blank" rel="noopener noreferrer">scottwebb · Training photograph · Pixabay</a></li>
+<li><a href="https://pixabay.com/photos/weight-lifting-fitness-gym-1284616/" target="_blank" rel="noopener noreferrer">Pexels · Dumbbell rack · Pixabay</a></li>
+<li><a href="https://pixabay.com/photos/crossfit-sports-fitness-training-534615/" target="_blank" rel="noopener noreferrer">Ichigo121212 · Barbell training · Pixabay</a></li>
+<li><a href="https://pixabay.com/photos/fitness-dumbbells-training-gym-594143/" target="_blank" rel="noopener noreferrer">markusspiske · Dumbbells · Pixabay</a></li>
+<li><a href="https://pixabay.com/photos/fitness-weight-dumbbell-gym-1882721/" target="_blank" rel="noopener noreferrer">LouisBauer · Training equipment · Pixabay</a></li>
+<li><a href="https://pixabay.com/photos/fitness-weights-workout-exercise-1038434/" target="_blank" rel="noopener noreferrer">nikkiUR · Weights · Pixabay</a></li>
+</ul>
+</details>
+</div>
+</footer>
+
+<div class="mobile-contact" aria-label="Quick contact">
+<a href="tel:+38267619400"><span aria-hidden="true">↗</span> Call Smart Gym</a>
+<button data-topic="3" aria-haspopup="dialog">Membership enquiry</button>
+</div>
+
+<dialog id="drawer" aria-labelledby="drawerTitle">
+<div class="drawer-top"><span class="label">SMART GYM / ENQUIRY</span><button class="close" id="drawerClose" aria-label="Close enquiry">×</button></div>
+<img class="drawer-image" id="drawerImage" src="img/stock-1.jpg" width="1000" height="500" alt="Illustrative stock photograph of fitness equipment">
+<div class="drawer-body">
+<span class="label" id="drawerEyebrow">Your next move</span>
+<h2 id="drawerTitle">Membership enquiry</h2>
+<p id="drawerDescription">Ask Smart Gym about current membership options, prices and access.</p>
+<p class="small">Illustrative stock image. Training facilities and services shown are not verified.</p>
+<form id="enquiryForm">
+<label class="field" for="personName">Your name</label>
+<input id="personName" name="name" autocomplete="name" maxlength="100" required>
+<label class="field" for="personEmail">Your email</label>
+<input id="personEmail" name="email" type="email" autocomplete="email" maxlength="160" required>
+<label class="field" for="message">What would you like to ask?</label>
+<textarea id="message" name="message" maxlength="2500" required></textarea>
+<p class="form-notice">Private concept demo. This form only prepares a draft in your browser. It does not contact Smart Gym or store your details.</p>
+<button class="button" type="submit">Create my enquiry draft <span aria-hidden="true">↗</span></button>
+</form>
+<div class="result" id="result" hidden>
+<p role="status"><strong>This is a demo form, nothing was sent.</strong></p>
+<label class="field" for="draft">Your enquiry draft</label>
+<textarea id="draft" readonly></textarea>
+<button class="button" id="copyDraft" type="button">Copy draft</button>
+<p class="small" id="copyStatus" aria-live="polite"></p>
+<a class="email-link" id="emailDraft" href="mailto:smartgympg@gmail.com">Open draft in your email app ↗</a>
+<p class="small">Opening your email app does not send the message. Review the recipient and details before sending.</p>
+</div>
+</div>
+</dialog>
+
+<script>
+(function(){
+'use strict';
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)');
+const gallery=document.getElementById('gallery');
+const slides=Array.from(gallery.querySelectorAll('.slide'));
+const tabs=Array.from(document.querySelectorAll('[data-slide]'));
+const previous=document.getElementById('previous');
+const next=document.getElementById('next');
+let current=0;
+function goTo(index){
+const safe=Math.max(0,Math.min(slides.length-1,index));
+gallery.scrollTo({left:slides[safe].offsetLeft-slides[0].offsetLeft,behavior:reduceMotion.matches?'instant':'smooth'});
+}
+function updateGallery(){
+let nearest=0,distance=Infinity;
+slides.forEach((slide,index)=>{
+const delta=Math.abs(slide.offsetLeft-slides[0].offsetLeft-gallery.scrollLeft);
+if(delta<distance){distance=delta;nearest=index;}
+});
+if(nearest!==current){current=nearest;}
+tabs.forEach((tab,index)=>tab.setAttribute('aria-current',String(index===current)));
+document.getElementById('position').textContent=String(current+1).padStart(2,'0')+' / 03';
+previous.disabled=current===0;next.disabled=current===slides.length-1;
+}
+let framePending=false;
+gallery.addEventListener('scroll',()=>{
+if(framePending)return;
+framePending=true;requestAnimationFrame(()=>{updateGallery();framePending=false;});
+},{passive:true});
+tabs.forEach(tab=>tab.addEventListener('click',()=>goTo(Number(tab.dataset.slide))));
+previous.addEventListener('click',()=>goTo(current-1));
+next.addEventListener('click',()=>goTo(current+1));
+gallery.addEventListener('keydown',event=>{
+if(event.target!==gallery)return;
+if(event.key==='ArrowRight'){event.preventDefault();goTo(current+1);}
+if(event.key==='ArrowLeft'){event.preventDefault();goTo(current-1);}
+if(event.key==='Home'){event.preventDefault();goTo(0);}
+if(event.key==='End'){event.preventDefault();goTo(slides.length-1);}
+});
+window.addEventListener('resize',updateGallery);
+
+const menu=document.getElementById('menu');
+const menuOpen=document.getElementById('menuOpen');
+const menuClose=document.getElementById('menuClose');
+const header=document.querySelector('.header');
+const banner=document.querySelector('.banner');
+const main=document.querySelector('main');
+const footer=document.querySelector('footer');
+const contact=document.querySelector('.mobile-contact');
+const background=[header,banner,main,footer,contact];
+function setBackgroundInert(value){background.forEach(element=>element.inert=value);}
+function closeMenu(){
+menu.classList.remove('open');menu.hidden=true;
+menuOpen.setAttribute('aria-expanded','false');
+document.body.classList.remove('locked');
+setBackgroundInert(false);menuOpen.focus();
+}
+menuOpen.addEventListener('click',()=>{
+menu.hidden=false;menu.classList.add('open');
+menuOpen.setAttribute('aria-expanded','true');
+document.body.classList.add('locked');setBackgroundInert(true);menuClose.focus();
+});
+menuClose.addEventListener('click',closeMenu);
+menu.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',()=>{
+const target=document.querySelector(link.getAttribute('href'));
+closeMenu();
+if(target){target.setAttribute('tabindex','-1');target.focus({preventScroll:true});}
+}));
+menu.addEventListener('keydown',event=>{
+if(event.key==='Escape'){event.preventDefault();closeMenu();return;}
+if(event.key!=='Tab')return;
+const focusable=Array.from(menu.querySelectorAll('button,a[href]'));
+const first=focusable[0],last=focusable[focusable.length-1];
+if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+});
+
+const topics=[
+{title:'Find your strength.',label:'01 / Strength',image:'img/stock-2.jpg',alt:'Illustrative stock photograph of a woman training with dumbbells',description:'Interested in strength training? Ask Smart Gym which training options are available and whether support is offered for your goals.',message:'Hello Smart Gym, I’m interested in strength training. Could you tell me about the options available and your current membership prices?'},
+{title:'Explore free weights.',label:'02 / Free weights',image:'img/stock-5.jpg',alt:'Illustrative stock photograph of a dumbbell rack',description:'Looking for a place to train with weights? Confirm the available equipment, access and membership details directly with Smart Gym.',message:'Hello Smart Gym, could you tell me which free weights and equipment are available, and what membership includes?'},
+{title:'Find your routine.',label:'03 / Your routine',image:'img/stock-3.jpg',alt:'Illustrative stock photograph of barbell training',description:'Thinking about joining? Ask about current opening times, membership access and anything you need to know before your first visit.',message:'Hello Smart Gym, I’m thinking about joining. Could you confirm your opening times, membership options and what I should know before visiting?'},
+{title:'Your next move.',label:'Membership enquiry',image:'img/stock-1.jpg',alt:'Illustrative stock photograph of fitness equipment',description:'Get the current details directly from Smart Gym: membership options, prices in EUR and what is included.',message:'Hello Smart Gym, I’d like to ask about your current membership options, prices in EUR and what is included. Could you share the details?'}
+];
+const drawer=document.getElementById('drawer');
+const form=document.getElementById('enquiryForm');
+const result=document.getElementById('result');
+let lastTrigger=null,selectedTopic=3;
+document.querySelectorAll('[data-topic]').forEach(button=>{
+button.addEventListener('click',()=>{
+lastTrigger=button;selectedTopic=Number(button.dataset.topic);
+const topic=topics[selectedTopic];
+document.getElementById('drawerTitle').textContent=topic.title;
+document.getElementById('drawerEyebrow').textContent=topic.label;
+document.getElementById('drawerDescription').textContent=topic.description;
+const image=document.getElementById('drawerImage');image.src=topic.image;image.alt=topic.alt;
+document.getElementById('message').value=topic.message;
+result.hidden=true;document.getElementById('copyStatus').textContent='';
+drawer.showModal();drawer.scrollTop=0;document.body.classList.add('locked');
+document.getElementById('drawerClose').focus();
+});
+});
+document.getElementById('drawerClose').addEventListener('click',()=>drawer.close());
+drawer.addEventListener('click',event=>{
+if(event.target===drawer&&event.clientX<drawer.getBoundingClientRect().left)drawer.close();
+});
+drawer.addEventListener('close',()=>{
+document.body.classList.remove('locked');if(lastTrigger)lastTrigger.focus({preventScroll:true});
+});
+drawer.addEventListener('keydown',event=>{
+if(event.key!=='Tab')return;
+const focusable=Array.from(drawer.querySelectorAll('a[href],button,input,textarea')).filter(el=>el.getClientRects().length&&!el.disabled);
+const first=focusable[0],last=focusable[focusable.length-1];
+if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+});
+form.addEventListener('submit',event=>{
+event.preventDefault();
+const name=document.getElementById('personName');
+const message=document.getElementById('message');
+name.setCustomValidity(name.value.trim()?'':'Please enter your name.');
+message.setCustomValidity(message.value.trim()?'':'Please enter your question.');
+if(!form.reportValidity())return;
+const email=document.getElementById('personEmail').value.trim();
+const text=message.value.trim()+'\n\n'+name.value.trim()+'\nReply email: '+email;
+document.getElementById('draft').value=text;
+document.getElementById('emailDraft').href='mailto:smartgympg@gmail.com?subject='+encodeURIComponent('Smart Gym — '+topics[selectedTopic].label)+'&body='+encodeURIComponent(text);
+result.hidden=false;
+result.scrollIntoView({behavior:reduceMotion.matches?'instant':'smooth',block:'start'});
+document.getElementById('draft').focus({preventScroll:true});
+});
+['personName','message'].forEach(id=>document.getElementById(id).addEventListener('input',event=>event.target.setCustomValidity('')));
+document.getElementById('copyDraft').addEventListener('click',async()=>{
+const draft=document.getElementById('draft'),status=document.getElementById('copyStatus');
+try{
+if(!navigator.clipboard)throw new Error('Clipboard unavailable');
+await navigator.clipboard.writeText(draft.value);
+status.textContent='Draft copied. Nothing has been sent.';
+}catch(error){
+draft.focus();draft.select();
+status.textContent='Select the draft and use your device’s Copy command. Nothing has been sent.';
+}
+});
+updateGallery();
+})();
+</script>
+</body>
+</html>
