@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F6F3EC">
+<title>Chestertons Chelsea — An Independent LeadSky Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f6f3ec;--ink:#193f46;--copper:#a35938;--line:#d6cfc2;--muted:#4f605f;--white:#fffdf8;--soft:#eae5da;--ease:cubic-bezier(.22,.68,0,1)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:105px}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 "Public Sans",sans-serif;-webkit-font-smoothing:antialiased}
+button,input,a{-webkit-tap-highlight-color:transparent}
+button,input{font:inherit}
+button,a{touch-action:manipulation}
+button{cursor:pointer}
+a{color:inherit;text-underline-offset:4px}
+button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid var(--copper);outline-offset:5px}
+img{display:block;width:100%;height:100%;object-fit:cover}
+h1,h2,h3,p,figure{margin:0}
+h1,h2,.display{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.03}
+h1{font-size:clamp(47px,5.6vw,84px);letter-spacing:-2px}
+h2{font-size:clamp(36px,3.8vw,56px);letter-spacing:-1.4px}
+h3{font-size:17px;line-height:1.4}
+p{max-width:55ch}
+[hidden]{display:none!important}
+.notice{position:relative;z-index:30;background:var(--ink);color:var(--white);padding:8px 16px;text-align:center;font-size:10px;line-height:1.5;letter-spacing:.025em}
+header{height:73px;position:sticky;top:0;z-index:25;display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--paper);border-bottom:1px solid var(--line);padding:0 4vw}
+.wordmark{text-decoration:none;font-family:"DM Serif Display",Georgia,serif;font-size:30px;letter-spacing:-1px;line-height:1}
+.wordmark span{font-family:"Public Sans",sans-serif;font-size:9px;letter-spacing:2px;display:block;margin-top:6px}
+.header-actions{display:flex;align-items:center;gap:25px}
+.header-link{font-size:12px;text-decoration:none;border-bottom:1px solid var(--copper);padding-bottom:3px}
+.menu-trigger{background:none;border:0;color:var(--ink);padding:12px 0 12px 10px;display:flex;gap:10px;align-items:center;font-size:12px}
+.menu-bars{width:22px;display:grid;gap:5px}
+.menu-bars i{height:1px;background:currentColor;display:block}
+.photo-panel{position:fixed;left:0;top:0;bottom:0;width:47%;z-index:0;overflow:hidden;background:#ddd4c5}
+.photo-panel:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,0,0,.62))}
+.photo-panel img{object-position:50% 50%}
+.photo-title{position:absolute;bottom:91px;left:8%;right:8%;color:white;z-index:1}
+.photo-title .display{font-size:clamp(50px,5.9vw,88px);letter-spacing:-2px}
+.photo-title p{font-size:12px;margin-top:15px}
+.photo-caption{position:absolute;left:8%;bottom:30px;background:var(--paper);color:var(--ink);padding:9px 12px;font-size:10px;z-index:1;max-width:85%}
+main{position:relative;margin-left:47%;background:var(--paper);min-height:100vh}
+.chapter{padding:65px clamp(26px,4.6vw,78px);border-bottom:1px solid var(--line);scroll-margin-top:0}
+.chapter-label{display:flex;align-items:center;gap:14px;font-size:10px;text-transform:uppercase;letter-spacing:1.7px;font-weight:600;margin-bottom:35px}
+.chapter-label b{color:var(--copper);font-size:12px;font-weight:500}
+.chapter-label:after{content:"";height:1px;background:var(--line);flex:1}
+.hero{min-height:calc(100svh - 105px);display:flex;flex-direction:column;justify-content:center;padding-top:55px;padding-bottom:45px}
+.hero .chapter-label{margin-bottom:42px}
+.hero h1 em{font-weight:400;color:var(--copper)}
+.hero-copy{margin-top:27px;max-width:37ch;color:var(--muted);font-size:15px}
+.button{border:1px solid var(--ink);background:var(--ink);color:var(--white);padding:16px 22px;display:inline-flex;align-items:center;justify-content:space-between;gap:28px;min-height:53px;text-decoration:none;font-size:12px;font-weight:600;line-height:1.4;transition:background .2s,color .2s,transform .2s}
+.button:hover{background:#2b545b}
+.button .arrow{font-size:19px;line-height:1}
+.hero .button{align-self:flex-start;margin-top:29px;min-width:210px}
+.hero-foot{display:flex;gap:18px;justify-content:space-between;align-items:end;margin-top:48px;padding-top:22px;border-top:1px solid var(--line);font-size:10px;color:var(--muted)}
+.hero-foot strong{display:block;font-weight:600;letter-spacing:1px;text-transform:uppercase;font-size:9px;margin-bottom:5px}
+.hero-foot a{text-decoration:none;font-size:21px}
+.mobile-photo{display:none}
+.intro{margin:21px 0 30px;color:var(--muted);font-size:14px}
+.quiz{margin-top:35px}
+.quiz-top{display:flex;justify-content:space-between;font-size:10px;text-transform:uppercase;letter-spacing:1px;gap:15px}
+.progress{display:flex;gap:7px;margin:15px 0 31px}
+.progress span{height:3px;background:var(--line);flex:1;transition:background .3s}
+.progress span.done{background:var(--copper)}
+fieldset{padding:0;border:0;margin:0;min-width:0}
+legend{font-family:"DM Serif Display",Georgia,serif;font-size:28px;line-height:1.2;padding:0;margin-bottom:21px}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.choice{position:relative;display:flex;align-items:center;gap:12px;padding:18px 14px;border:1px solid var(--line);background:var(--white);cursor:pointer;min-height:75px;transition:background .2s,border-color .2s}
+.choice:hover{border-color:var(--ink)}
+.choice:has(input:checked){border-color:var(--ink);background:#e4ebe5;box-shadow:inset 0 0 0 1px var(--ink)}
+.choice input{accent-color:var(--ink);width:17px;height:17px;flex-shrink:0;margin:0}
+.choice span{font-size:13px;line-height:1.4;font-weight:500}
+.choice small{display:block;font-size:10px;line-height:1.6;color:var(--muted);font-weight:400;margin-top:4px}
+.quiz-actions{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:24px}
+.text-button{border:0;background:none;color:var(--ink);padding:10px 0;text-decoration:underline;text-underline-offset:4px;font-size:12px}
+.error{font-size:12px;color:#913b25;min-height:23px;margin-top:12px}
+.quiz-note{font-size:10px;color:var(--muted);margin-top:22px}
+.quiz-step{animation:step .28s var(--ease)}
+@keyframes step{from{opacity:.5;transform:translateY(6px)}to{opacity:1;transform:none}}
+.result{padding:26px;background:var(--soft);border-top:3px solid var(--copper)}
+.result .eyebrow{font-size:9px;letter-spacing:1.4px;text-transform:uppercase}
+.result h3{font:32px/1.15 "DM Serif Display",Georgia,serif;margin:14px 0}
+.result p{font-size:13px}
+.result dl{margin:22px 0;border-top:1px solid #c9c1b2}
+.result dl div{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #c9c1b2;padding:11px 0;font-size:11px}
+.result dt{color:var(--muted)}
+.result dd{margin:0;text-align:right}
+.result .button{width:100%;margin-top:18px}
+.result-tools{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.copy-status{font-size:11px;min-height:20px}
+textarea{width:100%;min-height:160px;font:12px/1.6 "Public Sans",sans-serif;border:1px solid var(--ink);background:var(--white);padding:12px;color:var(--ink)}
+.editorial{margin-top:34px}
+.editorial-image{height:340px;overflow:hidden}
+figcaption{font-size:9px;line-height:1.6;color:var(--muted);margin-top:9px}
+.editorial-caption{display:flex;justify-content:space-between;gap:20px;align-items:start;margin-top:22px}
+.editorial-caption h3{font:29px/1.1 "DM Serif Display",Georgia,serif;max-width:7em}
+.editorial-caption p{font-size:12px;max-width:23ch}
+.detail-photo{margin:34px 0 0;width:65%;margin-left:auto}
+.detail-photo .image-wrap{height:230px;overflow:hidden}
+.guidance{padding:0;list-style:none;margin:32px 0}
+.guidance li{border-top:1px solid var(--line);padding:23px 0;display:grid;grid-template-columns:28px 1fr;gap:15px}
+.guidance li:last-child{border-bottom:1px solid var(--line)}
+.guidance .number{font-family:"DM Serif Display",Georgia,serif;color:var(--copper);font-size:24px;line-height:1.3}
+.guidance h3{font-size:14px;margin-bottom:7px}
+.guidance p{font-size:12px;color:var(--muted)}
+.landscape{height:220px;overflow:hidden}
+.contact{background:var(--ink);color:var(--paper)}
+.contact .chapter-label b{color:#e5ad8d}
+.contact .chapter-label:after{background:#527075}
+.contact h2{max-width:9ch}
+.contact-lead{margin-top:22px;font-size:13px;color:#dce1da}
+.phone{display:block;font-family:"DM Serif Display",Georgia,serif;font-size:clamp(25px,2.6vw,39px);text-decoration:none;letter-spacing:-.6px;margin:30px 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:27px;border-top:1px solid #527075;padding-top:25px}
+.contact-grid h3{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:12px;color:#e5ad8d}
+.contact-grid p,.contact-grid a{font-size:12px;line-height:1.9}
+.hours{display:grid;grid-template-columns:auto auto;gap:4px 12px;font-size:10px}
+.contact .official{display:flex;justify-content:space-between;border-top:1px solid #527075;margin-top:30px;padding-top:22px;font-size:12px;text-decoration:none}
+.hours-note{font-size:9px;color:#dce1da;margin-top:20px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:23px 30px 23px 0;position:relative;font-size:13px;font-weight:500}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:1px;top:18px;font-size:23px;font-weight:400}
+details[open] summary:after{content:"−"}
+details p{font-size:12px;color:var(--muted);padding-bottom:23px}
+.faq-list{margin-top:28px;border-top:1px solid var(--line)}
+footer{padding:35px clamp(26px,4.6vw,78px) 40px;background:#ebe6db;font-size:10px;color:var(--muted)}
+footer .footer-top{display:flex;justify-content:space-between;gap:20px;color:var(--ink);margin-bottom:18px}
+footer .footer-top strong{font-family:"DM Serif Display",Georgia,serif;font-size:19px;font-weight:400}
+footer p{max-width:65ch}
+.credits{margin-top:17px}
+.credits summary{padding:10px 22px 10px 0;font-size:10px}
+.credits summary:after{top:3px;font-size:20px}
+.credits ul{padding-left:15px;font-size:10px;line-height:1.9}
+.mobile-bar{display:none}
+.menu-shade{position:fixed;inset:0;background:rgba(13,34,38,.55);z-index:49}
+.menu-dialog{position:fixed;right:0;top:0;bottom:0;width:min(510px,100%);z-index:50;background:var(--paper);padding:30px 35px;overflow-y:auto}
+.menu-top{display:flex;align-items:center;justify-content:space-between}
+.menu-close{background:none;border:1px solid var(--line);color:var(--ink);width:43px;height:43px;font-size:25px}
+.menu-dialog nav{margin-top:40px}
+.menu-dialog nav a{display:flex;align-items:center;gap:20px;text-decoration:none;font:28px/1.2 "DM Serif Display",Georgia,serif;padding:21px 0;border-bottom:1px solid var(--line)}
+.menu-dialog nav a span{font:10px "Public Sans",sans-serif;color:var(--copper)}
+.menu-dialog nav a[aria-current="location"]{color:var(--copper)}
+.menu-description{font-size:11px;margin-top:30px;color:var(--muted)}
+.skip{position:fixed;top:-100px;left:15px;z-index:100;background:var(--white);padding:12px}
+.skip:focus{top:10px}
+.reveal.ready{clip-path:inset(0 0 10% 0);opacity:.4;transform:translateY(16px);transition:clip-path .85s var(--ease),opacity .8s,transform .85s var(--ease)}
+.reveal.ready.in{clip-path:inset(0);opacity:1;transform:none}
+@media(min-width:1500px){main{margin-left:49%}.photo-panel{width:49%}.chapter{padding-left:90px;padding-right:90px}}
+@media(max-width:1050px) and (min-width:761px){.photo-panel{width:42%}main{margin-left:42%}.chapter{padding-left:30px;padding-right:30px}h1{font-size:59px}.options{gap:8px}.choice{padding:15px 10px}.contact-grid{grid-template-columns:1fr}.editorial-caption{display:block}.editorial-caption p{max-width:40ch;margin-top:14px}}
+@media(max-width:760px){
+html{scroll-padding-top:78px}
+.notice{font-size:9px;padding:7px 14px}
+header{height:66px;padding:0 21px;gap:12px}
+.wordmark{font-size:24px}
+.wordmark span{font-size:7px;letter-spacing:1.7px;margin-top:5px}
+.header-actions{gap:19px}.header-link{font-size:11px}.menu-trigger{font-size:0;gap:0}
+.photo-panel{display:none}
+main{margin-left:0}
+.chapter{padding:45px 25px}
+.chapter-label{margin-bottom:26px;font-size:9px;letter-spacing:1.3px;gap:11px}
+.hero{min-height:0;padding:32px 25px 29px}
+.hero .chapter-label{margin-bottom:25px}
+h1{font-size:57px;letter-spacing:-1.8px;line-height:1}
+h2{font-size:42px}
+.hero-copy{font-size:13px;margin-top:21px;max-width:35ch}
+.hero .button{margin-top:24px;padding:15px 20px;min-width:195px}
+.hero-foot{margin-top:29px;padding-top:17px;font-size:9px}
+.mobile-photo{display:block;position:relative;height:245px}
+.mobile-photo figcaption{position:absolute;left:20px;bottom:16px;max-width:calc(100% - 40px);background:var(--paper);color:var(--ink);padding:7px 10px;margin:0;font-size:9px}
+.intro{font-size:13px;margin:20px 0 25px}
+.quiz{margin-top:28px}
+legend{font-size:27px}
+.choice{min-height:77px;padding:16px 12px;gap:9px}
+.choice span{font-size:12px}
+.quiz-actions .button{padding:14px 19px;gap:19px}
+.editorial-image{height:310px}
+.editorial-caption{gap:20px}
+.editorial-caption h3{font-size:27px}
+.editorial-caption p{font-size:11px}
+.detail-photo{width:72%;margin-top:28px}
+.detail-photo .image-wrap{height:225px}
+.landscape{height:215px}
+.phone{font-size:33px;margin:27px 0}
+.contact-grid{gap:22px;grid-template-columns:1fr 1fr}
+.contact-grid p,.contact-grid a{font-size:11px}
+.hours{font-size:9px;gap:5px 8px}
+footer{padding:30px 25px 100px}
+.mobile-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:35;background:var(--ink);color:white;padding:11px 21px calc(11px + env(safe-area-inset-bottom));align-items:center;justify-content:space-between;border-top:1px solid #628084;box-shadow:0 -3px 20px #193f4614}
+.mobile-bar span{font-size:10px;line-height:1.5}
+.mobile-bar span strong{display:block;font-size:11px;font-weight:500}
+.mobile-bar a{font-size:12px;text-decoration:none;background:var(--paper);color:var(--ink);padding:12px 18px;min-width:118px;text-align:center}
+.menu-dialog{padding:25px}.menu-dialog nav a{font-size:26px}
+}
+@media(max-width:350px){h1{font-size:49px}.header-actions{gap:12px}.options{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.editorial-caption{display:block}.editorial-caption p{margin-top:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.reveal.ready{clip-path:none;opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="notice">Independent website concept by LeadSky for Chesterons. Not their official website.</div>
+<header>
+<a class="wordmark" href="#chapter-1" aria-label="Chestertons Chelsea, start">Chestertons<span>CHELSEA · LONDON</span></a>
+<div class="header-actions">
+<a class="header-link" href="#chapter-2">Find my match ↗</a>
+<button class="menu-trigger" id="menu-open" aria-label="Open chapter menu" aria-expanded="false" aria-controls="chapter-menu">Menu <span class="menu-bars" aria-hidden="true"><i></i><i></i></span></button>
+</div>
+</header>
+
+<aside class="photo-panel" aria-label="Neighbourhood reference photograph">
+<img src="img/stock-11.jpg" alt="London residential architecture, used as neighbourhood reference photography" width="1600" height="2200" fetchpriority="high">
+<div class="photo-title"><div class="display">A place.<br>A possibility.<br>A next chapter.</div><p>A property journal for your next move.</p></div>
+<div class="photo-caption">London neighbourhood reference · Stock photography, not a listing</div>
+</aside>
+
+<main id="main">
+<section class="chapter hero" id="chapter-1" aria-labelledby="hero-title">
+<div class="chapter-label"><b>01</b> Your next move</div>
+<h1 id="hero-title">Property<br>in <em>Chelsea,</em><br>London.</h1>
+<p class="hero-copy">Your next move starts with the right question. Find a useful starting point for your property enquiry with Chestertons Chelsea.</p>
+<a class="button" href="#chapter-2">Find your match <span class="arrow" aria-hidden="true">↗</span></a>
+<div class="hero-foot"><div><strong>The Chelsea office</strong>17 Cale Street, London</div><a href="#chapter-3" aria-label="Explore the next chapters">↓</a></div>
+</section>
+
+<figure class="mobile-photo">
+<img src="img/stock-11.jpg" alt="London residential architecture in a neighbourhood reference photograph" width="900" height="600" fetchpriority="high">
+<figcaption>Neighbourhood reference · Stock photo, not a listing</figcaption>
+</figure>
+
+<section class="chapter" id="chapter-2" aria-labelledby="match-title">
+<div class="chapter-label"><b>02</b> Find your match</div>
+<h2 id="match-title">Your move.<br>Your priorities.</h2>
+<p class="intro">Three quick questions. A clearer starting point for your conversation with the Chelsea office.</p>
+<div class="quiz">
+<div id="quiz-form-area">
+<div class="quiz-top"><span id="step-count" aria-live="polite">Question 01 of 03</span><span>About a minute</span></div>
+<div class="progress" aria-hidden="true"><span class="done"></span><span></span><span></span></div>
+<form id="match-form">
+<div class="quiz-step" id="step-container"></div>
+<p id="quiz-error" class="error" role="alert"></p>
+<div class="quiz-actions">
+<button type="button" id="back" class="text-button" hidden>← Back</button>
+<span id="back-spacer"></span>
+<button type="submit" class="button" id="next">Continue <span class="arrow" aria-hidden="true">→</span></button>
+</div>
+</form>
+</div>
+<div class="result" id="quiz-result" hidden tabindex="-1" aria-labelledby="result-heading">
+<span class="eyebrow">Your enquiry starting point</span>
+<h3 id="result-heading"></h3>
+<p id="result-copy"></p>
+<dl id="result-summary"></dl>
+<p id="timing-copy"></p>
+<a class="button" href="tel:+442075944740">Call the Chelsea office <span aria-hidden="true">↗</span></a>
+<div class="result-tools">
+<button class="text-button" type="button" id="copy-summary">Copy enquiry summary</button>
+<button class="text-button" type="button" id="restart">Start again</button>
+</div>
+<p class="copy-status" id="copy-status" role="status"></p>
+<label for="copy-fallback" id="fallback-label" hidden>Your enquiry summary — select and copy:</label>
+<textarea id="copy-fallback" readonly hidden></textarea>
+</div>
+<p class="quiz-note">Enquiry guidance only. This is not a live property search, valuation or service confirmation. Your answers stay in this page and are not sent.</p>
+<noscript><p>Please enable JavaScript to use the quiz, or <a href="tel:+442075944740">call the Chelsea office on 020 7594 4740</a>.</p></noscript>
+</div>
+</section>
+
+<section class="chapter" id="chapter-3" aria-labelledby="chelsea-title">
+<div class="chapter-label"><b>03</b> Chelsea, in focus</div>
+<h2 id="chelsea-title">Look beyond<br>the front door.</h2>
+<p class="intro">The room you return to. The street outside. The details that make a place feel right. Bring those priorities into your property enquiry.</p>
+<figure class="editorial">
+<div class="editorial-image reveal"><img src="img/stock-8.jpg" alt="Bright living and dining space with large windows and natural light" width="1000" height="800" loading="lazy"></div>
+<figcaption>Interior reference photography · Not a Chestertons listing</figcaption>
+</figure>
+<div class="editorial-caption">
+<h3>Room for<br>everyday life.</h3>
+<p>Think about natural light, layout and the space you need. A short list of essentials makes a more useful brief.</p>
+</div>
+<figure class="detail-photo">
+<div class="image-wrap reveal"><img src="img/stock-6.jpg" alt="Residential entrance framed by brickwork and climbing plants" width="650" height="750" loading="lazy"></div>
+<figcaption>Architectural detail reference · Location not represented as Chelsea</figcaption>
+</figure>
+</section>
+
+<section class="chapter" id="chapter-4" aria-labelledby="steps-title">
+<div class="chapter-label"><b>04</b> From question to next step</div>
+<h2 id="steps-title">A little clarity.<br>A better enquiry.</h2>
+<p class="intro">You do not need every answer before you call. Start with what matters most.</p>
+<ol class="guidance">
+<li><span class="number" aria-hidden="true">1</span><div><h3>Gather the essentials.</h3><p>Note the property or area you want to discuss, your preferred timing and your main question. Share a budget only when you are comfortable doing so.</p></div></li>
+<li><span class="number" aria-hidden="true">2</span><div><h3>Talk through your priorities.</h3><p>Use your quiz summary to explain what you are looking for. Ask the Chelsea office which services and next steps apply to your enquiry.</p></div></li>
+<li><span class="number" aria-hidden="true">3</span><div><h3>Agree what happens next.</h3><p>Confirm any information the office needs and how you would like to be contacted. Check availability directly before making plans.</p></div></li>
+</ol>
+<figure>
+<div class="landscape reveal"><img src="img/stock-7.jpg" alt="Light-filled residential interior with timber flooring and seating" width="1000" height="650" loading="lazy"></div>
+<figcaption>Home interior reference · Not an available property or branch premises</figcaption>
+</figure>
+</section>
+
+<section class="chapter contact" id="chapter-5" aria-labelledby="contact-title">
+<div class="chapter-label"><b>05</b> Speak with Chelsea</div>
+<h2 id="contact-title">Make your<br>next move<br>a conversation.</h2>
+<p class="contact-lead">Have a question about property in Chelsea? Contact the office directly.</p>
+<a class="phone" href="tel:+442075944740">020 7594 4740 ↗</a>
+<div class="contact-grid">
+<div><h3>Find the office</h3><p>17 Cale Street<br>London</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Chestertons%2017%20Cale%20Street%20London" target="_blank" rel="noopener noreferrer">Get directions ↗</a></div>
+<div><h3>Office hours</h3><div class="hours"><span>Mon–Thu</span><span>08:40–19:00</span><span>Friday</span><span>08:40–18:00</span><span>Saturday</span><span>10:00–16:00</span></div></div>
+</div>
+<p class="hours-note">Contact details and hours supplied for this concept. Confirm current arrangements with the official office before visiting.</p>
+<a class="official" href="https://www.chestertons.com/en-gb/network/central-london/chelsea" target="_blank" rel="noopener noreferrer"><span>Visit the official branch website</span><span aria-hidden="true">↗</span></a>
+</section>
+
+<section class="chapter" id="chapter-6" aria-labelledby="faq-title">
+<div class="chapter-label"><b>06</b> Before you enquire</div>
+<h2 id="faq-title">A few useful<br>answers.</h2>
+<div class="faq-list">
+<details><summary>What does “find your match” mean?</summary><p>The quiz helps you organise a property enquiry around your intended move, timing and priorities. Its recommendation comes only from your answers. It does not search listings, assess eligibility or confirm which services the Chelsea branch can provide.</p></details>
+<details><summary>Has my enquiry been sent?</summary><p>No. This is an independent website concept. The quiz runs in your browser and does not send your answers or contact the office. Copy your summary if you want to keep it, then call the office yourself.</p></details>
+<details><summary>What should I have ready when I call?</summary><p>Your main question, the area or property you want to discuss, your preferred timing and any essential requirements. If you are discussing a particular listing, have its address or reference ready. The office can explain what other information it needs.</p></details>
+<details><summary>Are the photographs available properties?</summary><p>No. All photographs on this concept are illustrative stock images. They are not presented as Chestertons listings, completed work, staff or premises. Interior and architectural-detail images are visual references and do not establish a Chelsea location.</p></details>
+<details><summary>Is this the official Chestertons website?</summary><p>No. LeadSky created this independent concept to demonstrate a possible website experience. It is not endorsed by Chestertons and does not establish a client relationship. Use the official branch website or contact the office directly for current property and service information.</p></details>
+</div>
+</section>
+
+<footer>
+<div class="footer-top"><strong>Chestertons / Chelsea</strong><a href="#chapter-1">Back to top ↑</a></div>
+<p>Independent concept by <strong>LeadSky</strong>. Not the official Chestertons website. No enquiries are collected or sent. Business information supplied in the project brief; not independently verified for this demo.</p>
+<details class="credits">
+<summary>Photography &amp; usage credits</summary>
+<p>Illustrative stock photography supplied under the Pixabay Content License. No image is represented as a property listing, business premises or company-owned work.</p>
+<ul>
+<li>Neighbourhood reference: <a href="https://pixabay.com/photos/architecture-city-travel-house-3316311/" target="_blank" rel="noopener noreferrer">JonathanWilkins / Pixabay</a>.</li>
+<li>Living and dining interior: <a href="https://pixabay.com/photos/dining-room-living-room-modern-3108037/" target="_blank" rel="noopener noreferrer">jeanvdmeulen / Pixabay</a>.</li>
+<li>Residential entrance: <a href="https://pixabay.com/photos/house-home-door-sidewalk-2606818/" target="_blank" rel="noopener noreferrer">StockSnap / Pixabay</a>.</li>
+<li>Residential interior: <a href="https://pixabay.com/photos/chairs-floor-furniture-indoors-2181947/" target="_blank" rel="noopener noreferrer">Pexels / Pixabay</a>.</li>
+</ul>
+</details>
+</footer>
+</main>
+
+<div class="mobile-bar"><span><strong>Chestertons Chelsea</strong>Speak with the office</span><a href="tel:+442075944740">Call now ↗</a></div>
+
+<div class="menu-shade" id="menu-shade" hidden></div>
+<div class="menu-dialog" id="chapter-menu" role="dialog" aria-modal="true" aria-label="Chapter navigation" hidden>
+<div class="menu-top"><span class="wordmark">The chapters</span><button class="menu-close" id="menu-close" aria-label="Close chapter menu">×</button></div>
+<nav aria-label="Chapters">
+<a href="#chapter-1"><span>01</span>Your next move</a>
+<a href="#chapter-2"><span>02</span>Find your match</a>
+<a href="#chapter-3"><span>03</span>Chelsea, in focus</a>
+<a href="#chapter-4"><span>04</span>Your next step</a>
+<a href="#chapter-5"><span>05</span>Speak with Chelsea</a>
+<a href="#chapter-6"><span>06</span>Before you enquire</a>
+</nav>
+<p class="menu-description">An independent property website concept by LeadSky.</p>
+</div>
+
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id);
+const menu=$("chapter-menu"), trigger=$("menu-open"), shade=$("menu-shade");
+let previousOverflow="", savedInert=[];
+function openMenu(){
+ previousOverflow=document.body.style.overflow;
+ document.body.style.overflow="hidden";
+ menu.hidden=false;shade.hidden=false;trigger.setAttribute("aria-expanded","true");
+ savedInert=[];
+ Array.from(document.body.children).forEach(el=>{
+  if(el!==menu&&el!==shade&&el.tagName!=="SCRIPT"){
+   savedInert.push([el,el.inert]);el.inert=true;
+  }
+ });
+ $("menu-close").focus();
+}
+function closeMenu(){
+ if(menu.hidden)return;
+ menu.hidden=true;shade.hidden=true;
+ savedInert.forEach(([el,value])=>el.inert=value);
+ document.body.style.overflow=previousOverflow;
+ trigger.setAttribute("aria-expanded","false");trigger.focus();
+}
+trigger.addEventListener("click",openMenu);
+$("menu-close").addEventListener("click",closeMenu);
+shade.addEventListener("click",closeMenu);
+menu.addEventListener("keydown",e=>{
+ if(e.key==="Escape"){e.preventDefault();closeMenu();return;}
+ if(e.key==="Tab"){
+  const items=Array.from(menu.querySelectorAll("button,a[href]"));
+  const first=items[0],last=items[items.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+ }
+});
+menu.querySelectorAll("nav a").forEach(link=>link.addEventListener("click",()=>{
+ const target=document.querySelector(link.getAttribute("href"));
+ closeMenu();
+ target.setAttribute("tabindex","-1");target.focus({preventScroll:true});
+}));
+
+const answers={route:"",timing:"",priority:""};
+let step=0;
+const routes=[
+ ["buy","Buying","A home to make your own"],
+ ["rent","Renting","Somewhere for your next chapter"],
+ ["sell","Selling","A question about your property"],
+ ["let","Letting","A question as a property owner"]
+];
+const priorities={
+ buy:[["location","Location","The right area"],["space","Space & layout","Room for everyday life"],["budget","Budget","A clear price range"],["guidance","Getting started","Understanding the next step"]],
+ rent:[["move-date","Move-in timing","Planning your move"],["location","Location","An area that suits you"],["requirements","Property needs","Space and essentials"],["guidance","Getting started","Understanding the next step"]],
+ sell:[["valuation","Valuation enquiry","Discussing your property"],["timing","Timing","Planning a possible sale"],["presentation","Presentation","Preparing your property"],["guidance","Getting started","Understanding the next step"]],
+ let:[["letting","Letting enquiry","Discussing your property"],["management","Management enquiry","Exploring possible support"],["timing","Timing","Planning availability"],["guidance","Getting started","Understanding the next step"]]
+};
+const timingOptions=[["soon","As soon as practical","I am ready to talk"],["months","In the next few months","I am making plans"],["exploring","Just exploring","I am gathering information"]];
+function getOptions(index){return index===0?routes:index===1?timingOptions:priorities[answers.route];}
+function keyFor(index){return ["route","timing","priority"][index];}
+function render(focus){
+ const titles=["What would you like to discuss?","When are you thinking of moving?","What matters most to you?"];
+ if(step===1&&(answers.route==="sell"||answers.route==="let"))titles[1]="When would you like to take the next step?";
+ const container=$("step-container");
+ container.replaceChildren();
+ const field=document.createElement("fieldset");
+ const legend=document.createElement("legend");
+ legend.textContent=titles[step];legend.tabIndex=-1;
+ field.appendChild(legend);
+ const opts=document.createElement("div");opts.className="options";
+ getOptions(step).forEach(([value,label,help])=>{
+  const choice=document.createElement("label");choice.className="choice";
+  const input=document.createElement("input");input.type="radio";input.name=keyFor(step);input.value=value;input.required=true;input.checked=answers[keyFor(step)]===value;
+  input.addEventListener("change",()=>{$("quiz-error").textContent="";});
+  const text=document.createElement("span");text.textContent=label;
+  const small=document.createElement("small");small.textContent=help;text.appendChild(small);
+  choice.append(input,text);opts.appendChild(choice);
+ });
+ field.appendChild(opts);container.appendChild(field);
+ $("step-count").textContent="Question 0"+(step+1)+" of 03";
+ document.querySelectorAll(".progress span").forEach((el,i)=>el.classList.toggle("done",i<=step));
+ $("back").hidden=step===0;$("back-spacer").hidden=step!==0;
+ $("next").replaceChildren(document.createTextNode(step===2?"See my recommendation":"Continue"));
+ const arrow=document.createElement("span");arrow.className="arrow";arrow.setAttribute("aria-hidden","true");arrow.textContent="→";$("next").appendChild(arrow);
+ $("quiz-error").textContent="";
+ container.classList.remove("quiz-step");void container.offsetWidth;container.classList.add("quiz-step");
+ if(focus)legend.focus({preventScroll:true});
+}
+function retain(){
+ const selected=$("match-form").querySelector("input:checked");
+ if(selected){
+  const key=keyFor(step);
+  if(key==="route"&&answers.route!==selected.value)answers.priority="";
+  answers[key]=selected.value;
+ }
+ return !!selected;
+}
+$("match-form").addEventListener("submit",e=>{
+ e.preventDefault();
+ if(!retain()){$("quiz-error").textContent="Choose an answer to continue.";return;}
+ if(step<2){step++;render(true);}else showResult();
+});
+$("back").addEventListener("click",()=>{retain();if(step>0){step--;render(true);}});
+const routeRecommendations={
+ buy:["Start a buying enquiry.","Ask the Chelsea office about your buying requirements. Explain the areas, property features and budget range you would like to discuss."],
+ rent:["Start a rental enquiry.","Ask the Chelsea office about your rental requirements. Discuss your preferred move-in timing, area and essential property features."],
+ sell:["Start a selling conversation.","Ask the Chelsea office about a possible sale and whether a valuation discussion is the appropriate next step. Have your property details ready."],
+ let:["Start a landlord enquiry.","Ask the Chelsea office which letting or management services are available for your property and what information would help the discussion."]
+};
+let summaryText="";
+function labelFor(options,value){const item=options.find(x=>x[0]===value);return item?item[1]:"";}
+function showResult(){
+ const routeLabel=labelFor(routes,answers.route),timeLabel=labelFor(timingOptions,answers.timing),priorityLabel=labelFor(priorities[answers.route],answers.priority);
+ $("result-heading").textContent=routeRecommendations[answers.route][0];
+ $("result-copy").textContent=routeRecommendations[answers.route][1];
+ const list=$("result-summary");list.replaceChildren();
+ [["My enquiry",routeLabel],["My timing",timeLabel],["My priority",priorityLabel]].forEach(([label,value])=>{
+  const row=document.createElement("div"),dt=document.createElement("dt"),dd=document.createElement("dd");
+  dt.textContent=label;dd.textContent=value;row.append(dt,dd);list.appendChild(row);
+ });
+ const timingAdvice={
+ soon:"If timing is important, mention your preferred date when you call. Availability and next steps must be confirmed with the office.",
+ months:"Use the conversation to understand what you may need to prepare before your preferred timing.",
+ exploring:"An initial conversation can help you understand the information you need before deciding on your next step."
+ };
+ $("timing-copy").textContent=timingAdvice[answers.timing];
+ summaryText="Property enquiry for Chestertons Chelsea\nI would like to discuss: "+routeLabel+".\nMy timing: "+timeLabel+".\nMy main priority: "+priorityLabel+".\nPlease advise which services and next steps apply.";
+ $("copy-fallback").value=summaryText;
+ $("quiz-form-area").hidden=true;$("quiz-result").hidden=false;$("quiz-result").focus({preventScroll:true});
+}
+$("restart").addEventListener("click",()=>{
+ answers.route="";answers.timing="";answers.priority="";step=0;
+ $("quiz-result").hidden=true;$("quiz-form-area").hidden=false;
+ $("copy-fallback").hidden=true;$("fallback-label").hidden=true;$("copy-status").textContent="";
+ render(true);
+});
+$("copy-summary").addEventListener("click",async()=>{
+ try{
+  if(!navigator.clipboard||!window.isSecureContext)throw new Error("Clipboard unavailable");
+  await navigator.clipboard.writeText(summaryText);
+  $("copy-status").textContent="Summary copied. Nothing has been sent.";
+ }catch(e){
+  $("copy-fallback").hidden=false;$("fallback-label").hidden=false;
+  $("copy-fallback").focus();$("copy-fallback").select();
+  $("copy-status").textContent="Select and copy the summary below. Nothing has been sent.";
+ }
+});
+render(false);
+
+if("IntersectionObserver" in window){
+ const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+ if(!reduced.matches){
+  const reveals=document.querySelectorAll(".reveal");
+  const observer=new IntersectionObserver(entries=>{
+   entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("in");observer.unobserve(entry.target);}});
+  },{threshold:.12});
+  reveals.forEach(el=>{el.classList.add("ready");observer.observe(el);});
+ }
+ const chapterObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+   if(entry.isIntersecting){
+    menu.querySelectorAll("nav a").forEach(link=>{
+     if(link.getAttribute("href")==="#"+entry.target.id)link.setAttribute("aria-current","location");
+     else link.removeAttribute("aria-current");
+    });
+   }
+  });
+ },{rootMargin:"-15% 0px -65% 0px",threshold:0});
+ document.querySelectorAll(".chapter").forEach(el=>chapterObserver.observe(el));
+}
+})();
+</script>
+</body>
+</html>
