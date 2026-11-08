@@ -1,0 +1,116 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://jillchaifetz.org/wp-content/uploads/2023/10/JCTS-logo_round.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.png",
+    "kind": "business featured image",
+    "source": "https://jillchaifetz.org/wp-content/uploads/2023/10/JCTS-logo_round.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "modern high school classroom diverse students teacher",
+    "description": "children, india, education, classroom, happy, smile, together, school, india, education, education, education, classroom, school, school, school, school, school",
+    "source": "https://pixabay.com/photos/children-india-education-classroom-876543/",
+    "photographer": "akshayapatra",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "modern high school classroom diverse students teacher",
+    "description": "apple, books, classroom, red apple, fresh apple, fresh fruit, ripe, ripe apple, stack of books, delicious, fruit, apple, apple, apple, apple, apple, books",
+    "source": "https://pixabay.com/photos/apple-books-classroom-red-apple-256263/",
+    "photographer": "jarmoluk",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Bronx New York City school exterior building",
+    "description": "pedestrians, crossing, traffic, intersection, junction, crossroads, buildings, commuters, busy streets, street photography, city streets, architecture, new york city, manhattan, cars, city, cityscape, downtown, pedestrian crossing, people, road, street, urban, city, city, city, city, city, street, United States, New York",
+    "source": "https://pixabay.com/photos/pedestrians-crossing-traffic-1853552/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Bronx New York City school exterior building",
+    "description": "road, pedestrian, nyc, new york city, manhattan, america, new york, usa, urban, culture, street, city, building, new york, new york, new york, new york, new york",
+    "source": "https://pixabay.com/photos/road-pedestrian-nyc-new-york-city-4474168/",
+    "photographer": "bohdanchreptak",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "supportive teacher helping student laptop classroom",
+    "description": "merry christmas, kids, girls, writing, pencil, drawing, notebook, study, friends, hands, childhood, joy, school, lesson, learn, draw, concentrate, friendship day",
+    "source": "https://pixabay.com/photos/merry-christmas-kids-girls-writing-1093758/",
+    "photographer": "klimkin",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "supportive teacher helping student laptop classroom",
+    "description": "online, course, training, teacher, computer, internet, class, webinar, learning, writing, board, formula, elearning, skype, seminar, interactive, course, teacher, teacher, teacher, webinar, webinar, webinar, webinar, elearning, elearning, elearning, elearning, elearning",
+    "source": "https://pixabay.com/photos/online-course-training-teacher-4727942/",
+    "photographer": "Tumisu",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "happy young adult students graduation hallway high school",
+    "description": "yearbook, vietnamese students, ao dai students, high school students, student friends, school memories, youth, asian students, friendship, outdoor portrait",
+    "source": "https://pixabay.com/photos/yearbook-vietnamese-students-10168363/",
+    "photographer": "HuyNgan",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "happy young adult students graduation hallway high school",
+    "description": "girl, student, asian, uniform, school uniform, young woman, asian girl, portrait, model, asian model, modeling, pose, posing, smile, smiling, student, student, student, student, student, asian, asian girl",
+    "source": "https://pixabay.com/photos/girl-student-asian-uniform-6210483/",
+    "photographer": "CaiHuuThanh",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "school counselor talking with student smiling",
+    "description": "boys, kids, children, happy, sitting, students, siblings, brothers, friendship, childhood, studying, learning, young, school, education, portrait, kids, children, students, students, school, school, school, school, school, education, education, education, education",
+    "source": "https://pixabay.com/photos/boys-kids-children-happy-sitting-286245/",
+    "photographer": "White77",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "school counselor talking with student smiling",
+    "description": "group, children, boy, education, africa, kenya, childhood, happy, young, preschool, preschooler, educational, class, attention, faces, children, children, education, education, education, education, education, africa, africa, africa, africa, kenya",
+    "source": "https://pixabay.com/photos/group-children-boy-education-3137670/",
+    "photographer": "ean254",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
