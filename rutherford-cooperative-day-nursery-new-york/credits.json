@@ -1,0 +1,116 @@
+[
+  {
+    "file": "img/business-logo-1.jpg",
+    "kind": "business logo",
+    "source": "https://images.squarespace-cdn.com/content/v1/5adf4bfb12b13fc9c8c523bb/1532654865400-KUI0I45DMI9QT2N5P9AI/rcdn+logo.jpg?format=1500w",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "http://static1.squarespace.com/static/5adf4bfb12b13fc9c8c523bb/t/5b5a7510575d1f53832fb7c8/1532654867236/rcdn+logo.jpg?format=1500w",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "happy children preschool classroom learning crafts",
+    "description": "crayons, coloring book, coloring, hand, colors, coloring materials, art materials, school supplies, child, playing, colorful, fun, kid, childhood, kindergarten, preschool, education, preschooler, drawing, creativity, creative, crayons, coloring, child, kindergarten, kindergarten, preschool, preschool, education, education, education, education, drawing, drawing, drawing, drawing, drawing",
+    "source": "https://pixabay.com/photos/crayons-coloring-book-coloring-hand-1445053/",
+    "photographer": "ponce_photography",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "happy children preschool classroom learning crafts",
+    "description": "abacus, classroom, count, counter, kids, counting, math, mathematics, learn, learning, learning math, abacus, math, math, math, math, math, mathematics, learning",
+    "source": "https://pixabay.com/photos/abacus-classroom-count-counter-1866497/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "kindergarten playground outdoor children playing wooden toys",
+    "description": "wooden cubes, abc, cubes, letters, toys, play, alphabets, abc, letters, letters, letters, letters, letters",
+    "source": "https://pixabay.com/photos/wooden-cubes-abc-cubes-letters-473703/",
+    "photographer": "blickpixel",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "kindergarten playground outdoor children playing wooden toys",
+    "description": "christmas background, child, tower, building blocks, blocks, wooden blocks, kindergarten, toy, children, clutter, architecture, to build, to play",
+    "source": "https://pixabay.com/photos/christmas-background-child-tower-1864718/",
+    "photographer": "FeeLoona",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "warm smiling preschool teacher reading to children",
+    "description": "studying, nature, teacher, students, sunset, group, learn, women, reading, muslims, hijab, asian, dusk, asia",
+    "source": "https://pixabay.com/photos/studying-teacher-students-sunset-5831644/",
+    "photographer": "SyauqiFillah",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "warm smiling preschool teacher reading to children",
+    "description": "books, library, room, school, study, knowledge, education, shelf, light, bulb, books, books, books, library, library, library, library, library, school, school, school, study, study, education, education",
+    "source": "https://pixabay.com/photos/books-library-room-school-study-2596809/",
+    "photographer": "StockSnap",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "montessori classroom blocks and educational toys children",
+    "description": "block, children, toy, bricks, build, children's toys, blue, three, material, floor",
+    "source": "https://pixabay.com/photos/block-children-toy-bricks-build-9704503/",
+    "photographer": "cecigre",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "montessori classroom blocks and educational toys children",
+    "description": "color, school, numbers, cubes, math, math, math, math, math, math",
+    "source": "https://pixabay.com/photos/color-school-numbers-cubes-math-4503279/",
+    "photographer": "an_photos",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "cheerful nursery school interior sunny windows",
+    "description": "bedroom, bed, stuffed toy, plush toy, pillows, room, home, house, stuffed animal, toy animal, closeup, bedroom, bedroom, bed, bed, bed, bed, bed, home",
+    "source": "https://pixabay.com/photos/bedroom-bed-stuffed-toy-plush-toy-5646321/",
+    "photographer": "michasekdzi",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "cheerful nursery school interior sunny windows",
+    "description": "mattress, bed, pillow, sleep, relax, relaxation, rest, place to sleep, bedding, lie, teddy, bedroom, teddy bear, stuffed animal, toy, cute, mattress, mattress, mattress, mattress, mattress, bed, bed, bed, bed, sleep, sleep, bedroom",
+    "source": "https://pixabay.com/photos/mattress-bed-pillow-sleep-relax-2489615/",
+    "photographer": "congerdesign",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
