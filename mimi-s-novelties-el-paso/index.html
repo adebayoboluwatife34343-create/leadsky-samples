@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FDFCFA">
+<title>Mimi’s Novelties — Florist in El Paso | Independent Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FDFCFA;--ink:#2E3B34;--green:#426c51;--sage:#B9C8B9;--wash:#F3F6F4;--line:#d7dfd8;--serif:"Libre Baskerville",Georgia,serif;--sans:"Open Sans",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 var(--sans)}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}a{color:inherit}button{cursor:pointer}img{display:block;width:100%;height:100%;object-fit:cover}button,a{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #ac572e;outline-offset:4px}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.22}h2{font-size:clamp(30px,4.5vw,53px);letter-spacing:-1.7px}h3{font-size:23px}p{max-width:62ch}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}.eyebrow{text-transform:uppercase;letter-spacing:2.1px;font-size:10px;font-weight:700;margin-bottom:15px}.button{display:inline-flex;justify-content:center;align-items:center;gap:22px;background:var(--green);color:white;text-decoration:none;border:1px solid var(--green);padding:13px 22px;min-height:48px;font-size:13px;font-weight:600;border-radius:3px;transition:background .2s,transform .2s}.button:hover{background:#2e503b;transform:translateY(-2px)}.button.light{background:var(--paper);color:var(--ink);border-color:var(--paper)}.button.outline{background:transparent;color:var(--ink);border-color:var(--line)}.concept{padding:7px 20px;text-align:center;font-size:10px;line-height:1.6;background:#e8eee7}.header{position:sticky;top:0;z-index:50;background:rgba(253,252,250,.97);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;height:69px;gap:14px}.brand{font:17px var(--serif);text-decoration:none;white-space:nowrap;letter-spacing:-.7px}.brand small{font:8px var(--sans);letter-spacing:2.6px;display:block;margin-top:5px;text-transform:uppercase}.nav-actions{display:flex;gap:12px;align-items:center}.nav .button{min-height:38px;padding:7px 16px;font-size:11px}.menu-toggle{height:42px;width:42px;border:1px solid var(--line);background:transparent;border-radius:50%;display:grid;place-content:center;gap:5px}.menu-toggle span{display:block;width:16px;height:1px;background:var(--ink)}.menu{position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:18px max(20px,calc((100vw - 1180px)/2)) 24px;box-shadow:0 20px 30px #2e3b3410}.menu[hidden]{display:none}.menu a{display:block;padding:11px 0;text-decoration:none;border-bottom:1px solid var(--line);font:18px var(--serif)}
+.hero{padding:30px 0 100px}.hero-intro{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:23px}.hero-intro p{margin:0}.location{font-size:11px;letter-spacing:1px;text-transform:uppercase}.hero-note{font:italic 14px var(--serif)}.comparison{position:relative;height:600px;overflow:hidden;isolation:isolate;background:#d9dccc;--split:50%}.comparison>.photo{position:absolute;inset:0}.comparison .before{clip-path:inset(0 calc(100% - var(--split)) 0 0);z-index:2}.comparison .photo img{object-position:center 48%}.photo.after img{object-position:center 56%}
+.compare-shade{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,.35) 0%,rgba(0,0,0,.7) 55%,rgba(0,0,0,.9) 100%)}
+.hero-copy{position:absolute;z-index:10;bottom:100px;left:5%;right:5%;color:white;text-shadow:0 2px 12px rgba(0,0,0,.6)}.hero-copy h1{font-size:clamp(35px,5.4vw,68px);max-width:720px;letter-spacing:-2px;margin-bottom:15px}.hero-copy p{font-size:14px;margin-bottom:22px;max-width:420px}.hero-copy a{pointer-events:auto}.hero-copy .eyebrow{font-size:10px}.compare-labels{position:absolute;top:18px;left:18px;right:18px;display:flex;justify-content:space-between;z-index:4;pointer-events:none}.compare-labels span{background:var(--paper);color:var(--ink);font-size:10px;padding:5px 10px;border-radius:2px}.divider{position:absolute;left:var(--split);top:0;bottom:0;width:2px;background:#fff;z-index:4;pointer-events:none}.handle{position:absolute;top:30%;left:50%;transform:translate(-50%,-50%);width:50px;height:50px;background:var(--paper);border:1px solid white;border-radius:50%;color:var(--ink);display:grid;place-items:center;font-size:23px;box-shadow:0 4px 20px #0003}.compare-input{position:absolute;top:0;left:0;width:100%;height:43%;margin:0;opacity:0;z-index:6;cursor:ew-resize}.comparison:focus-within{outline:3px solid #ac572e;outline-offset:4px}.caption{display:flex;justify-content:space-between;gap:20px;padding:12px 0;font-size:10px;color:#566359}.caption p{margin:0;max-width:80ch}.caption strong{font-weight:600}.section{padding:90px 0}.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:35px}.section-head h2{margin:0;max-width:650px}.section-head>p{font-size:13px;max-width:270px;margin-bottom:0}.process-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:65px;align-items:center}.process-photo{height:510px;position:relative}.process-photo img{border-radius:140px 140px 3px 3px}.photo-note{font-size:10px;color:#526256;margin:10px 0 0}.step{border-top:1px solid var(--line)}.step:last-child{border-bottom:1px solid var(--line)}summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:22px;min-height:105px;padding:22px 0}summary::-webkit-details-marker{display:none}.num{font-size:11px;color:var(--green);border:1px solid var(--sage);height:34px;width:34px;display:grid;place-content:center;border-radius:50%;flex-shrink:0}summary h3{margin:0;font-size:25px}summary .plus{margin-left:auto;font-size:25px;font-weight:400}details[open] .plus{transform:rotate(45deg)}.step-content{padding:0 28px 25px 56px;font-size:13px}.step-content p{margin:0}.step-content small{display:block;margin-top:10px;color:#526256}.process-kicker{font-size:11px;margin-top:20px}
+.prices{background:var(--wash);border-block:1px solid var(--line)}.pricing-intro{max-width:580px;font-size:14px}.price-row{display:grid;grid-template-columns:90px 1fr 1fr 150px;gap:25px;align-items:center;border-top:1px solid var(--line);padding:23px 0;transition:background .2s}.price-row:hover{background:#eaf0e9}.price-row img{width:90px;height:100px;border-radius:2px}.price-row h3{font-size:21px;margin:0 0 5px}.price-row p{font-size:12px;margin:0}.price-row .quote{font-size:12px;font-weight:600}.price-row a{text-underline-offset:5px;font-size:12px}.table-heading{display:grid;grid-template-columns:115px 1fr 1fr 150px;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;padding:22px 0}.table-heading span:first-child{grid-column:2}.table-note{font-size:11px;margin-top:18px}.planner{margin-top:45px;background:var(--paper);border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr;gap:45px;padding:36px}.planner h3{font-size:27px;margin-bottom:12px}.planner p{font-size:12px}.planner-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}label{display:block;font-size:11px;font-weight:600;margin-bottom:7px}input,select,textarea{width:100%;min-height:47px;border:1px solid #b8c4ba;border-radius:2px;padding:11px;background:var(--paper);color:var(--ink)}textarea{min-height:110px;resize:vertical}.budget-result{grid-column:1/-1;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;gap:15px;align-items:center}.budget-result strong{font:26px var(--serif)}.budget-result span{font-size:11px;display:block}.planner .button{font-size:11px;padding:10px 15px}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:85px}.contact-info h2{max-width:430px}.contact-info>p{font-size:14px}.contact-links{display:flex;flex-direction:column;gap:10px;margin:25px 0 30px}.contact-links a{font-size:16px;text-underline-offset:5px;overflow-wrap:anywhere}.contact-details{border-top:1px solid var(--line);padding-top:20px;display:grid;grid-template-columns:1fr 1fr;gap:20px;font-size:12px}.contact-details strong{display:block;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}.contact-details p{margin-bottom:9px}.contact-photo{height:180px;margin-top:30px}.contact-photo img{object-position:center 48%;border-radius:2px}.form{background:var(--wash);padding:32px;border:1px solid var(--line)}.form h3{font-size:26px;margin-bottom:8px}.form .demo-note{font-size:11px;margin-bottom:25px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.full{grid-column:1/-1}.form .button{width:100%;margin-top:20px}.form-status{font-size:12px;padding:13px;background:#e3ece0;margin:16px 0 0;border-left:3px solid var(--green)}.form-status:empty{display:none}.privacy{font-size:10px;margin:12px 0 0}.footer{background:#e9eee7;padding:38px 0 90px;border-top:1px solid var(--line)}.footer-top{display:flex;justify-content:space-between;gap:25px;align-items:center}.footer-brand{font:23px var(--serif)}.footer p{font-size:10px;margin:12px 0}.credits{font-size:10px;border-top:1px solid #cad5c9;padding-top:18px;margin-top:24px}.credits summary{font:11px var(--sans);min-height:35px;padding:0;gap:10px}.credits ul{padding-left:18px;line-height:2}.credits a{text-underline-offset:2px}.mobile-bar{display:none}.skip{position:fixed;top:-100px;left:10px;z-index:100;background:var(--paper);padding:10px}.skip:focus{top:10px}.reveal{transition:opacity .6s,transform .6s}.js-motion .reveal.wait{opacity:0;transform:translateY(18px)}
+@media(min-width:1000px){.menu{left:auto;right:max(20px,calc((100vw - 1180px)/2));width:320px;padding:20px 28px}.hero{padding-top:35px}}
+@media(max-width:760px){.wrap{width:calc(100% - 36px)}.concept{font-size:9px;padding:6px 18px}.nav{height:63px}.brand{font-size:15px}.brand small{font-size:7px}.nav-actions{gap:8px}.nav .button{padding:7px 12px}.menu-toggle{width:36px;height:36px}.hero{padding-top:20px;padding-bottom:80px}.hero-intro{margin-bottom:15px}.location{font-size:9px}.hero-note{font-size:11px}.comparison{height:530px}.hero-copy{bottom:80px;left:22px;right:22px}.hero-copy h1{font-size:36px;letter-spacing:-1.4px;margin-bottom:12px}.hero-copy p{font-size:12px;max-width:280px;margin-bottom:18px}.hero-copy .eyebrow{font-size:9px;letter-spacing:1.4px}.hero-copy .button{padding:12px 19px}.compare-labels{left:12px;right:12px;top:12px}.compare-labels span{font-size:9px}.caption{display:block;font-size:9px;line-height:1.65}.caption strong{display:block;margin-top:5px}.section{padding:58px 0}.section-head{display:block;margin-bottom:28px}.section-head>p{margin-top:18px;max-width:350px}.section-head h2{font-size:34px;letter-spacing:-1px}.process-layout{grid-template-columns:1fr;gap:28px}.process-photo{height:290px;margin-right:40px}.process-photo img{border-radius:100px 100px 2px 2px}.process-photo .photo-note{font-size:9px}.process-layout>div:last-child{margin-top:10px}summary{min-height:90px;gap:15px}summary h3{font-size:24px}.step-content{padding-left:49px}.table-heading{display:none}.price-row{grid-template-columns:74px 1fr;gap:10px 17px;padding:23px 0}.price-row img{width:74px;height:100px;grid-row:1/4}.price-row h3{font-size:21px}.price-row>p{grid-column:2}.price-row>.quote{grid-column:2}.price-row .quote{font-size:11px}.price-row .quote a{margin-left:12px;font-size:11px}.planner{grid-template-columns:1fr;padding:23px;gap:18px;margin-top:30px}.planner-fields{gap:12px}.budget-result{flex-wrap:wrap}.budget-result strong{font-size:23px}.contact-grid{grid-template-columns:1fr;gap:35px}.contact-info h2{font-size:35px}.contact-details{gap:15px}.contact-photo{height:210px}.form{padding:22px}.form-grid{grid-template-columns:1fr}.full{grid-column:auto}.footer-top{display:block}.footer-top>a{display:inline-block;margin-top:15px;font-size:12px}.mobile-bar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:60;background:var(--paper);border-top:1px solid var(--line);padding:9px 18px max(9px,env(safe-area-inset-bottom));gap:10px;box-shadow:0 -5px 20px #2e3b3408}.mobile-bar a{flex:1;min-height:44px;padding:8px 10px;font-size:12px}.contact-links a{font-size:15px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.js-motion .reveal.wait{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="concept">Independent website concept by LeadSky for Mimi’s Novelties. Not their official website.</div>
+<header class="header">
+<div class="wrap nav">
+<a class="brand" href="#main" aria-label="Mimi’s Novelties home">Mimi’s Novelties<small>Flowers · El Paso</small></a>
+<div class="nav-actions">
+<a class="button" href="#contact">Order</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="site-menu" aria-label="Open navigation"><span></span><span></span></button>
+</div>
+</div>
+<nav class="menu" id="site-menu" aria-label="Main navigation" hidden>
+<a href="#arrangements">Flower inspiration</a>
+<a href="#process">How it works</a>
+<a href="#prices">Prices & budget planner</a>
+<a href="#contact">Order enquiry</a>
+<a href="#visit">Hours & location</a>
+</nav>
+</header>
+<main id="main">
+<section class="hero wrap" aria-labelledby="hero-title">
+<div class="hero-intro"><p class="location">Florist · El Paso, Texas</p><p class="hero-note">A little thought. A lovely gesture.</p></div>
+<div class="comparison" id="arrangements">
+<div class="photo after"><img src="img/stock-1.jpg" alt="Orange tulips gathered into a paper-wrapped bouquet, shown as stock inspiration" width="1400" height="950" fetchpriority="high"></div>
+<div class="photo before"><img src="img/stock-9.jpg" alt="A close-up of fresh pink roses, shown as stock inspiration" width="1400" height="950" fetchpriority="high"></div>
+<div class="compare-shade"></div>
+<div class="compare-labels"><span>Before / flower inspiration</span><span>After / bouquet inspiration</span></div>
+<div class="divider"><span class="handle" aria-hidden="true">↔</span></div>
+<input class="compare-input" id="comparison-slider" type="range" min="0" max="100" value="50" aria-label="Compare flower and bouquet inspiration" aria-valuetext="50 percent flower inspiration">
+<div class="hero-copy">
+<p class="eyebrow">Mimi’s Novelties — Florist in El Paso, TX</p>
+<h1>Say it<br>with flowers.</h1>
+<p>A birthday, a thank-you, or just because. Start your flower enquiry with Mimi’s Novelties.</p>
+<a href="#contact" class="button light">Order flowers <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+<div class="caption"><p>Drag the handle or use the arrow keys. Illustrative before/after concept using two different stock photographs, not a documented arrangement transformation or Mimi’s own work.</p><strong>Fresh inspiration. Your personal message.</strong></div>
+</section>
+
+<section class="section wrap" id="process">
+<div class="section-head">
+<div><p class="eyebrow">01 / From thought to flowers</p><h2>A thoughtful gesture<br>starts with a conversation.</h2></div>
+<p>A simple enquiry path. Flower choices, pricing and fulfilment are confirmed directly with the business.</p>
+</div>
+<div class="process-layout">
+<figure style="margin:0">
+<div class="process-photo"><img src="img/stock-8.jpg" alt="Hands holding a bouquet beside a florist’s notebook, illustrative stock photograph" loading="lazy" width="700" height="900"></div>
+<figcaption class="photo-note">Behind the gesture · illustrative stock photography</figcaption>
+</figure>
+<div>
+<details class="step reveal" open>
+<summary><span class="num">01</span><h3>Consult</h3><span class="plus" aria-hidden="true">+</span></summary>
+<div class="step-content"><p>Share the occasion, your preferred colours, the date and your budget. Have a favourite flower? Mention it so Mimi’s can discuss what may be available.</p><small>Start with a call or use the concept enquiry form below.</small></div>
+</details>
+<details class="step reveal">
+<summary><span class="num">02</span><h3>Design</h3><span class="plus" aria-hidden="true">+</span></summary>
+<div class="step-content"><p>Discuss the arrangement with Mimi’s before placing an order. Confirm the flowers, size, presentation and final price directly. The photographs here are inspiration, not an available product catalogue.</p></div>
+</details>
+<details class="step reveal">
+<summary><span class="num">03</span><h3>Deliver</h3><span class="plus" aria-hidden="true">+</span></summary>
+<div class="step-content"><p>Ask whether collection or delivery is available for your date and location. Confirm any delivery area, charge and timing directly with Mimi’s before making arrangements. This concept does not book or confirm delivery.</p></div>
+</details>
+<p class="process-kicker">Ready to talk flowers? <a href="tel:+19153297714">Call (915) 329-7714 ↗</a></p>
+</div>
+</div>
+</section>
+
+<section class="section prices" id="prices">
+<div class="wrap">
+<div class="section-head">
+<div><p class="eyebrow">02 / Clear conversations, personal choices</p><h2>Your flowers.<br>Your budget.</h2></div>
+<p>No guessed prices. Ask Mimi’s for current availability and a personalised quote.</p>
+</div>
+<p class="pricing-intro">Use these enquiry options to describe what you have in mind. Services, inclusions and prices need confirmation with the business.</p>
+<div class="table-heading" aria-hidden="true"><span>Enquiry</span><span>What to discuss</span><span>Price</span></div>
+<div class="price-row reveal">
+<img src="img/stock-7.jpg" alt="Wrapped floral bouquet shown as gift inspiration" loading="lazy" width="180" height="200">
+<div><h3>A floral gift</h3><p>A gesture with someone in mind.</p></div>
+<p>Occasion, flower preferences, wrapping and a personal message.</p>
+<div class="quote">Custom quote<br><a href="#contact" data-interest="Floral gift">Ask about a gift ↗</a></div>
+</div>
+<div class="price-row reveal">
+<img src="img/stock-6.jpg" alt="Colourful flowers in vases, illustrative arrangement inspiration" loading="lazy" width="180" height="200">
+<div><h3>Flowers for a gathering</h3><p>Bring your table ideas.</p></div>
+<p>Date, number of arrangements, colours and preferred presentation.</p>
+<div class="quote">Custom quote<br><a href="#contact" data-interest="Gathering or event">Discuss your occasion ↗</a></div>
+</div>
+<div class="price-row reveal">
+<img src="img/stock-2.jpg" alt="Colourful tulips shown as inspiration for a flower enquiry" loading="lazy" width="180" height="200">
+<div><h3>Something personal</h3><p>Start with a colour or a feeling.</p></div>
+<p>Your idea, budget and preferred date. Ask what can be arranged.</p>
+<div class="quote">Custom quote<br><a href="#contact" data-interest="Personal flower request">Share your idea ↗</a></div>
+</div>
+<p class="table-note">All images are illustrative stock photographs. No pictured arrangement is offered for sale through this concept.</p>
+
+<div class="planner" id="planner">
+<div>
+<p class="eyebrow">A useful starting point</p>
+<h3>Plan your flower budget.</h3>
+<p>Enter your own budget per arrangement and quantity to estimate your planned spend. This is a budgeting tool, not Mimi’s pricing or a quotation. Tax, delivery and other charges are not calculated.</p>
+</div>
+<div class="planner-fields">
+<div><label for="budget">Your budget per arrangement (USD)</label><input id="budget" type="number" min="1" max="100000" step="0.01" value="50" inputmode="decimal"></div>
+<div><label for="quantity">Number of arrangements</label><input id="quantity" type="number" min="1" max="1000" step="1" value="1" inputmode="numeric"></div>
+<div class="budget-result" aria-live="polite"><div><span>Planned flower spend</span><strong id="estimate">$50.00</strong></div><button class="button" id="use-budget" type="button">Use in my enquiry ↗</button></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section wrap" id="contact">
+<div class="contact-grid">
+<div class="contact-info">
+<p class="eyebrow">03 / Let’s talk flowers</p>
+<h2>Tell Mimi’s<br>what you have in mind.</h2>
+<p>For a real order, contact the business directly. The form is an interactive demonstration and does not send an enquiry.</p>
+<div class="contact-links">
+<a href="tel:+19153297714">(915) 329-7714 ↗</a>
+<a href="mailto:mimisnovelties@yahoo.com">mimisnovelties@yahoo.com ↗</a>
+</div>
+<div class="contact-details" id="visit">
+<div><strong>Find Mimi’s</strong><p>10101 North Loop Drive<br>Socorro, TX 79927</p><a href="https://www.google.com/maps/search/?api=1&amp;query=10101+North+Loop+Drive+Socorro+TX+79927" target="_blank" rel="noopener noreferrer">Open Google Maps ↗</a></div>
+<div><strong>Opening hours</strong><p>Monday–Friday<br>11:00 am–6:00 pm</p><p>Saturday<br>11:00 am–3:00 pm</p></div>
+</div>
+<div class="contact-photo"><img src="img/stock-5.jpg" alt="Flowers on a table, shown as illustrative floral inspiration" loading="lazy" width="800" height="420"></div>
+<p class="photo-note">A little inspiration for your next occasion. Stock photograph.</p>
+</div>
+
+<form class="form" id="enquiry-form">
+<h3>Your flower enquiry</h3>
+<p class="demo-note">Independent concept · demo form only. To reach Mimi’s, please call or email directly.</p>
+<div class="form-grid">
+<div><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" maxlength="100" required></div>
+<div><label for="email">Email address *</label><input id="email" name="email" type="email" autocomplete="email" maxlength="180" required></div>
+<div class="full"><label for="interest">What would you like to discuss?</label><select id="interest" name="interest"><option>Floral gift</option><option>Gathering or event</option><option>Personal flower request</option></select></div>
+<div><label for="date">Preferred date</label><input id="date" name="date" type="date"></div>
+<div><label for="form-budget">Your total budget (USD)</label><input id="form-budget" name="budget" type="number" min="1" step=".01" inputmode="decimal"></div>
+<div class="full"><label for="message">Tell us about your idea *</label><textarea id="message" name="message" required minlength="10" maxlength="2000" placeholder="The occasion, colours you love, and anything else you’d like to discuss."></textarea></div>
+</div>
+<button class="button" type="submit">Preview enquiry <span aria-hidden="true">↗</span></button>
+<p class="privacy">Nothing is stored or sent by this demo. No order, payment or delivery is confirmed.</p>
+<p class="form-status" id="form-status" role="status" tabindex="-1"></p>
+</form>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="wrap">
+<div class="footer-top"><div class="footer-brand">Mimi’s Novelties</div><a href="#main">Back to the flowers ↑</a></div>
+<p>Florist · El Paso area · 10101 North Loop Drive, Socorro, TX 79927</p>
+<p>Monday–Friday 11:00 am–6:00 pm · Saturday 11:00 am–3:00 pm</p>
+<p>Independent website concept. Not affiliated with or endorsed by Mimi’s Novelties. Business details supplied for this concept; current services and availability require direct confirmation.</p>
+<details class="credits">
+<summary>Photography & concept credits <span aria-hidden="true">+</span></summary>
+<p>Illustrative stock photography, used under the Pixabay Content License. These are not photographs of Mimi’s staff, premises or completed work.</p>
+<ul>
+<li>Orange tulip bouquet — <a href="https://pixabay.com/photos/tulips-bouquet-flowers-7765371/" target="_blank" rel="noopener noreferrer">jhenning / Pixabay</a></li>
+<li>Pink roses — <a href="https://pixabay.com/photos/roses-pink-roses-flowers-1463562/" target="_blank" rel="noopener noreferrer">congerdesign / Pixabay</a></li>
+<li>Florist’s tabletop — <a href="https://pixabay.com/photos/bouquet-decor-flat-lay-florist-5060834/" target="_blank" rel="noopener noreferrer">juliasorokina / Pixabay</a></li>
+<li>Wrapped bouquet — <a href="https://pixabay.com/photos/flower-mist-flower-admission-4919270/" target="_blank" rel="noopener noreferrer">김경복 / Pixabay</a></li>
+<li>Flowers in vases — <a href="https://pixabay.com/photos/bloom-blossom-colorful-colourful-1839452/" target="_blank" rel="noopener noreferrer">Pexels / Pixabay</a></li>
+<li>Colourful tulips — <a href="https://pixabay.com/photos/tulips-flowers-bouquet-colorful-7849160/" target="_blank" rel="noopener noreferrer">Irenna_____ / Pixabay</a></li>
+<li>Table flowers — <a href="https://pixabay.com/photos/flower-petal-bloom-garden-plant-2590521/" target="_blank" rel="noopener noreferrer">StockSnap / Pixabay</a></li>
+</ul>
+</details>
+<p>Concept by LeadSky</p>
+</div>
+</footer>
+<div class="mobile-bar" aria-label="Quick contact">
+<a class="button" href="tel:+19153297714">Call Mimi’s ↗</a>
+<a class="button outline" href="#contact">Flower enquiry ↗</a>
+</div>
+
+<script>
+(function(){
+"use strict";
+const menuButton=document.querySelector(".menu-toggle");
+const menu=document.getElementById("site-menu");
+function closeMenu(){menu.hidden=true;menuButton.setAttribute("aria-expanded","false");menuButton.setAttribute("aria-label","Open navigation")}
+menuButton.addEventListener("click",function(){
+const opening=menu.hidden;
+menu.hidden=!opening;
+menuButton.setAttribute("aria-expanded",String(opening));
+menuButton.setAttribute("aria-label",opening?"Close navigation":"Open navigation");
+});
+menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",closeMenu));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!menu.hidden){closeMenu();menuButton.focus()}});
+document.addEventListener("click",e=>{if(!e.target.closest(".header"))closeMenu()});
+
+const slider=document.getElementById("comparison-slider");
+const comparison=document.querySelector(".comparison");
+slider.addEventListener("input",function(){
+comparison.style.setProperty("--split",this.value+"%");
+this.setAttribute("aria-valuetext",this.value+" percent flower inspiration");
+});
+
+const budget=document.getElementById("budget");
+const quantity=document.getElementById("quantity");
+const output=document.getElementById("estimate");
+const useBudget=document.getElementById("use-budget");
+const money=new Intl.NumberFormat("en-US",{style:"currency",currency:"USD"});
+function total(){
+if(!budget.value||!quantity.value||!budget.validity.valid||!quantity.validity.valid)return null;
+return Number(budget.value)*Number(quantity.value);
+}
+function updateEstimate(){
+const amount=total();
+output.textContent=amount===null?"Check your entries":money.format(amount);
+useBudget.disabled=amount===null;
+useBudget.style.opacity=amount===null?".5":"1";
+}
+budget.addEventListener("input",updateEstimate);
+quantity.addEventListener("input",updateEstimate);
+useBudget.addEventListener("click",()=>{
+const amount=total();
+if(amount===null)return;
+document.getElementById("form-budget").value=amount.toFixed(2);
+const message=document.getElementById("message");
+const note="I am planning "+quantity.value+" arrangement"+(Number(quantity.value)===1?"":"s")+" with a budget of "+money.format(Number(budget.value))+" each ("+money.format(amount)+" total). Please confirm available options and any additional charges.";
+message.value=note;
+document.getElementById("contact").scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth"});
+document.getElementById("name").focus({preventScroll:true});
+});
+
+document.querySelectorAll("[data-interest]").forEach(link=>{
+link.addEventListener("click",()=>{document.getElementById("interest").value=link.dataset.interest});
+});
+
+const dateInput=document.getElementById("date");
+const now=new Date();
+dateInput.min=now.getFullYear()+"-"+String(now.getMonth()+1).padStart(2,"0")+"-"+String(now.getDate()).padStart(2,"0");
+const form=document.getElementById("enquiry-form");
+form.addEventListener("submit",e=>{
+e.preventDefault();
+const name=document.getElementById("name");
+const message=document.getElementById("message");
+name.setCustomValidity(name.value.trim()?"":"Please enter your name.");
+message.setCustomValidity(message.value.trim().length>=10?"":"Please describe your idea in at least 10 characters.");
+if(!form.reportValidity())return;
+const status=document.getElementById("form-status");
+status.textContent="This is a demo form, nothing was sent.";
+status.focus();
+});
+["name","message"].forEach(id=>document.getElementById(id).addEventListener("input",function(){this.setCustomValidity("");document.getElementById("form-status").textContent=""}));
+
+const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+if("IntersectionObserver" in window&&!reduced.matches){
+document.documentElement.classList.add("js-motion");
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.remove("wait");observer.unobserve(entry.target)}});
+},{threshold:.1});
+document.querySelectorAll(".reveal").forEach(el=>{el.classList.add("wait");observer.observe(el)});
+reduced.addEventListener("change",e=>{if(e.matches){document.querySelectorAll(".wait").forEach(el=>el.classList.remove("wait"));observer.disconnect()}});
+}
+updateEstimate();
+})();
+</script>
+</body>
+</html>
