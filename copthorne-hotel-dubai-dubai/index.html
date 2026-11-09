@@ -1,0 +1,2085 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="robots" content="noindex">
+<title>Copthorne Hotel Dubai · Luxury Accommodation & Event Concierge Concept</title>
+
+<!-- Allowed External Libraries -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+:root {
+  --bg: #FDFBF7;
+  --bg-card: #FFFFFF;
+  --wine: #6B1F38;
+  --wine-dark: #4A1224;
+  --gold: #C5A059;
+  --gold-light: #F4ECE1;
+  --sand: #F2EBE1;
+  --ink: #1C252E;
+  --muted: #5A6A78;
+  --line: #E6DFD5;
+  --white: #FFFFFF;
+  --shadow: 0 12px 32px rgba(28, 37, 46, 0.06);
+  --radius: 12px;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessibility & Focus */
+:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; touch-action: manipulation; border: 0; background: none; }
+a { color: var(--wine); text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* Sticky Concept Top Banner */
+.top-banner {
+  background: var(--wine-dark);
+  color: #F7EAD0;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 100;
+  line-height: 1.3;
+}
+
+/* Site Header */
+.site-header {
+  background: rgba(253, 251, 247, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  width: 100%;
+}
+
+.header-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 56px;
+}
+
+.brand-identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.brand-logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  min-width: 0;
+}
+
+.brand-text b {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  line-height: 1.15;
+  color: var(--wine);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brand-text span {
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nav-links a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--wine); }
+
+.header-cta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--wine);
+  color: var(--white);
+}
+.btn-primary:hover {
+  background: var(--wine-dark);
+}
+.btn-outline {
+  border: 1px solid var(--wine);
+  color: var(--wine);
+}
+.btn-outline:hover {
+  background: var(--wine);
+  color: var(--white);
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--wine-dark);
+}
+.btn-gold:hover {
+  background: #B38E46;
+}
+
+.desktop-staff-btn {
+  display: inline-flex;
+}
+
+.mobile-nav-toggle {
+  display: none;
+  font-size: 20px;
+  color: var(--wine);
+  padding: 4px;
+  line-height: 1;
+}
+
+/* Mobile Nav Drawer */
+.mobile-nav-drawer {
+  display: none;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 20px;
+  flex-direction: column;
+  gap: 12px;
+}
+.mobile-nav-drawer.open { display: flex; }
+.mobile-nav-drawer a {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  padding: 4px 0;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: var(--wine-dark);
+  color: var(--white);
+  overflow: hidden;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(30,8,16,0.92) 0%, rgba(30,8,16,0.65) 55%, rgba(30,8,16,0.3) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 50px 16px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 30px;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-block;
+  background: rgba(197, 160, 89, 0.25);
+  border: 1px solid var(--gold);
+  color: #F5E6C8;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 50px);
+  line-height: 1.15;
+  margin: 0 0 14px;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+.hero p {
+  font-size: 15px;
+  color: #E2D7CE;
+  margin: 0 0 24px;
+  max-width: 580px;
+}
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* 3D Visual Canvas Card */
+.hero-3d-card {
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  position: relative;
+}
+#three-canvas {
+  width: 100%;
+  height: 200px;
+  display: block;
+  border-radius: 8px;
+}
+.hero-3d-caption {
+  font-size: 11px;
+  color: #D5C7B8;
+  margin-top: 8px;
+  letter-spacing: 0.04em;
+}
+
+/* Section Common Layout */
+.section-padding {
+  padding: 60px 16px;
+}
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+}
+.section-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--wine);
+  margin-bottom: 6px;
+  display: block;
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 3vw, 36px);
+  color: var(--ink);
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+.section-desc {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Photo Cards Grid */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.photo-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.card-img-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: #E8E0D5;
+}
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-tag-pill {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(28, 37, 46, 0.85);
+  color: var(--white);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+.card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.card-title {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--ink);
+  margin: 0 0 6px;
+}
+.card-text {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 14px;
+  line-height: 1.55;
+  flex: 1;
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  margin-top: auto;
+  font-size: 12px;
+  color: var(--ink);
+  font-weight: 600;
+  gap: 8px;
+}
+
+/* Feature Showcase Split */
+.split-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: center;
+  background: var(--sand);
+  border-radius: 16px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  margin-top: 30px;
+}
+.split-img {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 300px;
+}
+.split-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.split-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 60%);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Interactive Concierge Workspace */
+.concierge-app-section {
+  background: #F4EFEA;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.app-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.app-sidebar {
+  background: #FAF6F0;
+  border-right: 1px solid var(--line);
+  padding: 20px 12px;
+}
+.sidebar-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+  padding: 0 8px;
+}
+.app-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink);
+  text-align: left;
+  margin-bottom: 4px;
+  transition: all 0.2s;
+}
+.app-nav-btn:hover {
+  background: #EFE7DC;
+}
+.app-nav-btn.active {
+  background: var(--wine);
+  color: var(--white);
+}
+.app-nav-btn .badge-count {
+  margin-left: auto;
+  background: rgba(0,0,0,0.08);
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+.app-nav-btn.active .badge-count {
+  background: rgba(255,255,255,0.25);
+  color: var(--white);
+}
+
+.app-main {
+  padding: 20px;
+  min-width: 0;
+}
+
+/* Workspace Views */
+.workspace-view {
+  display: none;
+}
+.workspace-view.active {
+  display: block;
+}
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.view-header h2 {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+.view-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Concierge Interactive Studio Grid */
+.studio-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 20px;
+}
+
+.panel-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.panel-head {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #FAF7F2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.panel-head h3 {
+  font-size: 13px;
+  font-weight: 700;
+  margin: 0;
+}
+.channel-selector {
+  display: flex;
+  gap: 2px;
+  background: #EBE3D5;
+  padding: 2px;
+  border-radius: 6px;
+}
+.channel-btn {
+  font-size: 9px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+.channel-btn.active {
+  background: var(--white);
+  color: var(--wine);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Chat & Task Area */
+.chat-log {
+  padding: 16px;
+  max-height: 220px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat-msg {
+  display: flex;
+  gap: 8px;
+  max-width: 90%;
+}
+.chat-msg.user {
+  margin-left: auto;
+  flex-direction: row-reverse;
+}
+.msg-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+.msg-bubble {
+  background: #F4EFE8;
+  padding: 8px 12px;
+  border-radius: 0 10px 10px 10px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+.chat-msg.user .msg-bubble {
+  background: var(--wine);
+  color: var(--white);
+  border-radius: 10px 0 10px 10px;
+}
+.msg-time {
+  font-size: 9px;
+  color: var(--muted);
+  margin-top: 3px;
+  display: block;
+}
+
+.task-selector-bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 16px;
+  background: #FAF7F2;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+}
+.task-tab {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--line);
+  background: var(--white);
+  white-space: nowrap;
+}
+.task-tab.active {
+  background: var(--wine);
+  color: var(--white);
+  border-color: var(--wine);
+}
+
+.task-form-body {
+  padding: 16px;
+}
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.form-group.full { grid-column: 1 / -1; }
+.form-group label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.form-control {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+  background: var(--white);
+  color: var(--ink);
+  width: 100%;
+}
+.form-control:focus {
+  border-color: var(--wine);
+  outline: none;
+}
+.form-error {
+  color: #B91C1C;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+/* Right Itinerary Panel */
+.itinerary-panel {
+  display: flex;
+  flex-direction: column;
+}
+.itinerary-img-box {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+}
+.itinerary-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.itinerary-img-caption {
+  position: absolute;
+  bottom: 0;
+  inset-x: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+  color: rgba(255,255,255,0.9);
+  padding: 6px 12px;
+  font-size: 9px;
+}
+.itinerary-content {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: 12px;
+}
+.summary-line span { color: var(--muted); }
+.summary-line b { font-weight: 600; }
+
+.price-total-box {
+  margin-top: 12px;
+  padding: 12px;
+  background: var(--gold-light);
+  border-radius: 8px;
+  border: 1px solid rgba(197, 160, 89, 0.4);
+}
+.price-total-box .lbl {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--wine-dark);
+  font-weight: 700;
+}
+.price-total-box .val {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--wine);
+  margin-top: 2px;
+}
+
+/* Staff Table & Records View */
+.records-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+  min-width: 600px;
+}
+.records-table th {
+  background: #FAF7F2;
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.records-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.status-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 10px;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.status-badge.pending { background: #FEF3C7; color: #92400E; }
+.status-badge.approved { background: #D1FAE5; color: #065F46; }
+.status-badge.declined { background: #FEE2E2; color: #991B1B; }
+
+/* Footer */
+.site-footer {
+  background: var(--wine-dark);
+  color: #E2D7CE;
+  padding: 50px 16px 24px;
+  font-size: 12px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.footer-col h4 {
+  font-family: var(--font-serif);
+  color: #FFFFFF;
+  font-size: 16px;
+  margin: 0 0 12px;
+}
+.footer-col p { margin: 0 0 10px; line-height: 1.5; }
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-links li { margin-bottom: 6px; }
+.footer-links a { color: #E2D7CE; transition: color 0.2s; }
+.footer-links a:hover { color: var(--gold); }
+
+.footer-credits {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 20px;
+  font-size: 10px;
+  color: #B5A495;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-credits a { color: #D5C5B5; text-decoration: underline; }
+
+/* Toast Notification */
+.toast-notice {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  left: 20px;
+  max-width: 360px;
+  margin: 0 auto;
+  background: var(--ink);
+  color: var(--white);
+  padding: 12px 18px;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  z-index: 1000;
+  font-size: 12px;
+  display: none;
+  border-left: 4px solid var(--gold);
+}
+
+/* Dialog Modals */
+dialog {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 24px;
+  max-width: 440px;
+  width: calc(100% - 24px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  background: var(--bg-card);
+  color: var(--ink);
+}
+dialog::backdrop {
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 992px) {
+  .hero-content { grid-template-columns: 1fr; padding: 40px 16px; }
+  .split-feature { grid-template-columns: 1fr; padding: 20px; }
+  .app-layout { grid-template-columns: 1fr; }
+  .app-sidebar { border-right: 0; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 6px; }
+  .sidebar-title { width: 100%; margin-bottom: 2px; }
+  .app-nav-btn { width: auto; flex: 1; min-width: 120px; justify-content: center; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .studio-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .desktop-staff-btn { display: none; }
+  .mobile-nav-toggle { display: block; }
+}
+
+@media (max-width: 640px) {
+  .header-inner { padding: 6px 12px; min-height: 52px; }
+  .brand-logo { height: 24px; }
+  .brand-text b { font-size: 13px; }
+  .brand-text span { font-size: 8px; }
+  .header-cta .btn-primary { padding: 6px 10px; font-size: 11px; }
+  .section-padding { padding: 40px 12px; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .form-grid-2 { grid-template-columns: 1fr; }
+  .card-img-wrap { height: 180px; }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Independent Concept Top Banner -->
+<div class="top-banner">
+  Independent website concept by LeadSky for Copthorne Hotel Dubai. Not their official website.
+</div>
+
+<!-- Site Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand-identity">
+      <!-- Verified Logo Asset -->
+      <img src="img/business-logo-1.svg" alt="Copthorne Hotel Dubai Logo" class="brand-logo" onerror="this.src='img/profile.jpg'">
+      <div class="brand-text">
+        <b>Copthorne Hotel Dubai</b>
+        <span>Deira Waterfront · Dubai</span>
+      </div>
+    </div>
+
+    <nav class="nav-links" aria-label="Main Navigation">
+      <a href="#rooms">Accommodation</a>
+      <a href="#meetings">Meetings & Events</a>
+      <a href="#services">Concierge Services</a>
+      <a href="#location">Dubai Creek Location</a>
+      <a href="#concierge-app">Stay Studio</a>
+    </nav>
+
+    <div class="header-cta">
+      <button class="btn btn-outline desktop-staff-btn" id="quickStaffToggle">Staff View ↗</button>
+      <a href="#concierge-app" class="btn btn-primary">Plan Stay</a>
+      <button class="mobile-nav-toggle" id="mobileNavBtn" aria-label="Toggle Menu">☰</button>
+    </div>
+  </div>
+
+  <div class="mobile-nav-drawer" id="mobileDrawer">
+    <a href="#rooms" onclick="toggleMobileMenu()">Accommodation</a>
+    <a href="#meetings" onclick="toggleMobileMenu()">Meetings & Events</a>
+    <a href="#services" onclick="toggleMobileMenu()">Concierge Services</a>
+    <a href="#location" onclick="toggleMobileMenu()">Dubai Creek Location</a>
+    <a href="#concierge-app" onclick="toggleMobileMenu()">Stay Studio</a>
+    <button class="btn btn-outline" style="width:100%; margin-top:8px;" onclick="toggleMobileMenu(); switchAppView('staff');">Staff View ↗</button>
+  </div>
+</header>
+
+<!-- Hero Section with Dubai Creek Backdrop (img/stock-9.jpg) -->
+<section class="hero" id="hero">
+  <img src="img/stock-9.jpg" alt="Dubai Creek Waterfront view from hotel" class="hero-bg">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div>
+      <span class="hero-badge">Prime Deira Waterfront · Dubai</span>
+      <h1>Sophisticated Comfort on Dubai Creek</h1>
+      <p>
+        Experience warm hospitality, contemporary guest rooms, and state-of-the-art conference facilities located just minutes from Dubai International Airport and historic Deira Creek.
+      </p>
+      <div class="hero-actions">
+        <a href="#concierge-app" class="btn btn-gold">Interactive Stay Studio</a>
+        <a href="#rooms" class="btn btn-outline" style="color:#fff; border-color:#fff;">Explore Suites</a>
+      </div>
+    </div>
+
+    <!-- 3D Keycard Visual Card -->
+    <div class="hero-3d-card">
+      <div id="three-canvas" aria-label="3D Interactive Keycard Display"></div>
+      <div class="hero-3d-caption">Interactive 3D Digital Keycard Concept</div>
+    </div>
+  </div>
+</section>
+
+<!-- Accommodation Section featuring real photos (img/stock-2.jpg, img/stock-1.jpg) -->
+<section class="section-padding" id="rooms">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Refined Living</span>
+      <h2 class="section-title">Rooms & Executive Suites</h2>
+      <p class="section-desc">Relaxed elegance featuring high-speed Wi-Fi, plush linen bedding, ergonomic workspaces, and panoramic views of Dubai Creek.</p>
+    </div>
+
+    <div class="grid-cards">
+      <!-- Card 1: Guest Bed (img/stock-2.jpg) -->
+      <article class="photo-card">
+        <div class="card-img-wrap">
+          <img src="img/stock-2.jpg" alt="Cozy guest bed in Deluxe Room">
+          <span class="card-tag-pill">Deluxe Room</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Deluxe Creek View Room</h3>
+          <p class="card-text">Spacious room with king bed, luxury cotton linens, blackout drapes, and tranquil city or creek outlooks ideal for corporate and leisure stays.</p>
+          <div class="card-meta">
+            <span>From AED 420 / night</span>
+            <button class="btn btn-outline" onclick="selectAppTask('Room')">Configure Stay</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Linen Texture (img/stock-1.jpg) -->
+      <article class="photo-card">
+        <div class="card-img-wrap">
+          <img src="img/stock-1.jpg" alt="Premium bed linen detail and textiles">
+          <span class="card-tag-pill">Executive Suite</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Executive Suite Experience</h3>
+          <p class="card-text">Upgraded textile furnishings, separate lounge area, bath amenities, complimentary breakfast, and late check-out options.</p>
+          <div class="card-meta">
+            <span>From AED 650 / night</span>
+            <button class="btn btn-outline" onclick="selectAppTask('Room')">Configure Stay</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Meetings & Events Section featuring real photos (img/stock-6.jpg, img/stock-4.jpg, img/stock-3.jpg, img/stock-5.jpg) -->
+<section class="section-padding" id="meetings" style="background: #F7F3EC; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Business & Conferences</span>
+      <h2 class="section-title">Meetings & Event Facilities</h2>
+      <p class="section-desc">Flexible venues equipped with modern audiovisual technology, natural daylight, and custom catering packages for board meetings and workshops.</p>
+    </div>
+
+    <div class="grid-cards">
+      <!-- Card 1: Boardroom (img/stock-6.jpg) -->
+      <article class="photo-card">
+        <div class="card-img-wrap">
+          <img src="img/stock-6.jpg" alt="Spacious boardroom meeting table">
+          <span class="card-tag-pill">Up to 24 Guests</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Executive Boardroom</h3>
+          <p class="card-text">Polished timber conference table, ergonomic executive seating, integrated AV presentation setup, and dedicated coffee breaks.</p>
+          <div class="card-meta">
+            <span>Half / Full Day Rates</span>
+            <button class="btn btn-outline" onclick="selectAppTask('Meeting')">Request Venue</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Conference Suite (img/stock-4.jpg) -->
+      <article class="photo-card">
+        <div class="card-img-wrap">
+          <img src="img/stock-4.jpg" alt="Contemporary conference room with sofas and seating">
+          <span class="card-tag-pill">Lounge & Seminar</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Contemporary Conference Lounge</h3>
+          <p class="card-text">Flexible seating layout suitable for corporate seminars, panel discussions, media briefings, and networking receptions.</p>
+          <div class="card-meta">
+            <span>Custom Catering</span>
+            <button class="btn btn-outline" onclick="selectAppTask('Meeting')">Request Venue</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Daylight Seminar (img/stock-3.jpg) -->
+      <article class="photo-card">
+        <div class="card-img-wrap">
+          <img src="img/stock-3.jpg" alt="Daylight meeting room with chairs and desks">
+          <span class="card-tag-pill">Daylight Room</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Al Rigga Meeting Room</h3>
+          <p class="card-text">Abundant natural light with floor-to-ceiling windows, high-speed Wi-Fi connection, and adjustable climate control.</p>
+          <div class="card-meta">
+            <span>Up to 20 Guests</span>
+            <button class="btn btn-outline" onclick="selectAppTask('Meeting')">Request Venue</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Classroom Setup (img/stock-5.jpg) -->
+      <article class="photo-card">
+        <div class="card-img-wrap">
+          <img src="img/stock-5.jpg" alt="Classroom style training room with brick wall design">
+          <span class="card-tag-pill">Training Setup</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Workshop & Training Suite</h3>
+          <p class="card-text">Ideal for interactive corporate training, workshops, and team exams with spacious seating and writing desks.</p>
+          <div class="card-meta">
+            <span>Modular Layout</span>
+            <button class="btn btn-outline" onclick="selectAppTask('Meeting')">Request Venue</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Concierge & Services Section featuring real photos (img/stock-7.jpg, img/stock-8.jpg, img/stock-11.jpg, img/stock-12.jpg) -->
+<section class="section-padding" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">24/7 Guest Assistance</span>
+      <h2 class="section-title">Concierge & Airport Transfers</h2>
+      <p class="section-desc">From check-in reception to direct airport shuttles, our dedicated team ensures your Dubai trip is effortless.</p>
+    </div>
+
+    <div class="grid-cards">
+      <!-- Card 1: Reception (img/stock-7.jpg) -->
+      <article class="photo-card">
+        <div class="card-img-wrap">
+          <img src="img/stock-7.jpg" alt="Hotel receptionists answering guest phone call">
+          <span class="card-tag-pill">24/7 Desk</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Multilingual Front Desk</h3>
+          <p class="card-text">24-hour reception desk assistance for check-in, currency exchange, local tour recommendations, and wake-up calls.</p>
+          <div class="card-meta">
+            <span>Available Always</span>
+            <button class="btn btn-outline" onclick="selectAppTask('Question')">Ask Question</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Desk Bell (img/stock-8.jpg) -->
+      <article class="photo-card">
+        <div class="card-img-wrap">
+          <img src="img/stock-8.jpg" alt="Hotel call bell on reception desk">
+          <span class="card-tag-pill">Express Service</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Concierge & Luggage Service</h3>
+          <p class="card-text">Prompt luggage handling, valet parking coordination, car rental assistance, and dining reservations across Dubai.</p>
+          <div class="card-meta">
+            <span>Dedicated Team</span>
+            <button class="btn btn-outline" onclick="selectAppTask('Question')">Contact Concierge</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Airport Arrival (img/stock-11.jpg) -->
+      <article class="photo-card">
+        <div class="card-img-wrap">
+          <img src="img/stock-11.jpg" alt="Passenger traveling with luggage at airport terminal">
+          <span class="card-tag-pill">Airport Pickup</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Dubai Airport Shuttle</h3>
+          <p class="card-text">Convenient transfer services connecting Copthorne Hotel Dubai with Dubai International Airport (DXB) Terminals 1, 2 & 3.</p>
+          <div class="card-meta">
+            <span>15 Mins to DXB</span>
+            <button class="btn btn-outline" onclick="selectAppTask('Shuttle')">Book Shuttle</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4: Airport Sunset (img/stock-12.jpg) -->
+      <article class="photo-card">
+        <div class="card-img-wrap">
+          <img src="img/stock-12.jpg" alt="Travelers walking through modern airport terminal">
+          <span class="card-tag-pill">Departures Transfer</span>
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Seamless Departure Service</h3>
+          <p class="card-text">Pre-arranged chauffeur drops and luggage transfer services scheduled directly to align with your departure flight.</p>
+          <div class="card-meta">
+            <span>Timely Pickups</span>
+            <button class="btn btn-outline" onclick="selectAppTask('Shuttle')">Book Transfer</button>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Feature Split Banner with Dubai Creek Water Taxi (img/stock-10.jpg) -->
+    <div class="split-feature" id="location">
+      <div class="split-img">
+        <img src="img/stock-10.jpg" alt="Dubai Creek waterfront view with traditional abra boat">
+        <div class="split-img-overlay">
+          <span>Historic Dubai Creek & Traditional Abra Boat Routes</span>
+        </div>
+      </div>
+      <div>
+        <span class="section-tag">Explore Deira & Beyond</span>
+        <h3 style="font-family: var(--font-serif); font-size: clamp(22px, 2.5vw, 28px); margin: 0 0 12px;">Connected to Dubai’s Heritage & Commerce</h3>
+        <p style="color: var(--muted); font-size: 14px; margin-bottom: 20px;">
+          Located near Deira City Centre metro station, guests enjoy quick access to Dubai Gold Souk, Spice Souk, Dubai Creek Golf & Yacht Club, and downtown financial districts.
+        </p>
+        <a href="#concierge-app" class="btn btn-primary">Plan Stay & City Transfer →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Interactive Concierge & Staff Workspace Studio -->
+<section class="section-padding concierge-app-section" id="concierge-app">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Interactive Demo Feature</span>
+      <h2 class="section-title">Stay & Event Concierge Workspace</h2>
+      <p class="section-desc">Simulate stay options, calculate meeting quotes, request transfers, and test the real-time staff request queue.</p>
+    </div>
+
+    <div class="app-layout">
+      <!-- App Sidebar Navigation -->
+      <div class="app-sidebar">
+        <div class="sidebar-title">Workspace Views</div>
+        <button class="app-nav-btn active" onclick="switchAppView('concierge')">
+          <span>◉ Guest Concierge</span>
+        </button>
+        <button class="app-nav-btn" onclick="switchAppView('requests')">
+          <span>▤ My Requests</span>
+          <span class="badge-count" id="requestBadge">1</span>
+        </button>
+        <button class="app-nav-btn" onclick="switchAppView('loyalty')">
+          <span>◇ Rewards & Points</span>
+        </button>
+        <button class="app-nav-btn" onclick="switchAppView('staff')">
+          <span>▦ Staff Dashboard</span>
+        </button>
+      </div>
+
+      <!-- App Main View Area -->
+      <div class="app-main">
+        <!-- View 1: Guest Concierge Interactive Studio -->
+        <div class="workspace-view active" id="view-concierge">
+          <div class="view-header">
+            <div>
+              <h2>Guest Concierge Studio</h2>
+              <p>Select a task below to build an instant illustrative quote and send it to staff.</p>
+            </div>
+            <span style="font-size: 11px; background: var(--gold-light); color: var(--wine); padding: 4px 10px; border-radius: 20px; font-weight: 600;">
+              Demo Simulation
+            </span>
+          </div>
+
+          <div class="studio-grid">
+            <!-- Left Interactive Chat & Form Panel -->
+            <div class="panel-card">
+              <div class="panel-head">
+                <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
+                  <img src="img/profile.jpg" alt="Copthorne Staff Profile" class="msg-avatar">
+                  <div style="min-width: 0;">
+                    <h3 style="font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Copthorne Assistant</h3>
+                    <span style="font-size: 9px; color: green;">● Online Assistant</span>
+                  </div>
+                </div>
+                <div class="channel-selector">
+                  <button class="channel-btn active" onclick="setChannel('Website', this)">Web</button>
+                  <button class="channel-btn" onclick="setChannel('Mobile', this)">Mobile</button>
+                  <button class="channel-btn" onclick="setChannel('WhatsApp', this)">WhatsApp</button>
+                </div>
+              </div>
+
+              <!-- Conversation Log -->
+              <div class="chat-log" id="chatLog">
+                <div class="chat-msg">
+                  <img src="img/profile.jpg" alt="Assistant Profile" class="msg-avatar">
+                  <div>
+                    <div class="msg-bubble">Welcome to Copthorne Hotel Dubai! How may I assist with your upcoming stay, event, or transfer?</div>
+                    <span class="msg-time">Concierge Assistant</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Task Selector Tabs -->
+              <div class="task-selector-bar">
+                <button class="task-tab active" onclick="selectAppTask('Room')">Room Stay</button>
+                <button class="task-tab" onclick="selectAppTask('Meeting')">Meeting Venue</button>
+                <button class="task-tab" onclick="selectAppTask('Shuttle')">Airport Shuttle</button>
+                <button class="task-tab" onclick="selectAppTask('Question')">Hotel Inquiry</button>
+              </div>
+
+              <!-- Task Form Body -->
+              <form class="task-form-body" id="taskForm" onsubmit="handleQuoteSubmit(event)">
+                <div id="formDynamicFields">
+                  <!-- Injected via JS -->
+                </div>
+                <div class="form-error" id="formError"></div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 14px;">Calculate Illustrative Quote →</button>
+              </form>
+            </div>
+
+            <!-- Right Itinerary & Quote Panel -->
+            <div class="panel-card itinerary-panel">
+              <div class="panel-head">
+                <h3>Live Itinerary Quote</h3>
+                <span id="quoteStatusBadge" style="font-size: 10px; background: #E2E8F0; padding: 2px 6px; border-radius: 4px;">Draft</span>
+              </div>
+
+              <div class="itinerary-img-box">
+                <img id="itineraryImg" src="img/stock-9.jpg" alt="Dubai Creek Waterfront Preview">
+                <div class="itinerary-img-caption" id="itineraryCaption">Photo: Dubai Creek Waterfront (Reference Stock)</div>
+              </div>
+
+              <div class="itinerary-content" id="itineraryContent">
+                <!-- Injected via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- View 2: My Requests View -->
+        <div class="workspace-view" id="view-requests">
+          <div class="view-header">
+            <div>
+              <h2>My Submitted Requests</h2>
+              <p>Track your submitted sample inquiries from initial quote to staff review.</p>
+            </div>
+            <button class="btn btn-outline" onclick="switchAppView('concierge')">New Inquiry +</button>
+          </div>
+          <div id="requestsListContainer">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+
+        <!-- View 3: Rewards & Points View -->
+        <div class="workspace-view" id="view-loyalty">
+          <div class="view-header">
+            <div>
+              <h2>Guest Loyalty & Points</h2>
+              <p>Sample points ledger for demonstration purposes (Not linked to official My Millennium account).</p>
+            </div>
+          </div>
+          <div style="background: var(--gold-light); border: 1px solid var(--gold); border-radius: 12px; padding: 20px; margin-bottom: 20px;">
+            <span style="font-size: 10px; font-weight: 700; text-transform: uppercase; color: var(--wine-dark);">Sample Balance</span>
+            <div style="font-family: var(--font-serif); font-size: 36px; font-weight: 700; color: var(--wine);" id="pointsVal">1,200 PTS</div>
+            <p style="font-size: 12px; color: var(--muted); margin: 4px 0 0;">Redeem 1,000 points to claim AED 100 off eligible stay or meeting quotes.</p>
+          </div>
+          <div class="panel-card">
+            <div class="panel-head"><h3>Points Activity Ledger</h3></div>
+            <div id="pointsLedger" style="padding: 14px;">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- View 4: Staff Dashboard View -->
+        <div class="workspace-view" id="view-staff">
+          <div class="view-header">
+            <div>
+              <h2>Staff Request Desk</h2>
+              <p>Simulate front-desk and events team response: approve requests, revise quotes, or adjust terms.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap;">
+            <input type="text" id="staffSearchInput" class="form-control" placeholder="Search by Guest Name or ID..." oninput="renderStaffTable()" style="flex: 1; min-width: 180px;">
+            <select id="staffFilterType" class="form-control" onchange="renderStaffTable()" style="width: auto;">
+              <option value="">All Types</option>
+              <option value="Room">Room</option>
+              <option value="Meeting">Meeting</option>
+              <option value="Shuttle">Shuttle</option>
+              <option value="Question">Question</option>
+            </select>
+          </div>
+
+          <div class="panel-card">
+            <div class="records-table-wrap">
+              <table class="records-table">
+                <thead>
+                  <tr>
+                    <th>Request ID</th>
+                    <th>Guest Name</th>
+                    <th>Type & Details</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="staffTableBody">
+                  <!-- Injected via JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Copthorne Hotel Dubai</h4>
+        <p>Deira Waterfront, P.O. Box 119444, Dubai, United Arab Emirates.</p>
+        <p>Comfortable accommodations, meeting venues, and personalized concierge services near Dubai Creek.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#rooms">Guest Rooms</a></li>
+          <li><a href="#meetings">Meeting Facilities</a></li>
+          <li><a href="#services">Airport Shuttle</a></li>
+          <li><a href="#concierge-app">Interactive Concierge</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services">24/7 Front Desk</a></li>
+          <li><a href="#meetings">Executive Boardroom</a></li>
+          <li><a href="#location">Dubai Creek Sightseeing</a></li>
+          <li><a href="#concierge-app">Quote Estimator</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Concept & Notice</h4>
+        <p>Independent website proposal created by LeadSky. Unofficial private demonstration concept.</p>
+      </div>
+    </div>
+
+    <!-- Verified Photo Credits in Footer -->
+    <div class="footer-credits">
+      <div>Concept design by LeadSky · Private Demonstration Concept</div>
+      <div>
+        Photo Credits (Pixabay Commercial Licenses):
+        <a href="https://pixabay.com/photos/dubai-creek-waterfront-man-sitting-9060098/" target="_blank" rel="noopener">Creek (katetrysh)</a> ·
+        <a href="https://pixabay.com/photos/woman-asleep-girl-sleep-bed-cozy-2197947/" target="_blank" rel="noopener">Bedroom (Claudio_Scott)</a> ·
+        <a href="https://pixabay.com/photos/chairs-conference-room-contemporary-2181994/" target="_blank" rel="noopener">Meeting (Pexels)</a> ·
+        <a href="https://pixabay.com/photos/receptionists-phone-call-hotel-5975962/" target="_blank" rel="noopener">Reception (Rodrigo_SalomonHC)</a> ·
+        <a href="https://pixabay.com/photos/airport-woman-flight-boarding-2373727/" target="_blank" rel="noopener">Airport (JESHOOTS-com)</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Toast Notice -->
+<div class="toast-notice" id="toastNotice"></div>
+
+<!-- Demo Modal Dialogs -->
+<dialog id="submitModal">
+  <h3 style="font-family: var(--font-serif); margin-top: 0; font-size: 18px;">Submit Demo Request</h3>
+  <p style="font-size: 12px; color: var(--muted);">This is a demonstration request. No payment details are charged and no actual hotel booking is sent.</p>
+  <form onsubmit="confirmDemoSubmission(event)">
+    <div class="form-group" style="margin-bottom: 12px;">
+      <label for="modalGuestName">Guest Full Name</label>
+      <input type="text" id="modalGuestName" class="form-control" value="Demo Guest" required>
+    </div>
+    <div class="form-group" style="margin-bottom: 12px;">
+      <label for="modalPayMethod">Simulated Payment Method</label>
+      <select id="modalPayMethod" class="form-control">
+        <option>Pay at Hotel Desk (Sample)</option>
+        <option>Simulated Online Link</option>
+      </select>
+    </div>
+    <div style="display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px;">
+      <button type="button" class="btn btn-outline" onclick="document.getElementById('submitModal').close()">Cancel</button>
+      <button type="submit" class="btn btn-primary">Confirm & Send</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="editQuoteModal">
+  <h3 style="font-family: var(--font-serif); margin-top: 0; font-size: 18px;">Revise Quote (Staff Simulation)</h3>
+  <form onsubmit="saveStaffQuoteRevision(event)">
+    <div class="form-group" style="margin-bottom: 12px;">
+      <label for="editQuoteAmount">New Amount (AED)</label>
+      <input type="number" id="editQuoteAmount" class="form-control" required min="10">
+    </div>
+    <div class="form-group" style="margin-bottom: 12px;">
+      <label for="editQuoteReason">Reason for Revision</label>
+      <input type="text" id="editQuoteReason" class="form-control" placeholder="e.g. Special group discount applied" required>
+    </div>
+    <div style="display: flex; gap: 8px; justify-content: flex-end;">
+      <button type="button" class="btn btn-outline" onclick="document.getElementById('editQuoteModal').close()">Cancel</button>
+      <button type="submit" class="btn btn-primary">Save Revised Quote</button>
+    </div>
+  </form>
+</dialog>
+
+<script>
+// --- GLOBAL APPLICATION STATE ---
+const state = {
+  currentTask: 'Room',
+  activeChannel: 'Website',
+  activeView: 'concierge',
+  activeQuote: null,
+  points: 1200,
+  redeemPoints: false,
+  editingId: null,
+  records: [
+    {
+      id: 'SAMPLE-101',
+      type: 'Meeting',
+      description: '12 Attendees · Executive Boardroom · Half Day',
+      name: 'Sarah Jenkins',
+      status: 'Awaiting review',
+      amount: 1640,
+      details: [['Meeting Date', '2026-11-15'], ['Attendees', '12'], ['Setup', 'Boardroom']],
+      history: ['Initial meeting inquiry submitted for staff review.']
+    }
+  ],
+  ledger: [
+    { text: 'Initial Welcome Demo Balance', amount: 1200 }
+  ]
+};
+
+// Date helper
+function getFutureDate(days) {
+  const d = new Date();
+  d.setDate(d.getDate() + days);
+  return d.toISOString().split('T')[0];
+}
+
+// Mobile Nav Toggle
+function toggleMobileMenu() {
+  const drawer = document.getElementById('mobileDrawer');
+  drawer.classList.toggle('open');
+}
+
+document.getElementById('mobileNavBtn').addEventListener('click', toggleMobileMenu);
+
+// Toast notification helper
+function showToast(msg) {
+  const toast = document.getElementById('toastNotice');
+  toast.textContent = msg;
+  toast.style.display = 'block';
+  setTimeout(() => { toast.style.display = 'none'; }, 4000);
+}
+
+// Quick Staff View Switcher
+document.getElementById('quickStaffToggle').addEventListener('click', () => {
+  const target = state.activeView === 'staff' ? 'concierge' : 'staff';
+  switchAppView(target);
+});
+
+// App View Switcher
+function switchAppView(viewId) {
+  state.activeView = viewId;
+  document.querySelectorAll('.workspace-view').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.app-nav-btn').forEach(btn => btn.classList.remove('active'));
+  
+  document.getElementById(`view-${viewId}`).classList.add('active');
+  
+  // Highlight active sidebar button
+  const btns = document.querySelectorAll('.app-nav-btn');
+  if (viewId === 'concierge') btns[0].classList.add('active');
+  if (viewId === 'requests') btns[1].classList.add('active');
+  if (viewId === 'loyalty') btns[2].classList.add('active');
+  if (viewId === 'staff') btns[3].classList.add('active');
+
+  if (viewId === 'requests') renderRequestsList();
+  if (viewId === 'loyalty') renderLoyaltyLedger();
+  if (viewId === 'staff') renderStaffTable();
+}
+
+// Channel Selector
+function setChannel(ch, btn) {
+  state.activeChannel = ch;
+  document.querySelectorAll('.channel-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  showToast(`Switched channel simulation to: ${ch}`);
+}
+
+// Select Task (Room, Meeting, Shuttle, Question)
+function selectAppTask(task) {
+  state.currentTask = task;
+  state.activeQuote = null;
+  state.redeemPoints = false;
+  
+  document.querySelectorAll('.task-tab').forEach(t => {
+    t.classList.toggle('active', t.textContent.includes(task) || (task==='Question' && t.textContent.includes('Inquiry')));
+  });
+
+  renderTaskFormFields();
+  renderItineraryPanel();
+  
+  const appSec = document.getElementById('concierge-app');
+  if (window.scrollY < appSec.offsetTop - 80 || window.scrollY > appSec.offsetTop + appSec.offsetHeight) {
+    appSec.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// Dynamic Form Generator
+function renderTaskFormFields() {
+  const container = document.getElementById('formDynamicFields');
+  let html = '';
+
+  if (state.currentTask === 'Room') {
+    html = `
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="roomArrival">Arrival Date</label>
+          <input type="date" id="roomArrival" class="form-control" value="${getFutureDate(7)}" min="${getFutureDate(0)}" required>
+        </div>
+        <div class="form-group">
+          <label for="roomDeparture">Departure Date</label>
+          <input type="date" id="roomDeparture" class="form-control" value="${getFutureDate(9)}" min="${getFutureDate(1)}" required>
+        </div>
+        <div class="form-group">
+          <label for="roomGuests">Guests</label>
+          <select id="roomGuests" class="form-control">
+            <option value="1">1 Guest</option>
+            <option value="2" selected>2 Guests</option>
+            <option value="3">3 Guests</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="roomType">Room Type</label>
+          <select id="roomType" class="form-control">
+            <option value="Deluxe Creek View Room">Deluxe Creek (AED 420/n)</option>
+            <option value="Executive Suite">Executive Suite (AED 650/n)</option>
+          </select>
+        </div>
+      </div>
+    `;
+  } else if (state.currentTask === 'Meeting') {
+    html = `
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="meetingDate">Event Date</label>
+          <input type="date" id="meetingDate" class="form-control" value="${getFutureDate(10)}" min="${getFutureDate(0)}" required>
+        </div>
+        <div class="form-group">
+          <label for="meetingAttendees">Attendees</label>
+          <input type="number" id="meetingAttendees" class="form-control" value="12" min="2" max="24" required>
+        </div>
+        <div class="form-group">
+          <label for="meetingSetup">Setup Layout</label>
+          <select id="meetingSetup" class="form-control">
+            <option value="Boardroom">Boardroom</option>
+            <option value="Classroom">Classroom</option>
+            <option value="Lounge">Seminar Lounge</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="meetingDuration">Duration</label>
+          <select id="meetingDuration" class="form-control">
+            <option value="Half Day">Half Day (AED 1,100)</option>
+            <option value="Full Day">Full Day (AED 1,800)</option>
+          </select>
+        </div>
+      </div>
+    `;
+  } else if (state.currentTask === 'Shuttle') {
+    html = `
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="shuttleRoute">Transfer Route</label>
+          <select id="shuttleRoute" class="form-control">
+            <option value="Airport (DXB) → Hotel">DXB Airport → Hotel</option>
+            <option value="Hotel → Airport (DXB)">Hotel → DXB Airport</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="shuttleDate">Transfer Date</label>
+          <input type="date" id="shuttleDate" class="form-control" value="${getFutureDate(7)}" min="${getFutureDate(0)}" required>
+        </div>
+        <div class="form-group">
+          <label for="shuttleTime">Pickup Time</label>
+          <input type="time" id="shuttleTime" class="form-control" value="10:00" required>
+        </div>
+        <div class="form-group">
+          <label for="shuttlePax">Passengers</label>
+          <input type="number" id="shuttlePax" class="form-control" value="2" min="1" max="6" required>
+        </div>
+      </div>
+    `;
+  } else if (state.currentTask === 'Question') {
+    html = `
+      <div class="form-group full">
+        <label for="inquiryText">Your Hotel Inquiry or Request</label>
+        <textarea id="inquiryText" class="form-control" rows="3" placeholder="Ask about dining, late check-out, or dietary preferences..." required></textarea>
+      </div>
+    `;
+  }
+
+  container.innerHTML = html;
+}
+
+// Calculate Quote Form Submission
+function handleQuoteSubmit(e) {
+  e.preventDefault();
+  document.getElementById('formError').textContent = '';
+
+  let q = { type: state.currentTask, details: [], amount: 0, description: '' };
+
+  if (state.currentTask === 'Room') {
+    const arr = document.getElementById('roomArrival').value;
+    const dep = document.getElementById('roomDeparture').value;
+    const g = parseInt(document.getElementById('roomGuests').value);
+    const roomType = document.getElementById('roomType').value;
+
+    const nNights = Math.max(1, Math.round((new Date(dep) - new Date(arr)) / 86400000));
+    const rate = roomType.includes('Executive') ? 650 : 420;
+    q.amount = nNights * rate;
+    q.description = `${nNights} Night(s) · ${roomType}`;
+    q.details = [
+      ['Arrival', arr],
+      ['Departure', dep],
+      ['Guests', g],
+      ['Rate/Night', `AED ${rate}`]
+    ];
+  } else if (state.currentTask === 'Meeting') {
+    const date = document.getElementById('meetingDate').value;
+    const att = parseInt(document.getElementById('meetingAttendees').value);
+    const setup = document.getElementById('meetingSetup').value;
+    const dur = document.getElementById('meetingDuration').value;
+
+    const base = dur === 'Full Day' ? 1800 : 1100;
+    q.amount = base + (att * 45);
+    q.description = `${att} Attendees · ${setup} · ${dur}`;
+    q.details = [
+      ['Date', date],
+      ['Setup', setup],
+      ['Attendees', att],
+      ['Catering', `AED ${att * 45}`]
+    ];
+  } else if (state.currentTask === 'Shuttle') {
+    const route = document.getElementById('shuttleRoute').value;
+    const date = document.getElementById('shuttleDate').value;
+    const time = document.getElementById('shuttleTime').value;
+    const pax = parseInt(document.getElementById('shuttlePax').value);
+
+    q.amount = pax > 3 ? 220 : 150;
+    q.description = `${route} (${pax} Pax)`;
+    q.details = [
+      ['Date', date],
+      ['Pickup', time],
+      ['Passengers', pax]
+    ];
+  } else if (state.currentTask === 'Question') {
+    const txt = document.getElementById('inquiryText').value.trim();
+    if (!txt) {
+      document.getElementById('formError').textContent = 'Please enter your inquiry.';
+      return;
+    }
+    q.amount = 0;
+    q.description = 'Hotel Desk Information Inquiry';
+    q.details = [['Inquiry', txt]];
+  }
+
+  state.activeQuote = q;
+  renderItineraryPanel();
+  appendChatMessage(`Calculated sample option for ${q.description}. Check your live itinerary panel.`, false);
+}
+
+// Render Itinerary Panel
+function renderItineraryPanel() {
+  const content = document.getElementById('itineraryContent');
+  const img = document.getElementById('itineraryImg');
+  const cap = document.getElementById('itineraryCaption');
+  const statusBadge = document.getElementById('quoteStatusBadge');
+
+  if (!state.activeQuote) {
+    img.src = 'img/stock-9.jpg';
+    cap.textContent = 'Photo: Dubai Creek Waterfront (Reference Stock)';
+    statusBadge.textContent = 'Draft';
+    content.innerHTML = `
+      <div style="text-align:center; padding: 16px 0;">
+        <h4 style="font-family: var(--font-serif); font-size: 16px; margin: 0 0 4px;">Your Itinerary is Ready</h4>
+        <p style="font-size: 11px; color: var(--muted); margin: 0;">Complete the options on the left to see your calculated sample quote.</p>
+      </div>
+    `;
+    return;
+  }
+
+  statusBadge.textContent = 'Calculated';
+
+  if (state.currentTask === 'Room') {
+    img.src = 'img/stock-2.jpg';
+    cap.textContent = 'Photo: Deluxe Room Bed (Reference Stock)';
+  } else if (state.currentTask === 'Meeting') {
+    img.src = 'img/stock-6.jpg';
+    cap.textContent = 'Photo: Boardroom Setup (Reference Stock)';
+  } else if (state.currentTask === 'Shuttle') {
+    img.src = 'img/stock-11.jpg';
+    cap.textContent = 'Photo: Airport Transfer (Reference Stock)';
+  } else {
+    img.src = 'img/stock-7.jpg';
+    cap.textContent = 'Photo: Front Desk Reception (Reference Stock)';
+  }
+
+  const discount = state.redeemPoints ? 100 : 0;
+  const finalTotal = Math.max(0, state.activeQuote.amount - discount);
+
+  let detailsHtml = state.activeQuote.details.map(([lbl, val]) => `
+    <div class="summary-line"><span>${lbl}</span><b>${val}</b></div>
+  `).join('');
+
+  content.innerHTML = `
+    <div style="margin-bottom: 10px;">
+      <span style="font-size: 9px; font-weight: 700; text-transform: uppercase; color: var(--wine);">${state.activeQuote.type} Option</span>
+      <h4 style="font-family: var(--font-serif); font-size: 15px; margin: 2px 0 8px;">${state.activeQuote.description}</h4>
+      ${detailsHtml}
+    </div>
+
+    ${state.activeQuote.amount > 0 ? `
+      <div class="price-total-box">
+        <div class="lbl">Sample Estimated Total</div>
+        <div class="val">AED ${finalTotal.toLocaleString()}</div>
+      </div>
+      
+      <div style="margin-top: 8px;">
+        <button class="btn btn-outline" style="width:100%; font-size:10px; padding:6px;" onclick="togglePointsRedeem()">
+          ${state.redeemPoints ? '✓ 1,000 Points Applied (-AED 100)' : 'Apply 1,000 Points Credit (-AED 100)'}
+        </button>
+      </div>
+    ` : ''}
+
+    <button class="btn btn-primary" style="width: 100%; margin-top: 12px;" onclick="openSubmitModal()">
+      Submit Request to Staff Desk →
+    </button>
+  `;
+}
+
+function togglePointsRedeem() {
+  if (state.points < 1000 && !state.redeemPoints) {
+    showToast('Insufficient points. Minimum 1,000 points required.');
+    return;
+  }
+  state.redeemPoints = !state.redeemPoints;
+  renderItineraryPanel();
+}
+
+function appendChatMessage(text, isUser = false) {
+  const log = document.getElementById('chatLog');
+  const div = document.createElement('div');
+  div.className = `chat-msg ${isUser ? 'user' : ''}`;
+  
+  const avatar = document.createElement('img');
+  avatar.className = 'msg-avatar';
+  avatar.src = isUser ? 'img/stock-8.jpg' : 'img/profile.jpg';
+  avatar.alt = isUser ? 'Guest user reference photo' : 'Copthorne Hotel assistant profile';
+  
+  const bubbleWrap = document.createElement('div');
+  const bubble = document.createElement('div');
+  bubble.className = 'msg-bubble';
+  bubble.textContent = text;
+  
+  const time = document.createElement('span');
+  time.className = 'msg-time';
+  time.textContent = isUser ? 'You' : 'Concierge Assistant';
+  
+  bubbleWrap.appendChild(bubble);
+  bubbleWrap.appendChild(time);
+  div.appendChild(avatar);
+  div.appendChild(bubbleWrap);
+  
+  log.appendChild(div);
+  log.scrollTop = log.scrollHeight;
+}
+
+function openSubmitModal() {
+  if (!state.activeQuote) return;
+  document.getElementById('submitModal').showModal();
+}
+
+function confirmDemoSubmission(e) {
+  e.preventDefault();
+  const guestName = document.getElementById('modalGuestName').value.trim() || 'Demo Guest';
+  const payMethod = document.getElementById('modalPayMethod').value;
+  
+  const discount = state.redeemPoints ? 100 : 0;
+  const finalAmount = Math.max(0, state.activeQuote.amount - discount);
+
+  const newRec = {
+    id: `SAMPLE-${Math.floor(100 + Math.random() * 900)}`,
+    type: state.activeQuote.type,
+    description: state.activeQuote.description,
+    name: guestName,
+    status: 'Awaiting review',
+    amount: finalAmount,
+    details: [...state.activeQuote.details, ['Payment Note', payMethod]],
+    history: ['Submitted by guest to staff desk queue.']
+  };
+
+  if (state.redeemPoints) {
+    state.points -= 1000;
+    state.ledger.unshift({ text: `Points Redeemed for ${newRec.id}`, amount: -1000 });
+  }
+
+  state.records.unshift(newRec);
+  document.getElementById('submitModal').close();
+  
+  state.activeQuote = null;
+  state.redeemPoints = false;
+  renderItineraryPanel();
+  
+  document.getElementById('requestBadge').textContent = state.records.length;
+  appendChatMessage(`Thank you ${guestName}. Your sample request ${newRec.id} has been logged!`, false);
+  showToast('This is a demo form — nothing was sent.');
+  
+  switchAppView('requests');
+}
+
+function renderRequestsList() {
+  const container = document.getElementById('requestsListContainer');
+  if (state.records.length === 0) {
+    container.innerHTML = `<div style="text-align:center; padding: 30px; color: var(--muted); font-size: 13px;">No submitted requests yet.</div>`;
+    return;
+  }
+
+  container.innerHTML = state.records.map(r => `
+    <div class="panel-card" style="margin-bottom: 14px; padding: 16px;">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap: 8px;">
+        <div>
+          <span style="font-size: 9px; font-weight:700; color: var(--wine); text-transform:uppercase;">${r.id} · ${r.type}</span>
+          <h4 style="font-family: var(--font-serif); font-size: 16px; margin: 2px 0 6px;">${r.description}</h4>
+          <div style="font-size: 11px; color: var(--muted);">Submitted by: <b>${r.name}</b></div>
+        </div>
+        <span class="status-badge ${r.status.includes('Approved') ? 'approved' : r.status.includes('Declined') ? 'declined' : 'pending'}">${r.status}</span>
+      </div>
+      <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--line); font-size: 12px; display:flex; justify-content:space-between; align-items:center;">
+        <div>Amount: <b>AED ${r.amount.toLocaleString()}</b></div>
+        <button class="btn btn-outline" style="font-size:10px; padding:3px 8px;" onclick="cancelRequest('${r.id}')">Cancel Request</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function cancelRequest(id) {
+  const r = state.records.find(x => x.id === id);
+  if (r) {
+    r.status = 'Declined';
+    r.history.push('Cancelled by guest.');
+    renderRequestsList();
+    showToast(`Request ${id} updated.`);
+  }
+}
+
+function renderLoyaltyLedger() {
+  document.getElementById('pointsVal').textContent = `${state.points.toLocaleString()} PTS`;
+  const container = document.getElementById('pointsLedger');
+  container.innerHTML = state.ledger.map(item => `
+    <div class="summary-line">
+      <span>${item.text}</span>
+      <b style="color: ${item.amount > 0 ? 'green' : 'var(--wine)'};">${item.amount > 0 ? '+' : ''}${item.amount} PTS</b>
+    </div>
+  `).join('');
+}
+
+function renderStaffTable() {
+  const tbody = document.getElementById('staffTableBody');
+  const search = document.getElementById('staffSearchInput').value.toLowerCase();
+  const filterType = document.getElementById('staffFilterType').value;
+
+  const filtered = state.records.filter(r => {
+    const mSearch = r.id.toLowerCase().includes(search) || r.name.toLowerCase().includes(search);
+    const mType = filterType === '' || r.type === filterType;
+    return mSearch && mType;
+  });
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding: 20px; color: var(--muted);">No matching requests found.</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(r => `
+    <tr>
+      <td><b>${r.id}</b></td>
+      <td>${r.name}</td>
+      <td>${r.description}</td>
+      <td>AED ${r.amount.toLocaleString()}</td>
+      <td><span class="status-badge ${r.status.includes('Approved') ? 'approved' : r.status.includes('Declined') ? 'declined' : 'pending'}">${r.status}</span></td>
+      <td>
+        <div style="display:flex; gap: 4px;">
+          ${r.status === 'Awaiting review' ? `
+            <button class="btn btn-primary" style="font-size:9px; padding:3px 6px;" onclick="staffApprove('${r.id}')">Approve</button>
+            <button class="btn btn-outline" style="font-size:9px; padding:3px 6px;" onclick="openEditQuoteModal('${r.id}', ${r.amount})">Revise</button>
+          ` : '<span style="font-size:10px; color:var(--muted);">Complete</span>'}
+        </div>
+      </td>
+    </tr>
+  `).join('');
+}
+
+function staffApprove(id) {
+  const r = state.records.find(x => x.id === id);
+  if (r) {
+    r.status = 'Approved';
+    r.history.push('Approved by hotel staff desk.');
+    state.points += 100;
+    state.ledger.unshift({ text: `Bonus Points for Approved Stay (${r.id})`, amount: 100 });
+    renderStaffTable();
+    showToast(`Request ${id} approved by staff!`);
+  }
+}
+
+function openEditQuoteModal(id, currentAmt) {
+  state.editingId = id;
+  document.getElementById('editQuoteAmount').value = currentAmt;
+  document.getElementById('editQuoteModal').showModal();
+}
+
+function saveStaffQuoteRevision(e) {
+  e.preventDefault();
+  const amt = parseFloat(document.getElementById('editQuoteAmount').value);
+  const reason = document.getElementById('editQuoteReason').value;
+
+  const r = state.records.find(x => x.id === state.editingId);
+  if (r) {
+    r.amount = amt;
+    r.status = 'Revised Quote';
+    r.history.push(`Staff revised quote to AED ${amt}: ${reason}`);
+    document.getElementById('editQuoteModal').close();
+    renderStaffTable();
+    showToast(`Quote for ${r.id} revised to AED ${amt}!`);
+  }
+}
+
+// Initial initialization
+window.addEventListener('DOMContentLoaded', () => {
+  renderTaskFormFields();
+  renderItineraryPanel();
+  initThreeJsCanvas();
+});
+
+function initThreeJsCanvas() {
+  const container = document.getElementById('three-canvas');
+  if (!container || typeof THREE === 'undefined') return;
+
+  const width = container.clientWidth || 280;
+  const height = container.clientHeight || 200;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+  camera.position.z = 4.5;
+
+  const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  const geometry = new THREE.BoxGeometry(2.4, 1.4, 0.08);
+  const materials = [
+    new THREE.MeshStandardMaterial({ color: 0x6B1F38 }),
+    new THREE.MeshStandardMaterial({ color: 0x6B1F38 }),
+    new THREE.MeshStandardMaterial({ color: 0x6B1F38 }),
+    new THREE.MeshStandardMaterial({ color: 0x6B1F38 }),
+    new THREE.MeshStandardMaterial({ color: 0xC5A059, metalness: 0.8, roughness: 0.2 }),
+    new THREE.MeshStandardMaterial({ color: 0x4A1224, metalness: 0.5, roughness: 0.4 })
+  ];
+  const card = new THREE.Mesh(geometry, materials);
+  scene.add(card);
+
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(ambientLight);
+
+  const dirLight = new THREE.DirectionalLight(0xF4ECE1, 1.2);
+  dirLight.position.set(3, 4, 5);
+  scene.add(dirLight);
+
+  let reqId;
+  function animate() {
+    reqId = requestAnimationFrame(animate);
+    card.rotation.y += 0.01;
+    card.rotation.x = Math.sin(card.rotation.y * 0.5) * 0.15;
+    renderer.render(scene, camera);
+  }
+  
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    animate();
+  } else {
+    renderer.render(scene, camera);
+  }
+
+  window.addEventListener('resize', () => {
+    const w = container.clientWidth;
+    const h = container.clientHeight;
+    if (w && h) {
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+      renderer.setSize(w, h);
+    }
+  });
+}
+</script>
+</body>
+</html>
