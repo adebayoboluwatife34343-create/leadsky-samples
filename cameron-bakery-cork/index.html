@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cameron Bakery — Fresh Bread & Pastries, Blackrock Village, Cork</title>
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#fdfaf5;
+  --ink:#3d2b23;
+  --brand:#a3532b;
+  --brand-dark:#8f4d2e;
+  --line:#e8dbc9;
+  --sand:#f3e7d8;
+  --white:#ffffff;
+  --body:"Albert Sans",Arial,Helvetica,sans-serif;
+  --display:"Fraunces","Georgia",serif;
+}
+*,*:before,*:after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:underline}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer;border:none;background:none}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--brand);outline-offset:4px}
+::selection{background:var(--brand);color:#fff}
+
+/* Concept banner */
+.concept{
+  position:sticky;top:0;z-index:110;
+  background:#a52a35;color:#fff;text-align:center;
+  font-size:11px;line-height:1.4;padding:8px 16px;letter-spacing:.02em;
+}
+
+/* Header */
+.site-header{
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+}
+.header-wrap{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px;gap:12px;
+}
+.brand{
+  font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-0.4px;
+  color:var(--ink);text-decoration:none;white-space:nowrap;display:flex;align-items:center;gap:8px;
+}
+.brand span{font-family:var(--body);font-size:11px;font-weight:500;letter-spacing:1.4px;opacity:0.75;}
+.tel-button{
+  font-size:13px;font-weight:600;padding:7px 16px;border:1px solid var(--ink);border-radius:8px;
+  color:var(--ink);text-decoration:none;min-height:40px;display:inline-flex;align-items:center;justify-content:center;
+  background:#fff;
+}
+.tel-button:hover{background:#f3e7d8}
+.menu-button{
+  width:40px;height:40px;border:1px solid var(--line);border-radius:8px;background:transparent;
+  display:grid;place-content:center;position:relative;
+}
+.menu-button span{position:absolute;left:50%;top:50%;width:20px;height:2px;background:var(--ink);border-radius:2px;transform:translate(-50%,-50%);transition:background .2s;}
+.menu-button::before, .menu-button::after{
+  content:"";position:absolute;left:50%;width:20px;height:2px;background:var(--ink);border-radius:2px;
+  transform:translate(-50%,-50%);transition:transform .2s;
+}
+.menu-button::before{top:35%;}
+.menu-button::after{top:65%;}
+.menu-button[aria-expanded="true"] span{background:transparent}
+.menu-button[aria-expanded="true"]::before{transform:translate(-50%,-50%) rotate(45deg);top:50%;}
+.menu-button[aria-expanded="true"]::after{transform:translate(-50%,-50%) rotate(-45deg);top:50%;}
+
+/* Menu */
+.site-menu{
+  position:fixed;inset:auto 20px auto auto;top:62px;width:min(300px,85vw);z-index:90;
+  background:var(--white);border:1px solid var(--line);border-radius:12px;
+  padding:20px;box-shadow:0 24px 60px rgba(61,43,35,0.10);transform:translateY(10px);opacity:0;pointer-events:none;transition:transform .25s,opacity .25s;
+}
+.site-menu[hidden]{display:none}
+.site-menu:not([hidden]){transform:translateY(0);opacity:1;pointer-events:auto;}
+.site-menu ul{list-style:none;margin:0;padding:0}
+.site-menu li{border-bottom:1px solid #f0e6d6}
+.site-menu a{
+  display:block;padding:14px 0;font-family:var(--display);font-size:20px;color:var(--ink);text-decoration:none;
+}
+.site-menu a:hover{color:var(--brand)}
+.menu-close{margin-top:16px;font-size:11px;line-height:1.5;color:#6b5a4e;}
+
+/* Main */
+main{padding-top:16px}
+.section{padding:56px 16px 40px}
+.section-head{margin-bottom:24px}
+.section-head h2{
+  font-family:var(--display);font-size:clamp(28px,6vw,44px);font-weight:500;line-height:1.15;margin:0 0 8px;letter-spacing:-0.02em;
+}
+.section-head p{margin:0;font-size:15px;color:#5c4a3f;max-width:420px}
+
+/* Hero - visible immediately, no intro */
+.hero{
+  position:relative;min-height:52vh;display:flex;flex-direction:column;justify-content:center;
+  padding:100px 16px 60px;overflow:hidden;
+}
+.hero-media{
+  position:absolute;inset:0;z-index:0;
+}
+.hero-media img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.hero-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:rgba(0,0,0,0.55);
+}
+.hero-content{
+  position:relative;z-index:2;color:#fff;max-width:340px;width:fit-content;
+  background:rgba(10,6,4,0.80);padding:24px;border-radius:10px;
+}
+.hero-eyebrow{
+  display:inline-block;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:700;
+  color:#f3e7d8;margin-bottom:12px;
+}
+.hero h1{
+  font-family:var(--display);font-size:clamp(34px,10vw,56px);font-weight:400;line-height:1.04;
+  margin:0 0 14px;color:#fff;letter-spacing:-0.02em;
+}
+.hero-deck{
+  margin:0 0 22px;font-size:15px;line-height:1.7;color:#eadfcb;max-width:300px;
+}
+.button{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:12px 22px;border-radius:8px;font-size:14px;font-weight:600;text-decoration:none;
+  min-height:48px;border:1px solid transparent;
+}
+.button.primary{background:var(--brand);color:#fff}
+.button.primary:hover{background:var(--brand-dark)}
+.button.outline{background:#fff;color:var(--ink);border-color:#fff}
+.button.outline:hover{background:#f3e7d8}
+.arrow{font-size:16px;line-height:1}
+
+/* Story */
+.story-grid{display:flex;flex-direction:column;gap:26px}
+.story-text h2{font-family:var(--display);font-size:clamp(28px,6vw,40px);font-weight:500;line-height:1.15;margin:0 0 14px}
+.story-text p{margin:0 0 12px;color:#5c4a3f}
+.story-image{position:relative;overflow:hidden;border-radius:10px;border:1px solid var(--line)}
+.story-image img{width:100%;height:300px;object-fit:cover;object-position:center;display:block}
+.image-caption{
+  font-size:10px;line-height:1.5;color:#5c4a3f;margin-top:8px;padding:0 4px;
+}
+
+/* Products */
+.product-grid{display:grid;grid-template-columns:1fr;gap:18px}
+.product-card{
+  position:relative;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;
+  display:flex;flex-direction:column;
+}
+.product-card img{width:100%;height:240px;object-fit:cover;object-position:center;display:block}
+.product-card-body{padding:16px;display:flex;flex-direction:column;gap:6px}
+.product-card h3{font-family:var(--display);font-size:22px;font-weight:500;line-height:1.2;margin:0}
+.product-card p{margin:0;font-size:14px;color:#5c4a3f}
+
+/* Visit */
+.visit-wrap{display:flex;flex-direction:column;gap:26px}
+.visit-text h2{font-family:var(--display);font-size:clamp(28px,6vw,40px);font-weight:500;line-height:1.15;margin:0 0 12px}
+.visit-text p{margin:0 0 18px;color:#5c4a3f}
+.visit-details{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.detail{
+  display:grid;grid-template-columns:70px 1fr;padding:14px 16px;border-bottom:1px solid #f0e6d6;
+}
+.detail:last-child{border-bottom:none}
+.detail dt{font-size:10px;text-transform:uppercase;letter-spacing:1.4px;font-weight:700;color:#8a7362;margin:0}
+.detail dd{margin:0;font-size:14px;color:var(--ink)}
+.detail a{text-underline-offset:4px}
+.visit-image{position:relative;overflow:hidden;border-radius:10px;border:1px solid var(--line)}
+.visit-image img{width:100%;height:300px;object-fit:cover;object-position:center;display:block}
+
+/* FAQ */
+.faq-list{display:grid;gap:10px;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+details{background:#fff;border-bottom:1px solid #f0e6d6}
+details:last-child{border-bottom:none}
+summary{
+  font-size:15px;font-weight:600;padding:16px;list-style:none;cursor:pointer;color:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:18px;color:var(--brand)}
+details[open] summary::after{content:"−"}
+details p{padding:0 16px 16px;margin:0;font-size:14px;color:#5c4a3f;line-height:1.6}
+
+/* Contact band */
+.contact-band{
+  background:linear-gradient(135deg,var(--brand) 0%,var(--brand-dark) 100%);
+  color:#fff;padding:40px 16px;text-align:center;border-radius:12px;margin:16px;
+}
+.contact-band h2{font-family:var(--display);font-size:clamp(26px,5vw,36px);font-weight:500;line-height:1.2;margin:0 0 10px}
+.contact-band p{margin:0 0 18px;color:#eadfcb;font-size:15px;max-width:420px;margin-left:auto;margin-right:auto}
+.contact-band .button{margin:6px 0;width:100%}
+.email-link{display:block;margin-top:10px;font-size:14px;color:#eadfcb;text-underline-offset:4px}
+
+/* Footer */
+footer{padding:56px 16px 80px;border-top:1px solid var(--line);background:#f5ede0}
+.footer-inner{max-width:860px;margin:0 auto}
+.footer-brand{font-family:var(--display);font-size:26px;font-weight:500;line-height:1.1;margin-bottom:10px}
+footer p{margin:0 0 14px;font-size:14px;color:#5c4a3f}
+.credits{margin-top:24px;padding-top:16px;border-top:1px solid var(--line)}
+.credits p{font-size:11px;color:#5c4a3f;margin-bottom:10px}
+.credit-links{display:flex;flex-wrap:wrap;gap:8px 14px}
+.credit-links a{font-size:11px;color:#5c4a3f;text-decoration:underline;text-underline-offset:3px}
+.footer-bottom{margin-top:28px;padding-top:16px;border-top:1px solid var(--line);font-size:11px;color:#5c4a3f;display:flex;justify-content:space-between;gap:12px}
+
+/* Mobile sticky bar */
+.mobile-bar{
+  position:fixed;bottom:0;left:0;right:0;z-index:100;background:#fff;border-top:1px solid var(--line);
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));box-shadow:0 -10px 30px rgba(163,83,43,0.25);
+}
+.mobile-bar a{
+  display:block;text-align:center;background:var(--brand);color:#fff;padding:10px 16px;border-radius:10px;
+  font-weight:700;font-size:14px;text-decoration:none;box-shadow:0 4px 12px rgba(163,83,43,0.25);
+}
+.mobile-bar a:hover{background:var(--brand-dark)}
+
+/* Reveals below hero only */
+.reveal{opacity:1;transition:opacity .6s ease,transform .6s ease}
+.js-motion .reveal.pending{opacity:0;transform:translateY(20px)}
+
+/* Tablet */
+@media(min-width:640px){
+  .section{padding:72px 24px 56px}
+  .hero{padding:130px 24px 80px}
+  .story-grid{flex-direction:row}
+  .story-text,.story-image{flex:1}
+  .product-grid{grid-template-columns:repeat(2,1fr)}
+  .visit-wrap{flex-direction:row}
+  .visit-text,.visit-image{flex:1}
+  .contact-band{padding:56px 32px}
+  .contact-band .button{width:auto}
+}
+
+/* Desktop */
+@media(min-width:1024px){
+  .header-wrap{padding:12px 32px}
+  .section{padding:96px 48px 80px}
+  .hero{padding:150px 48px 100px}
+  .product-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation-duration:0.001s !important;transition-duration:0.001s !important}
+  .js-motion .reveal.pending{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="concept">Independent website concept by LeadSky for Cameron Bakery. Not their official website.</div>
+
+<header class="site-header" role="banner">
+  <div class="header-wrap">
+    <a class="brand" href="#home">Cameron<span>Bakery</span></a>
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="site-menu" aria-label="Open menu"><span></span></button>
+    <a class="tel-button" href="tel:+353212413977">Call</a>
+  </div>
+</header>
+
+<nav class="site-menu" id="site-menu" hidden>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#bakery">About the bakery</a></li>
+    <li><a href="#products">Bakery discoveries</a></li>
+    <li><a href="#visit">Visit us</a></li>
+    <li><a href="#questions">Questions</a></li>
+    <li><a href="#contact">Get in touch</a></li>
+  </ul>
+  <p class="menu-close">Independent concept for Cameron Bakery. Not their official website.</p>
+</nav>
+
+<main>
+  <section class="hero" id="home" aria-labelledby="heroHeading">
+    <div class="hero-media">
+      <img src="img/stock-1.jpg" alt="Basket of bread and pastries in natural bakery light, illustrative stock photo" width="1600" height="1067" fetchpriority="high" loading="eager">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Blackrock Village · Cork</span>
+      <h1 id="heroHeading">Cameron Bakery</h1>
+      <p class="hero-deck">Fresh bread, flaky pastries and a quiet morning pause in Blackrock Village.</p>
+      <a class="button primary" href="#visit">Visit us <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <section class="section story" id="bakery" aria-labelledby="storyHeading">
+    <div class="section-head reveal">
+      <h2 id="storyHeading">A little bakery in Cork</h2>
+      <p>Cameron Bakery is a neighbourhood stop in Blackrock Village. We bake bread and pastries each morning for people who like a proper crust, a flaky layer, or something sweet to go with coffee.</p>
+    </div>
+    <div class="story-grid">
+      <div class="story-text reveal">
+        <p>Call ahead to ask what is available today, or drop by during opening hours. Every photograph on this page is illustrative stock photography used to show a possible design direction.</p>
+      </div>
+      <div class="story-image reveal">
+        <img src="img/stock-6.jpg" alt="Assorted freshly baked breads in a bakery display, illustrative stock photo" width="1000" height="750" loading="lazy">
+        <p class="image-caption">Reference photography only. Not Cameron Bakery’s own products or premises.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section products" id="products" aria-labelledby="productsHeading">
+    <div class="section-head reveal">
+      <h2 id="productsHeading">Bakery discoveries</h2>
+      <p>Taste directions you can ask the bakery about.</p>
+    </div>
+    <div class="product-grid">
+      <article class="product-card reveal">
+        <img src="img/stock-2.jpg" alt="Golden croissants with flaky pastry layers, illustrative stock photo" width="800" height="600" loading="lazy">
+        <div class="product-card-body">
+          <h3>The flaky side</h3>
+          <p>Light layers and a delicate bite. Good with coffee or on its own.</p>
+        </div>
+      </article>
+      <article class="product-card reveal">
+        <img src="img/stock-3.jpg" alt="Sourdough loaf with a textured crust, illustrative stock photo" width="800" height="600" loading="lazy">
+        <div class="product-card-body">
+          <h3>The crusty side</h3>
+          <p>A satisfying crust and a bread-led moment for the table.</p>
+        </div>
+      </article>
+      <article class="product-card reveal">
+        <img src="img/stock-4.jpg" alt="Rustic baked bread, illustrative stock photo" width="800" height="600" loading="lazy">
+        <div class="product-card-body">
+          <h3>Daily loaf</h3>
+          <p>Freshly baked bread made with care, ready to take home.</p>
+        </div>
+      </article>
+      <article class="product-card reveal">
+        <img src="img/stock-5.jpg" alt="Assorted sweet pastries and doughnuts, illustrative stock photo" width="800" height="600" loading="lazy">
+        <div class="product-card-body">
+          <h3>Sweet treats</h3>
+          <p>Something sweet for a little pause during the day.</p>
+        </div>
+      </article>
+      <article class="product-card reveal">
+        <img src="img/stock-9.jpg" alt="Fresh bread rolls, illustrative stock photo" width="800" height="600" loading="lazy">
+        <div class="product-card-body">
+          <h3>Soft rolls</h3>
+          <p>Soft and easy-going, ideal for sandwiches or butter.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section visit" id="visit" aria-labelledby="visitHeading">
+    <div class="visit-wrap">
+      <div class="visit-text reveal">
+        <h2 id="visitHeading">Visit us</h2>
+        <p>Find Cameron Bakery in Blackrock Village, Cork. Call ahead with a question or to check what is available.</p>
+        <div class="visit-details">
+          <div class="detail"><dt>Call</dt><dd><a href="tel:+353212413977">+353 21 241 3977</a></dd></div>
+          <div class="detail"><dt>Hours</dt><dd>Monday–Sunday<br>08:00–17:00</dd></div>
+          <div class="detail"><dt>Find us</dt><dd>Blackrock Village<br>Cork, Ireland</dd></div>
+        </div>
+        <p class="small-note" style="margin-top:14px;font-size:11px;color:#5c4a3f;">*Contact and hours are supplied for this concept and have not been independently verified. Please confirm before travelling.</p>
+        <p style="margin-top:18px"><a href="https://www.google.com/maps/search/?api=1&amp;query=Cameron+Bakery+Blackrock+Village+Cork+Ireland" target="_blank" rel="noopener noreferrer" class="button outline reveal">Look up directions <span class="arrow" aria-hidden="true">→</span></a></p>
+      </div>
+      <div class="visit-image reveal">
+        <img src="img/stock-8.jpg" alt="Bread preparation in a bakery, illustrative stock photo" width="1000" height="750" loading="lazy">
+        <p class="image-caption">Reference photography only. Not photographed at Cameron Bakery.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section faq" id="questions" aria-labelledby="faqHeading">
+    <div class="section-head reveal">
+      <h2 id="faqHeading">Questions</h2>
+      <p>Common things to ask before you visit.</p>
+    </div>
+    <div class="faq-list reveal">
+      <details>
+        <summary>Can I order through this website?</summary>
+        <p>No. This is an independent website concept. No orders, payments or messages are processed here. Please contact Cameron Bakery directly to ask about products and availability.</p>
+      </details>
+      <details>
+        <summary>What about allergies or dietary requirements?</summary>
+        <p>Please ask Cameron Bakery directly about ingredients, allergens and preparation before choosing anything. This concept does not confirm that any product is suitable for a particular dietary requirement.</p>
+      </details>
+      <details>
+        <summary>Are these photographs from Cameron Bakery?</summary>
+        <p>No. Every photograph is licensed stock used to show a possible visual direction. The pictures do not represent Cameron Bakery’s actual products, team or premises.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="contact-band" id="contact" aria-labelledby="contactHeading">
+    <h2 id="contactHeading">Get in touch</h2>
+    <p>Ask what is available before you travel.</p>
+    <a class="button primary" href="tel:+353212413977">Call Cameron Bakery <span class="arrow" aria-hidden="true">→</span></a>
+    <a class="email-link" href="mailto:cameronbakery@gmail.com?subject=Bakery%20enquiry">cameronbakery@gmail.com <span class="arrow" aria-hidden="true">→</span></a>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Cameron Bakery.</div>
+    <p>Blackrock Village, Cork, Ireland.<br>Independent, unendorsed website concept. No orders or payments are processed here.</p>
+    <div class="credits">
+      <p>Reference photography · Pixabay Content License. Stock images illustrate a design direction, not the bakery’s offering.</p>
+      <div class="credit-links">
+        <a href="https://pixabay.com/photos/bread-basket-food-breakfast-snack-6245204/" target="_blank" rel="noopener noreferrer">tiemaoanh · bread basket</a>
+        <a href="https://pixabay.com/photos/bakery-breads-assorted-assortment-1868925/" target="_blank" rel="noopener noreferrer">Pexels · assorted breads</a>
+        <a href="https://pixabay.com/photos/bread-croissant-morning-puff-paste-1284438/" target="_blank" rel="noopener noreferrer">Pexels · croissants</a>
+        <a href="https://pixabay.com/photos/sourdough-bread-food-homemade-9865309/" target="_blank" rel="noopener noreferrer">terski · sourdough</a>
+        <a href="https://pixabay.com/photos/bread-baked-food-freshly-baked-1281053/" target="_blank" rel="noopener noreferrer">Couleur · baked bread</a>
+        <a href="https://pixabay.com/photos/doughnuts-desserts-pastries-treats-1868573/" target="_blank" rel="noopener noreferrer">Pexels · sweet pastries</a>
+        <a href="https://pixabay.com/photos/bread-buns-baked-food-3467243/" target="_blank" rel="noopener noreferrer">manfredrichter · bread rolls</a>
+        <a href="https://pixabay.com/photos/loaf-bakery-preparation-fresh-bread-2436370/" target="_blank" rel="noopener noreferrer">Intuitivmedia · preparation</a>
+      </div>
+    </div>
+    <div class="footer-bottom"><span>Concept by LeadSky</span></div>
+  </div>
+</footer>
+
+<div class="mobile-bar"><a href="tel:+353212413977">Call →</a></div>
+
+<script>
+(function(){
+"use strict";
+
+// Menu toggle
+const menuButton=document.getElementById("menuButton");
+const menu=document.getElementById("site-menu");
+
+function closeMenu(){
+  menu.hidden=true;
+  menuButton.setAttribute("aria-expanded","false");
+  menuButton.setAttribute("aria-label","Open menu");
+}
+
+menuButton.addEventListener("click",function(){
+  const opening=menu.hidden;
+  menu.hidden=!opening;
+  menuButton.setAttribute("aria-expanded",String(opening));
+  menuButton.setAttribute("aria-label",opening?"Close menu":"Open menu");
+  if(opening){menu.querySelector("a").focus();}
+});
+
+menu.querySelectorAll("a").forEach(function(link){
+  link.addEventListener("click",function(){
+    closeMenu();
+    const target=document.querySelector(link.getAttribute("href"));
+    if(target){target.setAttribute("tabindex","-1");target.focus({preventScroll:true});}
+  });
+});
+
+document.addEventListener("keydown",function(e){
+  if(e.key==="Escape"&&!menu.hidden){closeMenu();menuButton.focus();}
+});
+
+document.addEventListener("click",function(e){
+  if(!menu.hidden&&!menu.contains(e.target)&&!menuButton.contains(e.target)){closeMenu();}
+});
+
+// Reveal animations for sections below the hero only
+const reduced=window.matchMedia("(prefers-reduced-motion: reduce)");
+if("IntersectionObserver" in window&&!reduced.matches){
+  document.body.classList.add("js-motion");
+  const observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.remove("pending");
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.12});
+
+  document.querySelectorAll("section:not(#home) .reveal").forEach(function(el){
+    el.classList.add("pending");
+    observer.observe(el);
+  });
+}
+})();
+</script>
+</body>
+</html>
