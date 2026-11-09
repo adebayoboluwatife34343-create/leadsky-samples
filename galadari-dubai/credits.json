@@ -1,0 +1,135 @@
+[
+  {
+    "file": "img/business-featured-1.jpg",
+    "kind": "business featured image",
+    "source": "https://www.gmdc.ae/wp-content/uploads/2016/08/dummy-1.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/galadari.motor.driving.centre"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels driving instructor learner driver car interior lesson",
+    "description": "automotive, car, dashboard, car wallpapers, driver, speedometer, steering wheel, vehicle, woman, steering, driving",
+    "source": "https://pixabay.com/photos/automotive-car-dashboard-driver-1866521/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels driving instructor learner driver car interior lesson",
+    "description": "car, car wallpapers, man, vehicle, automobile, driver, driving, auto, machine",
+    "source": "https://pixabay.com/photos/car-man-vehicle-automobile-driver-7614510/",
+    "photographer": "roro93380",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pexels motorcycle rider training helmet practice",
+    "description": "motorbike, motorcross, dirt bike, biker, motorcycle, speed, race, training, sport, motorbike, motorbike, motorcross, motorcross, dirt bike, dirt bike, dirt bike, dirt bike, dirt bike, sport, sport, sport",
+    "source": "https://pixabay.com/photos/motorbike-motorcross-dirt-bike-8142649/",
+    "photographer": "artellliii72",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pexels motorcycle rider training helmet practice",
+    "description": "training, motocross, motorcycle, sport, husqvarna, stunt, mxgp, motorsports, andika 117, training, training, training, motocross, motorcycle, motorcycle, motorcycle, sport, sport, sport, sport, sport, stunt, stunt, stunt, stunt, stunt",
+    "source": "https://pixabay.com/photos/training-motocross-motorcycle-sport-8122941/",
+    "photographer": "RojobronoStudio",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay heavy truck driver training vehicle",
+    "description": "woman, truck, vehicle, driver, fashion, headscarf, female, model, outdoors, person, young, pickup truck, drive, truck, truck, truck, truck, truck, driver, driver, drive, drive",
+    "source": "https://pixabay.com/photos/woman-truck-vehicle-driver-fashion-1845572/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay heavy truck driver training vehicle",
+    "description": "truck, heavy load, tractor, transport, traffic, special transport, bikes, tire, axis, low loader, chrome, machine, extra length, heavy-duty transporter, heavy load transport, truck, truck, truck, truck, truck, transport",
+    "source": "https://pixabay.com/photos/truck-heavy-load-tractor-transport-2920533/",
+    "photographer": "Tama66",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bus driver steering wheel interior",
+    "description": "vintage 1950s, pretty woman, vintage car, 1955 montclair, vintage, 1950s, retro, car, vehicle, old, transportation, classic, transport, auto, car wallpapers, antique, nostalgia, tumblr wallpaper",
+    "source": "https://pixabay.com/photos/vintage-1950s-pretty-woman-887272/",
+    "photographer": "JillWellington",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bus driver steering wheel interior",
+    "description": "vintage 1950s, pretty woman, vintage car, 1955 montclair, vintage, 1950s, retro, car, car wallpapers, vehicle, old, transportation, classic, transport, auto, antique, nostalgia",
+    "source": "https://pixabay.com/photos/vintage-1950s-pretty-woman-887273/",
+    "photographer": "JillWellington",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pexels forklift operator warehouse safety training",
+    "description": "class, practice, retractable, shelves, pallets, palletizing, storage, entrepreneur, job, classroom, engineer, logistics, training, exam, proof, human resources, undertake, people working, professionals, worker, truck, labor, ability, driving, machinery, storage, storage, logistics, logistics, logistics, logistics, logistics, human resources, truck",
+    "source": "https://pixabay.com/photos/class-practice-retractable-shelves-1227100/",
+    "photographer": "aniset",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pexels forklift operator warehouse safety training",
+    "description": "industrial, security, logistic, workwear, industrial security, safety glasses, vest, employee, required, factory, personal protection, worker, supervisor, tool, fierro, steel, kneepads, overalls, cut off, shoes, safety shoes, employee, factory, factory, factory, worker, worker, worker, worker, worker",
+    "source": "https://pixabay.com/photos/industrial-security-logistic-1636390/",
+    "photographer": "voltamax",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-11.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay wheel loader construction training equipment",
+    "description": "bulldozer, excavator, heavy machine, heavy machinery, equipment, vehicle, machinery, construction site, digger, bulldozer, excavator, excavator, machinery, construction site, construction site, construction site, construction site, construction site",
+    "source": "https://pixabay.com/photos/bulldozer-excavator-heavy-machine-2195329/",
+    "photographer": "dimitrisvetsikas1969",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-12.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay wheel loader construction training equipment",
+    "description": "loader, gravel, digger, excavator, heavy, heavy equipment, industrial, large, machine, machinery, silos, technology, truck, vehicle, work, heavy machinery, gravel, heavy equipment, industrial, industrial, truck, truck, truck, truck, truck",
+    "source": "https://pixabay.com/photos/loader-gravel-digger-excavator-1846346/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
