@@ -1,0 +1,135 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://lfigp.org/wp-content/uploads/2024/12/LFIGP-Web-logo.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/lfigpdubai.officiel"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bright school library books natural daylight",
+    "description": "library, books, bookshelves, bookcases, literature, read, reading, bookworm, knowledge, information, data, college, university, learning, education, study, research, library books, publication, expertise, wisdom, school, reference, library, library, library, library, library, books, books, books, college, university, education, study, research, school, school, school",
+    "source": "https://pixabay.com/photos/library-books-bookshelves-bookcases-1147815/",
+    "photographer": "ElasticComputeFarm",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bright school library books natural daylight",
+    "description": "open book, library, education, read, book, school, literature, study, knowledge, text, information, reading, studying, library, education, education, book, book, book, school, school, study, study, study, study, study, reading, studying",
+    "source": "https://pixabay.com/photos/open-book-library-education-read-1428428/",
+    "photographer": "lil_foot_",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay school classroom empty desks daylight",
+    "description": "education, student, boy, classroom, child, school, education, education, education, student, student, student, student, school, school, school, school, school",
+    "source": "https://pixabay.com/photos/education-student-boy-classroom-3670453/",
+    "photographer": "JhonDL",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay school classroom empty desks daylight",
+    "description": "school work, write, still life, assignment, pen, pencils, alarm clock, school bag, notebook, ink, table, desk, study, letter, retro, study, study, study, study, study",
+    "source": "https://pixabay.com/photos/school-work-write-still-life-851328/",
+    "photographer": "mozlase__",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pexels parent organising school documents desk",
+    "description": "notebook, hand, pen, write, writing, taking notes, notes, document, education, knowledge, learn, note, paper, school, student, work, writing, writing, writing, education, education, education, learn, learn, school, school, school, school, student, student, student, student, student",
+    "source": "https://pixabay.com/photos/notebook-hand-pen-write-writing-2178656/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pexels parent organising school documents desk",
+    "description": "write, pencils, desk, pen, colors, man, sit, work, drawing, office, draw, working place, executive, job, paper, stationery, sketch, pen, pen, pen, pen, pen, job",
+    "source": "https://pixabay.com/photos/write-pencils-desk-pen-colors-man-5170938/",
+    "photographer": "ClickerHappy",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels notebooks pencils school study materials",
+    "description": "merry christmas, kids, girls, writing, pencil, drawing, notebook, study, friends, hands, childhood, joy, school, lesson, learn, draw, concentrate, friendship day",
+    "source": "https://pixabay.com/photos/merry-christmas-kids-girls-writing-1093758/",
+    "photographer": "klimkin",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels notebooks pencils school study materials",
+    "description": "pencils, notebooks, stack, school supplies, write, blog, blogger, writer, work, work desk, monochrome, black and white, blog, blog, blog, blog, blog, writer, writer, work, work, work, work",
+    "source": "https://pixabay.com/photos/pencils-notebooks-stack-762555/",
+    "photographer": "kaboompics",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pexels school sports equipment basketball court",
+    "description": "shoes, basketball, lebron james shoes, feet, footwear, basketball shoes, nike, fashion, style, closeup, shoes, shoes, basketball, basketball, basketball, basketball, basketball, nike",
+    "source": "https://pixabay.com/photos/shoes-basketball-lebron-james-shoes-1011596/",
+    "photographer": "jeffjuit",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pexels school sports equipment basketball court",
+    "description": "ball, basketball, sports, spalding, team, basketball, basketball, basketball, basketball, basketball",
+    "source": "https://pixabay.com/photos/ball-basketball-sports-spalding-7610545/",
+    "photographer": "daschorsch",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-11.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay music classroom instruments school",
+    "description": "children, india, education, classroom, happy, smile, together, school, india, education, education, education, classroom, school, school, school, school, school",
+    "source": "https://pixabay.com/photos/children-india-education-classroom-876543/",
+    "photographer": "akshayapatra",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-12.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay music classroom instruments school",
+    "description": "black, board, desktop backgrounds, traces of chalk, wallpaper hd, laptop wallpaper, school, mac wallpaper, to learn, free background, beautiful wallpaper, free wallpaper, 4k wallpaper 1920x1080, windows wallpaper, full hd wallpaper, training, smeared, writing board, teaching, hd wallpaper, cool backgrounds, 4k wallpaper, wallpaper 4k, blackboard, structure, background",
+    "source": "https://pixabay.com/photos/black-board-traces-of-chalk-school-1072366/",
+    "photographer": "stux",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
