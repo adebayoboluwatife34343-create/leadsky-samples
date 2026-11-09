@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#153B59">
+<title>Montreal Naif Hotel — A connected stay | LeadSky concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;0,600;1,400&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{--paper:#F7FAFC;--blue:#153B59;--sky:#DCECF4;--gold:#C38319;--ink:#243441;--line:#cbd8e0;--muted:#506574;--white:#fff;--serif:"Bodoni Moda",Georgia,serif;--sans:"Public Sans",Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.65}button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}a{color:inherit;text-underline-offset:4px}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #bb7914;outline-offset:4px}button{color:inherit}img{display:block;width:100%;object-fit:cover}h1,h2,h3,p{margin-top:0}h1,h2,.display{font-family:var(--serif);font-weight:400;line-height:1.04;letter-spacing:-.045em}h2{font-size:clamp(40px,6vw,78px);margin-bottom:24px}h3{font-weight:500;font-size:23px;line-height:1.3}.eyebrow{text-transform:uppercase;font-size:10px;font-weight:700;letter-spacing:.19em;display:block;margin-bottom:18px}.muted{color:var(--muted)}.small{font-size:12px}.wrap{width:min(1320px,90%);margin:auto}.banner{background:var(--blue);color:white;text-align:center;padding:8px 16px;font-size:10px;letter-spacing:.025em;line-height:1.5}.header{position:sticky;top:0;background:rgba(247,250,252,.97);z-index:30;border-bottom:1px solid var(--line)}.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{text-decoration:none;font-family:var(--serif);font-size:25px;letter-spacing:-1px;white-space:nowrap}.brand span{font-family:var(--sans);font-size:9px;letter-spacing:.13em;margin-left:12px}.nav-right{display:flex;align-items:center;gap:26px}.navlinks{display:flex;gap:25px}.navlinks a{text-decoration:none;font-size:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:46px;padding:11px 22px;border:1px solid var(--blue);background:var(--blue);color:white;text-decoration:none;font-size:12px;font-weight:600;border-radius:0;transition:background .2s,transform .2s}.btn:hover{background:#245778}.btn.light{background:white;color:var(--blue);border-color:white}.btn.outline{background:transparent;color:var(--blue)}.btn.outline:hover{background:var(--sky)}.btn.smallbtn{min-height:38px;padding:8px 14px;font-size:11px}.textbtn{border:0;background:none;text-decoration:underline;text-underline-offset:5px;padding:8px 0;font-size:12px}.menu-button{border:0;background:none;font-size:12px;display:none;min-height:44px}.hero{height:690px;min-height:600px;position:relative;color:white;overflow:hidden;display:flex;align-items:flex-end}.hero>img{position:absolute;inset:0;height:100%;object-position:center 58%}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,24,38,.58),rgba(5,24,38,.58) 30%,rgba(5,24,38,.86))}.hero-inner{position:relative;z-index:1;padding:48px 0 35px;width:min(1320px,90%);margin:0 auto}.hero-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.hero-top .eyebrow{margin:0;color:white}.edition{font-family:var(--serif);font-style:italic;font-size:19px}.hero h1{font-size:clamp(70px,10.2vw,148px);margin:0 0 24px;line-height:.94;max-width:1100px}.hero h1 span{display:block}.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:40px}.hero-copy{max-width:460px}.hero-copy p{font-size:18px;line-height:1.55;margin:0 0 22px}.hero-foot{font-size:10px;opacity:.85;max-width:180px;text-align:right}.stay-bar{background:white;display:grid;grid-template-columns:1fr 1fr .7fr auto;gap:0;border-bottom:1px solid var(--line);padding:25px 5%;align-items:end}.stay-bar label{padding:0 28px;border-right:1px solid var(--line)}.stay-bar label:first-child{padding-left:0}.label{font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;display:block;margin-bottom:7px}.stay-bar input,.stay-bar select{width:100%;border:0;background:white;min-height:35px;color:var(--blue);font-size:17px}.stay-bar .btn{margin-left:28px}.disclosure{border-bottom:1px solid var(--line);padding:12px 5%;display:flex;justify-content:space-between;gap:16px;font-size:10px;color:var(--muted);background:#edf4f8}.disclosure strong{color:var(--blue)}.section{padding:100px 0}.section-head{display:grid;grid-template-columns:1.25fr 1fr;gap:70px;align-items:end;margin-bottom:45px}.section-head h2{margin-bottom:0}.section-head p{margin-bottom:6px;max-width:460px}.number{font-family:var(--serif);font-size:20px;color:var(--gold);margin-right:12px}.workspace{background:white;border:1px solid var(--line)}.workspace-top{padding:22px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:15px}.workspace-name{font-size:12px;font-weight:600}.pill{background:var(--sky);color:var(--blue);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;display:inline-block}.workspace-body{padding:30px}.booking-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}.calendar{border:1px solid var(--line);padding:20px}.calendar-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-size:13px}.iconbtn{border:1px solid var(--line);background:white;min-width:36px;min-height:36px;font-size:18px}.week,.days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.week span{text-align:center;font-size:9px;color:var(--muted);padding:5px}.day{border:0;background:transparent;aspect-ratio:1;min-height:32px;font-size:12px}.day:hover:not(:disabled){background:var(--sky)}.day.range{background:#edf4f8}.day.selected{background:var(--blue);color:white}.day.today{box-shadow:inset 0 0 0 1px var(--gold)}.calendar-note{font-size:11px;margin:13px 0 0;color:var(--muted)}.fields{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:20px 0}.field{display:block;font-size:11px;font-weight:600}.field input,.field select,.field textarea{display:block;width:100%;margin-top:7px;border:1px solid var(--line);padding:11px;background:white;color:var(--ink);min-height:44px;border-radius:0;font-weight:400}.field textarea{resize:vertical}.field.full{grid-column:1/-1}.rooms-heading{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:12px;font-size:12px}.room{display:grid;grid-template-columns:150px 1fr;gap:22px;border-bottom:1px solid var(--line);padding:23px 0}.room img{height:145px}.room h3{font-family:var(--serif);font-size:27px;margin:0 0 7px}.room p{font-size:12px;margin:0 0 12px}.room-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px}.rate{font-size:19px;color:var(--blue)}.rate small{font-size:10px;color:var(--muted)}.notice{font-size:12px;padding:14px 17px;background:#edf4f8;border-left:3px solid var(--blue);margin:18px 0}.error{color:#a02e28}.success{color:#1d6048}.steps{display:flex;gap:25px;font-size:10px;color:var(--muted);margin-bottom:25px}.steps .active{color:var(--blue);font-weight:700}.review{display:grid;grid-template-columns:1fr 1fr;gap:40px}.review-summary{background:var(--paper);padding:25px}.review-summary img{height:190px;margin-bottom:20px}.line{display:flex;justify-content:space-between;gap:15px;font-size:13px;padding:10px 0;border-bottom:1px solid var(--line)}.total{font-weight:700;font-size:18px}.actions{display:flex;flex-wrap:wrap;align-items:center;gap:15px;margin-top:22px}.journal{background:#edf3f7}.journal-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:40px}.journal-head h2{margin:0}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid #afc0cc;background:transparent;padding:9px 16px;font-size:11px;color:var(--blue)}.filter[aria-pressed=true]{background:var(--blue);border-color:var(--blue);color:white}.journal-count{font-size:11px;color:var(--muted);margin-bottom:25px}.journal-entry{display:grid;grid-template-columns:1.6fr .65fr;gap:7%;align-items:center;margin-bottom:55px}.journal-entry:nth-child(even){grid-template-columns:.65fr 1.6fr}.journal-entry:nth-child(even) .photo-button{order:2}.journal-entry:nth-child(even) .journal-text{order:1}.photo-button{position:relative;border:0;padding:0;background:var(--blue);overflow:hidden;display:block;width:100%;text-align:left}.photo-button img{height:430px;transition:transform .6s}.photo-button:hover img{transform:scale(1.025)}.photo-button .photo-open{position:absolute;bottom:18px;right:18px;background:white;color:var(--blue);padding:9px 14px;font-size:10px}.journal-text h3{font-family:var(--serif);font-size:38px;line-height:1.1;margin:15px 0}.journal-text p{font-size:13px;color:var(--muted)}.journal-text .eyebrow{margin-bottom:0}.how{display:grid;grid-template-columns:1fr 1fr;align-items:stretch}.how-photo{position:relative;min-height:610px}.how-photo img{height:100%;position:absolute;inset:0}.image-caption{position:absolute;left:18px;bottom:18px;max-width:90%;background:rgba(10,29,43,.85);color:white;padding:7px 12px;font-size:10px}.how-content{background:var(--blue);color:white;padding:70px 12%}.how-content h2{font-size:55px}.how-step{border-top:1px solid #537084;padding:20px 0;display:grid;grid-template-columns:30px 1fr;gap:15px}.how-step .display{font-size:26px;color:#e7ba6b}.how-step h3{font-size:15px;margin:0 0 8px}.how-step p{font-size:12px;opacity:.85;margin:0}.portal-grid{display:grid;grid-template-columns:.65fr 1.35fr;gap:70px;align-items:start}.portal-intro p{max-width:320px}.portal-intro img{height:270px;margin-top:30px}.portal-intro .small{margin-top:7px}.tabs{display:flex;gap:5px;border-bottom:1px solid var(--line);padding:0 25px}.tab{border:0;border-bottom:3px solid transparent;background:none;padding:18px 12px;font-size:12px}.tab[aria-selected=true]{border-color:var(--blue);font-weight:700}.record-head{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:15px}.record-head h3{font-family:var(--serif);font-size:31px;margin:0}.record-details{display:grid;grid-template-columns:1fr 1fr;gap:20px;background:var(--paper);padding:20px}.record-details p{margin:0;font-size:13px}.record-details span{display:block;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}.subheading{font-size:13px;font-weight:700;margin:25px 0 10px}.request-row{display:flex;justify-content:space-between;gap:16px;font-size:12px;border-bottom:1px solid var(--line);padding:12px 0}.check{display:flex;align-items:start;gap:10px;font-size:12px}.check input{width:17px;height:17px;flex-shrink:0;margin-top:3px}.staff-section{background:var(--sky)}.staff-intro{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:40px}.staff-intro h2{margin:0;max-width:700px}.staff-tools{display:flex;flex-wrap:wrap;gap:12px;align-items:end;padding-bottom:22px}.staff-tools .field{flex:1;min-width:130px}.staff-tools .btn{margin-bottom:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);margin-bottom:25px}.stat{padding:20px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{font-family:var(--serif);font-size:37px;line-height:1}.stat span{display:block;font-size:10px;color:var(--muted);margin-top:7px}.table-scroll{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:12px}th{font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:500}td,th{padding:14px 12px;border-bottom:1px solid var(--line);vertical-align:middle}td:first-child,th:first-child{padding-left:0}td .textbtn{font-size:11px}.status{font-size:10px;padding:4px 7px;background:var(--sky);white-space:nowrap}.status.cancelled{background:#f5e8e7;color:#882d29}.status.checked-in{background:#e0eee7;color:#27543d}.empty{padding:35px 15px;text-align:center;font-size:13px;color:var(--muted)}.inventory-row{display:grid;grid-template-columns:1fr .6fr 1fr 1fr;gap:15px;align-items:end;border-bottom:1px solid var(--line);padding:18px 0;font-size:12px}.inventory-row select{max-width:100%}.inventory-row .field select{font-size:12px}.boundaries{margin-top:25px;font-size:11px;max-width:900px;color:var(--muted)}footer{background:var(--blue);color:white;padding:50px 0 25px}.contact-strip{display:flex;justify-content:space-between;align-items:center;gap:35px;border-bottom:1px solid #48677f;padding-bottom:35px}.contact-strip .display{font-size:42px;max-width:550px}.contact-strip .actions{margin:0}.footer-bottom{display:flex;justify-content:space-between;gap:25px;margin-top:25px;font-size:10px;color:#d0dee7}.credits{margin-top:25px;border-top:1px solid #48677f;padding-top:15px;font-size:10px;color:#d0dee7}.credits summary{cursor:pointer;padding:8px 0}.credit-links{display:flex;flex-wrap:wrap;gap:10px 25px;padding:15px 0}.credit-links a{color:white}.modal{border:0;padding:0;width:min(760px,92vw);max-height:90dvh;background:white;color:var(--ink);box-shadow:0 30px 100px #0005}.modal::backdrop{background:rgba(8,24,37,.84)}.modal-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 25px;border-bottom:1px solid var(--line)}.modal-head h3{font-size:16px;margin:0}.modal-body{padding:25px}.lightbox{width:min(1100px,94vw);background:var(--paper)}.lightbox img{max-height:65dvh;object-fit:contain;background:#102c42}.lightbox-foot{padding:20px 25px;display:flex;justify-content:space-between;align-items:center;gap:20px}.lightbox-foot h3{font-family:var(--serif);font-size:27px;margin:0 0 4px}.lightbox-foot p{font-size:11px;margin:0}.lightbox-nav{display:flex;gap:8px}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--blue);color:white;padding:15px 22px;z-index:100;box-shadow:0 6px 30px #0003;font-size:12px;width:max-content;max-width:90vw;border:1px solid white}.hidden,[hidden]{display:none!important}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0)}.live-note{font-size:12px;margin:12px 0;color:var(--blue)}.review-label{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}.storage-note{font-size:10px;color:var(--muted);margin:20px 0 0}
+@media(min-width:1500px){.hero{height:770px}.hero-inner{padding-bottom:55px}}
+@media(max-width:1000px){.navlinks{gap:15px}.booking-layout{grid-template-columns:1fr 1.2fr;gap:25px}.room{grid-template-columns:110px 1fr;gap:15px}.room img{height:150px}.room-bottom{align-items:start;flex-direction:column}.portal-grid{grid-template-columns:.65fr 1.35fr;gap:35px}.section{padding:75px 0}.journal-entry{gap:5%;grid-template-columns:1.4fr .8fr}.journal-entry:nth-child(even){grid-template-columns:.8fr 1.4fr}.photo-button img{height:340px}.how-content{padding:55px 9%}.how-content h2{font-size:45px}.how-photo{min-height:600px}}
+@media(max-width:700px){body{font-size:14px}.wrap{width:90%}.banner{font-size:9px;padding:7px 12px}.nav{height:59px;gap:12px}.brand{font-size:21px}.brand span{display:none}.nav-right{gap:10px}.nav-right>.btn{min-height:36px;padding:7px 11px;font-size:10px}.menu-button{display:block}.navlinks{display:none;position:absolute;top:59px;left:0;right:0;background:var(--paper);padding:18px 5% 25px;border-bottom:1px solid var(--line);flex-direction:column;gap:0;box-shadow:0 15px 20px #0001}.navlinks.open{display:flex}.navlinks a{padding:13px 0;font-size:14px}.hero{height:590px;min-height:0;align-items:flex-end}.hero-inner{padding:35px 0 30px}.hero-top{margin-bottom:34px}.hero-top .eyebrow{font-size:9px}.edition{font-size:14px}.hero h1{font-size:clamp(58px,14.6vw,98px);line-height:1;letter-spacing:-.06em;margin-bottom:27px}.hero-copy p{font-size:16px;max-width:310px;margin-bottom:23px}.hero-bottom{display:block}.hero-foot{max-width:none;text-align:left;margin-top:22px;font-size:9px}.hero>img{object-position:61% center}.stay-bar{grid-template-columns:1fr 1fr;padding:22px 5%;gap:18px}.stay-bar label,.stay-bar label:first-child{padding:0;border:0}.stay-bar input,.stay-bar select{font-size:14px}.stay-bar .btn{margin:0;align-self:end;min-height:42px;padding:8px 14px}.label{font-size:9px}.disclosure{display:block;font-size:9px;padding:10px 5%}.disclosure span{display:block}.section{padding:60px 0}.section-head{grid-template-columns:1fr;gap:20px;margin-bottom:28px}.section-head h2{font-size:43px;max-width:340px}.section-head p{font-size:13px}.eyebrow{font-size:9px;margin-bottom:15px}.workspace-top{padding:16px;align-items:start}.workspace-name{font-size:11px}.pill{font-size:8px;padding:4px 6px}.workspace-body{padding:18px}.booking-layout{grid-template-columns:1fr;gap:25px}.calendar{padding:15px}.day{min-height:35px;aspect-ratio:auto;height:37px}.fields{gap:12px}.room{grid-template-columns:100px 1fr;gap:15px;padding:20px 0}.room img{height:154px}.room h3{font-size:25px}.room p{font-size:10px}.room .btn{padding:8px 12px;min-height:36px;font-size:10px}.rate{font-size:17px}.rooms-heading{font-size:10px}.review{grid-template-columns:1fr;gap:25px}.steps{gap:15px;font-size:9px;justify-content:space-between}.review-summary{padding:18px}.journal-head{display:block;margin-bottom:25px}.journal-head h2{font-size:44px;margin-bottom:25px}.filter{padding:8px 12px;font-size:10px}.journal-entry,.journal-entry:nth-child(even){grid-template-columns:1fr;gap:22px;margin-bottom:45px}.journal-entry:nth-child(even) .photo-button{order:0}.journal-entry:nth-child(even) .journal-text{order:0}.photo-button img{height:280px}.journal-text h3{font-size:33px;margin:10px 0}.journal-text p{font-size:12px;max-width:300px;margin-bottom:5px}.how{grid-template-columns:1fr}.how-photo{min-height:300px}.how-content{padding:45px 7%}.how-content h2{font-size:45px;max-width:300px}.portal-grid{grid-template-columns:1fr;gap:25px}.portal-intro h2{font-size:45px}.portal-intro img{height:210px;margin-top:25px}.portal-intro p{max-width:none}.record-head h3{font-size:26px}.record-details{padding:15px;gap:20px 12px}.record-details p{font-size:11px}.record-details span{font-size:9px}.tabs{padding:0 10px;overflow:auto;white-space:nowrap}.tab{padding:16px 10px;font-size:11px}.staff-intro{display:block}.staff-intro h2{font-size:43px}.staff-intro>.pill{margin-top:20px}.stat{padding:15px 10px}.stat strong{font-size:30px}.stat span{font-size:8px}.staff-tools{gap:10px}.staff-tools .field{min-width:110px}.inventory-row{grid-template-columns:1fr 1fr;gap:12px}.table-scroll table{min-width:580px}.contact-strip{display:block}.contact-strip .display{font-size:36px;margin-bottom:25px}.contact-strip .actions{gap:10px}.contact-strip .btn{font-size:10px;padding:10px 13px}.footer-bottom{flex-direction:column;gap:10px}.lightbox-foot{display:block;padding:18px}.lightbox-nav{margin-top:16px}.lightbox-foot h3{font-size:25px}.modal-body{padding:20px}.modal-head{padding:15px 20px}.storage-note{font-size:9px}.workspace-top .small{font-size:10px}.hero-copy .btn{min-height:46px}.toast{bottom:15px}.check{font-size:11px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="banner">Independent website concept by LeadSky for Montreal Naif Hotel. Not their official website.</div>
+<header class="header">
+<nav class="nav wrap" aria-label="Main navigation">
+<a class="brand" href="#home" aria-label="Montreal Naif Hotel home">Montreal Naif<span>DUBAI</span></a>
+<div class="nav-right">
+<div class="navlinks" id="navlinks">
+<a href="#booking">Reservations</a><a href="#journal">Photo journal</a><a href="#guest">Guest portal</a><a href="#operations">Hotel operations</a><a href="#contact">About this concept</a>
+</div>
+<a class="btn smallbtn" href="#booking">Try booking ↗</a>
+<button class="menu-button" id="menuToggle" aria-expanded="false" aria-controls="navlinks">Menu ☰</button>
+</div>
+</nav>
+</header>
+<main>
+<section class="hero" id="home" aria-labelledby="heroTitle">
+<img src="img/stock-4.jpg" alt="Stock reference photograph of a warmly lit hotel bedroom, not Montreal Naif Hotel" width="1920" height="1280" fetchpriority="high">
+<div class="hero-inner">
+<div class="hero-top"><span class="eyebrow">Dubai · A connected stay</span><span class="edition">The reservation edition / 01</span></div>
+<h1 id="heroTitle">Montreal Naif<span>Hotel.</span></h1>
+<div class="hero-bottom">
+<div class="hero-copy"><p>From a placeholder page to a complete booking journey.</p><a href="#booking" class="btn light">Try a sample booking <span aria-hidden="true">↗</span></a></div>
+<div class="hero-foot">A working product proposal.<br>Stock reference image, not hotel premises.</div>
+</div>
+</div>
+</section>
+<form class="stay-bar" id="coverSearch">
+<label><span class="label">Arrival</span><input type="date" id="coverArrival" required aria-label="Sample arrival date"></label>
+<label><span class="label">Departure</span><input type="date" id="coverDeparture" required aria-label="Sample departure date"></label>
+<label><span class="label">Guests</span><select id="coverGuests" aria-label="Guest count"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option></select></label>
+<button class="btn" type="submit">Explore a stay ↗</button>
+</form>
+<div class="disclosure"><strong>Independent product concept · sample data · no charges</strong><span>Illustrative rooms and rates. No live hotel availability.</span></div>
+
+<section class="section" id="booking">
+<div class="wrap">
+<div class="section-head">
+<div><span class="eyebrow"><span class="number">01</span> The reservation workspace</span><h2>A room. A date.<br>A clearer journey.</h2></div>
+<p class="muted">Try the full flow: choose a sample stay, review the price and simulate payment. Your reservation then appears in both the guest portal and hotel operations.</p>
+</div>
+<div class="workspace">
+<div class="workspace-top"><span class="workspace-name">Montreal Naif / Reservations</span><span class="pill">Interactive sample</span></div>
+<div class="workspace-body">
+<div class="steps" aria-label="Reservation progress"><span id="step1" class="active">01 — Choose a stay</span><span id="step2">02 — Guest & review</span><span id="step3">03 — Simulation</span></div>
+<div id="choosePanel">
+<div class="booking-layout">
+<div>
+<div class="calendar" aria-label="Choose sample stay dates">
+<div class="calendar-head"><button type="button" class="iconbtn" id="prevMonth" aria-label="Previous month">‹</button><strong id="monthTitle"></strong><button type="button" class="iconbtn" id="nextMonth" aria-label="Next month">›</button></div>
+<div class="week" aria-hidden="true"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div>
+<div class="days" id="calendarDays"></div>
+<p class="calendar-note" id="calendarHint" aria-live="polite">Choose arrival, then departure. Dates are sample only.</p>
+</div>
+<div class="fields">
+<label class="field">Arrival<input id="arrival" type="date" required></label>
+<label class="field">Departure<input id="departure" type="date" required></label>
+<label class="field full">Guests<select id="guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="3">3 guests</option></select></label>
+</div>
+<p class="small muted" id="dateSummary" aria-live="polite"></p>
+<p class="small error" id="dateError" role="alert"></p>
+</div>
+<div>
+<div class="rooms-heading"><strong>Proposed sample inventory</strong><span id="availableCount"></span></div>
+<div id="roomList"></div>
+<p class="small muted" style="margin-top:18px">Room names, capacities and AED rates below are invented for this demonstration, not published hotel offerings. All interiors are stock references. No taxes or fees are assumed.</p>
+</div>
+</div>
+</div>
+<div id="reviewPanel" hidden></div>
+<div id="resultPanel" hidden></div>
+</div>
+</div>
+<p class="storage-note" id="persistenceNote">Demo changes are stored in this browser only. Please use fictional guest details. Nothing is sent to the hotel.</p>
+</div>
+</section>
+
+<section class="section journal" id="journal">
+<div class="wrap">
+<div class="journal-head"><div><span class="eyebrow"><span class="number">02</span> A photographic journal</span><h2>Room to imagine.<br>A city to explore.</h2></div><div class="filters" role="group" aria-label="Filter photo journal"><button class="filter" data-filter="all" aria-pressed="true">All photographs</button><button class="filter" data-filter="rooms" aria-pressed="false">Room references</button><button class="filter" data-filter="dubai" aria-pressed="false">Dubai</button></div></div>
+<p class="journal-count" id="journalCount" aria-live="polite"></p>
+<div id="journalEntries"></div>
+</div>
+</section>
+
+<section class="how" aria-labelledby="howTitle">
+<div class="how-photo"><img src="img/stock-5.jpg" alt="Stock reference of hotel reception staff assisting a guest, not Montreal Naif employees" width="1200" height="1000" loading="lazy"><span class="image-caption">Hospitality reference · stock photograph, not hotel staff</span></div>
+<div class="how-content"><span class="eyebrow">Less back-and-forth. One connected record.</span><h2 id="howTitle">From enquiry<br>to organised stay.</h2>
+<div class="how-step"><span class="display">1</span><div><h3>Choose, without a phone call</h3><p>A proposed booking engine could show dates, rooms and prices together. Here, availability comes from local sample inventory.</p></div></div>
+<div class="how-step"><span class="display">2</span><div><h3>Review before committing</h3><p>See the nightly calculation and guest details in one place. Test both approved and declined payment scenarios without a card.</p></div></div>
+<div class="how-step"><span class="display">3</span><div><h3>Keep everyone on the same page</h3><p>One sample reservation connects the guest view, arrivals list and housekeeping workflow. Explore the screens below.</p></div></div>
+</div>
+</section>
+
+<section class="section" id="guest">
+<div class="wrap portal-grid">
+<div class="portal-intro"><span class="eyebrow"><span class="number">03</span> The guest companion</span><h2>Your stay.<br>In your hands.</h2><p class="muted">A responsive companion-app concept. Change a sample stay, request a service or manage a reservation from your phone.</p><img src="img/stock-2.jpg" alt="Stock bedroom detail with a book, used as a hospitality mood reference" width="900" height="650" loading="lazy"><p class="small muted">Reference photography. Not a hotel room listing.</p></div>
+<div class="workspace">
+<div class="workspace-top"><span class="workspace-name">Montreal Naif / My stay</span><span class="pill">Guest demo</span></div>
+<div class="workspace-body">
+<form id="lookupForm"><label class="field">Sample reservation reference<input id="lookupReference" placeholder="e.g. MN-SAMPLE-1001" required autocomplete="off"></label><div class="actions"><button class="btn smallbtn" type="submit">Find sample stay ↗</button><button class="textbtn" type="button" id="showLatest">Open latest active stay</button></div></form>
+<p class="live-note" id="lookupMessage" aria-live="polite"></p>
+<div id="guestRecord"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section staff-section" id="operations">
+<div class="wrap">
+<div class="staff-intro"><div><span class="eyebrow"><span class="number">04</span> Behind the stay</span><h2>One desk.<br>The whole picture.</h2></div><span class="pill" style="background:white">Staff workspace · no authentication in demo</span></div>
+<div class="workspace">
+<div class="workspace-top"><span class="workspace-name">Montreal Naif / Hotel operations</span><button class="textbtn" id="resetDemo">Reset sample data</button></div>
+<div class="tabs" role="tablist" aria-label="Operations views"><button class="tab" role="tab" id="tabReservations" data-staff-tab="reservations" aria-selected="true" aria-controls="staffPanel">Reservations</button><button class="tab" role="tab" id="tabInventory" data-staff-tab="inventory" aria-selected="false" aria-controls="staffPanel" tabindex="-1">Rooms & housekeeping</button><button class="tab" role="tab" id="tabRequests" data-staff-tab="requests" aria-selected="false" aria-controls="staffPanel" tabindex="-1">Guest requests</button></div>
+<div class="workspace-body">
+<div class="stats"><div class="stat"><strong id="statActive">0</strong><span>Active sample stays</span></div><div class="stat"><strong id="statAvailable">0</strong><span>Units open for selected dates</span></div><div class="stat"><strong id="statRequests">0</strong><span>Open sample requests</span></div></div>
+<div id="staffPanel" role="tabpanel" aria-labelledby="tabReservations"></div>
+<p class="storage-note">Proposed workflow only. Staff names, room numbers, housekeeping states and guest records are sample data.</p>
+</div>
+</div>
+<p class="boundaries">Production scope: a live booking engine, verified room inventory and rates, payment gateway, secure authentication, server database, email confirmations and property-management connections would require implementation. This responsive guest view is not a native mobile application. Operational details must be confirmed with the hotel.</p>
+</div>
+</section>
+</main>
+<footer id="contact">
+<div class="wrap">
+<div class="contact-strip"><div><span class="eyebrow">Built around a better booking journey</span><div class="display">A considered proposal.<br>A working conversation.</div></div><div class="actions"><a class="btn light" href="#booking">Try the booking flow ↗</a><a class="btn" style="border-color:#8aa4b6" href="https://montrealnaifhoteldubai.com/" target="_blank" rel="noopener noreferrer">Official website ↗</a></div></div>
+<div class="footer-bottom"><span>Concept by LeadSky · Montreal Naif Hotel, Dubai</span><span>Independent concept. No endorsement. No real reservations, payments or messages.</span></div>
+<details class="credits"><summary>Reference photography & usage notes</summary><p>All photographs are illustrative stock references, not verified hotel premises, rooms, views, staff or projects. Provided under the Pixabay Content License; commercial use permitted, attribution not required. Credits are included below.</p><div class="credit-links">
+<a href="https://pixabay.com/photos/pillows-sheets-bed-linen-820149/" target="_blank" rel="noopener noreferrer">JayMantri / Pixabay — linen</a>
+<a href="https://pixabay.com/photos/read-sunday-bedroom-book-sleep-3667768/" target="_blank" rel="noopener noreferrer">LUM3N / Pixabay — bedroom detail</a>
+<a href="https://pixabay.com/photos/bedroom-indoors-interior-design-3475656/" target="_blank" rel="noopener noreferrer">3534679 / Pixabay — bedroom</a>
+<a href="https://pixabay.com/photos/bed-hotel-luxurious-bedroom-4416515/" target="_blank" rel="noopener noreferrer">Engin_Akyurt / Pixabay — hotel interior</a>
+<a href="https://pixabay.com/photos/receptionists-phone-call-hotel-5975962/" target="_blank" rel="noopener noreferrer">Rodrigo_SalomonHC / Pixabay — reception</a>
+<a href="https://pixabay.com/photos/building-door-architecture-entrance-8246152/" target="_blank" rel="noopener noreferrer">Michael_Pointner / Pixabay — entrance</a>
+<a href="https://pixabay.com/photos/boat-river-tour-city-travel-islam-7767575/" target="_blank" rel="noopener noreferrer">SalvadorNavarroMaldonad / Pixabay — Dubai waterway</a>
+<a href="https://pixabay.com/photos/boat-street-urban-arab-arabic-2713872/" target="_blank" rel="noopener noreferrer">igorovsyannykov / Pixabay — Dubai street</a>
+<a href="https://pixabay.com/photos/downtown-dubai-uae-tourism-city-4045036/" target="_blank" rel="noopener noreferrer">Olgaozik / Pixabay — downtown Dubai</a>
+<a href="https://pixabay.com/photos/city-creek-lg-dubai-balconies-1283778/" target="_blank" rel="noopener noreferrer">Pexels / Pixabay — Dubai Creek</a>
+</div><p>The supplied website extract contains the default WordPress “Hello world!” post. This concept addresses that supplied observation; current hotel offerings and buying intent are unverified. Brand colours and the typographic wordmark are proposed, not an authenticated hotel identity.</p></details>
+</div>
+</footer>
+
+<dialog class="modal lightbox" id="lightbox" aria-labelledby="lightboxTitle">
+<div class="modal-head"><span class="small">The photographic journal / reference imagery</span><button class="iconbtn" id="closeLightbox" aria-label="Close photograph">×</button></div>
+<img id="lightboxImage" src="img/stock-7.jpg" alt="">
+<div class="lightbox-foot"><div><h3 id="lightboxTitle"></h3><p id="lightboxCaption"></p><a id="lightboxSource" class="small" target="_blank" rel="noopener noreferrer">Photographer & source ↗</a></div><div class="lightbox-nav"><button class="iconbtn" id="previousPhoto" aria-label="Previous photograph">‹</button><button class="iconbtn" id="nextPhoto" aria-label="Next photograph">›</button></div></div>
+</dialog>
+<dialog class="modal" id="detailModal" aria-labelledby="detailTitle"><div class="modal-head"><h3 id="detailTitle"></h3><button class="iconbtn" id="closeDetail" aria-label="Close details">×</button></div><div class="modal-body" id="detailBody"></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+"use strict";
+const $=s=>document.querySelector(s);
+const $$=s=>[...document.querySelectorAll(s)];
+const escapeHTML=v=>String(v??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const renderImg=(url,alt,w,h,cls="",extra="")=>'<img src="'+url+'" alt="'+escapeHTML(alt)+'" width="'+w+'" height="'+h+'"'+(cls?' class="'+cls+'"':'')+' '+extra+'>';
+const iso=d=>`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+const today=iso(new Date());
+const plus=(s,n)=>{const d=new Date(s+"T12:00:00");d.setDate(d.getDate()+n);return iso(d)};
+const fmt=s=>new Date(s+"T12:00:00").toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"});
+const nights=(a,b)=>Math.round((new Date(b+"T12:00:00")-new Date(a+"T12:00:00"))/86400000);
+const money=n=>"AED "+Number(n).toLocaleString("en-GB");
+const rooms=[
+{id:"double",name:"Sample Double",capacity:2,rate:240,img:"img/stock-3.jpg",units:["201","202"],description:"Illustrative option for up to two guests."},
+{id:"twin",name:"Sample Twin",capacity:2,rate:280,img:"img/stock-1.jpg",units:["203","204"],description:"Illustrative two-guest inventory option."},
+{id:"family",name:"Sample Family",capacity:3,rate:360,img:"img/stock-6.jpg",units:["301"],description:"Proposed three-guest option. Entrance reference image, not a room photograph."}
+];
+const key="leadsky-montreal-naif-v1";
+const fresh=()=>({
+reservations:[
+{id:"MN-SAMPLE-1001",room:"double",unit:"201",arrival:plus(today,2),departure:plus(today,4),guests:2,name:"Alex Sample",email:"alex@example.invalid",status:"reserved",rate:240,offers:false,created:1},
+{id:"MN-SAMPLE-1002",room:"twin",unit:"203",arrival:today,departure:plus(today,1),guests:1,name:"Sam Example",email:"sam@example.invalid",status:"checked-in",rate:280,offers:false,created:2}
+],blocks:[],housekeeping:{"201":{status:"Ready",assignee:"Unassigned"},"202":{status:"Ready",assignee:"Unassigned"},"203":{status:"Occupied",assignee:"Sample team A"},"204":{status:"Ready",assignee:"Unassigned"},"301":{status:"Ready",assignee:"Unassigned"}},requests:[],next:1003});
+let state;
+try{const raw=JSON.parse(localStorage.getItem(key));state=raw&&Array.isArray(raw.reservations)&&raw.housekeeping&&Array.isArray(raw.requests)&&Array.isArray(raw.blocks)&&Number.isInteger(raw.next)?raw:fresh()}catch(e){state=fresh()}
+let persistence=true;
+function save(){try{localStorage.setItem(key,JSON.stringify(state))}catch(e){persistence=false;$("#persistenceNote").textContent="Browser storage is unavailable. Demo changes last only for this open page. Please use fictional details; nothing is sent."}}
+save();
+let selectedRoom=null,guestId=null,staffTab="reservations",staffSearch="",staffStatus="all",staffDate="",calendarMonth=new Date(today+"T12:00:00"),selectingDeparture=false,photoFilter="all",photoIndex=0,lastPhotoTrigger=null,detailRestore=null;
+let toastTimer;
+function toast(text){$("#toast").textContent=text;$("#toast").hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("#toast").hidden=true,5000)}
+function active(r){return r.status==="reserved"||r.status==="checked-in"}
+function overlaps(a,b,c,d){return a<d&&b>c}
+function freeUnits(room,a,b,ignore=null){return room.units.filter(unit=>!state.blocks.includes(unit)&&!state.reservations.some(r=>r.id!==ignore&&r.unit===unit&&active(r)&&overlaps(a,b,r.arrival,r.departure)))}
+function dates(){return{a:$("#arrival").value,b:$("#departure").value,g:Number($("#guests").value)}}
+function dateValid(a,b){return !!a&&!!b&&a>=today&&b>a&&nights(a,b)<=60}
+function dateError(a,b){if(!a||!b)return"Choose both arrival and departure.";if(a<today)return"Arrival must be today or later.";if(b<=a)return"Departure must be at least one day after arrival.";if(nights(a,b)>60)return"Please choose a sample stay of up to 60 nights.";return""}
+function resetBookingView(){selectedRoom=null;$("#choosePanel").hidden=false;$("#reviewPanel").hidden=true;$("#resultPanel").hidden=true;setStep(1)}
+function setStep(n){[1,2,3].forEach(i=>$("#step"+i).classList.toggle("active",i===n))}
+$("#arrival").value=plus(today,1);$("#departure").value=plus(today,3);
+["#arrival","#coverArrival"].forEach(s=>$(s).min=today);
+function syncCover(){const {a,b,g}=dates();$("#coverArrival").value=a;$("#coverDeparture").value=b;$("#coverGuests").value=g;$("#departure").min=plus(a||today,1);$("#coverDeparture").min=plus(a||today,1)}
+syncCover();
+function renderCalendar(){
+const year=calendarMonth.getFullYear(),month=calendarMonth.getMonth();
+$("#monthTitle").textContent=calendarMonth.toLocaleDateString("en-GB",{month:"long",year:"numeric"});
+const first=new Date(year,month,1),offset=(first.getDay()+6)%7,count=new Date(year,month+1,0).getDate(),{a,b}=dates();
+let html=Array.from({length:offset},()=>'<span aria-hidden="true"></span>').join("");
+for(let d=1;d<=count;d++){const val=iso(new Date(year,month,d)),chosen=val===a||val===b;html+=`<button type="button" class="day ${chosen?"selected":""} ${val>a&&val<b?"range":""} ${val===today?"today":""}" data-date="${val}" ${val<today?"disabled":""} aria-label="${fmt(val)}${val===a?", selected arrival":val===b?", selected departure":""}" aria-pressed="${chosen}">${d}</button>`}
+$("#calendarDays").innerHTML=html;
+$("#prevMonth").disabled=year===new Date().getFullYear()&&month===new Date().getMonth();
+}
+function renderRooms(){
+const {a,b,g}=dates(),err=dateError(a,b);$("#dateError").textContent=err;
+$("#dateSummary").textContent=err?"":`${nights(a,b)} ${nights(a,b)===1?"night":"nights"} · ${g} ${g===1?"guest":"guests"} · ${fmt(a)} — ${fmt(b)}`;
+let available=0;
+$("#roomList").innerHTML=rooms.map(room=>{let free=err?[]:freeUnits(room,a,b);const ok=!err&&g<=room.capacity&&free.length>0;if(ok)available++;return`<article class="room">${renderImg(room.img,room.id==="family"?"Stock entrance reference, not a family-room photograph":"Stock accommodation reference, not a hotel room photograph",300,300,"","loading=\"lazy\"")}<div><span class="review-label">Sample inventory · ${room.capacity} guests max</span><h3>${room.name}</h3><p class="muted">${room.description} Stock reference.</p><div class="room-bottom"><div class="rate">${money(room.rate)} <small>/ night</small></div><button class="btn smallbtn" data-room="${room.id}" ${ok?"":"disabled"}>${g>room.capacity?"Too many guests":err?"Select dates":!free.length?"Unavailable":"Choose stay ↗"}</button></div></div></article>`}).join("");
+$("#availableCount").textContent=`${available} of ${rooms.length} options available`;
+}
+function refresh(){renderCalendar();renderRooms();renderGuest();renderStats();renderStaff();syncCover()}
+function dateChange(){const a=$("#arrival").value;if(a&&$("#departure").value<=a)$("#departure").value=plus(a,1);syncCover();renderCalendar();renderRooms();renderStats()}
+["#arrival","#departure","#guests"].forEach(s=>$(s).addEventListener("change",dateChange));
+$("#coverArrival").addEventListener("change",()=>{const a=$("#coverArrival").value;$("#coverDeparture").min=plus(a||today,1);if($("#coverDeparture").value<=a)$("#coverDeparture").value=plus(a,1)});
+$("#coverSearch").addEventListener("submit",e=>{e.preventDefault();const a=$("#coverArrival").value,b=$("#coverDeparture").value,err=dateError(a,b);if(err){toast(err);return}$("#arrival").value=a;$("#departure").value=b;$("#guests").value=$("#coverGuests").value;calendarMonth=new Date(a+"T12:00:00");resetBookingView();dateChange();$("#booking").scrollIntoView({behavior:"smooth"})});
+$("#prevMonth").onclick=()=>{calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()-1,1);renderCalendar();$("#prevMonth").focus()};
+$("#nextMonth").onclick=()=>{calendarMonth=new Date(calendarMonth.getFullYear(),calendarMonth.getMonth()+1,1);renderCalendar();$("#nextMonth").focus()};
+$("#calendarDays").onclick=e=>{const btn=e.target.closest("[data-date]");if(!btn)return;const val=btn.dataset.date;if(!selectingDeparture){$("#arrival").value=val;$("#departure").value=plus(val,1);selectingDeparture=true;$("#calendarHint").textContent="Arrival selected. Now choose a later departure date."}else if(val>$("#arrival").value){$("#departure").value=val;selectingDeparture=false;$("#calendarHint").textContent="Stay selected. Choose a room, or pick a new arrival."}else{$("#arrival").value=val;$("#departure").value=plus(val,1);$("#calendarHint").textContent="New arrival selected. Choose a later departure."}dateChange();const focus=$(`[data-date="${val}"]`);if(focus)focus.focus()};
+function chooseRoom(id){
+selectedRoom=rooms.find(r=>r.id===id);const {a,b,g}=dates();if(!selectedRoom||!dateValid(a,b)||g>selectedRoom.capacity||!freeUnits(selectedRoom,a,b).length){toast("This sample option is not available. Please review your dates.");return}
+$("#choosePanel").hidden=true;$("#reviewPanel").hidden=false;$("#resultPanel").hidden=true;setStep(2);
+$("#reviewPanel").innerHTML=`<div class="review"><div class="review-summary">${renderImg(selectedRoom.img,"Illustrative stock reference, not the selected hotel room",700,420)}<span class="eyebrow">Your illustrative stay</span><h3 style="font-family:var(--serif);font-size:32px">${selectedRoom.name}</h3><div class="line"><span>Dates</span><span>${fmt(a)} — ${fmt(b)}</span></div><div class="line"><span>Guests</span><span>${g}</span></div><div class="line"><span>${nights(a,b)} nights × ${money(selectedRoom.rate)}</span><span>${money(nights(a,b)*selectedRoom.rate)}</span></div><div class="line total"><span>Sample total</span><span>${money(nights(a,b)*selectedRoom.rate)}</span></div><p class="small muted" style="margin-top:15px">Illustrative AED pricing. No actual hotel rates, taxes or fee policies are represented. No charge will occur.</p><button class="textbtn" id="backChoose">← Change room or dates</button></div><form id="reviewForm"><span class="eyebrow">Fictional details only</span><h3>Who is this sample stay for?</h3><div class="fields"><label class="field full">Fictional guest name<input id="guestName" required maxlength="80" autocomplete="off" placeholder="Alex Example"></label><label class="field full">Fictional email<input id="guestEmail" type="email" required maxlength="120" autocomplete="off" placeholder="alex@example.invalid"></label></div><label class="field">Payment simulation<select id="paymentResult"><option value="approved">Simulate approval</option><option value="declined">Simulate decline</option></select></label><div class="notice">No card details. No real transaction. Only a simulated approval creates a local sample reservation.</div><label class="check"><input type="checkbox" required><span>I understand this is an independent demo, not a hotel reservation.</span></label><p id="paymentError" class="small error" role="alert"></p><div class="actions"><button class="btn" type="submit">Create sample reservation ↗</button></div><p class="small muted" style="margin-top:18px">This is a demo form, nothing was sent.</p></form></div>`;
+$("#backChoose").onclick=()=>{resetBookingView();renderRooms()};
+$("#reviewForm").onsubmit=e=>{e.preventDefault();if(!$("#guestName").value.trim()){$("#guestName").setCustomValidity("Enter a fictional guest name.");$("#guestName").reportValidity();return}
+if($("#paymentResult").value==="declined"){setStep(3);$("#paymentError").textContent="Simulated payment declined. No reservation was created and nothing was charged. Choose “Simulate approval” to retry.";return}
+const unit=freeUnits(selectedRoom,a,b)[0];if(!unit){$("#paymentError").textContent="This sample room is no longer available. Go back and choose another option.";return}
+const record={id:"MN-SAMPLE-"+state.next++,room:selectedRoom.id,unit,arrival:a,departure:b,guests:g,name:$("#guestName").value.trim(),email:$("#guestEmail").value.trim(),status:"reserved",rate:selectedRoom.rate,offers:false,created:Date.now()};
+state.reservations.push(record);guestId=record.id;save();setStep(3);$("#reviewPanel").hidden=true;$("#resultPanel").hidden=false;
+$("#resultPanel").innerHTML=`<div style="max-width:650px;margin:15px auto 30px"><span class="pill">Simulation complete · not a real booking</span><h3 class="display" style="font-size:48px;margin:25px 0">One stay.<br>Now connected.</h3><p>Your local sample reference is <strong>${record.id}</strong>. It is now visible in the guest portal and staff reservations list.</p><div class="notice">This is a demo form, nothing was sent. No room was booked, no money was charged and no confirmation email was sent.</div><div class="actions"><a class="btn" href="#guest">Open guest portal ↗</a><a class="btn outline" href="#operations">View staff record ↗</a><button class="textbtn" id="newBooking">Try another stay</button></div></div>`;
+$("#lookupReference").value=record.id;$("#newBooking").onclick=()=>{resetBookingView();renderRooms()};refresh();$("#resultPanel").setAttribute("tabindex","-1");$("#resultPanel").focus();
+};
+$("#guestName").oninput=()=>$("#guestName").setCustomValidity("");
+$("#reviewPanel").scrollIntoView({behavior:"smooth",block:"center"});
+}
+$("#roomList").onclick=e=>{const b=e.target.closest("[data-room]");if(b)chooseRoom(b.dataset.room)};
+
+const photos=[
+{img:"img/stock-7.jpg",type:"dubai",title:"The city, from the water.",tag:"Dubai / Waterways",text:"A Dubai waterway reference introduces the destination. It makes no claim about the hotel’s location, views or proximity.",source:"https://pixabay.com/photos/boat-river-tour-city-travel-islam-7767575/",by:"SalvadorNavarroMaldonad"},
+{img:"img/stock-9.jpg",type:"dubai",title:"A different pace of Dubai.",tag:"Dubai / Street life",text:"City photography gives the destination its own chapter, separate from unverified hotel amenities and room promises.",source:"https://pixabay.com/photos/downtown-dubai-uae-tourism-city-4045036/",by:"Olgaozik"},
+{img:"img/stock-8.jpg",type:"dubai",title:"Between streets and shore.",tag:"Dubai / Everyday scenes",text:"A street-level travel reference. Open the photograph to explore the journal and its original source.",source:"https://pixabay.com/photos/boat-street-urban-arab-arabic-2713872/",by:"igorovsyannykov"},
+{img:"img/stock-10.jpg",type:"dubai",title:"Along the Creek.",tag:"Dubai / City textures",text:"A Dubai Creek reference, chosen to show the city rather than imply a view from a hotel room.",source:"https://pixabay.com/photos/city-creek-lg-dubai-balconies-1283778/",by:"Pexels"},
+{img:"img/stock-3.jpg",type:"rooms",title:"A room, with a clear next step.",tag:"Room references / Sample Double",text:"Illustrative accommodation imagery accompanies a proposed sample option. Explore the room image, then test its reservation journey.",source:"https://pixabay.com/photos/bedroom-indoors-interior-design-3475656/",by:"3534679",room:"double"},
+{img:"img/stock-1.jpg",type:"rooms",title:"The quieter details.",tag:"Room references / Sample Twin",text:"Stock linen photography illustrates the mood only. The sample inventory, nightly rate and reservation below are demonstration data.",source:"https://pixabay.com/photos/pillows-sheets-bed-linen-820149/",by:"JayMantri",room:"twin"}
+];
+function filteredPhotos(){return photos.filter(p=>photoFilter==="all"||p.type===photoFilter)}
+function renderJournal(){
+const list=filteredPhotos();$("#journalCount").textContent=`${list.length} photographs · All interiors are stock references; Dubai images do not represent hotel views.`;
+$("#journalEntries").innerHTML=list.map(p=>`<article class="journal-entry"><button class="photo-button" data-photo="${photos.indexOf(p)}" aria-label="Open ${p.title}">${renderImg(p.img,(p.type==="dubai"?"Dubai city reference: ":"Illustrative stock interior: ")+p.title+" Not a hotel property photograph.",1200,800,"","loading=\"lazy\"")}<span class="photo-open">Explore photograph ＋</span></button><div class="journal-text"><span class="eyebrow">${p.tag}</span><h3>${p.title}</h3><p>${p.text}</p>${p.room?`<button class="textbtn" data-journal-room="${p.room}">Try this sample stay ↗</button>`:'<span class="small muted">Destination reference · not a hotel view</span>'}</div></article>`).join("");
+}
+$$("[data-filter]").forEach(b=>b.onclick=()=>{photoFilter=b.dataset.filter;$$("[data-filter]").forEach(x=>x.setAttribute("aria-pressed",x===b));renderJournal()});
+function updateLightbox(){const list=filteredPhotos();photoIndex=(photoIndex+list.length)%list.length;const p=list[photoIndex];$("#lightboxImage").src=p.img;$("#lightboxImage").alt=`${p.title} Stock reference, not hotel premises.`;$("#lightboxTitle").textContent=p.title;$("#lightboxCaption").textContent=`${photoIndex+1} / ${list.length} · ${p.type==="dubai"?"Dubai destination reference; not a hotel view.":"Stock accommodation reference; not hotel premises."}`;$("#lightboxSource").href=p.source;$("#lightboxSource").textContent=p.by+" / Pixabay ↗"}
+$("#journalEntries").onclick=e=>{const b=e.target.closest("[data-photo]"),r=e.target.closest("[data-journal-room]");if(b){lastPhotoTrigger=b;photoIndex=filteredPhotos().indexOf(photos[Number(b.dataset.photo)]);updateLightbox();$("#lightbox").showModal()}if(r){resetBookingView();$("#booking").scrollIntoView({behavior:"smooth"});const room=rooms.find(x=>x.id===r.dataset.journalRoom);if(Number($("#guests").value)>room.capacity)$("#guests").value=room.capacity;dateChange();chooseRoom(room.id)}};
+$("#closeLightbox").onclick=()=>$("#lightbox").close();
+$("#lightbox").addEventListener("close",()=>lastPhotoTrigger?.focus());
+$("#previousPhoto").onclick=()=>{photoIndex--;updateLightbox()};
+$("#nextPhoto").onclick=()=>{photoIndex++;updateLightbox()};
+$("#lightbox").addEventListener("keydown",e=>{if(e.key==="ArrowLeft"){e.preventDefault();photoIndex--;updateLightbox()}if(e.key==="ArrowRight"){e.preventDefault();photoIndex++;updateLightbox()}});
+
+function renderGuest(){
+const r=state.reservations.find(x=>x.id===guestId);
+if(!r){$("#guestRecord").innerHTML='<div class="notice">Explore an existing fictional stay with <strong>MN-SAMPLE-1001</strong>, or create your own sample reservation above. No guest authentication is implemented.</div>';return}
+$("#lookupReference").value=r.id;
+const room=rooms.find(x=>x.id===r.room),requests=state.requests.filter(x=>x.reservation===r.id);
+$("#guestRecord").innerHTML=`<div style="border-top:1px solid var(--line);padding-top:25px;margin-top:20px"><div class="record-head"><div><span class="review-label">${r.id} · sample</span><h3>Hello, ${escapeHTML(r.name.split(" ")[0])}.</h3></div><span class="status ${r.status}">${r.status.replace("-"," ")}</span></div><div class="record-details"><p><span>Stay</span>${room.name} · ${r.guests} guest${r.guests>1?"s":""}</p><p><span>Sample room</span>${r.unit}</p><p><span>Arrival</span>${fmt(r.arrival)}</p><p><span>Departure</span>${fmt(r.departure)}</p><p><span>Illustrative total</span>${money(nights(r.arrival,r.departure)*r.rate)}</p><p><span>Fictional email</span>${escapeHTML(r.email)}</p></div>
+${r.status==="reserved"?`<div class="actions"><button class="textbtn" data-guest-action="change">Change sample dates</button><button class="textbtn" data-guest-action="cancel">Cancel sample stay</button></div>`:""}
+${active(r)?`<p class="subheading">Request a little help</p><form id="serviceForm"><label class="field">Proposed service category<select id="serviceCategory"><option>Housekeeping request</option><option>Extra linen request</option><option>Arrival question</option></select></label><label class="field" style="margin-top:12px">Sample request details<textarea id="serviceMessage" rows="2" maxlength="300" required placeholder="Use fictional details only."></textarea></label><button class="btn smallbtn" type="submit" style="margin-top:15px">Add sample request ↗</button></form><label class="check" style="margin-top:22px"><input id="offerPreference" type="checkbox" ${r.offers?"checked":""}><span>Save a sample preference for offers. No marketing messages will be sent.</span></label>`:"<div class='notice'>This sample stay is closed. It no longer holds room availability.</div>"}
+${requests.length?`<p class="subheading">Your sample requests</p>${requests.map(q=>`<div class="request-row"><div><strong>${escapeHTML(q.category)}</strong><br>${escapeHTML(q.message)}</div><span class="status">${q.status}</span></div>`).join("")}`:""}
+<p class="small muted" style="margin-top:20px">This is a demo form, nothing was sent. Updates affect this browser only.</p></div>`;
+const sf=$("#serviceForm");if(sf)sf.onsubmit=e=>{e.preventDefault();const msg=$("#serviceMessage").value.trim();if(!msg){$("#serviceMessage").setCustomValidity("Enter a fictional request.");$("#serviceMessage").reportValidity();return}state.requests.push({id:"REQ-"+Date.now(),reservation:r.id,category:$("#serviceCategory").value,message:msg,status:"Open"});save();refresh();toast("Sample request added locally. This is a demo form, nothing was sent.")};
+if($("#serviceMessage"))$("#serviceMessage").oninput=()=>$("#serviceMessage").setCustomValidity("");
+if($("#offerPreference"))$("#offerPreference").onchange=e=>{r.offers=e.target.checked;save();toast("Sample preference saved locally. No marketing message will be sent.")};
+}
+$("#lookupForm").onsubmit=e=>{e.preventDefault();const id=$("#lookupReference").value.trim().toUpperCase();if(!state.reservations.some(x=>x.id===id)){$("#lookupMessage").textContent="No local sample reservation matches that reference.";return}guestId=id;$("#lookupMessage").textContent="Local sample stay found. No real guest data is connected.";renderGuest()};
+$("#showLatest").onclick=()=>{const list=state.reservations.filter(active).sort((a,b)=>b.created-a.created);if(!list.length){toast("No active sample stay. Create one in Reservations.");return}guestId=list[0].id;$("#lookupMessage").textContent="Latest active sample stay opened.";renderGuest()};
+function openDetail(title,html){detailRestore=document.activeElement;$("#detailTitle").textContent=title;$("#detailBody").innerHTML=html;$("#detailModal").showModal()}
+$("#closeDetail").onclick=()=>$("#detailModal").close();
+$("#detailModal").addEventListener("close",()=>{if(detailRestore?.isConnected)detailRestore.focus()});
+$("#guestRecord").onclick=e=>{
+const b=e.target.closest("[data-guest-action]");if(!b)return;const r=state.reservations.find(x=>x.id===guestId);
+if(b.dataset.guestAction==="cancel"){
+openDetail("Cancel this sample stay?",`<p>Cancel <strong>${r.id}</strong>? Its sample room will become available again. No real booking will be changed.</p><div class="actions"><button class="btn" id="confirmCancel">Cancel sample stay</button><button class="btn outline" id="keepStay">Keep it</button></div>`);
+$("#keepStay").onclick=()=>$("#detailModal").close();
+$("#confirmCancel").onclick=()=>{r.status="cancelled";save();$("#detailModal").close();refresh();toast("Sample stay cancelled locally. No hotel message was sent.")};
+}else{
+openDetail("Change sample dates",`<form id="changeForm"><p class="small muted">${r.id} · ${rooms.find(x=>x.id===r.room).name}. Date changes require sample availability.</p><div class="fields"><label class="field">Arrival<input id="changeArrival" type="date" min="${today}" value="${r.arrival}" required></label><label class="field">Departure<input id="changeDeparture" type="date" min="${plus(today,1)}" value="${r.departure}" required></label></div><div class="notice" id="changeQuote" aria-live="polite"></div><p class="small error" id="changeError" role="alert"></p><button class="btn" type="submit">Save sample date change ↗</button><p class="small muted" style="margin-top:15px">This is a demo form, nothing was sent. No real payment adjustment.</p></form>`);
+const quote=()=>{const a=$("#changeArrival").value,b=$("#changeDeparture").value;$("#changeQuote").textContent=dateValid(a,b)?`${nights(a,b)} nights × ${money(r.rate)} = ${money(nights(a,b)*r.rate)}. Previous total: ${money(nights(r.arrival,r.departure)*r.rate)}.`:"Select a valid stay of 1–60 nights."};quote();$("#changeArrival").onchange=quote;$("#changeDeparture").onchange=quote;
+$("#changeForm").onsubmit=e=>{e.preventDefault();const a=$("#changeArrival").value,b=$("#changeDeparture").value,err=dateError(a,b),room=rooms.find(x=>x.id===r.room);if(err){$("#changeError").textContent=err;return}const units=freeUnits(room,a,b,r.id);if(!units.length){$("#changeError").textContent="No sample room is available for these dates.";return}r.arrival=a;r.departure=b;r.unit=units.includes(r.unit)?r.unit:units[0];save();$("#detailModal").close();refresh();toast("Sample dates changed locally. No real booking or payment changed.")};
+}
+};
+
+function renderStats(){
+$("#statActive").textContent=state.reservations.filter(active).length;
+const {a,b}=dates();$("#statAvailable").textContent=dateValid(a,b)?rooms.reduce((n,r)=>n+freeUnits(r,a,b).length,0):"—";
+$("#statRequests").textContent=state.requests.filter(q=>q.status!=="Resolved").length;
+}
+function renderStaff(){
+const panel=$("#staffPanel");
+if(staffTab==="reservations"){
+panel.innerHTML=`<div class="staff-tools"><label class="field">Search sample records<input id="staffSearch" value="${escapeHTML(staffSearch)}" placeholder="Guest or reference"></label><label class="field">Status<select id="staffStatus"><option value="all">All statuses</option><option value="reserved">Reserved</option><option value="checked-in">Checked in</option><option value="checked-out">Checked out</option><option value="cancelled">Cancelled</option></select></label><label class="field">Stay includes date<input id="staffDate" type="date" value="${staffDate}"></label><button class="btn outline smallbtn" id="clearStaffFilters">Clear</button></div><div id="reservationTable"></div>`;
+$("#staffStatus").value=staffStatus;
+$("#staffSearch").oninput=e=>{staffSearch=e.target.value;renderReservationTable()};
+$("#staffStatus").onchange=e=>{staffStatus=e.target.value;renderReservationTable()};
+$("#staffDate").onchange=e=>{staffDate=e.target.value;renderReservationTable()};
+$("#clearStaffFilters").onclick=()=>{staffSearch="";staffStatus="all";staffDate="";renderStaff()};
+renderReservationTable();
+}else if(staffTab==="inventory"){
+panel.innerHTML=`<p class="small muted">Blocking removes a unit from all new sample searches. Existing stays remain. Housekeeping and assignments are local demonstration states.</p><div>${rooms.flatMap(room=>room.units.map(unit=>{const h=state.housekeeping[unit];return`<div class="inventory-row"><div><strong>Sample room ${unit}</strong><br><span class="muted">${room.name}</span></div><button class="btn ${state.blocks.includes(unit)?"":"outline"} smallbtn" data-block="${unit}">${state.blocks.includes(unit)?"Unblock room":"Block room"}</button><label class="field">Housekeeping<select data-house="${unit}">${["Ready","Occupied","Needs cleaning","In progress","Inspected"].map(s=>`<option ${h.status===s?"selected":""}>${s}</option>`).join("")}</select></label><label class="field">Sample assignment<select data-assign="${unit}">${["Unassigned","Sample team A","Sample team B"].map(s=>`<option ${h.assignee===s?"selected":""}>${s}</option>`).join("")}</select></label></div>`})).join("")}</div>`;
+}else{
+panel.innerHTML=state.requests.length?state.requests.map(q=>`<div class="request-row"><div><span class="review-label">${q.reservation} · sample</span><br><strong>${escapeHTML(q.category)}</strong><p style="margin:7px 0">${escapeHTML(q.message)}</p></div><label class="field">Status<select data-request="${q.id}">${["Open","In progress","Resolved"].map(s=>`<option ${q.status===s?"selected":""}>${s}</option>`).join("")}</select></label></div>`).join(""):'<div class="empty">No sample requests yet. Open a guest stay and add a request to see it here.</div>';
+}
+}
+function renderReservationTable(){
+const q=staffSearch.toLowerCase().trim(),list=state.reservations.filter(r=>(!q||`${r.id} ${r.name}`.toLowerCase().includes(q))&&(staffStatus==="all"||r.status===staffStatus)&&(!staffDate||(r.arrival<=staffDate&&r.departure>staffDate))).sort((a,b)=>b.created-a.created);
+$("#reservationTable").innerHTML=list.length?`<p class="small muted">${list.length} matching sample record${list.length!==1?"s":""}. Arrival and departure actions are simulations.</p><div class="table-scroll" tabindex="0" role="region" aria-label="Sample reservations table; scroll horizontally on small screens"><table><thead><tr><th>Guest / reference</th><th>Room</th><th>Stay</th><th>Status</th><th>Action</th></tr></thead><tbody>${list.map(r=>`<tr><td><strong>${escapeHTML(r.name)}</strong><br><span class="small muted">${r.id}</span></td><td>${r.unit}<br>${rooms.find(x=>x.id===r.room).name}</td><td>${fmt(r.arrival)}<br>${fmt(r.departure)}</td><td><span class="status ${r.status}">${r.status.replace("-"," ")}</span></td><td><button class="textbtn" data-details="${r.id}">Details</button>${r.status==="reserved"?`<br><button class="textbtn" data-status="${r.id}" data-next="checked-in">Simulate arrival</button>`:r.status==="checked-in"?`<br><button class="textbtn" data-status="${r.id}" data-next="checked-out">Simulate departure</button>`:""}</td></tr>`).join("")}</tbody></table></div>`:'<div class="empty">No sample reservations match these filters. Clear the filters or try another date.</div>';
+}
+$$("[data-staff-tab]").forEach(b=>{
+b.onclick=()=>{staffTab=b.dataset.staffTab;$$("[data-staff-tab]").forEach(x=>{x.setAttribute("aria-selected",x===b);x.tabIndex=x===b?0:-1});$("#staffPanel").setAttribute("aria-labelledby",b.id);renderStaff()};
+b.onkeydown=e=>{if(!["ArrowLeft","ArrowRight","Home","End"].includes(e.key))return;e.preventDefault();const list=$$("[data-staff-tab]"),i=list.indexOf(b),index=e.key==="Home"?0:e.key==="End"?list.length-1:(i+(e.key==="ArrowRight"?1:-1)+list.length)%list.length;list[index].click();list[index].focus()}
+});
+$("#staffPanel").onclick=e=>{
+const block=e.target.closest("[data-block]"),status=e.target.closest("[data-status]"),detail=e.target.closest("[data-details]");
+if(block){const unit=block.dataset.block;state.blocks=state.blocks.includes(unit)?state.blocks.filter(x=>x!==unit):[...state.blocks,unit];save();refresh();$(`[data-block="${unit}"]`)?.focus();toast(`Sample room ${unit} ${state.blocks.includes(unit)?"blocked":"unblocked"} for new stays.`)}
+if(status){const r=state.reservations.find(x=>x.id===status.dataset.status),arriving=status.dataset.next==="checked-in";if(arriving){const collision=state.reservations.find(x=>x.id!==r.id&&x.unit===r.unit&&x.status==="checked-in");if(collision){toast("This unit already has a checked-in sample stay. Simulate its departure first.");return}}r.status=status.dataset.next;state.housekeeping[r.unit].status=arriving?"Occupied":"Needs cleaning";save();refresh();toast(arriving?"Sample arrival recorded. Housekeeping updated.":"Sample departure recorded. Room marked for cleaning.")}
+if(detail){const r=state.reservations.find(x=>x.id===detail.dataset.details);openDetail("Sample reservation details",`<span class="pill">${r.id}</span><h3 style="margin-top:20px">${escapeHTML(r.name)}</h3><div class="line"><span>Fictional email</span><span>${escapeHTML(r.email)}</span></div><div class="line"><span>Sample room</span><span>${r.unit} / ${rooms.find(x=>x.id===r.room).name}</span></div><div class="line"><span>Stay</span><span>${fmt(r.arrival)} — ${fmt(r.departure)}</span></div><div class="line"><span>Status</span><span>${r.status.replace("-"," ")}</span></div><div class="line"><span>Illustrative total</span><span>${money(nights(r.arrival,r.departure)*r.rate)}</span></div><button class="btn smallbtn" id="openGuestFromStaff" style="margin-top:20px">Inspect in guest portal ↗</button><p class="small muted" style="margin-top:18px">Sample record only. No real payment or reservation.</p>`);$("#openGuestFromStaff").onclick=()=>{guestId=r.id;renderGuest();$("#detailModal").close();$("#guest").scrollIntoView({behavior:"smooth"})}}
+};
+$("#staffPanel").onchange=e=>{
+const unit=e.target.dataset.house,assignment=e.target.dataset.assign,request=e.target.dataset.request;
+if(unit){state.housekeeping[unit].status=e.target.value;save();toast("Sample housekeeping state updated.")}
+if(assignment){state.housekeeping[assignment].assignee=e.target.value;save();toast("Sample housekeeping assignment updated.")}
+if(request){state.requests.find(q=>q.id===request).status=e.target.value;save();renderStats();renderGuest();toast("Sample service request status updated.")}
+};
+$("#resetDemo").onclick=()=>{
+openDetail("Reset this browser’s demo?",'<p>This removes locally created sample stays, requests and operational changes. The original fictional records will return. No hotel systems are affected.</p><div class="actions"><button class="btn" id="confirmReset">Reset sample data</button><button class="btn outline" id="cancelReset">Keep my demo</button></div>');
+$("#cancelReset").onclick=()=>$("#detailModal").close();
+$("#confirmReset").onclick=()=>{state=fresh();guestId=null;save();$("#detailModal").close();$("#lookupReference").value="";$("#lookupMessage").textContent="";resetBookingView();refresh();toast("Sample data reset in this browser.")};
+};
+$("#menuToggle").onclick=()=>{const open=$("#menuToggle").getAttribute("aria-expanded")!=="true";$("#menuToggle").setAttribute("aria-expanded",open);$("#navlinks").classList.toggle("open",open);$("#menuToggle").textContent=open?"Close ×":"Menu ☰"};
+$("#navlinks").onclick=e=>{if(e.target.closest("a")){$("#navlinks").classList.remove("open");$("#menuToggle").setAttribute("aria-expanded","false");$("#menuToggle").textContent="Menu ☰"}};
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#navlinks").classList.contains("open")){$("#navlinks").classList.remove("open");$("#menuToggle").setAttribute("aria-expanded","false");$("#menuToggle").textContent="Menu ☰";$("#menuToggle").focus()}});
+renderJournal();refresh();
+</script>
+</body>
+</html>
