@@ -1,0 +1,1427 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#fdfaf5">
+<title>IOTA Group — Independent Workforce Control Concept</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{
+  --bg:#fdfaf5;
+  --ink:#2d2620;
+  --muted:#6b5b52;
+  --brand:#8d4f8d;
+  --accent:#b45309;
+  --line:#eadccf;
+  --panel:#fff;
+  --shadow:0 20px 60px rgba(45,38,32,0.06);
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 Inter,Arial,sans-serif}
+button,input,select,textarea{font:inherit}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+button:disabled{cursor:default;opacity:0.6}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3,.brand{font-family:"Space Grotesk",Arial,sans-serif}
+h1{font-size:clamp(28px,7vw,44px);font-weight:600;line-height:1.12;letter-spacing:-1px}
+h2{font-size:clamp(24px,5vw,34px);font-weight:600;line-height:1.2;letter-spacing:-0.5px}
+h3{font-size:clamp(18px,4vw,22px);font-weight:600;line-height:1.3}
+p{color:var(--ink)}
+.container{width:min(var(--max),calc(100% - 32px));margin:auto}
+.disclosure{
+  background:var(--brand);
+  color:#fff;
+  text-align:center;
+  font-size:11px;
+  letter-spacing:0.2px;
+  padding:8px 16px;
+}
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:40;
+  border-bottom:1px solid var(--line);
+  background:rgba(253,250,245,0.92);
+  backdrop-filter:blur(6px);
+}
+.topbar-inner{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  height:64px;
+  flex-wrap:wrap;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  font-weight:700;
+  font-size:18px;
+  white-space:nowrap;
+}
+.brand-img{
+  width:36px;
+  height:36px;
+  border-radius:6px;
+  object-fit:cover;
+  display:block;
+}
+.desktop-links{
+  display:none;
+  gap:26px;
+  margin-left:auto;
+  align-items:center;
+}
+.desktop-links a{
+  font-size:13px;
+  font-weight:600;
+  color:var(--muted);
+}
+.desktop-links a:hover{color:var(--ink)}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  border:1px solid transparent;
+  border-radius:6px;
+  min-height:40px;
+  padding:0 16px;
+  font-size:13px;
+  font-weight:600;
+  text-decoration:none;
+  transition:background 0.2s,transform 0.1s;
+}
+.btn.accent{
+  background:var(--accent);
+  color:#fff;
+}
+.btn.accent:hover{background:#9c4405}
+.btn.outline{
+  background:var(--panel);
+  color:var(--ink);
+  border-color:var(--line);
+}
+.btn.outline:hover{background:#f5efe6}
+.btn.small{min-height:34px;padding:0 12px;font-size:12px}
+.menu-btn{
+  display:grid;
+  place-items:center;
+  width:36px;
+  height:36px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:6px;
+  font-size:18px;
+  margin-left:auto;
+}
+.mobile-menu{
+  display:none;
+  padding:14px 16px;
+  border-top:1px solid var(--line);
+  background:var(--panel);
+}
+.mobile-menu.open{display:block}
+.mobile-menu a{
+  display:block;
+  padding:10px 0;
+  font-size:14px;
+  font-weight:600;
+  border-bottom:1px solid #f0e7dc;
+  color:var(--ink);
+}
+.mobile-menu a:last-child{border-bottom:0}
+.eyebrow{
+  text-transform:uppercase;
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:700;
+  color:var(--accent);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:12px;
+}
+.eyebrow:before{
+  content:"";
+  width:6px;
+  height:6px;
+  background:var(--accent);
+  border-radius:50%;
+}
+.hero{
+  padding:56px 0 40px;
+}
+.hero-grid{
+  display:grid;
+  gap:26px;
+}
+.hero-text{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+.hero-text p{
+  font-size:15px;
+  max-width:460px;
+  color:var(--ink);
+}
+.hero-actions{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  margin-top:6px;
+}
+.hero-image{
+  position:relative;
+  border-radius:10px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#fff;
+}
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.hero-image .overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0.45),rgba(0,0,0,0.25));
+}
+.hero-caption{
+  position:absolute;
+  bottom:14px;
+  left:14px;
+  right:14px;
+  background:rgba(253,250,245,0.85);
+  backdrop-filter:blur(4px);
+  border-radius:6px;
+  padding:8px 10px;
+  font-size:11px;
+  color:var(--ink);
+  border:1px solid rgba(255,255,255,0.6);
+}
+.section{padding:46px 0}
+.section-head{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-bottom:26px;
+}
+.section-index{
+  font-size:10px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--brand);
+}
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+}
+.card{
+  border:1px solid var(--line);
+  border-radius:8px;
+  overflow:hidden;
+  background:var(--panel);
+  display:flex;
+  flex-direction:column;
+}
+.card-img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  display:block;
+}
+.card-body{
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.card-tag{
+  font-size:10px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--accent);
+}
+.card h4{font-size:15px}
+.card p{font-size:13px;color:var(--muted);margin:0}
+.workspace{
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  background:var(--panel);
+  box-shadow:var(--shadow);
+}
+.workspace-top{
+  height:56px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 18px;
+  gap:12px;
+}
+.workspace-title{
+  font-family:"Space Grotesk",sans-serif;
+  font-weight:600;
+  font-size:15px;
+  display:flex;
+  gap:8px;
+  align-items:center;
+}
+.sample-chip{
+  font-size:9px;
+  letter-spacing:0.8px;
+  text-transform:uppercase;
+  font-weight:700;
+  background:#f3e9d7;
+  color:#7a3d10;
+  padding:3px 8px;
+  border-radius:4px;
+  white-space:nowrap;
+}
+.workspace-layout{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  min-height:520px;
+}
+.workspace-sidebar{
+  background:#f7f2ec;
+  border-right:1px solid var(--line);
+  padding:16px 12px;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar-label{
+  font-size:9px;
+  letter-spacing:1.5px;
+  text-transform:uppercase;
+  color:var(--muted);
+  padding:0 12px;
+  margin-bottom:14px;
+}
+.workspace-nav{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.nav-item{
+  border:0;
+  background:none;
+  border-radius:5px;
+  text-align:left;
+  padding:10px 12px;
+  font-size:12px;
+  font-weight:500;
+  color:var(--ink);
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.nav-item:hover{background:#efe4d6}
+.nav-item.active{background:var(--brand);color:#fff}
+.nav-item span:first-child{width:18px;text-align:center;font-size:16px}
+.workspace-main{
+  padding:22px;
+  min-width:0;
+}
+.workspace-head{display:flex;justify-content:space-between;gap:16px;align-items:start;margin-bottom:18px}
+.workspace-head h3{font-size:21px}
+.workspace-head p{font-size:12px;color:var(--muted);margin-top:4px;max-width:420px}
+.workspace-foot{
+  border-top:1px solid var(--line);
+  padding:12px 18px;
+  font-size:11px;
+  color:var(--muted);
+  background:#fbf9f6;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+}
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+  margin-bottom:20px;
+}
+.stat{
+  padding:16px;
+  border:1px solid var(--line);
+  border-radius:7px;
+  background:var(--panel);
+}
+.stat-label{font-size:10px;color:var(--muted)}
+.metric-value{font-family:"Space Grotesk",sans-serif;font-size:26px;font-weight:600;line-height:1.2;letter-spacing:-0.5px;margin:6px 0 4px}
+.stat-foot{font-size:9px;color:var(--muted)}
+.stat.emphasis{
+  background:var(--ink);
+  color:#fff;
+  border-color:var(--ink);
+}
+.stat.emphasis .stat-label,.stat.emphasis .stat-foot{color:#c9b9a8}
+.panel{
+  border:1px solid var(--line);
+  border-radius:7px;
+  overflow:hidden;
+  margin-bottom:16px;
+  background:var(--panel);
+}
+.panel-head{
+  padding:14px 16px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  border-bottom:1px solid var(--line);
+}
+.panel-head h4{font-size:12px;margin:0}
+.panel-body{padding:16px}
+.person-row{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 16px;
+  border-bottom:1px solid #f0e7dc;
+}
+.person-row:last-child{border:0}
+.person-info{flex:1;min-width:0}
+.person-info b{font-size:12px;display:block}
+.person-info small{font-size:11px;color:var(--muted)}
+.initial{
+  width:30px;height:30px;
+  background:#e7dfd4;
+  color:var(--ink);
+  border-radius:50%;
+  font-size:11px;
+  display:grid;
+  place-items:center;
+  flex:none;
+}
+.status{
+  font-size:9px;
+  line-height:1.4;
+  padding:4px 8px;
+  background:#eef3ee;
+  color:#2e6b4e;
+  border-radius:4px;
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  white-space:nowrap;
+}
+.status.warn{background:#f7ede1;color:#9a4a16}
+.status.blue{background:#e8eff7;color:#375a86}
+.attention{
+  background:#fbf6ef;
+  border:1px solid #eadccf;
+  border-radius:6px;
+  padding:12px;
+  margin-bottom:12px;
+}
+.attention b{font-size:12px;display:block;margin-bottom:4px}
+.attention p{font-size:12px;line-height:1.6;margin:0}
+.text-btn{
+  font-size:11px;
+  color:var(--accent);
+  background:none;
+  border:0;
+  font-weight:600;
+  padding:4px 0;
+  cursor:pointer;
+}
+.text-btn:hover{text-decoration:underline}
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+.form-group.full{grid-column:1/-1}
+label{font-size:11px;font-weight:600;display:block;margin-bottom:6px;color:var(--ink)}
+.field,input[type=text],input[type=number],input[type=date],input[type=email],select,textarea{
+  border:1px solid #d8cbbd;
+  background:var(--panel);
+  border-radius:6px;
+  min-height:40px;
+  padding:8px 11px;
+  color:var(--ink);
+  width:100%;
+  font-size:13px;
+}
+textarea{resize:vertical;min-height:90px}
+.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.form-note{font-size:11px;color:var(--muted);margin-top:10px;line-height:1.6}
+.estimator-output{min-width:0}
+.estimate-total{
+  padding:20px;
+  background:var(--ink);
+  color:#fff;
+  border-radius:8px;
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:12px;
+  margin-bottom:14px;
+}
+.estimate-total p{color:#c9b9a8;font-size:11px;margin:0}
+.estimate-total strong{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:30px;
+  font-weight:600;
+  letter-spacing:-0.5px;
+  display:block;
+}
+.estimate-total small{font-size:10px;color:#c9b9a8}
+.price-table{width:100%;border-collapse:collapse;font-size:12px}
+.price-table th{
+  text-align:left;
+  font-size:9px;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:0.8px;
+  color:var(--muted);
+  padding:10px 14px;
+  border-bottom:1px solid var(--line);
+}
+.price-table td{
+  padding:12px 14px;
+  border-bottom:1px solid var(--line);
+  vertical-align:middle;
+}
+.price-table td:last-child{text-align:right;font-weight:600;white-space:nowrap}
+.closing{
+  padding:36px 0 52px;
+}
+.closing-inner{
+  background:var(--ink);
+  color:#fff;
+  border-radius:10px;
+  padding:32px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:30px;
+}
+.closing h2{font-size:30px;max-width:460px}
+.closing p{color:#c9b9a8;font-size:13px;margin-top:12px;line-height:1.7;max-width:470px}
+.closing .eyebrow{color:#d9a05b}
+.closing .eyebrow:before{background:#d9a05b}
+.closing-tools{display:flex;flex-direction:column;gap:14px}
+.completion{display:flex;gap:16px;flex-wrap:wrap}
+.completion span{font-size:10px;color:#c9b9a8}
+.completion b{font-size:20px;color:#fff;display:block;font-family:"Space Grotesk"}
+.closing-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:6px}
+.closing-link{
+  color:#b9c4cd;
+  font-size:10px;
+  background:none;
+  border:0;
+  padding:0;
+  margin-top:16px;
+  text-decoration:underline;
+  cursor:pointer;
+}
+.footer{
+  border-top:1px solid var(--line);
+  padding:30px 0 40px;
+  font-size:11px;
+  color:var(--muted);
+}
+.footer-top{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  align-items:center;
+  margin-bottom:14px;
+}
+.footer-logo{
+  font-family:"Space Grotesk",sans-serif;
+  font-size:17px;
+  color:var(--ink);
+  font-weight:700;
+}
+.footer-logo span{color:var(--accent)}
+.footer p{max-width:800px;margin-top:10px;line-height:1.7}
+.credits{margin-top:16px;display:flex;gap:14px;flex-wrap:wrap}
+.credits span{font-weight:700;color:var(--ink)}
+.credits a{text-underline-offset:3px;color:var(--brand)}
+.credits a:hover{text-decoration:underline}
+.source-list{padding-left:20px;line-height:1.9;margin-top:14px;font-size:11px}
+.source-list a{color:var(--brand);overflow-wrap:anywhere}
+.toast{
+  position:fixed;
+  bottom:22px;
+  left:50%;
+  transform:translate(-50%,20px);
+  background:var(--ink);
+  color:#fff;
+  padding:13px 20px;
+  border-radius:7px;
+  font-size:12px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.15);
+  z-index:100;
+  opacity:0;
+  pointer-events:none;
+  transition:0.2s;
+  max-width:calc(100% - 32px);
+  width:max-content;
+}
+.toast.visible{opacity:1;transform:translate(-50%,0)}
+dialog{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:0;
+  width:min(600px,calc(100% - 28px));
+  max-height:85vh;
+  box-shadow:0 30px 100px rgba(0,0,0,0.18);
+  color:var(--ink);
+}
+dialog::backdrop{background:rgba(45,38,32,0.55);backdrop-filter:blur(4px)}
+.dialog-head{
+  padding:18px 22px;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+.dialog-head h3{font-size:18px}
+.dialog-content{padding:22px;max-height:60vh;overflow:auto}
+.dialog-content p{font-size:12px;margin-bottom:12px}
+.dialog-content h4{margin:16px 0 8px;font-size:12px}
+.dialog-content label.check-label{display:flex;gap:9px;align-items:start;font-weight:400;line-height:1.7}
+.check-label input{margin-top:4px;accent-color:var(--accent)}
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0;
+}
+.empty{
+  padding:22px;
+  text-align:center;
+  color:var(--muted);
+  font-size:12px;
+}
+.mini-image{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  display:block;
+  border-radius:6px;
+}
+.panel-caption{
+  font-size:9px;
+  color:var(--muted);
+  padding:6px 12px;
+  background:#f7f2ec;
+}
+@media(min-width:900px){
+  .desktop-links{display:flex}
+  .menu-btn{display:none}
+  .hero-grid{grid-template-columns:1.15fr 1fr;align-items:center}
+  .workspace-layout{grid-template-columns:180px 1fr}
+  .closing-inner{grid-template-columns:1fr 1fr}
+  .stat-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:899px){
+  .hero-grid{grid-template-columns:1fr}
+  .hero-image{height:300px}
+  .workspace-layout{display:block;min-height:0}
+  .workspace-sidebar{border-right:0;border-bottom:1px solid var(--line);padding:12px}
+  .workspace-main{padding:16px}
+  .closing-inner{grid-template-columns:1fr;gap:20px;padding:24px}
+  .closing h2{font-size:26px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<div class="disclosure">Independent website concept by LeadSky for IOTA Nigeria. Not their official website.</div>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="brand" href="#home" aria-label="IOTA Group concept home">
+      <img src="img/profile.jpg" alt="IOTA Group brand mark" class="brand-img">
+      <span class="brand-text">IOTA Group</span>
+    </a>
+    <nav class="desktop-links" aria-label="Main navigation">
+      <a href="#shift">The shift</a>
+      <a href="#process">How it works</a>
+      <a href="#workspace">Client workspace</a>
+      <a href="#estimator">Planning assumptions</a>
+    </nav>
+    <a class="btn accent" href="#workspace">Explore demo</a>
+    <button class="icon-btn menu-btn" id="mainMenuButton" aria-label="Open navigation" aria-expanded="false" aria-controls="mainMenu">Menu</button>
+  </div>
+</header>
+<nav id="mainMenu" class="mobile-menu" aria-label="Mobile navigation">
+  <a href="#shift">The shift</a>
+  <a href="#process">How it works</a>
+  <a href="#workspace">Client workspace</a>
+  <a href="#estimator">Planning assumptions</a>
+  <a href="#sources">Sources & limitations</a>
+</nav>
+<main id="home">
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="eyebrow">Independent concept · IOTA Nigeria</div>
+          <h1 id="heroTitle">Less status chasing.<br>One workforce view.</h1>
+          <p>Employer of Record, international payroll and deployment, together. This concept shows how a shared client view could make workforce administration clearer.</p>
+          <div class="hero-actions">
+            <a class="btn accent" href="#workspace">Explore the working demo <span aria-hidden="true">↗</span></a>
+            <span class="sample-chip">No sign-in needed</span>
+          </div>
+          <p style="font-size:12px;color:var(--muted);margin-top:10px">Independent proposal. Fictional sample data. Nothing is sent or paid.</p>
+        </div>
+        <div class="hero-image">
+          <img src="img/stock-3.jpg" alt="Illustrative stock photo: paperwork and document coordination at a desk" width="900" height="600" loading="eager">
+          <div class="overlay"></div>
+          <div class="hero-caption">Illustrative stock photo, not IOTA premises or staff</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="shift" aria-labelledby="shiftTitle">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-index">01 / From email coordination to a shared view</div>
+          <h2 id="shiftTitle">Two ways to run the same work.</h2>
+        </div>
+        <p>These are illustrative scenes, not photographs of IOTA&rsquo;s operations. They show the difference between email-led coordination and a shared client workspace.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <img src="img/stock-3.jpg" alt="Illustrative stock photo: paperwork and document coordination at a desk" width="500" height="300" class="card-img" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Before · illustrative</span>
+            <h4>Email-led coordination</h4>
+            <p>Documents, queries and approvals live across inboxes. Status chasing takes time.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/stock-4.jpg" alt="Illustrative stock photo: professional reviewing documents at a computer" width="500" height="300" class="card-img" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">After · concept</span>
+            <h4>Shared workspace</h4>
+            <p>One view of onboarding, payroll and deployment records for client and provider.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="process" aria-labelledby="processTitle">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-index">02 / A clearer way through the work</div>
+          <h2 id="processTitle">From first document to next deployment.</h2>
+        </div>
+        <p>Follow a sample client cycle: onboarding records, payroll review, coverage checks and deployment changes.</p>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <img src="img/stock-2.jpg" alt="Illustrative stock photo: business charts and documents on a desk" width="500" height="300" class="card-img" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Illustrative stock photo</span>
+            <h4>Onboarding</h4>
+            <p>Employment contracts, identity and bank details for sample records.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/stock-9.jpg" alt="Illustrative stock photo: bookkeeping, accounting and taxes paperwork" width="500" height="300" class="card-img" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Illustrative stock photo</span>
+            <h4>Payroll review</h4>
+            <p>Gross amounts, queries and approvals in NGN.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/stock-6.jpg" alt="Illustrative stock photo: passport and world map for travel planning" width="500" height="300" class="card-img" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Illustrative stock photo</span>
+            <h4>Coverage & compliance</h4>
+            <p>Insurance, pension and deployment document review.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/stock-8.jpg" alt="Illustrative stock photo: worker with machine and engine parts" width="500" height="300" class="card-img" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Illustrative stock photo</span>
+            <h4>Deployment changes</h4>
+            <p>Requests, repatriation dates and close-out coordination.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="workspace" aria-labelledby="workspaceTitle">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-index">03 / Client workspace concept</div>
+          <h2 id="workspaceTitle">Explore a working sample portal.</h2>
+        </div>
+        <p>All people, amounts and workflow records in this workspace are fictional. Local browser actions only.</p>
+      </div>
+      <div class="workspace" id="workspace" tabindex="-1" role="region" aria-label="Sample client workspace">
+        <div class="workspace-top">
+          <div class="workspace-title"><span class="dot-grid" aria-hidden="true">▦</span> Workforce Control <span class="sample-chip">Sample workspace</span></div>
+          <span style="font-size:11px;color:var(--muted)">Client view · demo</span>
+        </div>
+        <div class="workspace-layout">
+          <aside class="workspace-sidebar">
+            <div class="sidebar-label">Client operations</div>
+            <button class="mobile-workspace-menu" id="workspaceMenuButton" aria-expanded="false" aria-controls="portalNav">
+              <span id="mobileCurrent">Overview</span>
+              <span style="font-size:11px;color:var(--muted)">All workspace screens ▾</span>
+            </button>
+            <nav class="workspace-nav" id="portalNav" aria-label="Workspace screens">
+              <button class="nav-item active" data-screen="overview"><span aria-hidden="true">▦</span>Overview</button>
+              <button class="nav-item" data-screen="onboarding"><span aria-hidden="true">♙</span>Onboarding</button>
+              <button class="nav-item" data-screen="payroll"><span aria-hidden="true">≋</span>Payroll</button>
+              <button class="nav-item" data-screen="compliance"><span aria-hidden="true">◈</span>Compliance &amp; coverage</button>
+              <button class="nav-item" data-screen="requests"><span aria-hidden="true">⇄</span>Requests</button>
+              <button class="nav-item" data-screen="documents"><span aria-hidden="true">▤</span>Documents</button>
+              <button class="nav-item" data-screen="assistant"><span aria-hidden="true">✧</span>Assistant</button>
+            </nav>
+            <div style="margin-top:auto;padding:18px 12px 0">
+              <p style="font-size:10px;line-height:1.6;color:var(--muted)"><b>A private product exploration</b><br>All people, amounts and workflow records are fictional. No live payroll, legal advice or back-office connection.</p>
+            </div>
+          </aside>
+          <div class="workspace-main" id="workspaceMain"></div>
+        </div>
+        <div class="workspace-foot">
+          <span id="storageStatus">Sample changes saved on this device</span>
+          <span>No live payroll, legal advice or back-office connection.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="estimator" aria-labelledby="estimatorTitle">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-index">04 / Make the assumptions visible</div>
+          <h2 id="estimatorTitle">A clear view of the numbers, too.</h2>
+        </div>
+        <p>Build an illustrative workforce budget. Change every assumption. These are planning inputs, not IOTA pricing or a quotation.</p>
+      </div>
+      <div class="card-grid" style="grid-template-columns:1fr 1fr; margin-bottom:26px">
+        <div class="card">
+          <img src="img/stock-10.jpg" alt="Illustrative stock photo: calculator and finance paperwork" width="500" height="300" class="card-img" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Illustrative stock photo</span>
+            <h4>Planning calculator</span>
+            <p>Editable headcount, gross pay, employer-cost and service-fee assumptions.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/stock-7.jpg" alt="Illustrative stock photo: engineer in a technical environment" width="500" height="300" class="card-img" loading="lazy">
+          <div class="card-body">
+            <span class="card-tag">Illustrative stock photo</span>
+            <h4>Technical workforce</span>
+            <p>Sample records for field engineers and consultants.</p>
+          </div>
+        </div>
+      </div>
+      <div class="estimator-layout" style="display:grid;grid-template-columns:1.1fr 1fr;gap:30px;align-items:start">
+        <form class="estimate-inputs" id="estimateForm">
+          <h3>Your planning assumptions</h3>
+          <p>All amounts in NGN. No exchange rates or statutory tax calculations.</p>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="headcount">Workforce headcount</label>
+              <div class="input-with-unit" style="position:relative"><input id="headcount" type="number" min="1" max="10000" step="1" value="6" required><span style="position:absolute;right:12px;top:10px;font-size:11px;color:var(--muted)">people</span></div>
+            </div>
+            <div class="form-group">
+              <label for="gross">Monthly gross / person</label>
+              <div class="input-with-unit" style="position:relative"><input id="gross" type="number" min="0" max="1000000000" step="1000" value="850000" required><span style="position:absolute;right:12px;top:10px;font-size:11px;color:var(--muted)">NGN</span></div>
+            </div>
+            <div class="form-group">
+              <label for="employer">Employer-cost assumption</label>
+              <div class="input-with-unit" style="position:relative"><input id="employer" type="number" min="0" max="100" step="0.1" value="12" required><span style="position:absolute;right:12px;top:10px;font-size:11px;color:var(--muted)">%</span></div>
+            </div>
+            <div class="form-group">
+              <label for="fee">Monthly service fee / person</label>
+              <div class="input-with-unit" style="position:relative"><input id="fee" type="number" min="0" max="100000000" step="1000" value="50000" required><span style="position:absolute;right:12px;top:10px;font-size:11px;color:var(--muted)">NGN</span></div>
+            </div>
+            <div class="form-group full">
+              <label for="implementation">Optional one-time portal implementation</label>
+              <div class="input-with-unit" style="position:relative"><input id="implementation" type="number" min="0" max="1000000000" step="1000" value="0" required><span style="position:absolute;right:12px;top:10px;font-size:11px;color:var(--muted)">NGN</span></div>
+            </div>
+          </div>
+          <details class="time-box">
+            <summary>Explore an administration-time assumption</summary>
+            <div class="form-grid">
+              <div class="form-group"><label for="hoursBefore">Current hours / month</label><input id="hoursBefore" type="number" min="0" max="10000" step="0.5" value="24" required></div>
+              <div class="form-group"><label for="hoursAfter">Proposed hours / month</label><input id="hoursAfter" type="number" min="0" max="10000" step="0.5" value="16" required></div>
+            </div>
+            <div class="time-result" id="timeResult"></div>
+            <p class="form-note">Your hypothetical inputs only. Not measured or promised savings.</p>
+          </details>
+          <div class="form-actions"><button class="btn outline small" type="reset">Reset assumptions</button></div>
+        </form>
+        <div class="estimate-output">
+          <div class="panel">
+            <div class="panel-head"><h4>Illustrative monthly breakdown</h4><span class="sample-chip">Not a quote</span></div>
+            <table class="price-table"><thead><tr><th scope="col">Budget component</th><th scope="col" style="text-align:right">Monthly · NGN</th></tr></thead><tbody id="priceRows"></tbody></table>
+          </div>
+          <div class="estimate-total">
+            <div>
+              <p>Estimated monthly total</p>
+              <strong id="monthlyTotal">—</strong>
+              <small>NGN · recurring assumptions</small>
+            </div>
+            <span aria-hidden="true" style="font-size:28px;color:#d9a05b">↗</span>
+          </div>
+          <div class="panel">
+            <div class="panel-body">
+              <div style="display:flex;justify-content:space-between;font-size:11px;gap:15px">
+                <span>First year, including one-time input</span>
+                <strong id="annualTotal">—</strong>
+              </div>
+            </div>
+          </div>
+          <p class="estimate-note">Employer costs and service fees are editable assumptions. Actual contributions, tax treatment, insurance, pension, travel, third-party charges and implementation scope need confirmation. No invoice or payment is created.</p>
+          <button class="btn outline" id="downloadEstimate" type="button">Download planning summary <span aria-hidden="true">↓</span></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" id="review">
+    <div class="container">
+      <div class="closing-inner">
+        <div>
+          <div class="eyebrow">From exploration to a useful brief</div>
+          <h2>A workspace worth discussing with your team.</h2>
+          <p>Take the workflows and assumptions with you. Export a local requirements brief, then decide what a connected IOTA client portal should do.</p>
+        </div>
+        <div class="closing-tools">
+          <div class="completion" id="completion"></div>
+          <div class="closing-actions">
+            <button class="btn outline" id="exportBrief">Download requirements brief <span aria-hidden="true">↓</span></button>
+            <button class="btn outline" id="resetDemo">Reset demo</button>
+          </div>
+          <button class="closing-link" id="researchNotes">View scope, sources &amp; limitations</button>
+          <p style="font-size:10px;margin-top:14px">Production authentication, permissions, integrations, legal review and electronic signatures require implementation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer" id="sources">
+  <div class="container">
+    <div class="footer-top">
+      <span class="footer-logo">Concept by LeadSky<span>.</span></span>
+      <span>Independent, unendorsed product concept for IOTA Nigeria.</span>
+    </div>
+    <p>IOTA&rsquo;s supplied website information describes Employer of Record, international payroll, employment contracts, insurance, pensions and repatriation services. Manual processes and the absence of an existing portal are unverified hypotheses. This demo does not establish either.</p>
+    <div class="credits">
+      <span>Illustrative photography:</span>
+      <a href="https://pixabay.com/photos/laptop-office-hand-writing-3196481/" target="_blank" rel="noopener">AymaneJed / Pixabay</a>
+      <a href="https://pixabay.com/photos/student-typing-keyboard-text-849825/" target="_blank" rel="noopener">StartupStockPhotos / Pixabay</a>
+      <a href="https://pixabay.com/photos/analysis-analytics-business-charts-1841158/" target="_blank" rel="noopener">Pexels / Pixabay</a>
+      <a href="https://pixabay.com/photos/bookkeeping-accounting-taxes-615384/" target="_blank" rel="noopener">Firmbee / Pixabay</a>
+      <a href="https://pixabay.com/photos/passport-map-world-trip-tourism-2714675/" target="_blank" rel="noopener">Pamjpat / Pixabay</a>
+      <a href="https://pixabay.com/photos/work-worker-machine-people-engine-8772016/" target="_blank" rel="noopener">simonreza09 / Pixabay</a>
+      <a href="https://pixabay.com/photos/man-engineer-energy-heat-8499957/" target="_blank" rel="noopener">This_is_Engineering / Pixabay</a>
+      <a href="https://pixabay.com/photos/calculator-calculation-insurance-385506/" target="_blank" rel="noopener">stevepb / Pixabay</a>
+    </div>
+    <details>
+      <summary>Business references &amp; asset notes</summary>
+      <ul class="source-list">
+        <li>Business reference: <a href="https://iota-group.com/" target="_blank" rel="noopener">Official IOTA website</a>. Service details are based on the owner-supplied website text; no fresh verification is claimed.</li>
+        <li>Brand mark: <code>img/profile.jpg</code> from the business&rsquo;s public Instagram profile, used as logo / profile picture only.</li>
+        <li>Stock images supplied under the Pixabay Content License. Depicted people and locations are not represented as IOTA staff, premises or completed work.</li>
+        <li>Design record: light ivory background, plum and terracotta accents, Space Grotesk / Inter, illustrative photo cards, working estimator and sample workspace demo. No decorative 3D.</li>
+      </ul>
+    </details>
+  </div>
+</footer>
+
+<dialog id="modal" aria-labelledby="modalTitle">
+  <div class="dialog-head"><h3 id="modalTitle"></h3><button class="icon-btn" id="closeModal" aria-label="Close dialog">×</button></div>
+  <div class="dialog-content" id="modalContent"></div>
+</dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div class="sr-only" id="announcer" role="status" aria-live="polite"></div>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money = n => new Intl.NumberFormat("en-NG",{maximumFractionDigits:0}).format(n);
+
+const names = {
+  overview:"Overview",onboarding:"Onboarding",payroll:"Payroll",compliance:"Compliance & coverage",
+  requests:"Requests",documents:"Documents",assistant:"Assistant"
+};
+const KEY = "leadsky-iota-sample-v2";
+const defaults = () => ({
+  version:2,
+  employees:[
+    {id:"EMP-001",name:"Ada Okafor",initials:"AO",role:"Technical consultant",country:"Nigeria",gross:900000,contract:true,identity:true,bank:false},
+    {id:"EMP-002",name:"Daniel Cole",initials:"DC",role:"Deployment coordinator",country:"Nigeria",gross:750000,contract:true,identity:true,bank:true},
+    {id:"EMP-003",name:"Mariam Bello",initials:"MB",role:"Field engineer",country:"Nigeria",gross:900000,contract:true,identity:true,bank:true},
+    {id:"EMP-004",name:"James Turner",initials:"JT",role:"Technical consultant",country:"Nigeria",gross:850000,contract:true,identity:false,bank:true},
+    {id:"EMP-005",name:"Chidi Nwosu",initials:"CN",role:"Project coordinator",country:"Nigeria",gross:800000,contract:true,identity:true,bank:true},
+    {id:"EMP-006",name:"Sofia Martin",initials:"SM",role:"Field engineer",country:"Nigeria",gross:900000,contract:true,identity:true,bank:true}
+  ],
+  queryResolved:false,payrollApproved:false,invoiceApproved:false,requestDraft:null,
+  requests:[{id:"REQ-001",employee:"Sofia Martin",type:"Repatriation",date:"2026-12-15",note:"Sample request: coordinate return travel and employment close-out documents.",status:"Draft"}],
+  attachments:[],activities:[],chat:[],completed:[]
+});
+let state = defaults(), storageAvailable = true;
+try{let saved = JSON.parse(localStorage.getItem(KEY)); if(saved && saved.version===2 && Array.isArray(saved.employees) && saved.employees.length===6) state = saved}catch(e){storageAvailable=false}
+let current = "overview", search = "", filter = "all", toastTimer, previousFocus;
+
+function save(){
+  try{localStorage.setItem(KEY, JSON.stringify(state))}catch(e){storageAvailable=false}
+  $("storageStatus").textContent = storageAvailable ? "Sample changes saved on this device" : "Session only · browser storage unavailable";
+  updateCompletion();
+}
+function notify(msg){
+  $("toast").textContent = msg;
+  $("toast").classList.add("visible");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>$("toast").classList.remove("visible"), 4000);
+}
+function activity(text){state.activities.unshift({text,time:new Date().toISOString()}); if(state.activities.length>30) state.activities.length=30; save()}
+function complete(action){if(!state.completed.includes(action)) state.completed.push(action); save()}
+function ready(e){return e.contract && e.identity && e.bank}
+function progress(e){return Math.round(([e.contract,e.identity,e.bank].filter(Boolean).length/3)*100)}
+function tag(text,type=""){return '<span class="status '+type+'">'+esc(text)+'</span>'}
+function totalGross(){return state.employees.reduce((a,e)=>a+e.gross,0)}
+function updateCompletion(){$("completion").innerHTML='<span><b>'+state.completed.length+'</b>sample actions explored</span><span><b>'+state.requests.length+'</b>deployment request'+(state.requests.length===1?"":"s")+'</span>'}
+function showModal(title,html){
+  previousFocus = document.activeElement;
+  $("modalTitle").textContent = title;
+  $("modalContent").innerHTML = html;
+  $("modal").showModal();
+}
+$("closeModal").onclick = ()=>$("modal").close();
+$("modal").addEventListener("close",()=>{if(previousFocus && previousFocus.isConnected) previousFocus.focus()});
+$("modal").addEventListener("click",e=>{if(e.target=== $("modal")){const r=$("modal").getBoundingClientRect(); if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom) $("modal").close()}});
+
+function heading(title,desc){
+  return '<div class="workspace-head"><div><h3>'+title+'</h3><p>'+desc+'</p></div></div>';
+}
+function setScreen(screen,focus=false){
+  if(!names[screen]) return;
+  current = screen; search=""; filter="all";
+  document.querySelectorAll("[data-screen]").forEach(b=>{
+    b.classList.toggle("active", b.dataset.screen===screen);
+    if(b.dataset.screen===screen) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current");
+  });
+  document.querySelectorAll("[data-step]").forEach(b=>b.classList.toggle("active", b.dataset.step===screen));
+  $("mobileCurrent").textContent = names[screen];
+  $("portalNav").classList.remove("open");
+  $("workspaceMenuButton").setAttribute("aria-expanded","false");
+  render();
+  if(focus) $("workspaceMain").focus({preventScroll:true});
+  $("announcer").textContent = names[screen]+" screen opened";
+}
+function openWorkspace(){setScreen("overview")}
+document.querySelectorAll("[data-screen]").forEach(b=>b.onclick=()=>setScreen(b.dataset.screen,true));
+$("workspaceMenuButton").onclick = ()=>{
+  const open = $("portalNav").classList.toggle("open");
+  $("workspaceMenuButton").setAttribute("aria-expanded", String(open));
+};
+$("mainMenuButton").onclick = ()=>{
+  const open = $("mainMenu").classList.toggle("open");
+  $("mainMenuButton").setAttribute("aria-expanded", String(open));
+  $("mainMenuButton").textContent = open ? "Close" : "Menu";
+};
+$("mainMenu").querySelectorAll("a").forEach(a=>a.onclick=()=>{
+  $("mainMenu").classList.remove("open");
+  $("mainMenuButton").setAttribute("aria-expanded","false");
+  $("mainMenuButton").textContent = "Menu";
+});
+
+function render(){
+  const views = {
+    overview:renderOverview,onboarding:renderOnboarding,payroll:renderPayroll,
+    compliance:renderCompliance,requests:renderRequests,documents:renderDocuments,assistant:renderAssistant
+  };
+  views[current]();
+  save();
+}
+function renderOverview(){
+  const completeCount = state.employees.filter(ready).length;
+  const missing = state.employees.length - completeCount;
+  $("workspaceMain").innerHTML =
+    heading("Your workforce, in view.","Fictional Lagos-based client team · all six records are sample data.")+
+    '<div class="stat-grid">'+
+    '<div class="stat"><div class="stat-label">Workforce records</div><div class="metric-value">06</div><div class="stat-foot">Employer of Record · sample</div></div>'+
+    '<div class="stat"><div class="stat-label">Onboarding complete</div><div class="metric-value">'+String(completeCount).padStart(2,"0")+'<span style="font-size:14px;color:#c9b9a8"> / 6</span></div><div class="stat-foot">'+missing+' with a document blocker</div></div>'+
+    '<div class="stat emphasis"><div class="stat-label">Monthly gross · NGN</div><div class="metric-value">5.10m</div><div class="stat-foot">'+(state.payrollApproved?"Sample approval recorded":"Sample run awaiting review")+'</div></div>'+
+    '<div class="stat"><div class="stat-label">Deployment requests</div><div class="metric-value">'+String(state.requests.length).padStart(2,"0")+'</div><div class="stat-foot">'+state.requests.filter(r=>r.status==="Draft").length+' in draft</div></div>'+
+    '</div>'+
+    '<div class="card-grid" style="grid-template-columns:repeat(2,1fr); gap:16px">'+
+    '<div class="card"><div class="panel-body" style="padding:0"><img class="mini-image" src="img/stock-7.jpg" alt="Illustrative stock photo: engineer in a technical environment" width="600" height="200" loading="lazy"><div class="panel-body" style="padding:16px"><h4 style="margin:0 0 6px;font-size:13px">Deployment, with a paper trail.</h4><p style="font-size:11px">Explore Sofia Martin&rsquo;s fictional repatriation request, dates and next steps.</p><button class="text-btn" onclick="setScreen(\'requests\')">View deployment requests &rarr;</button></div></div></div>'+
+    '<div class="card"><div class="panel-body" style="padding:0"><img class="mini-image" src="img/stock-5.jpg" alt="Illustrative stock photo: office team planning" width="600" height="200" loading="lazy"><div class="panel-body" style="padding:16px"><h4 style="margin:0 0 6px;font-size:13px">Team visibility.</h4><p style="font-size:11px">Review onboarding progress and document blockers across sample records.</p><button class="text-btn" onclick="setScreen(\'onboarding\')">Open onboarding &rarr;</button></div></div></div>'+
+    '</div>'+
+    '<div class="panel"><div class="panel-head"><h4>Latest local activity</h4><span style="font-size:9px;color:var(--muted)">Demo only</span></div><div class="panel-body activity-list">'+
+    (state.activities.length ? state.activities.slice(0,5).map(a=>'<div class="activity"><span>'+esc(a.text)+'<small>'+new Date(a.time).toLocaleString()+'</small></span></div>').join("") :
+    '<p style="font-size:11px">Your sample actions will appear here. Start with a document blocker or payroll review.</p>')+
+    '</div></div>';
+}
+function tools(statuses){
+  return '<div class="toolrow" style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px">'+
+    '<label class="sr-only" for="recordSearch">Search sample records</label><input id="recordSearch" type="search" placeholder="Search name, role or reference…" value="'+esc(search)+'" style="flex:1;min-width:150px">'+
+    '<label class="sr-only" for="recordFilter">Filter records</label><select id="recordFilter" style="width:auto;max-width:100%">'+
+    statuses.map(s=>'<option value="'+s[0]+'" '+(filter===s[0]?"selected":"")+'>'+s[1]+'</option>').join("")+
+    '</select></div>';
+}
+function bindTools(){
+  if($("recordSearch")) $("recordSearch").oninput = e=>{search=e.target.value; renderRows();};
+  if($("recordFilter")) $("recordFilter").onchange = e=>{filter=e.target.value; renderRows();};
+}
+function renderRows(){
+  if(current==="onboarding"){
+    let list = state.employees.filter(e=>(e.name+" "+e.role+" "+e.id).toLowerCase().includes(search.toLowerCase()) && (filter==="all" || (filter==="ready"?ready(e):!ready(e))));
+    $("recordRows").innerHTML = list.length ? list.map(e=>'<tr><td data-label="Employee"><div><strong>'+e.name+'</strong><small>'+e.id+' · fictional</small></div></td><td data-label="Deployment"><div>'+e.role+'<br><small>'+e.country+' · Employer of Record</small></div></td><td data-label="Checklist">'+tag(progress(e)+"% · "+(ready(e)?"Ready":"Needs documents"), ready(e)?"":"warn")+'</td><td data-label="Action"><button class="btn outline small" onclick="employeeDetails(\''+e.id+'\')">Review checklist</button></td></tr>').join("") :
+    '<tr><td colspan="4"><div class="empty">No sample records match. Try another search or stage.</div></td></tr>';
+  }
+  if(current==="documents") renderDocumentRows();
+  if(current==="requests") renderRequestRows();
+}
+function employeeDetails(id){
+  let e = state.employees.find(x=>x.id===id);
+  showModal(e.name+" · sample onboarding", '<p>'+e.role+' · '+e.country+' · '+e.id+'</p>'+tag(ready(e)?"Ready for next step":"Documents need attention", ready(e)?"":"warn")+
+  '<div class="check-row" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f0e7dc;font-size:11px"><span>Employment contract</span>'+tag(e.contract?"Reviewed":"Required", e.contract?"":"warn")+'</div>'+
+  '<div class="check-row" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f0e7dc;font-size:11px"><span>Identity document</span>'+tag(e.identity?"Reviewed":"Required", e.identity?"":"warn")+'</div>'+
+  '<div class="check-row" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f0e7dc;font-size:11px"><span>Bank details</span>'+tag(e.bank?"Reviewed":"Required", e.bank?"":"warn")+'</div>'+
+  '<div style="height:5px;background:#e8edf3;border-radius:4px;overflow:hidden;margin-top:10px"><span style="height:100%;display:block;background:var(--accent);width:'+progress(e)+'%"></span></div>'+
+  (!ready(e)?
+    '<h4 style="font-size:13px;margin-top:14px">Attach a local test document</h4><p style="font-size:11px">No file is uploaded or retained. Only its name, size and selected requirement are saved locally.</p>'+
+    '<form id="attachmentForm"><label for="requirement" style="font-size:11px">Requirement</label><select id="requirement">'+(!e.identity?'<option value="identity">Identity document</option>':"")+(!e.bank?'<option value="bank">Bank details</option>':"")+'</select>'+
+    '<label for="testFile" style="margin-top:13px;font-size:11px">PDF, JPEG or PNG · maximum 5 MB</label><input class="field" id="testFile" type="file" accept=".pdf,.jpg,.jpeg,.png" required>'+
+    '<div class="form-actions"><button class="btn accent" type="submit">Attach & mark reviewed locally</button></div>'+
+    '<p class="form-note">This simulates both attachment and review. No verification is performed.</p></form>'
+    :
+    '<div class="inline-notice" style="font-size:11px;background:#eef3ee;border-left:3px solid #7a96b0;padding:10px 12px;margin:13px 0">All three sample checklist items are reviewed. No employment action has been taken.</div>'
+  );
+  if($("attachmentForm")) $("attachmentForm").onsubmit = ev=>{
+    ev.preventDefault();
+    let f = $("testFile").files[0], key = $("requirement").value;
+    if(!f) return;
+    if(f.size>5*1024*1024 || !/\.(pdf|jpe?g|png)$/i.test(f.name)){notify("Choose a PDF, JPEG or PNG under 5 MB."); return}
+    e[key] = true;
+    state.attachments.push({employee:e.name,name:f.name,size:f.size,requirement:key,time:new Date().toISOString()});
+    activity(e.name+": sample "+key+" document marked reviewed");
+    complete("document");
+    $("modal").close(); render(); notify("Sample document marked reviewed. No file was uploaded.");
+  };
+}
+function renderPayroll(){
+  $("workspaceMain").innerHTML =
+    heading("Payroll review","November 2026 · six fictional employment records · NGN only.")+
+    '<div class="summary-strip" style="background:#eef3ee;padding:15px;border-radius:6px;display:flex;justify-content:space-between;gap:15px;align-items:center;margin-bottom:17px">'+
+    '<div><p style="font-size:11px">Sample monthly gross payroll</p><strong style="font-size:15px">NGN '+money(totalGross())+'</strong></div>'+
+    tag(state.payrollApproved?"Approved locally":state.queryResolved?"Ready for sample approval":"1 query to resolve", state.payrollApproved?"":state.queryResolved?"blue":"warn")+
+    '</div>'+
+    (!state.queryResolved?
+      '<div class="attention"><b>Query PR-001 · Mariam Bello</b><p>The sample gross amount includes an allowance that needs acknowledgement before approval.</p><button class="text-btn" onclick="resolveQuery()">Review & resolve sample query &rarr;</button></div>'
+      :
+      '<div class="inline-notice" style="font-size:11px;background:#eef3ee;border-left:3px solid #7a96b0;padding:10px 12px;margin:13px 0">PR-001 resolved locally. The gross payroll total has not changed. No actual allowance, deduction or tax has been calculated.</div>')+
+    '<div class="panel"><div class="table-wrap"><table class="data-table" style="width:100%;border-collapse:collapse;text-align:left;font-size:12px"><thead><tr><th style="padding:11px 13px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);background:#f7f2ec">Sample employee</th><th style="padding:11px 13px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);background:#f7f2ec">Gross · NGN</th><th style="padding:11px 13px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);background:#f7f2ec">Review</th></tr></thead><tbody>'+
+    state.employees.map(e=>'<tr><td style="padding:14px 13px;border-bottom:1px solid var(--line);vertical-align:middle"><div><strong>'+e.name+'</strong><small>'+e.role+'</small></div></td><td style="padding:14px 13px;border-bottom:1px solid var(--line);vertical-align:middle">'+money(e.gross)+'</td><td style="padding:14px 13px;border-bottom:1px solid var(--line);vertical-align:middle">'+tag(e.id==="EMP-003"&&!state.queryResolved?"Allowance query":"Reviewed", e.id==="EMP-003"&&!state.queryResolved?"warn":"")+'</td></tr>').join("")+
+    '</tbody></table></div></div>'+
+    '<div class="form-actions">'+
+    '<button class="btn accent" id="payrollApproval" '+(state.payrollApproved||!state.queryResolved?"disabled":"")+'> '+(state.payrollApproved?"Sample approval recorded":"Review & approve sample run")+'</button>'+
+    '<button class="btn outline" onclick="invoiceDetails()">Review sample invoice</button>'+
+    '<button class="btn outline" onclick="downloadPayroll()">Download run summary</button>'+
+    '</div>'+
+    '<p class="form-note">Approval updates this fictional run only. No salary, statutory calculation or bank instruction is processed.</p>';
+  $("payrollApproval").onclick = ()=>{
+    showModal("Approve sample payroll run",'<p>You are reviewing six fictional records with a combined gross amount of <strong>NGN '+money(totalGross())+'</strong>.</p><form id="approvePayrollForm"><label class="check-label"><input type="checkbox" required> I understand this is a local simulation and no payroll will be processed.</label><button class="btn accent" style="margin-top:15px">Record sample approval</button></form>');
+    $("approvePayrollForm").onsubmit = ev=>{
+      ev.preventDefault();
+      state.payrollApproved = true;
+      activity("November sample payroll run approved locally");
+      complete("payroll");
+      $("modal").close(); render(); notify("Sample run approved locally. No payroll was processed.");
+    };
+  };
+}
+function resolveQuery(){
+  showModal("Resolve sample payroll query",'<p><strong>PR-001 · Mariam Bello</strong><br>Fictional gross amount: NGN 900,000. Confirm review of the allowance included in that amount.</p><form id="queryForm"><label for="queryNote" style="font-size:11px">Review note</label><textarea id="queryNote" required minlength="8" maxlength="1000" style="font:inherit">Reviewed the sample allowance included in the gross amount.</textarea><label class="check-label" style="margin-top:12px"><input type="checkbox" required> Mark this sample query resolved. No live payroll change.</label><button class="btn accent" style="margin-top:14px">Resolve locally</button></form>');
+  $("queryForm").onsubmit = e=>{
+    e.preventDefault();
+    state.queryResolved = true;
+    state.queryNote = $("queryNote").value.trim();
+    activity("PR-001: sample allowance query resolved");
+    complete("query");
+    $("modal").close(); render(); notify("Sample query resolved. No payroll data was transmitted.");
+  };
+}
+function invoiceDetails(){
+  showModal("Sample invoice · INV-DEMO-001",'<span class="sample-chip">Illustrative document · not payable</span><div class="document-info" style="padding:14px;background:#f4f7fb;border-radius:6px;margin:13px 0;font-size:11px;white-space:pre-wrap">Period: November 2026\nSample client: Fictional Lagos operations team\nEmployer of Record administration\n6 records × NGN 50,000 = NGN 300,000\n\nIllustrative service fee total: NGN 300,000\nTax and other charges: not calculated\nThis is not an IOTA invoice or price quote.</div>'+
+  (state.invoiceApproved?'<div class="inline-notice" style="font-size:11px">Sample invoice acknowledged locally by '+esc(state.invoiceName)+'. This is not an electronic signature.</div>':
+    '<form id="invoiceForm"><label for="typedName" style="font-size:11px">Typed name · use a fictional name</label><input id="typedName" type="text" minlength="2" maxlength="60" required autocomplete="off" class="field"><label class="check-label" style="margin-top:14px"><input type="checkbox" required> I acknowledge this sample invoice for demonstration only. No charge or electronic signature.</label><button class="btn accent" style="margin-top:15px">Acknowledge sample invoice</button></form>')+
+  '<div class="form-actions"><button class="btn outline small" onclick="downloadInvoice()">Download sample invoice</button></div>');
+  if($("invoiceForm")) $("invoiceForm").onsubmit = e=>{
+    e.preventDefault();
+    if(!$("typedName").value.trim()){notify("Enter a fictional acknowledgement name."); return}
+    state.invoiceName = $("typedName").value.trim();
+    state.invoiceApproved = true;
+    activity("INV-DEMO-001 acknowledged locally");
+    complete("invoice");
+    invoiceDetails(); notify("Sample acknowledgement recorded. Nothing was signed or charged.");
+  };
+}
+function renderCompliance(){
+  $("workspaceMain").innerHTML =
+    heading("Compliance & coverage","Illustrative records to review, not verified coverage or legal advice.")+
+    '<div class="inline-notice" style="font-size:11px">No regulatory feed is connected. Statuses below are fictional review prompts; they do not certify compliance, insurance or pension coverage.</div>'+
+    '<div style="display:grid;grid-template-columns:1fr 1fr;gap:15px">'+
+    [
+      ["Insurance record","COV-001","Review requested","warn","Illustrative cover record for six sample employees. Policy details and insurer confirmation would need verification."],
+      ["Pension record","COV-002","Recorded · sample","","Sample pension administration record. Contribution rates and remittances are not calculated here."],
+      ["Employment contracts","DOC-001","Review checklist","blue","All six fictional records have a reviewed contract flag. Actual terms and amendments require authorised review."],
+      ["Deployment documents","DEP-001","Date review","warn","Sofia Martin&rsquo;s fictional repatriation date is 15 December 2026. Travel and close-out documents need coordination."]
+    ].map(x=>'<div style="padding:17px;border:1px solid var(--line);border-radius:6px">'+tag(x[2],x[3])+
+    '<h3 style="font-size:16px;margin-top:13px">'+x[0]+'</h3><p style="font-size:11px;margin:10px 0">'+x[4]+'</p>'+
+    '<button class="text-btn" onclick="coverageDetails(\''+x[1]+'\')">Inspect '+x[1]+' &rarr;</button></div>').join("")+
+    '</div>'+
+    '<div class="form-actions"><button class="btn outline" onclick="downloadChecklist()">Download sample checklist</button><button class="btn outline" onclick="setScreen(\'documents\')">Open documents</button></div>';
+}
+function coverageDetails(id){
+  showModal("Sample record · "+id,'<p>This is a fictional workflow record, not a live policy, legal requirement or verified document.</p><div class="check-row" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f0e7dc;font-size:11px"><span>Owner</span><strong>Sample client operations</strong></div><div class="check-row" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f0e7dc;font-size:11px"><span>Evidence review</span>'+tag("Human review required","warn")+'</div><div class="check-row" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid #f0e7dc;font-size:11px"><span>Scope</span><strong>6 fictional records</strong></div><h4 style="font-size:13px">Suggested review outline</h4><p style="font-size:11px">Confirm the source document, responsible reviewer, applicable dates and any unresolved questions. Obtain advice from the relevant authorised professional before relying on a record.</p><button class="btn outline" onclick="downloadChecklist()">Download sample review outline</button>');
+}
+function renderRequests(){
+  $("workspaceMain").innerHTML =
+    heading("Deployment requests","Track a fictional repatriation or employment change without sending an instruction.")+
+    tools([["all","All request states"],["Draft","Draft"],["Submitted locally","Submitted locally"]])+
+    '<div class="form-actions" style="margin:0 0 16px"><button class="btn accent" onclick="requestEditor()">New sample request</button><button class="btn outline" onclick="requestEditor(null,true)"> '+(state.requestDraft?"Resume saved draft":"Start a draft")+'</button></div>'+
+    '<div class="panel"><table class="data-table" style="width:100%;border-collapse:collapse;text-align:left;font-size:12px"><thead><tr><th style="padding:11px 13px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);background:#f7f2ec">Reference / employee</th><th style="padding:11px 13px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);background:#f7f2ec">Request</th><th style="padding:11px 13px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);background:#f7f2ec">Status</th><th style="padding:11px 13px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);background:#f7f2ec">Action</th></tr></thead><tbody id="recordRows"></tbody></table></div>'+
+    '<p class="form-note">All confirmations are local. Travel arrangements and employment changes are not initiated.</p>';
+  renderRequestRows(); bindTools();
+}
+function renderRequestRows(){
+  let list = state.requests.filter(r=>(r.id+" "+r.employee+" "+r.type).toLowerCase().includes(search.toLowerCase()) && (filter==="all" || filter===r.status));
+  $("recordRows").innerHTML = list.length ? list.map(r=>'<tr><td style="padding:14px 13px;border-bottom:1px solid var(--line);vertical-align:middle"><div><strong>'+esc(r.employee)+'</strong><small>'+r.id+' · sample</small></div></td><td style="padding:14px 13px;border-bottom:1px solid var(--line);vertical-align:middle"><div>'+esc(r.type)+'<br><small>'+esc(r.date)+'</small></div></td><td style="padding:14px 13px;border-bottom:1px solid var(--line);vertical-align:middle">'+tag(r.status, r.status==="Draft"?"gray":"blue")+'</td><td style="padding:14px 13px;border-bottom:1px solid var(--line);vertical-align:middle"><button class="btn outline small" onclick="requestDetails(\''+r.id+'\')">View & edit</button></td></tr>').join("") :
+  '<tr><td colspan="4"><div class="empty">No sample requests match this search.</div></td></tr>';
+}
+function requestEditor(id=null,resume=false){
+  let r = id ? state.requests.find(x=>x.id===id) : (resume && state.requestDraft ? state.requestDraft : {employee:state.employees[0].name,type:"Repatriation",date:"2026-12-15",note:""});
+  showModal(id?"Edit sample request":"New sample deployment request",'<p style="font-size:12px">Use fictional details only. This request remains in your browser.</p><form id="requestForm"><div class="form-grid"><div class="form-group"><label for="requestEmployee" style="font-size:11px">Sample employee</label><select id="requestEmployee" class="field">'+state.employees.map(e=>'<option '+(e.name===r.employee?"selected":"")+'>'+e.name+'</option>').join("")+'</select></div><div class="form-group"><label for="requestType" style="font-size:11px">Request type</label><select id="requestType" class="field">'+["Repatriation","Employment contract change","Payroll query","Insurance or pension query"].map(t=>'<option '+(t===r.type?"selected":"")+'>'+t+'</option>').join("")+'</select></div><div class="form-group full"><label for="requestDate" style="font-size:11px">Requested date</label><input id="requestDate" type="date" value="'+esc(r.date)+'" required min="2026-01-01" max="2030-12-31" class="field"></div><div class="form-group full"><label for="requestNote" style="font-size:11px">Request details</label><textarea id="requestNote" minlength="10" maxlength="1500" required class="field">'+esc(r.note)+'</textarea></div></div><div class="form-actions"><button class="btn accent" type="submit">Submit sample request locally</button><button class="btn outline" type="button" id="saveDraft">Save draft</button></div><p class="form-note">This is a demo form, nothing was sent.</p></form>');
+  const values = ()=>({employee:$("requestEmployee").value,type:$("requestType").value,date:$("requestDate").value,note:$("requestNote").value.trim()});
+  $("saveDraft").onclick = ()=>{
+    const v = values();
+    if(id){Object.assign(state.requests.find(x=>x.id===id), v, {status:"Draft"}); activity(id+": sample draft saved")}
+    else{state.requestDraft = v; save()}
+    $("modal").close(); render(); notify("Draft saved on this device. Nothing was sent.");
+  };
+  $("requestForm").onsubmit = e=>{
+    e.preventDefault();
+    let v = values();
+    if(v.note.length<10){notify("Add at least 10 characters of sample details."); return}
+    let rid = id || "REQ-"+String(state.requests.length+1).padStart(3,"0");
+    if(id){Object.assign(state.requests.find(x=>x.id===id), v, {status:"Submitted locally", submitted:new Date().toISOString()})}
+    else state.requests.push({...v, id:rid, status:"Submitted locally", submitted:new Date().toISOString()});
+    state.requestDraft = null;
+    activity(rid+": sample "+v.type.toLowerCase()+" request submitted locally");
+    complete("request");
+    $("modal").close(); render(); notify("This is a demo form, nothing was sent.");
+  };
+}
+function requestDetails(id){
+  let r = state.requests.find(x=>x.id===id);
+  showModal(r.id+" · "+r.type, tag(r.status, r.status==="Draft"?"gray":"blue")+'<h4 style="font-size:13px">'+esc(r.employee)+' · fictional employee</h4><p style="font-size:11px">Requested date: '+esc(r.date)+'</p><div class="document-info" style="padding:14px;background:#f4f7fb;border-radius:6px;margin:13px 0;font-size:11px;white-space:pre-wrap">'+esc(r.note)+'</div><h4 style="font-size:13px">Local request timeline</h4><div class="activity"><span>Sample request created<small>Fictional demonstration record</small></span></div>'+(r.submitted?'<div class="activity"><span>Submitted locally<small>'+new Date(r.submitted).toLocaleString()+' · nothing sent</small></span></div>':'<div class="activity"><span>Draft awaiting review<small>No instruction has been issued.</small></span></div>')+'<div class="form-actions"><button class="btn accent" onclick="requestEditor(\''+r.id+'\')">Edit request</button><button class="btn outline" onclick="downloadRequest(\''+r.id+'\')">Download request</button></div>');
+}
+function renderDocuments(){
+  $("workspaceMain").innerHTML =
+    heading("Documents","Sample previews, local attachment records and an illustrative invoice.")+
+    tools([["all","All document types"],["template","Sample templates"],["attachment","Local attachments"]])+
+    '<div class="panel"><table class="data-table" style="width:100%;border-collapse:collapse;text-align:left;font-size:12px"><thead><tr><th style="padding:11px 13px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);background:#f7f2ec">Document</th><th style="padding:11px 13px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);background:#f7f2ec">Category</th><th style="padding:11px 13px;font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.6px;color:var(--muted);background:#f7f2ec">Action</th></tr></thead><tbody id="recordRows"></tbody></table></div>'+
+    '<div class="inline-notice" style="font-size:11px">Local files are not uploaded or stored. Attachment previews show metadata only. Do not use personal, payroll or identity documents in this demonstration.</div>';
+  renderDocumentRows(); bindTools();
+}
+function renderDocumentRows(){
+  let docs = [
+    {name:"Employment contract review outline",type:"template",cat:"Employment contract",action:"contract"},
+    {name:"November illustrative service invoice",type:"template",cat:"Invoice · sample",action:"invoice"},
+    {name:"Coverage review checklist",type:"template",cat:"Insurance & pension",action:"coverage"},
+    ...state.attachments.map((a,i)=>({name:a.name,type:"attachment",cat:a.employee+" · "+a.requirement,action:"attachment",index:i}))
+  ].filter(d=>(d.name+" "+d.cat).toLowerCase().includes(search.toLowerCase()) && (filter==="all" || filter===d.type));
+  $("recordRows").innerHTML = docs.length ? docs.map(d=>'<tr><td style="padding:14px 13px;border-bottom:1px solid var(--line);vertical-align:middle"><div><strong>'+esc(d.name)+'</strong><small>'+ (d.type==="attachment"?"Local metadata only":"Fictional sample document")+'</small></div></td><td style="padding:14px 13px;border-bottom:1px solid var(--line);vertical-align:middle">'+esc(d.cat)+'</td><td style="padding:14px 13px;border-bottom:1px solid var(--line);vertical-align:middle"><button class="btn outline small" onclick="previewDocument(\''+d.action+'\','+(d.index??0)+')">Preview</button></td></tr>').join("") :
+  '<tr><td colspan="3"><div class="empty">No documents match this filter.</div></td></tr>';
+}
+function previewDocument(action,index){
+  if(action==="invoice"){ invoiceDetails(); return }
+  if(action==="coverage"){ coverageDetails("COV-001"); return }
+  if(action==="attachment"){
+    let a = state.attachments[index];
+    showModal("Local attachment record",'<div class="document-info" style="padding:14px;background:#f4f7fb;border-radius:6px;margin:13px 0;font-size:11px;white-space:pre-wrap">File: '+esc(a.name)+'\nSize: '+money(a.size)+' bytes\nSample employee: '+esc(a.employee)+'\nRequirement: '+esc(a.requirement)+'\nRecorded: '+new Date(a.time).toLocaleString()+'</div><p style="font-size:11px">Only metadata was retained. The file cannot be previewed because its contents were not uploaded or saved.</p>');
+    return
+  }
+  showModal("Employment contract review outline",'<span class="sample-chip">Outline only · not a contract</span><div class="document-info" style="padding:14px;background:#f4f7fb;border-radius:6px;margin:13px 0;font-size:11px;white-space:pre-wrap">EMPLOYMENT CONTRACT REVIEW\n\n1. Confirm the employing entity and employee details.\n2. Review the role, deployment location and agreed dates.\n3. Confirm remuneration and payroll instructions.\n4. Review insurance, pension and deployment arrangements.\n5. Ask an authorised reviewer to check applicable terms.\n6. Record questions before approval.\n\nThis outline contains no legal requirements or contract terms.</div><button class="btn outline" onclick="downloadChecklist()">Download outline</button>');
+}
+function renderAssistant(){
+  $("workspaceMain").innerHTML =
+    heading("Workspace assistant","Scripted answers grounded in this fictional dataset. No live AI or regulatory feed.")+
+    '<div class="chat-log" id="chatLog" style="height:300px;overflow-y:auto;padding:17px;background:#f7f9fc;display:flex;flex-direction:column;gap:12px;border:1px solid var(--line);border-radius:6px" role="log" aria-label="Sample assistant conversation" aria-live="polite"></div>'+
+    '<div style="display:flex;gap:7px;flex-wrap:wrap;margin:13px 0">'+
+    ['What is blocking onboarding?','Summarise payroll','Draft a payroll query','Create a compliance checklist','Show repatriation status','New regulations?'].map(q=>'<button data-prompt="'+esc(q)+'" style="border:1px solid var(--line);background:var(--panel);padding:7px 9px;border-radius:20px;font-size:10px">'+esc(q)+'</button>').join("")+
+    '</div>'+
+    '<form class="chat-form" id="chatForm" style="display:flex;gap:8px"><label class="sr-only" for="chatInput">Ask a sample workforce question</label><input id="chatInput" type="text" placeholder="Ask about onboarding, payroll or repatriation…" required maxlength="500" autocomplete="off" class="field" style="flex:1;min-width:0"><button class="btn accent">Send <span aria-hidden="true">↑</span></button></form>'+
+    '<p class="form-note">Messages stay local. Supported topics are shown above. Drafts need human review.</p><div id="draftArea"></div>';
+  paintChat();
+  document.querySelectorAll("[data-prompt]").forEach(b=>b.onclick=()=>ask(b.dataset.prompt));
+  $("chatForm").onsubmit = e=>{
+    e.preventDefault();
+    let q = $("chatInput").value.trim();
+    if(q){ ask(q); $("chatInput").value = ""; }
+  };
+}
+function paintChat(){
+  let list = state.chat.length ? state.chat : [{role:"assistant",text:"Hello. I can explain the sample onboarding blockers, summarise payroll, outline a checklist or draft a query. Nothing is sent, and I cannot interpret live regulations."}];
+  $("chatLog").innerHTML = list.map(m=>'<div class="bubble" style="max-width:88%;padding:12px 15px;background:var(--panel);border:1px solid var(--line);border-radius:'+(m.role==="user"?'8px 8px 0 8px':'8px 8px 8px 0')+';font-size:11px;white-space:pre-wrap'+(m.role==="user"?'align-self:flex-end;background:var(--ink);color:#fff;border:0':'')+'">'+esc(m.text)+'</div>').join("");
+  $("chatLog").scrollTop = $("chatLog").scrollHeight;
+}
+function ask(q){
+  let l = q.toLowerCase(), answer, draft = null;
+  if(/regulat|law|legal|tax/.test(l)){
+    answer = "No live regulatory monitoring or legal analysis is connected. I cannot verify local laws or generate legally reliable amendments. A production portal would need approved sources, jurisdiction-specific review and a human approval step. I can outline a document review checklist.";
+  } else if(/draft|amend|query/.test(l)){
+    draft = "Subject: November sample payroll — allowance review\n\nPlease confirm the allowance included in Mariam Bello&rsquo;s fictional NGN 900,000 gross amount and identify the supporting approval record.\n\nThis draft refers only to demonstration data. Please review before any real use.";
+    answer = "I have prepared an editable sample payroll query below. No message has been sent.";
+  } else if(/onboard|block|document/.test(l)){
+    let b = state.employees.filter(e=>!ready(e));
+    answer = b.length ? b.map(e=>e.name+": "+[!e.identity?"identity document":null,!e.bank?"bank details":null].filter(Boolean).join(" and ")+" missing.").join("\n")+"\n\nOpen Onboarding to attach a non-sensitive local test file and mark it reviewed." : "All six sample onboarding checklists are reviewed. This does not verify real documents or authorise employment.";
+  } else if(/payroll|salary|gross/.test(l)){
+    answer = "November sample gross: NGN "+money(totalGross())+" across six fictional records.\nQuery PR-001: "+(state.queryResolved?"resolved locally.":"allowance confirmation still needed.")+"\nRun state: "+(state.payrollApproved?"approved locally.":"not approved.")+"\nNo tax, net pay or bank instructions are calculated.";
+  } else if(/repat|request|deploy/.test(l)){
+    answer = state.requests.map(r=>r.id+" · "+r.employee+" · "+r.type+" · "+r.date+" · "+r.status).join("\n")+"\n\nAll request records are local simulations. No travel or employment change is initiated.";
+  } else if(/checklist|compliance|insurance|pension/.test(l)){
+    draft = "SAMPLE REVIEW OUTLINE — NOT LEGAL ADVICE\n\n□ Identify the relevant employment and deployment records.\n□ Confirm document ownership, source and review dates.\n□ Check insurance and pension evidence with authorised reviewers.\n□ Record outstanding questions and responsible owners.\n□ Obtain appropriate professional review before acting.";
+    answer = "An editable review outline is ready below. It contains no verified legal requirements.";
+  } else if(/invoice/.test(l)){
+    answer = "INV-DEMO-001 is an illustrative NGN 300,000 service invoice, based on six sample records at an assumed NGN 50,000 each. It is "+(state.invoiceApproved?"acknowledged locally.":"not yet acknowledged.")+" It is not an IOTA quote and cannot be paid.";
+  } else {
+    answer = "I can answer scripted questions about onboarding blockers, payroll, the sample invoice, coverage checklists and repatriation requests. Choose a topic above. I cannot access live company records, verify regulations or contact anyone.";
+  }
+  state.chat.push({role:"user",text:q},{role:"assistant",text:answer});
+  if(state.chat.length>40) state.chat = state.chat.slice(-40);
+  complete("assistant"); save(); paintChat();
+  if(draft){
+    $("draftArea").innerHTML = '<div style="margin-top:18px"><label for="assistantDraft" style="font-size:11px">Editable sample draft · human review required</label><textarea id="assistantDraft" rows="8">'+esc(draft)+'</textarea><div class="form-actions"><button class="btn outline small" id="downloadDraft">Download edited draft</button></div></div>';
+    $("downloadDraft").onclick = ()=>download("iota-sample-draft.txt", $("assistantDraft").value+"\n\nIndependent concept. Nothing was sent.");
+  }
+}
+function download(name,text){
+  const blob = new Blob([text],{type:"text/plain;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = name;
+  document.body.append(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),10000);
+  notify("Download prepared locally. Nothing was transmitted.");
+}
+function downloadChecklist(){
+  download("iota-sample-review-checklist.txt","IOTA WORKFORCE CONTROL — INDEPENDENT CONCEPT\nSAMPLE REVIEW OUTLINE — NOT LEGAL ADVICE\n\n[ ] Confirm employee, role and deployment information.\n[ ] Review contract and supporting document sources.\n[ ] Confirm insurance and pension evidence with authorised reviewers.\n[ ] Record dates, document owners and outstanding queries.\n[ ] Obtain jurisdiction-specific professional review before acting.\n\nNo legal requirements, insurance coverage or compliance status are certified.");
+}
+function downloadInvoice(){
+  download("INV-DEMO-001.txt","ILLUSTRATIVE INVOICE — NOT PAYABLE\nIndependent IOTA concept. Not issued by IOTA.\n\nNovember 2026\n6 fictional records x NGN 50,000 assumed administration fee\nTotal illustrative fee: NGN 300,000\nTaxes and other charges not calculated.\n\nLocal acknowledgement: "+(state.invoiceApproved?state.invoiceName:"Not acknowledged")+"\nNot an electronic signature. Nothing was charged.");
+}
+function downloadPayroll(){
+  download("iota-sample-payroll.txt","SAMPLE PAYROLL — NOVEMBER 2026\nAll employees and amounts are fictional. NGN only.\n\n"+state.employees.map(e=>e.name+" | "+e.role+" | NGN "+money(e.gross)).join("\n")+"\n\nGross total: NGN "+money(totalGross())+"\nQuery resolved: "+state.queryResolved+"\nApproved locally: "+state.payrollApproved+"\nNo net pay, tax or payment instructions calculated.");
+}
+function downloadRequest(id){
+  let r = state.requests.find(x=>x.id===id);
+  download(id+"-sample.txt","SAMPLE REQUEST — NOTHING SENT\n\n"+r.id+"\nEmployee: "+r.employee+"\nType: "+r.type+"\nDate: "+r.date+"\nStatus: "+r.status+"\n\n"+r.note+"\n\nIndependent product concept. No travel or employment action initiated.");
+}
+
+const estimateIds = ["headcount","gross","employer","fee","implementation","hoursBefore","hoursAfter"];
+function estimate(){
+  let invalid = estimateIds.some(id=>!$(id).checkValidity());
+  if(invalid){
+    $("monthlyTotal").textContent = "Check inputs";
+    $("annualTotal").textContent = "—";
+    $("priceRows").innerHTML = '<tr><td colspan="2">Enter valid non-negative assumptions within the displayed input limits.</td></tr>';
+    $("timeResult").textContent = "Check the assumptions above.";
+    return null;
+  }
+  let v = Object.fromEntries(estimateIds.map(id=>[id, Number($(id).value)]));
+  v.pay = v.headcount * v.gross;
+  v.cost = v.pay * v.employer / 100;
+  v.service = v.headcount * v.fee;
+  v.monthly = v.pay + v.cost + v.service;
+  v.annual = v.monthly * 12 + v.implementation;
+  $("priceRows").innerHTML =
+    '<tr><td>Employee gross payroll<br><small>'+v.headcount+' × NGN '+money(v.gross)+'</small></td><td>'+money(v.pay)+'</td></tr>'+
+    '<tr><td>Employer-cost assumption<br><small>'+v.employer+'% of gross · user input</small></td><td>'+money(v.cost)+'</td></tr>'+
+    '<tr><td>Service-fee assumption<br><small>'+v.headcount+' × NGN '+money(v.fee)+' · not IOTA pricing</small></td><td>'+money(v.service)+'</td></tr>'+
+    '<tr><td>One-time implementation<br><small>Included in first year only</small></td><td>'+money(v.implementation)+'</td></tr>';
+  $("monthlyTotal").textContent = money(v.monthly);
+  $("annualTotal").textContent = "NGN "+money(v.annual);
+  let diff = v.hoursBefore - v.hoursAfter;
+  $("timeResult").textContent = diff>=0 ? money(diff)+" fewer hours / month under your assumptions." : money(-diff)+" additional hours / month under your assumptions.";
+  return v;
+}
+function estimateText(v){
+  return "ILLUSTRATIVE PLANNING ASSUMPTIONS — NOT IOTA PRICING\nCurrency: NGN. No exchange-rate or tax calculation.\n\nHeadcount: "+v.headcount+"\nGross per person / month: "+v.gross+"\nEmployer-cost assumption: "+v.employer+"%\nService fee assumption / person / month: "+v.fee+"\nOne-time implementation input: "+v.implementation+"\n\nMonthly gross: "+v.pay+"\nMonthly employer-cost assumption: "+v.cost+"\nMonthly assumed service fees: "+v.service+"\nMonthly total: "+v.monthly+"\nFirst year including one-time input: "+v.annual+"\n\nCurrent admin hours / month: "+v.hoursBefore+"\nProposed admin hours / month: "+v.hoursAfter+"\nDifference: "+(v.hoursBefore-v.hoursAfter)+" hours / month (hypothetical only).\n\nExcludes any charges not entered. Actual tax, pension, insurance, travel and implementation scope require confirmation. No savings promised.";
+}
+$("estimateForm").oninput = ()=>estimate();
+$("estimateForm").onsubmit = e=>e.preventDefault();
+$("estimateForm").onreset = ()=>setTimeout(()=>{estimate(); notify("Illustrative assumptions reset.")},0);
+$("downloadEstimate").onclick = ()=>{
+  let v = estimate();
+  if(!v){ $("estimateForm").reportValidity(); return }
+  download("iota-planning-summary.txt", estimateText(v));
+};
+$("exportBrief").onclick = ()=>{
+  let v = estimate();
+  if(!v){ $("estimateForm").reportValidity(); $("estimator").scrollIntoView(); return }
+  download("iota-workforce-requirements.txt","IOTA WORKFORCE CONTROL\nIndependent, unendorsed concept by LeadSky\n\nPROPOSED WORKFLOWS\n1. Client-scoped workforce overview and search.\n2. Onboarding checklists and secure document review.\n3. Payroll queries, review and approval audit trail.\n4. Insurance and pension evidence review.\n5. Deployment changes and repatriation requests.\n6. Invoice review with an appropriate signature integration.\n7. Human-reviewed assistant drafts and source-controlled checklists.\n\nLOCAL DEMO PROGRESS\nExplored actions: "+(state.completed.join(", ")||"None yet")+"\nPayroll query resolved: "+state.queryResolved+"\nSample payroll approved: "+state.payrollApproved+"\nSample invoice acknowledged: "+state.invoiceApproved+"\nLocal attachment records: "+state.attachments.length+"\nSample deployment requests: "+state.requests.length+"\n\n"+estimateText(v)+"\n\nPRODUCTION REQUIREMENTS\nAuthentication, role-based access, tenant isolation, privacy review, secure storage, audit logging, backups, back-office and payroll integration, reviewed regulatory sources, appropriate legal oversight and signature provider integration.\n\nVALIDATION QUESTIONS\nDoes an existing client portal already cover these workflows?\nWhich coordination steps actually create delays?\nWho may approve payroll, invoices and document reviews?\nWhich systems are the source of truth?\nWhich countries and regulatory reviews are in scope?\n\nEVIDENCE LIMIT\nIOTA service categories come from supplied official website text. Manual workflows and lack of a client portal are unverified hypotheses.\n\nAll sample records are fictional. No information was sent or charged.");
+};
+$("resetDemo").onclick = ()=>showModal("Reset local demonstration?",'<p>This clears the fictional employee changes, attachment metadata, assistant conversation, saved drafts and sample approvals on this device. Planning inputs return to their illustrative defaults.</p><div class="form-actions"><button class="btn accent" id="confirmReset">Clear data & reset demo</button><button class="btn outline" onclick="document.getElementById(\'modal\').close()">Keep exploring</button></div>');
+$("resetDemo").addEventListener("click",()=>{
+  $("confirmReset").onclick = ()=>{
+    state = defaults();
+    try{localStorage.removeItem(KEY)}catch(e){}
+    $("estimateForm").reset();
+    setScreen("overview");
+    $("modal").close();
+    notify("Local sample data cleared. Demo restored.");
+  };
+});
+$("researchNotes").onclick = ()=>showModal("Scope, research & limitations",'<span class="sample-chip">Independent concept · unendorsed</span><h4 style="font-size:13px">What is supported by the supplied information</h4><p style="font-size:12px">IOTA Group describes Employer of Record, technical consulting, recruitment, international payroll, employment contracts, insurance, pensions and repatriation services.</p><h4 style="font-size:13px">What remains a hypothesis</h4><p style="font-size:12px">The supplied website text does not prove that IOTA handles administration manually or lacks a portal. This concept explores a potential workflow improvement; it is not an operational audit.</p><h4 style="font-size:13px">What works in this local sample</h4><p style="font-size:12px">Editable estimator, record search and filters, document metadata attachment with validation, checklist updates, payroll query resolution, local approvals, request drafts and submission simulation, scripted assistant answers, editable drafts, downloads and reset.</p><h4 style="font-size:13px">Integration limits</h4><p style="font-size:12px">No authentication, upload, payment, actual payroll processing, electronic signature, live AI, regulatory monitoring or IOTA system connection. Only fictional state and test-file metadata are retained locally.</p><h4 style="font-size:13px">Assets & references</h4><p style="font-size:12px"><a href="https://iota-group.com/" target="_blank" rel="noopener">Official IOTA website</a> — service reference. Photography credits and license notes are in the footer. Logo permission must be confirmed before public launch.</p>');
+
+estimate();
+setScreen("overview");
+updateCompletion();
+</script>
+</body>
+</html>

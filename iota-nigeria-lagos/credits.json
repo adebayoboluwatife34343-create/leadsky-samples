@@ -1,0 +1,115 @@
+[
+  {
+    "file": "img/business-logo-1.svg",
+    "kind": "business logo",
+    "source": "https://iota-group.com/wp-content/uploads/2025/07/logo_iota_white.svg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/iota.group"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels office administrator organizing paper employment documents desk",
+    "description": "typewriter, vintage, old, vintage typewriter, retro, type, antique, paper, text, write, nostalgia, letter, vintage type, machine, word, black, white, lettering, typing, classic, message, office, technology, black white, typewriter, typewriter, typewriter, typewriter, typewriter, vintage, letter, typing, technology",
+    "source": "https://pixabay.com/photos/typewriter-vintage-old-1248088/",
+    "photographer": "ha11ok",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels office administrator organizing paper employment documents desk",
+    "description": "analysis, analytics, business, charts, computer, concept, data, desk, device, diagram, digital, documents, graphs, information, investment, job, management, marketing, modern, office, report, business, business, data, data, data, data, data, information, investment, investment, management, marketing, marketing, marketing, report, report, report",
+    "source": "https://pixabay.com/photos/analysis-analytics-business-charts-1841158/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pexels business professional laptop document review bright office",
+    "description": "laptop, office, hand, writing, business, document, contract, paper, education, work, notebook, data, pen, meeting, recruitment, agreement, paperwork, office, business, business, business, business, business, contract, contract, education, work, meeting, meeting",
+    "source": "https://pixabay.com/photos/laptop-office-hand-writing-3196481/",
+    "photographer": "AymaneJed",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pexels business professional laptop document review bright office",
+    "description": "student, typing, keyboard, text, startup, people, students, office, strategy, work, technology, company, corporate, communication, young, plan, marketing, computer, design, professional, planning, internet, project, laptop, presentation, web, display, monitor, screen, digital, electronic, pc, modern, student, office, work, work, work, marketing, computer, computer, computer, computer, computer, laptop, laptop, laptop",
+    "source": "https://pixabay.com/photos/student-typing-keyboard-text-849825/",
+    "photographer": "StartupStockPhotos",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay international logistics team planning deployment office",
+    "description": "job, office, team, business, internet, technology, design, draft, portable, meeting, job, office, office, office, office, team, team, business, business, business, business, business, technology, meeting, meeting, meeting",
+    "source": "https://pixabay.com/photos/job-office-team-business-internet-5382501/",
+    "photographer": "RonaldCandonga",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay international logistics team planning deployment office",
+    "description": "passport, world map, map, world, trip, tourism, vacation, travel, planning, camera",
+    "source": "https://pixabay.com/photos/passport-map-world-trip-tourism-2714675/",
+    "photographer": "Pamjpat",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels industrial engineers protective equipment field operations",
+    "description": "man, engineer, energy, heat, engineer, engineer, engineer, engineer, engineer",
+    "source": "https://pixabay.com/photos/man-engineer-energy-heat-8499957/",
+    "photographer": "This_is_Engineering",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels industrial engineers protective equipment field operations",
+    "description": "work, worker, machine, people, engine, vehicle, people, people, people, people, people",
+    "source": "https://pixabay.com/photos/work-worker-machine-people-engine-8772016/",
+    "photographer": "simonreza09",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pexels payroll administrator calculator laptop paperwork",
+    "description": "bookkeeping, accounting, taxes, settlement, calculator, money, business, finance, billing, documents, office, desk, secretariat, macbook, binder, folders, bookkeeping, bookkeeping, bookkeeping, accounting, accounting, accounting, accounting, accounting, taxes, calculator, money, money, money, finance, finance, finance, finance, billing",
+    "source": "https://pixabay.com/photos/bookkeeping-accounting-taxes-615384/",
+    "photographer": "Firmbee",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pexels payroll administrator calculator laptop paperwork",
+    "description": "calculator, calculation, insurance, finance, accounting, pen, fountain pen, investment, office, work, taxes, calculator, insurance, insurance, finance, finance, finance, finance, finance, accounting, accounting, accounting, investment, taxes",
+    "source": "https://pixabay.com/photos/calculator-calculation-insurance-385506/",
+    "photographer": "stevepb",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
