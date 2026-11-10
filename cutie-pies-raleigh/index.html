@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F1F8F2">
+<title>Cutie Pies · Raleigh | Independent Website Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600;700&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f1f8f2;--berry:#a52d55;--green:#173f35;--peach:#f4d9ce;--ink:#24382f;--line:#c9d7cc;--serif:Fraunces,Georgia,serif;--sans:Karla,Arial,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:96px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 var(--sans)}button,input,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit;text-underline-offset:5px}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--berry);outline-offset:5px}button{color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.04}button{border:0}::selection{background:var(--peach)}.notice{padding:9px 20px;text-align:center;font-size:12px;line-height:1.4;background:var(--green);color:white}.header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 5%;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(241,248,242,.97);z-index:20}.brand{text-decoration:none;font:600 24px var(--serif);letter-spacing:-1px}.brand span{color:var(--berry)}.header-actions{display:flex;align-items:center;gap:16px}.pill{display:inline-flex;align-items:center;justify-content:center;gap:12px;text-decoration:none;border-radius:40px;padding:10px 18px;background:var(--berry);color:#fff;font-size:14px;font-weight:600;transition:background .2s,transform .2s}.pill:hover{background:#84213f;transform:translateY(-2px)}.menu-toggle{background:none;padding:8px 0;display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600}.hamb{width:18px;display:grid;gap:4px}.hamb:before,.hamb:after{content:"";height:2px;background:var(--ink)}.nav{position:absolute;right:5%;top:68px;background:var(--green);color:white;padding:22px;width:min(330px,90vw);box-shadow:0 20px 50px #173f3520;border-radius:6px}.nav[hidden]{display:none}.nav a{display:flex;padding:12px 5px;text-decoration:none;border-bottom:1px solid #ffffff30;font:20px var(--serif)}.wrap{width:90%;max-width:1440px;margin:auto}.hero{padding:57px 0 42px;position:relative}.eyebrow{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:700}.hero .eyebrow{color:var(--berry);margin-bottom:22px}.hero-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:8%;align-items:end}h1{font-size:clamp(54px,7.5vw,112px);letter-spacing:-5px;max-width:850px}h1 em{color:var(--berry);font-weight:400}.hero-note{padding-bottom:7px;max-width:340px}.hero-note p{margin-bottom:24px}.hero-foot{display:flex;justify-content:space-between;margin-top:43px;padding-top:17px;border-top:1px solid var(--line);font-size:12px;letter-spacing:1px;text-transform:uppercase}.showcase{border-top:1px solid var(--line);padding:28px 0 70px;display:grid;grid-template-columns:210px minmax(0,1fr);gap:34px}.index{position:sticky;top:105px;align-self:start}.index h2{font-size:28px;margin:12px 0 22px}.index-buttons{display:grid;gap:4px}.index-button{background:transparent;text-align:left;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;gap:15px;align-items:center;transition:color .2s}.index-button span{font-size:11px}.index-button[aria-current=true]{color:var(--berry);font-weight:700}.index small{display:block;font-size:12px;margin-top:22px;line-height:1.5}.gallery-area{min-width:0}.track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--berry) var(--line);padding-bottom:16px;overscroll-behavior-x:contain}.panel{flex:0 0 88%;scroll-snap-align:start;min-width:0}.photo-button{width:100%;padding:0;background:var(--peach);position:relative;display:block;overflow:hidden;aspect-ratio:1.36;text-align:left}.photo-button img{transition:transform .65s cubic-bezier(.2,.7,.3,1)}.photo-button:hover img{transform:scale(1.035)}.photo-action{position:absolute;right:18px;bottom:18px;background:var(--paper);color:var(--ink);border-radius:50%;width:49px;height:49px;display:grid;place-items:center;font-size:26px;transition:background .2s}.photo-button:hover .photo-action{background:var(--peach)}.caption{display:flex;justify-content:space-between;gap:20px;padding:20px 0 8px}.caption h3{font-size:34px;letter-spacing:-1px}.caption p{font-size:13px;margin-top:8px}.caption>span{font-size:12px;white-space:nowrap;padding-top:8px}.gallery-controls{display:flex;align-items:center;justify-content:space-between;margin-top:15px}.counter{font-size:13px;letter-spacing:2px}.arrows{display:flex;gap:9px}.arrow{width:47px;height:47px;background:none;border:1px solid var(--line);border-radius:50%;font-size:22px;transition:background .2s}.arrow:hover{background:var(--peach)}.arrow:disabled{opacity:.35;cursor:default}.section{padding:75px 0;border-top:1px solid var(--line)}.section-top{display:grid;grid-template-columns:1fr 1fr;gap:8%;margin-bottom:38px}.section h2{font-size:clamp(42px,5vw,70px);letter-spacing:-2.5px}.section-top .eyebrow{margin-bottom:20px;color:var(--berry)}.section-top>p{align-self:end;max-width:440px}.menu-table{width:100%;border-collapse:collapse}.menu-table th{text-align:left;font-size:12px;letter-spacing:1.4px;text-transform:uppercase;padding:15px 0;border-bottom:1px solid var(--ink)}.menu-table td{padding:23px 12px 23px 0;border-bottom:1px solid var(--line)}.menu-table th:last-child,.menu-table td:last-child{text-align:right}.menu-table td:first-child{font-family:var(--serif);font-size:24px}.text-link{background:transparent;color:var(--berry);padding:0;text-decoration:underline;text-underline-offset:5px;font-weight:700}.menu-note{margin-top:19px;font-size:13px;max-width:750px}.visit{background:var(--peach);padding:75px 0}.visit-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:10%}.visit h2{font-size:clamp(46px,6vw,80px);letter-spacing:-3px;margin:20px 0 32px}.visit address{font-style:normal;font-size:22px;line-height:1.5}.visit-links{display:flex;flex-wrap:wrap;gap:15px 28px;margin-top:27px}.visit-info{border-top:1px solid #24382f55;margin-top:35px;padding-top:22px;font-size:14px}.visit-photo{aspect-ratio:1.16;position:relative}.visit-photo figcaption{font-size:12px;margin-top:11px}.visit-photo figure{margin:0}.enquiry{background:var(--green);color:var(--paper);padding:70px 0}.enquiry-inner{display:flex;align-items:center;justify-content:space-between;gap:50px}.enquiry h2{font-size:clamp(40px,5vw,66px);letter-spacing:-2px;max-width:680px;margin:17px 0}.enquiry p{max-width:630px;color:#deeadf}.enquiry .pill{background:var(--peach);color:var(--green);white-space:nowrap}.footer{padding:42px 0 30px}.footer-top{display:flex;justify-content:space-between;gap:30px;font-size:13px}.footer details{margin-top:28px;border-top:1px solid var(--line);padding-top:18px;font-size:12px}.footer summary{cursor:pointer;font-weight:700}.credits{display:flex;flex-wrap:wrap;gap:10px 25px;margin-top:14px}.fine{font-size:12px;margin-top:18px;max-width:800px}.bottom-call{display:none}.drawer{position:fixed;inset:0 0 0 auto;width:min(560px,100%);height:100dvh;max-height:none;margin:0;padding:0;border:0;background:var(--paper);color:var(--ink);overflow-y:auto;box-shadow:-20px 0 70px #0002}.drawer::backdrop{background:#10281fc7}.drawer-head{position:sticky;top:0;display:flex;justify-content:space-between;align-items:center;padding:15px 25px;background:var(--paper);z-index:2;border-bottom:1px solid var(--line)}.close{border:1px solid var(--line);border-radius:40px;padding:7px 15px;background:transparent}.drawer-image{height:230px}.drawer-body{padding:28px}.drawer h2{font-size:43px;letter-spacing:-1.5px;margin-bottom:16px}.drawer-description{font-size:15px;margin-bottom:15px}.drawer-disclosure{font-size:12px;border-left:2px solid var(--berry);padding-left:12px;margin-bottom:27px}.form-title{font:26px var(--serif);margin-bottom:18px}.field{display:grid;gap:6px;margin:15px 0}.field label{font-size:14px;font-weight:700}.field input,.field textarea{width:100%;border:1px solid #a7baac;background:#fff;padding:12px;color:var(--ink);border-radius:3px}.field textarea{resize:vertical;min-height:105px}.form-note{font-size:12px;margin:12px 0 20px}.preview{margin-top:22px;padding:18px;background:#e1ebe2;border:1px solid var(--line)}.preview[hidden]{display:none}.preview p{font-size:14px;margin:10px 0}.preview pre{white-space:pre-wrap;font:14px/1.5 var(--sans);word-break:break-word}.preview-actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:16px}.preview-status{font-weight:700;color:var(--berry)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:1500px){.panel{flex-basis:80%}}
+@media(max-width:900px){.showcase{grid-template-columns:165px minmax(0,1fr);gap:22px}.hero-grid{gap:5%}h1{letter-spacing:-3px}.caption h3{font-size:28px}.caption>span{display:none}.visit-grid{gap:6%}.enquiry-inner{align-items:start;flex-direction:column;gap:25px}}
+@media(max-width:600px){html{scroll-padding-top:135px}.notice{font-size:10px;padding:7px 15px}.header{height:62px;padding:0 5%}.brand{font-size:20px;letter-spacing:-0.5px}.header-actions{gap:12px}.header .pill{padding:7px 14px;font-size:12px}.menu-label{display:none}.menu-toggle{padding:8px 0;font-size:13px}.nav{top:57px;width:90vw}.wrap{width:90%}.hero{padding:30px 0 24px}.hero .eyebrow{font-size:11px;margin-bottom:16px}.hero-grid{display:block}h1{font-size:56px;letter-spacing:-2.8px;line-height:1.02}.hero-note{max-width:100%;padding:0;margin-top:20px}.hero-note p{font-size:15px;max-width:320px;margin-bottom:18px}.pill{padding:12px 20px;font-size:14px}.hero-foot{margin-top:26px;font-size:10px;gap:20px}.hero-foot span:last-child{text-align:right}.showcase{display:block;padding:0 0 36px;border-top:0}.index{top:62px;z-index:10;background:var(--paper);padding:10px 0 9px;margin:0 0 16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.index .eyebrow,.index h2,.index small{display:none}.index-buttons{display:flex;gap:21px;overflow:auto;scrollbar-width:none}.index-button{white-space:nowrap;font-size:12px;border:0;padding:5px 0;gap:6px}.index-button span{font-size:10px}.panel{flex-basis:94%}.track{gap:14px}.photo-button{aspect-ratio:1.05}.photo-action{width:42px;height:42px;right:13px;bottom:13px}.caption{padding-top:16px}.caption h3{font-size:30px}.caption p{font-size:12px;max-width:265px}.gallery-controls{margin-top:8px}.section{padding:43px 0}.section-top{display:block;margin-bottom:25px}.section h2{font-size:45px;letter-spacing:-2px}.section-top>p{font-size:15px;margin-top:22px}.section-top .eyebrow{font-size:11px;margin-bottom:15px}.menu-table th{font-size:10px}.menu-table td{padding:18px 8px 18px 0;font-size:13px}.menu-table td:first-child{font-size:20px;width:36%}.menu-table td:last-child{width:29%}.menu-note{font-size:12px}.visit{padding:43px 0 50px}.visit-grid{display:flex;flex-direction:column;gap:34px}.visit h2{font-size:53px;margin:15px 0 23px}.visit address{font-size:21px}.visit-links{gap:15px;font-size:14px}.visit-info{margin-top:25px;font-size:13px}.visit-photo{aspect-ratio:1.3;margin-bottom:20px}.enquiry{padding:44px 0}.enquiry h2{font-size:43px;letter-spacing:-1.5px}.enquiry p{font-size:15px}.enquiry .eyebrow{font-size:11px}.footer{padding:30px 0 95px}.footer-top{display:block}.footer-top p+p{margin-top:12px}.bottom-call{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:15;align-items:center;justify-content:space-between;background:var(--green);color:white;padding:12px 5% max(12px,env(safe-area-inset-bottom));box-shadow:0 -3px 20px #0001}.bottom-call span{font-size:12px}.bottom-call a{font-weight:700;font-size:14px;text-decoration:none}.drawer-body{padding:24px}.drawer-image{height:195px}.drawer h2{font-size:38px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="notice">Independent website concept by LeadSky for Cutie Pies. Not their official website.</div>
+<header class="header">
+<a class="brand" href="#home" aria-label="Cutie Pies home">Cutie Pies<span>·</span></a>
+<div class="header-actions">
+<a class="pill" href="#showcase">Explore <span aria-hidden="true">↗</span></a>
+<button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navigation"><span class="menu-label">Menu</span><span class="hamb" aria-hidden="true"></span><span class="sr-only">Toggle navigation</span></button>
+</div>
+<nav class="nav" id="navigation" aria-label="Main navigation" hidden>
+<a href="#showcase">01 — Showcase</a><a href="#menu">02 — Menu enquiries</a><a href="#visit">03 — Plan your visit</a><a href="#enquire">04 — Get in touch</a>
+</nav>
+</header>
+<main id="home">
+<section class="hero wrap" aria-labelledby="heroTitle">
+<p class="eyebrow">Cutie Pies · Raleigh, North Carolina</p>
+<div class="hero-grid">
+<h1 id="heroTitle">A little café.<br>A <em>lovely</em> pause.</h1>
+<div class="hero-note"><p>Meet Cutie Pies on Hillsborough Street. Get in touch for the current menu, prices and visiting details.</p><a class="pill" href="#showcase">Explore the photo album <span aria-hidden="true">↘</span></a></div>
+</div>
+<div class="hero-foot"><span>A neighbourhood café concept</span><span>Scroll the album. Find your next question.</span></div>
+</section>
+
+<section class="showcase wrap" id="showcase" aria-label="Reference photography showcase">
+<aside class="index">
+<p class="eyebrow">The photo album</p><h2>A taste of<br>the direction.</h2>
+<div class="index-buttons" aria-label="Choose a photograph">
+<button class="index-button" data-index="0" aria-current="true"><span>01</span> Bakery counter</button>
+<button class="index-button" data-index="1" aria-current="false"><span>02</span> Something sweet</button>
+<button class="index-button" data-index="2" aria-current="false"><span>03</span> Coffee moments</button>
+<button class="index-button" data-index="3" aria-current="false"><span>04</span> Baked details</button>
+</div>
+<small>Reference photography for this concept. These images do not show Cutie Pies’ products or premises. Offerings are not confirmed.</small>
+</aside>
+<div class="gallery-area">
+<div class="track" id="track" tabindex="0" aria-label="Swipeable photo album" aria-roledescription="carousel">
+<article class="panel" id="panel0">
+<button class="photo-button" data-item="0" aria-label="Open bakery counter reference and enquiry"><img src="img/stock-1.jpg" width="1200" height="900" alt="Illustrative stock photograph of assorted breads in a bakery display" fetchpriority="high"><span class="photo-action" aria-hidden="true">↗</span></button>
+<div class="caption"><div><h3>At the counter.</h3><p>Bakery reference · Ask about the current selection.</p></div><span>01 / 04</span></div>
+</article>
+<article class="panel" id="panel1">
+<button class="photo-button" data-item="1" aria-label="Open dessert reference and enquiry"><img src="img/stock-3.jpg" width="1200" height="900" alt="Illustrative stock photograph of a raspberry tart, not a Cutie Pies product" loading="lazy"><span class="photo-action" aria-hidden="true">↗</span></button>
+<div class="caption"><div><h3>A sweeter detail.</h3><p>Dessert reference · Ask what is on the menu.</p></div><span>02 / 04</span></div>
+</article>
+<article class="panel" id="panel2">
+<button class="photo-button" data-item="2" aria-label="Open coffee reference and enquiry"><img src="img/stock-7.jpg" width="1200" height="900" alt="Illustrative stock photograph of a cup of coffee beside an open notebook" loading="lazy"><span class="photo-action" aria-hidden="true">↗</span></button>
+<div class="caption"><div><h3>Make room for a pause.</h3><p>Coffee reference · Ask about drinks.</p></div><span>03 / 04</span></div>
+</article>
+<article class="panel" id="panel3">
+<button class="photo-button" data-item="3" aria-label="Open baked details reference and enquiry"><img src="img/stock-5.jpg" width="1200" height="900" alt="Illustrative stock photograph of chocolate chip cookies, not Cutie Pies products" loading="lazy"><span class="photo-action" aria-hidden="true">↗</span></button>
+<div class="caption"><div><h3>The small pleasures.</h3><p>Baking reference · Ask about available treats.</p></div><span>04 / 04</span></div>
+</article>
+</div>
+<div class="gallery-controls"><span class="counter" id="counter" aria-live="polite" aria-atomic="true">01 / 04</span><div class="arrows"><button class="arrow" id="previous" aria-label="Previous photograph" disabled>←</button><button class="arrow" id="next" aria-label="Next photograph">→</button></div></div>
+</div>
+</section>
+
+<section class="section wrap" id="menu" aria-labelledby="menuTitle">
+<div class="section-top"><div><p class="eyebrow">Before you choose</p><h2 id="menuTitle">The menu starts<br>with a conversation.</h2></div><p>For the latest selection and prices, contact Cutie Pies directly. This independent concept does not list an unverified menu.</p></div>
+<table class="menu-table">
+<caption class="sr-only">How to request current menu and pricing information</caption>
+<thead><tr><th scope="col">Your question</th><th scope="col">What to request</th><th scope="col">Next step</th></tr></thead>
+<tbody>
+<tr><td>Current menu</td><td>Today’s selection and prices</td><td><button class="text-link" data-topic="Current menu and prices">Ask about the menu ↗</button></td></tr>
+<tr><td>Food details</td><td>Ingredients and dietary information</td><td><button class="text-link" data-topic="Ingredients and dietary information">Ask a question ↗</button></td></tr>
+<tr><td>Your visit</td><td>Current opening hours</td><td><button class="text-link" data-topic="Opening hours and visiting">Plan a visit ↗</button></td></tr>
+</tbody>
+</table>
+<p class="menu-note">Menu items, prices and opening hours were not supplied for this concept. Photographs are visual references, not a promise of availability. Please confirm food and allergen information directly with the business.</p>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="visitTitle">
+<div class="wrap visit-grid">
+<div>
+<p class="eyebrow">Hillsborough Street · Raleigh</p>
+<h2 id="visitTitle">Find your way<br>to Cutie Pies.</h2>
+<address>1213 Hillsborough Street<br>Raleigh, NC 27603</address>
+<div class="visit-links"><a href="https://www.google.com/maps/search/?api=1&query=1213%20Hillsborough%20Street%20Raleigh%20NC%2027603" target="_blank" rel="noopener">Open directions ↗</a><a href="tel:+19195941909">919-594-1909</a></div>
+<div class="visit-info"><p>Check current opening hours before travelling.</p><p><a href="mailto:cutiepiesofraleigh@gmail.com">cutiepiesofraleigh@gmail.com</a></p></div>
+</div>
+<div class="visit-photo"><figure><img src="img/stock-8.jpg" width="1000" height="850" alt="Illustrative stock photograph of coffee on a table; not the Cutie Pies café" loading="lazy"><figcaption>A moment to pause. Reference photography, not the café’s premises.</figcaption></figure></div>
+</div>
+</section>
+
+<section class="enquiry" id="enquire" aria-labelledby="enquiryTitle">
+<div class="wrap enquiry-inner"><div><p class="eyebrow">A question before you stop by?</p><h2 id="enquiryTitle">Let’s make the next<br>step a simple one.</h2><p>Prepare a message about the menu or your visit. You can copy it or open your email app when you are ready.</p></div><button class="pill" data-topic="General café enquiry">Draft an enquiry <span aria-hidden="true">↗</span></button></div>
+</section>
+</main>
+<footer class="footer wrap">
+<div class="footer-top"><p class="brand">Cutie Pies<span>·</span></p><p>Raleigh, North Carolina<br>Independent concept · Concept by LeadSky</p></div>
+<p class="fine">Business details are taken from the supplied brief and have not been independently verified. This concept is not affiliated with or endorsed by Cutie Pies. No ordering, booking or message delivery is provided.</p>
+<details><summary>Photography sources &amp; concept notes</summary>
+<p class="fine">All images are illustrative stock photography used under the supplied Pixabay Content License. They do not depict this business, its staff, premises or products. The palette and typography are a proposed identity.</p>
+<div class="credits">
+<a href="https://pixabay.com/photos/bakery-breads-assorted-assortment-1868925/" target="_blank" rel="noopener">Bakery display — Pexels / Pixabay</a>
+<a href="https://pixabay.com/photos/dessert-food-tart-pie-raspberries-5712284/" target="_blank" rel="noopener">Raspberry tart — Pat_Photographies / Pixabay</a>
+<a href="https://pixabay.com/photos/coffee-pen-notebook-open-notebook-2306471/" target="_blank" rel="noopener">Coffee &amp; notebook — Engin_Akyurt / Pixabay</a>
+<a href="https://pixabay.com/photos/cookies-sweets-dessert-8082386/" target="_blank" rel="noopener">Cookies — dmarr515 / Pixabay</a>
+<a href="https://pixabay.com/photos/cup-coffee-table-drinks-beverage-6878196/" target="_blank" rel="noopener">Coffee on table — CUN_CUN / Pixabay</a>
+</div>
+</details>
+</footer>
+<div class="bottom-call"><span>Cutie Pies · Raleigh</span><a href="tel:+19195941909">Call 919-594-1909 ↗</a></div>
+
+<dialog class="drawer" id="drawer" aria-labelledby="drawerTitle">
+<div class="drawer-head"><span class="eyebrow">Cutie Pies · Enquiry</span><button class="close" id="closeDrawer" autofocus>Close ×</button></div>
+<div class="drawer-image" id="drawerImageWrap"><img id="drawerImage" src="img/stock-1.jpg" width="1200" height="600" alt="Illustrative bakery reference photograph"></div>
+<div class="drawer-body">
+<h2 id="drawerTitle">At the counter.</h2>
+<p class="drawer-description" id="drawerDescription"></p>
+<p class="drawer-disclosure" id="drawerDisclosure">Reference photography only. This item is not a confirmed Cutie Pies offering. Ask the business about its current menu.</p>
+<form id="enquiryForm">
+<h3 class="form-title">Prepare your enquiry</h3>
+<div class="field"><label for="topic">About</label><input id="topic" name="topic" required maxlength="150"></div>
+<div class="field"><label for="customerName">Your name</label><input id="customerName" name="name" autocomplete="name" required maxlength="100"></div>
+<div class="field"><label for="customerEmail">Your email</label><input id="customerEmail" name="email" type="email" autocomplete="email" required maxlength="180"></div>
+<div class="field"><label for="message">Your question</label><textarea id="message" name="message" required maxlength="2000"></textarea></div>
+<p class="form-note">This is a local message draft. Nothing is stored or sent by this page. Opening your email app does not send the message automatically.</p>
+<button class="pill" type="submit">Preview message <span aria-hidden="true">→</span></button>
+</form>
+<div class="preview" id="preview" hidden tabindex="-1">
+<p class="preview-status" role="status">This is a demo form, nothing was sent.</p>
+<pre id="messagePreview"></pre>
+<div class="preview-actions"><button class="text-link" id="copyMessage" type="button">Copy message</button><a class="text-link" id="emailHandoff" href="mailto:cutiepiesofraleigh@gmail.com">Open email app ↗</a></div>
+<p id="copyStatus" aria-live="polite"></p>
+</div>
+</div>
+</dialog>
+<script>
+(function(){
+'use strict';
+const $=s=>document.querySelector(s);
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+const menu=$('#navigation'),toggle=$('#menuToggle');
+function closeMenu(restore){menu.hidden=true;toggle.setAttribute('aria-expanded','false');if(restore)toggle.focus();}
+toggle.addEventListener('click',()=>{const open=menu.hidden;menu.hidden=!open;toggle.setAttribute('aria-expanded',String(open));});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>closeMenu(false)));
+document.addEventListener('click',e=>{if(!menu.hidden&&!menu.contains(e.target)&&!toggle.contains(e.target))closeMenu(false);});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden)closeMenu(true);});
+const track=$('#track'),panels=[...document.querySelectorAll('.panel')],indexes=[...document.querySelectorAll('[data-index]')];
+let active=0;
+function update(i){active=i;indexes.forEach((b,n)=>b.setAttribute('aria-current',String(n===i)));$('#counter').textContent=String(i+1).padStart(2,'0')+' / 04';$('#previous').disabled=i===0;$('#next').disabled=i===panels.length-1;}
+function go(i){i=Math.max(0,Math.min(panels.length-1,i));track.scrollTo({left:panels[i].offsetLeft-panels[0].offsetLeft,behavior:reduced.matches?'instant':'smooth'});}
+indexes.forEach(b=>b.addEventListener('click',()=>go(Number(b.dataset.index))));
+$('#previous').addEventListener('click',()=>go(active-1));
+$('#next').addEventListener('click',()=>go(active+1));
+let pending=false;
+track.addEventListener('scroll',()=>{if(pending)return;pending=true;requestAnimationFrame(()=>{let best=0,distance=Infinity;panels.forEach((p,i)=>{const d=Math.abs(p.offsetLeft-panels[0].offsetLeft-track.scrollLeft);if(d<distance){distance=d;best=i;}});update(best);pending=false;});},{passive:true});
+track.addEventListener('keydown',e=>{if(e.target!==track)return;if(e.key==='ArrowRight'){e.preventDefault();go(active+1);}if(e.key==='ArrowLeft'){e.preventDefault();go(active-1);}if(e.key==='Home'){e.preventDefault();go(0);}if(e.key==='End'){e.preventDefault();go(3);}});
+const items=[
+{title:'At the counter.',image:'img/stock-1.jpg',alt:'Stock reference of assorted breads at a bakery counter',description:'This bakery photograph sets the visual direction for the concept. To find out what Cutie Pies currently serves, ask for the menu and prices.',topic:'Current menu — bakery reference',message:'Hello Cutie Pies, could you share your current menu and prices?'},
+{title:'A sweeter detail.',image:'img/stock-3.jpg',alt:'Stock reference of a raspberry tart on a plate',description:'A dessert reference for the photo album, rather than a menu listing. Contact Cutie Pies to ask whether desserts are available and what the current choices are.',topic:'Current menu — dessert enquiry',message:'Hello Cutie Pies, could you tell me about your current dessert selection and prices?'},
+{title:'Make room for a pause.',image:'img/stock-7.jpg',alt:'Stock reference of coffee beside a notebook',description:'An illustrative coffee moment. Drinks, sizes and prices have not been confirmed for this concept; the café can provide its current drinks menu.',topic:'Current menu — drinks enquiry',message:'Hello Cutie Pies, could you share your current drinks menu and prices?'},
+{title:'The small pleasures.',image:'img/stock-5.jpg',alt:'Stock reference of chocolate chip cookies',description:'A baking reference, not a photograph of a Cutie Pies product. Ask the café what treats are currently available before planning your visit.',topic:'Current menu — treats enquiry',message:'Hello Cutie Pies, what sweet treats are currently available, and what are their prices?'}
+];
+const drawer=$('#drawer'),form=$('#enquiryForm');
+let opener=null,oldOverflow='',draft='';
+function openDrawer(item,topic){
+opener=document.activeElement;$('#preview').hidden=true;$('#copyStatus').textContent='';
+if(item){$('#drawerTitle').textContent=item.title;$('#drawerDescription').textContent=item.description;$('#drawerImage').src=item.image;$('#drawerImage').alt=item.alt;$('#drawerImageWrap').hidden=false;$('#drawerDisclosure').hidden=false;$('#topic').value=item.topic;$('#message').value=item.message;}
+else{$('#drawerTitle').textContent='A question for Cutie Pies.';$('#drawerDescription').textContent='Draft a message, review it, then choose whether to copy it or open your own email app.';$('#drawerImageWrap').hidden=true;$('#drawerDisclosure').hidden=true;$('#topic').value=topic;$('#message').value='Hello Cutie Pies, I would like to ask about '+topic.toLowerCase()+'.';}
+oldOverflow=document.body.style.overflow;document.body.style.overflow='hidden';drawer.showModal();drawer.scrollTop=0;$('#closeDrawer').focus();
+}
+document.querySelectorAll('[data-item]').forEach(b=>b.addEventListener('click',()=>openDrawer(items[Number(b.dataset.item)])));
+document.querySelectorAll('[data-topic]').forEach(b=>b.addEventListener('click',()=>openDrawer(null,b.dataset.topic)));
+$('#closeDrawer').addEventListener('click',()=>drawer.close());
+drawer.addEventListener('click',e=>{if(e.target===drawer){const r=drawer.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right)drawer.close();}});
+drawer.addEventListener('close',()=>{document.body.style.overflow=oldOverflow;if(opener)opener.focus({preventScroll:true});});
+form.addEventListener('submit',e=>{
+e.preventDefault();if(!form.reportValidity())return;
+const name=$('#customerName').value.trim(),email=$('#customerEmail').value.trim(),topic=$('#topic').value.trim(),message=$('#message').value.trim();
+if(!name||!topic||!message){const field=!name?$('#customerName'):!topic?$('#topic'):$('#message');field.setCustomValidity('Please enter a message using more than spaces.');field.reportValidity();field.addEventListener('input',()=>field.setCustomValidity(''),{once:true});return;}
+draft=message+'\n\n'+name+'\nReply email: '+email+'\nEnquiry: '+topic;
+$('#messagePreview').textContent=draft;
+$('#emailHandoff').href='mailto:cutiepiesofraleigh@gmail.com?subject='+encodeURIComponent('Cutie Pies enquiry: '+topic)+'&body='+encodeURIComponent(draft);
+$('#preview').hidden=false;$('#copyStatus').textContent='';$('#preview').focus();
+});
+form.addEventListener('input',()=>{$('#preview').hidden=true;});
+$('#copyMessage').addEventListener('click',async()=>{
+try{if(!navigator.clipboard)throw new Error('Clipboard unavailable');await navigator.clipboard.writeText(draft);$('#copyStatus').textContent='Message copied. Nothing was sent.';}
+catch(e){const selection=window.getSelection(),range=document.createRange();range.selectNodeContents($('#messagePreview'));selection.removeAllRanges();selection.addRange(range);$('#copyStatus').textContent='Automatic copying is unavailable. The message is selected so you can copy it manually.';}
+});
+})();
+</script>
+</body>
+</html>
