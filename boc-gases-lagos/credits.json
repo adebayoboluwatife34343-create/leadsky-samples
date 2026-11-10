@@ -1,0 +1,142 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://assets.linde.com/-/media/shared/logo/linde-logo-desktop.png?r=67f656cb1f",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "https://assets.linde.com/-/media/celum-connect/2025/10/21/14/24/47289_linde_us_image_banner-800x800_197084.jpg?impolicy=focal-point&cw=1200&ch=630&fx=400&fy=400&r=9f8e4da1ce",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/lindeplc"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "industrial gas production plant pipework daylight",
+    "description": "factory, building, industry, industrial plant, manufacturing plant, structure, metal, steel, neuss, germany, factory, factory, factory, factory, factory, industry, industry",
+    "source": "https://pixabay.com/photos/factory-building-industry-1140760/",
+    "photographer": "652234",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "industrial gas production plant pipework daylight",
+    "description": "natural, landscape, nature, building, pipe, silver, industrial, plant, steel tower, crane",
+    "source": "https://pixabay.com/photos/natural-landscape-building-pipe-4820021/",
+    "photographer": "SichiRi",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "hydrogen electrolyser industrial equipment",
+    "description": "gears, cogs, machine, machinery, mechanical, gears and cogs, technology, industry, industrial, engineering, cogwheels, metals, monochrome, black and white, gears, gears, gears, cogs, machine, machine, machine, machine, machine, machinery, machinery, mechanical, technology, technology, technology, technology, industry, industry, industry, industrial, engineering, engineering, engineering, engineering",
+    "source": "https://pixabay.com/photos/gears-cogs-machine-machinery-1236578/",
+    "photographer": "MustangJoe",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "hydrogen electrolyser industrial equipment",
+    "description": "worker, grinder, factory, workplace, workshop, production, manufacturing, industry, metal work, work, steel, metal, profession, worker, worker, factory, factory, factory, production, manufacturing, manufacturing, manufacturing, manufacturing, manufacturing, industry, industry, work, work, steel, steel, metal",
+    "source": "https://pixabay.com/photos/worker-grinder-factory-workplace-5736096/",
+    "photographer": "jannonivergall",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "industrial electricity substation energy infrastructure",
+    "description": "coil, high voltage, technology, power generation, span, voltage, electricity, energy, danger, management, distribution, heaven, coil, coil, high voltage, high voltage, high voltage, high voltage, high voltage, power generation, power generation, power generation, voltage, voltage, electricity, electricity, electricity",
+    "source": "https://pixabay.com/photos/coil-high-voltage-technology-4320892/",
+    "photographer": "analogicus",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "industrial electricity substation energy infrastructure",
+    "description": "industry, perfomance, heaven, technology, electricity, substation, electrical engineering, energy, high voltage, w\u00fclfel, sromverteilung, power supply, substation, substation, substation, substation, electrical engineering, electrical engineering, electrical engineering, electrical engineering, electrical engineering",
+    "source": "https://pixabay.com/photos/industry-perfomance-heaven-3196696/",
+    "photographer": "Photomat",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "carbon capture facility steel processing columns",
+    "description": "silos, warehouse, storage, black and white, warehouse, storage, black and white, black and white, black and white, black and white, black and white",
+    "source": "https://pixabay.com/photos/silos-warehouse-storage-8253284/",
+    "photographer": "wal_172619",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "carbon capture facility steel processing columns",
+    "description": "mie prefecture, oil, plant, manufacturing, pipe, tank, nature, atmospheric distillation equipment, atmospheric distillation, distillation, distiller, chimney, topper, main distillation column, yokkaichi",
+    "source": "https://pixabay.com/photos/mie-prefecture-oil-plant-1362785/",
+    "photographer": "kentoshima1984",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "industrial gas tanker truck logistics depot",
+    "description": "production, facility, logistic, distribution center, transit, truck, transport, top view, industrial, semi, aerial view, heavy, depot, germany, warehouse, container truck, shipping containers, storehouse, road, loading bay, factory, unloading, distribute, unload, europe, aerial photography, production, logistic, truck, truck, warehouse, warehouse, warehouse, warehouse, warehouse, Jankowice, Greater Poland Voivodeship, Poland",
+    "source": "https://pixabay.com/photos/production-facility-logistic-4408573/",
+    "photographer": "marcinjozwiak",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "industrial gas tanker truck logistics depot",
+    "description": "truck, nature, road, highway, desert, transport",
+    "source": "https://pixabay.com/photos/truck-road-highway-desert-1181063/",
+    "photographer": "janeb13",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-11.jpg",
+    "kind": "stock photo",
+    "query": "factory energy monitoring equipment close up",
+    "description": "welding, tinsmith, welder, production, factory, workshop, sparks, to fix, ohs, repair, care, security, work, cook, man, daily, hard, trouble, hand, closeup, welding, welding, welding, welding, welding",
+    "source": "https://pixabay.com/photos/welding-tinsmith-welder-production-7104637/",
+    "photographer": "jwvein",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-12.jpg",
+    "kind": "stock photo",
+    "query": "factory energy monitoring equipment close up",
+    "description": "cctv surveillance camera, cctv, security, camera, surveillance, privacy, monitoring, spy, control, wall, guard, protection, technology, cctv, cctv, cctv, cctv, cctv, security, security, security, security, surveillance, privacy, privacy",
+    "source": "https://pixabay.com/photos/cctv-surveillance-camera-cctv-7267551/",
+    "photographer": "WebTechExperts",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
