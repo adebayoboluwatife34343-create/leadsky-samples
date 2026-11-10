@@ -1,0 +1,826 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lagos Oriental Hotel — Independent Concept by LeadSky</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fdfaf5;
+  --wine:#5a1a2e;
+  --wine-dark:#3d1020;
+  --blush:#efe3dc;
+  --gold:#9b7435;
+  --ink:#2d2428;
+  --line:#d9c9c1;
+  --muted:#6b5a62;
+  --serif:"DM Serif Display",Georgia,serif;
+  --sans:"Work Sans",Arial,sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration:0.01ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.01ms !important;
+    scroll-behavior:auto !important;
+  }
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:60px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 var(--sans);-webkit-tap-highlight-color:transparent}
+button,input,select,textarea{font:inherit}
+button,a,input,select,textarea{touch-action:manipulation}
+button,a{cursor:pointer}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+button{border:0;background:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1}
+h2{font-size:clamp(28px,5vw,52px)}
+h3{font-size:24px}
+p+p{margin-top:14px}
+
+.notice{
+  background:var(--wine);
+  color:#fff;
+  text-align:center;
+  padding:7px 16px;
+  font-size:11px;
+  line-height:1.5;
+}
+
+.header{
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 5%;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:var(--bg);
+}
+.brand{
+  text-decoration:none;
+  line-height:1.05;
+  letter-spacing:-0.4px;
+  font-family:var(--serif);
+  font-size:20px;
+  display:flex;
+  flex-direction:column;
+}
+.brand small{
+  font:9px var(--sans);
+  letter-spacing:3px;
+  text-transform:uppercase;
+  margin-top:3px;
+}
+.nav-actions{display:flex;gap:10px;align-items:center}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:11px 18px;
+  min-height:44px;
+  background:var(--wine);
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  font-size:13px;
+  border:1px solid var(--wine);
+  border-radius:4px;
+  transition:background .2s ease;
+}
+.btn:hover{background:var(--wine-dark)}
+.btn.light{background:var(--bg);color:var(--wine);border-color:var(--wine)}
+.btn.secondary{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.secondary:hover{background:var(--blush)}
+.btn.small{padding:8px 14px;min-height:38px;font-size:12px}
+.textbtn{
+  background:none;
+  border:none;
+  color:var(--wine);
+  cursor:pointer;
+  padding:0;
+  font:inherit;
+  font-weight:600;
+  text-decoration:underline;
+  text-underline-offset:4px;
+}
+.textbtn:hover{opacity:0.7}
+.menu-toggle{
+  background:transparent;
+  padding:10px;
+  color:var(--ink);
+  display:flex;
+  align-items:center;
+  font-size:12px;
+}
+.menu{
+  position:absolute;
+  right:5%;
+  top:60px;
+  background:var(--bg);
+  padding:18px 24px;
+  box-shadow:0 20px 60px rgba(45,36,40,.12);
+  min-width:220px;
+  border:1px solid var(--line);
+  border-radius:8px;
+}
+.menu a,.menu button{
+  display:block;
+  text-align:left;
+  width:100%;
+  padding:10px 0;
+  background:none;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+  font-size:14px;
+  cursor:pointer;
+}
+.menu a:last-child,.menu button:last-child{border-bottom:none}
+[hidden]{display:none!important}
+
+.hero{
+  position:relative;
+  min-height:70svh;
+  height:calc(100svh - 60px);
+  max-height:900px;
+  display:flex;
+  align-items:center;
+  color:#fff;
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero img{
+  position:absolute;
+  inset:0;
+  z-index:-2;
+  object-position:center 55%;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.72),rgba(0,0,0,.42));
+  z-index:-1;
+}
+.hero-content{
+  padding:32px 7%;
+  max-width:720px;
+}
+.hero h1{
+  font-size:clamp(40px,10vw,96px);
+  letter-spacing:-3px;
+  line-height:.92;
+}
+.hero p{color:#f1e8de;font-size:14px;max-width:430px}
+.section{padding:70px 7%}
+.container{max-width:1080px;margin:0 auto}
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:2.5px;
+  font-size:10px;
+  font-weight:600;
+  display:block;
+  margin-bottom:12px;
+  color:var(--wine);
+}
+.alt{background:#f2e9df}
+
+.cardGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:26px;margin-top:24px}
+.card{
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+}
+.card figure{margin:0;height:300px;overflow:hidden}
+.cardBody{padding:20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card h3{font-size:19px;margin-bottom:4px}
+.price{font-size:17px;color:var(--wine);font-weight:700;display:block}
+.twoCol{display:grid;grid-template-columns:1fr 1fr;gap:6%;align-items:center}
+.twoCol.reverse figure{order:2}
+.figure{margin:0;height:520px;position:relative;overflow:hidden;border-radius:10px}
+.figcaption{
+  position:absolute;
+  bottom:16px;
+  left:16px;
+  background:rgba(0,0,0,.6);
+  color:#fff;
+  padding:6px 10px;
+  font-size:11px;
+  border-radius:4px;
+  max-width:80%;
+}
+.contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:24px}
+.contactGrid a{color:var(--wine);text-decoration:underline;text-underline-offset:4px}
+
+.journalGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:24px}
+.journalEntry{
+  border:1px solid var(--line);
+  border-radius:10px;
+  overflow:hidden;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+}
+.journalEntry figure{margin:0;height:260px;overflow:hidden}
+.journalBody{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cat{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--wine);font-weight:600}
+.journalEntry h3{font-size:20px}
+.journalEntry p{font-size:13px;color:#5a4d52}
+
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 10px}
+.filter{
+  padding:9px 16px;
+  background:transparent;
+  border:1px solid #bfaea4;
+  font-size:12px;
+  color:var(--ink);
+  border-radius:30px;
+  cursor:pointer;
+}
+.filter.active{background:var(--wine);border-color:var(--wine);color:#fff}
+
+.dialog{
+  border:0;
+  padding:0;
+  background:var(--bg);
+  color:var(--ink);
+  max-width:960px;
+  width:calc(100% - 32px);
+  max-height:92svh;
+  box-shadow:0 25px 100px rgba(0,0,0,.18);
+  border-radius:12px;
+}
+dialog::backdrop{background:rgba(29,17,26,.75);backdrop-filter:blur(4px)}
+.dialogHead{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 24px;
+  border-bottom:1px solid var(--line);
+  position:sticky;
+  top:0;
+  background:var(--bg);
+  z-index:2;
+}
+.dialogHead span{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--wine)}
+.closeBtn{
+  background:none;
+  font-size:28px;
+  color:var(--wine);
+  width:44px;
+  height:44px;
+  line-height:1;
+  padding:0;
+}
+.dialogBody{padding:26px;overflow-y:auto}
+.dialogBody h2{font-size:34px;margin-bottom:10px}
+.muted{font-size:12px;color:var(--muted)}
+.demoNote{
+  padding:12px 15px;
+  background:#f1e1dd;
+  border-left:3px solid var(--wine);
+  font-size:11px;
+  margin:16px 0;
+}
+.progress{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.progress span{font-size:10px;padding:6px 10px;border-bottom:2px solid var(--line);color:#6e5a62}
+.progress .current{border-color:var(--wine);color:var(--wine);font-weight:700}
+.formGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+label{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  font-size:12px;
+  font-weight:600;
+}
+input,select,textarea{
+  width:100%;
+  border:1px solid #bdaba5;
+  background:#fff;
+  padding:11px 12px;
+  color:var(--ink);
+  min-height:46px;
+  border-radius:4px;
+}
+textarea{resize:vertical;min-height:110px}
+.full{grid-column:1/-1}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.error{
+  color:#9e163c;
+  background:#fff0f0;
+  padding:12px;
+  font-size:12px;
+  margin:14px 0;
+  border-radius:4px;
+}
+.roomOption{
+  border-top:1px solid var(--line);
+  padding:20px 0;
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
+.roomOption>div{flex:1}
+.roomOption h3{margin:0 0 6px;font-size:22px}
+.status{display:inline-block;background:var(--blush);padding:4px 10px;color:var(--wine);font-size:10px;border-radius:4px}
+.successMark{font:46px var(--serif);color:var(--wine);line-height:1}
+.summaryRow{
+  display:flex;
+  justify-content:space-between;
+  gap:16px;
+  padding:10px 0;
+  border-bottom:1px solid var(--line);
+  font-size:13px;
+}
+.summaryRow.total{font-weight:700;font-size:17px}
+.bottomBar{
+  display:none;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:var(--bg);
+  border-top:1px solid var(--line);
+  z-index:40;
+  padding:8px 18px calc(8px + env(safe-area-inset-bottom));
+  gap:8px;
+}
+.bottomBar a,.bottomBar button{
+  flex:1;
+  font-size:12px;
+  min-height:42px;
+  padding:8px 12px;
+  border-radius:6px;
+}
+.footer{
+  padding:30px 7% 40px;
+  font-size:11px;
+  color:#6c5d61;
+  border-top:1px solid var(--line);
+}
+.footer p+p{margin-top:10px}
+.credits{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:14px}
+.credits a{color:var(--wine);text-decoration:underline}
+
+.staffRecord{border-top:1px solid var(--line);padding:16px 0}
+.staffRecord summary{
+  cursor:pointer;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:center;
+  font-size:13px;
+  font-weight:600;
+}
+.staffRecord p{font-size:12px;margin:8px 0}
+
+@media (max-width:800px){
+  .section{padding:50px 5%}
+  .hero{min-height:640px;height:auto;padding-bottom:90px}
+  .hero-content{padding:28px 22px 80px}
+  .hero h1{font-size:56px}
+  .twoCol,.twoCol.reverse{grid-template-columns:1fr}
+  .figure{height:400px}
+  .cardGrid{grid-template-columns:1fr}
+  .contactGrid{grid-template-columns:1fr}
+  .bottomBar{display:flex}
+  .menu{right:15px;left:15px;top:54px}
+}
+@media (min-width:801px){.bottomBar{display:none}}
+</style>
+</head>
+<body>
+
+<div class="notice">Independent website concept by LeadSky for Lagos Oriental Hotel. Not their official website.</div>
+
+<header class="header">
+  <a class="brand" href="#home" aria-label="Lagos Oriental Hotel home">Lagos Oriental<small>Hotel · Victoria Island, Lagos</small></a>
+  <div class="nav-actions">
+    <a class="btn" href="#contact">Contact</a>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainMenu">Menu</button>
+  </div>
+  <nav id="mainMenu" class="menu" hidden aria-label="Main navigation">
+    <a href="#rooms">Rooms &amp; Suites</a>
+    <a href="#dining">Dining</a>
+    <a href="#events">Meetings &amp; Events</a>
+    <a href="#journal">The Journal</a>
+    <a href="#contact">Contact</a>
+    <button id="openStaff">Staff view (demo)</button>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" id="home" aria-labelledby="heroTitle">
+    <img src="img/stock-1.jpg" alt="Reference photograph of a softly lit hotel bedroom" width="1600" height="1067" fetchpriority="high">
+    <div class="hero-content">
+      <h1 id="heroTitle">Lagos Oriental<br>Hotel</h1>
+      <p class="heroWhere">Victoria Island, Lagos, Nigeria</p>
+      <p class="heroDesc">Rooms, dining and meetings in one place. Choose your dates and check sample availability.</p>
+      <a class="btn" id="heroBook">Check sample availability</a>
+      <a class="btn secondary" href="tel:+2342012806600">Call +234 201 280 6600</a>
+    </div>
+  </section>
+
+  <section class="section" id="rooms">
+    <div class="container">
+      <span class="eyebrow">Rooms &amp; Suites</span>
+      <h2>Your dates.<br>Your next chapter.</h2>
+      <p>Compare clearly labelled sample room options and review an illustrative estimate before you try the reservation journey.</p>
+      <div class="cardGrid">
+        <article class="card">
+          <figure><img src="img/stock-3.jpg" alt="Reference bedroom interior with warm furnishings, illustrative stock photo" width="700" height="450" loading="lazy"></figure>
+          <div class="cardBody">
+            <h3>Sample Room Option A</h3>
+            <p class="price">₦125,000 / night</p>
+            <p>Illustrative capacity: up to 2 guests. Rates shown are samples only, not hotel prices.</p>
+            <button class="btn small" data-room="0">Select room</button>
+          </div>
+        </article>
+        <article class="card">
+          <figure><img src="img/stock-4.jpg" alt="Reference hotel bedroom with white bed linen, illustrative stock photo" width="700" height="450" loading="lazy"></figure>
+          <div class="cardBody">
+            <h3>Sample Room Option B</h3>
+            <p class="price">₦185,000 / night</p>
+            <p>Illustrative capacity: up to 4 guests. Rates shown are samples only, not hotel prices.</p>
+            <button class="btn small" data-room="1">Select room</button>
+          </div>
+        </article>
+        <article class="card">
+          <figure><img src="img/stock-12.jpg" alt="Reference welcoming bedroom interior, illustrative stock photo" width="700" height="450" loading="lazy"></figure>
+          <div class="cardBody">
+            <h3>Sample Room Option C</h3>
+            <p class="price">₦220,000 / night</p>
+            <p>Illustrative capacity: up to 6 guests. Rates shown are samples only, not hotel prices.</p>
+            <button class="btn small" data-room="2">Select room</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="dining">
+    <div class="container">
+      <div class="twoCol">
+        <div>
+          <span class="eyebrow">Dining</span>
+          <h2>Make room<br>for the table.</h2>
+          <p>Prepare a sample dining enquiry for your party. No table is held and nothing is sent to the hotel.</p>
+          <button class="btn" id="openDining">Plan dining</button>
+        </div>
+        <figure class="figure"><img src="img/stock-6.jpg" alt="Reference restaurant table setting, illustrative stock photo" width="900" height="600" loading="lazy"><figcaption>Reference dining setting · Not hotel premises</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="events">
+    <div class="container">
+      <div class="twoCol reverse">
+        <figure class="figure"><img src="img/stock-9.jpg" alt="Reference meeting room with a long table and daylight, illustrative stock photo" width="900" height="600" loading="lazy"><figcaption>Reference meeting space · Not a hotel venue</figcaption></figure>
+        <div>
+          <span class="eyebrow">Meetings &amp; Events</span>
+          <h2>A clear brief.<br>A better beginning.</h2>
+          <p>Put the date, guest count and requirements in one place. Build an illustrative planning estimate and download a copy for review.</p>
+          <button class="btn" id="openEvents">Build a meeting brief</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="journal">
+    <div class="container">
+      <span class="eyebrow">The journal</span>
+      <h2>Stories to explore.</h2>
+      <p>Illustrative photography to help you picture a stay, a meal or a gathering.</p>
+      <div class="filters" role="group" aria-label="Filter journal">
+        <button class="filter active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter" data-filter="rooms">Rooms &amp; Suites</button>
+        <button class="filter" data-filter="dining">Dining</button>
+        <button class="filter" data-filter="events">Meetings &amp; Events</button>
+      </div>
+      <div class="journalGrid" id="journalGrid">
+        <article class="journalEntry" data-category="rooms">
+          <figure><img src="img/stock-2.jpg" alt="Illustrative bright bedroom interior, stock reference photo" width="500" height="340" loading="lazy"></figure>
+          <div class="journalBody">
+            <span class="cat">Rooms &amp; Suites</span>
+            <h3>A slower start.</h3>
+            <p>Explore dates and a sample room estimate.</p>
+            <button class="openStory" data-img="img/stock-2.jpg" data-title="A slower start." data-category="Rooms &amp; Suites" data-photo="6719005 &middot; Pixabay" data-source="https://pixabay.com/photos/room-home-the-interior-furniture-4768554/" data-action="booking">Open story &rarr;</button>
+          </div>
+        </article>
+        <article class="journalEntry" data-category="dining">
+          <figure><img src="img/stock-7.jpg" alt="Illustrative plated lasagna, stock reference photo" width="500" height="340" loading="lazy"></figure>
+          <div class="journalBody">
+            <span class="cat">Dining</span>
+            <h3>An evening, considered.</h3>
+            <p>Add a date and dietary notes to your enquiry.</p>
+            <button class="openStory" data-img="img/stock-7.jpg" data-title="An evening, considered." data-category="Dining" data-photo="Foodart &middot; Pixabay" data-source="https://pixabay.com/photos/lasagna-pasta-meal-italian-kitchen-5994612/" data-action="dining">Open story &rarr;</button>
+          </div>
+        </article>
+        <article class="journalEntry" data-category="events">
+          <figure><img src="img/stock-10.jpg" alt="Illustrative contemporary conference room, stock reference photo" width="500" height="340" loading="lazy"></figure>
+          <div class="journalBody">
+            <span class="cat">Meetings &amp; Events</span>
+            <h3>Space for the conversation.</h3>
+            <p>Bring your meeting requirements together.</p>
+            <button class="openStory" data-img="img/stock-10.jpg" data-title="Space for the conversation." data-category="Meetings &amp; Events" data-photo="Pexels &middot; Pixabay" data-source="https://pixabay.com/photos/chairs-conference-room-contemporary-2181994/" data-action="events">Open story &rarr;</button>
+          </div>
+        </article>
+        <article class="journalEntry" data-category="dining">
+          <figure><img src="img/stock-5.jpg" alt="Illustrative table setting with food, stock reference photo" width="500" height="340" loading="lazy"></figure>
+          <div class="journalBody">
+            <span class="cat">Dining</span>
+            <h3>A place at the table.</h3>
+            <p>Prepare a dining enquiry for your party.</p>
+            <button class="openStory" data-img="img/stock-5.jpg" data-title="A place at the table." data-category="Dining" data-photo="RealAKP &middot; Pixabay" data-source="https://pixabay.com/photos/table-food-lunch-breakfast-fresh-710040/" data-action="dining">Open story &rarr;</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h2>Get in touch.</h2>
+      <div class="contactGrid">
+        <div>
+          <p><strong>Lagos Oriental Hotel</strong></p>
+          <p>3 Lekki Road, Victoria Island, Lagos, Nigeria</p>
+          <p>Opening hours: please phone the hotel.</p>
+          <p><a href="tel:+2342012806600">+234 (0) 201 280 6600–5</a></p>
+          <p><a href="mailto:reservation@lagosoriental.com">reservation@lagosoriental.com</a></p>
+          <p>Contact details reproduced from supplied information. Live verification pending.</p>
+        </div>
+        <div>
+          <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Lagos+Oriental+Hotel+3+Lekki+Road+Victoria+Island+Lagos" target="_blank" rel="noopener">View location &rarr;</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="bottomBar">
+  <a class="btn" href="tel:+2342012806600">Call hotel</a>
+  <a class="btn" href="https://wa.me/2342012806600" target="_blank" rel="noopener">WhatsApp</a>
+</div>
+
+<footer>
+  <div class="container">
+    <p>Concept by LeadSky &middot; Independent and unendorsed.</p>
+    <p>All photographs are illustrative references. They do not show Lagos Oriental Hotel&rsquo;s premises, accommodation, food or employees.</p>
+    <details>
+      <summary>Photography credits &amp; usage</summary>
+      <p>Supplied assets under the <a href="https://pixabay.com/service/license-summary/" target="_blank" rel="noopener">Pixabay Content License</a>. No attribution required; credited here with thanks.</p>
+      <div class="credits" id="credits"></div>
+    </details>
+  </div>
+</footer>
+
+<dialog id="workspace" aria-labelledby="dialogTitle">
+  <div class="dialogHead"><span id="dialogLabel">LAGOS ORIENTAL / PRODUCT CONCEPT</span><button class="closeBtn" id="closeDialog" aria-label="Close workspace">&#215;</button></div>
+  <div class="dialogBody" id="workspaceBody"></div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+"use strict";
+var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+var $=function(s){return document.querySelector(s)};
+var $$=function(s){return[].slice.call(document.querySelectorAll(s))};
+var esc=function(v){return String(v??'').replace(/[&<>"']/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])})};
+var money=function(n){return new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:0}).format(n)};
+var today=new Date();today.setHours(0,0,0,0);
+function iso(d){var dd=new Date(d);return dd.getFullYear()+'-'+String(dd.getMonth()+1).padStart(2,'0')+'-'+String(dd.getDate()).padStart(2,'0')}
+function plusDate(n){var dd=new Date(today);dd.setDate(dd.getDate()+n);return iso(dd)}
+function nextDay(s){var dd=new Date(s+'T12:00:00');dd.setDate(dd.getDate()+1);return iso(dd)}
+function dateLabel(s){return new Date(s+'T12:00:00').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}
+
+var photos=[
+  ["stock-1.jpg","Engin_Akyurt","https://pixabay.com/photos/bed-hotel-luxurious-bedroom-4416515/"],
+  ["stock-2.jpg","6719005","https://pixabay.com/photos/room-home-the-interior-furniture-4768554/"],
+  ["stock-3.jpg","3534679","https://pixabay.com/photos/bedroom-indoors-interior-design-3475656/"],
+  ["stock-4.jpg","Pexels","https://pixabay.com/photos/bedroom-hotel-room-bed-bed-sheets-1285156/"],
+  ["stock-5.jpg","RealAKP","https://pixabay.com/photos/table-food-lunch-breakfast-fresh-710040/"],
+  ["stock-6.jpg","neshom","https://pixabay.com/photos/restaurant-table-setting-table-449952/"],
+  ["stock-7.jpg","Foodart","https://pixabay.com/photos/lasagna-pasta-meal-italian-kitchen-5994612/"],
+  ["stock-8.jpg","RitaE","https://pixabay.com/photos/pasta-italian-cuisine-dish-3547078/"],
+  ["stock-9.jpg","Pexels","https://pixabay.com/photos/chairs-table-contemporary-furniture-2181960/"],
+  ["stock-10.jpg","Pexels","https://pixabay.com/photos/chairs-conference-room-contemporary-2181994/"],
+  ["stock-11.jpg","Rodrigo_SalomonHC","https://pixabay.com/photos/receptionists-phone-call-hotel-5975962/"],
+  ["stock-12.jpg","ManuelaJaeger","https://pixabay.com/photos/hotel-hotel-rooms-home-decoration-1749602/"]
+];
+var creditHtml='';
+for(var i=0;i<photos.length;i++){var p=photos[i];creditHtml+='<a href="'+p[2]+'" target="_blank" rel="noopener">'+(i+1)+'. '+p[1]+' / Pixabay</a>';}
+$('#credits').innerHTML=creditHtml;
+
+var roomOptions=[{name:'Sample Room Option A',rate:125000,max:2},{name:'Sample Room Option B',rate:185000,max:4},{name:'Sample Room Option C',rate:220000,max:6}];
+var draft={arrival:plusDate(1),departure:plusDate(3),guests:'2',room:0,name:'',email:'',outcome:'approved'};
+var records=[];try{var saved=JSON.parse(localStorage.getItem('oriental-demo-records')||'[]');if(Array.isArray(saved)){records=saved.filter(function(r){return r&&r.id&&r.type})}}catch(e){}
+function persist(){try{localStorage.setItem('oriental-demo-records',JSON.stringify(records))}catch(e){}}
+var returnFocus=null;
+var view='',step=0,editId=null;
+var dialog=$('#workspace'),body=$('#workspaceBody'),closeBtn=$('#closeDialog');
+
+function show(markup){
+  body.innerHTML=markup;
+  body.scrollTop=0;
+  if(!dialog.open){returnFocus=document.activeElement;dialog.showModal()}
+  dialog.scrollTop=0;
+  requestAnimationFrame(function(){
+    var h=$('#dialogTitle');
+    if(h){h.tabIndex=-1;h.focus({preventScroll:true})}
+  });
+}
+function closeDialog(){dialog.close();view=''}
+closeBtn.onclick=closeDialog;
+dialog.addEventListener('close',function(){view='';if(returnFocus&&returnFocus.isConnected){returnFocus.focus()}});
+dialog.addEventListener('click',function(e){if(e.target===dialog){var r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom){closeDialog()}}});
+
+document.addEventListener('click',function(e){
+  var opener=e.target.closest('[data-open]');
+  if(opener){openView(opener.getAttribute('data-open'))}
+  var story=e.target.closest('.openStory');
+  if(story){openStory(story)}
+  var roomBtn=e.target.closest('[data-room]');
+  if(roomBtn){draft.room=roomBtn.getAttribute('data-room');step=2;renderBooking()}
+});
+
+function openView(v){
+  view=v;
+  if(v==='booking'){step=0;editId=null;renderBooking()}
+  else if(v==='stay'){renderStay()}
+  else if(v==='staff'){renderStaff()}
+  else if(v==='guide'){renderGuide()}
+  else if(v==='dining'||v==='events'){renderEnquiry(v,false)}
+}
+function openStory(el){
+  var imgSrc=el.getAttribute('data-img');
+  var title=el.getAttribute('data-title');
+  var category=el.getAttribute('data-category');
+  var photo=el.getAttribute('data-photo');
+  var source=el.getAttribute('data-source');
+  var action=el.getAttribute('data-action');
+  view='lightbox';
+  show('<h2 id="dialogTitle">'+esc(title)+'</h2><p class="muted">'+esc(category)+' &middot; Illustrative stock photography</p><div style="height:420px;border-radius:8px;overflow:hidden;margin:16px 0;background:#e4d8d0"><img src="'+imgSrc+'" alt="'+esc(title)+', illustrative reference" width="1200" height="800" style="width:100%;height:100%;object-fit:cover"></div><p class="muted" style="margin-top:12px">Reference photograph, not Lagos Oriental Hotel. Photo: <a href="'+source+'" target="_blank" rel="noopener">'+esc(photo)+'</a>. Supplied under the Pixabay Content License.</p><p style="margin-top:14px">This is an illustrative reference only.</p><div class="actions"><button class="btn" data-open="'+action+'">'+(action==='booking'?'Check sample availability':action==='dining'?'Plan dining':'Build a meeting brief')+' &rarr;</button><button class="btn secondary" id="closeLightbox">Close</button></div>');
+  $('#closeLightbox').onclick=closeDialog;
+}
+
+function nights(){return Math.round((new Date(draft.departure+'T12:00:00')-new Date(draft.arrival+'T12:00:00'))/86400000)}
+function totals(){
+  var amount=roomOptions[draft.room].rate*nights();
+  return '<div class="summaryRow"><span>'+esc(roomOptions[draft.room].name)+'</span><span>'+money(roomOptions[draft.room].rate)+' / night</span></div>' +
+         '<div class="summaryRow"><span>'+dateLabel(draft.arrival)+' &rarr; '+dateLabel(draft.departure)+'</span><span>'+nights()+' night'+(nights()>1?'s':'')+'</span></div>' +
+         '<div class="summaryRow"><span>Guests</span><span>'+esc(draft.guests)+'</span></div>' +
+         '<div class="summaryRow total"><span>Sample total</span><span>'+money(amount)+'</span></div>' +
+         '<p class="muted" style="margin-top:12px">Illustrative rates only. Not hotel prices. No actual tax or fee treatment is represented.</p>';
+}
+function bookingTop(){
+  return '<div class="progress" aria-label="Reservation steps">'+['Dates','Room','Review','Payment','Confirmation'].map(function(s,i){return '<span class="'+(step===i?'current':'')+'" '+(step===i?'aria-current="step"':'')+'>'+(i+1)+' / '+s+'</span>'}).join('')+'</div>' +
+         '<h2 id="dialogTitle">'+['A date with Lagos.','Find your sample stay.','Everything, in view.','Try the payment step.','Your sample stay.'][step]+'</h2>';
+}
+function availability(){
+  var n=+draft.arrival.slice(-2);
+  return roomOptions.map(function(r,i){return {index:i,available:n!==15&&+draft.guests<=r.max&&!(i===0&&n%3===0),name:r.name,rate:r.rate,max:r.max}});
+}
+function renderBooking(error){
+  view='booking';
+  var content=bookingTop();
+  if(step===0){
+    content+='<p>Choose dates to explore simulated room availability.</p><div class="demoNote">Sample inventory. No live hotel availability is checked. For an unavailable result, choose any future arrival on the 15th.</div><form id="datesForm"><div class="formGrid"><label>Check-in<input type="date" id="arrival" required min="'+iso(today)+'" value="'+draft.arrival+'"></label><label>Check-out<input type="date" id="departure" required min="'+nextDay(draft.arrival)+'" value="'+draft.departure+'"></label><label>Guests<select id="guests">'+[1,2,3,4].map(function(n){return '<option '+(+draft.guests===n?'selected':'')+'>'+n+'</option>'}).join('')+'</select></label></div><p class="muted" id="dateSummary" aria-live="polite">'+nights()+' sample nights selected.</p>'+(error?'<div class="error" role="alert">'+esc(error)+'</div>':'')+'<div class="actions"><button class="btn" type="submit">Check sample availability &rarr;</button><button type="button" class="textbtn" id="unavailableTest">Try unavailable dates</button></div></form>';
+    show(content);
+    $('#arrival').onchange=function(){var a=$('#arrival').value;if(a){$('#departure').min=nextDay(a);if($('#departure').value<=a){$('#departure').value=nextDay(a)}}updateDateSummary()};
+    $('#departure').onchange=updateDateSummary;
+    $('#unavailableTest').onclick=function(){var d=new Date(today);d.setDate(15);if(d<today){d.setMonth(d.getMonth()+1)}draft.arrival=iso(d);draft.departure=nextDay(draft.arrival);renderBooking();$('#dateSummary').textContent='Unavailable test dates selected. Check availability to see the result.'};
+    $('#datesForm').onsubmit=function(e){e.preventDefault();draft.arrival=$('#arrival').value;draft.departure=$('#departure').value;draft.guests=$('#guests').value;if(draft.arrival<iso(today)||draft.departure<=draft.arrival){return renderBooking('Choose a current or future arrival and a departure after arrival.')}step=1;renderBooking()};
+  }
+  if(step===1){
+    var available=availability();var any=false;for(var i=0;i<available.length;i++){if(available[i].available){any=true;break}}
+    content+='<p>'+dateLabel(draft.arrival)+' &mdash; '+dateLabel(draft.departure)+' &middot; '+nights()+' nights &middot; '+draft.guests+' guest'+(+draft.guests>1?'s':'')+'</p><div class="demoNote">These are sample options, not verified hotel room categories or rates.</div>';
+    if(!any){content+='<div class="error" role="status">No sample rooms match these dates and guests. No hotel inventory was checked. Try another arrival date.</div>'}
+    for(var j=0;j<available.length;j++){var r=available[j];content+='<div class="roomOption"><div><h3>'+esc(r.name)+'</h3><p>Demo capacity: up to '+r.max+' guests</p><p class="price">'+money(r.rate)+' <small style="font-size:11px">/ night, illustrative</small></p><p>'+(r.available?'Sample total: '+money(r.rate*nights()):'Unavailable in this sample scenario')+'</p></div><button class="btn '+(r.available?'':'secondary')+'" data-room="'+r.index+'" '+(r.available?'':'disabled')+'>'+(r.available?'Select &rarr;':'Unavailable')+'</button></div>'}
+    content+='<div class="actions"><button class="textbtn" id="bookingBack">&larr; Change dates</button></div>';
+    show(content);$$('[data-room]').forEach(function(b){b.onclick=function(){draft.room=b.getAttribute('data-room');step=2;renderBooking()}});$('#bookingBack').onclick=function(){step=0;renderBooking()};
+  }
+  if(step===2){
+    content+=totals()+'<form id="guestForm"><div class="formGrid"><label>Guest name for the sample record<input name="name" value="'+esc(draft.name)+'" required maxlength="80" autocomplete="off" placeholder="Use a fictional name"></label><label>Demo email<input name="email" type="email" value="'+esc(draft.email)+'" required maxlength="150" autocomplete="off" placeholder="guest@example.com"></label></div><div class="demoNote">Use fictional details. This is a demo form, nothing was sent. Records are stored only in this browser.</div><div class="actions"><button class="btn" type="submit">Continue to simulated payment &rarr;</button><button class="textbtn" type="button" id="bookingBack">&larr; Change room</button></div></form>';
+    show(content);
+    $('#guestForm').onsubmit=function(e){e.preventDefault();draft.name=$('#guestForm').elements.name.value.trim();draft.email=$('#guestForm').elements.email.value.trim();if(!draft.name){$('#guestForm').elements.name.setCustomValidity('Enter a sample guest name.');$('#guestForm').elements.name.reportValidity();return}step=3;renderBooking()};
+    $('#guestForm').elements.name.oninput=function(e){e.target.setCustomValidity('')};
+    $('#bookingBack').onclick=function(){draft.name=$('#guestForm').elements.name.value.trim();draft.email=$('#guestForm').elements.email.value.trim();step=1;renderBooking()};
+  }
+  if(step===3){
+    content+='<p>No card details. No payment provider. Choose the outcome you want to test.</p>'+totals()+'<form id="paymentForm"><div class="formGrid"><label class="full">Simulated payment outcome<select id="paymentOutcome"><option value="approved" '+(draft.outcome==='approved'?'selected':'')+'>Approved &mdash; create a sample confirmation</option><option value="declined" '+(draft.outcome==='declined'?'selected':'')+'>Declined &mdash; keep the booking unconfirmed</option></select></label></div>'+(error?'<div class="error" role="alert">'+esc(error)+'</div>':'')+'<div class="demoNote">This is a demo form, nothing was sent. Nothing is charged or reserved.</div><div class="actions"><button class="btn" type="submit">Simulate payment outcome &rarr;</button><button class="textbtn" type="button" id="bookingBack">&larr; Edit guest details</button></div></form>';
+    show(content);
+    $('#paymentOutcome').onchange=function(e){draft.outcome=e.target.value};
+    $('#paymentForm').onsubmit=function(e){e.preventDefault();draft.outcome=$('#paymentOutcome').value;if(draft.outcome==='declined'){renderBooking('Simulated payment declined. No sample reservation was created or amended. Choose Approved to try again.');return}var rec={id:editId||'LO-DEMO-'+Date.now().toString(36).toUpperCase(),type:'Stay',status:'Sample confirmed',total:roomOptions[draft.room].rate*nights(),created:new Date().toISOString(),arrival:draft.arrival,departure:draft.departure,guests:draft.guests,room:draft.room,name:draft.name,email:draft.email};if(editId){var at=records.findIndex(function(r){return r.id===editId});if(at>=0){records[at]=rec}}else{records.unshift(rec)}persist();draft.lastId=rec.id;step=4;renderBooking()};
+    $('#bookingBack').onclick=function(){step=2;renderBooking()};
+  }
+  if(step===4){
+    content+='<div class="successMark" aria-hidden="true">&#10003;</div><span class="status">Simulated confirmation</span><h3>'+esc(draft.lastId)+'</h3><p>'+esc(draft.name)+', your sample reservation record is ready to explore.</p>'+totals()+'<div class="demoNote">This is a demo form, nothing was sent. No room is reserved, no payment occurred and no email was issued. Contact the hotel for a real reservation.</div><div class="actions"><button class="btn" data-open="stay">View my sample stay &rarr;</button><button class="btn secondary" data-open="staff">See staff record</button><button class="textbtn" id="downloadStay">Download demo summary</button></div>';
+    show(content);
+    $('#downloadStay').onclick=function(){download('sample-stay.txt','LAGOS ORIENTAL HOTEL \u2014 INDEPENDENT DEMO\nReference: '+draft.lastId+'\n'+draft.name+'\n'+draft.arrival+' to '+draft.departure+'\n'+roomOptions[draft.room].name+'\nIllustrative total: '+money(roomOptions[draft.room].rate*nights())+'\nNothing sent, charged or reserved.')};
+  }
+}
+function updateDateSummary(){var a=$('#arrival').value,b=$('#departure').value;$('#dateSummary').textContent=a&&b&&b>a?Math.round((new Date(b+'T12:00:00')-new Date(a+'T12:00:00'))/86400000)+' sample nights selected.':'Choose a departure after arrival.'}
+
+function renderStay(){
+  view='stay';
+  var stays=records.filter(function(r){return r.type==='Stay'});
+  var listHtml='';
+  if(stays.length){
+    listHtml=stays.map(function(r){return '<article style="border-top:1px solid var(--line);padding:20px 0"><span class="status">'+esc(r.status)+'</span><h3>'+esc(r.name)+'</h3><p class="muted">'+esc(r.id)+'</p><div class="summaryRow"><span>Dates</span><span>'+dateLabel(r.arrival)+'<br>'+dateLabel(r.departure)+'</span></div><div class="summaryRow"><span>Room</span><span>'+esc(roomOptions[r.room]?.name||'Sample room')+'</span></div><div class="summaryRow"><span>'+esc(r.guests)+' guests</span><span>'+money(r.total)+' illustrative</span></div><div class="actions">'+(r.status!=='Cancelled'?'<button class="btn secondary" data-amend="'+esc(r.id)+'">Amend</button><button class="textbtn" data-cancel="'+esc(r.id)+'">Cancel sample stay</button>':'<p class="muted">This local sample record is cancelled.</p>')+'</div></article>'}).join('');
+  }else{
+    listHtml='<h3>Your journey starts here.</h3><p>No sample reservation has been created in this browser yet.</p><div class="actions"><button class="btn" data-open="booking">Try a reservation &rarr;</button></div>';
+  }
+  show('<h2 id="dialogTitle">My sample stay.</h2><p class="muted">Guest portal concept. Uses the same local demonstration records. This is not a native mobile application.</p>'+listHtml+'<div class="demoNote">Sample data only. Nothing has been sent, paid or reserved.</div><div class="actions"><button class="textbtn" id="resetRecords">Reset all local demo records</button></div><div id="resetPrompt"></div>');
+  $$('[data-amend]').forEach(function(b){b.onclick=function(){var r=records.find(function(x){return x.id===b.getAttribute('data-amend')});draft={arrival:r.arrival,departure:r.departure,guests:r.guests,room:r.room,name:r.name,email:r.email,outcome:'approved'};editId=r.id;step=0;renderBooking()}});
+  $$('[data-cancel]').forEach(function(b){b.onclick=function(){var r=records.find(function(x){return x.id===b.getAttribute('data-cancel')});b.parentElement.innerHTML='<p>Cancel this sample stay?</p><button class="btn secondary" id="confirmCancel">Yes, cancel locally</button><button class="textbtn" id="keepStay">Keep stay</button>';$('#confirmCancel').onclick=function(){r.status='Cancelled';persist();renderStay()};$('#keepStay').onclick=renderStay}});
+  $('#resetRecords').onclick=function(){$('#resetPrompt').innerHTML='<div class="demoNote">Remove all sample reservations and enquiries from this browser?<div class="actions"><button class="btn" id="confirmReset">Reset demo data</button><button class="textbtn" id="keepRecords">Keep records</button></div></div>';$('#confirmReset').onclick=function(){records=[];persist();editId=null;draft={arrival:plusDate(1),departure:plusDate(3),guests:'2',room:0,name:'',email:'',outcome:'approved'};renderStay()};$('#keepRecords').onclick=function(){$('#resetPrompt').innerHTML=''}};
+}
+
+var enquiryDraft={Dining:{date:plusDate(2),people:2,name:'',email:'',notes:''},Events:{date:plusDate(7),people:20,name:'',email:'',notes:'',setup:'Meeting',catering:'No catering'}};
+function renderEnquiry(kind,review){
+  view=kind;
+  var event=kind==='events';
+  var key=event?'Events':'Dining';
+  var d=enquiryDraft[key];
+  var estimate=event?+d.people*12000+(d.catering==='Include catering'?+d.people*8000:0):0;
+  if(review){
+    show('<h2 id="dialogTitle">'+(event?'Your meeting brief.':'Your dining enquiry.')+'</h2><span class="status">Sample &middot; Not sent</span><div class="summaryRow"><span>Date</span><span>'+dateLabel(d.date)+'</span></div><div class="summaryRow"><span>'+(event?'Attendees':'Party size')+'</span><span>'+esc(d.people)+'</span></div><div class="summaryRow"><span>Contact</span><span>'+esc(d.name)+'<br>'+esc(d.email)+'</span></div>'+(event?'<div class="summaryRow"><span>Plan</span><span>'+esc(d.setup)+'<br>'+esc(d.catering)+'</span></div><div class="summaryRow"><span>Illustrative meeting allowance</span><span>'+money(+d.people*12000)+'</span></div><div class="summaryRow"><span>Illustrative catering allowance</span><span>'+money(d.catering==='Include catering'?+d.people*8000:0)+'</span></div><div class="summaryRow total"><span>Planning estimate</span><span>'+money(estimate)+'</span></div><p class="muted">Demo formula: \u20a612,000 per attendee plus \u20a68,000 per attendee if catering is selected. Not a hotel quotation or published price.</p>':'')+'<h3>Requirements</h3><p>'+esc(d.notes||'No additional requirements entered.')+'</p><div class="demoNote">This is a demo form, nothing was sent. No venue or table is held. Any estimate is illustrative.</div><div class="actions"><button class="btn" id="saveEnquiry">Save sample '+(event?'brief':'enquiry')+' locally</button><button class="btn secondary" id="editEnquiry">&larr; Edit</button><button class="textbtn" id="downloadBrief">Download demo brief</button></div><div id="saveResult" aria-live="polite"></div>');
+    $('#editEnquiry').onclick=function(){renderEnquiry(kind)};
+    $('#downloadBrief').onclick=function(){download((event?'sample-meeting-brief.txt':'sample-dining-enquiry.txt'),'LAGOS ORIENTAL HOTEL \u2014 INDEPENDENT DEMO\n'+key+' enquiry\nDate: '+d.date+'\nPeople: '+d.people+'\nName: '+d.name+'\nDemo email: '+d.email+'\n'+(event?'Setup: '+d.setup+'\nCatering: '+d.catering+'\nIllustrative estimate: '+money(estimate)+'\n':'')+'Requirements: '+(d.notes||'None entered')+'\nThis is a demo form, nothing was sent. No reservation or price commitment.')};
+    $('#saveEnquiry').onclick=function(){records.unshift({...d,id:'LO-DEMO-'+Date.now().toString(36).toUpperCase(),type:event?'Meeting':'Dining',status:'Draft',total:estimate,created:new Date().toISOString()});persist();$('#saveEnquiry').disabled=true;$('#saveResult').innerHTML='<div class="demoNote">Saved in this browser only. This is a demo form, nothing was sent. <button class="textbtn" data-open="staff">View staff record &rarr;</button></div>'};
+    return;
+  }
+  show('<h2 id="dialogTitle">'+(event?'Bring everyone together.':'Plan your table.')+'</h2><p>'+(event?'Create a meeting or event brief with an illustrative estimate.':'Prepare a sample dining enquiry. Venue, menu and table availability require hotel confirmation.')+'</p><form id="enquiryForm"><div class="formGrid"><label>'+(event?'Event':'Dining')+' date<input name="date" type="date" required min="'+iso(today)+'" value="'+d.date+'"></label><label>'+(event?'Attendees':'Party size')+'<input name="people" type="number" required min="1" max="'+(event?500:30)+'" value="'+d.people+'"></label>'+(event?'<label>Format<select name="setup">'+['Meeting','Workshop','Celebration'].map(function(x){return '<option '+(d.setup===x?'selected':'')+'>'+x+'</option>'}).join('')+'</select></label><label>Catering preference<select name="catering">'+['No catering','Include catering'].map(function(x){return '<option '+(d.catering===x?'selected':'')+'>'+x+'</option>'}).join('')+'</select></label>':'')+'<label>Sample contact name<input name="name" required maxlength="80" value="'+esc(d.name)+'" placeholder="Use a fictional name"></label><label>Demo email<input name="email" type="email" required maxlength="150" value="'+esc(d.email)+'" placeholder="guest@example.com"></label><label class="full">'+(event?'Equipment, timing &amp; other requirements':'Preferred time, dietary needs &amp; other notes')+'<textarea name="notes" maxlength="2000">'+esc(d.notes)+'</textarea></label></div><div class="demoNote">Use fictional details. This is a demo form, nothing was sent. No hotel staff member receives this information.</div><div class="actions"><button class="btn" type="submit">Review '+(event?'brief &amp; sample estimate':'sample enquiry')+' &rarr;</button></div></form>');
+  $('#enquiryForm').onsubmit=function(e){e.preventDefault();var data=Object.fromEntries(new FormData(e.target));if(!data.name.trim()){e.target.elements.name.setCustomValidity('Enter a sample name.');e.target.elements.name.reportValidity();return}Object.assign(d,data);renderEnquiry(kind,true)};
+  $('#enquiryForm').elements.name.oninput=function(e){e.target.setCustomValidity('')};
+}
+
+function download(filename,content){var url=URL.createObjectURL(new Blob([content],{type:'text/plain;charset=utf-8'}));var a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},1500)}
+
+var staffSearch='',staffType='All',staffStatus='All';
+function renderStaff(){
+  view='staff';
+  show('<h2 id="dialogTitle">The reservation desk.</h2><p>Sample operational view. Guest reservations, dining enquiries and meeting briefs share the same browser-local records.</p><div class="demoNote">No authentication or live hotel data. Only fictional demonstration details should be entered. No status change contacts a guest.</div><div class="formGrid"><label>Search records<input id="staffSearch" type="search" value="'+esc(staffSearch)+'" placeholder="Name, reference or date"></label><label>Category<select id="staffType">'+['All','Stay','Dining','Meeting'].map(function(x){return '<option '+(staffType===x?'selected':'')+'>'+x+'</option>'}).join('')+'</select></label><label>Status<select id="staffStatus">'+['All','Sample confirmed','Draft','Reviewed','Cancelled'].map(function(x){return '<option '+(staffStatus===x?'selected':'')+'>'+x+'</option>'}).join('')+'</select></label></div><div id="staffResults" aria-live="polite"></div><div class="actions"><button class="btn secondary" data-open="booking">Create sample reservation</button><button class="textbtn" data-open="events">Create meeting brief</button></div>');
+  $('#staffSearch').oninput=function(e){staffSearch=e.target.value;renderStaffResults()};
+  $('#staffType').onchange=function(e){staffType=e.target.value;renderStaffResults()};
+  $('#staffStatus').onchange=function(e){staffStatus=e.target.value;renderStaffResults()};
+  renderStaffResults();
+}
+function renderStaffResults(){
+  var list=records.filter(function(r){return (staffType==='All'||r.type===staffType)&&(staffStatus==='All'||r.status===staffStatus)&&JSON.stringify(r).toLowerCase().includes(staffSearch.toLowerCase())});
+  $('#staffResults').innerHTML='<p class="muted">'+list.length+' sample record'+(list.length===1?'':'s')+'</p>'+(list.length?list.map(function(r){return '<details class="staffRecord"><summary><span>'+esc(r.name)+' &middot; '+esc(r.type)+'<br><small>'+esc(r.id)+'</small></span><span class="status">'+esc(r.status)+'</span></summary><p>Demo email: '+esc(r.email)+'</p><p>'+(r.type==='Stay'?dateLabel(r.arrival)+' &rarr; '+dateLabel(r.departure)+' &middot; '+esc(r.guests)+' guests &middot; '+esc(roomOptions[r.room]?.name||'Sample option'):dateLabel(r.date)+' &middot; '+esc(r.people)+' people')+'</p>'+(r.notes?'<p>Requirements: '+esc(r.notes)+'</p>':'')+(r.setup?'<p>'+esc(r.setup)+' &middot; '+esc(r.catering)+'</p>':'')+(r.total?'<p>Illustrative total: '+money(r.total)+'</p>':'')+'<label>Local status<select data-status-id="'+esc(r.id)+'">'+['Sample confirmed','Draft','Reviewed','Cancelled'].map(function(x){return '<option '+(r.status===x?'selected':'')+'>'+x+'</option>'}).join('')+'</select></label></details>'}).join(''):'<div class="demoNote">No matching sample records. Complete a reservation or save an enquiry to populate this view.</div>');
+  $$('[data-status-id]').forEach(function(s){s.onchange=function(){var r=records.find(function(x){return x.id===s.getAttribute('data-status-id')});r.status=s.value;persist();renderStaffResults()}});
+}
+
+function renderGuide(){
+  show('<h2 id="dialogTitle">A concept you can explore.</h2><p>This independent product sample was created by LeadSky for Lagos Oriental Hotel. It is not endorsed by the hotel and is not its official website.</p><h3>What works in this demo</h3><p>Journal filters and story view, date and guest selection, sample room options, illustrative estimates, guest validation, simulated approved or declined payments, sample confirmation, amendments, cancellation, local staff review, dining enquiries, meeting brief downloads and contact links.</p><h3>What is simulated</h3><p>All inventory, room options, rates, meeting allowances and confirmations. A future arrival on the 15th produces no sample availability. Option A also becomes unavailable when the arrival day is divisible by three, or when more than two guests are selected.</p><h3>What a live product needs</h3><p>Hotel-approved room categories and pricing, a connected property-management or inventory service, a secure payment provider, server-side validation, authentication, notifications, privacy controls and deployment. The companion concept is responsive; a native mobile application requires separate development.</p><h3>Data and photography</h3><p>Records are stored in this browser when local storage is available. Do not enter personal or card information. Reset local records in My sample stay. All supplied Pixabay photographs are references; none depict this hotel, its staff, its food or its accommodation. Credits and source links appear in the footer.</p><h3>Business information</h3><p>The supplied information lists Rooms &amp; Suites, Dining and Meetings &amp; Events, together with 3 Lekki Road, Victoria Island, Lagos, reservation@lagosoriental.com and +234 (0) 201 280 6600&ndash;5. These details have not been independently checked live in this build. No WhatsApp account or official logo has been assumed.</p><div class="demoNote">This is a demo form, nothing was sent. No booking, payment, dining reservation or event request is real.</div><div class="actions"><button class="btn" data-open="booking">Explore a sample booking &rarr;</button><button class="btn secondary" data-open="stay">My sample stay</button></div>');
+}
+
+var menu=$('#menuToggle');var nav=$('#mainMenu');
+menu.onclick=function(){nav.hidden=!nav.hidden;menu.setAttribute('aria-expanded',String(!nav.hidden))};
+document.addEventListener('click',function(e){if(!e.target.closest('.header')){nav.hidden=true;menu.setAttribute('aria-expanded','false')}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!nav.hidden){nav.hidden=true;menu.setAttribute('aria-expanded','false');menu.focus()}});
+
+$('#heroBook').onclick=function(){openView('booking')};
+$('#openDining').onclick=function(){openView('dining')};
+$('#openEvents').onclick=function(){openView('events')};
+$('#openStaff').onclick=function(){openView('staff')};
+
+// Journal filter functionality
+$$('.filter').forEach(function(b){
+  b.onclick=function(){
+    $$('.filter').forEach(function(x){x.classList.remove('active');x.removeAttribute('aria-pressed')});
+    b.classList.add('active');b.setAttribute('aria-pressed','true');
+    var f=b.getAttribute('data-filter');
+    $$('.journalEntry').forEach(function(entry){
+      if(f==='all'||entry.getAttribute('data-category')===f){entry.style.display='flex'}else{entry.style.display='none'}
+    })
+  }
+})
+
+if(!reduced){
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.utils.toArray('.section h2, .section p, .card, .journalEntry, .figure').forEach(function(el){
+    gsap.from(el,{opacity:0,y:20,duration:0.6,ease:'power2.out',scrollTrigger:{trigger:el,start:'top 82%',toggleActions:'play none none none'}});
+  });
+}
+</script>
+</body>
+</html>
