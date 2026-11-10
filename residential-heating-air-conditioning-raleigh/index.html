@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F6F4ED">
+<title>Residential Heating &amp; Air Conditioning · Raleigh · Independent Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F4ED;--ink:#20343e;--blue:#254E64;--night:#152E3D;--rust:#A34723;--ice:#C1DADD;--line:#d8dbd5;--header:64px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--header)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,sans-serif;font-size:15px;line-height:1.6}
+button,a{font:inherit;-webkit-tap-highlight-color:transparent;text-decoration:none}
+button{cursor:pointer}
+a{color:inherit}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--rust);outline-offset:4px}
+button:disabled{cursor:default;opacity:.5}
+::selection{background:var(--ice);color:var(--night)}
+.skip{position:fixed;top:-100px;left:15px;background:white;padding:12px;border:1px solid var(--line);z-index:100;font-size:13px}
+.skip:focus{top:10px}
+
+.notice{margin:0;padding:6px 16px;text-align:center;background:#e8ece7;color:#33434a;font-size:10px;line-height:1.4;border-bottom:1px solid #d7ded7}
+.shell{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav{height:var(--header);max-width:1540px;margin:auto;padding:0 4%;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:8px;min-width:0;flex:1}
+.brand-mark{width:26px;height:26px;border:1px solid var(--blue);border-radius:50%;display:grid;place-items:center;color:var(--blue);font-family:"Archivo Narrow",sans-serif;font-size:14px;flex-shrink:0}
+.brand-name{font-family:"Archivo Narrow",sans-serif;font-weight:600;font-size:clamp(13px,3.5vw,16px);line-height:1.15;letter-spacing:-.2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-actions{display:flex;gap:8px;align-items:center;flex-shrink:0}
+.nav-call{font-size:12px;font-weight:800;border-bottom:1.5px solid var(--rust);padding:4px 0}
+.menu-toggle{border:1px solid #c5cdc8;border-radius:50px;background:none;padding:6px 12px;display:flex;align-items:center;font-size:11px;font-weight:800;line-height:1}
+
+.menu{position:fixed;right:0;top:0;height:100vh;width:min(360px,85vw);background:var(--bg);padding:70px 24px 24px;border-left:1px solid var(--line);box-shadow:-10px 0 35px #152e3d22;z-index:50;display:flex;flex-direction:column;justify-content:space-between;transition:transform .3s cubic-bezier(0.16,1,0.3,1)}
+.menu[hidden]{display:flex;transform:translateX(100%);pointer-events:none;visibility:hidden}
+.menu-backdrop{position:fixed;inset:0;background:rgba(9,25,33,.4);z-index:45;backdrop-filter:blur(2px);transition:opacity .3s}
+.menu-backdrop[hidden]{display:none;opacity:0}
+.menu-close{position:absolute;top:16px;right:20px;background:none;border:1px solid var(--line);border-radius:50%;width:36px;height:36px;font-size:16px;font-weight:700;display:grid;place-items:center}
+.menu-links{display:flex;flex-direction:column;gap:8px}
+.menu-links a{display:flex;gap:16px;padding:12px 4px;border-bottom:1px solid var(--line);font-family:"Archivo Narrow",sans-serif;font-size:20px}
+.menu-footer{font-size:12px;color:#4b5b61;border-top:1px solid var(--line);padding-top:16px}
+
+/* Hero - Ensure content is fully visible immediately, no hidden states */
+.hero{position:relative;padding:60px 0 80px;background:#152E3D;color:white;overflow:hidden;display:flex;align-items:center}
+.hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;display:block;opacity:.35}
+.hero-overlay{position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(21,46,61,.85) 0%,rgba(21,46,61,.95) 100%)}
+.hero-container{position:relative;z-index:2;max-width:1540px;margin:auto;padding:0 5%;width:100%}
+.hero-content{max-width:740px}
+.hero-eyebrow{font-size:11px;letter-spacing:2.5px;font-weight:800;text-transform:uppercase;margin:0 0 12px;color:var(--ice)}
+.hero h1{font-family:"Archivo Narrow",sans-serif;font-weight:600;font-size:clamp(32px,6vw,54px);line-height:1.1;letter-spacing:-.8px;margin:0 0 16px}
+.hero p{font-size:clamp(15px,1.8vw,18px);max-width:580px;margin:0 0 24px;line-height:1.6;color:#e4e8e6}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;background:var(--bg);color:var(--night);padding:0 22px;border:1px solid transparent;border-radius:4px;font-weight:800;font-size:13px}
+.button.primary{background:var(--rust);color:white}
+.button.primary:hover{background:#893a1d}
+.arrow{font-size:16px;line-height:1}
+.hero-credit{margin-top:16px;font-size:9px;opacity:.75;max-width:560px}
+
+/* Page sections */
+.container{padding:0 5%;max-width:1540px;margin:auto}
+section{padding:70px 0}
+h2{font-family:"Archivo Narrow",sans-serif;font-weight:600;font-size:clamp(30px,5vw,46px);line-height:1.1;letter-spacing:-.5px;margin:0 0 16px}
+.section-lead{font-size:15px;max-width:620px;margin:0 0 40px;color:#4b5b61}
+
+/* Service cards */
+.service-grid{display:grid;grid-template-columns:1fr;gap:20px}
+.service-card{background:white;border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column}
+.service-card img{width:100%;height:240px;object-fit:cover;display:block}
+.card-body{padding:24px}
+.service-card h3{font-family:"Archivo Narrow",sans-serif;font-weight:600;font-size:20px;margin:0 0 10px;letter-spacing:-.3px}
+.service-card p{font-size:14px;margin:0;color:#4b5b61}
+
+/* Comfort image section */
+.image-section{display:flex;flex-direction:column;background:#eef1ec}
+.image-section img{width:100%;height:320px;object-fit:cover;display:block}
+.text-panel{padding:40px 5%;background:var(--bg)}
+.text-panel h2{margin-bottom:16px}
+.text-panel p{margin:0 0 14px;color:#4b5b61}
+.image-credit{font-size:9px;color:#6b7a73;margin-top:10px}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:30px}
+.contact-block{border:1px solid var(--line);padding:20px;border-radius:6px;background:#fff}
+.contact-block .label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--blue);margin-bottom:6px}
+.contact-block a{font-size:16px;font-weight:700;overflow-wrap:anywhere}
+form{display:flex;flex-direction:column;gap:12px;margin-top:20px;max-width:700px;background:white;padding:30px;border:1px solid var(--line);border-radius:6px}
+form input,form textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:4px;background:var(--bg);font:inherit;font-size:14px}
+form input:focus,form textarea:focus{border-color:var(--blue);outline:none}
+form .button{width:fit-content;margin-top:6px}
+.form-hint{font-size:13px;margin-top:8px;color:var(--rust);font-weight:600}
+.faq-list{max-width:900px;margin-top:30px}
+.faq{border:1px solid var(--line);border-radius:6px;overflow:hidden;margin-top:12px;background:white}
+.faq summary{padding:16px 20px;font-weight:700;cursor:pointer;list-style:none;background:#fcfdfc;font-family:"Archivo Narrow",sans-serif;font-size:18px}
+.faq p{padding:0 20px 18px;margin:0;font-size:14px;color:#4b5b61;line-height:1.6}
+
+/* Sticky bottom bar on mobile */
+.bottom-bar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--rust);color:white;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:10px;padding:14px 0;font-size:13px;font-weight:800;box-shadow:0 -4px 20px #0002}
+.bottom-bar svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.bottom-bar:focus-visible{outline:3px solid white;outline-offset:4px}
+
+/* Footer */
+footer{padding:40px 5% 60px;border-top:1px solid var(--line);font-size:11px;color:#4b5b61;background:#fff}
+footer .footer-inner{display:flex;flex-direction:column;gap:12px;max-width:1540px;margin:auto}
+footer strong{color:var(--blue)}
+footer a{text-underline-offset:3px}
+.credits{line-height:1.7}
+
+/* Responsive */
+@media(min-width:601px){
+  .bottom-bar{display:none}
+  .service-grid{grid-template-columns:1fr 1fr}
+  .image-section{flex-direction:row}
+  .image-section img{width:50%;height:460px}
+  .text-panel{width:50%;padding:60px 8%;display:flex;flex-direction:column;justify-content:center}
+  .contact-grid{grid-template-columns:1fr 1fr 1fr}
+  .nav{padding:0 6%}
+}
+@media(min-width:1024px){
+  .hero{padding:90px 0 110px}
+  .service-grid{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:600px){
+  main{padding-bottom:80px}
+  .hero{padding:40px 0 60px}
+  .service-card img{height:200px}
+  .image-section img{height:260px}
+  footer{padding-bottom:100px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#home">Skip to content</a>
+
+<header class="shell" id="top">
+<p class="notice">Independent website concept by LeadSky for Residential Heating &amp; Air Conditioning. Not their official website.</p>
+<div class="nav">
+<a class="brand" href="#home" aria-label="Residential Heating and Air Conditioning, home">
+<span class="brand-mark" aria-hidden="true">R</span>
+<span class="brand-name">Residential Heating &amp; Air Conditioning</span>
+</a>
+<div class="nav-actions">
+<a class="nav-call" href="tel:+19198479221">Call ↗</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="main-menu" aria-label="Open navigation">Menu</button>
+</div>
+</div>
+</header>
+
+<div class="menu-backdrop" id="menu-backdrop" hidden></div>
+<nav class="menu" id="main-menu" aria-label="Main navigation" hidden>
+<div>
+<button class="menu-close" aria-label="Close navigation">✕</button>
+<div class="menu-links" style="margin-top: 40px;">
+<a href="#home"><span>01</span> Raleigh home comfort</a>
+<a href="#services"><span>02</span> Services to discuss</a>
+<a href="#comfort"><span>03</span> Comfort at home</a>
+<a href="#contact"><span>04</span> Get in touch</a>
+</div>
+</div>
+<div class="menu-footer">
+<p style="margin:0 0 8px;font-weight:700;">Independent concept</p>
+<p style="margin:0;">Call the business directly to discuss your system.</p>
+</div>
+</nav>
+
+<main>
+<section class="hero" id="home" aria-labelledby="hero-title">
+<img class="hero-photo" src="img/stock-4.jpg" alt="Reference photograph of an outdoor air-conditioning condenser beside a house" width="1920" height="1280" fetchpriority="high" loading="eager">
+<div class="hero-overlay"></div>
+<div class="hero-container">
+<div class="hero-content">
+<p class="hero-eyebrow">Residential HVAC · Raleigh</p>
+<h1 id="hero-title">Residential Heating &amp; Air Conditioning</h1>
+<p>Based in Raleigh. Talk directly with Residential about your heating and cooling needs at home.</p>
+<a class="button primary" href="tel:+19198479221">Call (919) 847-9221 <span class="arrow" aria-hidden="true">↗</span></a>
+<p class="hero-credit">Reference photograph — illustrative stock, not this business&rsquo;s premises. Photo: AlfLucio via Pixabay.</p>
+</div>
+</div>
+</section>
+
+<section id="services" aria-labelledby="services-title">
+<div class="container">
+<h2 id="services-title">Services to discuss</h2>
+<p class="section-lead">The business has not confirmed a specific service list in this concept. These are common topics to raise when you call.</p>
+<div class="service-grid">
+<article class="service-card">
+<img src="img/stock-2.jpg" alt="Reference photograph of a wall-mounted air-conditioning unit" width="800" height="533" loading="lazy">
+<div class="card-body">
+<h3>Air conditioning</h3>
+<p>Ask whether they service your cooling system, which rooms are affected, and what a visit would involve.</p>
+</div>
+</article>
+<article class="service-card">
+<img src="img/stock-3.jpg" alt="Reference photograph of an outdoor condenser unit in a garden" width="800" height="533" loading="lazy">
+<div class="card-body">
+<h3>Heating</h3>
+<p>Describe your heating system and what has changed in your home&rsquo;s comfort.</p>
+</div>
+</article>
+<article class="service-card">
+<img src="img/stock-10.jpg" alt="Reference photograph of compressed air and filter equipment" width="800" height="533" loading="lazy">
+<div class="card-body">
+<h3>Filters and maintenance</h3>
+<p>Ask about air filters, servicing intervals and what maintenance your system may need.</p>
+</div>
+</article>
+<article class="service-card">
+<img src="img/stock-8.jpg" alt="Reference photograph of hand tools and repair equipment" width="800" height="533" loading="lazy">
+<div class="card-body">
+<h3>Repairs</h3>
+<p>Share your location and system details so they can advise whether they can help.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<section id="comfort" aria-labelledby="comfort-title" class="image-section" style="padding:0;">
+<img src="img/stock-1.jpg" alt="Reference photograph of a bedroom interior, used to illustrate home comfort" width="1200" height="800" loading="lazy">
+<div class="text-panel">
+<h2 id="comfort-title">Comfort at home</h2>
+<p>A comfortable home starts with a conversation. Residential is based in Raleigh and can discuss your heating and cooling system with you.</p>
+<p>Have ready: your location, the type of system if you know it, and a short description of the issue.</p>
+<p class="image-credit">Reference photograph — illustrative stock interior, not business premises or customer work. Photo: peterweideman via Pixabay.</p>
+</div>
+</section>
+
+<section id="contact" aria-labelledby="contact-title">
+<div class="container">
+<h2 id="contact-title">Get in touch</h2>
+<p class="section-lead">Reach out directly by phone or email, or send a note through this concept form.</p>
+<div class="contact-grid">
+<div class="contact-block">
+<p class="label">Telephone</p>
+<a href="tel:+19198479221">(919) 847-9221</a>
+</div>
+<div class="contact-block">
+<p class="label">Email</p>
+<a href="mailto:residentialheatingandair@gmail.com">residentialheatingandair@gmail.com</a>
+</div>
+<div class="contact-block">
+<p class="label">Business website</p>
+<a href="https://residentialheatingandair.com/" target="_blank" rel="noopener noreferrer">residentialheatingandair.com ↗</a>
+</div>
+</div>
+
+<form id="demo-form" novalidate>
+<p class="label" style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:var(--blue);margin:0 0 4px;">Send a note (demo)</p>
+<input type="text" placeholder="Your name" required aria-label="Your name">
+<input type="email" placeholder="Your email" required aria-label="Your email">
+<textarea placeholder="What would you like to discuss?" rows="4" required aria-label="What would you like to discuss?"></textarea>
+<button type="submit" class="button primary">Send note</button>
+<p class="form-hint" id="form-status" aria-live="polite"></p>
+</form>
+
+<div class="faq-list">
+<details class="faq">
+<summary>Can I book through this page?</summary>
+<p>This is an independent website concept. There is no booking system and no connection to the business. Call or email Residential directly to arrange anything.</p>
+</details>
+<details class="faq">
+<summary>Which areas do they cover?</summary>
+<p>The business is based in Raleigh. Contact them to confirm whether they cover your address and can help with your system.</p>
+</details>
+<details class="faq">
+<summary>What should I have ready?</summary>
+<p>Your location, the type or model of your system if you know it, and a short description of the issue. Ask about availability and any charges before arranging a visit.</p>
+</details>
+</div>
+
+</div>
+</section>
+</main>
+
+<a class="bottom-bar" href="tel:+19198479221" aria-label="Call Residential Heating & Air Conditioning on (919) 847-9221">
+<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3 4 4c-3 5 7 17 13 16l3-3-5-4-2 2c-2-1-4-3-5-5l2-2-3-5Z" stroke-linejoin="round"/></svg>
+<span>Call (919) 847-9221</span>
+</a>
+
+<footer>
+<div class="footer-inner">
+<span>Residential Heating &amp; Air Conditioning · Raleigh</span>
+<p class="credits">Photo credits — Pixabay Content License (free for commercial use, no attribution required; credit given): <a href="https://pixabay.com/photos/condenser-unit-6605975/" target="_blank" rel="noopener noreferrer">Condenser — AlfLucio</a> · <a href="https://pixabay.com/photos/air-conditioner-air-conditioning-unit-6605973/" target="_blank" rel="noopener noreferrer">Air conditioning unit — AlfLucio</a> · <a href="https://pixabay.com/photos/air-conditioner-global-warming-3629396/" target="_blank" rel="noopener noreferrer">Condenser in garden — ElasticComputeFarm</a> · <a href="https://pixabay.com/photos/pneumatics-compressed-air-steering-2147365/" target="_blank" rel="noopener noreferrer">Compressed air filter — Bru-nO</a> · <a href="https://pixabay.com/photos/tools-construct-craft-repair-864983/" target="_blank" rel="noopener noreferrer">Tools — picjumbo_com</a> · <a href="https://pixabay.com/photos/bedroom-interior-design-bed-room-5664221/" target="_blank" rel="noopener noreferrer">Bedroom interior — peterweideman</a>. All images are illustrative licensed stock, not photographs of this business, its staff, premises or completed work.</p>
+<strong>Concept by LeadSky</strong>
+</div>
+</footer>
+
+<script>
+(function(){
+const menu=document.getElementById('main-menu');
+const backdrop=document.getElementById('menu-backdrop');
+const toggle=document.querySelector('.menu-toggle');
+const closeBtn=document.querySelector('.menu-close');
+
+function openMenu(open){
+menu.hidden=!open;
+backdrop.hidden=!open;
+toggle.setAttribute('aria-expanded',String(open));
+toggle.setAttribute('aria-label',open?'Close navigation':'Open navigation');
+if(open){
+document.body.style.overflow='hidden';
+}else{
+document.body.style.overflow='';
+}
+}
+
+toggle.addEventListener('click',()=>openMenu(menu.hidden));
+closeBtn.addEventListener('click',()=>openMenu(false));
+backdrop.addEventListener('click',()=>openMenu(false));
+menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>openMenu(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden)openMenu(false)});
+})();
+
+(function(){
+const form=document.getElementById('demo-form');
+const status=document.getElementById('form-status');
+if(form){
+form.addEventListener('submit',function(e){
+e.preventDefault();
+status.textContent='This is a demo form, nothing was sent.';
+form.reset();
+});
+}
+})();
+</script>
+</body>
+</html>
