@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Lane and Associates Family Dentistry — Independent Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FFFCF8;--plum:#482A57;--lilac:#EDE5F4;--peach:#F5C5A3;--ink:#302D38;--line:#ded6e1;--muted:#66596a;--white:#fff;--radius:18px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:85px}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.5 "Source Sans 3",sans-serif}button,input,a{-webkit-tap-highlight-color:transparent}button,input{font:inherit}button,a{touch-action:manipulation}a{color:inherit}button{cursor:pointer}button:disabled{cursor:default}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #a34d21;outline-offset:4px}h1,h2,h3,p{margin:0}h1,h2,h3,.brand,.button{font-family:Outfit,sans-serif}button{color:var(--plum)}.wrap{width:min(1240px,calc(100% - 64px));margin:auto}.notice{background:var(--plum);color:#fff;text-align:center;font-size:12px;padding:8px 18px;line-height:1.45}.header{position:sticky;top:0;z-index:20;background:rgba(255,252,248,.97);border-bottom:1px solid var(--line)}.navrow{height:75px;display:flex;align-items:center;gap:22px}.brand{text-decoration:none;line-height:1.12;color:var(--plum);font-size:20px;font-weight:600;letter-spacing:-.6px}.brand small{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-top:6px;font-weight:500}.navlinks{display:flex;gap:27px;margin-left:auto;font-size:15px}.navlinks a{text-decoration:none}.navlinks a:hover{text-decoration:underline;text-underline-offset:6px}.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;background:var(--plum);color:white;border:1px solid var(--plum);border-radius:100px;padding:12px 21px;font-size:15px;text-decoration:none;font-weight:500;min-height:46px;transition:background .2s,transform .2s}.button:hover{background:#613b72;transform:translateY(-2px)}.button.light{background:var(--paper);color:var(--plum);border-color:var(--line)}.button.peach{background:var(--peach);color:var(--plum);border-color:var(--peach)}.menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:50%;width:44px;height:44px;font-size:20px}
+
+/* HERO SECTION - IMMEDIATE DISPLAY, NO SPLASH/INTRO */
+.hero-section{margin-top:28px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+.hero-content{background:var(--lilac);padding:40px;border-radius:var(--radius);position:relative}
+.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--plum);margin-bottom:12px}
+.hero-content h1{font-size:clamp(30px,3.8vw,48px);font-weight:600;letter-spacing:-1.3px;line-height:1.1;color:var(--plum)}
+.hero-content p{margin:14px 0 24px;font-size:18px;color:var(--muted)}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-gallery{display:grid;grid-template-columns:1fr 1fr;gap:14px;height:100%}
+.hero-img-card{border-radius:var(--radius);overflow:hidden;position:relative;aspect-ratio:1;box-shadow:0 10px 30px rgba(72,42,87,.1)}
+.hero-img-card img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-img-card .photo-label{position:absolute;bottom:8px;left:8px;background:rgba(255,252,248,.9);padding:3px 8px;border-radius:12px;font-size:9px;color:var(--plum)}
+
+.catalogue{padding:50px 0 40px}.section-top{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}h2{font-size:32px;letter-spacing:-1px;line-height:1.15;color:var(--plum);font-weight:500}.section-top p{font-size:15px;color:var(--muted);margin-top:8px}.step{color:var(--muted);font-size:12px;letter-spacing:1.3px;white-space:nowrap}.tools{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:18px}.tabs{display:flex;gap:7px;flex-wrap:wrap}.tab{border:1px solid var(--line);background:transparent;border-radius:30px;padding:9px 17px;font-size:14px;min-height:42px}.tab[aria-pressed=true]{color:white;background:var(--plum);border-color:var(--plum)}.search{position:relative;min-width:270px}.search span{position:absolute;left:16px;top:10px;font-size:20px}.search input{border:1px solid var(--line);border-radius:100px;background:#fff;width:100%;padding:12px 16px 12px 43px;color:var(--ink);min-height:46px}.catalogue-note{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding:13px 0;display:flex;gap:20px;justify-content:space-between}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px 18px}.card{border:1px solid var(--line);border-radius:15px;background:#fff;overflow:hidden;position:relative;transition:border-color .2s,box-shadow .2s}.card.selected{border:2px solid var(--plum);box-shadow:0 0 0 3px var(--lilac)}.card-photo{position:relative;aspect-ratio:1.35;overflow:hidden;background:var(--lilac)}.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}.card:hover img{transform:scale(1.045)}.category{position:absolute;left:12px;top:12px;background:var(--paper);border-radius:20px;padding:4px 10px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase}.selected-tag{position:absolute;right:10px;bottom:10px;background:var(--plum);color:white;padding:4px 9px;border-radius:20px;font-size:11px}.card-copy{padding:17px}.card h3{color:var(--plum);font-size:20px;font-weight:500;line-height:1.2;letter-spacing:-.4px}.card p{font-size:14px;color:var(--muted);margin:8px 0 18px;min-height:42px}.details-button{display:flex;justify-content:space-between;align-items:center;background:none;border:0;border-top:1px solid var(--line);padding:12px 0 0;width:100%;font-weight:600;font-size:14px;text-align:left;min-height:42px}.details-button span{font-size:20px;transition:transform .2s}.details-button:hover span{transform:translateX(4px)}.empty{padding:45px;text-align:center;background:var(--lilac);border-radius:15px}.empty p{margin:10px 0 18px}.summary{border-top:1px solid var(--line);padding:38px 0 45px;display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}.summary p{color:var(--muted);margin:15px 0;font-size:16px}.summary-panel{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:#fff}.summary-panel h3{font-size:20px;font-weight:500;color:var(--plum)}.summary-list{list-style:none;padding:0;margin:14px 0}.summary-list li{display:flex;align-items:center;justify-content:space-between;gap:14px;border-bottom:1px solid var(--line);padding:10px 0}.remove{border:0;background:var(--lilac);width:34px;height:34px;border-radius:50%;flex-shrink:0;font-size:21px}.actions{display:flex;flex-wrap:wrap;gap:8px}.actions .button{padding:9px 15px;font-size:13px;min-height:42px}.text-button{background:none;border:0;text-decoration:underline;text-underline-offset:3px;font-size:14px;padding:8px}.summary-panel .small{font-size:13px;margin:14px 0 0}.visit{padding:32px;background:var(--lilac);border-radius:var(--radius);display:grid;grid-template-columns:1fr 1fr;gap:40px}.visit h2{margin-bottom:18px}.address{font-size:21px;font-weight:500;color:var(--plum)}.visit p{margin-top:10px}.visit a{overflow-wrap:anywhere}.visit-details{display:grid;gap:16px;padding:5px 0}.visit-details small{display:block;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;color:var(--plum);margin-bottom:5px}.visit-note{font-size:13px;color:var(--muted);max-width:470px}.closing{margin:32px 0 25px;background:var(--plum);color:white;padding:35px;border-radius:var(--radius);display:flex;gap:30px;justify-content:space-between;align-items:center}.closing h2{color:white;font-size:29px}.closing p{margin-top:9px;color:#eee3f3;font-size:15px;max-width:590px}footer{padding:10px 0 140px;color:var(--muted);font-size:12px}.footer-top{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:18px}.footer-top strong{font:500 19px Outfit,sans-serif;color:var(--plum)}footer details{margin-top:15px}footer summary{cursor:pointer;min-height:35px}footer ul{padding-left:18px;columns:2}footer li{margin-bottom:7px}.dock{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);width:min(730px,calc(100% - 32px));z-index:25;background:var(--plum);color:white;border-radius:15px;box-shadow:0 8px 40px #30203830;padding:12px 15px;display:flex;align-items:center;gap:14px}.dock-count{background:var(--peach);color:var(--plum);border-radius:50%;min-width:37px;height:37px;display:grid;place-items:center;font:500 16px Outfit,sans-serif}.dock-title{font:500 15px Outfit,sans-serif}.dock small{display:block;font-size:11px;color:#e5dbea}.dock .button{margin-left:auto;padding:9px 16px;min-height:42px}.dock-call{color:white;font-size:14px;padding:9px 5px;white-space:nowrap}.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}dialog{border:0;padding:0;border-radius:22px;width:min(760px,calc(100% - 30px));max-height:90dvh;background:var(--paper);color:var(--ink);box-shadow:0 30px 100px #1e10254d}dialog::backdrop{background:rgba(35,23,42,.65);backdrop-filter:blur(5px)}dialog[open]{animation:dialogIn .22s ease-out}.modal-layout{display:grid;grid-template-columns:.85fr 1.15fr}.modal-image{width:100%;height:100%;min-height:420px;object-fit:cover}.modal-body{padding:36px 28px}.modal-body h2{font-size:30px;padding-right:18px}.modal-body p{font-size:16px;margin:16px 0}.modal-body h3{font-size:17px;color:var(--plum);margin-top:20px}.modal-body ul{padding-left:19px;font-size:15px}.modal-body .small{font-size:12px;color:var(--muted)}.close-dialog{position:absolute;right:11px;top:11px;border:1px solid var(--line);border-radius:50%;background:var(--paper);width:36px;height:36px;font-size:24px;z-index:2}.manual-copy{width:100%;min-height:140px;background:var(--paper);border:1px solid var(--line);padding:10px;font:14px "Source Sans 3",sans-serif;margin-top:12px}.feedback{font-size:13px;color:var(--plum);margin-top:12px;min-height:20px}.skip{position:fixed;left:12px;top:-90px;background:var(--plum);color:#fff;padding:12px;z-index:100}.skip:focus{top:12px}@keyframes dialogIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:950px){.hero-section{grid-template-columns:1fr}.hero-gallery{display:none}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.navlinks{gap:16px}.summary{gap:35px}.tools{align-items:stretch;flex-direction:column}.search{max-width:440px}}
+@media(max-width:650px){.wrap{width:calc(100% - 32px)}.notice{font-size:10px;padding:7px 15px}.navrow{height:64px;gap:10px}.brand{font-size:16px;letter-spacing:-.4px}.brand small{font-size:8px;letter-spacing:1.3px;margin-top:4px}.header .button{margin-left:auto;padding:9px 14px;font-size:12px;min-height:38px}.menu-toggle{display:block;width:38px;height:38px;flex-shrink:0}.navlinks{display:none;position:absolute;top:64px;left:0;right:0;padding:18px 22px 22px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 12px 20px #30203812}.navlinks.open{display:flex;flex-direction:column;gap:0}.navlinks a{padding:13px 0;border-bottom:1px solid var(--line)}.hero-section{margin-top:16px}.hero-content{padding:24px 20px}.eyebrow{font-size:9px;letter-spacing:1.5px;margin-bottom:9px}.hero-content h1{font-size:26px;letter-spacing:-.8px}.hero-content p{font-size:15px;margin:10px 0 16px;line-height:1.35}.hero-gallery{display:none}.catalogue{padding:27px 0}.section-top{margin-bottom:17px;align-items:start}.section-top h2{font-size:27px}.section-top p{font-size:13px;line-height:1.35}.step{font-size:10px;padding-top:5px}.tools{gap:12px}.tabs{gap:6px}.tab{font-size:12px;padding:8px 12px;min-height:40px}.search{min-width:0;max-width:none}.search input{font-size:16px}.catalogue-note{font-size:11px;gap:14px;line-height:1.4}.catalogue-note>span:first-child{max-width:245px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:15px 12px}.card{border-radius:12px}.card-photo{aspect-ratio:1.1}.category{font-size:8px;left:8px;top:8px;padding:4px 7px;letter-spacing:.5px}.card-copy{padding:13px 11px 8px}.card h3{font-size:17px;min-height:41px;letter-spacing:-.3px}.card p{font-size:13px;line-height:1.4;margin:7px 0 12px;min-height:55px}.details-button{font-size:12px;padding-top:7px}.selected-tag{font-size:9px;right:6px;bottom:6px}.summary{grid-template-columns:1fr;gap:20px;padding:28px 0}.summary h2{font-size:27px}.summary p{font-size:15px;margin:10px 0}.summary-panel{padding:19px}.visit{padding:24px 21px;grid-template-columns:1fr;gap:22px}.visit h2{font-size:27px}.address{font-size:19px}.visit-details{border-top:1px solid #d0c2d8;padding-top:20px;font-size:15px}.closing{padding:25px 22px;align-items:start;flex-direction:column;gap:19px;margin-top:22px}.closing h2{font-size:26px}.footer-top{flex-direction:column;gap:8px}footer ul{columns:1}footer{padding-bottom:145px}.dock{bottom:10px;width:calc(100% - 20px);padding:10px;gap:9px;border-radius:13px}.dock-count{min-width:31px;height:31px;font-size:14px}.dock-title{font-size:12px}.dock small{font-size:9px}.dock .button{font-size:11px;padding:8px 12px;min-height:38px}.dock-call{font-size:12px;padding:8px 3px}.modal-layout{grid-template-columns:1fr}.modal-image{height:180px;min-height:0}.modal-body{padding:23px}.modal-body h2{font-size:27px}.modal-body p{font-size:15px}.modal-body .button{width:100%}.empty{padding:25px 16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#services">Skip to dental care explorer</a>
+<div class="notice">Independent website concept by LeadSky for Lane and Associates Family Dentistry. Not their official website.</div>
+<header class="header">
+<div class="wrap navrow">
+<a class="brand" href="#top" aria-label="Lane and Associates, top of page">Lane &amp; Associates<small>Family Dentistry · Raleigh</small></a>
+<nav class="navlinks" id="navigation" aria-label="Main navigation">
+<a href="#services">Services</a><a href="#shortlist">Your shortlist</a><a href="#visit">Visit</a><a href="#concept">Concept information</a>
+</nav>
+<a class="button" href="#services">Explore <span aria-hidden="true">↗</span></a>
+<button class="menu-toggle" id="menu" aria-label="Open navigation" aria-controls="navigation" aria-expanded="false">☰</button>
+</div>
+</header>
+<main id="top">
+<div class="wrap">
+
+<!-- HERO SECTION - IMMEDIATE DISPLAY, RICH PHOTOGRAPHY -->
+<section class="hero-section" aria-labelledby="intro-title">
+<div class="hero-content">
+<div class="eyebrow">A little clarity before your visit</div>
+<h1 id="intro-title">Lane and Associates<br>Family Dentistry</h1>
+<p>Explore dental care in Raleigh with confidence. Browse topics and save questions for your practice visit.</p>
+<div class="hero-actions">
+<a href="#services" class="button">Find a service <span aria-hidden="true">↓</span></a>
+<a href="tel:+19198619101" class="button light">Call practice <span aria-hidden="true">↗</span></a>
+</div>
+</div>
+<div class="hero-gallery" aria-hidden="true">
+<div class="hero-img-card">
+<img src="img/stock-1.jpg" width="300" height="300" alt="Dental examination mirror and tray" fetchpriority="high">
+<span class="photo-label">Care tools</span>
+</div>
+<div class="hero-img-card">
+<img src="img/stock-3.jpg" width="300" height="300" alt="Bright dental clinic examination room" fetchpriority="high">
+<span class="photo-label">Practice room</span>
+</div>
+</div>
+</section>
+
+<section class="catalogue" id="services" aria-labelledby="catalogue-title">
+<div class="section-top">
+<div><div class="eyebrow">Browse. Understand. Ask.</div><h2 id="catalogue-title">What would you like to discuss?</h2><p>Explore care topics. Keep the questions that matter to you.</p></div>
+<span class="step">01 / EXPLORE</span>
+</div>
+<div class="tools">
+<div class="tabs" role="group" aria-label="Filter care topics">
+<button class="tab" aria-pressed="true" data-category="All">All topics</button>
+<button class="tab" aria-pressed="false" data-category="Everyday care">Everyday care</button>
+<button class="tab" aria-pressed="false" data-category="Treatment">Treatment</button>
+<button class="tab" aria-pressed="false" data-category="Alignment">Alignment</button>
+</div>
+<label class="search"><span aria-hidden="true">⌕</span><span class="sr-only">Search care topics</span><input id="search" type="search" placeholder="Search dental care…" autocomplete="off"></label>
+</div>
+<div class="catalogue-note"><span>Illustrative care topics, not a verified service list. Ask the practice about availability and suitability.</span><span id="result-count" role="status" aria-live="polite">8 topics</span></div>
+<div class="grid" id="grid"></div>
+<div class="empty" id="empty" hidden><h3>No matching topics</h3><p>Try “care”, “teeth” or browse all topics.</p><button class="button light" id="reset">Clear filters</button></div>
+<p class="visit-note" style="margin-top:18px">All photographs are illustrative stock. They do not show this practice, its staff, patients or treatment results.</p>
+</section>
+
+<section class="summary" id="shortlist" aria-labelledby="shortlist-title">
+<div>
+<div class="eyebrow">02 / MAKE IT PERSONAL</div>
+<h2 id="shortlist-title">Your questions.<br>One simple shortlist.</h2>
+<p>You do not need to choose a treatment here. Save topics you would like to ask about, then keep a copy for your conversation with the practice.</p>
+<p class="visit-note">A dentist determines which care is appropriate. Your list stays in this page and clears when you reload.</p>
+</div>
+<div class="summary-panel">
+<h3>Consultation topics <span id="summary-count">(0)</span></h3>
+<ul class="summary-list" id="summary-list"></ul>
+<p id="empty-list">Nothing selected yet. Open a care topic above to start your list.</p>
+<div class="actions"><button class="button" id="copy">Copy list <span aria-hidden="true">↗</span></button><button class="button light" id="download">Download .txt</button><button class="text-button" id="clear">Clear all</button></div>
+<div class="feedback" id="feedback" role="status" aria-live="polite"></div>
+<textarea class="manual-copy" id="manual-copy" aria-label="Your shortlist for manual copying" readonly hidden></textarea>
+<p class="small">Demo summary only. Nothing is sent. This does not request an appointment, reserve treatment or confirm a booking.</p>
+</div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="visit-title">
+<div>
+<div class="eyebrow">03 / THE NEXT CONVERSATION</div>
+<h2 id="visit-title">Find your way to Raleigh.</h2>
+<p class="address">6320 Capital Boulevard<br>Raleigh, NC 27616</p>
+<p><a class="button light" href="https://www.google.com/maps/search/?api=1&amp;query=6320+Capital+Boulevard+Raleigh+27616" target="_blank" rel="noopener noreferrer">Open directions <span aria-hidden="true">↗</span></a></p>
+</div>
+<div class="visit-details">
+<div><small>Call the practice</small><a href="tel:+19198619101">(919) 861-9101</a></div>
+<div><small>Email</small><a href="mailto:laneraleigh@lanedds.com">laneraleigh@lanedds.com</a></div>
+<div><small>Before you travel</small><p style="margin:0">Call to confirm office hours, location and appointment availability.</p></div>
+<p class="visit-note">Contact details supplied for this concept have not been independently verified. Please confirm them before use. Do not email sensitive medical information.</p>
+</div>
+</section>
+
+<section class="closing" aria-labelledby="contact-title">
+<div><h2 id="contact-title">Ready to ask your questions?</h2><p>Contact the practice to discuss care and appointment availability. Exploring this concept does not make an appointment.</p></div>
+<a class="button peach" href="tel:+19198619101">Call the practice <span aria-hidden="true">↗</span></a>
+</section>
+<footer id="concept">
+<div class="footer-top"><strong>Considered care starts with a conversation.</strong><span>Concept by LeadSky</span></div>
+<p style="margin-top:16px">Private presentation concept. Independent of Lane and Associates Family Dentistry; no endorsement or client relationship is implied. Care topics are general discussion prompts, not clinical advice or confirmed offerings. This page collects no personal or medical information.</p>
+<details><summary>Photography credits &amp; usage</summary><p>Illustrative stock supplied under the Pixabay Content License. Photographs are not representations of this business.</p>
+<ul>
+<li><a href="https://pixabay.com/photos/dentist-dental-care-dentistry-teeth-2530990/" target="_blank" rel="noopener noreferrer">drshohmelian — Dental care</a></li>
+<li><a href="https://pixabay.com/photos/toothbrush-toothpaste-dental-care-571741/" target="_blank" rel="noopener noreferrer">stevepb — Toothbrush and toothpaste</a></li>
+<li><a href="https://pixabay.com/photos/dentist-patient-dental-care-medical-428646/" target="_blank" rel="noopener noreferrer">jarmoluk — Dental examination</a></li>
+<li><a href="https://pixabay.com/photos/dentist-dental-care-patient-doctor-428645/" target="_blank" rel="noopener noreferrer">jarmoluk — Dental care visit</a></li>
+<li><a href="https://pixabay.com/photos/toothbrush-toothpaste-healthcare-3191097/" target="_blank" rel="noopener noreferrer">stevepb — Oral hygiene</a></li>
+<li><a href="https://pixabay.com/photos/dental-toothpaste-toothbrush-842314/" target="_blank" rel="noopener noreferrer">stevepb — Home care essentials</a></li>
+<li><a href="https://pixabay.com/photos/braces-dental-care-10510075/" target="_blank" rel="noopener noreferrer">RHDOSTOCKER — Orthodontic appliance</a></li>
+<li><a href="https://pixabay.com/photos/teeth-models-gypsum-dentist-dental-797308/" target="_blank" rel="noopener noreferrer">Humusak — Dental models</a></li>
+<li><a href="https://pixabay.com/photos/dentist-operation-teeth-lamp-4373290/" target="_blank" rel="noopener noreferrer">Movidagrafica — Dental equipment</a></li>
+</ul><p><a href="https://pixabay.com/service/license-summary/" target="_blank" rel="noopener noreferrer">Pixabay Content License summary</a></p></details>
+<details><summary>Demo scope &amp; review notes</summary><p>Search, filters, topic details and a temporary shortlist operate in this browser. Copying and downloading are local actions. No appointment, payment or submission integration is connected. Office-specific services and contact details require verification before publication. Device, browser and asset-loading checks have not been independently performed on this delivered HTML.</p></details>
+</footer>
+</div>
+</main>
+<aside class="dock" aria-label="Your running shortlist">
+<span class="dock-count" id="dock-count">0</span>
+<div><div class="dock-title">Your care shortlist</div><small>Questions, not a booking</small></div>
+<a class="button peach" href="#shortlist">Review <span aria-hidden="true">↑</span></a>
+<a class="dock-call" href="tel:+19198619101">Call ↗</a>
+</aside>
+<div class="sr-only" id="announcement" role="status" aria-live="polite"></div>
+<dialog id="quick-view" aria-labelledby="modal-title">
+<button class="close-dialog" id="close-dialog" aria-label="Close care topic">×</button>
+<div class="modal-layout">
+<img id="modal-image" class="modal-image" alt="" width="500" height="650">
+<div class="modal-body">
+<div class="eyebrow" id="modal-category"></div>
+<h2 id="modal-title"></h2>
+<p id="modal-description"></p>
+<h3>Questions to bring along</h3>
+<ul id="modal-questions"></ul>
+<button class="button" id="add-topic">Add to my shortlist <span aria-hidden="true">+</span></button>
+<p class="small">General discussion topic. Availability at this office is unverified. A dentist must assess your individual needs. Photograph is illustrative stock.</p>
+</div>
+</div>
+</dialog>
+<script>
+"use strict";
+const topics=[
+{id:"checkup",title:"Dental check-ups",category:"Everyday care",image:1,alt:"Illustrative stock photograph of dental examination tools",short:"Start a conversation about routine dental visits.",description:"Use this topic to ask what a routine dental visit involves and how to prepare. The practice can explain its appointment process.",questions:["What happens at a first appointment?","What should I bring to my visit?","How should I plan future check-ups?"]},
+{id:"cleaning",title:"Cleaning & hygiene",category:"Everyday care",image:2,alt:"Illustrative stock photograph of a toothbrush and toothpaste",short:"Explore professional care and everyday habits.",description:"Ask about professional cleaning, oral hygiene and care between appointments. Individual recommendations should come from your dental team.",questions:["What cleaning options are available?","Which daily habits should I discuss?","How can I care for hard-to-reach areas?"]},
+{id:"family",title:"Family dental visits",category:"Everyday care",image:4,alt:"Illustrative stock photograph of a dental care visit",short:"Ask about planning dental care for your family.",description:"Discuss appointment arrangements for different members of your family. Confirm which ages this office sees before making plans.",questions:["Which ages does this office see?","Can family visits be arranged together?","How can I help a child prepare for a visit?"]},
+{id:"repair",title:"Tooth repair",category:"Treatment",image:8,alt:"Illustrative stock photograph of dental models",short:"Understand the questions to ask about a damaged tooth.",description:"If you have a damaged tooth, ask the practice about assessment and available care. This explorer cannot diagnose a problem or recommend a treatment.",questions:["How can I arrange an assessment?","What options might the dentist discuss?","What information should I share when I call?"]},
+{id:"gums",title:"Gum health",category:"Everyday care",image:5,alt:"Illustrative stock photograph of oral hygiene supplies",short:"Put gum care on your conversation list.",description:"Bring questions about gum care, brushing or changes you have noticed to a dental professional. An examination is needed for personalized guidance.",questions:["How is gum health assessed?","What changes should I mention?","What home-care questions should I bring?"]},
+{id:"alignment",title:"Teeth alignment",category:"Alignment",image:7,alt:"Illustrative stock photograph of an orthodontic appliance",short:"Ask about an assessment and available options.",description:"Explore whether an alignment consultation is available here or whether a referral is needed. Suitability and treatment options require a professional assessment.",questions:["Does this office offer alignment consultations?","Would I need a referral?","What would an initial assessment involve?"]},
+{id:"comfort",title:"Comfort during care",category:"Treatment",image:10,alt:"Illustrative stock photograph of dental treatment equipment",short:"Share questions about feeling comfortable at a visit.",description:"If a dental visit feels daunting, speak with the practice before attending. Ask what can be discussed or arranged to help you prepare.",questions:["Can I discuss concerns before my visit?","How will the appointment be explained?","What comfort options can I ask about?"]},
+{id:"home",title:"Care at home",category:"Everyday care",image:6,alt:"Illustrative stock photograph of dental floss and oral care products",short:"Build a list of questions about your daily routine.",description:"Ask the dental team about brushing, interdental cleaning and choosing oral-care products for your needs. This concept does not provide a personalized care plan.",questions:["Which brushing questions should I ask?","How should I clean between my teeth?","Which products should I discuss with the dentist?"]}
+];
+const $=id=>document.getElementById(id);
+const selected=new Set();
+let category="All",active=null,lastTrigger=null;
+const grid=$("grid"),dialog=$("quick-view");
+function render(){
+ const query=$("search").value.trim().toLowerCase();
+ const visible=topics.filter(t=>(category==="All"||t.category===category)&&[t.title,t.short,t.category].join(" ").toLowerCase().includes(query));
+ grid.replaceChildren();
+ visible.forEach(t=>{
+  const card=document.createElement("article");card.className="card"+(selected.has(t.id)?" selected":"");
+  card.innerHTML='<div class="card-photo"><img src="img/stock-'+t.image+'.jpg" width="500" height="380" loading="lazy" alt="'+t.alt+'"><span class="category">'+t.category+'</span>'+(selected.has(t.id)?'<span class="selected-tag">✓ Shortlisted</span>':'')+'</div><div class="card-copy"><h3>'+t.title+'</h3><p>'+t.short+'</p><button class="details-button" aria-label="View details about '+t.title+'">View details <span aria-hidden="true">↗</span></button></div>';
+  card.querySelector("button").addEventListener("click",e=>openTopic(t,e.currentTarget));
+  grid.append(card);
+ });
+ $("empty").hidden=visible.length>0;
+ $("result-count").textContent=visible.length+" topic"+(visible.length===1?"":"s");
+}
+function updateShortlist(message){
+ $("dock-count").textContent=selected.size;
+ $("summary-count").textContent="("+selected.size+")";
+ $("empty-list").hidden=selected.size>0;
+ const list=$("summary-list");list.replaceChildren();
+ topics.filter(t=>selected.has(t.id)).forEach(t=>{
+  const li=document.createElement("li"),label=document.createElement("span"),button=document.createElement("button");
+  label.textContent=t.title;button.className="remove";button.textContent="×";button.setAttribute("aria-label","Remove "+t.title);
+  button.addEventListener("click",()=>{selected.delete(t.id);updateShortlist(t.title+" removed.");render();$("clear").focus()});
+  li.append(label,button);list.append(li);
+ });
+ ["copy","download","clear"].forEach(id=>$(id).disabled=!selected.size);
+ $("manual-copy").hidden=true;$("feedback").textContent="";
+ if(message)$("announcement").textContent=message;
+}
+function updateAddButton(){
+ const added=selected.has(active.id);
+ $("add-topic").textContent=added?"Remove from shortlist −":"Add to my shortlist +";
+}
+function openTopic(topic,trigger){
+ active=topic;lastTrigger=trigger;
+ $("modal-title").textContent=topic.title;$("modal-category").textContent=topic.category;
+ $("modal-description").textContent=topic.description;
+ $("modal-image").src="img/stock-"+topic.image+".jpg";$("modal-image").alt=topic.alt;
+ $("modal-questions").replaceChildren(...topic.questions.map(q=>{const li=document.createElement("li");li.textContent=q;return li}));
+ updateAddButton();dialog.showModal();$("close-dialog").focus();
+}
+$("add-topic").addEventListener("click",()=>{
+ const removed=selected.has(active.id);
+ if(removed)selected.delete(active.id);else selected.add(active.id);
+ updateShortlist(active.title+(removed?" removed.":" added to your shortlist."));
+ updateAddButton();
+});
+function closeDialog(){dialog.close()}
+$("close-dialog").addEventListener("click",closeDialog);
+dialog.addEventListener("click",e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog()}});
+dialog.addEventListener("close",()=>{
+ const id=active&&active.id;render();
+ const matching=topics.filter(t=>(category==="All"||t.category===category)&&[t.title,t.short,t.category].join(" ").toLowerCase().includes($("search").value.trim().toLowerCase()));
+ const index=matching.findIndex(t=>t.id===id);
+ const buttons=grid.querySelectorAll(".details-button");
+ if(index>=0&&buttons[index])buttons[index].focus();else if(lastTrigger&&lastTrigger.isConnected)lastTrigger.focus();else $("search").focus();
+});
+dialog.addEventListener("keydown",e=>{
+ if(e.key!=="Tab")return;
+ const items=Array.from(dialog.querySelectorAll('button:not([disabled]),a[href],input,textarea')).filter(el=>!el.hidden);
+ const first=items[0],last=items[items.length-1];
+ if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+ else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+});
+document.querySelectorAll(".tab").forEach(button=>button.addEventListener("click",()=>{
+ category=button.dataset.category;document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-pressed",String(b===button)));render();
+}));
+$("search").addEventListener("input",render);
+$("reset").addEventListener("click",()=>{$("search").value="";category="All";document.querySelectorAll(".tab").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.category==="All")));render();$("search").focus()});
+$("clear").addEventListener("click",()=>{selected.clear();updateShortlist("Shortlist cleared.");render();$("search").focus()});
+function shortlistText(){return "My dental care discussion topics\nLane and Associates Family Dentistry — independent LeadSky concept\n\n"+topics.filter(t=>selected.has(t.id)).map(t=>t.title+"\n"+t.questions.map(q=>"• "+q).join("\n")).join("\n\n")+"\n\nDemo only. Nothing was sent. No appointment requested or confirmed. Care topics and office availability require confirmation with the practice."}
+$("copy").addEventListener("click",async()=>{
+ const value=shortlistText();
+ try{if(!navigator.clipboard)throw Error("Clipboard unavailable");await navigator.clipboard.writeText(value);$("feedback").textContent="List copied to your clipboard. Nothing was sent."}
+ catch(e){$("manual-copy").hidden=false;$("manual-copy").value=value;$("manual-copy").focus();$("manual-copy").select();$("feedback").textContent="Automatic copying is unavailable. Copy the selected text below manually."}
+});
+$("download").addEventListener("click",()=>{
+ const blob=new Blob([shortlistText()],{type:"text/plain;charset=utf-8"}),url=URL.createObjectURL(blob),link=document.createElement("a");
+ link.href=url;link.download="my-dental-care-questions.txt";document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);
+ $("feedback").textContent="Your browser was asked to download the list. Nothing was sent.";
+});
+$("menu").addEventListener("click",()=>{
+ const open=$("menu").getAttribute("aria-expanded")!=="true";
+ $("menu").setAttribute("aria-expanded",String(open));$("menu").setAttribute("aria-label",open?"Close navigation":"Open navigation");$("navigation").classList.toggle("open",open);$("menu").textContent=open?"×":"☰";
+});
+function closeMenu(){$("menu").setAttribute("aria-expanded","false");$("menu").setAttribute("aria-label","Open navigation");$("navigation").classList.remove("open");$("menu").textContent="☰"}
+document.querySelectorAll("#navigation a").forEach(a=>a.addEventListener("click",closeMenu));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&$("navigation").classList.contains("open")){closeMenu();$("menu").focus()}});
+document.addEventListener("click",e=>{if(!e.target.closest(".header"))closeMenu()});
+render();updateShortlist();
+</script>
+</body>
+</html>
