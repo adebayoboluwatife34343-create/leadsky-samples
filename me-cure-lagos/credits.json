@@ -1,0 +1,142 @@
+[
+  {
+    "file": "img/business-logo-1.svg",
+    "kind": "business logo",
+    "source": "https://www.mecure.com.ng/images/brand-logo.svg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "https://www.mecure.com.ng/images/MHL_SEO.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/mecurehealth"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels diagnostic imaging CT scanner hospital equipment",
+    "description": "hospital, equipment, medicine, patient, healthcare, technology, medical, machine, clinic, ct, pet, scan, diagnostic, radiology, exam, diagnosis, examination, blue technology, blue hospital, blue medical, blue medicine, blue pets, blue healthcare, hospital, hospital, hospital, hospital, patient, healthcare, medical, radiology, radiology, radiology, radiology, radiology",
+    "source": "https://pixabay.com/photos/hospital-equipment-medicine-patient-3098683/",
+    "photographer": "OsloMetX",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels diagnostic imaging CT scanner hospital equipment",
+    "description": "bethesda naval medical center, maryland, hospital, technician, patient, ct scan, machine, care, treatment, brown hospital, brown medical, brown care, hospital, hospital, patient, patient, patient, ct scan, ct scan, ct scan, ct scan, ct scan",
+    "source": "https://pixabay.com/photos/bethesda-naval-medical-center-80380/",
+    "photographer": "12019",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pexels laboratory technician blood sample analysis",
+    "description": "laboratory, test tubes, healthcare worker, hospital, healthcare professional, medical professional, medical technology, medical, health, medicine, healthcare, laboratory, laboratory, laboratory, laboratory, laboratory, hospital, hospital, hospital, hospital, medical, medical, medical, medical, health, health, medicine, medicine, medicine, healthcare, healthcare, healthcare",
+    "source": "https://pixabay.com/photos/laboratory-test-tubes-563423/",
+    "photographer": "DarkoStojanovic",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pexels laboratory technician blood sample analysis",
+    "description": "blood test, blood sample, medical technology, medical technologist, surgical gloves, face mask, sample, hospital worker, laboratory, lab, blood test, blood test, blood test, blood test, blood test, sample, laboratory, laboratory, laboratory, lab, lab",
+    "source": "https://pixabay.com/photos/blood-test-blood-sample-5601437/",
+    "photographer": "shameersrk",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pexels optometrist eye examination equipment",
+    "description": "visual, visual test, vision, women attractive, eyesight, optometrist, optical, medical, ophthalmology, test, cataract, glasses, optician, health, checkup, vision, eyesight, eyesight, optometrist, optometrist, optometrist, optometrist, optometrist, optical, ophthalmology, ophthalmology, ophthalmology, cataract, cataract, optician, optician",
+    "source": "https://pixabay.com/photos/visual-visual-test-vision-5028090/",
+    "photographer": "newarta",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pexels optometrist eye examination equipment",
+    "description": "visual, visual test, vision, women attractive, eyesight, optometrist, optical, medical, ophthalmology, test, cataract, glasses, optician, health, checkup, eyesight, optometrist, optometrist, optometrist, optometrist, optometrist, ophthalmology, ophthalmology, ophthalmology, cataract, cataract, optician, optician, optician",
+    "source": "https://pixabay.com/photos/visual-visual-test-vision-5028074/",
+    "photographer": "newarta",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay dental examination instruments clinic",
+    "description": "dentist, operation, teeth, lamp, clinic, dental, medicine, dentistry, hygiene, doctor, gray doctors, gray medicine, gray teeth, gray lamp, dentist, dentist, dentist, teeth, doctor, doctor, doctor, doctor, doctor",
+    "source": "https://pixabay.com/photos/dentist-operation-teeth-lamp-4373290/",
+    "photographer": "Movidagrafica",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay dental examination instruments clinic",
+    "description": "dentist, dental care, dentistry, teeth, doctor, health care, dentist, dentist, dentist, dentist, dentist, teeth, doctor, doctor",
+    "source": "https://pixabay.com/photos/dentist-dental-care-dentistry-teeth-2530990/",
+    "photographer": "drshohmelian",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pexels pharmacist arranging medicine pharmacy shelves",
+    "description": "pharmacy, old, bottles, medicinal products, remedies, chemistry, black-and-white, historical, medicine, porcelain, pharmacy cabinet, shelf, retro, formerly, health, cans",
+    "source": "https://pixabay.com/photos/pharmacy-old-bottles-4496863/",
+    "photographer": "analogicus",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pexels pharmacist arranging medicine pharmacy shelves",
+    "description": "pharmacy, antique, old, chemicals, bottles, glass bottles, shelf, formerly, stock, container, bottle, drink, medicine, tools, heal, remedies",
+    "source": "https://pixabay.com/photos/pharmacy-antique-old-chemicals-3377670/",
+    "photographer": "analogicus",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-11.jpg",
+    "kind": "stock photo",
+    "query": "Pexels doctor video consultation laptop healthcare",
+    "description": "treatment, hospital, clinic, medicine, laboratory, diagnosis, patient, healthcare, hospital, hospital, hospital, hospital, hospital, patient, patient, patient, healthcare, healthcare, healthcare",
+    "source": "https://pixabay.com/photos/treatment-hospital-clinic-medicine-4099432/",
+    "photographer": "fernandozhiminaicela",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-12.jpg",
+    "kind": "stock photo",
+    "query": "Pexels doctor video consultation laptop healthcare",
+    "description": "computer, business, typing, keyboard, laptop, doctor, medical care, desk, doctor, doctor, doctor, doctor, doctor",
+    "source": "https://pixabay.com/photos/computer-business-typing-keyboard-1149148/",
+    "photographer": "Free-Photos",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]

@@ -1,0 +1,1804 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Me Cure Healthcare Hub — Independent Digital Concept</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Approved External Libraries -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<style>
+:root {
+  --bg: #F7F5F0;
+  --white: #FFFFFF;
+  --navy: #12263A;
+  --green: #0E7C66;
+  --green-dark: #0A5A4A;
+  --soft: #F2EEE4;
+  --border: #E4DCCE;
+  --text-main: #22303C;
+  --text-muted: #5B6B7A;
+  --accent: #C88B3E;
+  --shadow: 0 12px 30px rgba(18,38,58,0.08);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-main);
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, button, .brand-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 0;
+}
+
+button, input, select { font: inherit; }
+button, a { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; border: none; background: none; }
+a { color: inherit; text-decoration: none; }
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 700;
+  z-index: 999;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 16px; }
+
+/* Concept Banner */
+.concept-banner {
+  background: #22303C;
+  color: #E8E0D0;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+/* Slim Header */
+.header {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.header-inner {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  gap: 12px;
+}
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  display: block;
+}
+.brand-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-btn {
+  background: var(--green);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.contact-btn:hover { background: var(--green-dark); }
+
+.menu-toggle {
+  display: block;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.mobile-menu {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mobile-menu[hidden] { display: none; }
+.mobile-menu a {
+  padding: 10px 0;
+  font-weight: 700;
+  border-bottom: 1px dashed var(--border);
+  font-size: 14px;
+}
+
+.desktop-nav {
+  display: none;
+  align-items: center;
+  gap: 26px;
+}
+.desktop-nav a {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.desktop-nav a:hover { color: var(--green); }
+
+/* Buttons */
+.btn-primary {
+  background: var(--green);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-primary:hover { background: var(--green-dark); }
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--navy);
+  border: 1px solid var(--border);
+  padding: 11px 20px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-secondary:hover { background: var(--soft); border-color: #CFC3A8; }
+
+/* Hero */
+.hero-section {
+  padding: 48px 0 60px;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.hero-text { max-width: 640px; }
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-title {
+  font-size: clamp(24px, 4vw, 38px);
+  line-height: 1.22;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+.hero-copy {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 26px;
+  max-width: 560px;
+}
+.hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.hero-image {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  height: 340px;
+  background: #12263A;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero-image .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(18,38,58,0.55) 0%, rgba(18,38,58,0.9) 100%);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  color: #fff;
+}
+.hero-image .tag {
+  background: var(--green);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  width: fit-content;
+  margin-bottom: 8px;
+}
+.hero-image .title {
+  font-size: 19px;
+  font-weight: 800;
+}
+.hero-image .sub {
+  font-size: 12px;
+  color: #D8CEB8;
+  margin-top: 4px;
+}
+
+/* Spotlight */
+.spotlight-section { padding: 36px 0 50px; }
+.section-header { margin-bottom: 22px; }
+.section-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+}
+.section-desc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.spotlight-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.spotlight-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.spotlight-img {
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+.spotlight-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.spotlight-body {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.spotlight-card h3 {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.spotlight-card p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+/* Diagnostic Equipment Panel (static image, no 3D) */
+.equipment-panel {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px;
+  margin: 30px 0;
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.equipment-text h2 {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.equipment-text p {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.canvas-wrap {
+  height: 260px;
+  background: #0B1A26;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.canvas-wrap canvas,
+.canvas-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.canvas-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(18,38,58,0.85);
+  color: #8CD3E8;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(140,211,232,0.3);
+}
+.btn-secondary-scan {
+  background: var(--white);
+  color: var(--navy);
+  border: 1px solid var(--border);
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 800;
+  font-size: 13px;
+}
+.btn-secondary-scan:hover { background: var(--soft); }
+
+/* Catalogue Workspace */
+.workspace-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  margin-bottom: 40px;
+}
+.catalogue-header { margin-bottom: 12px; }
+.filter-toolbar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.search-box { position: relative; width: 100%; }
+.search-box input {
+  width: 100%;
+  padding: 12px 16px 12px 40px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--white);
+  font-size: 13px;
+  color: var(--navy);
+}
+.search-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.category-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  background: var(--white);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+.tab-btn:hover { background: var(--soft); color: var(--green); }
+.tab-btn.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.card-tile {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.card-media {
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+}
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.card-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(18,38,58,0.85);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+}
+.card-content {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.card-category {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 6px;
+}
+.card-title {
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.35;
+}
+.card-text {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  flex: 1;
+}
+.card-footer {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid #F1EEE4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--green);
+}
+.card-arrow {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+/* Basket Aside */
+.basket-aside {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  display: none;
+}
+.basket-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.basket-header h3 { font-size: 16px; font-weight: 800; color: var(--navy); }
+.basket-badge {
+  background: var(--green);
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 800;
+}
+.basket-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+.basket-empty {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 20px 14px;
+  text-align: center;
+  background: var(--soft);
+}
+.basket-empty b {
+  display: block;
+  font-size: 13px;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.basket-empty p { font-size: 11px; color: var(--text-muted); margin: 0; }
+.basket-item {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.basket-item strong { display: block; font-size: 12px; color: var(--navy); }
+.basket-item small {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.basket-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+.basket-controls button {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 800;
+}
+.basket-remove {
+  color: #B91C1C;
+  font-size: 11px;
+  margin-left: auto;
+  font-weight: 700;
+}
+.review-btn {
+  width: 100%;
+  margin-top: 18px;
+}
+
+/* Portal Band */
+.portal-band {
+  background: var(--navy);
+  color: #fff;
+  padding: 48px 0;
+  margin: 40px 0 60px;
+}
+.portal-intro { margin-bottom: 26px; }
+.portal-eyebrow {
+  color: #7FC4B3;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.portal-band h2 {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.portal-band p {
+  color: #C9D2DD;
+  font-size: 13px;
+  margin-top: 4px;
+}
+.portal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.portal-card {
+  background: var(--white);
+  color: var(--text-main);
+  border-radius: 14px;
+  padding: 22px;
+}
+.portal-card small {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+}
+.portal-card h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.portal-card p {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+.portal-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Modal */
+dialog {
+  border: none;
+  border-radius: 20px;
+  padding: 0;
+  width: min(600px, calc(100% - 32px));
+  max-height: 90vh;
+  box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+  background: var(--white);
+}
+dialog::backdrop {
+  background: rgba(18,38,58,0.7);
+  backdrop-filter: blur(4px);
+}
+.modal-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-header h2 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--navy);
+}
+.modal-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--soft);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-body { padding: 24px; }
+.modal-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+/* Calendar */
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 16px 0 12px;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  text-align: center;
+}
+.cal-grid span {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+.cal-grid button {
+  height: 38px;
+  border-radius: 8px;
+  background: var(--bg);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.cal-grid button.selected { background: var(--green); color: #fff; }
+.time-slots {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 14px;
+}
+.time-slots button {
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.time-slots button.selected { background: var(--green); color: #fff; border-color: var(--green); }
+
+/* Chat Assistant */
+.assistant-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 90;
+  background: var(--green);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 13px;
+  box-shadow: 0 8px 24px rgba(14,124,102,0.35);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chat-window {
+  position: fixed;
+  bottom: 84px;
+  right: 24px;
+  width: 340px;
+  max-width: calc(100% - 32px);
+  height: 460px;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  z-index: 95;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.chat-window[hidden] { display: none; }
+.chat-header {
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.chat-log {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.chat-msg {
+  padding: 10px 14px;
+  border-radius: 12px;
+  font-size: 12px;
+  max-width: 85%;
+  background: var(--soft);
+}
+.chat-msg.user {
+  background: #DCEBEA;
+  align-self: flex-end;
+  color: var(--navy);
+}
+.chat-input-row {
+  padding: 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 8px;
+}
+.chat-input-row input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* Toast */
+.toast-notice {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 200;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.toast-notice[hidden] { display: none; }
+
+/* Mobile Bottom Bar */
+.mobile-bottom-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 10px 16px max(10px, env(safe-area-inset-bottom));
+  z-index: 85;
+  align-items: center;
+  justify-content: space-between;
+}
+.mobile-bottom-bar b {
+  font-size: 12px;
+  color: var(--navy);
+}
+.mobile-bottom-bar small {
+  font-size: 10px;
+  color: var(--text-muted);
+  display: block;
+}
+
+/* Footer */
+.footer {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+  padding: 40px 0 80px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+.footer h4 {
+  font-size: 14px;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.footer p {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+.footer-credits {
+  font-size: 11px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+.footer-credits a { color: var(--green); text-decoration: underline; }
+
+/* Desktop Adjustments */
+@media (min-width: 760px) {
+  .menu-toggle { display: none; }
+  .desktop-nav { display: flex; }
+  .mobile-bottom-bar { display: none; }
+  .hero-grid { grid-template-columns: 1fr 0.9fr; }
+  .hero-image { height: 420px; }
+  .spotlight-grid { grid-template-columns: repeat(4, 1fr); }
+  .workspace-layout { grid-template-columns: 1fr 320px; }
+  .basket-aside {
+    display: block;
+    position: sticky;
+    top: 100px;
+  }
+  .catalogue-grid { grid-template-columns: repeat(3, 1fr); }
+  .portal-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .shell { padding: 0 16px; }
+  .desktop-nav { display: none; }
+  .catalogue-grid { grid-template-columns: 1fr; }
+  .spotlight-grid { grid-template-columns: 1fr; }
+  .mobile-bottom-bar { display: flex; }
+  .assistant-btn {
+    bottom: 70px;
+    right: 16px;
+    padding: 10px 16px;
+    font-size: 12px;
+  }
+  .chat-window {
+    right: 16px;
+    bottom: 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *:before, *:after { transition: none !important; animation: none !important; }
+}
+</style>
+</head>
+<body>
+
+<a href="#mainCatalogue" class="skip-link">Skip to Care Services</a>
+
+<div class="concept-banner">
+  Independent website concept by LeadSky for Me Cure. Not their official website.
+</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="brand-link" aria-label="Me Cure Healthcare Hub Home">
+      <img src="img/profile.jpg" alt="Me Cure Healthcare Hub profile" class="brand-logo">
+      <span class="brand-title">Me Cure</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main Navigation">
+      <a href="#spotlight">Highlights</a>
+      <a href="#equipment3d">Diagnostic Tech</a>
+      <a href="#mainCatalogue">Care Services</a>
+      <a href="#portalDemo">Patient Portal</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="mailto:info@mecure.com.ng" class="contact-btn">Contact</a>
+      <button class="menu-toggle" id="menuToggleBtn" aria-expanded="false" aria-controls="mobileNavMenu">Menu</button>
+    </div>
+  </div>
+
+  <nav class="mobile-menu" id="mobileNavMenu" hidden aria-label="Mobile Navigation">
+    <a href="#spotlight" onclick="toggleMobileMenu()">Highlights</a>
+    <a href="#equipment3d" onclick="toggleMobileMenu()">Diagnostic Tech</a>
+    <a href="#mainCatalogue" onclick="toggleMobileMenu()">Care Services</a>
+    <a href="#portalDemo" onclick="toggleMobileMenu()">Patient Portal</a>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero-section shell" aria-labelledby="heroHeading">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="hero-eyebrow"><span>Me Cure Healthcare · Lagos, Nigeria</span></div>
+        <h1 id="heroHeading" class="hero-title">Connected care in one patient workspace</h1>
+        <p class="hero-copy">
+          Explore diagnostic imaging, WeCare health checks, eye care, dental procedures, and prescription refills from a single, intuitive hub.
+        </p>
+        <div class="hero-ctas">
+          <button class="btn-primary" onclick="scrollToCatalogue()">Browse Care Services →</button>
+          <a href="mailto:info@mecure.com.ng" class="btn-secondary">Direct Contact</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="img/business-featured-2.jpg" alt="Me Cure Healthcare diagnostic facility" class="hero-photo-img">
+        <div class="overlay">
+          <span class="tag">Me Cure Diagnostic Center</span>
+          <div class="title">Advanced Healthcare Infrastructure</div>
+          <div class="sub">Serving patients across Lagos & Nigeria</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Spotlight -->
+  <section id="spotlight" class="spotlight-section shell" aria-labelledby="spotlightHeading">
+    <div class="section-header">
+      <div>
+        <h2 id="spotlightHeading" class="section-title">Core Diagnostic & Clinical Pillars</h2>
+        <p class="section-desc">Illustrative care categories shown in this concept.</p>
+      </div>
+    </div>
+
+    <div class="spotlight-grid">
+      <div class="spotlight-card">
+        <div class="spotlight-img">
+          <img src="img/stock-2.jpg" alt="Illustrative CT scanner equipment">
+        </div>
+        <div class="spotlight-body">
+          <h3>PET/CT & Radiology</h3>
+          <p>High-precision molecular imaging and radiopharmaceutical diagnostics in Lagos.</p>
+        </div>
+      </div>
+
+      <div class="spotlight-card">
+        <div class="spotlight-img">
+          <img src="img/stock-4.jpg" alt="Illustrative blood sample analysis">
+        </div>
+        <div class="spotlight-body">
+          <h3>Automated Pathology</h3>
+          <p>Comprehensive blood chemistry, immunology, and automated blood sample processing.</p>
+        </div>
+      </div>
+
+      <div class="spotlight-card">
+        <div class="spotlight-img">
+          <img src="img/stock-6.jpg" alt="Illustrative eye examination equipment">
+        </div>
+        <div class="spotlight-body">
+          <h3>Eye Center</h3>
+          <p>Full ophthalmic diagnostics, optical corrections, cataract assessments, and eye care.</p>
+        </div>
+      </div>
+
+      <div class="spotlight-card">
+        <div class="spotlight-img">
+          <img src="img/stock-8.jpg" alt="Illustrative dental clinic instruments">
+        </div>
+        <div class="spotlight-body">
+          <h3>Dental Care</h3>
+          <p>Cosmetic dentistry, root canals, oral surgery, and preventative hygiene treatments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diagnostic Equipment Panel -->
+  <section id="equipment3d" class="shell" aria-labelledby="techHeading">
+    <div class="equipment-panel">
+      <div class="equipment-text">
+        <div style="font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:var(--green); margin-bottom:8px;">Diagnostic Technology</div>
+        <h2 id="techHeading" class="section-title" style="margin-bottom:8px;">Imaging Equipment</h2>
+        <p style="color:var(--text-muted); margin-bottom:16px;">
+          Illustrative photograph of diagnostic imaging hardware used in modern healthcare settings. This stock image represents the category of equipment used in diagnostics and is not a photograph of Me Cure premises.
+        </p>
+        <button class="btn-secondary-scan" onclick="openModalService('ct-pet')">View Scan Schedule Options →</button>
+      </div>
+
+      <div class="canvas-wrap" id="canvasWrap">
+        <span class="canvas-badge">Illustrative Stock Photo</span>
+        <img src="img/stock-1.jpg" alt="Illustrative CT scanner equipment in hospital radiology room" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalogue Workspace -->
+  <section id="mainCatalogue" class="shell workspace-layout" aria-labelledby="catHeading">
+    <div>
+      <div class="catalogue-header">
+        <h2 id="catHeading" class="section-title">Explore Care Services</h2>
+        <p class="section-desc">Search, filter, and plan sample appointments or health check interest.</p>
+      </div>
+
+      <div class="filter-toolbar">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="search" id="searchInput" placeholder="Search services (e.g. PET Scan, Dental, Eye Check, Lab)..." aria-label="Search care services">
+        </div>
+
+        <div class="category-tabs" id="categoryTabs" role="tablist"></div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; font-size:11px; color:var(--text-muted); margin-bottom:14px;">
+        <span id="serviceCountLabel">12 Services Available</span>
+        <span>Reference Photography · Illustrative Availability</span>
+      </div>
+
+      <div class="catalogue-grid" id="catalogueGrid"></div>
+    </div>
+
+    <aside class="basket-aside" aria-label="Selected Care Basket">
+      <div class="basket-header">
+        <h3>Care Basket</h3>
+        <span class="basket-badge" id="basketCount">0</span>
+      </div>
+      <p class="basket-sub">Keep your planned requests in one summary view.</p>
+
+      <div id="basketList">
+        <div class="basket-empty">
+          <b>Your Basket is Empty</b>
+          <p>Choose a service card to select sample dates or add items.</p>
+        </div>
+      </div>
+
+      <button class="btn-primary review-btn" id="reviewBasketBtn" onclick="openBasketSummary()" disabled>Review Demo Summary →</button>
+    </aside>
+  </section>
+
+  <!-- Patient Portal Demo -->
+  <section id="portalDemo" class="portal-band" aria-labelledby="portalHeading">
+    <div class="shell">
+      <div class="portal-intro">
+        <div class="portal-eyebrow">Connected Portal Concept</div>
+        <h2 id="portalHeading">Simulated Patient Results Workspace</h2>
+        <p>Test how report notifications and diagnostic follow-ups connect seamlessly.</p>
+      </div>
+
+      <div class="portal-grid">
+        <div class="portal-card">
+          <small>FICTIONAL RECORD · MC-DEMO-001</small>
+          <h3>Diagnostic Reports</h3>
+          <p>Simulate changing report status to view how sample reports appear in the patient dashboard.</p>
+          <div style="margin-bottom:14px;">
+            <label style="font-size:11px; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">Simulate Status:</label>
+            <select id="simReportStatus" style="width:100%; padding:8px; border-radius:6px; border:1px solid var(--border);">
+              <option value="ready">Ready to View</option>
+              <option value="processing">Processing in Lab</option>
+              <option value="scheduled">Awaiting Specimen</option>
+            </select>
+          </div>
+          <button class="btn-secondary" style="width:100%; font-size:12px;" onclick="viewSampleReport()">View Sample Document</button>
+        </div>
+
+        <div class="portal-card">
+          <small>TELEMEDICINE INTEGRATION</small>
+          <h3>Virtual Consultation</h3>
+          <p>Connect with a medical practitioner to discuss diagnostic lab findings remotely.</p>
+          <img src="img/stock-12.jpg" alt="Illustrative doctor providing video consultation">
+          <button class="btn-primary" style="width:100%; font-size:12px;" onclick="openModalService('telemedicine-care')">Try Virtual Flow</button>
+        </div>
+
+        <div class="portal-card">
+          <small>PHARMACY REFILLS</small>
+          <h3>SmartBuy Store</h3>
+          <p>Explore direct ordering for prescribed medications and wellness supplements.</p>
+          <img src="img/stock-10.jpg" alt="Illustrative pharmacy apothecary shelves">
+          <button class="btn-secondary" style="width:100%; font-size:12px;" onclick="openModalService('smartbuy-pharma')">Browse SmartBuy Demo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="shell">
+    <div class="footer-grid">
+      <div>
+        <h4 style="font-size:16px; font-weight:800;">Me Cure Healthcare Hub Concept</h4>
+        <p>
+          This independent web application concept demonstrates a unified digital interface for Me Cure Healthcare in Lagos, Nigeria. Appointments, health checks, lab reports, and retail pharmacy items are presented for interactive exploration.
+        </p>
+      </div>
+
+      <div>
+        <h4>Me Cure Links</h4>
+        <p><a href="https://www.mecure.com.ng/" target="_blank" rel="noopener">Official Me Cure Website ↗</a></p>
+        <p><a href="mailto:info@mecure.com.ng">Business Email Contact</a></p>
+      </div>
+
+      <div>
+        <h4>Concept Credits</h4>
+        <p>Designed & Developed by LeadSky.</p>
+        <p>Private Interactive Prototype.</p>
+      </div>
+    </div>
+
+    <div class="footer-credits">
+      <span>Stock photography used for illustrative care categories under Pixabay Content License:</span>
+      <a href="https://pixabay.com/photos/hospital-equipment-medicine-patient-3098683/" target="_blank" rel="noopener">CT Equipment (OsloMetX)</a>
+      <a href="https://pixabay.com/photos/bethesda-naval-medical-center-80380/" target="_blank" rel="noopener">Radiology Scanner (12019)</a>
+      <a href="https://pixabay.com/photos/laboratory-test-tubes-563423/" target="_blank" rel="noopener">Pathology Tubes (DarkoStojanovic)</a>
+      <a href="https://pixabay.com/photos/blood-test-blood-sample-5601437/" target="_blank" rel="noopener">Blood Test (shameersrk)</a>
+      <a href="https://pixabay.com/photos/visual-visual-test-vision-5028090/" target="_blank" rel="noopener">Eye Exam (newarta)</a>
+      <a href="https://pixabay.com/photos/dentist-operation-teeth-lamp-4373290/" target="_blank" rel="noopener">Dental Lamp (Movidagrafica)</a>
+      <a href="https://pixabay.com/photos/dentist-dental-care-dentistry-teeth-2530990/" target="_blank" rel="noopener">Dentistry (drshohmelian)</a>
+      <a href="https://pixabay.com/photos/pharmacy-old-bottles-4496863/" target="_blank" rel="noopener">Pharmacy Shelves (analogicus)</a>
+      <a href="https://pixabay.com/photos/treatment-hospital-clinic-medicine-4099432/" target="_blank" rel="noopener">Clinic Doctor (fernandozhiminaicela)</a>
+      <a href="https://pixabay.com/photos/computer-business-typing-keyboard-1149148/" target="_blank" rel="noopener">Telemedicine (Free-Photos)</a>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bottom-bar">
+  <div>
+    <b>Contact</b>
+    <small>info@mecure.com.ng</small>
+  </div>
+  <a href="mailto:info@mecure.com.ng" class="btn-primary" style="padding:8px 16px; font-size:13px;">Email</a>
+</div>
+
+<button class="assistant-btn" id="chatLaunchBtn" onclick="toggleChatWindow()" aria-expanded="false" aria-controls="chatWindow">
+  <span>✦</span> Care Assistant
+</button>
+
+<div class="chat-window" id="chatWindow" hidden>
+  <div class="chat-header">
+    <div>
+      <b style="font-size:13px;">Me Cure Care Assistant</b>
+      <small style="display:block; font-size:9px; color:#C9D2DD;">Scripted Demo · Instant Guidance</small>
+    </div>
+    <button onclick="toggleChatWindow()" style="color:#fff; font-size:18px;">×</button>
+  </div>
+
+  <div class="chat-log" id="chatLog">
+    <div class="chat-msg">
+      Hello! How can I assist your tour of this Me Cure concept? Ask about PET Scans, WeCare packages, Eye care, or Dental appointments.
+    </div>
+  </div>
+
+  <form class="chat-input-row" id="chatForm">
+    <input type="text" id="chatInput" placeholder="Ask a question..." required>
+    <button class="btn-primary" style="padding:8px 14px;">Send</button>
+  </form>
+</div>
+
+<dialog id="serviceModal">
+  <div class="modal-header">
+    <h2 id="modalTitle">Service Details</h2>
+    <button class="modal-close" onclick="closeModal()">×</button>
+  </div>
+  <div class="modal-body" id="modalBody"></div>
+</dialog>
+
+<div class="toast-notice" id="toastNotice" hidden></div>
+
+<script>
+'use strict';
+
+const services = [
+  {
+    id: 'ct-pet',
+    category: 'Diagnostics',
+    name: 'PET/CT & Advanced Imaging',
+    desc: 'High-precision molecular imaging and radiopharmaceutical scan diagnostics in Lagos.',
+    image: 'img/stock-1.jpg',
+    alt: 'High precision CT and PET scanning medical machine',
+    action: 'Book Scan Slot',
+    kind: 'booking',
+    detail: 'Me Cure Healthcare offers state-of-the-art PET/CT and diagnostic radiology services. Select a sample appointment date and time for diagnostic review.'
+  },
+  {
+    id: 'mri-xray',
+    category: 'Diagnostics',
+    name: 'MRI & Radiographic Diagnostics',
+    desc: 'Comprehensive structural imaging, soft tissue MRI scans, and low-radiation digital X-ray exams.',
+    image: 'img/stock-2.jpg',
+    alt: 'Bethesda CT scanner equipment in hospital radiology room',
+    action: 'Schedule MRI/X-Ray',
+    kind: 'booking',
+    detail: 'Advanced cross-sectional MRI and digital X-ray reporting. Choose a preferred morning or afternoon window for sample scheduling.'
+  },
+  {
+    id: 'lab-pathology',
+    category: 'Pathology Lab',
+    name: 'Automated Clinical Pathology',
+    desc: 'Full-spectrum automated biochemistry, hematology, immunology and lab diagnostics.',
+    image: 'img/stock-3.jpg',
+    alt: 'Laboratory test tubes and diagnostic analysis equipment',
+    action: 'Request Lab Specimen',
+    kind: 'booking',
+    detail: 'Me Cure clinical laboratory provides accurate pathology testing. Schedule a sample lab specimen collection or walk-in enquiry.'
+  },
+  {
+    id: 'wecare-checkup',
+    category: 'WeCare',
+    name: 'WeCare Health Check Plan',
+    desc: 'Comprehensive screening for 9 lifestyle diseases covering 53 key medical investigations.',
+    image: 'img/stock-4.jpg',
+    alt: 'Healthcare technician preparing blood sample test',
+    action: 'Explore WeCare Plan',
+    kind: 'plan',
+    detail: 'WeCare is designed to offer preventative wellness through 53 health parameters. Select your interest level to add this to your care summary.'
+  },
+  {
+    id: 'eye-exam',
+    category: 'Eye Center',
+    name: 'Comprehensive Eye Examination',
+    desc: 'Complete optical health evaluation, visual acuity assessment and glaucoma screening.',
+    image: 'img/stock-5.jpg',
+    alt: 'Optometrist examining patient vision with optical equipment',
+    action: 'Book Eye Exam',
+    kind: 'booking',
+    detail: 'Me Cure Eye Center provides comprehensive ophthalmic diagnostic consultations. Select an appointment slot for a visual health check.'
+  },
+  {
+    id: 'eye-surgery',
+    category: 'Eye Center',
+    name: 'Cataract & Refractive Diagnostics',
+    desc: 'Specialized eye care including cataract evaluation, corneal topometry, and optical correction.',
+    image: 'img/stock-6.jpg',
+    alt: 'Ophthalmologist performing vision test examination',
+    action: 'Consult Specialist',
+    kind: 'booking',
+    detail: 'Detailed diagnostic mapping for cataract surgery and vision restoration. Pick a sample consultation slot.'
+  },
+  {
+    id: 'dental-general',
+    category: 'Dental Care',
+    name: 'Preventive & Cosmetic Dentistry',
+    desc: 'Professional teeth cleaning, teeth whitening, aesthetic veneers and comprehensive oral exams.',
+    image: 'img/stock-7.jpg',
+    alt: 'Dental clinic operating lamp and treatment room instruments',
+    action: 'Book Dental Visit',
+    kind: 'booking',
+    detail: 'Complete oral health care, teeth whitening, and cosmetic enhancements. Select a convenient time slot for your appointment.'
+  },
+  {
+    id: 'dental-specialist',
+    category: 'Dental Care',
+    name: 'Restorative & Root Canal Therapy',
+    desc: 'Expert endodontic care, root canal procedures, crown fittings, and dental implants.',
+    image: 'img/stock-8.jpg',
+    alt: 'Dentist holding dental examination instruments during procedure',
+    action: 'Schedule Procedure',
+    kind: 'booking',
+    detail: 'Specialized restorative dental therapy focused on comfort and long-term oral health. Select a sample consultation slot.'
+  },
+  {
+    id: 'smartbuy-essentials',
+    category: 'SmartBuy',
+    name: 'SmartBuy Wellness Essentials',
+    desc: 'Direct ordering demo for daily health supplements, personal care items and wellness kits.',
+    image: 'img/stock-9.jpg',
+    alt: 'Pharmacy shelf display with apothecary care products',
+    action: 'Browse Item Demo',
+    kind: 'retail',
+    detail: 'Me Cure SmartBuy digital storefront simulation. Select demo quantities to test adding wellness products to your care basket.'
+  },
+  {
+    id: 'smartbuy-pharma',
+    category: 'SmartBuy',
+    name: 'Prescription Refill Service',
+    desc: 'Verified pharmaceutical dispensing, chronic disease refills and medicine tracking.',
+    image: 'img/stock-10.jpg',
+    alt: 'Historical pharmacy chemical bottles and apothecary stock',
+    action: 'Request Refill Demo',
+    kind: 'retail',
+    detail: 'Explore how prescription refills and medication management integrate directly into your patient portal workspace.'
+  },
+  {
+    id: 'clinical-doctor',
+    category: 'Specialist Clinics',
+    name: 'Physician Specialist Consultation',
+    desc: 'In-person physician consultations, internal medicine evaluations and wellness reviews.',
+    image: 'img/stock-11.jpg',
+    alt: 'Doctor providing treatment consultation in medical clinic',
+    action: 'Book Consultation',
+    kind: 'booking',
+    detail: 'Schedule an in-person consultation with a qualified specialist physician at Me Cure facilities.'
+  },
+  {
+    id: 'telemedicine-care',
+    category: 'Telemedicine',
+    name: 'Virtual Telemedicine Session',
+    desc: 'Secure video consultations with Me Cure clinicians from the comfort of your home.',
+    image: 'img/stock-12.jpg',
+    alt: 'Healthcare doctor conducting virtual consultation at laptop desk',
+    action: 'Try Telemedicine',
+    kind: 'tele',
+    detail: 'Virtual telemedicine connects patients directly with doctors for diagnostic follow-ups, report explanations, and prescription reviews.'
+  }
+];
+
+let activeCategory = 'All Care';
+let searchQuery = '';
+let basket = [];
+let selectedDate = '';
+let selectedTime = '';
+let currentActiveService = null;
+let toastTimer = null;
+
+const categories = ['All Care', 'Diagnostics', 'Pathology Lab', 'WeCare', 'Eye Center', 'Dental Care', 'SmartBuy', 'Telemedicine'];
+
+function toast(message) {
+  const el = document.getElementById('toastNotice');
+  el.textContent = message;
+  el.hidden = false;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.hidden = true; }, 4000);
+}
+
+function scrollToCatalogue() {
+  document.getElementById('mainCatalogue').scrollIntoView({ behavior: 'smooth' });
+}
+
+function toggleMobileMenu() {
+  const menu = document.getElementById('mobileNavMenu');
+  const btn = document.getElementById('menuToggleBtn');
+  const isHidden = menu.hidden;
+  menu.hidden = !isHidden;
+  btn.setAttribute('aria-expanded', isHidden);
+}
+
+function renderTabs() {
+  const wrap = document.getElementById('categoryTabs');
+  wrap.innerHTML = categories.map(cat => `
+    <button class="tab-btn ${cat === activeCategory ? 'active' : ''}" onclick="setCategory('${cat}')" role="tab" aria-selected="${cat === activeCategory}">
+      ${cat}
+    </button>
+  `).join('');
+}
+
+function setCategory(cat) {
+  activeCategory = cat;
+  renderTabs();
+  renderGrid();
+}
+
+function renderGrid() {
+  const grid = document.getElementById('catalogueGrid');
+  const filtered = services.filter(s => {
+    const matchCat = (activeCategory === 'All Care' || s.category === activeCategory);
+    const matchQuery = (s.name.toLowerCase().includes(searchQuery.toLowerCase()) || s.desc.toLowerCase().includes(searchQuery.toLowerCase()) || s.category.toLowerCase().includes(searchQuery.toLowerCase()));
+    return matchCat && matchQuery;
+  });
+
+  document.getElementById('serviceCountLabel').textContent = `${filtered.length} Services Available`;
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `
+      <div style="grid-column: 1/-1; text-align:center; padding:40px; background:white; border-radius:12px; border:1px dashed var(--border);">
+        <h3 style="font-size:16px; color:var(--navy);">No Matching Services Found</h3>
+        <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">Try searching for "Eye", "Dental", "Lab", or "PET".</p>
+        <button class="btn-secondary" style="margin-top:12px;" onclick="resetSearch()">Reset Filters</button>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = filtered.map(s => `
+    <button class="card-tile" onclick="openModalService('${s.id}')" aria-label="${s.name}">
+      <div class="card-media">
+        <img src="${s.image}" alt="${s.alt}" loading="lazy" width="400" height="240">
+        <span class="card-tag">${s.kind === 'tele' ? 'Virtual Care' : s.kind === 'retail' ? 'SmartBuy Demo' : 'Clinical Service'}</span>
+      </div>
+      <div class="card-content">
+        <span class="card-category">${s.category}</span>
+        <h3 class="card-title">${s.name}</h3>
+        <p class="card-text">${s.desc}</p>
+        <div class="card-footer">
+          <span>${s.action}</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </div>
+    </button>
+  `).join('');
+}
+
+function resetSearch() {
+  activeCategory = 'All Care';
+  searchQuery = '';
+  document.getElementById('searchInput').value = '';
+  renderTabs();
+  renderGrid();
+}
+
+document.getElementById('searchInput').addEventListener('input', (e) => {
+  searchQuery = e.target.value;
+  renderGrid();
+});
+
+function openModalService(id) {
+  currentActiveService = services.find(s => s.id === id);
+  const s = currentActiveService;
+  selectedDate = '';
+  selectedTime = '';
+
+  const modal = document.getElementById('serviceModal');
+  document.getElementById('modalTitle').textContent = s.name;
+
+  let bodyHTML = `
+    <img src="${s.image}" alt="${s.alt}" class="modal-img">
+    <div style="font-size:11px; font-weight:800; color:var(--green); text-transform:uppercase; margin-bottom:4px;">${s.category}</div>
+    <p style="font-size:13px; color:var(--text-muted); margin-bottom:16px;">${s.detail}</p>
+  `;
+
+  if (s.kind === 'plan') {
+    bodyHTML += `
+      <form onsubmit="handlePlanSubmit(event)">
+        <div style="margin-bottom:14px;">
+          <label style="font-size:12px; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">Select WeCare Tier:</label>
+          <select id="planOptionSelect" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border);">
+            <option>WeCare Standard Package (53 Parameters)</option>
+            <option>WeCare Comprehensive Family Package</option>
+            <option>WeCare Executive Senior Screening</option>
+          </select>
+        </div>
+        <button class="btn-primary" style="width:100%;">Add Plan Interest to Basket →</button>
+      </form>
+    `;
+  } else if (s.kind === 'retail') {
+    bodyHTML += `
+      <form onsubmit="handleRetailSubmit(event)">
+        <div style="margin-bottom:14px;">
+          <label style="font-size:12px; font-weight:700; color:var(--navy); display:block; margin-bottom:4px;">Demo Item Quantity:</label>
+          <input type="number" id="retailQtyInput" min="1" max="10" value="1" style="width:100%; padding:10px; border-radius:8px; border:1px solid var(--border);">
+        </div>
+        <button class="btn-primary" style="width:100%;">Add Demo Item to Basket →</button>
+      </form>
+    `;
+  } else {
+    bodyHTML += `
+      <div style="background:var(--soft); border:1px solid var(--border); border-radius:10px; padding:14px; margin-bottom:16px;">
+        <span style="font-size:11px; font-weight:800; color:var(--navy);">SELECT SAMPLE APPOINTMENT SLOT</span>
+        <div class="cal-header">
+          <button type="button" onclick="toast('Sample month selector')">‹</button>
+          <strong style="font-size:12px; color:var(--navy);">Lagos Center · Upcoming Days</strong>
+          <button type="button" onclick="toast('Sample month selector')">›</button>
+        </div>
+        <div class="cal-grid" id="calGrid">
+          <span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span>
+          <button type="button" onclick="selectCalDate(this, '2026-11-10')">10</button>
+          <button type="button" onclick="selectCalDate(this, '2026-11-11')">11</button>
+          <button type="button" onclick="selectCalDate(this, '2026-11-12')">12</button>
+          <button type="button" onclick="selectCalDate(this, '2026-11-13')">13</button>
+          <button type="button" onclick="selectCalDate(this, '2026-11-14')">14</button>
+          <button type="button" onclick="selectCalDate(this, '2026-11-15')">15</button>
+          <button type="button" onclick="selectCalDate(this, '2026-11-16')">16</button>
+        </div>
+
+        <div class="time-slots" id="timeSlots" style="display:none;">
+          <button type="button" onclick="selectSlot(this, '09:00 WAT')">09:00 WAT</button>
+          <button type="button" onclick="selectSlot(this, '11:30 WAT')">11:30 WAT</button>
+          <button type="button" onclick="selectSlot(this, '14:00 WAT')">14:00 WAT</button>
+          <button type="button" onclick="selectSlot(this, '16:00 WAT')">16:00 WAT</button>
+        </div>
+      </div>
+
+      <button class="btn-primary" style="width:100%;" id="confirmBookingBtn" onclick="confirmAppointment()" disabled>Save Sample Slot to Basket →</button>
+    `;
+  }
+
+  document.getElementById('modalBody').innerHTML = bodyHTML;
+  modal.showModal();
+}
+
+function closeModal() {
+  document.getElementById('serviceModal').close();
+}
+
+function selectCalDate(btn, dateStr) {
+  document.querySelectorAll('#calGrid button').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedDate = dateStr;
+  document.getElementById('timeSlots').style.display = 'flex';
+}
+
+function selectSlot(btn, timeStr) {
+  document.querySelectorAll('#timeSlots button').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedTime = timeStr;
+  document.getElementById('confirmBookingBtn').disabled = false;
+}
+
+function confirmAppointment() {
+  const s = currentActiveService;
+  addToBasket(s, `${selectedDate} at ${selectedTime}`, 1);
+  closeModal();
+  toast(`This is a demo form, nothing was sent. ${s.name} added to your basket.`);
+}
+
+function handlePlanSubmit(e) {
+  e.preventDefault();
+  const s = currentActiveService;
+  const opt = document.getElementById('planOptionSelect').value;
+  addToBasket(s, opt, 1);
+  closeModal();
+  toast(`This is a demo form, nothing was sent. ${s.name} saved to basket.`);
+}
+
+function handleRetailSubmit(e) {
+  e.preventDefault();
+  const s = currentActiveService;
+  const qty = parseInt(document.getElementById('retailQtyInput').value) || 1;
+  addToBasket(s, 'SmartBuy Item Demo', qty);
+  closeModal();
+  toast(`This is a demo form, nothing was sent. ${qty}x ${s.name} added.`);
+}
+
+function addToBasket(service, detailStr, qty) {
+  const existing = basket.find(b => b.id === service.id && b.detail === detailStr);
+  if (existing) {
+    existing.qty += qty;
+  } else {
+    basket.push({
+      key: Date.now() + Math.random(),
+      id: service.id,
+      name: service.name,
+      detail: detailStr,
+      qty: qty
+    });
+  }
+  updateBasketUI();
+}
+
+function updateBasketUI() {
+  const count = basket.reduce((sum, item) => sum + item.qty, 0);
+  document.getElementById('basketCount').textContent = count;
+  document.getElementById('reviewBasketBtn').disabled = (count === 0);
+
+  const container = document.getElementById('basketList');
+  if (basket.length === 0) {
+    container.innerHTML = `
+      <div class="basket-empty">
+        <b>Your Basket is Empty</b>
+        <p>Choose a service card to select sample dates or add items.</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = basket.map(item => `
+    <div class="basket-item">
+      <strong>${item.name}</strong>
+      <small>${item.detail}</small>
+      <div class="basket-controls">
+        <span>Qty: ${item.qty}</span>
+        <button class="basket-remove" onclick="removeFromBasket('${item.key}')">Remove</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function removeFromBasket(key) {
+  basket = basket.filter(i => String(i.key) !== String(key));
+  updateBasketUI();
+  toast('Item removed from basket.');
+}
+
+function openBasketSummary() {
+  if (basket.length === 0) return;
+  const modal = document.getElementById('serviceModal');
+  document.getElementById('modalTitle').textContent = 'Your Care Summary';
+
+  const itemsList = basket.map(i => `
+    <div style="padding:10px 0; border-bottom:1px solid var(--border);">
+      <b style="color:var(--navy); font-size:13px;">${i.name} (x${i.qty})</b>
+      <small style="display:block; color:var(--text-muted); font-size:11px;">${i.detail}</small>
+    </div>
+  `).join('');
+
+  document.getElementById('modalBody').innerHTML = `
+    <div style="background:var(--soft); border-radius:10px; padding:14px; margin-bottom:16px;">
+      <span style="font-size:11px; font-weight:800; color:var(--green); text-transform:uppercase;">Connected Demo Request Summary</span>
+      <p style="font-size:12px; color:var(--text-muted); margin-top:4px;">No payments or clinical reservations are executed in this private demo environment.</p>
+    </div>
+    ${itemsList}
+    <div style="margin-top:20px;">
+      <button class="btn-primary" style="width:100%;" onclick="submitDemoForm()">Submit Demo Summary →</button>
+    </div>
+  `;
+  modal.showModal();
+}
+
+function submitDemoForm() {
+  closeModal();
+  basket = [];
+  updateBasketUI();
+  toast('This is a demo form, nothing was sent. Thank you for exploring!');
+}
+
+function viewSampleReport() {
+  const status = document.getElementById('simReportStatus').value;
+  if (status !== 'ready') {
+    toast(`Sample status is set to "${status}". No report is downloadable in this state.`);
+    return;
+  }
+
+  const textContent = `ME CURE HEALTHCARE HUB — INDEPENDENT CONCEPT DEMO
+=====================================================
+FICTIONAL SAMPLE DIAGNOSTIC REPORT (MC-DEMO-001)
+
+Patient Name: Fictional Demo Profile
+Facility: Me Cure Diagnostic Center, Lagos
+Status: Simulated Ready State
+
+NOTES:
+- This document contains no real patient records or clinical data.
+- Standard Laboratory Reference Range: Comparison parameters for clinicians.
+- For actual results, consult your registered physician at Me Cure Healthcare.
+=====================================================`;
+
+  const blob = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'SAMPLE-Diagnostic-Report-MeCure.txt';
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  toast('Sample diagnostic text report downloaded.');
+}
+
+function toggleChatWindow() {
+  const win = document.getElementById('chatWindow');
+  const btn = document.getElementById('chatLaunchBtn');
+  const isHidden = win.hidden;
+  win.hidden = !isHidden;
+  btn.setAttribute('aria-expanded', isHidden);
+}
+
+document.getElementById('chatForm').addEventListener('submit', (e) => {
+  e.preventDefault();
+  const input = document.getElementById('chatInput');
+  const val = input.value.trim();
+  if (!val) return;
+
+  const log = document.getElementById('chatLog');
+
+  const userMsg = document.createElement('div');
+  userMsg.className = 'chat-msg user';
+  userMsg.textContent = val;
+  log.appendChild(userMsg);
+
+  let reply = 'I am a scripted assistant for this Me Cure web concept. You can explore PET Scans, WeCare packages, Eye care exams, Dental procedures, or SmartBuy refills.';
+  const q = val.toLowerCase();
+  if (q.includes('pet') || q.includes('scan') || q.includes('ct') || q.includes('mri')) {
+    reply = 'Me Cure provides advanced PET/CT and diagnostic radiology in Lagos. Select the "PET/CT" or "MRI" card on the catalogue to try sample date scheduling!';
+  } else if (q.includes('wecare') || q.includes('package') || q.includes('checkup')) {
+    reply = 'WeCare covers 9 lifestyle disease parameters across 53 medical investigations. Click "Explore WeCare Plan" to select your preferred package option!';
+  } else if (q.includes('eye') || q.includes('optical') || q.includes('cataract')) {
+    reply = 'Me Cure Eye Center offers visual acuity testing, cataract surgery diagnostics, and optical care. Check out the Eye Center cards in the catalogue.';
+  } else if (q.includes('dental') || q.includes('teeth')) {
+    reply = 'Dental services include teeth whitening, root canals, veneers, and preventative care. Click any Dental Care card to select sample appointments.';
+  } else if (q.includes('report') || q.includes('result')) {
+    reply = 'You can simulate viewing and downloading a sample laboratory report in the "Simulated Patient Results Workspace" section below!';
+  }
+
+  setTimeout(() => {
+    const botMsg = document.createElement('div');
+    botMsg.className = 'chat-msg';
+    botMsg.textContent = reply;
+    log.appendChild(botMsg);
+    log.scrollTop = log.scrollHeight;
+  }, 300);
+
+  input.value = '';
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderTabs();
+  renderGrid();
+  updateBasketUI();
+});
+</script>
+</body>
+</html>
