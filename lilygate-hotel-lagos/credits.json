@@ -1,0 +1,128 @@
+[
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/lilygatehotel"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bright contemporary hotel bedroom queen bed writing desk",
+    "description": "bed, bedroom, chairs, computer, furniture, windows, bedroom furniture, indoors, interiors, interior design, interior decoration, bedroom, bedroom, bedroom, bedroom, bedroom, interior design",
+    "source": "https://pixabay.com/photos/bed-bedroom-chairs-computer-1834327/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bright contemporary hotel bedroom queen bed writing desk",
+    "description": "bed, hotel, luxurious, bedroom, hotel room, relax, vacation, hotel, hotel, hotel, hotel, hotel, bedroom, hotel room",
+    "source": "https://pixabay.com/photos/bed-hotel-luxurious-bedroom-4416515/",
+    "photographer": "Engin_Akyurt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pexels luxury hotel bedroom balcony king bed",
+    "description": "bedroom, interior design, house, room, bed, interior, beddings, furniture, bedroom furniture, bedroom interior, minimalist design, minimalist interior, minimalist, minimalism, bedroom, bedroom, bedroom, bedroom, bedroom, bed, bed",
+    "source": "https://pixabay.com/photos/bedroom-interior-design-house-room-5772286/",
+    "photographer": "StuBaileyPhoto",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pexels luxury hotel bedroom balcony king bed",
+    "description": "bedroom, interior design, bed, room, furniture, interior, indoors, bedroom interior, bedroom furniture, hotel room, house, home, bedroom, bedroom, bedroom, bedroom, bedroom, bed, bed, bed, room, hotel room, hotel room",
+    "source": "https://pixabay.com/photos/bedroom-interior-design-bed-room-5664221/",
+    "photographer": "peterweideman",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay hotel suite living room dining table",
+    "description": "chairs, floor, furniture, indoors, interior design, lamp, parquet, room, tables, windows, rug, interiors, home interior, home furniture, interior decoration, home, house, floor, interior design, room, room, home, home, home, house, house, house, house, house",
+    "source": "https://pixabay.com/photos/chairs-floor-furniture-indoors-2181947/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay hotel suite living room dining table",
+    "description": "dining room, living room, modern, white, bright, windows, interior design, window, apartment, room, furniture, table, chairs, contemporary, indoors, inside, interior, clean, architecture, zoom background, blue background, blue window, blue room, blue zoom, blue table, blue design, blue interior, blue clean, dining room, dining room, living room, living room, living room, living room, living room, windows, interior design, interior design, window, apartment, apartment, apartment, apartment, room, furniture, table, interior, zoom background",
+    "source": "https://pixabay.com/photos/dining-room-living-room-modern-3108037/",
+    "photographer": "jeanvdmeulen",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels hotel room service breakfast tray",
+    "description": "hotel, hotel rooms, home, decoration, relax, mood, room, bed, double bed, tourist, boudoir, hotel, hotel, hotel, hotel, hotel",
+    "source": "https://pixabay.com/photos/hotel-hotel-rooms-home-decoration-1749602/",
+    "photographer": "ManuelaJaeger",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels hotel room service breakfast tray",
+    "description": "legs, breakfast, bed, breakfast in bed, tray, breakfast tray, bedroom, blanket, food, sheets, bed sheets, feet, woman, lifestyle, relaxation, toast, wooden tray, morning, breakfast, breakfast, breakfast, breakfast, breakfast, bed, lifestyle",
+    "source": "https://pixabay.com/photos/legs-breakfast-bed-breakfast-in-bed-1867769/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pexels elegant hotel lounge bar interior",
+    "description": "wine, alcohol, drink, bar, bottle, water, nature, wooden, old",
+    "source": "https://pixabay.com/photos/wine-alcohol-drink-bar-bottle-6878013/",
+    "photographer": "tianya1223",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pexels elegant hotel lounge bar interior",
+    "description": "restaurant, furniture, interiors, interior design, interior decoration, architecture, bar, building, chairs, hotel, indoors, seats, tables, restaurant, restaurant, restaurant, restaurant, restaurant, bar, hotel, hotel",
+    "source": "https://pixabay.com/photos/restaurant-furniture-interiors-1837150/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-11.jpg",
+    "kind": "stock photo",
+    "query": "Pexels outdoor hotel terrace dining evening",
+    "description": "table, glassware, cutlery, silverware, stemware, dining table, dinner table, table setting, table set-up, nature, dinner, luxury, restaurant, sunset",
+    "source": "https://pixabay.com/photos/table-glassware-cutlery-silverware-5356682/",
+    "photographer": "JoelFazhari",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-12.jpg",
+    "kind": "stock photo",
+    "query": "Pexels outdoor hotel terrace dining evening",
+    "description": "street cafe, cafe, krakow, poland, travel, cafe, cafe, cafe, cafe, cafe",
+    "source": "https://pixabay.com/photos/street-cafe-cafe-krakow-poland-4472312/",
+    "photographer": "DimaLiss",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
