@@ -1,0 +1,102 @@
+[
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels restaurant table setting natural daylight linen",
+    "description": "table, glassware, cutlery, silverware, stemware, dining table, dinner table, table setting, table set-up, nature, dinner, luxury, restaurant, sunset",
+    "source": "https://pixabay.com/photos/table-glassware-cutlery-silverware-5356682/",
+    "photographer": "JoelFazhari",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels restaurant table setting natural daylight linen",
+    "description": "table, food, lunch, breakfast, fresh, dish, family, house, family house, cooking, taste, meal, cutlery, glasses, plates, tablecloth, napkins, lunch, lunch, lunch, lunch, lunch, family, family, family, cooking, cooking, meal",
+    "source": "https://pixabay.com/photos/table-food-lunch-breakfast-fresh-710040/",
+    "photographer": "RealAKP",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay restaurant dining room warm wood daylight",
+    "description": "dining room, living room, modern, white, bright, windows, interior design, window, apartment, room, furniture, table, chairs, contemporary, indoors, inside, interior, clean, architecture, zoom background, blue background, blue window, blue room, blue zoom, blue table, blue design, blue interior, blue clean, dining room, dining room, living room, living room, living room, living room, living room, windows, interior design, interior design, window, apartment, apartment, apartment, apartment, room, furniture, table, interior, zoom background",
+    "source": "https://pixabay.com/photos/dining-room-living-room-modern-3108037/",
+    "photographer": "jeanvdmeulen",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay restaurant dining room warm wood daylight",
+    "description": "kitchen, restaurant, food, breakfast, table, window, sunlight, space, restaurant, restaurant, restaurant, restaurant, restaurant",
+    "source": "https://pixabay.com/photos/kitchen-restaurant-food-breakfast-6878026/",
+    "photographer": "tianya1223",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pexels ceramic plates cutlery restaurant table detail",
+    "description": "restaurant, table setting, table, glassware, stemware, wine glasses, glasses, plates, napkin, set-up, dinner, dining, service, lunch, restaurant, restaurant, restaurant, restaurant, restaurant",
+    "source": "https://pixabay.com/photos/restaurant-table-setting-table-449952/",
+    "photographer": "neshom",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pexels ceramic plates cutlery restaurant table detail",
+    "description": "glasses, banquet, festive, celebration, table decoration, meal, celebration, celebration, celebration, celebration, celebration, meal, meal, meal",
+    "source": "https://pixabay.com/photos/glasses-banquet-festive-celebration-8470536/",
+    "photographer": "congerdesign",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels restaurant glassware window light close up",
+    "description": "kitchen, glass, bar, restaurant, rack, wine, drink, empty, arrange",
+    "source": "https://pixabay.com/photos/kitchen-glass-bar-restaurant-rack-10005922/",
+    "photographer": "jrydertr",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels restaurant glassware window light close up",
+    "description": "alcoholic beverages, bar, beer, bottles, glass bottles, liquors, alcoholic drinks, drinks, counter, pub, shelves, bar, bar, bar, bar, bar, beer",
+    "source": "https://pixabay.com/photos/alcoholic-beverages-bar-beer-1845295/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay restaurant table candle evening detail",
+    "description": "table setting, celebration, feast, meal, dishes, wine, dinner, feast, wine, wine, wine, wine, wine, dinner, dinner, dinner, dinner",
+    "source": "https://pixabay.com/photos/table-setting-celebration-feast-791148/",
+    "photographer": "kaboompics",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay restaurant table candle evening detail",
+    "description": "christmas background, table, setting, christmas, xmas, evening, dinner, supper, food, holidays, decor, decoration",
+    "source": "https://pixabay.com/photos/christmas-background-table-setting-791110/",
+    "photographer": "kaboompics",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
