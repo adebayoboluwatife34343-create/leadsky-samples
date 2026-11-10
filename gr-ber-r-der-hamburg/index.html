@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F0F5FA">
+<title>Gräber Räder · Dein Alltag. Dein Rad. · Website-Konzept</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;450;500;600&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F0F5FA;--ink:#20364B;--red:#B83A24;--olive:#E1E7C9;--line:#c8d3dc;--muted:#506477;--ease:cubic-bezier(.22,.68,0,1.01)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"IBM Plex Sans",sans-serif;font-size:16px;line-height:1.6}
+button,a,input{touch-action:manipulation}
+a{color:inherit;text-underline-offset:4px}
+button{font:inherit;cursor:pointer}
+button,a{-webkit-tap-highlight-color:transparent}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--red);outline-offset:5px}
+button:disabled{cursor:default;opacity:.45}
+img{display:block;width:100%;height:auto;object-fit:cover}
+h1,h2,h3,p{margin:0}
+h1,h2,h3,.brand{font-family:Sora,sans-serif}
+h1{font-size:clamp(44px,5vw,78px);line-height:1.06;font-weight:500;letter-spacing:-.065em}
+h2{font-size:clamp(32px,3.2vw,52px);line-height:1.13;font-weight:500;letter-spacing:-.05em}
+h3{font-weight:500;letter-spacing:-.025em;line-height:1.3}
+button{border:0}
+.banner{padding:8px 18px;background:var(--ink);color:#fff;font-size:11px;text-align:center;line-height:1.5}
+.header{height:73px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding:0 4%;background:var(--paper);position:relative;z-index:20}
+.brand{text-decoration:none;font-size:20px;font-weight:600;letter-spacing:-1px;white-space:nowrap}
+.brand-mark{display:inline-block;width:11px;height:11px;background:var(--red);border-radius:50%;margin-right:8px}
+.header-actions{display:flex;gap:26px;align-items:center}
+.header-call{font-size:13px;font-weight:600;text-decoration:none}
+.menu-toggle{display:flex;align-items:center;gap:10px;background:transparent;color:var(--ink);padding:12px 0;font-size:13px}
+.menu-lines{width:20px;display:grid;gap:5px}
+.menu-lines:before,.menu-lines:after{content:"";height:1px;background:currentColor;display:block;transition:transform .2s}
+.menu-toggle[aria-expanded="true"] .menu-lines:before{transform:translateY(3px) rotate(45deg)}
+.menu-toggle[aria-expanded="true"] .menu-lines:after{transform:translateY(-3px) rotate(-45deg)}
+.menu{position:absolute;right:0;top:100%;width:min(440px,100%);background:var(--ink);color:white;padding:24px 30px;box-shadow:0 20px 35px #20364b22}
+.menu[hidden]{display:none}
+.menu a{display:flex;gap:24px;text-decoration:none;padding:15px 0;border-bottom:1px solid #ffffff33;font-family:Sora,sans-serif;font-size:18px}
+.menu a span{font:12px "IBM Plex Sans",sans-serif;color:#bdcbd5;padding-top:6px}
+.layout{display:grid;grid-template-columns:48% 52%;align-items:start}
+.visual{position:sticky;top:0;height:100svh;overflow:hidden;background:#dce2df}
+.visual img{height:100%;position:absolute;inset:0;transition:opacity .8s ease;object-position:48% center}
+.visual img:last-of-type{opacity:0}
+.visual-bottom{position:absolute;bottom:0;left:0;right:0;background:var(--ink);color:white;padding:19px 27px;display:flex;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.04em}
+.visual-stamp{position:absolute;top:28px;left:28px;background:var(--paper);padding:13px 17px;line-height:1.4;font-size:12px}
+.visual-stamp strong{font-family:Sora,sans-serif;font-size:17px;display:block;font-weight:500}
+.photo-number{position:absolute;right:26px;top:27px;background:var(--olive);color:var(--ink);width:45px;height:45px;display:grid;place-items:center;border-radius:50%;font-size:12px}
+main{min-width:0}
+.chapter{padding:64px clamp(25px,4.2vw,76px);border-bottom:1px solid var(--line);scroll-margin-top:20px}
+.hero{min-height:calc(100svh - 107px);display:flex;flex-direction:column;justify-content:space-between;padding-top:34px;padding-bottom:26px}
+.eyebrow{display:flex;align-items:center;gap:12px;font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:600;margin-bottom:32px}
+.eyebrow .num{border:1px solid #8f9eaa;border-radius:50%;width:29px;height:29px;display:inline-grid;place-items:center;flex:none;letter-spacing:0}
+.hero h1{margin:30px 0 25px}
+.hero h1 em{font-style:normal;color:var(--red)}
+.hero .intro{max-width:350px;color:var(--muted);font-size:17px;margin-bottom:28px}
+.button{display:inline-flex;align-items:center;justify-content:space-between;gap:25px;background:var(--red);color:white;text-decoration:none;padding:16px 21px;min-height:54px;font-weight:500;font-size:14px;transition:background .2s,transform .2s}
+.button:hover{background:#982e1c;transform:translateY(-2px)}
+.button .arrow{font-size:22px;line-height:1}
+.hero-tail{display:flex;justify-content:space-between;gap:18px;border-top:1px solid var(--line);padding-top:20px;margin-top:50px;font-size:11px;color:var(--muted)}
+.hero-tail a{text-decoration:none}
+.mobile-photo{display:none}
+.chapter-intro{margin-top:22px;color:var(--muted);max-width:390px}
+.editorial-row{padding-top:34px;margin-top:35px;border-top:1px solid var(--line)}
+.row-head{display:flex;gap:18px;align-items:baseline;margin-bottom:13px}
+.row-head span{font-size:11px;color:var(--red);font-weight:600}
+.row-head h3{font-size:23px}
+.editorial-row p{color:var(--muted);margin:0 0 22px 35px;font-size:15px}
+.editorial-row img{aspect-ratio:1.6;filter:saturate(.8)}
+.caption{font-size:10px;letter-spacing:.025em;color:var(--muted);margin-top:8px}
+.quiz-section{background:var(--olive)}
+.quiz-section .eyebrow{margin-bottom:25px}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;margin:30px 0 12px;font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.progress{display:flex;gap:5px;margin-bottom:30px}
+.progress span{height:3px;flex:1;background:#b8c1a5;transition:background .2s}
+.progress span.filled{background:var(--ink)}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend{font-family:Sora,sans-serif;font-size:24px;line-height:1.3;letter-spacing:-.035em;margin-bottom:20px;width:100%;font-weight:500}
+.answers{display:grid;gap:9px}
+.answer{display:flex;align-items:center;gap:14px;background:#ffffff85;border:1px solid #a5af92;padding:15px;text-align:left;color:var(--ink);min-height:65px;transition:background .2s,border-color .2s}
+.answer:hover{background:#fff}
+.answer[aria-pressed="true"]{background:white;border:2px solid var(--ink);padding:14px}
+.answer .letter{font-size:11px;border:1px solid #a5af92;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;flex:none}
+.answer strong{font-weight:500;font-size:15px;display:block}
+.answer small{display:block;font-size:12px;color:#455741}
+.quiz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:15px}
+.text-button{background:transparent;color:var(--ink);padding:10px 0;font-size:13px;text-decoration:underline;text-underline-offset:4px}
+.quiz-note{font-size:11px;line-height:1.6;color:#44523e;margin-top:22px}
+.answer-summary{margin-top:20px;font-size:12px;color:#44523e;min-height:20px}
+.result h3{font-size:31px;margin:7px 0 18px}
+.result-label{font-size:11px;letter-spacing:.13em;text-transform:uppercase}
+.result p{font-size:15px;margin-bottom:18px}
+.result ul{padding-left:20px;font-size:14px}
+.result-actions{display:flex;gap:15px;align-items:center;flex-wrap:wrap;margin-top:24px}
+.copy-status{font-size:12px;min-height:22px;margin-top:10px}
+.summary-output{font-size:12px;border-top:1px solid #a5af92;padding-top:16px;user-select:text;white-space:pre-line}
+.workshop-photo{margin:30px 0 25px}
+.workshop-photo img{aspect-ratio:1.3;filter:saturate(.6)}
+.service-line{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-top:1px solid var(--line)}
+.service-line span{font-size:14px}
+.service-line span:last-child{font-size:18px}
+.contact{padding:0;border-bottom:0}
+.contact-top{padding:48px clamp(25px,4.2vw,76px);background:var(--ink);color:white}
+.contact-top .eyebrow .num{border-color:#aebfce}
+.contact-top h2{margin-bottom:28px}
+.contact-top a{font-family:Sora,sans-serif;font-size:clamp(22px,2.7vw,39px);letter-spacing:-.04em;text-decoration:none;border-bottom:1px solid #8d9dac;padding-bottom:7px;display:inline-block}
+.visit{padding:40px clamp(25px,4.2vw,76px)}
+.visit-grid{display:grid;grid-template-columns:1fr;gap:29px}
+.label{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:600;display:block;margin-bottom:10px}
+address{font-style:normal;font-size:18px;line-height:1.5}
+.direction{font-size:13px;display:inline-block;margin-top:12px}
+.hours{width:100%;border-collapse:collapse;font-size:14px}
+.hours td{padding:6px 0;border-bottom:1px solid var(--line)}
+.hours td:last-child{text-align:right;white-space:nowrap}
+.email{overflow-wrap:anywhere;font-size:14px}
+.faq{margin-top:35px}
+details{border-top:1px solid var(--line)}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:19px 30px 19px 0;font-size:14px;font-weight:500;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:0;top:17px;font-size:20px;font-weight:400}
+details[open] summary:after{content:"−"}
+details p{font-size:13px;color:var(--muted);padding:0 15px 20px 0}
+footer{padding:28px clamp(25px,4.2vw,76px);background:#e6edf2;font-size:11px;color:var(--muted)}
+footer strong{color:var(--ink);font-weight:600}
+footer p+p{margin-top:12px}
+.credit-links{display:flex;flex-wrap:wrap;gap:7px 13px;margin-top:10px}
+.footer-bottom{display:flex;justify-content:space-between;gap:15px;border-top:1px solid var(--line);padding-top:17px;margin-top:22px}
+.chapter-index{position:fixed;left:17px;top:50%;z-index:4;display:grid;gap:9px}
+.chapter-index a{width:28px;height:28px;background:var(--paper);color:var(--ink);display:grid;place-items:center;font-size:10px;text-decoration:none;border:1px solid transparent;transition:background .2s,color .2s}
+.chapter-index a[aria-current="location"]{background:var(--red);color:white}
+.mobile-contact{display:none}
+.skip{position:fixed;top:10px;left:10px;background:white;padding:10px;z-index:100;transform:translateY(-150%)}
+.skip:focus{transform:none}
+@media(min-width:1500px){.chapter{padding-left:88px;padding-right:88px}.hero h1{max-width:560px}}
+@media(max-width:1000px) and (min-width:761px){.layout{grid-template-columns:44% 56%}.chapter{padding-left:30px;padding-right:30px}.hero h1{font-size:56px}.visual-stamp{left:20px}.chapter-index{left:10px}.visual-bottom{padding-left:18px}.visual-bottom span:last-child{display:none}}
+@media(max-width:760px){
+html{scroll-padding-top:76px}
+body{padding-bottom:67px}
+.banner{font-size:9px;padding:6px 14px}
+.header{height:60px;padding:0 20px;position:sticky;top:0}
+.brand{font-size:16px;letter-spacing:-.7px}.brand-mark{width:8px;height:8px;margin-right:5px}
+.header-actions{gap:19px}.header-call{font-size:12px}.menu-toggle{font-size:0;padding:15px 0}.menu-lines{width:21px}
+.layout{display:block}.visual,.chapter-index{display:none}
+.chapter{padding:40px 24px;scroll-margin-top:65px}
+.hero{min-height:0;display:block;padding:26px 24px 0}
+.eyebrow{font-size:9px;letter-spacing:.12em;margin-bottom:23px;gap:10px}.eyebrow .num{width:25px;height:25px}
+.hero h1{font-size:clamp(42px,11.9vw,67px);margin:0 0 19px;letter-spacing:-.065em;max-width:500px}
+.hero .intro{font-size:15px;max-width:320px;margin-bottom:22px;line-height:1.55}
+.button{padding:14px 19px;min-height:50px;font-size:13px}
+.hero-tail{margin:25px 0 20px;padding-top:15px;font-size:10px}
+.mobile-photo{display:block;margin:0 -24px}
+.mobile-photo img{height:240px;object-position:center 57%}
+.mobile-photo figcaption{font-size:9px;padding:9px 24px;background:var(--ink);color:white}
+h2{font-size:35px}
+.chapter-intro{font-size:15px}
+.editorial-row{margin-top:27px;padding-top:25px}.row-head h3{font-size:22px}.editorial-row p{margin-left:0;font-size:14px}
+.editorial-row img{aspect-ratio:1.5}
+.quiz-section{padding-top:40px;padding-bottom:38px}
+.quiz-top{margin-top:25px}
+legend{font-size:23px}
+.answer{padding:13px;min-height:68px}.answer[aria-pressed="true"]{padding:12px}
+.answer strong{font-size:14px}.answer small{font-size:11px}
+.quiz-nav{margin-top:20px}
+.contact{padding:0}.contact-top{padding:38px 24px}.contact-top a{font-size:30px}
+.visit{padding:34px 24px}.visit-grid{grid-template-columns:1fr 1fr;gap:25px 16px}.visit-grid>div:last-child{grid-column:1/-1}
+.hours{font-size:12px}.hours td{padding:6px 0}.label{font-size:9px}
+address{font-size:15px}.direction{font-size:12px}
+footer{padding:26px 24px}
+.mobile-contact{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--paper);border-top:1px solid var(--line);padding:9px 16px max(9px,env(safe-area-inset-bottom));z-index:30;gap:10px;align-items:center}
+.mobile-contact a{display:flex;align-items:center;justify-content:center;min-height:43px;text-decoration:none;font-size:12px}
+.mobile-contact .call{background:var(--red);color:white;flex:1;gap:10px}.mobile-contact .find{padding:0 16px;border:1px solid var(--line)}
+}
+@media(max-width:360px){.header{padding:0 14px}.header-actions{gap:13px}.chapter{padding-left:20px;padding-right:20px}.hero h1{font-size:40px}.visit-grid{grid-template-columns:1fr}.visit-grid>div:last-child{grid-column:auto}.mobile-photo{margin-left:-20px;margin-right:-20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.button:hover{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt</a>
+<div class="banner" lang="en">Independent website concept by LeadSky for Gräber Räder. Not their official website.</div>
+<header class="header">
+<a class="brand" href="#start" aria-label="Gräber Räder Start"><span class="brand-mark" aria-hidden="true"></span>Gräber Räder</a>
+<div class="header-actions">
+<a class="header-call" href="tel:+49406928770">Anrufen ↗</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Menü öffnen">Menü <span class="menu-lines" aria-hidden="true"></span></button>
+</div>
+<nav id="menu" class="menu" aria-label="Hauptnavigation" hidden>
+<a href="#start"><span>01</span>Gräber Räder</a>
+<a href="#raeder"><span>02</span>Dein Alltag. Dein Rad.</a>
+<a href="#radfinder"><span>03</span>Radfinder</a>
+<a href="#werkstatt"><span>04</span>Werkstatt</a>
+<a href="#besuch"><span>05</span>Kontakt & Besuch</a>
+</nav>
+</header>
+<div class="layout">
+<aside class="visual" aria-label="Illustrative Fahrradfotografie">
+<img id="fixed-image-a" src="img/stock-2.jpg" alt="Urbanes Fahrrad am Straßenrand – illustrative Stockfotografie" width="1200" height="1600" fetchpriority="high">
+<img id="fixed-image-b" src="img/stock-6.jpg" alt="" width="1200" height="1600" aria-hidden="true">
+<div class="visual-stamp">ZWEI RÄDER. DEIN WEG.<strong>Hamburg, auf deine Art.</strong></div>
+<span class="photo-number" id="photo-number" aria-hidden="true">01</span>
+<div class="visual-bottom"><span>FAHRRADKULTUR · HAMBURG</span><span>Illustrative Stockfotografie</span></div>
+<nav class="chapter-index" aria-label="Kapitel">
+<a href="#start" aria-label="Kapitel 1: Start" aria-current="location">01</a>
+<a href="#raeder" aria-label="Kapitel 2: Fahrräder">02</a>
+<a href="#radfinder" aria-label="Kapitel 3: Radfinder">03</a>
+<a href="#werkstatt" aria-label="Kapitel 4: Werkstatt">04</a>
+<a href="#besuch" aria-label="Kapitel 5: Kontakt">05</a>
+</nav>
+</aside>
+<main id="main">
+<section class="chapter hero" id="start" data-photo="img/stock-2.jpg" data-alt="Urbanes Fahrrad am Straßenrand – illustrative Stockfotografie" data-number="01">
+<div>
+<div class="eyebrow"><span class="num">01</span> Fahrräder · Hamburg</div>
+<h1>Dein Alltag.<br>Dein Weg.<br><em>Dein Rad.</em></h1>
+<p class="intro">Gräber Räder in Hamburg. Welches Rad passt zu deinem Alltag? Finde mit drei kurzen Fragen deine Richtung.</p>
+<a class="button" href="#radfinder">Rad finden <span class="arrow" aria-hidden="true">↗</span></a>
+</div>
+<div>
+<div class="hero-tail"><span>Fuhlsbüttler Straße 269</span><a href="#besuch">Dein Weg zu uns ↓</a></div>
+<figure class="mobile-photo">
+<img src="img/stock-2.jpg" alt="Orangefarbenes Fahrrad vor einer urbanen Fassade – illustrative Stockfotografie" width="900" height="650" fetchpriority="high">
+<figcaption>Unterwegs in der Stadt · illustrative Stockfotografie, kein Geschäftsstandort</figcaption>
+</figure>
+</div>
+</section>
+
+<section class="chapter" id="raeder" data-photo="img/stock-6.jpg" data-alt="Detail eines Fahrradantriebs – illustrative Stockfotografie" data-number="02">
+<div class="eyebrow"><span class="num">02</span> Was zu dir passt</div>
+<h2>Nicht irgendein Rad.<br>Deines.</h2>
+<p class="chapter-intro">Der Weg zur Arbeit. Der Einkauf. Die längere Runde am Wochenende. Dein Alltag ist ein guter Ausgangspunkt für die Fahrradwahl.</p>
+<article class="editorial-row">
+<div class="row-head"><span>01 /</span><h3>Für deine Wege.</h3></div>
+<p>Wie weit fährst du? Wo stellst du dein Rad ab? Was nimmst du mit? Der Radfinder hilft dir, deine Wünsche zu sortieren.</p>
+<img src="img/stock-10.jpg" alt="Fahrrad in einer städtischen Straßenszene – illustrative Stockfotografie" width="1000" height="650" loading="lazy">
+<div class="caption">Stadtleben auf zwei Rädern · illustrative Stockfotografie</div>
+</article>
+<article class="editorial-row">
+<div class="row-head"><span>02 /</span><h3>Auf dich abgestimmt.</h3></div>
+<p>Ein individuell zusammengestelltes Fahrrad beginnt mit deinen Vorstellungen. Besprich mit Gräber Räder, welche Ausstattung und Zusammenstellung möglich ist.</p>
+<img src="img/stock-5.jpg" alt="Nahaufnahme von Fahrradkette und Ritzeln – illustrative Stockfotografie" width="1000" height="650" loading="lazy">
+<div class="caption">Der Blick aufs Detail · kein abgebildetes Shopprodukt</div>
+</article>
+</section>
+
+<section class="chapter quiz-section" id="radfinder" data-photo="img/stock-9.jpg" data-alt="Fahrradtour entlang eines blühenden Weges – illustrative Stockfotografie" data-number="03">
+<div class="eyebrow"><span class="num">03</span> Dein Radfinder</div>
+<h2>Drei Fragen.<br>Eine Richtung.</h2>
+<p class="chapter-intro">Was brauchst du unterwegs? Entdecke dein Fahrprofil und nimm es mit ins Gespräch.</p>
+<div id="quiz">
+<div class="quiz-top"><span id="step-label">Frage 01 / 03</span><span>Etwa eine Minute</span></div>
+<div class="progress" aria-hidden="true"><span class="filled"></span><span></span><span></span></div>
+<div id="question-area"></div>
+<div class="quiz-nav">
+<button id="back" class="text-button" type="button" disabled>← Zurück</button>
+<button id="next" class="button" type="button" disabled>Weiter <span aria-hidden="true">→</span></button>
+</div>
+<p id="answer-summary" class="answer-summary" aria-live="polite"></p>
+</div>
+<div id="result" class="result" hidden tabindex="-1" aria-labelledby="result-title">
+<div class="quiz-top"><span>Dein Fahrprofil</span><span>03 / 03</span></div>
+<div class="progress" aria-hidden="true"><span class="filled"></span><span class="filled"></span><span class="filled"></span></div>
+<span class="result-label">Das könnte zu dir passen</span>
+<h3 id="result-title"></h3>
+<p id="result-description"></p>
+<ul id="result-reasons"></ul>
+<p><strong>Dein nächster Schritt:</strong> Besprich Sitzposition, Ausstattung und passende Möglichkeiten direkt mit dem Geschäft.</p>
+<div class="result-actions">
+<a class="button" href="tel:+49406928770">Jetzt anrufen <span aria-hidden="true">↗</span></a>
+<button class="text-button" id="copy" type="button">Profil kopieren</button>
+</div>
+<div id="copy-status" class="copy-status" role="status"></div>
+<div id="summary-output" class="summary-output" tabindex="0" aria-label="Dein Fahrprofil zum Auswählen und Kopieren"></div>
+<div class="quiz-nav">
+<button id="edit" class="text-button" type="button">← Antworten ändern</button>
+<button id="restart" class="text-button" type="button">Neu starten ↻</button>
+</div>
+</div>
+<p class="quiz-note">Orientierung, keine Produktempfehlung oder Verfügbarkeitszusage. Der Finder läuft nur in deinem Browser. Es wird nichts gesendet.</p>
+</section>
+
+<section class="chapter" id="werkstatt" data-photo="img/stock-7.jpg" data-alt="Detail von Schaltung und Hinterrad eines Fahrrads – illustrative Stockfotografie" data-number="04">
+<div class="eyebrow"><span class="num">04</span> Fahrradservice</div>
+<h2>Dein Rad braucht<br>Aufmerksamkeit?</h2>
+<figure class="workshop-photo" style="margin-left:0;margin-right:0">
+<img src="img/stock-7.jpg" alt="Fahrradschaltung und Hinterrad aus der Nähe – illustrative Stockfotografie, keine Werkstattaufnahme" width="1000" height="780" loading="lazy">
+<figcaption class="caption">Technik im Detail · illustrative Stockfotografie</figcaption>
+</figure>
+<p class="chapter-intro">Du hast eine Frage zu Reparatur oder Wartung? Ruf bei Gräber Räder an und beschreibe, was an deinem Fahrrad auffällt.</p>
+<div style="margin-top:26px">
+<div class="service-line"><span>Was macht dein Fahrrad?</span><span aria-hidden="true">01</span></div>
+<div class="service-line"><span>Was möchtest du prüfen lassen?</span><span aria-hidden="true">02</span></div>
+<div class="service-line"><span>Welche nächsten Schritte sind möglich?</span><span aria-hidden="true">03</span></div>
+</div>
+<p class="caption" style="margin:15px 0 25px">Leistungsumfang, Termine und Kosten bitte direkt mit dem Geschäft klären.</p>
+<a href="tel:+49406928770" class="button">Service anfragen <span class="arrow" aria-hidden="true">↗</span></a>
+</section>
+
+<section class="chapter contact" id="besuch" data-photo="img/stock-1.jpg" data-alt="Fahrräder in einer europäischen Straßenszene – illustrative Stockfotografie, nicht der Geschäftsstandort" data-number="05">
+<div class="contact-top">
+<div class="eyebrow"><span class="num">05</span> Gräber Räder · Hamburg</div>
+<h2>Dein nächster Weg?<br>Zum passenden Rad.</h2>
+<a href="tel:+49406928770" aria-label="Gräber Räder anrufen: 040 6928770">040 6928770 ↗</a>
+</div>
+<div class="visit">
+<div class="visit-grid">
+<div>
+<span class="label">Hier findest du das Geschäft</span>
+<address>Gräber Räder<br>Fuhlsbüttler Straße 269<br>22307 Hamburg</address>
+<a class="direction" href="https://www.google.com/maps/search/?api=1&amp;query=Gr%C3%A4ber+R%C3%A4der+Fuhlsb%C3%BCttler+Stra%C3%9Fe+269+22307+Hamburg" target="_blank" rel="noopener noreferrer">Route öffnen ↗</a>
+</div>
+<div>
+<span class="label">Öffnungszeiten</span>
+<table class="hours" aria-label="Öffnungszeiten">
+<tbody>
+<tr><td>Mo</td><td>12–18 Uhr</td></tr>
+<tr><td>Di–Fr</td><td>10–18 Uhr</td></tr>
+<tr><td>Sa</td><td>10–14 Uhr</td></tr>
+</tbody>
+</table>
+</div>
+<div>
+<span class="label">Lieber schreiben?</span>
+<a class="email" href="mailto:info@graeber-raeder.de">info@graeber-raeder.de ↗</a>
+</div>
+</div>
+<div class="faq">
+<details>
+<summary>Wie kann ich mein Fahrprofil besprechen?</summary>
+<p>Beantworte die drei Fragen und kopiere dein Ergebnis. Ruf anschließend unter 040 6928770 an oder nutze die E-Mail-Adresse. Der Finder übermittelt deine Antworten nicht an das Geschäft.</p>
+</details>
+<details>
+<summary>Kann ich hier einen Werkstatttermin buchen?</summary>
+<p>Dieses unabhängige Konzept bietet keine Terminbuchung. Bitte frage direkt bei Gräber Räder nach dem möglichen Service, einem Termin und den Kosten.</p>
+</details>
+<details>
+<summary>Sind die abgebildeten Fahrräder im Geschäft erhältlich?</summary>
+<p>Die Bilder sind illustrative Stockfotografien. Sie zeigen weder bestätigten Warenbestand noch Arbeiten, Mitarbeitende oder Räumlichkeiten von Gräber Räder. Verfügbare Fahrräder und Ausstattung bitte direkt erfragen.</p>
+</details>
+</div>
+</div>
+</section>
+
+<footer>
+<p><strong>Ein unabhängiger Entwurf. Eine neue Perspektive.</strong></p>
+<p>Concept by LeadSky. Dieses Website-Konzept ist nicht die offizielle Website von Gräber Räder und wurde nicht als beauftragtes Kundenprojekt erstellt. Geschäftsinformationen stammen aus dem bereitgestellten Briefing; bitte vor einem Besuch direkt bestätigen.</p>
+<p>Alle Fotos sind illustrative Stockaufnahmen. Bildnachweise · Pixabay Content License:</p>
+<div class="credit-links">
+<a href="https://pixabay.com/photos/bike-bicycle-street-urban-pavement-8337261/" target="_blank" rel="noopener noreferrer">pen_ash</a>
+<a href="https://pixabay.com/photos/bicycle-street-street-photography-4496443/" target="_blank" rel="noopener noreferrer">Jhnndy</a>
+<a href="https://pixabay.com/photos/gears-bicycle-chain-transmission-2291916/" target="_blank" rel="noopener noreferrer">661512</a>
+<a href="https://pixabay.com/photos/road-bike-gear-vintage-594164/" target="_blank" rel="noopener noreferrer">markusspiske</a>
+<a href="https://pixabay.com/photos/to-go-biking-poppy-leisure-time-5178398/" target="_blank" rel="noopener noreferrer">Didgeman</a>
+<a href="https://pixabay.com/photos/exchange-bicycle-cycling-bike-4771284/" target="_blank" rel="noopener noreferrer">AlfLucio</a>
+<a href="https://pixabay.com/photos/amsterdam-street-bicycle-city-6744567/" target="_blank" rel="noopener noreferrer">Mariakray</a>
+</div>
+<div class="footer-bottom"><span>Gräber Räder · Konzept</span><a href="https://www.graeber-raeder.de/" target="_blank" rel="noopener noreferrer">Offizielle Website ↗</a></div>
+</footer>
+</main>
+</div>
+<div class="mobile-contact" aria-label="Schnellkontakt">
+<a class="call" href="tel:+49406928770">Anrufen <span aria-hidden="true">↗</span></a>
+<a class="find" href="#radfinder">Rad finden →</a>
+</div>
+<script>
+(function(){
+"use strict";
+const toggle=document.querySelector(".menu-toggle");
+const menu=document.getElementById("menu");
+function setMenu(open,restoreFocus){
+menu.hidden=!open;
+toggle.setAttribute("aria-expanded",String(open));
+toggle.setAttribute("aria-label",open?"Menü schließen":"Menü öffnen");
+if(restoreFocus)toggle.focus();
+}
+toggle.addEventListener("click",()=>setMenu(menu.hidden,false));
+menu.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>setMenu(false,false)));
+document.addEventListener("keydown",e=>{
+if(e.key==="Escape"&&!menu.hidden)setMenu(false,true);
+});
+document.addEventListener("click",e=>{
+if(!menu.hidden&&!menu.contains(e.target)&&!toggle.contains(e.target))setMenu(false,false);
+});
+document.addEventListener("focusin",e=>{
+if(!menu.hidden&&!menu.contains(e.target)&&!toggle.contains(e.target))setMenu(false,false);
+});
+
+const questions=[
+{title:"Wo bist du meistens unterwegs?",options:[
+["stadt","In der Stadt","Alltagswege, Arbeit und kurze Strecken"],
+["mix","Stadt und Land","Alltag und gelegentliche Ausflüge"],
+["tour","Auf längeren Touren","Mehr Strecke, mehr Zeit draußen"]]},
+{title:"Was kommt mit auf deine Fahrt?",options:[
+["leicht","Nur das Nötigste","Schlüssel, Handy und eine kleine Tasche"],
+["alltag","Tasche oder Einkauf","Gepäck gehört zum Alltag"],
+["viel","Auch mal mehr Gepäck","Für längere Wege und größere Pläne"]]},
+{title:"Was ist dir besonders wichtig?",options:[
+["komfort","Entspannt ankommen","Eine bequeme Haltung und Übersicht"],
+["direkt","Zügig unterwegs sein","Ein direktes, aktives Fahrgefühl"],
+["flexibel","Für vieles bereit sein","Flexibilität im Alltag und unterwegs"]]}
+];
+let step=0;
+let answers=[null,null,null];
+let resultText="";
+const area=document.getElementById("question-area");
+const quiz=document.getElementById("quiz");
+const result=document.getElementById("result");
+const next=document.getElementById("next");
+const back=document.getElementById("back");
+function optionAt(i){return questions[i].options.find(o=>o[0]===answers[i]);}
+function render(focus){
+area.replaceChildren();
+const field=document.createElement("fieldset");
+const legend=document.createElement("legend");
+legend.textContent=questions[step].title;
+legend.tabIndex=-1;
+field.appendChild(legend);
+const group=document.createElement("div");
+group.className="answers";
+questions[step].options.forEach((option,index)=>{
+const button=document.createElement("button");
+button.type="button";
+button.className="answer";
+button.setAttribute("aria-pressed",String(answers[step]===option[0]));
+const letter=document.createElement("span");
+letter.className="letter";
+letter.textContent=String.fromCharCode(65+index);
+letter.setAttribute("aria-hidden","true");
+const text=document.createElement("span");
+const strong=document.createElement("strong");
+strong.textContent=option[1];
+const small=document.createElement("small");
+small.textContent=option[2];
+text.append(strong,small);
+button.append(letter,text);
+button.addEventListener("click",()=>{
+answers[step]=option[0];
+group.querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed","false"));
+button.setAttribute("aria-pressed","true");
+next.disabled=false;
+updateSummary();
+});
+group.appendChild(button);
+});
+field.appendChild(group);
+area.appendChild(field);
+document.getElementById("step-label").textContent="Frage 0"+(step+1)+" / 03";
+document.querySelectorAll("#quiz .progress span").forEach((bar,i)=>bar.classList.toggle("filled",i<=step));
+back.disabled=step===0;
+next.disabled=answers[step]===null;
+next.innerHTML=step===2?'Mein Fahrprofil <span aria-hidden="true">↗</span>':'Weiter <span aria-hidden="true">→</span>';
+updateSummary();
+if(focus)legend.focus({preventScroll:true});
+}
+function updateSummary(){
+document.getElementById("answer-summary").textContent=answers.map((a,i)=>a?optionAt(i)[1]:null).filter(Boolean).join(" · ");
+}
+function showResult(){
+const touring=answers[0]==="tour";
+const sporty=answers[2]==="direkt";
+let title=touring?"Deine Richtung: Tour & Strecke":answers[0]==="stadt"?"Deine Richtung: urbaner Alltag":"Deine Richtung: vielseitig unterwegs";
+let description=touring?"Du denkst über den nächsten Stadtblock hinaus. Besprich ein Rad, dessen Sitzposition und Ausstattung auch zu längeren Wegen passen.":answers[0]==="stadt"?"Dein Rad soll sich in deinen Alltag einfügen. Im Gespräch stehen deine täglichen Wege und ein für dich angenehmes Fahrgefühl im Mittelpunkt.":"Du möchtest dich nicht auf einen Weg festlegen. Erzähle im Geschäft, wie sich deine Alltagsfahrten und Ausflüge verteilen.";
+const reasons=[
+answers[0]==="stadt"?"Deine Wege: Stadt und Alltag.":touring?"Deine Wege: längere Touren.":"Deine Wege: Stadt und Land.",
+answers[1]==="leicht"?"Dein Gepäck: wenig dabei. Besprich, welche Ausstattung du wirklich brauchst.":answers[1]==="alltag"?"Dein Gepäck: Tasche oder Einkauf. Frage nach passenden Transportmöglichkeiten.":"Dein Gepäck: auch größere Tourenausrüstung. Kläre Befestigung und zulässige Belastung.",
+sporty?"Dein Wunsch: ein aktives Fahrgefühl. Sprich über Sitzposition und passende Übersetzung.":answers[2]==="komfort"?"Dein Wunsch: entspannt ankommen. Sprich über Sitzposition und Komfort.":"Dein Wunsch: vielseitig bleiben. Besprich Ausstattung für unterschiedliche Wege."
+];
+document.getElementById("result-title").textContent=title;
+document.getElementById("result-description").textContent=description;
+const list=document.getElementById("result-reasons");
+list.replaceChildren();
+reasons.forEach(text=>{const li=document.createElement("li");li.textContent=text;list.appendChild(li)});
+resultText=title+"\n\n"+questions.map((q,i)=>q.title+" "+optionAt(i)[1]).join("\n")+"\n\n"+reasons.join("\n")+"\n\nOrientierung aus dem unabhängigen Gräber-Räder-Konzept. Ausstattung und Verfügbarkeit direkt mit dem Geschäft besprechen.";
+document.getElementById("summary-output").textContent=questions.map((q,i)=>optionAt(i)[1]).join(" · ");
+document.getElementById("copy-status").textContent="";
+quiz.hidden=true;
+result.hidden=false;
+result.focus({preventScroll:true});
+}
+next.addEventListener("click",()=>{
+if(answers[step]===null)return;
+if(step<2){step++;render(true)}else showResult();
+});
+back.addEventListener("click",()=>{if(step>0){step--;render(true)}});
+document.getElementById("edit").addEventListener("click",()=>{
+result.hidden=true;quiz.hidden=false;step=2;render(true);
+});
+document.getElementById("restart").addEventListener("click",()=>{
+answers=[null,null,null];step=0;result.hidden=true;quiz.hidden=false;render(true);
+});
+document.getElementById("copy").addEventListener("click",async()=>{
+const status=document.getElementById("copy-status");
+try{
+if(!navigator.clipboard)throw new Error("unavailable");
+await navigator.clipboard.writeText(resultText);
+status.textContent="Dein Fahrprofil wurde kopiert.";
+}catch(error){
+const output=document.getElementById("summary-output");
+output.textContent=resultText;
+const range=document.createRange();range.selectNodeContents(output);
+const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);
+status.textContent="Bitte den markierten Text über die Kopierfunktion deines Geräts kopieren.";
+output.focus({preventScroll:true});
+}
+});
+render(false);
+
+const chapters=Array.from(document.querySelectorAll("[data-photo]"));
+const links=document.querySelectorAll(".chapter-index a");
+const imageA=document.getElementById("fixed-image-a");
+const imageB=document.getElementById("fixed-image-b");
+let imageToken=0,currentSource=chapters[0].dataset.photo;
+function setChapter(section){
+links.forEach(a=>{
+if(a.hash==="#"+section.id)a.setAttribute("aria-current","location");
+else a.removeAttribute("aria-current");
+});
+document.getElementById("photo-number").textContent=section.dataset.number;
+if(window.innerWidth<=760||section.dataset.photo===currentSource)return;
+currentSource=section.dataset.photo;
+const token=++imageToken;
+const preload=new Image();
+preload.onload=()=>{
+if(token!==imageToken)return;
+imageB.src=preload.src;
+imageA.alt=section.dataset.alt;
+imageB.style.opacity="1";
+const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+setTimeout(()=>{
+if(token!==imageToken)return;
+imageA.src=preload.src;
+imageB.style.transition="none";
+imageB.style.opacity="0";
+requestAnimationFrame(()=>requestAnimationFrame(()=>{imageB.style.transition=""}));
+},reduced?0:850);
+};
+preload.src=currentSource;
+}
+let ticking=false;
+function updateChapter(){
+const marker=window.innerHeight*.38;
+let active=chapters[0];
+chapters.forEach(section=>{if(section.getBoundingClientRect().top<=marker)active=section});
+setChapter(active);ticking=false;
+}
+window.addEventListener("scroll",()=>{
+if(!ticking){ticking=true;requestAnimationFrame(updateChapter)}
+},{passive:true});
+window.addEventListener("resize",updateChapter,{passive:true});
+updateChapter();
+})();
+</script>
+</body>
+</html>
