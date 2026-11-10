@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F7FAF8">
+<title>Delphi · Ein Tisch in Hamburg — Websitekonzept</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f7faf8;--teal:#164e50;--aqua:#ddeeea;--copper:#a94d32;--ink:#243735;--line:#c4d6d0;--header:64px;--index:52px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:130px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 "DM Sans",sans-serif}body.locked{overflow:hidden}button,input,textarea,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}button,a,input,textarea,select{outline-offset:3px} :focus-visible{outline:2px solid var(--copper)}a{color:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.4}img{display:block;width:100%;object-fit:cover}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:400;color:var(--teal)}button{color:inherit}.notice{padding:6px 16px;background:var(--aqua);text-align:center;font-size:11px;line-height:1.4;color:var(--teal)}.header{height:var(--header);position:sticky;top:0;z-index:30;display:flex;align-items:center;justify-content:space-between;padding:0 5vw;background:var(--paper);border-bottom:1px solid var(--line)}.brand{text-decoration:none;font:500 22px Fraunces,Georgia,serif;letter-spacing:-1px;color:var(--teal)}.header-actions{display:flex;gap:14px;align-items:center}.short-link{font-size:12px;font-weight:600;text-underline-offset:4px;padding:6px 10px;border-radius:2px;background:var(--aqua)}.menu-toggle{border:1px solid var(--line);background:none;border-radius:50%;width:38px;height:38px;display:grid;place-content:center;gap:4px}.menu-toggle span{width:14px;height:1px;background:var(--teal)}.menu{position:fixed;z-index:29;top:var(--header);left:0;right:0;padding:24px 5vw;background:var(--aqua);box-shadow:0 16px 25px #164e5012}.menu[hidden]{display:none}.menu nav{display:flex;gap:24px;flex-wrap:wrap}.menu a{font:22px Fraunces,serif;text-decoration:none}.wrap{width:min(1320px,90vw);margin:auto}.intro{padding:42px 0 32px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}.eyebrow{text-transform:uppercase;font-size:10px;letter-spacing:1.5px;font-weight:700;color:var(--copper);margin-bottom:8px}h1{font-size:clamp(48px,8vw,110px);line-height:1;letter-spacing:-3px}.intro-copy{max-width:380px;margin-top:16px;font-size:16px;line-height:1.5}.intro-side{max-width:260px;padding-bottom:4px}.intro-side p{font-size:13px;margin-bottom:16px}.button{display:inline-flex;justify-content:center;align-items:center;gap:14px;min-height:42px;padding:10px 18px;border:1px solid var(--teal);background:var(--teal);color:white;text-decoration:none;font-size:12px;font-weight:600;border-radius:2px;transition:background .2s,transform .2s}.button:hover{background:#246366}.button .arrow{font-size:16px}.index{position:sticky;top:var(--header);z-index:20;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.index-inner{display:flex;align-items:center;gap:24px;min-height:var(--index);overflow:auto;scrollbar-width:none}.index-label{font-size:10px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;margin-right:auto}.index button{white-space:nowrap;border:0;background:none;padding:12px 0;font-size:12px;border-bottom:2px solid transparent}.index button[aria-current=true]{border-color:var(--copper);color:var(--copper)}.showcase{padding-top:18px}.rail{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:20px;padding:0 5vw 10px;scrollbar-width:thin;scrollbar-color:var(--teal) var(--aqua);overscroll-behavior-x:contain}.panel{position:relative;flex:0 0 81vw;max-width:1180px;scroll-snap-align:center;margin:0}.photo-button{padding:0;border:0;background:var(--aqua);display:block;width:100%;overflow:hidden;position:relative;text-align:left}.photo-button img{height:clamp(280px,44vw,560px);transition:transform .65s cubic-bezier(.2,.7,.2,1)}.photo-button:hover img{transform:scale(1.025)}.photo-action{position:absolute;bottom:18px;right:18px;display:flex;gap:14px;align-items:center;background:var(--paper);color:var(--teal);padding:8px 14px;font-size:11px}.photo-action b{font-size:16px;font-weight:400}.caption{padding:18px 0 10px;display:grid;grid-template-columns:40px 1fr auto;gap:12px;align-items:start}.number{font-size:11px;padding-top:5px;color:var(--copper)}.caption h2{font-size:26px;line-height:1.2}.caption p{font-size:13px;margin-top:6px;max-width:400px}.reference{font-size:10px;text-transform:uppercase;letter-spacing:1px;padding-top:6px;max-width:140px;text-align:right}.rail-controls{display:flex;justify-content:space-between;align-items:center;margin-top:14px;margin-bottom:50px}.rail-controls p{font-size:11px}.controls{display:flex;gap:8px;align-items:center}.circle{border:1px solid var(--line);width:38px;height:38px;border-radius:50%;background:none;font-size:16px;transition:background .2s}.circle:hover{background:var(--aqua)}.position{font-size:11px;min-width:42px;text-align:center}.menu-section{padding:50px 0 64px;background:var(--aqua)}.section-top{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:32px}h2{font-size:clamp(32px,4vw,56px);line-height:1.1;letter-spacing:-1.2px}.section-top p{font-size:13px;max-width:420px}.menu-table{width:100%;border-collapse:collapse;text-align:left}.menu-table th{font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:12px 0;border-bottom:1px solid #88aaa3}.menu-table td{padding:18px 0;border-bottom:1px solid #afcbc3;font-size:13px;vertical-align:top}.menu-table th:last-child,.menu-table td:last-child{text-align:right;width:110px}.table-name{font:21px Fraunces,serif;color:var(--teal);display:block;margin-bottom:4px}.table-button{border:0;background:none;text-align:left;padding:0;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}.table-detail{display:block;font-size:12px;max-width:480px}.menu-note{font-size:11px;margin-top:16px;max-width:620px}.visit{background:var(--teal);color:white;padding:60px 0}.visit h2,.visit h3{color:white}.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:7vw}.visit .eyebrow{color:#dcece7}.visit-intro{font-size:14px;max-width:360px;margin:20px 0}.visit .button{background:var(--paper);color:var(--teal);border-color:var(--paper)}.visit-photo{height:200px;margin-top:28px}.visit-photo img{height:100%}.image-note{font-size:10px;margin-top:6px;color:#dcece7}.visit h3{font-size:24px;margin-bottom:16px}.hours{display:grid;grid-template-columns:1fr auto;gap:10px;font-size:13px;padding:14px 0;border-top:1px solid #ffffff40}.hours span:last-child{text-align:right}.visit-note{font-size:11px;margin-top:16px;color:#dfebe7}.location{margin-top:30px;padding-top:20px;border-top:1px solid #ffffff40}.location p{font-size:13px;margin:8px 0}.footer{padding:36px 0 28px}.footer-top{display:flex;gap:32px;justify-content:space-between;align-items:start}.footer h2{font-size:24px;letter-spacing:-.4px}.footer p{font-size:11px;max-width:600px;margin-top:10px}.footer-mark{white-space:nowrap;font-size:11px}.credits{margin-top:22px;border-top:1px solid var(--line);padding-top:14px;font-size:11px}.credits summary{cursor:pointer;min-height:28px}.credit-links{display:flex;flex-wrap:wrap;gap:10px 18px;padding-top:8px}.credit-links a{text-underline-offset:3px}.dialog{border:0;padding:0;margin:0 0 0 auto;width:min(580px,100%);height:100dvh;max-height:100dvh;max-width:100%;background:var(--paper);color:var(--ink);overflow:auto;box-shadow:-20px 0 80px #0002}.dialog::backdrop{background:#102e36a8}.dialog[open]{animation:drawer .25s ease-out}.drawer-head{position:sticky;top:0;z-index:2;background:var(--paper);display:flex;align-items:center;justify-content:space-between;padding:14px 22px;border-bottom:1px solid var(--line);font-size:11px}.close{border:1px solid var(--line);background:none;border-radius:50%;width:34px;height:34px;font-size:20px;line-height:1}.drawer-photo{height:220px}.drawer-content{padding:24px 26px 36px}.drawer-content h2{font-size:32px;margin-bottom:14px}.drawer-content>p{font-size:13px;margin-bottom:20px}.drawer-content .eyebrow{font-size:10px;margin:0 0 8px}.form-title{font:22px Fraunces,serif;color:var(--teal);margin:22px 0 6px}.form-note{font-size:11px;margin-bottom:18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}.field label{font-size:11px;font-weight:600}.field input,.field select,.field textarea{width:100%;border:1px solid #92aaa2;border-radius:0;background:white;color:var(--ink);padding:10px;min-height:42px}.field textarea{resize:vertical;min-height:85px}.status{background:var(--aqua);border-left:3px solid var(--teal);padding:16px;margin-top:16px;font-size:13px}.status strong{display:block;margin-bottom:6px}.status p{white-space:pre-line}.status[hidden]{display:none}.submit{width:100%}.skip{position:fixed;top:8px;left:8px;z-index:100;background:white;padding:10px;transform:translateY(-150%)}.skip:focus{transform:none}@keyframes drawer{from{transform:translateX(35px);opacity:.6}to{transform:none;opacity:1}}
+@media(min-width:1500px){.rail{padding-left:calc((100vw - 1320px)/2)}}
+@media(max-width:760px){:root{--header:56px;--index:46px}.notice{font-size:9px;padding:5px 12px}.header{padding:0 4vw}.brand{font-size:18px}.header-actions{gap:10px}.short-link{font-size:11px;padding:4px 8px}.menu nav{flex-direction:column;gap:16px}.intro{display:block;padding:24px 0 20px}.eyebrow{font-size:9px;margin-bottom:6px}h1{font-size:52px;letter-spacing:-2px}.intro-copy{font-size:15px;margin-top:10px;max-width:280px}.intro-side{max-width:none;margin-top:16px}.intro-side p{display:none}.button{min-height:40px;padding:8px 16px;font-size:11px}.index-inner{gap:18px}.index-label{display:none}.index button{font-size:11px;padding-top:12px}.showcase{padding-top:10px}.rail{gap:12px}.panel{flex-basis:87vw}.photo-button img{height:280px}.photo-action{bottom:12px;right:12px;padding:6px 10px;font-size:10px;gap:12px}.caption{grid-template-columns:22px 1fr;gap:8px;padding-top:14px}.caption h2{font-size:22px}.caption p{font-size:12px}.reference{grid-column:2;text-align:left;max-width:none;padding-top:1px;font-size:9px}.rail-controls{margin-top:10px;margin-bottom:32px}.rail-controls>p{max-width:150px;font-size:10px}.circle{width:34px;height:34px;font-size:14px}.section-top{grid-template-columns:1fr;gap:16px;margin-bottom:20px}.menu-section{padding:36px 0 42px}h2{font-size:32px}.menu-table td{padding:14px 0}.menu-table th:last-child,.menu-table td:last-child{width:75px;font-size:11px}.table-name{font-size:18px}.table-detail{font-size:11px;padding-right:10px}.visit{padding:36px 0}.visit-grid{grid-template-columns:1fr;gap:32px}.visit-photo{height:180px}.visit-intro{font-size:13px}.footer-top{flex-direction:column;gap:16px}.footer{padding:28px 0}.drawer-photo{height:180px}.drawer-content{padding:20px 18px 28px}.drawer-content h2{font-size:28px}.dialog{height:94dvh;margin:auto 0 0;border-radius:12px 12px 0 0}.drawer-head{padding:12px 18px}.form-grid{gap:10px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.photo-button:hover img{transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt</a>
+<div class="notice">Independent website concept by LeadSky for Delphi. Not their official website.</div>
+<header class="header">
+<a class="brand" href="#main" aria-label="Delphi – zum Anfang">delphi.</a>
+<div class="header-actions">
+<a class="short-link" href="#besuch">Anfragen ↗</a>
+<button class="menu-toggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="navigation"><span></span><span></span></button>
+</div>
+</header>
+<div class="menu" id="navigation" hidden>
+<nav aria-label="Hauptnavigation">
+<a href="#entdecken">Entdecken</a>
+<a href="#speisekarte">Speisekarte</a>
+<a href="#besuch">Besuch</a>
+<a href="#konzept">Konzept</a>
+</nav>
+</div>
+<main id="main">
+<section class="intro wrap" aria-labelledby="title">
+<div>
+<p class="eyebrow">Restaurant · Hamburg</p>
+<h1 id="title">Delphi.</h1>
+<p class="intro-copy">Ein Tisch. Gute Gesellschaft.<br>Zeit für einen gemeinsamen Abend.</p>
+</div>
+<div class="intro-side">
+<p>Eine Idee für Ihren nächsten Restaurantbesuch — in einem unabhängigen Websitekonzept.</p>
+<a class="button" href="#entdecken">Angebot entdecken <span class="arrow" aria-hidden="true">↗</span></a>
+</div>
+</section>
+
+<div class="index">
+<nav class="index-inner wrap" aria-label="Fotografische Themen">
+<span class="index-label">Ein erster Eindruck</span>
+<button data-panel="0" aria-current="true">01 · Am Tisch</button>
+<button data-panel="1" aria-current="false">02 · Zusammenkommen</button>
+<button data-panel="2" aria-current="false">03 · Der Moment</button>
+</nav>
+</div>
+
+<section class="showcase" id="entdecken" aria-label="Fotografisches Konzept">
+<div class="rail" tabindex="0" aria-label="Fotogalerie, horizontal scrollbar">
+<figure class="panel" id="panel-0">
+<button class="photo-button" data-detail="0" aria-label="Am Tisch – Details und Demo-Anfrage öffnen">
+<img src="img/stock-1.jpg" width="1400" height="900" fetchpriority="high" alt="Gedeckter Tisch mit Gläsern und Besteck im warmen Abendlicht; Referenzfotografie">
+<span class="photo-action">Den Moment entdecken <b aria-hidden="true">↗</b></span>
+</button>
+<figcaption class="caption"><span class="number">01 /</span><div><h2>Am Tisch beginnt’s.</h2><p>Ankommen, Platz nehmen, den Alltag kurz draußen lassen.</p></div><span class="reference">Referenzfotografie<br>Keine Aufnahme von Delphi</span></figcaption>
+</figure>
+<figure class="panel" id="panel-1">
+<button class="photo-button" data-detail="1" aria-label="Zusammenkommen – Details und Demo-Anfrage öffnen">
+<img src="img/stock-2.jpg" width="1400" height="900" loading="lazy" alt="Festlich gedeckte Tafel mit Weingläsern und Besteck; Referenzfotografie">
+<span class="photo-action">Gemeinsam planen <b aria-hidden="true">↗</b></span>
+</button>
+<figcaption class="caption"><span class="number">02 /</span><div><h2>Lieber gemeinsam.</h2><p>Ein Anlass, ein Wiedersehen oder einfach Zeit füreinander.</p></div><span class="reference">Referenzfotografie<br>Keine Aufnahme von Delphi</span></figcaption>
+</figure>
+<figure class="panel" id="panel-2">
+<button class="photo-button" data-detail="2" aria-label="Der Moment – Details und Demo-Anfrage öffnen">
+<img src="img/stock-5.jpg" width="1400" height="900" loading="lazy" alt="Sorgfältig arrangierter Teller mit Besteck und Tischdekoration; Referenzfotografie">
+<span class="photo-action">Besuch vormerken <b aria-hidden="true">↗</b></span>
+</button>
+<figcaption class="caption"><span class="number">03 /</span><div><h2>Die kleinen Details.</h2><p>Ein schön gedeckter Tisch macht aus einer Pause einen Moment.</p></div><span class="reference">Referenzfotografie<br>Keine Aufnahme von Delphi</span></figcaption>
+</figure>
+</div>
+<div class="rail-controls wrap">
+<p>Wischen oder blättern.<br>Ein Foto öffnet die Details.</p>
+<div class="controls">
+<button class="circle" id="previous" aria-label="Vorheriges Foto" disabled>←</button>
+<span class="position" aria-live="polite" aria-atomic="true">01 / 03</span>
+<button class="circle" id="next" aria-label="Nächstes Foto">→</button>
+</div>
+</div>
+</section>
+
+<section class="menu-section" id="speisekarte" aria-labelledby="menu-title">
+<div class="wrap">
+<div class="section-top">
+<div><p class="eyebrow">Vor dem Besuch</p><h2 id="menu-title">Was auf den<br>Tisch kommt.</h2></div>
+<p>Eine aktuelle Speisekarte ist für dieses Konzept nicht bestätigt. Deshalb nennen wir keine Gerichte oder Preise. Die folgende Übersicht zeigt, welche Informationen Sie vor Ihrem Besuch erfragen können.</p>
+</div>
+<table class="menu-table">
+<thead><tr><th scope="col">Ihre Frage</th><th scope="col">Preisangabe</th></tr></thead>
+<tbody>
+<tr><td><button class="table-button" data-detail="3"><span class="table-name">Aktuelle Speisekarte ↗</span></button><span class="table-detail">Gerichte, Getränke und die dazugehörigen Preise direkt bestätigen lassen.</span></td><td>Nicht bestätigt</td></tr>
+<tr><td><button class="table-button" data-detail="4"><span class="table-name">Wünsche zum Essen ↗</span></button><span class="table-detail">Zutaten, Unverträglichkeiten und individuelle Wünsche vorab besprechen.</span></td><td>Nicht bestätigt</td></tr>
+</tbody>
+</table>
+<p class="menu-note">Keine verbindlichen Menü-, Preis- oder Allergenangaben. Die Detailansicht bietet eine lokale Demo-Anfrage; sie kontaktiert das Restaurant nicht.</p>
+</div>
+</section>
+
+<section class="visit" id="besuch" aria-labelledby="visit-title">
+<div class="visit-grid wrap">
+<div>
+<p class="eyebrow">Delphi · Hamburg</p>
+<h2 id="visit-title">Ein Abend<br>fängt mit einer<br>Verabredung an.</h2>
+<p class="visit-intro">Datum wählen, Wünsche notieren und Ihre Anfrage in Ruhe prüfen. Hier können Sie den Ablauf ausprobieren — ohne Versand und ohne Reservierung.</p>
+<button class="button" data-detail="0" data-enquiry="true">Tischanfrage ausprobieren <span class="arrow" aria-hidden="true">↗</span></button>
+<div class="visit-photo"><img src="img/stock-4.jpg" width="1000" height="650" loading="lazy" alt="Restauranttisch mit Gläsern, Tellern und Servietten; illustrative Stockfotografie"></div>
+<p class="image-note">Atmosphärische Referenz · nicht die Räumlichkeiten von Delphi</p>
+</div>
+<div>
+<h3>Für Ihre Planung</h3>
+<div class="hours"><span>Dienstag – Sonntag</span><span>11:30 – 14:30<br>17:30 – 23:00</span></div>
+<div class="hours"><span>Feiertage</span><span>Geschlossen</span></div>
+<p class="visit-note">Diese Zeiten stammen aus den bereitgestellten Geschäftsdaten und wurden nicht unabhängig bestätigt. Bitte vor einem Besuch beim Restaurant prüfen. Für Montag liegt keine bestätigte Angabe vor.</p>
+<div class="location">
+<p class="eyebrow">Standort</p>
+<h3>Hamburg</h3>
+<p>Eine genaue Restaurantadresse und ein eindeutig zugeordneter Kontakt sind für dieses Konzept noch nicht verifiziert.</p>
+<p class="visit-note">Deshalb sind hier keine Anfahrt, Telefonverbindung oder echte Buchung hinterlegt. Die Fotos zeigen ausschließlich eine gestalterische Richtung; sie belegen weder Räumlichkeiten noch Angebote.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="footer wrap" id="konzept">
+<div class="footer-top">
+<div><h2>Eine Idee für Delphi.</h2><p>Unabhängiger Gestaltungsvorschlag von LeadSky. Keine offizielle Website und keine bestehende Zusammenarbeit mit Delphi. Alle Anfragen bleiben in dieser Ansicht; es werden keine Daten versendet oder gespeichert. Die Restaurantidentität, Kontaktdaten und Speisekarte müssen vor einer Veröffentlichung bestätigt werden.</p></div>
+<span class="footer-mark">Concept by <strong>LeadSky</strong> ↗</span>
+</div>
+<details class="credits">
+<summary>Bildnachweise & Nutzung</summary>
+<p>Illustrative Stockfotografie von Pixabay, gemäß bereitgestelltem Lizenznachweis unter der Pixabay Content License. Keine der Aufnahmen zeigt nachweislich Delphi, dessen Personal, Speisen oder Räumlichkeiten.</p>
+<div class="credit-links">
+<a href="https://pixabay.com/photos/table-glassware-cutlery-silverware-5356682/" target="_blank" rel="noopener noreferrer">JoelFazhari · Am Tisch</a>
+<a href="https://pixabay.com/photos/table-table-setting-cutlery-5696243/" target="_blank" rel="noopener noreferrer">Dorigo · Zusammenkommen</a>
+<a href="https://pixabay.com/photos/table-setting-cutlery-table-deco-4002726/" target="_blank" rel="noopener noreferrer">allybally4b · Details</a>
+<a href="https://pixabay.com/photos/restaurant-table-setting-table-449952/" target="_blank" rel="noopener noreferrer">neshom · Tischkultur</a>
+<a href="https://pixabay.com/service/license-summary/" target="_blank" rel="noopener noreferrer">Pixabay-Lizenz</a>
+</div>
+</details>
+</footer>
+
+<dialog class="dialog" id="detail" aria-labelledby="drawer-title">
+<div class="drawer-head"><span>DELPHI / KONZEPTANSICHT</span><button class="close" aria-label="Detailansicht schließen">×</button></div>
+<img class="drawer-photo" id="drawer-photo" src="img/stock-1.jpg" width="900" height="550" alt="Gedeckter Tisch; Referenzfotografie">
+<div class="drawer-content">
+<p class="eyebrow">Referenzfotografie · kein Geschäftsfoto</p>
+<h2 id="drawer-title">Am Tisch beginnt’s.</h2>
+<p id="drawer-description"></p>
+<h3 class="form-title" id="form-heading">Ihre Tischanfrage</h3>
+<p class="form-note">Nur zum Ausprobieren. Eine Verfügbarkeit wird nicht geprüft. Ihre Eingaben verlassen diese Seite nicht.</p>
+<form id="enquiry" aria-labelledby="form-heading">
+<div class="form-grid">
+<div class="field"><label for="date">Wunschdatum</label><input id="date" name="date" type="date" required></div>
+<div class="field"><label for="party">Personen</label><input id="party" name="party" type="number" min="1" step="1" required inputmode="numeric"></div>
+</div>
+<div class="field"><label for="time">Wunschzeit</label><input id="time" name="time" type="time" required><small>Öffnungszeit und Verfügbarkeit sind zu bestätigen.</small></div>
+<div class="field"><label for="message">Ihre Nachricht oder Wünsche (optional)</label><textarea id="message" name="message" maxlength="1500"></textarea></div>
+<button class="button submit" type="submit">Demo-Anfrage prüfen <span aria-hidden="true">↗</span></button>
+<div class="status" id="status" role="status" tabindex="-1" hidden><strong>This is a demo form, nothing was sent.</strong><p id="review"></p><p>Es wurde kein Tisch reserviert.</p></div>
+</form>
+</div>
+</dialog>
+
+<script>
+(()=>{
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
+const menuButton=document.querySelector('.menu-toggle');
+const menu=document.querySelector('.menu');
+function closeMenu(){menu.hidden=true;menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Menü öffnen')}
+menuButton.addEventListener('click',()=>{const opening=menu.hidden;menu.hidden=!opening;menuButton.setAttribute('aria-expanded',String(opening));menuButton.setAttribute('aria-label',opening?'Menü schließen':'Menü öffnen')});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('click',e=>{if(!menu.hidden&&!menu.contains(e.target)&&!menuButton.contains(e.target))closeMenu()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden){closeMenu();menuButton.focus()}});
+const rail=document.querySelector('.rail'),panels=[...document.querySelectorAll('.panel')],tabs=[...document.querySelectorAll('[data-panel]')];
+const prev=document.getElementById('previous'),next=document.getElementById('next');
+let active=0,ticking=false;
+function setActive(i){active=i;tabs.forEach((b,n)=>b.setAttribute('aria-current',String(i===n)));prev.disabled=i===0;next.disabled=i===panels.length-1;document.querySelector('.position').textContent=String(i+1).padStart(2,'0')+' / 03'}
+function go(i){i=Math.max(0,Math.min(panels.length-1,i));const p=panels[i];rail.scrollTo({left:p.offsetLeft-(rail.clientWidth-p.clientWidth)/2,behavior:reduced.matches?'instant':'smooth'})}
+tabs.forEach((b,i)=>b.addEventListener('click',()=>go(i)));
+prev.addEventListener('click',()=>go(active-1));next.addEventListener('click',()=>go(active+1));
+rail.addEventListener('scroll',()=>{if(ticking)return;ticking=true;requestAnimationFrame(()=>{const center=rail.getBoundingClientRect().left+rail.clientWidth/2;let nearest=0,distance=Infinity;panels.forEach((p,i)=>{const r=p.getBoundingClientRect(),d=Math.abs(r.left+r.width/2-center);if(d<distance){nearest=i;distance=d}});setActive(nearest);ticking=false})},{passive:true});
+rail.addEventListener('keydown',e=>{if(e.target!==rail)return;if(e.key==='ArrowRight'){e.preventDefault();go(active+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(active-1)}});
+const entries=[
+{title:'Am Tisch beginnt’s.',image:'img/stock-1.jpg',alt:'Gedeckter Tisch im Abendlicht; Referenzfotografie',text:'Ein gedeckter Tisch als Bildidee für gemeinsame Zeit. Die Fotografie dient ausschließlich der Gestaltung und zeigt nicht Delphi. Mit der Demo können Sie einen Wunschtermin und Ihre Nachricht zusammenstellen.'},
+{title:'Lieber gemeinsam.',image:'img/stock-2.jpg',alt:'Festlich gedeckte Tafel; Referenzfotografie',text:'Ein Wiedersehen oder ein gemeinsamer Abend: Notieren Sie die gewünschte Personenzahl und Ihren Anlass. Ob Delphi dafür Platz oder ein passendes Angebot hat, muss direkt mit dem Restaurant geklärt werden. Die Aufnahme ist eine fotografische Referenz.'},
+{title:'Die kleinen Details.',image:'img/stock-5.jpg',alt:'Teller und Besteck mit Tischdekoration; Referenzfotografie',text:'Diese Aufnahme steht für die Atmosphäre des Websitekonzepts. Sie zeigt keine bestätigte Ausstattung von Delphi. Besondere Wünsche können Sie im Demo-Ablauf notieren; eine Zusage oder Reservierung ist damit nicht verbunden.'},
+{title:'Aktuelle Speisekarte',image:'img/stock-4.jpg',alt:'Gedeckter Restauranttisch; illustrative Stockfotografie',text:'Für Delphi liegt in diesem Konzept keine verifizierte aktuelle Speisekarte vor. Gerichte, Getränke und Preise werden deshalb nicht ergänzt oder geschätzt. Nutzen Sie die Demo, um eine entsprechende Frage zu formulieren.'},
+{title:'Wünsche zum Essen',image:'img/stock-5.jpg',alt:'Teller mit Besteck; illustrative Stockfotografie',text:'Eine verbindliche Auskunft zu Zutaten, Allergenen oder möglichen Anpassungen kann nur das Restaurant geben. Dieses Konzept bestätigt keine Ernährungsoptionen. Formulieren Sie Ihre Frage in der Demo, ohne sensible Gesundheitsdaten einzutragen.'}
+];
+const dialog=document.getElementById('detail'),form=document.getElementById('enquiry'),status=document.getElementById('status');
+let trigger=null,selected=entries[0];
+const date=document.getElementById('date');
+function setMinimum(){const now=new Date();date.min=[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-')}
+setMinimum();
+document.querySelectorAll('[data-detail]').forEach(button=>button.addEventListener('click',()=>{
+trigger=button;selected=entries[Number(button.dataset.detail)];
+document.getElementById('drawer-title').textContent=selected.title;
+const img=document.getElementById('drawer-photo');img.src=selected.image;img.alt=selected.alt;
+document.getElementById('drawer-description').textContent=selected.text;
+form.reset();status.hidden=true;date.setCustomValidity('');setMinimum();closeMenu();
+dialog.showModal();document.body.classList.add('locked');dialog.scrollTop=0;
+if(button.dataset.enquiry)requestAnimationFrame(()=>date.focus({preventScroll:true}));
+}));
+function closeDialog(){dialog.close()}
+dialog.querySelector('.close').addEventListener('click',closeDialog);
+dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog()}});
+dialog.addEventListener('close',()=>{document.body.classList.remove('locked');if(trigger)trigger.focus({preventScroll:true})});
+date.addEventListener('input',()=>{date.setCustomValidity(date.value&&date.value<date.min?'Bitte wählen Sie heute oder einen zukünftigen Tag.':'')});
+form.addEventListener('input',()=>{status.hidden=true});
+form.addEventListener('submit',e=>{
+e.preventDefault();if(!form.reportValidity())return;
+const chosen=new Date(date.value+'T12:00:00');
+const formatted=new Intl.DateTimeFormat('de-DE',{day:'numeric',month:'long',year:'numeric'}).format(chosen);
+const party=document.getElementById('party').value,time=document.getElementById('time').value,message=document.getElementById('message').value.trim();
+document.getElementById('review').textContent='Thema: '+selected.title+'\nWunsch: '+formatted+', '+time+' Uhr\nPersonen: '+party+(message?'\nIhre Nachricht: '+message:'');
+status.hidden=false;status.focus({preventScroll:true});status.scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'nearest'});
+});
+})();
+</script>
+</body>
+</html>
