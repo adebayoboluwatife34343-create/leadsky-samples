@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FFF8DF">
+<title>Old Greg’s Pizza · Miami · Independent Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#fff8df;--red:#b52d20;--ink:#292b20;--yellow:#f1cf52;--sage:#e7ecd9;--line:#c8bfa4;--display:"Barlow Condensed",Impact,sans-serif;--body:"DM Sans",sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6}button,input,textarea{font:inherit}button,a,input,textarea{-webkit-tap-highlight-color:transparent}button,a{touch-action:manipulation}a{color:inherit}button{cursor:pointer}button:disabled{cursor:default;opacity:.5}:focus-visible{outline:3px solid var(--red);outline-offset:5px}::selection{background:var(--yellow);color:var(--ink)}img{display:block;width:100%;height:100%;object-fit:cover}figure{margin:0}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:var(--display);line-height:.96;text-transform:uppercase}button{color:inherit}.notice{background:var(--red);color:var(--paper);text-align:center;font-size:11px;padding:8px 16px;line-height:1.45}.wrap{width:min(1360px,calc(100% - 88px));margin:auto}.header{height:88px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--ink);gap:20px}.brand{text-decoration:none;font-family:var(--display);font-weight:800;font-size:30px;letter-spacing:-.8px;white-space:nowrap}.header-actions{display:flex;align-items:center;gap:28px}.small-link{font-size:13px;font-weight:700;text-decoration:none}.menu-toggle{display:flex;gap:8px;align-items:center;background:none;border:1px solid var(--ink);padding:6px 12px;font-size:13px;font-weight:700}.menu-toggle span{font-size:15px;line-height:1}.navigation{padding:22px 0;border-bottom:1px solid var(--ink)}.navigation[hidden]{display:none}.navigation a{display:inline-block;margin:8px 35px 8px 0;font-weight:600;text-decoration:none}.navigation a:hover{text-decoration:underline}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;font-weight:700}.opening{padding:39px 0 0}.opening-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.opening-top .location{font-size:12px;font-weight:600}.opening-title{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:35px}.opening h1{font-size:clamp(70px,8.4vw,126px);letter-spacing:-2.5px;color:var(--red)}.opening-title p{max-width:255px;font-size:14px;padding-bottom:5px}.board{display:grid;grid-template-columns:1fr 1.04fr;min-height:620px;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}.menu-board{padding:32px 40px 30px 0;display:flex;flex-direction:column}.section-number{font-size:11px;letter-spacing:1px;font-weight:700}.board-heading{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.board-heading h2{font-size:42px}.price-note{font-size:12px;max-width:330px;margin-bottom:28px}.menu-row{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:25px 0}.select-row{display:grid;grid-template-columns:28px 1fr auto;gap:14px;align-items:start;cursor:pointer}.select-row input{accent-color:var(--red);width:23px;height:23px;margin:6px 0}.item-name{font-family:var(--display);font-size:35px;font-weight:700;text-transform:uppercase;display:block;line-height:1.15}.item-detail{display:block;font-size:12px;max-width:250px;margin-top:7px}.price{font-size:12px;font-weight:600;padding-top:8px;text-align:right;max-width:96px}.quantity{display:flex;justify-content:space-between;align-items:center;padding:19px 0 0 42px;font-size:13px}.quantity[hidden]{display:none}.stepper{display:flex;align-items:center;border:1px solid var(--ink)}.stepper button{border:0;background:transparent;width:42px;height:40px;font-size:22px}.stepper output{min-width:34px;text-align:center;font-weight:700}.menu-note{font-size:12px;max-width:340px;margin:22px 0 28px}.button{background:var(--red);color:var(--paper);border:1px solid var(--red);padding:15px 21px;display:inline-flex;justify-content:space-between;align-items:center;gap:30px;text-decoration:none;font-size:13px;font-weight:700;transition:background .2s,transform .2s}.button:hover{background:#922318;transform:translateY(-2px)}.button.secondary{background:transparent;color:var(--ink);border-color:var(--ink)}.button.secondary:hover{background:var(--yellow)}.board-footer{margin-top:auto;padding-top:28px;display:flex;justify-content:space-between;align-items:center;font-size:11px;gap:20px}.hero-photo{position:relative;overflow:hidden;background:#d8ccb0;min-height:540px}.hero-photo img{transition:transform 1s cubic-bezier(.2,.7,.2,1)}.hero-photo:hover img{transform:scale(1.035)}.photo-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.8));padding:58px 25px 20px;color:white;font-size:11px}.photo-tag{position:absolute;top:22px;left:22px;background:var(--paper);color:var(--ink);padding:8px 12px;font-size:10px;letter-spacing:1.4px;font-weight:700;text-transform:uppercase}.ticker{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:20px 0;border-bottom:1px solid var(--ink);font-family:var(--display);font-size:22px;font-weight:600;text-transform:uppercase}.ticker i{font-style:normal;color:var(--red)}.selection-section{padding:88px 0;display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}.section-title{font-size:clamp(54px,6vw,82px);letter-spacing:-1px;margin:15px 0 24px}.intro-copy{max-width:315px;font-size:14px}.selection-panel{border:1px solid var(--ink);background:#fffdf1;padding:30px}.panel-top{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);padding-bottom:18px;font-size:12px;font-weight:700}.text-button{background:none;border:0;text-decoration:underline;padding:0;font-size:12px}.summary-row{display:flex;justify-content:space-between;gap:15px;padding:20px 0;font-size:14px;border-bottom:1px solid var(--line)}.empty{padding:20px 0;font-size:13px}.subtotal{display:flex;justify-content:space-between;padding:18px 0;gap:20px;font-size:13px;font-weight:700}.disclaimer{font-size:11px;line-height:1.6;margin-bottom:22px}.field-label{display:block;font-size:12px;font-weight:700;margin:18px 0 8px}textarea{width:100%;border:1px solid #8f8b76;background:var(--paper);padding:13px;min-height:150px;resize:vertical;border-radius:0;font-size:13px;color:var(--ink)}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.status{font-size:12px;min-height:22px;margin-top:12px}.story{background:var(--sage);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:65px 0}.story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:75px;align-items:center}.story-photo{height:460px;position:relative}.story-copy p{font-size:15px;max-width:370px;margin-bottom:24px}.story-copy h2{font-size:clamp(54px,6vw,85px);margin:20px 0 26px}.underlink{font-size:13px;font-weight:700;text-underline-offset:5px}.gallery{padding:80px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:30px}.section-head p{font-size:12px;max-width:270px}.section-head h2{font-size:clamp(55px,6vw,82px);margin-top:15px}.gallery-grid{display:grid;grid-template-columns:1.35fr 1fr 1fr;gap:18px;align-items:start}.gallery-card{border:0;background:transparent;padding:0;text-align:left;width:100%}.gallery-image{height:310px;overflow:hidden;position:relative}.gallery-card:nth-child(2){margin-top:50px}.gallery-card:nth-child(3){margin-top:100px}.gallery-image img{transition:transform .5s}.gallery-card:hover img{transform:scale(1.05)}.zoom{position:absolute;right:12px;bottom:12px;background:var(--paper);width:38px;height:38px;display:grid;place-items:center;font-size:23px}.gallery-label{display:flex;justify-content:space-between;gap:10px;font-size:11px;padding:12px 0;border-bottom:1px solid var(--ink)}.visit{border-top:1px solid var(--ink);padding:75px 0}.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px}.visit h2{font-size:clamp(65px,7vw,100px);margin:20px 0 30px}.address{font-style:normal;font-size:19px;max-width:330px;line-height:1.7;margin-bottom:24px}.visit-details{border-top:1px solid var(--ink)}.detail{padding:22px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:110px 1fr;gap:25px;font-size:13px}.detail dt{font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:700}.detail dd{margin:0}.detail a{overflow-wrap:anywhere}.faq{margin-top:30px}details{border-bottom:1px solid var(--line);padding:16px 0;font-size:13px}summary{cursor:pointer;font-weight:700;padding-right:20px}details p{padding-top:12px}.closing{background:var(--red);color:var(--paper);padding:44px 0}.closing-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}.closing h2{font-size:50px}.closing .button{background:var(--paper);color:var(--red);border-color:var(--paper)}footer{padding:35px 0 45px;font-size:10px}.footer-top{display:flex;justify-content:space-between;gap:25px,margin-bottom:20px}.credits{max-width:950px;line-height:1.9;color:#565443}.credits a{text-underline-offset:2px}.mobile-call{display:none}.lightbox{border:0;padding:0;background:var(--paper);width:min(950px,92vw);max-height:92vh;color:var(--ink)}.lightbox::backdrop{background:rgba(0,0,0,.83)}.lightbox-top{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;font-size:12px}.lightbox button{background:transparent;border:1px solid var(--ink);min-height:44px;min-width:44px}.lightbox figure img{height:min(65vh,650px);object-fit:contain;background:#171810}.lightbox figcaption{padding:12px 18px;font-size:12px}.lightbox-controls{display:flex;justify-content:space-between;padding:0 18px 18px}.lightbox-controls button{padding:8px 16px}.reveal{transition:opacity .6s,transform .6s}.motion-ready .reveal:not(.seen){opacity:0;transform:translateY(20px)}
+@media(min-width:1500px){.hero-photo{min-height:650px}}
+@media(max-width:1000px){.wrap{width:calc(100% - 48px)}.opening h1{font-size:90px}.opening-title p{max-width:220px}.menu-board{padding-right:24px}.selection-section{gap:40px}.story-grid{gap:35px}.story-photo{height:400px}.visit-grid{gap:45px}.gallery-image{height:250px}}
+@media(max-width:650px){html{scroll-padding-top:16px}.wrap{width:calc(100% - 36px)}.notice{font-size:9px;padding:6px 16px}.header{height:64px;gap:8px}.brand{font-size:20px;letter-spacing:-.5px}.header-actions{gap:10px}.small-link{font-size:11px}.menu-toggle{font-size:11px;gap:6px;padding:6px 10px;height:36px}.menu-toggle span{font-size:14px}.navigation a{display:block;margin:0;padding:12px 0;border-bottom:1px solid var(--line)}.opening{padding-top:19px}.opening-top{margin-bottom:12px}.eyebrow{font-size:9px;letter-spacing:1.6px}.opening-top .location{font-size:10px}.opening-title{display:block;margin-bottom:20px}.opening h1{font-size:72px;letter-spacing:-1.5px;line-height:.9}.opening-title p{font-size:12px;max-width:none;padding:12px 0 0}.board{display:flex;flex-direction:column;min-height:0}.hero-photo{order:-1;min-height:0;height:155px}.hero-photo img{object-position:50% 52%}.photo-tag{top:10px;left:10px;font-size:8px;padding:5px 8px}.photo-caption{padding:35px 12px 8px;font-size:9px}.menu-board{padding:20px 0 24px}.board-heading{margin-bottom:12px}.board-heading h2{font-size:33px}.price-note{font-size:11px;margin-bottom:15px;max-width:none}.menu-row{padding:18px 0}.item-name{font-size:31px}.item-detail{font-size:11px}.select-row{gap:10px;grid-template-columns:26px 1fr 80px}.price{font-size:10px;max-width:80px}.menu-note{font-size:11px;margin:15px 0 18px;max-width:none}.menu-board>.button{width:100%}.board-footer{padding-top:16px}.ticker{font-size:15px;padding:15px 0;gap:8px}.selection-section{padding:45px 0;grid-template-columns:1fr;gap:25px}.section-title{font-size:58px;margin:12px 0 15px}.intro-copy{max-width:none;font-size:13px}.selection-panel{padding:20px}.actions .button{flex:1;gap:12px;font-size:12px;padding:13px}.story{padding:36px 0}.story-grid{grid-template-columns:1fr;gap:28px}.story-photo{height:260px}.story-copy h2{font-size:63px;margin:14px 0 20px}.story-copy p{font-size:13px}.gallery{padding:42px 0}.section-head{display:block;margin-bottom:24px}.section-head h2{font-size:60px}.section-head p{margin-top:16px;max-width:none}.gallery-grid{grid-template-columns:1fr 1fr;gap:15px}.gallery-card:first-child{grid-column:1/-1}.gallery-card:nth-child(2),.gallery-card:nth-child(3){margin-top:0}.gallery-image{height:180px}.gallery-card:first-child .gallery-image{height:255px}.gallery-label{font-size:9px;gap:4px}.visit{padding:40px 0}.visit-grid{grid-template-columns:1fr;gap:30px}.visit h2{font-size:72px;margin:15px 0 20px}.address{font-size:17px}.detail{grid-template-columns:80px 1fr;gap:12px}.closing{padding:30px 0}.closing-inner{display:block}.closing h2{font-size:43px;margin-bottom:22px}.closing .button{width:100%}.footer-top{display:block}.footer-top p+ p{margin-top:8px}footer{padding-bottom:95px}.mobile-call{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:20;background:var(--paper);border-top:1px solid var(--ink);padding:10px 18px calc(10px + env(safe-area-inset-bottom));gap:12px;align-items:center;justify-content:space-between}.mobile-call span{font-size:11px;font-weight:700}.mobile-call a{background:var(--red);color:var(--paper);padding:11px 26px;text-decoration:none;font-size:12px;font-weight:700}.lightbox{width:94vw}.quantity{padding-left:36px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.motion-ready .reveal:not(.seen){opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="notice">Independent website concept by LeadSky for Old Greg’s Pizza. Not their official website.</div>
+<div class="wrap">
+<header class="header">
+<a class="brand" href="#top" aria-label="Old Greg’s Pizza home">OLD GREG’S PIZZA</a>
+<div class="header-actions">
+<a class="small-link" href="#menu">Menu</a>
+<button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navigation" aria-label="Open navigation">Explore <span aria-hidden="true">☰</span></button>
+</div>
+</header>
+<nav class="navigation" id="navigation" aria-label="Main navigation" hidden>
+<a href="#menu">Menu board</a><a href="#selection">Your selection</a><a href="#about">About</a><a href="#gallery">Photo inspiration</a><a href="#visit">Visit & contact</a>
+</nav>
+<main id="top">
+<section class="opening" aria-labelledby="heroTitle">
+<div class="opening-top"><span class="eyebrow">Old Greg’s Pizza</span><span class="location">Miami, Florida ↗</span></div>
+<div class="opening-title">
+<h1 id="heroTitle">PIZZA ON<br>YOUR MIND?</h1>
+<p>Old Greg’s Pizza, Miami.<br>Start your pizza enquiry here.</p>
+</div>
+<div class="board" id="menu">
+<div class="menu-board">
+<div class="board-heading"><h2>The menu board.</h2><span class="section-number">01 / PIZZA</span></div>
+<p class="price-note">Current menu items and prices have not been verified for this independent concept. Contact the restaurant for its latest menu.</p>
+<div class="menu-row">
+<label class="select-row" for="pizzaCheck">
+<input id="pizzaCheck" type="checkbox">
+<span><span class="item-name">Pizza enquiry</span><span class="item-detail">Choose a quantity to ask about. Confirm pizza options with the restaurant.</span></span>
+<span class="price">Ask for<br>current prices</span>
+</label>
+<div class="quantity" id="quantityControl" hidden>
+<span>Number of pizzas</span>
+<div class="stepper"><button id="minus" type="button" aria-label="Decrease pizza quantity">−</button><output id="quantity" aria-live="polite">1</output><button id="plus" type="button" aria-label="Increase pizza quantity">+</button></div>
+</div>
+</div>
+<p class="menu-note">This is an enquiry builder, not an ordering service. No payment, reservation or order is taken here.</p>
+<a class="button" href="#selection">Build your enquiry <span aria-hidden="true">↗</span></a>
+<div class="board-footer"><span>MIAMI DESIGN DISTRICT</span><span>Good plans start with pizza.</span></div>
+</div>
+<figure class="hero-photo">
+<img src="img/stock-3.jpg" alt="Close-up of pizza slices, shown as illustrative stock photography" width="1000" height="1100" fetchpriority="high">
+<span class="photo-tag">A little pizza inspiration</span>
+<figcaption class="photo-caption">Reference photography · Not an Old Greg’s menu item.</figcaption>
+</figure>
+</div>
+<div class="ticker" aria-hidden="true"><span>Pick your quantity</span><i>✳</i><span>Ask about the menu</span><i>✳</i><span>Make a pizza plan</span></div>
+</section>
+
+<section class="selection-section" id="selection" aria-labelledby="selectionTitle">
+<div>
+<span class="eyebrow">Your pizza plan / 02</span>
+<h2 class="section-title" id="selectionTitle">A LITTLE PLAN.<br>A LOT OF<br>POSSIBILITIES.</h2>
+<p class="intro-copy">Select your quantity, add a note and copy your enquiry. You can then contact Old Greg’s directly to discuss the menu, prices and availability.</p>
+</div>
+<div class="selection-panel">
+<div class="panel-top"><span>YOUR ENQUIRY</span><button class="text-button" id="clearSelection" type="button">Clear selection</button></div>
+<div id="selectionSummary" aria-live="polite"><p class="empty">Tick “Pizza enquiry” on the menu board to get started.</p></div>
+<div class="subtotal"><span>Estimated subtotal</span><span>Requires current prices</span></div>
+<p class="disclaimer">No total is calculated without verified prices. Menu options, availability, taxes, fees and acceptance must be confirmed directly with the restaurant.</p>
+<label class="field-label" for="notes">Anything you’d like to ask?</label>
+<textarea id="notes" maxlength="1000" rows="3" aria-describedby="notesHelp"></textarea>
+<p id="notesHelp" class="disclaimer">You can mention your preferred date, collection plans or dietary questions.</p>
+<label class="field-label" for="enquiry">Your message · editable before copying</label>
+<textarea id="enquiry" rows="6"></textarea>
+<div class="actions">
+<button class="button" id="copyEnquiry" type="button">Copy enquiry <span aria-hidden="true">↗</span></button>
+<a class="button secondary" href="mailto:yo@oldgregspizza.com" id="emailEnquiry">Open email <span aria-hidden="true">↗</span></a>
+</div>
+<p class="status" id="copyStatus" role="status"></p>
+<p class="disclaimer">Nothing is sent by this page. “Open email” creates a draft in your email app; sending it is your choice. Contact details are supplied for this concept and have not been independently verified.</p>
+</div>
+</section>
+</main>
+</div>
+
+<section class="story" id="about" aria-labelledby="aboutTitle">
+<div class="wrap story-grid">
+<figure class="story-photo reveal">
+<img src="img/stock-5.jpg" alt="Flour and dough preparation in a kitchen, illustrative stock photography" width="1000" height="800" loading="lazy">
+<figcaption class="photo-caption">Reference photography · Not the restaurant’s kitchen.</figcaption>
+</figure>
+<div class="story-copy reveal">
+<span class="eyebrow">Old Greg’s / Miami</span>
+<h2 id="aboutTitle">LET’S KEEP<br>IT ABOUT<br>THE PIZZA.</h2>
+<p>Looking for Old Greg’s Pizza in Miami? Find the supplied location and contact details below, and speak with the restaurant for its current menu.</p>
+<p>This independent concept puts the useful things first: your enquiry, where to go and how to get in touch.</p>
+<a class="underlink" href="#visit">Find Old Greg’s ↗</a>
+</div>
+</div>
+</section>
+
+<div class="wrap">
+<section class="gallery" id="gallery" aria-labelledby="galleryTitle">
+<div class="section-head"><div><span class="eyebrow">Photo inspiration / 03</span><h2 id="galleryTitle">IN A PIZZA MOOD.</h2></div><p>Illustrative stock photography, chosen for this concept. These are not photographs of Old Greg’s dishes or premises.</p></div>
+<div class="gallery-grid">
+<button class="gallery-card reveal" type="button" data-gallery="0" aria-label="Enlarge pizza and vegetables reference photograph">
+<div class="gallery-image"><img src="img/stock-4.jpg" alt="Pizza topped with vegetables, reference photography" width="900" height="700" loading="lazy"><span class="zoom" aria-hidden="true">+</span></div>
+<span class="gallery-label"><span>01 / Pizza & vegetables</span><span>REFERENCE</span></span>
+</button>
+<button class="gallery-card reveal" type="button" data-gallery="1" aria-label="Enlarge tomato basil and mozzarella reference photograph">
+<div class="gallery-image"><img src="img/stock-7.jpg" alt="Tomatoes, mozzarella and basil, reference photography" width="700" height="850" loading="lazy"><span class="zoom" aria-hidden="true">+</span></div>
+<span class="gallery-label"><span>02 / A fresh perspective</span><span>REFERENCE</span></span>
+</button>
+<button class="gallery-card reveal" type="button" data-gallery="2" aria-label="Enlarge pizza oven reference photograph">
+<div class="gallery-image"><img src="img/stock-9.jpg" alt="Pizza baking in an oven, reference photography" width="700" height="850" loading="lazy"><span class="zoom" aria-hidden="true">+</span></div>
+<span class="gallery-label"><span>03 / From the oven</span><span>REFERENCE</span></span>
+</button>
+</div>
+</section>
+
+<section class="visit" id="visit" aria-labelledby="visitTitle">
+<div class="visit-grid">
+<div><span class="eyebrow">Miami Design District / 04</span><h2 id="visitTitle">HERE’S<br>WHERE.</h2>
+<address class="address">Old Greg’s Pizza<br>3620 Northeast 2nd Avenue<br>Miami Design District, FL 33137</address>
+<a class="button secondary" href="https://www.google.com/maps/search/?api=1&amp;query=Old+Greg%27s+Pizza+3620+Northeast+2nd+Avenue+Miami+33137" target="_blank" rel="noopener noreferrer">Get directions <span aria-hidden="true">↗</span></a>
+</div>
+<div>
+<dl class="visit-details">
+<div class="detail"><dt>Call</dt><dd><a href="tel:+18666534734">+1 866-653-4734</a></dd></div>
+<div class="detail"><dt>Email</dt><dd><a href="mailto:yo@oldgregspizza.com">yo@oldgregspizza.com</a></dd></div>
+<div class="detail"><dt>Hours</dt><dd>Please contact the restaurant for current opening hours before visiting.</dd></div>
+<div class="detail"><dt>Website</dt><dd><a href="https://www.oldgregspizza.com/" target="_blank" rel="noopener noreferrer">oldgregspizza.com ↗</a></dd></div>
+</dl>
+<div class="faq">
+<details><summary>Does this website place an order?</summary><p>No. This is an independent website concept. Your selection creates an editable enquiry only. Nothing is sent, paid for, booked or accepted through this page.</p></details>
+<details><summary>Where can I find current prices?</summary><p>Contact Old Greg’s Pizza directly for its latest menu, prices and availability. This concept does not include unverified item names or prices.</p></details>
+<details><summary>Are these photos from Old Greg’s?</summary><p>No. All food and kitchen photographs on this page are illustrative stock images licensed from Pixabay. They do not represent the restaurant’s actual dishes, staff or premises.</p></details>
+<details><summary>Can I ask about dietary requirements?</summary><p>Yes. Add your question to the enquiry and contact the restaurant directly. Ingredients, allergens and preparation arrangements need confirmation from the restaurant before ordering.</p></details>
+</div>
+</div>
+</div>
+</section>
+</div>
+
+<section class="closing">
+<div class="wrap closing-inner"><h2>YOUR NEXT PIZZA PLAN?</h2><a class="button" href="tel:+18666534734">Call Old Greg’s <span aria-hidden="true">↗</span></a></div>
+</section>
+<footer class="wrap">
+<div class="footer-top"><p><strong>OLD GREG’S PIZZA · MIAMI</strong></p><p>Concept by LeadSky · Independent and unendorsed.</p></div>
+<p>This private proposal is not the restaurant’s official website. Business details are supplied lead information; current operations, menu, prices and contact channels have not been independently verified.</p>
+<p class="credits">Reference photography: <a href="https://pixabay.com/photos/pizza-slices-italian-cuisine-329523/" target="_blank" rel="noopener noreferrer">joshuemd</a> · <a href="https://pixabay.com/photos/new-year-background-dough-cook-943245/" target="_blank" rel="noopener noreferrer">ClickerHappy</a> · <a href="https://pixabay.com/photos/pizza-vegetables-toppings-346985/" target="_blank" rel="noopener noreferrer">keram</a> · <a href="https://pixabay.com/photos/tomatoes-caprese-mozzarella-basil-1580273/" target="_blank" rel="noopener noreferrer">congerdesign</a> · <a href="https://pixabay.com/photos/pizza-oven-restaurant-meal-yummy-6478478/" target="_blank" rel="noopener noreferrer">px_steven_be</a> / Pixabay. Used under the supplied Pixabay Content License.</p>
+</footer>
+
+<div class="mobile-call"><span>OLD GREG’S · MIAMI</span><a href="tel:+18666534734">Call restaurant ↗</a></div>
+
+<dialog class="lightbox" id="lightbox" aria-labelledby="lightboxTitle">
+<div class="lightbox-top"><span id="lightboxTitle">Photo inspiration</span><button id="closeLightbox" type="button" aria-label="Close photograph">✕</button></div>
+<figure><img id="lightboxImage" src="img/stock-4.jpg" alt="Pizza with vegetables, illustrative stock photography" width="1100" height="800"><figcaption id="lightboxCaption"></figcaption></figure>
+<div class="lightbox-controls"><button id="previousImage" type="button">← Previous</button><button id="nextImage" type="button">Next →</button></div>
+</dialog>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const toggle=$("menuToggle"),navigation=$("navigation");
+function closeMenu(restore=false){navigation.hidden=true;toggle.setAttribute("aria-expanded","false");toggle.setAttribute("aria-label","Open navigation");if(restore)toggle.focus()}
+toggle.addEventListener("click",()=>{const opening=navigation.hidden;navigation.hidden=!opening;toggle.setAttribute("aria-expanded",String(opening));toggle.setAttribute("aria-label",opening?"Close navigation":"Open navigation")});
+navigation.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>closeMenu()));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!navigation.hidden)closeMenu(true)});
+let count=1;
+const checkbox=$("pizzaCheck"),notes=$("notes"),enquiry=$("enquiry");
+function message(){return "Hello Old Greg’s Pizza,\n\n"+(checkbox.checked?"I’d like to enquire about "+count+" pizza"+(count===1?"":"s")+".\n\n":"I’d like to ask about your pizza menu.\n\n")+"Could you please share your current menu, prices and availability?"+(notes.value.trim()?"\n\n"+notes.value.trim():"")+"\n\nThank you."}
+function syncEmail(){$("emailEnquiry").href="mailto:yo@oldgregspizza.com?subject="+encodeURIComponent("Pizza enquiry")+"&body="+encodeURIComponent(enquiry.value)}
+function update(){
+$("quantityControl").hidden=!checkbox.checked;
+$("quantity").textContent=count;
+$("minus").disabled=count<=1;
+$("plus").disabled=count>=99;
+$("clearSelection").disabled=!checkbox.checked&&!notes.value;
+$("selectionSummary").replaceChildren();
+if(checkbox.checked){const row=document.createElement("div");row.className="summary-row";const text=document.createElement("span");text.textContent=count+" × Pizza enquiry";const remove=document.createElement("button");remove.type="button";remove.className="text-button";remove.textContent="Remove";remove.setAttribute("aria-label","Remove pizza enquiry");remove.addEventListener("click",()=>{checkbox.checked=false;update();checkbox.focus()});row.append(text,remove);$("selectionSummary").append(row)}else{const empty=document.createElement("p");empty.className="empty";empty.textContent="Tick “Pizza enquiry” on the menu board to get started.";$("selectionSummary").append(empty)}
+enquiry.value=message();syncEmail();$("copyStatus").textContent="";
+}
+checkbox.addEventListener("change",update);
+$("minus").addEventListener("click",()=>{if(count>1)count--;update()});
+$("plus").addEventListener("click",()=>{if(count<99)count++;update()});
+notes.addEventListener("input",update);
+enquiry.addEventListener("input",syncEmail);
+$("clearSelection").addEventListener("click",()=>{checkbox.checked=false;count=1;notes.value="";update()});
+$("copyEnquiry").addEventListener("click",async()=>{
+if(!enquiry.value.trim()){$("copyStatus").textContent="Write an enquiry before copying.";enquiry.focus();return}
+try{if(!navigator.clipboard)throw new Error("Clipboard unavailable");await navigator.clipboard.writeText(enquiry.value);$("copyStatus").textContent="Enquiry copied. Nothing was sent."}
+catch(error){enquiry.focus();enquiry.select();$("copyStatus").textContent="Select and copy the message above using your device’s copy command. Nothing was sent."}
+});
+update();
+const photos=[
+{src:"img/stock-4.jpg",alt:"Pizza topped with vegetables, illustrative stock photography",caption:"Pizza & vegetables · Reference photo by keram / Pixabay. Not an Old Greg’s dish."},
+{src:"img/stock-7.jpg",alt:"Tomatoes, mozzarella and basil, illustrative stock photography",caption:"Tomatoes, mozzarella & basil · Reference photo by congerdesign / Pixabay."},
+{src:"img/stock-9.jpg",alt:"Pizza baking in an oven, illustrative stock photography",caption:"From the oven · Reference photo by px_steven_be / Pixabay. Not the restaurant’s premises."}
+];
+const lightbox=$("lightbox");let photoIndex=0,lastTrigger=null;
+function showPhoto(index){photoIndex=(index+photos.length)%photos.length;const photo=photos[photoIndex];$("lightboxImage").src=photo.src;$("lightboxImage").alt=photo.alt;$("lightboxCaption").textContent=photo.caption;$("lightboxTitle").textContent="Photo inspiration / "+(photoIndex+1)+" of "+photos.length}
+document.querySelectorAll("[data-gallery]").forEach(button=>button.addEventListener("click",()=>{lastTrigger=button;showPhoto(Number(button.dataset.gallery));lightbox.showModal();document.body.style.overflow="hidden";$("closeLightbox").focus()}));
+$("closeLightbox").addEventListener("click",()=>lightbox.close());
+$("previousImage").addEventListener("click",()=>showPhoto(photoIndex-1));
+$("nextImage").addEventListener("click",()=>showPhoto(photoIndex+1));
+lightbox.addEventListener("keydown",event=>{if(event.key==="ArrowLeft"){event.preventDefault();showPhoto(photoIndex-1)}if(event.key==="ArrowRight"){event.preventDefault();showPhoto(photoIndex+1)}});
+lightbox.addEventListener("click",event=>{if(event.target===lightbox){const r=lightbox.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)lightbox.close()}});
+lightbox.addEventListener("close",()=>{document.body.style.overflow="";if(lastTrigger)lastTrigger.focus()});
+const reducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)");
+if("IntersectionObserver" in window&&!reducedMotion.matches){document.body.classList.add("motion-ready");const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("seen");observer.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll(".reveal").forEach(el=>observer.observe(el))}
+</script>
+</body>
+</html>
