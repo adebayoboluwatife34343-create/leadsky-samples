@@ -1,0 +1,122 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://www.riverclubvet.co.za/wp-content/uploads/2024/09/Logo5-1.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "https://www.riverclubvet.co.za/wp-content/uploads/2024/10/RVC_Image5.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/riverclubvetclinic"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels cat veterinary consultation examination table natural light",
+    "description": "treatment, hospital, clinic, medicine, laboratory, diagnosis, patient, healthcare, hospital, hospital, hospital, hospital, hospital, patient, patient, patient, healthcare, healthcare, healthcare",
+    "source": "https://pixabay.com/photos/treatment-hospital-clinic-medicine-4099432/",
+    "photographer": "fernandozhiminaicela",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels cat veterinary consultation examination table natural light",
+    "description": "veterinary, blood pressure, pressure measurement, ecg, record, heart, cardiac examination, medicine, heart disease, dogs, cardiovascular pressure, dog examination, veterinary examination, dog on examination, nature, animal, vet, white, doctor, veterinarian, pet, canine",
+    "source": "https://pixabay.com/photos/veterinary-blood-pressure-4940425/",
+    "photographer": "mirkosajkov",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pexels relaxed cat resting clean indoor bedding",
+    "description": "cat, pet, feline, nature, animal, fur, kitty, domestic, domestic cat, cat portrait, animal world",
+    "source": "https://pixabay.com/photos/cat-pet-feline-animal-fur-kitty-4688579/",
+    "photographer": "Kwiaatekk",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pexels relaxed cat resting clean indoor bedding",
+    "description": "cat, pet, animal, domestic, feline, mammal, sleep, bed, british cat, british shorthair, nature, gray cat, sleeping cat, cat in bed",
+    "source": "https://pixabay.com/photos/cat-pet-animal-domestic-feline-7533717/",
+    "photographer": "yacubee",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay veterinarian examining dog bright consultation room",
+    "description": "chairs, floor, furniture, indoors, interior design, lamp, parquet, room, tables, windows, rug, interiors, home interior, home furniture, interior decoration, home, house, floor, interior design, room, room, home, home, home, house, house, house, house, house",
+    "source": "https://pixabay.com/photos/chairs-floor-furniture-indoors-2181947/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay veterinarian examining dog bright consultation room",
+    "description": "chairs, table, contemporary, furniture, indoors, interior design, office, room, spacious, windows, interior decoration, office furniture, meeting room, boardroom, office, office, office, office, office",
+    "source": "https://pixabay.com/photos/chairs-table-contemporary-furniture-2181960/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels cat boarding comfortable indoor enclosure",
+    "description": "bed, comforter, cat's paw, cat, duvet, hiding, comfortable, pet, animal, relaxed, sleep, nature, lazing around, lazy, Germany, Bavaria, Augsburg",
+    "source": "https://pixabay.com/photos/bed-comforter-cats-paw-cat-duvet-1358907/",
+    "photographer": "tvjoern",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels cat boarding comfortable indoor enclosure",
+    "description": "kitten, cat, nature, pet, feline, animal, fur, kitty, domestic, domestic cat, cat portrait, animal world",
+    "source": "https://pixabay.com/photos/kitten-cat-pet-feline-animal-fur-4611189/",
+    "photographer": "guvo59",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay rabbit veterinary care examination",
+    "description": "dentist, dental care, patient, doctor, dental check up, dental examination, dental clinic, dentistry, dentist, dentist, dentist, dentist, patient, doctor, doctor, doctor, doctor, doctor",
+    "source": "https://pixabay.com/photos/dentist-dental-care-patient-doctor-428645/",
+    "photographer": "jarmoluk",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay rabbit veterinary care examination",
+    "description": "cat, nature, kitty, veterinarian, pet, feline, animal, domestic, fur, orange, tabby, cage, veterinary",
+    "source": "https://pixabay.com/photos/cat-kitty-veterinarian-pet-feline-4988408/",
+    "photographer": "joannafotograf",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
