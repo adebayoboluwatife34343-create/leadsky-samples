@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#392748">
+<title>Mens Health Clinics — A more considered consultation journey</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FCFAFF;--ink:#392748;--lilac:#EDE5F4;--green:#216757;--muted:#655D70;--line:#ddd5e5;--white:#fff;--radius:18px;--shadow:0 18px 65px #3927480b}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.55 "Source Sans 3",sans-serif}
+button,input,select,textarea{font:inherit}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+button{cursor:pointer}
+a{color:inherit;text-underline-offset:4px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid #9b6dc2;outline-offset:4px}
+button:disabled{cursor:not-allowed;opacity:.5}
+button{color:inherit}
+img{max-width:100%;display:block}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3{line-height:1.12}
+h1,h2,.serif{font-family:Lora,serif;font-weight:400}
+h1{font-size:clamp(38px,4.5vw,68px);letter-spacing:-2.3px;margin-bottom:24px}
+h2{font-size:clamp(32px,3.4vw,47px);letter-spacing:-1.3px;margin-bottom:18px}
+h3{font-size:22px;font-weight:600}
+p{margin-bottom:18px}
+small,.small{font-size:14px;line-height:1.5}
+.muted{color:var(--muted)}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:22px}
+.eyebrow:before{content:"";height:7px;width:7px;flex-shrink:0;background:var(--green);border-radius:50%}
+.wrap{width:min(1220px,calc(100% - 80px));margin:auto}
+.banner{background:var(--lilac);text-align:center;font-size:12px;padding:8px 15px;color:var(--ink)}
+.header{position:sticky;top:0;z-index:30;background:#fcfafff5;border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.header-inner{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.identity{display:flex;align-items:center;gap:13px;text-decoration:none}
+.logo{width:103px;height:48px;object-fit:contain;background:var(--ink);border-radius:5px;padding:6px}
+.identity span{font-size:13px;line-height:1.25;border-left:1px solid var(--line);padding-left:13px}
+.desktop-nav{display:flex;gap:24px;align-items:center;font-size:14px}
+.desktop-nav>a:not(.btn){text-decoration:none}
+.desktop-nav>a:hover{text-decoration:underline}
+.btn{border:1px solid transparent;background:var(--ink);color:white;padding:13px 22px;border-radius:8px;text-decoration:none;display:inline-flex;justify-content:center;align-items:center;gap:12px;font-weight:600;font-size:15px;line-height:1.4;transition:background .2s,transform .2s,box-shadow .2s}
+.btn:hover{background:#523b65;box-shadow:0 5px 18px #39274818}
+.btn:active{transform:translateY(1px)}
+.btn.green{background:var(--green)}
+.btn.green:hover{background:#174c40}
+.btn.outline{background:transparent;border-color:var(--line);color:var(--ink)}
+.btn.outline:hover{background:var(--lilac)}
+.btn.light{background:var(--white);color:var(--ink)}
+.btn.small{padding:9px 15px;font-size:14px}
+.text-btn{background:none;border:0;text-decoration:underline;text-underline-offset:4px;font-size:14px;padding:7px 2px}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:8px;height:42px;width:42px;font-size:22px}
+.mobile-actions{display:none}
+.menu-panel{position:absolute;right:0;left:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:var(--shadow);padding:16px 24px 24px}
+.menu-panel a{display:block;padding:13px 5px;text-decoration:none;border-bottom:1px solid var(--line)}
+[hidden]{display:none!important}
+.hero{padding:65px 0 36px}
+.hero-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:55px;align-items:center}
+.hero-copy .intro{font-size:19px;max-width:480px;color:var(--muted);margin-bottom:26px}
+.hero-meta{display:flex;gap:18px;align-items:center;margin-top:25px;font-size:12px;color:var(--muted)}
+.hero-meta span+span{border-left:1px solid var(--line);padding-left:18px}
+.arrow{font-size:20px}
+.compare-card{background:white;border-radius:24px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);padding:12px}
+.compare-top{display:flex;align-items:center;justify-content:space-between;padding:8px 8px 15px;font-size:12px;letter-spacing:.5px}
+.live-dot{display:inline-flex;align-items:center;gap:7px;color:var(--green)}
+.live-dot:before{content:"";width:6px;height:6px;background:var(--green);border-radius:50%}
+.comparison{position:relative;height:360px;border-radius:14px;overflow:hidden;--split:50%;background:var(--lilac)}
+.comparison>img,.before-layer,.before-layer>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.comparison>img{object-position:50% 52%}
+.before-layer{clip-path:inset(0 calc(100% - var(--split)) 0 0)}
+.before-layer>img{object-position:48% center}
+.photo-shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8),rgba(0,0,0,.03) 65%);pointer-events:none}
+.photo-caption{position:absolute;bottom:20px;color:white;font-size:14px;max-width:145px;z-index:2;line-height:1.3}
+.photo-caption b{display:block;font-size:11px;letter-spacing:1.6px;margin-bottom:8px}
+.photo-caption.before{left:18px}.photo-caption.after{right:18px;text-align:right}
+.compare-line{position:absolute;top:0;bottom:0;left:var(--split);width:2px;background:white;pointer-events:none;z-index:3;transform:translateX(-50%)}
+.compare-handle{position:absolute;top:48%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:white;color:var(--ink);box-shadow:0 2px 20px #0003;font-size:20px}
+.comparison input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;z-index:5}
+.comparison:focus-within{outline:3px solid var(--green);outline-offset:3px}
+.compare-controls{padding:12px 8px 4px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.compare-controls button{border:0;background:none;font-size:13px;padding:7px;color:var(--ink)}
+.compare-controls output{font-size:12px;color:var(--muted)}
+.image-note{font-size:11px;color:var(--muted);margin:10px 9px 2px}
+.hero-foot{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:30px 0 8px;margin-top:28px;border-top:1px solid var(--line);font-size:14px}
+.hero-foot p{margin:0;max-width:700px}
+.hero-foot .index{color:var(--green);font-size:12px;white-space:nowrap;letter-spacing:1px}
+.section{padding:85px 0}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:35px;margin-bottom:35px}
+.section-head h2{max-width:600px;margin-bottom:0}
+.section-head>p{max-width:360px;color:var(--muted);margin:0}
+.journey{background:#f3eef7;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.workspace{display:grid;grid-template-columns:240px 1fr;background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.steps-rail{background:#faf7fd;padding:28px 22px;display:flex;flex-direction:column}
+.rail-title{font-size:11px;font-weight:700;letter-spacing:1.6px;color:var(--muted);margin-bottom:28px}
+.step-link{display:flex;align-items:center;gap:12px;background:none;border:0;text-align:left;padding:0 0 30px;position:relative;width:100%;font-size:14px;font-weight:600}
+.step-link:not(:last-of-type):after{content:"";position:absolute;height:23px;width:1px;background:var(--line);top:37px;left:17px}
+.step-number{width:35px;height:35px;border:1px solid var(--line);display:grid;place-items:center;flex-shrink:0;border-radius:50%;font-size:12px;background:#fff;color:var(--muted)}
+.step-link.active .step-number{background:var(--ink);color:white;border-color:var(--ink)}
+.step-link.done .step-number{background:var(--green);color:white;border-color:var(--green)}
+.step-link.active{color:var(--ink)}
+.rail-footer{margin-top:auto;padding-top:30px;border-top:1px solid var(--line);font-size:13px}
+.rail-footer p{color:var(--muted);margin-top:8px}
+.workspace-main{min-width:0;padding:34px 38px}
+.workspace-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--line);font-size:12px}
+.pill{display:inline-block;border:1px solid var(--line);background:#faf7fd;padding:4px 10px;border-radius:30px;font-size:12px;white-space:nowrap}
+.pill.jade{color:var(--green);background:#eaf4ef;border-color:#c5ded2}
+.step-panel h3{font:400 30px/1.2 Lora,serif;letter-spacing:-.6px;margin-bottom:12px}
+.step-panel>.muted{font-size:15px}
+.field-label{display:block;font-size:14px;font-weight:600;margin-bottom:9px}
+.service-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0 25px}
+.choice{display:flex;gap:10px;align-items:center;border:1px solid var(--line);border-radius:9px;padding:13px 14px;font-size:14px;cursor:pointer;background:#fff}
+.choice:has(input:checked){background:#f2ebf8;border-color:#725687;box-shadow:0 0 0 1px #725687}
+input[type=radio],input[type=checkbox]{accent-color:var(--ink);width:17px;height:17px;flex-shrink:0}
+.format-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.format-options .choice{align-items:flex-start;padding:17px 14px}
+.choice small{display:block;font-weight:400;color:var(--muted);margin-top:3px;font-size:12px}
+.workspace-bottom{display:flex;justify-content:space-between;gap:14px;border-top:1px solid var(--line);margin-top:30px;padding-top:22px;align-items:center}
+.workspace-bottom .btn{margin-left:auto}
+.note{background:#f5f1f8;border-left:3px solid #a38bb6;padding:13px 16px;font-size:13px;margin:20px 0;line-height:1.5}
+.note.jade{background:#edf6f1;border-color:var(--green)}
+.month-row{display:flex;justify-content:space-between;align-items:center;margin:25px 0 16px}
+.month-row button{background:white;border:1px solid var(--line);border-radius:8px;width:37px;height:37px}
+.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;text-align:center}
+.calendar .weekday{font-size:11px;color:var(--muted);padding:7px 0}
+.day{aspect-ratio:1.3;border:1px solid transparent;border-radius:7px;background:#faf7fc;min-height:39px;font-size:14px}
+.day:hover:not(:disabled){border-color:var(--ink)}
+.day.selected{background:var(--ink);color:white}
+.day:disabled{background:none;opacity:.35}
+.slots{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
+.slot{background:white;border:1px solid var(--line);border-radius:7px;padding:9px 17px;font-size:14px}
+.slot.selected{background:var(--green);color:white;border-color:var(--green)}
+.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{margin-bottom:18px}
+input:not([type=range]):not([type=radio]):not([type=checkbox]),select,textarea{border:1px solid #cfc5d7;border-radius:8px;background:white;color:var(--ink);padding:11px 13px;width:100%;min-width:0}
+textarea{resize:vertical;min-height:90px}
+.review-list{margin:20px 0;display:grid;grid-template-columns:140px 1fr;font-size:14px;gap:13px 20px}
+.review-list dt{color:var(--muted)}
+.review-list dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.review-list dt,.review-list dd{padding-bottom:12px;border-bottom:1px solid var(--line)}
+.status{font-size:14px;color:var(--green);margin:14px 0 0;min-height:22px}
+.error{color:#9c263d}
+.assistant{margin-top:20px;background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.assistant summary{padding:18px 24px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;font-size:15px;font-weight:600}
+.assistant summary::-webkit-details-marker{display:none}
+.assistant summary:after{content:"+";font-size:22px}
+.assistant[open] summary:after{content:"−"}
+.assistant-body{padding:0 24px 24px}
+.chat-log{max-height:260px;overflow-y:auto;display:flex;flex-direction:column;gap:10px;padding:4px 2px 14px}
+.bubble{background:var(--lilac);padding:12px 15px;font-size:14px;border-radius:12px 12px 12px 2px;max-width:85%;margin:0}
+.bubble.user{align-self:flex-end;background:#e8f2ed;border-radius:12px 12px 2px 12px}
+.chat-suggestions{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 15px}
+.chat-suggestions button{font-size:13px;border:1px solid var(--line);background:white;border-radius:30px;padding:7px 13px}
+.chat-form{display:flex;gap:9px}
+.chat-form .btn{flex-shrink:0}
+.cost-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:start}
+.price-table{width:100%;border-collapse:collapse;font-size:15px}
+.price-table th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:1.4px;color:var(--muted);padding:16px 12px;border-bottom:1px solid var(--ink)}
+.price-table td{padding:24px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.price-table th:first-child,.price-table td:first-child{padding-left:0}
+.price-table td small{display:block;font-size:12px;color:var(--muted);margin-top:6px}
+.calculator{background:var(--lilac);border-radius:20px;padding:28px}
+.calculator h3{font-family:Lora,serif;font-weight:400;font-size:27px}
+.calc-row{display:grid;grid-template-columns:1fr 100px 67px;gap:10px;align-items:center;margin:12px 0;font-size:14px}
+.calc-row.head{font-size:11px;color:var(--muted)}
+.calc-row input{padding:9px!important;background:#fcfaff!important}
+.calc-total{padding-top:23px;margin-top:23px;border-top:1px solid #c9bdd3;display:flex;justify-content:space-between;gap:20px;align-items:center}
+.calc-total output{font:400 25px/1.2 Lora,serif;text-align:right}
+.cost-note{margin-top:25px;display:flex;gap:18px;align-items:center;padding:16px;background:#f4f0f7;border-radius:12px}
+.cost-note img{width:85px;height:75px;object-fit:cover;border-radius:8px}
+.cost-note p{font-size:13px;margin:0}
+.dashboard-section{background:var(--ink);color:white;padding:75px 0 0}
+.dashboard-section .eyebrow:before{background:#bcd5c9}
+.dashboard-section .muted{color:#ded3e6}
+.dashboard-section .section-head{margin-bottom:30px}
+.view-toggle{display:flex;padding:4px;background:#523d62;border:1px solid #7d668e;border-radius:9px;flex-shrink:0}
+.view-toggle button{border:0;border-radius:6px;background:none;color:white;padding:10px 17px;font-size:14px}
+.view-toggle button[aria-pressed=true]{background:#fff;color:var(--ink)}
+.portal{background:#FCFAFF;color:var(--ink);border-radius:20px;padding:30px}
+.portal-head{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:25px}
+.portal-head h3{margin:0;font-size:21px}
+.portal-head p{margin:6px 0 0;font-size:13px;color:var(--muted)}
+.portal-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.portal-card{border:1px solid var(--line);border-radius:12px;padding:23px}
+.portal-card h4{margin:0 0 15px;font-size:15px}
+.portal-card p{font-size:14px}
+.portal-card .muted{color:var(--muted)}
+.portal-card .review-list{grid-template-columns:100px 1fr;margin-bottom:0}
+.portal-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}
+.reminder{margin-top:23px}
+.reminder summary{cursor:pointer;font-size:14px;padding:12px 0}
+.reminder textarea{font-size:13px;min-height:100px}
+.reminder-tabs{display:flex;gap:8px;margin:10px 0}
+.reminder-tabs button{border:1px solid var(--line);background:#fff;padding:6px 13px;border-radius:6px;font-size:13px}
+.reminder-tabs button[aria-pressed=true]{background:var(--ink);color:#fff}
+.message-list{display:flex;flex-direction:column;gap:9px;margin:12px 0}
+.message-list p{margin:0;background:#eee7f4;border-radius:8px;padding:11px;font-size:13px}
+.empty-state{background:#f0eaf6;padding:30px;border-radius:10px;text-align:center}
+.empty-state p{max-width:450px;margin:0 auto 20px;color:var(--muted)}
+.staff-filters{display:grid;grid-template-columns:1fr 1fr 1fr;gap:15px;margin-bottom:22px}
+.queue-item{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:10px;margin-top:12px;font-size:14px}
+.queue-item p{margin:4px 0;font-size:13px;color:var(--muted)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:35px;padding:55px 0 40px}
+.contact-grid h3{font-size:15px;margin-bottom:13px}
+.contact-grid p,.contact-grid a{font-size:14px;color:#e8dfef}
+.contact-grid p{margin-bottom:8px}
+.contact-grid a{display:inline-block;margin-bottom:6px}
+.contact-grid .big-contact{font-size:24px;color:#fff;text-decoration:none}
+.disclaimer{border-top:1px solid #735c82;padding:24px 0;font-size:12px;color:#ded3e6}
+.footer{padding:27px 0 35px;font-size:12px;color:var(--muted)}
+.footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.footer details{margin-top:15px}
+.footer summary{cursor:pointer}
+.footer ul{padding-left:18px}
+.bottom-bar{display:none}
+dialog{border:1px solid var(--line);border-radius:20px;padding:30px;width:min(500px,calc(100% - 32px));color:var(--ink);background:var(--paper);box-shadow:0 20px 100px #0003}
+dialog::backdrop{background:#27173180;backdrop-filter:blur(3px)}
+dialog h3{font-family:Lora,serif;font-weight:400;font-size:28px}
+dialog p{font-size:15px}
+dialog .btn{margin-top:8px}
+.toast{position:fixed;z-index:100;bottom:26px;left:50%;transform:translateX(-50%);background:var(--ink);border:1px solid #8f78a0;box-shadow:0 10px 30px #0002;color:white;padding:13px 22px;border-radius:10px;font-size:14px;width:max-content;max-width:calc(100% - 32px)}
+.skip{position:fixed;left:15px;top:-100px;z-index:200;background:var(--ink);color:white;padding:10px}
+.skip:focus{top:10px}
+.reveal{animation:panel-in .25s ease-out}
+@keyframes panel-in{from{transform:translateY(7px);opacity:.6}to{transform:translateY(0);opacity:1}}
+@media(min-width:1500px){.hero{padding-top:80px;padding-bottom:45px}.comparison{height:400px}}
+@media(max-width:1050px){.wrap{width:calc(100% - 48px)}.hero-grid{gap:30px}h1{font-size:49px}.desktop-nav{gap:16px;font-size:13px}.identity span{display:none}.workspace{grid-template-columns:200px 1fr}.workspace-main{padding:28px}.cost-grid{gap:30px}.comparison{height:350px}.portal{padding:24px}.portal-grid{gap:18px}.portal-card{padding:18px}}
+@media(max-width:760px){
+html{scroll-padding-top:85px}
+.wrap{width:calc(100% - 36px)}
+body{font-size:16px}
+.banner{font-size:10px;line-height:1.4;padding:7px 14px}
+.header-inner{height:64px;gap:10px}
+.logo{width:92px;height:42px}
+.identity{gap:0}
+.desktop-nav{display:none}
+.mobile-actions{display:flex;align-items:center;gap:8px}
+.mobile-actions .btn{padding:10px 13px;font-size:13px}
+.menu-btn{display:block}
+.hero{padding:30px 0 24px}
+.hero-grid{display:flex;flex-direction:column;gap:27px;align-items:stretch}
+h1{font-size:39px;letter-spacing:-1.5px;line-height:1.1;margin-bottom:17px}
+.hero .eyebrow{font-size:10px;letter-spacing:1.2px;margin-bottom:15px}
+.hero-copy .intro{font-size:16px;line-height:1.5;margin-bottom:20px}
+.hero-copy>.btn{width:100%;padding:13px 17px}
+.hero-meta{margin-top:16px;font-size:11px;gap:12px}
+.hero-meta span+span{padding-left:12px}
+.compare-card{border-radius:18px;padding:8px}
+.compare-top{padding:7px 6px 12px;font-size:11px}
+.comparison{height:270px;border-radius:11px}
+.photo-caption{font-size:12px;max-width:115px;bottom:18px}
+.photo-caption.before{left:12px}.photo-caption.after{right:12px}
+.photo-caption b{font-size:9px}
+.compare-controls{padding:9px 0 0}
+.compare-controls output{font-size:11px}
+.image-note{font-size:10px;margin:8px 6px 2px}
+.hero-foot{margin-top:25px;padding-top:20px;display:block}
+.hero-foot p{font-size:13px}
+.hero-foot .index{display:block;margin-top:12px;font-size:10px}
+.section{padding:48px 0}
+.section-head{display:block;margin-bottom:25px}
+.section-head h2{font-size:34px}
+.section-head>p{margin-top:15px;font-size:15px}
+.eyebrow{font-size:10px;margin-bottom:15px}
+.workspace{display:block;border-radius:15px}
+.steps-rail{padding:15px 13px;flex-direction:row;justify-content:space-between;gap:5px}
+.rail-title,.rail-footer{display:none}
+.step-link{width:auto;flex-direction:column;gap:6px;padding:0;font-size:10px;text-align:center;flex:1}
+.step-link:not(:last-of-type):after{height:1px;width:25%;top:16px;left:87%}
+.step-number{height:30px;width:30px;font-size:11px}
+.workspace-main{padding:22px 18px}
+.workspace-top{font-size:10px;margin-bottom:24px;gap:5px}
+.workspace-top .pill{font-size:10px;padding:3px 7px}
+.step-panel h3{font-size:27px}
+.step-panel>.muted{font-size:14px}
+.service-options{gap:8px;margin:18px 0 23px}
+.choice{padding:12px 9px;font-size:12px;gap:7px;line-height:1.35}
+.choice input{width:15px;height:15px;margin:0}
+.format-options{gap:8px}
+.format-options .choice{padding:13px 10px;font-size:13px}
+.choice small{font-size:11px}
+.workspace-bottom{margin-top:24px}
+.workspace-bottom .btn{padding:11px 14px;font-size:14px}
+.note{font-size:12px;padding:12px}
+.two-cols{grid-template-columns:1fr;gap:0}
+.day{font-size:13px;min-height:36px}
+.calendar{gap:3px}
+.slots{gap:7px}
+.slot{padding:9px 12px;font-size:13px}
+.review-list{grid-template-columns:90px 1fr;font-size:13px;gap:10px}
+.assistant summary{padding:16px;font-size:14px}
+.assistant-body{padding:0 16px 18px}
+.bubble{max-width:95%;font-size:13px}
+.chat-form .btn{padding:10px 12px}
+.cost-grid{grid-template-columns:1fr;gap:28px}
+.price-table{font-size:14px}
+.price-table td{padding:18px 8px}
+.price-table th{font-size:10px;padding:12px 8px}
+.calculator{padding:22px 18px}
+.calc-row{grid-template-columns:1fr 86px 58px;gap:8px;font-size:13px}
+.calc-total output{font-size:23px}
+.dashboard-section{padding-top:45px}
+.view-toggle{width:max-content;margin-top:20px}
+.portal{padding:18px;border-radius:14px}
+.portal-head{gap:10px;align-items:flex-start}
+.portal-head h3{font-size:18px}
+.portal-head .pill{font-size:10px}
+.portal-grid{grid-template-columns:1fr;gap:16px}
+.portal-card{padding:17px}
+.portal-card .review-list{font-size:12px;grid-template-columns:80px 1fr}
+.staff-filters{grid-template-columns:1fr;gap:10px}
+.staff-filters .field{margin:0}
+.queue-item{align-items:flex-start;flex-direction:column;gap:8px}
+.contact-grid{grid-template-columns:1fr;gap:25px;padding:35px 0 25px}
+.contact-grid h3{margin-bottom:8px}
+.disclaimer{font-size:11px}
+.footer{padding-bottom:100px}
+.footer-top{align-items:flex-start;font-size:11px}
+.bottom-bar{display:flex;position:fixed;bottom:0;left:0;right:0;background:#fcfafff7;backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 18px calc(10px + env(safe-area-inset-bottom));gap:10px;z-index:40}
+.bottom-bar a{flex:1;padding:10px 12px;font-size:14px}
+.toast{bottom:85px;font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="banner">Independent website concept by LeadSky for Mens Health Clinics. Not their official website.</div>
+<header class="header">
+<div class="wrap header-inner">
+<a class="identity" href="#main" aria-label="Mens Health Clinics concept home">
+<img class="logo" src="img/business-logo-1.webp" alt="Mens Health Clinics" width="103" height="48">
+<span>Confidential care.<br>A considered next step.</span>
+</a>
+<nav class="desktop-nav" aria-label="Main navigation">
+<a href="#comparison">The comparison</a>
+<a href="#journey">Consultation journey</a>
+<a href="#costs">Costs</a>
+<a href="#dashboard">Your workspace</a>
+<a class="btn small" href="#journey">Try the demo <span aria-hidden="true">↗</span></a>
+</nav>
+<div class="mobile-actions">
+<a href="#journey" class="btn">Try demo <span aria-hidden="true">↗</span></a>
+<button class="menu-btn" id="menuButton" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open navigation">☰</button>
+</div>
+</div>
+<nav class="menu-panel" id="mobileMenu" aria-label="Mobile navigation" hidden>
+<a href="#comparison">The comparison</a>
+<a href="#journey">Consultation journey</a>
+<a href="#costs">Costs &amp; estimator</a>
+<a href="#dashboard">Sample patient &amp; staff workspace</a>
+<a href="#contact">Contact the actual clinic</a>
+</nav>
+</header>
+
+<main id="main">
+<section class="hero" id="comparison">
+<div class="wrap">
+<div class="hero-grid">
+<div class="hero-copy">
+<div class="eyebrow">Mens Health Clinics · Sandton &amp; remote</div>
+<h1>Less back-and-forth.<br>A more private<br>way forward.</h1>
+<p class="intro">From appointment messages to one guided booking journey. Explore a proposed consultation workspace for Mens Health Clinics.</p>
+<a class="btn" href="#journey">Try the booking journey <span class="arrow" aria-hidden="true">↗</span></a>
+<div class="hero-meta"><span>Independent product demo</span><span>No real booking or payment</span></div>
+</div>
+<div class="compare-card">
+<div class="compare-top"><span>APPOINTMENT COORDINATION</span><span class="live-dot">Before / proposed</span></div>
+<div class="comparison" id="comparisonView">
+<img src="img/stock-4.jpg" alt="Reference photograph of a person using a laptop at home, illustrating remote access" width="900" height="650" fetchpriority="high">
+<div class="before-layer">
+<img src="img/stock-2.jpg" alt="Reference photograph of handwritten paperwork beside a laptop, illustrating manual coordination" width="900" height="650">
+</div>
+<div class="photo-shade"></div>
+<div class="photo-caption before"><b>CURRENT ROUTE</b>Call or WhatsApp.<br>Arrange a time.</div>
+<div class="photo-caption after"><b>PROPOSED ROUTE</b>Choose. Prepare.<br>Review in one place.</div>
+<div class="compare-line"><span class="compare-handle" aria-hidden="true">‹ ›</span></div>
+<input id="compareRange" type="range" min="0" max="100" value="50" aria-label="Compare appointment processes. Move left to show the proposed route and right for the current route" aria-valuetext="Both processes equally visible">
+</div>
+<div class="compare-controls">
+<button type="button" id="showBefore">← Current route</button>
+<output id="compareOutput" for="compareRange">Drag to compare</output>
+<button type="button" id="showAfter">Proposed route →</button>
+</div>
+<p class="image-note">Reference stock photography. Not clinic premises, staff or patients. This compares processes, not treatment outcomes.</p>
+</div>
+</div>
+<div class="hero-foot">
+<p>The published booking route is a call or WhatsApp conversation. This concept brings time selection, pre-visit preparation and follow-up together, so less coordination could be needed.</p>
+<span class="index">01 / EXPLORE THE DIFFERENCE</span>
+</div>
+</div>
+</section>
+
+<section class="section journey" id="journey">
+<div class="wrap">
+<div class="section-head">
+<div><div class="eyebrow">One considered step at a time</div><h2>Your consultation starts<br>with a little clarity.</h2></div>
+<p>Click through the whole idea. Choose a concern, explore sample times, prepare a fictional intake and open your follow-up space.</p>
+</div>
+<div class="workspace">
+<aside class="steps-rail" aria-label="Consultation process">
+<div class="rail-title">YOUR SAMPLE JOURNEY</div>
+<button class="step-link active" data-step="0" aria-current="step"><span class="step-number">01</span><span>Consultation</span></button>
+<button class="step-link" data-step="1"><span class="step-number">02</span><span>Find a time</span></button>
+<button class="step-link" data-step="2"><span class="step-number">03</span><span>Prepare privately</span></button>
+<button class="step-link" data-step="3"><span class="step-number">04</span><span>Review &amp; finish</span></button>
+<div class="rail-footer"><strong>Made for your pace.</strong><p>No account required here. Please use fictional information only.</p><button class="text-btn" id="summaryButton">View selection summary</button><br><button class="text-btn" id="resetButton">Clear demo data</button></div>
+</aside>
+<div class="workspace-main">
+<div class="workspace-top"><span id="stepCounter">STEP 01 OF 04</span><span class="pill jade">Sample data · in memory only</span><button class="text-btn small" id="mobileSummary">Summary</button></div>
+
+<div class="step-panel" id="step0">
+<h3>What would you like to discuss?</h3>
+<p class="muted">Choose from the clinic’s published services. Your selection organises this sample enquiry; it is not a diagnosis.</p>
+<fieldset style="border:0;padding:0;margin:0">
+<legend class="field-label">Consultation concern</legend>
+<div class="service-options" id="serviceOptions">
+<label class="choice"><input type="radio" name="service" value="Erectile Dysfunction" checked><span>Erectile Dysfunction</span></label>
+<label class="choice"><input type="radio" name="service" value="Low Libido"><span>Low Libido</span></label>
+<label class="choice"><input type="radio" name="service" value="Penis Enlargement"><span>Penis Enlargement</span></label>
+<label class="choice"><input type="radio" name="service" value="Premature Ejaculation"><span>Premature Ejaculation</span></label>
+<label class="choice"><input type="radio" name="service" value="Weak Erections"><span>Weak Erections</span></label>
+<label class="choice"><input type="radio" name="service" value="Sexual Health Counselling"><span>Sexual Health Counselling</span></label>
+</div>
+</fieldset>
+<fieldset style="border:0;padding:0;margin:0">
+<legend class="field-label">How would you prefer to meet?</legend>
+<div class="format-options">
+<label class="choice"><input type="radio" name="format" value="In person" checked><span><strong>In person</strong><small>Buccleuch, Sandton</small></span></label>
+<label class="choice"><input type="radio" name="format" value="Remote"><span><strong>Remote</strong><small>Telephone consultation</small></span></label>
+</div>
+</fieldset>
+<div class="workspace-bottom"><span class="small muted">Your choice, without judgement.</span><button class="btn" data-next="1">Find a time <span aria-hidden="true">→</span></button></div>
+</div>
+
+<div class="step-panel" id="step1" hidden>
+<h3>A time that suits your day.</h3>
+<p class="muted">Every slot below is illustrative, not live clinic availability. Times are shown in Africa/Johannesburg (SAST, UTC+2).</p>
+<label for="calendarFormat" class="field-label">Show sample times for</label>
+<select id="calendarFormat"><option>In person</option><option>Remote</option></select>
+<div class="month-row"><button id="previousMonth" aria-label="Previous month">←</button><strong id="monthTitle"></strong><button id="nextMonth" aria-label="Next month">→</button></div>
+<div class="calendar" id="calendar" aria-label="Select an illustrative appointment date"></div>
+<div style="margin-top:22px"><span class="field-label" id="slotLabel">Choose a date to see sample times</span><div class="slots" id="slots"></div></div>
+<div class="note">The clinic publishes 24/7 access and contact hours. This does not verify any practitioner’s availability.</div>
+<p class="status error" id="slotError" role="status"></p>
+<div class="workspace-bottom"><button class="text-btn" data-back="0">← Back</button><button class="btn" data-next="2">Prepare for your visit <span aria-hidden="true">→</span></button></div>
+</div>
+
+<div class="step-panel" id="step2" hidden>
+<h3>A little preparation. Less repetition.</h3>
+<p class="muted">Explore a pre-visit questionnaire using the fictional details below. Optional answers can be left blank. Do not enter real health information.</p>
+<form id="intakeForm">
+<div class="field"><label class="field-label" for="demoName">Fictional first name <span class="muted">(required)</span></label><input id="demoName" name="demoName" required maxlength="40" value="Alex" autocomplete="off"></div>
+<div class="field"><label class="field-label" for="goals">What would you like to discuss? <span class="muted">(optional)</span></label><textarea id="goals" maxlength="600">Fictional example: I would like to discuss my concerns privately and understand what a consultation involves.</textarea></div>
+<div class="field"><label class="field-label" for="history">Relevant history to raise <span class="muted">(optional)</span></label><textarea id="history" maxlength="600">Fictional example: I would prefer to discuss this with the practitioner.</textarea></div>
+<div class="field"><label class="field-label" for="questions">Questions for your consultation <span class="muted">(optional)</span></label><textarea id="questions" maxlength="600">Fictional example: What information should I have ready for the first consultation?</textarea></div>
+<label class="choice"><input type="checkbox" id="fictionalCheck" required><span>I am using fictional information and understand that nothing is sent to the clinic.</span></label>
+<div class="workspace-bottom"><button type="button" class="text-btn" data-back="1">← Back</button><button class="btn" type="submit">Review my journey <span aria-hidden="true">→</span></button></div>
+</form>
+</div>
+
+<div class="step-panel" id="step3" hidden>
+<h3>Everything in one place.</h3>
+<p class="muted">Review your sample selection. Finishing creates a record in this page only, with no clinic reservation.</p>
+<dl class="review-list" id="reviewList"></dl>
+<div style="display:flex;gap:20px;flex-wrap:wrap"><button class="text-btn" data-edit="0">Edit consultation</button><button class="text-btn" data-edit="1">Change time</button><button class="text-btn" data-edit="2">Review intake</button></div>
+<div class="note jade"><strong>Payment review · simulation only</strong><br>Verified consultation fees have not been supplied. A clinic quote is required. No card details are collected, no amount is due here and nothing is charged.</div>
+<div class="note"><strong>Proposed handoff</strong><br>A production service could reserve a slot, deliver reminders and pass intake to the practitioner. Here, you can preview an unsent reminder and download a clearly labelled demo calendar entry.</div>
+<p class="status" id="completionStatus" role="status"></p>
+<div class="workspace-bottom"><button class="text-btn" data-back="2">← Back</button><button class="btn green" id="finishButton">Create sample appointment <span aria-hidden="true">→</span></button></div>
+</div>
+</div>
+</div>
+
+<details class="assistant" id="assistant">
+<summary><span>Need a hand? Ask the scheduling assistant <span class="small muted">· scripted demo</span></span></summary>
+<div class="assistant-body">
+<p class="small muted">Scheduling guidance only. No medical advice, diagnosis or real messages.</p>
+<div class="chat-log" id="chatLog" role="log" aria-label="Scripted assistant conversation" aria-live="polite">
+<p class="bubble">Hello. I can help you explore an in-person or remote consultation, explain sample availability, or guide you through this demo.</p>
+</div>
+<div class="chat-suggestions">
+<button data-chat="Choose remote">Choose remote</button><button data-chat="Choose in person">Choose in person</button><button data-chat="How does this work?">How does this work?</button><button data-chat="Are these live times?">Are these live times?</button>
+</div>
+<form class="chat-form" id="chatForm"><label for="chatInput" class="field-label" style="position:absolute;clip-path:inset(50%);width:1px;height:1px;overflow:hidden">Message the scripted scheduling assistant</label><input id="chatInput" placeholder="Ask about booking or the demo…" maxlength="250" required autocomplete="off"><button class="btn" type="submit">Ask <span aria-hidden="true">↗</span></button></form>
+</div>
+</details>
+</div>
+</section>
+
+<section class="section" id="costs">
+<div class="wrap">
+<div class="section-head">
+<div><div class="eyebrow">Clarity before commitment</div><h2>Know the steps.<br>Ask about the cost.</h2></div>
+<p>No invented fees. Explore how a transparent quotation tool could work, using your own hypothetical amounts.</p>
+</div>
+<div class="cost-grid">
+<div>
+<table class="price-table">
+<thead><tr><th scope="col">Consultation</th><th scope="col">Published fee status</th></tr></thead>
+<tbody>
+<tr><td>In-person consultation<small>Sandton practice</small></td><td>Clinic quote required<small>No verified fee supplied</small></td></tr>
+<tr><td>Remote consultation<small>Confidential telephone consultation</small></td><td>Clinic quote required<small>No verified fee supplied</small></td></tr>
+<tr><td>Follow-up<small>Arrange details with the clinic</small></td><td>Clinic quote required<small>No verified fee supplied</small></td></tr>
+</tbody>
+</table>
+<div class="cost-note"><img src="img/stock-9.jpg" alt="Reference photograph of an appointment notebook on a desk" width="170" height="150" loading="lazy"><p>A clearer view before you decide.<br>Fees, duration, payment terms and appointment availability must be confirmed directly with the clinic.<br><span class="muted">Reference stock photograph.</span></p></div>
+</div>
+<div class="calculator">
+<span class="pill" style="margin-bottom:18px">Interactive · hypothetical ZAR estimator</span>
+<h3>Try your own scenario.</h3>
+<p class="small muted">These are reviewer-entered figures, not Mens Health Clinics prices. Leave a fee blank when it is not known.</p>
+<div class="calc-row head" aria-hidden="true"><span>Consultation type</span><span>Fee (R)</span><span>Qty</span></div>
+<div class="calc-row"><label for="feePerson">In person</label><input id="feePerson" type="number" min="0" max="100000" step=".01" placeholder="—" aria-label="Hypothetical in-person fee in rand"><input id="qtyPerson" type="number" value="1" min="0" max="20" step="1" aria-label="In-person quantity"></div>
+<div class="calc-row"><label for="feeRemote">Remote</label><input id="feeRemote" type="number" min="0" max="100000" step=".01" placeholder="—" aria-label="Hypothetical remote fee in rand"><input id="qtyRemote" type="number" value="0" min="0" max="20" step="1" aria-label="Remote quantity"></div>
+<div class="calc-row"><label for="feeFollow">Follow-up</label><input id="feeFollow" type="number" min="0" max="100000" step=".01" placeholder="—" aria-label="Hypothetical follow-up fee in rand"><input id="qtyFollow" type="number" value="0" min="0" max="20" step="1" aria-label="Follow-up quantity"></div>
+<div class="calc-total"><span class="small">Hypothetical total<br><span class="muted">Not a quote or payment</span></span><output id="estimateTotal" aria-live="polite">Clinic quote<br>required</output></div>
+<p class="small muted" id="estimateNote" style="margin:14px 0 0">Enter a fee for each selected consultation.</p>
+<button class="text-btn" id="clearEstimate" style="margin-top:12px">Clear estimator</button>
+</div>
+</div>
+</div>
+</section>
+
+<section class="dashboard-section" id="dashboard">
+<div class="wrap">
+<div class="section-head">
+<div><div class="eyebrow">The conversation can continue</div><h2>A quieter place<br>to keep track.</h2><p class="muted" style="max-width:560px;margin-bottom:0">See what happens after the sample booking. Switch views to explore the proposed patient and clinic workflows.</p></div>
+<div class="view-toggle" aria-label="Workspace view">
+<button id="patientToggle" aria-pressed="true">Patient view</button><button id="staffToggle" aria-pressed="false">Staff view</button>
+</div>
+</div>
+<div class="portal">
+<div class="portal-head"><div><h3 id="portalHeading">Your sample workspace</h3><p>No login, live records or clinic connection.</p></div><span class="pill jade">DEMO ONLY</span></div>
+<div id="patientView">
+<div class="empty-state" id="patientEmpty"><h3>Your next step, kept together.</h3><p>Complete the sample journey to bring your appointment, fictional intake and unsent message previews into this workspace.</p><a class="btn" href="#journey">Start the sample journey <span aria-hidden="true">↗</span></a></div>
+<div id="patientContent" hidden>
+<div class="portal-grid">
+<div class="portal-card">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><h4 style="margin:0">Your sample appointment</h4><span class="pill jade" id="appointmentStatus">Sample record</span></div>
+<dl id="appointmentDetails" class="review-list"></dl>
+<div class="portal-actions"><button class="btn outline small" id="rescheduleButton">Reschedule</button><button class="btn outline small" id="cancelButton">Cancel sample</button><button class="text-btn" id="calendarDownload">Download DEMO calendar</button></div>
+<details class="reminder"><summary>Preview unsent reminders</summary><p class="small muted">Editable drafts only. No reminder is scheduled or sent.</p><div class="reminder-tabs" aria-label="Reminder channel"><button data-reminder="SMS" aria-pressed="true">SMS</button><button data-reminder="WhatsApp" aria-pressed="false">WhatsApp</button><button data-reminder="Email" aria-pressed="false">Email</button></div><label class="field-label small" for="reminderText">Unsent SMS preview</label><textarea id="reminderText" maxlength="1000"></textarea><button class="text-btn" id="resetReminder">Restore this draft</button></details>
+</div>
+<div class="portal-card">
+<h4>Preparation &amp; follow-up</h4><p><span class="pill jade" id="intakeStatus">Fictional intake prepared</span></p><button class="text-btn" id="viewIntake">View / edit fictional intake</button>
+<div class="note"><strong>Fictional administrative note</strong><br>Your sample questionnaire is ready for review. In a real service, the practitioner would provide any treatment plan after the consultation. No clinical plan or progress notes are generated here.</div>
+<form id="messageForm"><label class="field-label" for="patientMessage">Draft a follow-up message</label><textarea id="patientMessage" maxlength="500" placeholder="Use fictional information only." required></textarea><button type="submit" class="btn small" style="margin-top:9px">Save unsent draft</button></form>
+<div class="message-list" id="messageList" aria-live="polite"></div>
+<p class="small muted" id="messageStatus" role="status">Drafts stay on this page. This is not secure messaging.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="staffView" hidden>
+<div class="note" style="margin-top:0">A proposed coordination view, using only the sample record created here. No access to the clinic’s diary, patients or practitioner system.</div>
+<div class="staff-filters">
+<div class="field"><label class="field-label" for="staffDate">Date</label><input id="staffDate" type="date"></div>
+<div class="field"><label class="field-label" for="staffFormat">Format</label><select id="staffFormat"><option value="">All formats</option><option>In person</option><option>Remote</option></select></div>
+<div class="field"><label class="field-label" for="staffIntake">Intake status</label><select id="staffIntake"><option value="">All statuses</option><option value="complete">Prepared</option><option value="incomplete">Not prepared</option></select></div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><strong class="small" id="queueCount">0 sample appointments</strong><button id="clearFilters" class="text-btn">Clear filters</button></div>
+<div id="queueList" aria-live="polite"></div>
+</div>
+</div>
+
+<div class="contact-grid" id="contact">
+<div><h3>Contact the actual clinic</h3><a class="big-contact" href="tel:+27102059855">+27 10 205 9855 ↗</a><br><a href="https://wa.me/27818231313" target="_blank" rel="noopener">WhatsApp +27 81 823 1313 ↗</a><br><a href="mailto:info@menshealthclinics.co.za">info@menshealthclinics.co.za</a></div>
+<div><h3>In Sandton. Or from home.</h3><p>199 Vanessa Street, Buccleuch,<br>Sandton, Johannesburg, South Africa</p><a href="https://www.google.com/maps/search/?api=1&amp;query=199+Vanessa+Street+Buccleuch+Sandton" target="_blank" rel="noopener">Open directions ↗</a></div>
+<div><h3>Published access &amp; contact hours</h3><p>Monday–Sunday · 24/7<br>Consultations by appointment.<br>In person or remote.</p><a href="https://menshealthclinics.co.za/" target="_blank" rel="noopener">Visit the official clinic website ↗</a><p class="small">External contact links leave this demo. They do not automatically send a message.</p></div>
+</div>
+<div class="disclaimer">Independent, unendorsed concept. All availability, appointment records and intake details in the workspace are samples. Nothing is booked, sent or charged. Data is held in page memory and clears on reload or reset. This demo has no authentication or production security controls. Live availability, payments, confidential records, messaging, reminders and practitioner integrations require a separate production implementation and security, privacy and legal review. No HIPAA or POPIA compliance is claimed.</div>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<div class="wrap">
+<div class="footer-top"><span>Concept by <strong>LeadSky</strong><br>Designed around a more considered patient journey.</span><a href="#main">Back to the beginning ↑</a></div>
+<details><summary>Photography, identity &amp; source notes</summary>
+<ul>
+<li>Paperwork reference: AymaneJed, <a href="https://pixabay.com/photos/laptop-office-hand-writing-3196481/" target="_blank" rel="noopener">Pixabay</a>.</li>
+<li>Remote-work reference: Pexels, <a href="https://pixabay.com/photos/apple-computer-girl-iphone-working-1853337/" target="_blank" rel="noopener">Pixabay</a>.</li>
+<li>Appointment notebook: kaboompics, <a href="https://pixabay.com/photos/new-year-background-organizer-791939/" target="_blank" rel="noopener">Pixabay</a>.</li>
+</ul>
+<p>Stock assets supplied under the Pixabay Content License. Used as process-reference imagery only; none depict this clinic, its staff, patients or completed work. Logo published by Mens Health Clinics; reuse permission is not confirmed. Business approval is required before public use. Business details and service names use the supplied website content as the baseline; fees and practitioner availability are not verified.</p>
+</details>
+</div>
+</footer>
+
+<div class="bottom-bar" aria-label="Contact the actual clinic"><a class="btn" href="tel:+27102059855">Call clinic ↗</a><a class="btn green" href="https://wa.me/27818231313" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+<dialog id="summaryDialog" aria-labelledby="summaryTitle"><h3 id="summaryTitle">Your sample selection</h3><dl class="review-list" id="summaryContent"></dl><p class="small muted">Fictional information only. No clinic reservation or payment.</p><button class="btn" id="closeSummary">Close summary</button></dialog>
+<dialog id="resetDialog" aria-labelledby="resetTitle"><h3 id="resetTitle">Clear this demo?</h3><p>This removes the sample appointment, intake, message drafts, assistant conversation and estimator entries from this page.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn" id="confirmReset">Clear all demo data</button><button class="btn outline" id="keepData">Keep exploring</button></div></dialog>
+<dialog id="cancelDialog" aria-labelledby="cancelTitle"><h3 id="cancelTitle">Cancel the sample appointment?</h3><p>Only this demonstration record changes. No real appointment or clinic diary will be affected.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn" id="confirmCancel">Cancel sample record</button><button class="btn outline" id="keepAppointment">Keep sample record</button></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+const today=new Date();
+const baseToday=new Date(today.getFullYear(),today.getMonth(),today.getDate());
+let month=new Date(baseToday.getFullYear(),baseToday.getMonth(),1);
+let step=0, service="Erectile Dysfunction", format="In person", selectedDate="", selectedTime="", intake=null, appointment=null, rescheduling=false, reminderChannel="SMS", reminderDrafts={}, messages=[];
+const money=new Intl.NumberFormat("en-ZA",{style:"currency",currency:"ZAR",maximumFractionDigits:2});
+const dateKey=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const displayDate=k=>k?new Date(k+"T12:00:00").toLocaleDateString("en-ZA",{weekday:"short",day:"numeric",month:"long",year:"numeric"}):"Not selected";
+function notify(t){$("toast").textContent=t;$("toast").hidden=false;clearTimeout(notify.timer);notify.timer=setTimeout(()=>$("toast").hidden=true,4800)}
+function scrollToId(id){$(id).scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"instant":"smooth",block:"start"})}
+function escapeText(t){return String(t).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function listHTML(rows){return rows.map(([a,b])=>"<dt>"+escapeText(a)+"</dt><dd>"+escapeText(b)+"</dd>").join("")}
+function currentRows(){return [["Concern",service],["Format",format],["Sample time",selectedDate?displayDate(selectedDate)+(selectedTime?" · "+selectedTime+" SAST":" · time not selected"):"Not selected"],["Intake",intake?"Prepared · fictional":"Not yet prepared"],["Payment","Clinic quote required · no charge"]]}
+function menuClose(returnFocus=false){$("mobileMenu").hidden=true;$("menuButton").setAttribute("aria-expanded","false");$("menuButton").setAttribute("aria-label","Open navigation");if(returnFocus)$("menuButton").focus()}
+$("menuButton").onclick=()=>{let open=$("mobileMenu").hidden;$("mobileMenu").hidden=!open;$("menuButton").setAttribute("aria-expanded",String(open));$("menuButton").setAttribute("aria-label",open?"Close navigation":"Open navigation")};
+$("mobileMenu").querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>menuClose()));
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("mobileMenu").hidden)menuClose(true)});
+document.addEventListener("click",e=>{if(!e.target.closest(".header"))menuClose()});
+matchMedia("(min-width:761px)").addEventListener("change",e=>{if(e.matches)menuClose()});
+function updateComparison(v){$("compareRange").value=v;$("comparisonView").style.setProperty("--split",v+"%");$("compareRange").setAttribute("aria-valuetext",v+" percent current route, "+(100-v)+" percent proposed route");$("compareOutput").textContent=v===100?"Current route":v===0?"Proposed route":v+"% current / "+(100-v)+"% proposed"}
+$("compareRange").addEventListener("input",e=>updateComparison(e.target.value));
+$("showBefore").onclick=()=>updateComparison(100);
+$("showAfter").onclick=()=>updateComparison(0);
+
+function syncFormat(value){if(format!==value){selectedTime=""}format=value;document.querySelectorAll('input[name="format"]').forEach(r=>r.checked=r.value===format);$("calendarFormat").value=format;renderSlots()}
+document.querySelectorAll('input[name="service"]').forEach(r=>r.onchange=()=>{service=r.value});
+document.querySelectorAll('input[name="format"]').forEach(r=>r.onchange=()=>syncFormat(r.value));
+$("calendarFormat").onchange=e=>syncFormat(e.target.value);
+function goStep(n,focus=true){
+ step=n;document.querySelectorAll(".step-panel").forEach((p,i)=>{p.hidden=i!==n;if(i===n){p.classList.remove("reveal");void p.offsetWidth;p.classList.add("reveal")}});
+ document.querySelectorAll(".step-link").forEach((b,i)=>{b.classList.toggle("active",i===n);b.classList.toggle("done",i<n);if(i===n)b.setAttribute("aria-current","step");else b.removeAttribute("aria-current")});
+ $("stepCounter").textContent="STEP 0"+(n+1)+" OF 04";
+ if(n===1){$("calendarFormat").value=format;renderCalendar();renderSlots()}
+ if(n===3){$("reviewList").innerHTML=listHTML(currentRows().concat([["Fictional name",intake?intake.name:"Not prepared"]]));$("finishButton").textContent=rescheduling?"Update sample appointment →":"Create sample appointment →"}
+ if(focus){const h=$("step"+n).querySelector("h3");h.tabIndex=-1;h.focus({preventScroll:true})}
+}
+function advance(n){
+ if(n>=2&&(!selectedDate||!selectedTime)){goStep(1);$("slotError").textContent="Choose a sample date and time before continuing.";return false}
+ if(n>=3&&!intake){goStep(2);notify("Review the fictional intake before continuing.");return false}
+ goStep(n);return true
+}
+document.querySelectorAll("[data-next]").forEach(b=>b.onclick=()=>advance(Number(b.dataset.next)));
+document.querySelectorAll("[data-back]").forEach(b=>b.onclick=()=>goStep(Number(b.dataset.back)));
+document.querySelectorAll("[data-edit]").forEach(b=>b.onclick=()=>goStep(Number(b.dataset.edit)));
+document.querySelectorAll(".step-link").forEach(b=>b.onclick=()=>{let n=Number(b.dataset.step);if(n<=step)goStep(n);else advance(n)});
+$("intakeForm").onsubmit=e=>{e.preventDefault();if(!$("intakeForm").reportValidity())return;if(!$("demoName").value.trim()){$("demoName").setCustomValidity("Enter a fictional first name.");$("demoName").reportValidity();return}intake={name:$("demoName").value.trim(),goals:$("goals").value.trim(),history:$("history").value.trim(),questions:$("questions").value.trim()};goStep(3)};
+$("demoName").oninput=()=>$("demoName").setCustomValidity("");
+function renderCalendar(){
+ $("monthTitle").textContent=month.toLocaleDateString("en-ZA",{month:"long",year:"numeric"});
+ const minMonth=new Date(baseToday.getFullYear(),baseToday.getMonth(),1),maxMonth=new Date(baseToday.getFullYear()+1,baseToday.getMonth(),1);
+ $("previousMonth").disabled=month<=minMonth;$("nextMonth").disabled=month>=maxMonth;
+ const root=$("calendar");root.replaceChildren();
+ ["M","T","W","T","F","S","S"].forEach((s,i)=>{let d=document.createElement("div");d.className="weekday";d.textContent=s;d.setAttribute("aria-label",["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"][i]);root.append(d)});
+ let offset=(month.getDay()+6)%7;for(let i=0;i<offset;i++){let d=document.createElement("span");d.setAttribute("aria-hidden","true");root.append(d)}
+ let days=new Date(month.getFullYear(),month.getMonth()+1,0).getDate();
+ for(let i=1;i<=days;i++){let date=new Date(month.getFullYear(),month.getMonth(),i),key=dateKey(date),b=document.createElement("button");b.className="day"+(key===selectedDate?" selected":"");b.textContent=i;b.type="button";b.disabled=date<baseToday;b.setAttribute("aria-label",displayDate(key)+", sample date");b.setAttribute("aria-pressed",String(key===selectedDate));b.onclick=()=>{selectedDate=key;selectedTime="";$("slotError").textContent="";renderCalendar();renderSlots()};root.append(b)}
+}
+$("previousMonth").onclick=()=>{month=new Date(month.getFullYear(),month.getMonth()-1,1);renderCalendar()};
+$("nextMonth").onclick=()=>{month=new Date(month.getFullYear(),month.getMonth()+1,1);renderCalendar()};
+function renderSlots(){
+ $("slots").replaceChildren();
+ $("slotLabel").textContent=selectedDate?"Illustrative times · "+displayDate(selectedDate):"Choose a date to see sample times";
+ if(!selectedDate)return;
+ const times=format==="Remote"?["09:30","12:30","16:00","18:30"]:["09:00","11:00","14:00","16:30"];
+ times.forEach(t=>{let b=document.createElement("button");b.type="button";b.className="slot"+(selectedTime===t?" selected":"");b.textContent=t;b.setAttribute("aria-label",t+" SAST, illustrative "+format.toLowerCase()+" slot");b.setAttribute("aria-pressed",String(selectedTime===t));b.onclick=()=>{selectedTime=t;$("slotError").textContent="";renderSlots()};$("slots").append(b)})
+}
+function showSummary(){$("summaryContent").innerHTML=listHTML(currentRows());$("summaryDialog").showModal()}
+$("summaryButton").onclick=showSummary;$("mobileSummary").onclick=showSummary;$("closeSummary").onclick=()=>$("summaryDialog").close();
+
+$("finishButton").onclick=()=>{
+ if(!selectedDate||!selectedTime||!intake){advance(3);return}
+ appointment={service,format,date:selectedDate,time:selectedTime,intake:{...intake},status:"active"};
+ reminderDrafts={};rescheduling=false;$("completionStatus").textContent="This is a demo form, nothing was sent. Only a sample appointment was created.";
+ renderPortal();notify("Sample record created. Nothing was booked, sent or charged.");scrollToId("dashboard")
+};
+function renderPortal(){
+ const a=appointment;$("patientEmpty").hidden=!!a;$("patientContent").hidden=!a;
+ if(a){
+ $("appointmentDetails").innerHTML=listHTML([["Concern",a.service],["Format",a.format],["Sample time",displayDate(a.date)+" · "+a.time+" SAST"],["Location",a.format==="Remote"?"Telephone · no real call scheduled":"199 Vanessa Street, Buccleuch, Sandton"],["Patient",a.intake.name+" · fictional"],["Payment","Uncharged · clinic quote required"]]);
+ $("appointmentStatus").textContent=a.status==="cancelled"?"Cancelled sample":"Sample record";
+ $("appointmentStatus").classList.toggle("jade",a.status!=="cancelled");
+ $("cancelButton").disabled=a.status==="cancelled";$("calendarDownload").disabled=a.status==="cancelled";
+ $("rescheduleButton").textContent=a.status==="cancelled"?"Choose another sample time":"Reschedule";
+ renderReminder();
+ }
+ renderQueue()
+}
+function setView(staff){
+ $("patientView").hidden=staff;$("staffView").hidden=!staff;
+ $("staffToggle").setAttribute("aria-pressed",String(staff));$("patientToggle").setAttribute("aria-pressed",String(!staff));
+ $("portalHeading").textContent=staff?"Sample appointment coordination":"Your sample workspace";
+ renderQueue()
+}
+$("patientToggle").onclick=()=>setView(false);$("staffToggle").onclick=()=>setView(true);
+$("rescheduleButton").onclick=()=>{
+ if(!appointment)return;
+ service=appointment.service;format=appointment.format;intake={...appointment.intake};
+ selectedDate=appointment.date;selectedTime=appointment.time;
+ month=new Date(selectedDate+"T12:00:00");month.setDate(1);
+ document.querySelectorAll('input[name="service"]').forEach(r=>r.checked=r.value===service);
+ syncFormat(format);rescheduling=true;
+ goStep(1);scrollToId("journey");notify("Choose a sample time, review, then update the record. No real appointment changes.")
+};
+$("cancelButton").onclick=()=>$("cancelDialog").showModal();
+$("keepAppointment").onclick=()=>$("cancelDialog").close();
+$("confirmCancel").onclick=()=>{if(appointment){appointment.status="cancelled";renderPortal()}$("cancelDialog").close();notify("Sample appointment cancelled. Nothing was sent to the clinic.")};
+$("viewIntake").onclick=()=>{
+ if(!appointment)return;
+ intake={...appointment.intake};$("demoName").value=intake.name;$("goals").value=intake.goals;$("history").value=intake.history;$("questions").value=intake.questions;$("fictionalCheck").checked=true;
+ selectedDate=appointment.date;selectedTime=appointment.time;service=appointment.service;syncFormat(appointment.format);
+ document.querySelectorAll('input[name="service"]').forEach(r=>r.checked=r.value===service);
+ rescheduling=true;goStep(2);scrollToId("journey")
+};
+function renderQueue(){
+ const root=$("queueList");root.replaceChildren();
+ const date=$("staffDate").value, fmt=$("staffFormat").value, status=$("staffIntake").value;
+ const matches=appointment&&(!date||date===appointment.date)&&(!fmt||fmt===appointment.format)&&(!status||status==="complete");
+ $("queueCount").textContent=matches?"1 sample appointment":"0 sample appointments";
+ if(!matches){let p=document.createElement("p");p.className="note";p.textContent=appointment?"No sample record matches these filters. Clear filters to see the record.":"No sample appointments yet. Complete the consultation journey to create one.";root.append(p);return}
+ let row=document.createElement("div");row.className="queue-item";
+ let info=document.createElement("div");let b=document.createElement("strong");b.textContent=appointment.intake.name+" · fictional patient";info.append(b);
+ let p=document.createElement("p");p.textContent=appointment.service+" · "+appointment.format;info.append(p);
+ let p2=document.createElement("p");p2.textContent=displayDate(appointment.date)+" · "+appointment.time+" SAST";info.append(p2);
+ let tag=document.createElement("span");tag.className="pill";tag.textContent=appointment.status==="cancelled"?"Cancelled · sample":"Intake prepared · sample";
+ let button=document.createElement("button");button.className="btn outline small";button.textContent="Open sample record";button.onclick=()=>{setView(false);$("appointmentStatus").tabIndex=-1;$("appointmentStatus").focus()};
+ row.append(info,tag,button);root.append(row)
+}
+["staffDate","staffFormat","staffIntake"].forEach(id=>$(id).onchange=renderQueue);
+$("clearFilters").onclick=()=>{$("staffDate").value="";$("staffFormat").value="";$("staffIntake").value="";renderQueue()};
+$("messageForm").onsubmit=e=>{
+ e.preventDefault();if(!$("messageForm").reportValidity())return;let text=$("patientMessage").value.trim();if(!text){$("patientMessage").setCustomValidity("Enter a fictional message.");$("patientMessage").reportValidity();return}
+ messages.push(text);const p=document.createElement("p");p.textContent="Not sent · "+text;$("messageList").append(p);$("patientMessage").value="";$("messageStatus").textContent="This is a demo form, nothing was sent. Your draft is held in page memory."
+};
+$("patientMessage").oninput=()=>$("patientMessage").setCustomValidity("");
+function defaultReminder(channel){
+ if(!appointment)return "";
+ return "DEMO — UNSENT "+channel.toUpperCase()+"\nHello "+appointment.intake.name+". This is a preview for a sample "+appointment.format.toLowerCase()+" consultation on "+displayDate(appointment.date)+" at "+appointment.time+" SAST.\nNo appointment has been booked. For a real appointment, contact Mens Health Clinics on +27 10 205 9855."
+}
+function renderReminder(){
+ $("reminderText").value=reminderDrafts[reminderChannel]??defaultReminder(reminderChannel);
+ document.querySelector('label[for="reminderText"]').textContent="Unsent "+reminderChannel+" preview";
+ document.querySelectorAll("[data-reminder]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.reminder===reminderChannel)))
+}
+document.querySelectorAll("[data-reminder]").forEach(b=>b.onclick=()=>{reminderDrafts[reminderChannel]=$("reminderText").value;reminderChannel=b.dataset.reminder;renderReminder()});
+$("reminderText").oninput=()=>{reminderDrafts[reminderChannel]=$("reminderText").value};
+$("resetReminder").onclick=()=>{delete reminderDrafts[reminderChannel];renderReminder();notify("Unsent draft restored.")};
+$("calendarDownload").onclick=()=>{
+ if(!appointment||appointment.status!=="active")return;
+ const a=appointment, compact=a.date.replace(/-/g,""),[hr,mn]=a.time.split(":").map(Number);
+ // Sample time converted from SAST to UTC. No appointment duration is asserted.
+ const utc=new Date(Date.UTC(Number(compact.slice(0,4)),Number(compact.slice(4,6))-1,Number(compact.slice(6,8)),hr-2,mn));
+ const stamp=d=>d.toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"");
+ const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//LeadSky//Independent clinic demo//EN","CALSCALE:GREGORIAN","BEGIN:VEVENT","UID:demo-"+Date.now()+"@leadsky.example","DTSTAMP:"+stamp(new Date()),"DTSTART:"+stamp(utc),"SUMMARY:DEMO - Not a real clinic appointment","DESCRIPTION:Independent Mens Health Clinics concept. Nothing was booked or sent. Contact the clinic to arrange a real consultation.","STATUS:TENTATIVE","TRANSP:TRANSPARENT","END:VEVENT","END:VCALENDAR"].join("\r\n");
+ const url=URL.createObjectURL(new Blob([ics],{type:"text/calendar;charset=utf-8"})),link=document.createElement("a");link.href=url;link.download="DEMO-not-a-real-appointment.ics";link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notify("DEMO calendar file downloaded. No invitation was sent.")
+};
+
+const calcKeys=["Person","Remote","Follow"];
+function estimate(){
+ let total=0,missing=false,active=0,invalid=false;
+ calcKeys.forEach(k=>{let q=$("qty"+k),f=$("fee"+k);if(!q.validity.valid||!f.validity.valid||q.value===""){invalid=true;return}const qty=Number(q.value);if(qty>0){active++;if(f.value==="")missing=true;else total+=Number(f.value)*qty}});
+ if(invalid){$("estimateTotal").textContent="Check your inputs";$("estimateNote").textContent="Use fees from R0 to R100,000 and whole quantities from 0 to 20.";return}
+ if(!active){$("estimateTotal").textContent="No items selected";$("estimateNote").textContent="Set at least one quantity above zero to explore a scenario.";return}
+ if(missing){$("estimateTotal").textContent="Clinic quote required";$("estimateNote").textContent="Enter a hypothetical fee for every selected item to calculate a complete total.";return}
+ $("estimateTotal").textContent=money.format(total);$("estimateNote").textContent="Hypothetical arithmetic only. Not a clinic quote; no fees, taxes or payment terms are verified."
+}
+calcKeys.forEach(k=>["fee","qty"].forEach(p=>$(p+k).addEventListener("input",estimate)));
+function clearEstimate(){calcKeys.forEach(k=>{$("fee"+k).value="";$("qty"+k).value=k==="Person"?"1":"0"});estimate()}
+$("clearEstimate").onclick=clearEstimate;
+
+function addChat(text,user=false){let p=document.createElement("p");p.className="bubble"+(user?" user":"");p.textContent=text;$("chatLog").append(p);$("chatLog").scrollTop=$("chatLog").scrollHeight}
+function chat(text){
+ addChat(text,true);let q=text.toLowerCase(),reply;
+ if(/symptom|diagnos|medicine|medication|treat|cure|pain|erect|libido|enlarge|ejaculat/.test(q)){reply="I can only demonstrate scheduling. I cannot assess symptoms, recommend treatment or answer clinical questions. Please contact the actual clinic for a consultation."}
+ else if(/choose remote|select remote|telephone|online|video/.test(q)){syncFormat("Remote");reply="Remote telephone consultation selected in the demo. No video service is implied. Open step 02 to choose an illustrative time; nothing is booked."}
+ else if(/choose in person|select in person|visit|address|where|location/.test(q)){syncFormat("In person");reply="In-person consultation selected. The supplied clinic address is 199 Vanessa Street, Buccleuch, Sandton. Choose an illustrative time in step 02; no visit is reserved."}
+ else if(/live|availability|times|24|hours/.test(q)){reply="These times are sample data, not live availability. The clinic publishes 24/7 access and contact hours, but practitioner availability must be confirmed directly. Use step 02 to explore the sample calendar."}
+ else if(/price|cost|fee|pay/.test(q)){reply="No verified consultation fee has been supplied. The costs section lists quote-required items and a hypothetical rand estimator. Nothing is charged here."}
+ else if(/privacy|secure|data|confidential/.test(q)){reply="Use fictional information only. This demo keeps entries in page memory and clears them on reload or reset. It is not a secure clinical portal and sends no data to the clinic."}
+ else if(/cancel|reschedule/.test(q)){reply=appointment?"Open the patient workspace to cancel or reschedule your sample record. Only this page changes; no real clinic appointment is affected.":"Create a sample appointment first. The patient workspace will then offer cancellation and rescheduling controls."}
+ else if(/how|work|start|book|help/.test(q)){reply="Choose a published service and consultation format, select a sample date and time, review fictional intake details, then create a sample record. Explore the patient and staff views afterwards. No real booking, payment or message is made."}
+ else{reply="This is a scripted scheduling demo. Try “Choose remote”, “How does this work?”, “Are these live times?” or “What does it cost?”. For personal assistance, use the clinic’s real contact links."}
+ addChat(reply)
+}
+document.querySelectorAll("[data-chat]").forEach(b=>b.onclick=()=>chat(b.dataset.chat));
+$("chatForm").onsubmit=e=>{e.preventDefault();const t=$("chatInput").value.trim();if(!t){$("chatInput").setCustomValidity("Enter a scheduling question.");$("chatInput").reportValidity();return}chat(t);$("chatInput").value=""};
+$("chatInput").oninput=()=>$("chatInput").setCustomValidity("");
+$("resetButton").onclick=()=>$("resetDialog").showModal();
+$("keepData").onclick=()=>$("resetDialog").close();
+$("confirmReset").onclick=()=>{
+ appointment=null;intake=null;messages=[];rescheduling=false;selectedDate="";selectedTime="";service="Erectile Dysfunction";format="In person";reminderDrafts={};reminderChannel="SMS";
+ month=new Date(baseToday.getFullYear(),baseToday.getMonth(),1);
+ $("intakeForm").reset();$("demoName").value="";$("goals").value="";$("history").value="";$("questions").value="";$("fictionalCheck").checked=false;
+ $("demoName").setCustomValidity("");$("patientMessage").setCustomValidity("");$("chatInput").setCustomValidity("");
+ document.querySelectorAll('input[name="service"]').forEach(r=>r.checked=r.value===service);syncFormat("In person");
+ $("patientMessage").value="";$("messageList").replaceChildren();$("messageStatus").textContent="Drafts stay on this page. This is not secure messaging.";
+ $("chatLog").replaceChildren();addChat("Hello. I can help you explore an in-person or remote consultation, explain sample availability, or guide you through this demo.");
+ $("chatInput").value="";$("assistant").open=false;$("completionStatus").textContent="";$("slotError").textContent="";
+ $("staffDate").value="";$("staffFormat").value="";$("staffIntake").value="";$("reminderText").value="";
+ clearEstimate();updateComparison(50);goStep(0,false);setView(false);renderPortal();$("resetDialog").close();notify("All demo data cleared. Nothing was sent or retained.")
+};
+document.querySelectorAll("dialog").forEach(d=>d.addEventListener("click",e=>{if(e.target===d){const r=d.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)d.close()}}));
+renderCalendar();renderPortal();estimate();
+</script>
+</body>
+</html>
