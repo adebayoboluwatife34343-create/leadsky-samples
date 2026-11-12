@@ -1,0 +1,1596 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Marlboro Crane Hire — Precision Heavy Lifting South Africa</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root {
+  --bg: #F4F6F4;
+  --panel: #FFFFFF;
+  --ink: #111A16;
+  --muted: #4F6359;
+  --line: #D1DCD5;
+  --yellow: #F5C518;
+  --yellow-hover: #E0B310;
+  --sage: #E2EBE5;
+  --dark-panel: #121C18;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(17,26,22,0.08);
+}
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+button, input, select, textarea { font: inherit; color: inherit; }
+button, a { touch-action: manipulation; }
+:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+/* Global Text Protection against Mobile Truncation */
+h1, h2, h3, h4, h5, h6, p, span, a, label, td, th {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: manual;
+}
+
+/* Concept Banner */
+.concept-banner {
+  background: #0B120E;
+  color: #D2DDD7;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid #1E2B24;
+}
+
+/* Header */
+.top-header {
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.top-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 64px;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  min-width: 0;
+  flex-shrink: 1;
+}
+.brand-logo-badge {
+  background: #111A16;
+  color: #F5C518;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  border: 1px solid #293830;
+  flex-shrink: 0;
+}
+.brand-logo-badge span {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+}
+.brand-logo-badge small {
+  font-size: 8px;
+  letter-spacing: 1.2px;
+  color: #F5C518;
+  margin-top: 2px;
+}
+.brand-name-wrap {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.brand-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.1;
+  color: var(--ink);
+  white-space: nowrap;
+  letter-spacing: -0.2px;
+}
+.brand-sub {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.nav-link {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--muted);
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-link:hover, .nav-link.active { color: var(--ink); }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.phone-link {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--ink);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Mobile Drawer Toggle */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--ink);
+}
+
+.mobile-drawer {
+  display: none;
+  position: fixed;
+  top: 96px;
+  left: 0;
+  right: 0;
+  background: var(--panel);
+  border-bottom: 2px solid var(--line);
+  padding: 16px 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  z-index: 99;
+  flex-direction: column;
+  gap: 12px;
+}
+.mobile-drawer.open { display: flex; }
+.mobile-drawer a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 8px 0;
+  border-bottom: 1px solid #EEF2EF;
+}
+
+/* Global Buttons */
+.btn {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-height: 44px;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--sage); }
+.btn-primary {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: #1A2203;
+}
+.btn-primary:hover { background: var(--yellow-hover); border-color: var(--yellow-hover); }
+.btn-dark {
+  background: var(--ink);
+  color: #FFF;
+  border-color: var(--ink);
+}
+.btn-dark:hover { background: #23342C; }
+.btn-sm { font-size: 13px; padding: 6px 12px; min-height: 36px; }
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--line);
+  padding: 36px 16px 40px;
+}
+.hero-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--sage);
+  color: var(--ink);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.hero-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2E7D32;
+}
+.hero-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.8px;
+  margin: 0 0 16px 0;
+}
+.hero-desc {
+  font-size: 17px;
+  color: var(--muted);
+  margin: 0 0 24px 0;
+  max-width: 580px;
+}
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero-visual {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  min-height: 320px;
+  background: var(--dark-panel);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.hero-visual-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(0deg, rgba(10,16,13,0.95) 0%, rgba(10,16,13,0.70) 65%, rgba(10,16,13,0.2) 100%);
+  padding: 24px 20px;
+  color: #FFF;
+  margin-top: auto;
+}
+.hero-overlay-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(18px, 2.5vw, 22px);
+  line-height: 1.25;
+  margin: 0 0 6px 0;
+  color: #FFFFFF;
+}
+.hero-overlay-sub {
+  font-size: 13px;
+  color: #D2DDD7;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Layout Shell */
+.app-shell {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 36px 16px;
+}
+
+.section-head {
+  margin-bottom: 24px;
+}
+.section-tag {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.section-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(24px, 3vw, 32px);
+  letter-spacing: -0.5px;
+  margin: 4px 0 6px;
+}
+.section-desc {
+  color: var(--muted);
+  margin: 0;
+}
+
+/* Steps Navigation */
+.steps-nav {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 24px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+.step-tab {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  padding: 8px 10px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.step-num {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: var(--ink);
+  font-size: 11px;
+  display: grid;
+  place-items: center;
+}
+.step-tab.active {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+.step-tab.active .step-num {
+  background: var(--ink);
+  color: #FFF;
+}
+
+/* Workspace Layout Grid */
+.quote-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 24px;
+  align-items: start;
+}
+.card-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.03);
+}
+.panel-body { padding: 20px; }
+
+/* Form Fields */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.field-full { grid-column: 1 / -1; }
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+}
+.form-control {
+  border: 1px solid #C4D0C7;
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  background: #FFF;
+  width: 100%;
+}
+.form-control:focus {
+  border-color: var(--ink);
+  outline: none;
+}
+.notice-box {
+  background: #FDF9E7;
+  border: 1px solid #E6D89C;
+  border-radius: 6px;
+  padding: 12px;
+  font-size: 12px;
+  color: #574B1A;
+  margin: 16px 0;
+  line-height: 1.4;
+}
+
+/* Category Choice Cards */
+.choices-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.choice-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: #FFF;
+  cursor: pointer;
+  text-align: left;
+  padding: 0;
+  transition: all 0.2s;
+  position: relative;
+}
+.choice-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+}
+.choice-card-content { padding: 10px; }
+.choice-card-title {
+  font-size: 13px;
+  font-weight: 700;
+  display: block;
+  line-height: 1.2;
+}
+.choice-card-sub {
+  font-size: 11px;
+  color: var(--muted);
+  display: block;
+  margin-top: 2px;
+}
+.choice-card.selected {
+  border: 2px solid var(--ink);
+  background: #FAFBF9;
+}
+
+/* Calendar */
+.cal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+.cal-weekday {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--muted);
+  padding: 4px 0;
+}
+.cal-day {
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #FFF;
+  font-size: 13px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cal-day:hover:not(:disabled) { background: var(--sage); }
+.cal-day.selected { background: var(--ink); color: #FFF; border-color: var(--ink); }
+.cal-day:disabled { opacity: 0.3; cursor: not-allowed; text-decoration: line-through; }
+
+/* Summary Side Box */
+.summary-photo {
+  height: 130px;
+  position: relative;
+  background: var(--dark-panel);
+}
+.summary-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.summary-photo-label {
+  position: absolute;
+  bottom: 0;
+  inset-x: 0;
+  background: rgba(10,16,13,0.85);
+  color: #FFF;
+  font-size: 11px;
+  padding: 4px 10px;
+}
+.summary-body { padding: 16px; }
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 8px 0;
+  font-size: 13px;
+  border-bottom: 1px solid #EEF2EF;
+}
+.summary-row span:first-child { color: var(--muted); flex-shrink: 0; }
+.summary-row span:last-child { font-weight: 600; text-align: right; }
+.summary-total {
+  background: var(--ink);
+  color: #FFF;
+  padding: 16px;
+}
+.summary-total label { font-size: 11px; color: #B2C4BB; display: block; letter-spacing: 0.5px; }
+.summary-total strong { font-family: "Space Grotesk", sans-serif; font-size: 24px; display: block; margin: 2px 0; color: #FFF; }
+.summary-total small { font-size: 11px; color: #B2C4BB; display: block; }
+
+/* Fleet Section */
+.fleet-section {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+}
+.fleet-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.fleet-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+}
+.fleet-card-img {
+  height: 170px;
+  width: 100%;
+  object-fit: cover;
+}
+.fleet-card-body {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.fleet-card-title {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 17px;
+  margin: 0 0 6px 0;
+}
+.fleet-card-desc {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 14px 0;
+  flex: 1;
+}
+.fleet-card-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  background: var(--bg);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+.spec-item strong { display: block; color: var(--ink); }
+.spec-item span { color: var(--muted); }
+
+/* 3D Visualizer Section */
+.viewer-section {
+  background: var(--dark-panel);
+  color: #FFF;
+  border-radius: var(--radius);
+  padding: 28px;
+  margin: 40px 0;
+}
+.viewer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.viewer-canvas-container {
+  height: 280px;
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+}
+#threeCanvas { width: 100%; height: 100%; display: block; }
+.viewer-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 16px;
+  color: #A3B5AC;
+  font-size: 13px;
+}
+
+/* FAQ Accordion Section */
+.faq-section {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+}
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.faq-item {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.faq-summary {
+  padding: 16px 20px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+.faq-summary::-webkit-details-marker { display: none; }
+.faq-summary::after {
+  content: "+";
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-left: 12px;
+  flex-shrink: 0;
+}
+details[open] .faq-summary::after {
+  content: "−";
+}
+.faq-content {
+  padding: 0 20px 18px 20px;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  border-top: 1px solid #F0F4F1;
+  margin-top: 4px;
+  padding-top: 14px;
+}
+
+/* Footer */
+.site-footer {
+  background: #0B120E;
+  color: #A5B5AC;
+  padding: 36px 16px 80px;
+  font-size: 12px;
+  line-height: 1.6;
+  border-top: 1px solid #1E2B24;
+}
+.footer-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.footer-title {
+  color: #FFF;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 15px;
+  margin: 0 0 6px 0;
+}
+.footer-credits {
+  border-top: 1px solid #1E2B24;
+  padding-top: 16px;
+}
+.footer-credits a { color: #D5E2DB; text-decoration: underline; }
+
+/* Sticky Mobile Bottom Bar */
+.sticky-mobile-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #0D1612;
+  border-top: 1px solid #23342C;
+  padding: 10px 16px;
+  z-index: 101;
+  gap: 10px;
+}
+.sticky-mobile-bar .btn { flex: 1; min-height: 40px; font-size: 13px; }
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .hero-container { grid-template-columns: 1fr; }
+  .quote-grid { grid-template-columns: 1fr; }
+  .fleet-cards-grid { grid-template-columns: repeat(2, 1fr); }
+  .viewer-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 680px) {
+  .top-inner { padding: 0 12px; }
+  .nav-links, .phone-link { display: none; }
+  .menu-toggle { display: block; }
+  .brand-sub { display: none; }
+  .brand-title { font-size: 14px; }
+  .choices-grid { grid-template-columns: 1fr; }
+  .fleet-cards-grid { grid-template-columns: 1fr; }
+  .form-grid { grid-template-columns: 1fr; }
+  .hero-visual { min-height: 260px; }
+  .hero-overlay { padding: 18px 16px; }
+  .sticky-mobile-bar { display: flex; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP CONCEPT BANNER -->
+<div class="concept-banner">
+  Independent website concept by LeadSky for Marlboro Crane Hire. Not their official website.
+</div>
+
+<!-- HEADER -->
+<header class="top-header">
+  <div class="top-inner">
+    <a href="#" class="brand-mark">
+      <div class="brand-logo-badge">
+        <span>MARLBORO</span>
+        <small>CRANE HIRE</small>
+      </div>
+      <div class="brand-name-wrap">
+        <span class="brand-title">Marlboro Crane Hire</span>
+        <span class="brand-sub">Johannesburg · South Africa</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#quote-workspace" class="nav-link active">Lift Calculator</a>
+      <a href="#fleet-section" class="nav-link">Fleet Range</a>
+      <a href="#viewer-section" class="nav-link">3D Inspection</a>
+      <a href="#faq-section" class="nav-link">Safety Guidelines</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="tel:+27118828301" class="phone-link">+27 11 882 8301</a>
+      <a href="#quote-workspace" class="btn btn-primary btn-sm">Get Lift Quote</a>
+      <button type="button" class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">Menu ☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <a href="#quote-workspace" onclick="toggleMobileMenu()">Lift Calculator Workspace</a>
+    <a href="#fleet-section" onclick="toggleMobileMenu()">Fleet Capabilities & Range</a>
+    <a href="#viewer-section" onclick="toggleMobileMenu()">3D Equipment Inspection</a>
+    <a href="#faq-section" onclick="toggleMobileMenu()">Safety & Operational Guidelines</a>
+    <a href="tel:+27118828301" style="color: var(--yellow);">Call Direct: +27 11 882 8301</a>
+  </div>
+</header>
+
+<!-- HERO SECTION (Visible immediately, no intro loader) -->
+<section class="hero-section">
+  <div class="hero-container">
+    <div>
+      <div class="hero-badge">
+        <span class="hero-badge-dot"></span> Mobile & Crawler Crane Hire
+      </div>
+      <h1 class="hero-title">Precision Heavy Lifting Across South Africa</h1>
+      <p class="hero-desc">
+        Mobile hydraulic cranes up to 500 tons and crawler cranes up to 1,200 tons. Calculate indicative estimates, structure site requirements, and request rigging mobilization.
+      </p>
+      <div class="hero-ctas">
+        <a href="#quote-workspace" class="btn btn-primary">Calculate Lift Quote →</a>
+        <a href="#fleet-section" class="btn">Explore Fleet Range</a>
+        <a href="tel:+27118828301" class="btn btn-dark">Call Direct</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img src="img/stock-8.jpg" alt="Port and industrial heavy lifting cranes" class="hero-visual-img" width="800" height="400">
+      <div class="hero-overlay">
+        <h2 class="hero-overlay-title">Johannesburg & Regional Operations</h2>
+        <p class="hero-overlay-sub">Full technical site assessment, certified rigging teams, and abnormal load transport.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN APP SHELL -->
+<div class="app-shell">
+
+  <!-- QUOTE WORKSPACE -->
+  <section id="quote-workspace" style="scroll-margin-top: 80px;">
+    <div class="section-head">
+      <span class="section-tag">Interactive Workspace</span>
+      <h2 class="section-title">Lift Details & Sample Quote Generator</h2>
+      <p class="section-desc">Formulate site specifications and receive an instant indicative calculation before technical review.</p>
+    </div>
+
+    <!-- Steps Tabs -->
+    <div class="steps-nav" role="tablist">
+      <button class="step-tab active" id="tab-0" onclick="switchStep(0)">
+        <span class="step-num">1</span> Lift Specifications
+      </button>
+      <button class="step-tab" id="tab-1" onclick="switchStep(1)">
+        <span class="step-num">2</span> Crane Category & Date
+      </button>
+      <button class="step-tab" id="tab-2" onclick="switchStep(2)">
+        <span class="step-num">3</span> Indicative Breakdown
+      </button>
+      <button class="step-tab" id="tab-3" onclick="switchStep(3)">
+        <span class="step-num">4</span> Demo Booking Handoff
+      </button>
+    </div>
+
+    <div class="quote-grid">
+      <!-- Main Form Panel -->
+      <div class="card-panel">
+        
+        <!-- STEP 0: SPECS -->
+        <div id="step-0-panel" class="panel-body">
+          <form id="specsForm" onsubmit="handleSpecsSubmit(event)">
+            <div class="form-grid">
+              <div class="form-group field-full">
+                <label for="siteLocation">Site Location / City</label>
+                <input type="text" id="siteLocation" class="form-control" value="Johannesburg Industrial Zone" required>
+              </div>
+
+              <div class="form-group">
+                <label for="mobRegion">Mobilisation Region</label>
+                <select id="mobRegion" class="form-control" onchange="recalc()">
+                  <option value="local">Gauteng / Local Zone</option>
+                  <option value="regional">Regional / Cross-Province</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="requestedCap">Capacity (Tons)</label>
+                <input type="number" id="requestedCap" class="form-control" min="7" max="1200" value="60" required onchange="recalc()">
+              </div>
+
+              <div class="form-group">
+                <label for="hireDuration">Duration (Days)</label>
+                <input type="number" id="hireDuration" class="form-control" min="1" max="60" value="2" required onchange="recalc()">
+              </div>
+
+              <div class="form-group">
+                <label for="loadMass">Load Mass (Tons)</label>
+                <input type="number" id="loadMass" class="form-control" step="0.1" value="14.5" required>
+              </div>
+
+              <div class="form-group">
+                <label for="workRadius">Working Radius (Meters)</label>
+                <input type="number" id="workRadius" class="form-control" step="0.1" value="16" required>
+              </div>
+
+              <div class="form-group">
+                <label for="liftHeight">Required Lift Height (Meters)</label>
+                <input type="number" id="liftHeight" class="form-control" step="0.1" value="22" required>
+              </div>
+
+              <div class="form-group field-full">
+                <label for="loadDescription">Load Description & Site Notes</label>
+                <textarea id="loadDescription" class="form-control" rows="3" required>Structural steel assembly lifting and placement on concrete footings.</textarea>
+              </div>
+            </div>
+
+            <div class="notice-box">
+              <strong>Technical Review Note:</strong> Crane tonnage capacity alone does not guarantee site execution. Ground bearing pressure, boom angles, wind limits, and rigging tackle must be reviewed by Marlboro’s engineering team.
+            </div>
+
+            <div style="display: flex; justify-content: flex-end; margin-top: 16px;">
+              <button type="submit" class="btn btn-primary">Proceed to Equipment Selection →</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- STEP 1: CATEGORY & DATE -->
+        <div id="step-1-panel" class="panel-body" style="display: none;">
+          <h3 style="font-family: 'Space Grotesk'; margin: 0 0 14px 0; font-size: 18px;">Select Crane Equipment Category</h3>
+          <div class="choices-grid">
+            <button type="button" class="choice-card selected" id="choice-mobile" onclick="selectCategory('mobile')">
+              <img src="img/stock-5.jpg" alt="Mobile hydraulic crane outriggers" width="300" height="100">
+              <div class="choice-card-content">
+                <span class="choice-card-title">Mobile Hydraulic</span>
+                <span class="choice-card-sub">7 to 500 Tons Range</span>
+              </div>
+            </button>
+
+            <button type="button" class="choice-card" id="choice-crawler" onclick="selectCategory('crawler')">
+              <img src="img/stock-3.jpg" alt="Crawler lattice boom crane" width="300" height="100">
+              <div class="choice-card-content">
+                <span class="choice-card-title">Crawler Crane</span>
+                <span class="choice-card-sub">50 to 1,200 Tons Range</span>
+              </div>
+            </button>
+
+            <button type="button" class="choice-card" id="choice-heavy" onclick="selectCategory('heavy')">
+              <img src="img/stock-7.jpg" alt="Heavy lifting hook and chains" width="300" height="100">
+              <div class="choice-card-content">
+                <span class="choice-card-title">Heavy Lift / Rigging</span>
+                <span class="choice-card-sub">Specialist Rigging Engineering</span>
+              </div>
+            </button>
+          </div>
+
+          <h4 style="margin: 18px 0 10px 0; font-size: 15px;">Select Proposed Start Date</h4>
+          <div class="cal-header">
+            <strong id="calMonthLabel" style="font-size: 14px;">Month 2026</strong>
+            <div style="display: flex; gap: 4px;">
+              <button class="btn btn-sm" type="button" onclick="changeMonth(-1)">←</button>
+              <button class="btn btn-sm" type="button" onclick="changeMonth(1)">→</button>
+            </div>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+
+          <div style="margin-top: 18px; display: flex; flex-direction: column; gap: 8px;">
+            <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px;">
+              <input type="checkbox" id="addRigging" onchange="recalc()" checked> Include Certified Rigging Crew
+            </label>
+            <label style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px;">
+              <input type="checkbox" id="addTransport" onchange="recalc()"> Include Heavy Transport Lowbed Logistics
+            </label>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <button type="button" class="btn" onclick="switchStep(0)">← Back to Specs</button>
+            <button type="button" class="btn btn-primary" onclick="switchStep(2)">Review Breakdown →</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: BREAKDOWN -->
+        <div id="step-2-panel" class="panel-body" style="display: none;">
+          <h3 style="font-family: 'Space Grotesk'; margin: 0 0 14px 0; font-size: 18px;">Itemized Sample Estimate (ZAR)</h3>
+          <div id="breakdownTable" style="overflow-x: auto;"></div>
+
+          <div class="notice-box">
+            <strong>Sample Pricing Standard:</strong> Rates are illustrative for demonstration. SA VAT is calculated at 15%. Official quotes require formal site assessment and engineering verification.
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+            <button type="button" class="btn" onclick="switchStep(1)">← Edit Category/Date</button>
+            <button type="button" class="btn btn-primary" onclick="switchStep(3)">Proceed to Demo Confirmation →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: DEMO CONFIRMATION -->
+        <div id="step-3-panel" class="panel-body" style="display: none;">
+          <h3 style="font-family: 'Space Grotesk'; margin: 0 0 8px 0; font-size: 18px;">Simulated Hire Request</h3>
+          <p style="font-size: 14px; color: var(--muted); margin-bottom: 16px;">
+            Test the booking handoff workflow. This form is a live interaction demo.
+          </p>
+
+          <form id="demoCheckoutForm" onsubmit="handleDemoBooking(event)">
+            <div class="form-group" style="margin-bottom: 14px;">
+              <label for="projRef">Project / Client Reference Name</label>
+              <input type="text" id="projRef" class="form-control" value="Johannesburg Site Lift #104" required>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 14px;">
+              <label for="contactEmail">Contact Email (Demo Purpose)</label>
+              <input type="email" id="contactEmail" class="form-control" value="contractor@example.co.za" required>
+            </div>
+
+            <div class="notice-box">
+              This is a demo form, nothing was sent. Submitting records a local session confirmation state for review.
+            </div>
+
+            <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+              <button type="button" class="btn" onclick="switchStep(2)">← Review Breakdown</button>
+              <button type="submit" class="btn btn-primary">Submit Demo Booking →</button>
+            </div>
+          </form>
+
+          <div id="demoResultBox" style="display: none; margin-top: 16px; padding: 14px; background: #E8F5E9; border: 1px solid #C8E6C9; border-radius: 8px; color: #1B5E20; font-size: 13px;">
+            <strong>✓ Demo Booking Created!</strong>
+            <p style="margin: 4px 0 0 0;">This is a demo form, nothing was sent. Your sample reference has been recorded locally.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Live Summary Panel -->
+      <div class="card-panel">
+        <div class="summary-photo">
+          <img src="img/stock-9.jpg" alt="Crane hook detail close up" width="340" height="130">
+          <div class="summary-photo-label">Technical Reference · Stock Asset</div>
+        </div>
+        <div class="summary-body">
+          <span style="font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase;">Estimated Summary</span>
+          <h3 id="summaryCategoryTitle" style="font-family: 'Space Grotesk'; margin: 4px 0 10px 0; font-size: 18px;">Mobile Hydraulic Crane</h3>
+
+          <div class="summary-row">
+            <span>Location:</span>
+            <span id="summarySite">Johannesburg</span>
+          </div>
+          <div class="summary-row">
+            <span>Capacity:</span>
+            <span id="summaryCap">60 Tons</span>
+          </div>
+          <div class="summary-row">
+            <span>Duration:</span>
+            <span id="summaryDur">2 Days</span>
+          </div>
+          <div class="summary-row">
+            <span>Proposed Start:</span>
+            <span id="summaryDate">Not selected</span>
+          </div>
+          <div class="summary-row">
+            <span>Mobilisation:</span>
+            <span id="summaryMob">Local Zone</span>
+          </div>
+        </div>
+
+        <div class="summary-total">
+          <label>INDICATIVE TOTAL (INCL. 15% VAT)</label>
+          <strong id="summaryTotalZar">R 0</strong>
+          <small>Subject to formal site inspection</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLEET SHOWCASE SECTION -->
+  <section id="fleet-section" class="fleet-section" style="scroll-margin-top: 80px;">
+    <div class="section-head">
+      <span class="section-tag">Fleet Capabilities</span>
+      <h2 class="section-title">Heavy Lifting Fleet Categories</h2>
+      <p class="section-desc">Marlboro operates an extensive fleet of mobile hydraulic cranes, crawler cranes, and heavy rigging gear.</p>
+    </div>
+
+    <div class="fleet-cards-grid">
+      <!-- Card 1 -->
+      <div class="fleet-card">
+        <img src="img/stock-1.jpg" alt="Mobile telescopic crane site operational view" class="fleet-card-img" width="400" height="170">
+        <div class="fleet-card-body">
+          <h3 class="fleet-card-title">Mobile All-Terrain Cranes</h3>
+          <p class="fleet-card-desc">Rapid deployment and versatile outrigger setup suited for construction sites and industrial facilities.</p>
+          <div class="fleet-card-specs">
+            <div class="spec-item">
+              <strong>Capacity Range</strong>
+              <span>7t – 500t</span>
+            </div>
+            <div class="spec-item">
+              <strong>Mobilisation</strong>
+              <span>Self-propelled</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="fleet-card">
+        <img src="img/stock-4.jpg" alt="Crawler crane lattice boom machinery" class="fleet-card-img" width="400" height="170">
+        <div class="fleet-card-body">
+          <h3 class="fleet-card-title">Heavy Lattice Crawler Cranes</h3>
+          <p class="fleet-card-desc">High lift capacities and on-site pick-and-carry capability for mining and infrastructure projects.</p>
+          <div class="fleet-card-specs">
+            <div class="spec-item">
+              <strong>Capacity Range</strong>
+              <span>50t – 1,200t</span>
+            </div>
+            <div class="spec-item">
+              <strong>Track Base</strong>
+              <span>Heavy Steel Track</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="fleet-card">
+        <img src="img/stock-6.jpg" alt="Mercedes heavy haulage equipment transport" class="fleet-card-img" width="400" height="170">
+        <div class="fleet-card-body">
+          <h3 class="fleet-card-title">Heavy Transport & Lowbeds</h3>
+          <p class="fleet-card-desc">Specialized transport fleet for abnormal loads, counterweight logistics, and regional machine moves.</p>
+          <div class="fleet-card-specs">
+            <div class="spec-item">
+              <strong>Haulage Type</strong>
+              <span>Abnormal / Multi-Axle</span>
+            </div>
+            <div class="spec-item">
+              <strong>Permits</strong>
+              <span>Provincial Compliant</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="fleet-card">
+        <img src="img/stock-10.jpg" alt="Certified heavy lifting tackle and rigging" class="fleet-card-img" width="400" height="170">
+        <div class="fleet-card-body">
+          <h3 class="fleet-card-title">Certified Rigging Gear</h3>
+          <p class="fleet-card-desc">Spreader beams, heavy steel slings, shackles, and certified riggers for complex structural lifts.</p>
+          <div class="fleet-card-specs">
+            <div class="spec-item">
+              <strong>Rigging Gear</strong>
+              <span>Fully Certified</span>
+            </div>
+            <div class="spec-item">
+              <strong>Safety Code</strong>
+              <span>SANS Standard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="fleet-card">
+        <img src="img/stock-2.jpg" alt="Auto crane hydraulics equipment" class="fleet-card-img" width="400" height="170">
+        <div class="fleet-card-body">
+          <h3 class="fleet-card-title">Truck Mounted Cranes</h3>
+          <p class="fleet-card-desc">Versatile solution for fast delivery, self-loading material movement, and short setup cycles.</p>
+          <div class="fleet-card-specs">
+            <div class="spec-item">
+              <strong>Utility</strong>
+              <span>Transport + Lift</span>
+            </div>
+            <div class="spec-item">
+              <strong>Setup Time</strong>
+              <span>Under 15 Mins</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="fleet-card">
+        <img src="img/stock-12.jpg" alt="Heavy plant machinery transportation" class="fleet-card-img" width="400" height="170">
+        <div class="fleet-card-body">
+          <h3 class="fleet-card-title">Plant & Logistics Support</h3>
+          <p class="fleet-card-desc">End-to-end site logistics for power stations, mining installations, and commercial construction projects.</p>
+          <div class="fleet-card-specs">
+            <div class="spec-item">
+              <strong>Coverage</strong>
+              <span>Southern Africa</span>
+            </div>
+            <div class="spec-item">
+              <strong>Support</strong>
+              <span>Field Mechanics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D MECHANICAL INSPECTION TOOL -->
+  <section id="viewer-section" class="viewer-section" style="scroll-margin-top: 80px;">
+    <div class="viewer-grid">
+      <div>
+        <span class="section-tag" style="color: var(--yellow);">Interactive 3D Visualizer</span>
+        <h2 style="font-family: 'Space Grotesk'; font-size: clamp(24px, 3vw, 32px); margin: 6px 0 14px 0;">3D Equipment & Rigging Inspection</h2>
+        <p style="color: #B2C4BB; font-size: 14px; margin-bottom: 20px;">
+          Inspect a 3D structural model of crane hook block and rigging assembly. Touch or drag to rotate geometry.
+        </p>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <button type="button" class="btn btn-primary btn-sm" onclick="reset3DCamera()">Reset View</button>
+          <button type="button" class="btn btn-sm" style="background: rgba(255,255,255,0.1); color: #FFF; border-color: rgba(255,255,255,0.2);" onclick="toggle3DRotation()">Toggle Rotation</button>
+        </div>
+      </div>
+      <div class="viewer-canvas-container">
+        <canvas id="threeCanvas"></canvas>
+        <div id="canvasFallback" class="viewer-fallback" style="display:none;">
+          3D viewer available on WebGL compatible devices.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ ACCORDION SECTION -->
+  <section id="faq-section" class="faq-section" style="scroll-margin-top: 80px;">
+    <div class="section-head">
+      <span class="section-tag">Information & Safety</span>
+      <h2 class="section-title">Operational Guidelines & Technical Requirements</h2>
+      <p class="section-desc">Key guidelines for operating heavy crane equipment on South African job sites.</p>
+    </div>
+
+    <div class="faq-accordion">
+      <details class="faq-item" open>
+        <summary class="faq-summary">What site preparation is required prior to crane arrival?</summary>
+        <div class="faq-content">
+          Ground surfaces must be level, compacted, and free of unmapped underground services. High-capacity steel outrigger spreader plates or heavy timber mats are deployed based on site bearing pressure calculations.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">Are certified crane operators and riggers provided with hires?</summary>
+        <div class="faq-content">
+          Yes. Marlboro supplies certified crane operators and qualified riggers in accordance with South African statutory Occupational Health and Safety (OHS) regulations and SANS codes.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">How are permit requirements for abnormal load transport managed?</summary>
+        <div class="faq-content">
+          Our heavy transport division handles provincial movement permits, route clearance, and escort logistics for moving counterweights and crawler crane components across provinces.
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary class="faq-summary">How are safe working load capacities determined?</summary>
+        <div class="faq-content">
+          Every lift calculation incorporates total load mass, rigging tackle deduction, working radius, tip height, and wind conditions against OEM load charts.
+        </div>
+      </details>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-row">
+      <div>
+        <h4 class="footer-title">MARLBORO CRANE HIRE</h4>
+        <p>Johannesburg & Regional Operations · Direct Call: <a href="tel:+27118828301" style="color:#FFF;">+27 11 882 8301</a></p>
+      </div>
+      <div>
+        <p>Independent Digital Website Concept by LeadSky</p>
+        <p>Demonstration design environment for heavy equipment hire.</p>
+      </div>
+    </div>
+
+    <div class="footer-credits">
+      <p>
+        Stock photo credits (Pixabay Content License): 
+        <a href="https://pixabay.com/photos/cranes-construction-load-crane-3703469/" target="_blank" rel="noopener">analogicus</a>, 
+        <a href="https://pixabay.com/photos/crane-auto-crane-adk-125-to-lift-2875654/" target="_blank" rel="noopener">Tama66</a>, 
+        <a href="https://pixabay.com/photos/construction-machine-scoops-shovel-3412240/" target="_blank" rel="noopener">Tama66</a>, 
+        <a href="https://pixabay.com/photos/excavator-construction-site-vehicle-800996/" target="_blank" rel="noopener">Didgeman</a>, 
+        <a href="https://pixabay.com/photos/crane-truck-crane-steel-rope-2617165/" target="_blank" rel="noopener">Momentmal</a>, 
+        <a href="https://pixabay.com/photos/truck-mercedes-vehicles-3368440/" target="_blank" rel="noopener">Alexas_Fotos</a>, 
+        <a href="https://pixabay.com/photos/loads-chains-crane-hanger-hook-2495144/" target="_blank" rel="noopener">Momentmal</a>, 
+        <a href="https://pixabay.com/photos/port-cranes-harbor-cranes-heaven-1650374/" target="_blank" rel="noopener">pixel2013</a>, 
+        <a href="https://pixabay.com/photos/hook-crane-close-up-detail-1943675/" target="_blank" rel="noopener">Tama66</a>, 
+        <a href="https://pixabay.com/photos/chain-hook-heavy-equipment-2434934/" target="_blank" rel="noopener">funky-noodle</a>, 
+        <a href="https://pixabay.com/photos/bulldozer-excavator-heavy-machine-2195329/" target="_blank" rel="noopener">dimitrisvetsikas1969</a>, 
+        <a href="https://pixabay.com/photos/digger-excavator-engine-heavy-1867268/" target="_blank" rel="noopener">Pexels</a>.
+      </p>
+      <p style="margin-top: 6px; font-size: 11px;">
+        Concept by LeadSky · Not the official website of Marlboro Crane Hire.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE BOTTOM BAR -->
+<div class="sticky-mobile-bar">
+  <a href="tel:+27118828301" class="btn btn-dark">Call +27 11 882 8301</a>
+  <a href="#quote-workspace" class="btn btn-primary">Lift Calculator</a>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+'use strict';
+
+let currentStep = 0;
+let selectedCat = 'mobile';
+let selectedDateStr = '';
+let autoRotate3D = true;
+let scene, camera, renderer, hookGroup;
+
+const categoryRates = {
+  mobile: { base: 8500, perTon: 95, name: 'Mobile Hydraulic Crane' },
+  crawler: { base: 19500, perTon: 70, name: 'Heavy Crawler Crane' },
+  heavy: { base: 28000, perTon: 110, name: 'Heavy Lift & Rigging System' }
+};
+
+const today = new Date();
+let currentCalMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+
+document.addEventListener('DOMContentLoaded', () => {
+  renderCalendar();
+  recalc();
+  init3D();
+});
+
+function toggleMobileMenu() {
+  const drawer = document.getElementById('mobileDrawer');
+  if (drawer) drawer.classList.toggle('open');
+}
+
+function switchStep(stepIdx) {
+  currentStep = stepIdx;
+  for (let i = 0; i < 4; i++) {
+    const p = document.getElementById(`step-${i}-panel`);
+    const t = document.getElementById(`tab-${i}`);
+    if (p) p.style.display = (i === stepIdx) ? 'block' : 'none';
+    if (t) {
+      if (i === stepIdx) t.classList.add('active');
+      else t.classList.remove('active');
+    }
+  }
+}
+
+function selectCategory(catKey) {
+  selectedCat = catKey;
+  ['mobile', 'crawler', 'heavy'].forEach(k => {
+    const el = document.getElementById(`choice-${k}`);
+    if (el) {
+      if (k === catKey) el.classList.add('selected');
+      else el.classList.remove('selected');
+    }
+  });
+  recalc();
+}
+
+function renderCalendar() {
+  const calGrid = document.getElementById('calGrid');
+  const monthLabel = document.getElementById('calMonthLabel');
+  if (!calGrid || !monthLabel) return;
+
+  const y = currentCalMonth.getFullYear();
+  const m = currentCalMonth.getMonth();
+  monthLabel.textContent = currentCalMonth.toLocaleDateString('en-ZA', { month: 'long', year: 'numeric' });
+
+  calGrid.innerHTML = '';
+  const weekdays = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
+  weekdays.forEach(w => {
+    const d = document.createElement('div');
+    d.className = 'cal-weekday';
+    d.textContent = w;
+    calGrid.appendChild(d);
+  });
+
+  const firstDayIndex = (new Date(y, m, 1).getDay() + 6) % 7;
+  const daysInMonth = new Date(y, m + 1, 0).getDate();
+
+  for (let i = 0; i < firstDayIndex; i++) {
+    const empty = document.createElement('div');
+    calGrid.appendChild(empty);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dateObj = new Date(y, m, day);
+    const dateStr = `${y}-${String(m + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'cal-day';
+    btn.textContent = day;
+
+    if (dateObj < today) {
+      btn.disabled = true;
+    } else {
+      if (selectedDateStr === dateStr) {
+        btn.classList.add('selected');
+      }
+      btn.onclick = () => {
+        selectedDateStr = dateStr;
+        renderCalendar();
+        recalc();
+      };
+    }
+    calGrid.appendChild(btn);
+  }
+}
+
+function changeMonth(delta) {
+  currentCalMonth.setMonth(currentCalMonth.getMonth() + delta);
+  renderCalendar();
+}
+
+function recalc() {
+  const site = document.getElementById('siteLocation')?.value || 'Johannesburg';
+  const cap = parseFloat(document.getElementById('requestedCap')?.value) || 60;
+  const dur = parseInt(document.getElementById('hireDuration')?.value) || 1;
+  const region = document.getElementById('mobRegion')?.value || 'local';
+
+  const catData = categoryRates[selectedCat];
+  const dailyRate = catData.base + (cap * catData.perTon);
+  const hireSubtotal = dailyRate * dur;
+  const mobCost = (region === 'regional') ? 9800 : 3500;
+
+  const addRigging = document.getElementById('addRigging')?.checked;
+  const addTransport = document.getElementById('addTransport')?.checked;
+
+  const riggingCost = addRigging ? (3200 * dur) : 0;
+  const transportCost = addTransport ? 6500 : 0;
+
+  const netTotal = hireSubtotal + mobCost + riggingCost + transportCost;
+  const vat = netTotal * 0.15;
+  const grandTotal = netTotal + vat;
+
+  const fmtZar = num => 'R ' + Math.round(num).toLocaleString('en-ZA');
+
+  document.getElementById('summaryCategoryTitle').textContent = catData.name;
+  document.getElementById('summarySite').textContent = site;
+  document.getElementById('summaryCap').textContent = `${cap} Tons`;
+  document.getElementById('summaryDur').textContent = `${dur} Day${dur > 1 ? 's' : ''}`;
+  document.getElementById('summaryDate').textContent = selectedDateStr || 'Select date';
+  document.getElementById('summaryMob').textContent = (region === 'regional') ? 'Regional Zone' : 'Local Zone';
+  document.getElementById('summaryTotalZar').textContent = fmtZar(grandTotal);
+
+  const bTable = document.getElementById('breakdownTable');
+  if (bTable) {
+    bTable.innerHTML = `
+      <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+        <thead>
+          <tr style="border-bottom: 2px solid var(--line); text-align: left;">
+            <th style="padding: 8px 0;">Item Description</th>
+            <th style="padding: 8px 0; text-align: right;">Amount (ZAR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid #EEF2EF;">
+            <td style="padding: 8px 0;">${catData.name} (${dur} days @ ${fmtZar(dailyRate)}/day)</td>
+            <td style="padding: 8px 0; text-align: right;">${fmtZar(hireSubtotal)}</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #EEF2EF;">
+            <td style="padding: 8px 0;">Mobilisation (${region === 'regional' ? 'Regional' : 'Local Gauteng'})</td>
+            <td style="padding: 8px 0; text-align: right;">${fmtZar(mobCost)}</td>
+          </tr>
+          ${addRigging ? `
+          <tr style="border-bottom: 1px solid #EEF2EF;">
+            <td style="padding: 8px 0;">Certified Rigging Crew & Gear</td>
+            <td style="padding: 8px 0; text-align: right;">${fmtZar(riggingCost)}</td>
+          </tr>` : ''}
+          ${addTransport ? `
+          <tr style="border-bottom: 1px solid #EEF2EF;">
+            <td style="padding: 8px 0;">Heavy Transport Lowbed Logistics</td>
+            <td style="padding: 8px 0; text-align: right;">${fmtZar(transportCost)}</td>
+          </tr>` : ''}
+          <tr style="border-bottom: 1px solid #EEF2EF;">
+            <td style="padding: 8px 0; font-weight: 600;">Net Subtotal</td>
+            <td style="padding: 8px 0; text-align: right; font-weight: 600;">${fmtZar(netTotal)}</td>
+          </tr>
+          <tr style="border-bottom: 1px solid #EEF2EF;">
+            <td style="padding: 8px 0; color: var(--muted);">SA Value Added Tax (15%)</td>
+            <td style="padding: 8px 0; text-align: right; color: var(--muted);">${fmtZar(vat)}</td>
+          </tr>
+          <tr style="font-size: 15px; font-weight: 700;">
+            <td style="padding: 10px 0;">Indicative Total</td>
+            <td style="padding: 10px 0; text-align: right; color: var(--ink);">${fmtZar(grandTotal)}</td>
+          </tr>
+        </tbody>
+      </table>
+    `;
+  }
+}
+
+function handleSpecsSubmit(e) {
+  e.preventDefault();
+  switchStep(1);
+}
+
+function handleDemoBooking(e) {
+  e.preventDefault();
+  const box = document.getElementById('demoResultBox');
+  if (box) box.style.display = 'block';
+}
+
+function init3D() {
+  const canvas = document.getElementById('threeCanvas');
+  const fallback = document.getElementById('canvasFallback');
+  if (!canvas) return;
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    autoRotate3D = false;
+  }
+
+  try {
+    scene = new THREE.Scene();
+    camera = new THREE.PerspectiveCamera(45, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
+    camera.position.set(0, 0, 5.5);
+
+    renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+    scene.add(ambientLight);
+
+    const dirLight = new THREE.DirectionalLight(0xf5c518, 1.2);
+    dirLight.position.set(5, 8, 6);
+    scene.add(dirLight);
+
+    hookGroup = new THREE.Group();
+
+    const blockGeo = new THREE.BoxGeometry(1.2, 1.5, 0.55);
+    const blockMat = new THREE.MeshStandardMaterial({ color: 0x1B2722, metalness: 0.7, roughness: 0.3 });
+    const block = new THREE.Mesh(blockGeo, blockMat);
+    hookGroup.add(block);
+
+    const plateGeo = new THREE.BoxGeometry(1.24, 1.1, 0.57);
+    const plateMat = new THREE.MeshStandardMaterial({ color: 0xF5C518, metalness: 0.2, roughness: 0.4 });
+    const plate = new THREE.Mesh(plateGeo, plateMat);
+    hookGroup.add(plate);
+
+    const ringGeo = new THREE.TorusGeometry(0.45, 0.1, 16, 32);
+    const steelMat = new THREE.MeshStandardMaterial({ color: 0xCCCCCC, metalness: 0.9, roughness: 0.2 });
+    const ring = new THREE.Mesh(ringGeo, steelMat);
+    ring.position.y = -1.15;
+    ring.rotation.x = Math.PI / 2;
+    hookGroup.add(ring);
+
+    scene.add(hookGroup);
+
+    function animate() {
+      requestAnimationFrame(animate);
+      if (autoRotate3D && hookGroup) {
+        hookGroup.rotation.y += 0.008;
+      }
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener('resize', () => {
+      if (!canvas) return;
+      camera.aspect = canvas.clientWidth / canvas.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+    });
+
+  } catch (err) {
+    if (fallback) fallback.style.display = 'flex';
+  }
+}
+
+function reset3DCamera() {
+  if (hookGroup) hookGroup.rotation.set(0, 0, 0);
+}
+
+function toggle3DRotation() {
+  autoRotate3D = !autoRotate3D;
+}
+</script>
+
+</body>
+</html>
