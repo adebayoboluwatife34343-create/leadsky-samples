@@ -1,0 +1,1433 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Absa Corporate Command Centre · Independent Concept</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{--paper:#fffcfa;--red:#af0037;--ink:#30282d;--pink:#f7e5eb;--sage:#e8ede9;--line:#e7dfe1;--muted:#6a6065;--white:#fff;--green:#28634b;--radius:15px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.55 'Noto Sans',sans-serif}
+button,input,select,textarea{font:inherit}button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}button{cursor:pointer}a{color:inherit}button{color:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #af0037;outline-offset:3px}
+button:disabled{opacity:.5;cursor:not-allowed}h1,h2,h3,h4,p{margin:0}
+h1,h2,h3,h4,.number{font-family:Archivo,sans-serif}
+h1{font-size:clamp(29px,3.5vw,47px);letter-spacing:-1.7px;line-height:1.1;font-weight:600}
+h2{font-size:25px;line-height:1.2;letter-spacing:-.6px}h3{font-size:17px;line-height:1.3}
+small,.small{font-size:11px}.muted{color:var(--muted)}.eyebrow{text-transform:uppercase;letter-spacing:1.8px;font-size:10px;font-weight:700}
+.disclosure{background:var(--ink);color:#fff;text-align:center;padding:7px 18px;font-size:10px;letter-spacing:.1px;position:relative;z-index:30}
+.header{position:sticky;top:0;z-index:20;background:rgba(255,252,250,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.header-inner{max-width:1470px;margin:auto;display:flex;align-items:center;gap:30px;padding:15px 40px}
+.logo{width:106px;height:43px;object-fit:contain;object-position:left}
+.divider{height:29px;width:1px;background:var(--line)}
+.workspace-name{font-size:12px;font-weight:600}.workspace-name span{display:block;color:var(--muted);font-size:10px;font-weight:400}
+.nav{margin-left:auto;display:flex;gap:27px;align-items:center}.nav a{text-decoration:none;font-size:12px;font-weight:500}.nav a:hover{color:var(--red)}
+.header-actions{display:flex;align-items:center;gap:12px}
+.btn{border:1px solid var(--line);background:#fff;padding:11px 17px;border-radius:8px;text-decoration:none;font-weight:600;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:background .2s,transform .2s,border-color .2s}
+.btn:hover{background:var(--pink);border-color:#c99aa9}.btn.primary{background:var(--red);color:#fff;border-color:var(--red)}.btn.primary:hover{background:#8e002d}
+.btn.dark{background:var(--ink);border-color:var(--ink);color:white}.btn.small{padding:7px 10px;font-size:11px}
+.text-btn{background:none;border:0;color:var(--red);font-weight:600;font-size:12px;padding:7px 0;text-decoration:underline;text-underline-offset:3px}
+.menu-toggle{width:38px;height:38px;display:none;background:white;border:1px solid var(--line);border-radius:8px;font-size:19px}
+.count{background:var(--pink);color:var(--red);font-size:10px;min-width:19px;height:19px;display:inline-grid;place-items:center;border-radius:6px}
+.shell{max-width:1470px;margin:auto;padding:27px 40px 60px}
+.breadcrumbs{display:flex;justify-content:space-between;font-size:10px;color:var(--muted);margin-bottom:17px}
+.live-dot{display:inline-block;width:6px;height:6px;background:var(--green);border-radius:50%;margin-right:6px}
+
+/* Banner Hero & Visual Feature */
+.banner{background:var(--pink);border:1px solid #efd7df;border-radius:var(--radius);padding:32px 36px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;position:relative;overflow:hidden;align-items:center}
+.banner-info .eyebrow{color:var(--red);margin-bottom:10px}
+.banner-info p{margin-top:12px;font-size:13px;max-width:560px;line-height:1.6}
+.banner-actions{margin-top:20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.banner-visual{position:relative;height:240px;border-radius:12px;overflow:hidden;border:1px solid #e5c3cf;background:#30282d}
+.banner-visual img{width:100%;height:100%;object-fit:cover;display:block}
+.banner-visual-overlay{position:absolute;inset:0;background:linear-gradient(0deg, rgba(48,40,45,0.92) 0%, rgba(48,40,45,0.4) 60%, rgba(0,0,0,0) 100%);display:flex;flex-direction:column;justify-content:space-between;padding:18px;color:#fff}
+
+/* Real Photo Spotlight Pillars */
+.spotlight-section{margin-top:35px}
+.spotlight-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:15px}
+.spotlight-card{position:relative;height:160px;border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:0 4px 12px rgba(0,0,0,0.03)}
+.spotlight-card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s}
+.spotlight-card:hover img{transform:scale(1.05)}
+.spotlight-overlay{position:absolute;inset:0;background:linear-gradient(0deg, rgba(48,40,45,0.92) 0%, rgba(48,40,45,0.2) 60%, rgba(0,0,0,0) 100%);padding:14px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.spotlight-overlay h4{font-size:14px;color:#fff;margin-bottom:2px}
+.spotlight-overlay p{font-size:10px;color:#f7e5eb;opacity:0.9}
+
+.overview-heading{display:flex;justify-content:space-between;align-items:center;margin:30px 0 14px}
+.overview-heading h2{font-size:16px;letter-spacing:0}
+.metrics{display:grid;grid-template-columns:repeat(3,1fr) 1.05fr;gap:13px}
+.metric{border:1px solid var(--line);border-radius:12px;background:#fff;padding:16px 18px}
+.metric-top{display:flex;align-items:center;justify-content:space-between;font-size:10px;color:var(--muted)}
+.currency{border:1px solid var(--line);padding:1px 6px;border-radius:4px;font-size:9px;color:var(--ink)}
+.metric .number{display:block;font-size:25px;font-weight:500;letter-spacing:-.7px;margin:8px 0 3px}
+.metric-foot{font-size:10px;color:var(--muted)}
+.metric.tasks{background:var(--sage);border-color:#dbe4dc;display:flex;gap:17px;align-items:center}
+.tasks .number{font-size:29px;margin:0}
+.task-item{flex:1}.task-item+ .task-item{border-left:1px solid #c5d2c8;padding-left:17px}
+.task-item button{border:0;background:none;padding:0;text-align:left;font-size:10px;text-decoration:underline;text-underline-offset:3px}
+
+.main-grid{display:grid;grid-template-columns:minmax(0,1fr) 275px;gap:25px;margin-top:34px}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:18px}
+.section-top p{font-size:12px;color:var(--muted);margin-top:5px}
+.section-top .index{color:var(--red);font-size:11px;margin-right:9px}
+.search-wrap{position:relative;margin-bottom:15px}
+.search-wrap span{position:absolute;left:16px;top:11px;font-size:20px;color:var(--muted)}
+.search-wrap input{background:#fff;border:1px solid #d9cfd3;padding:13px 90px 13px 46px;border-radius:9px;width:100%;font-size:12px}
+.search-wrap .shortcut{position:absolute;right:12px;top:13px;font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 5px}
+.filters{display:flex;gap:6px;overflow:auto;padding:1px 0 10px;scrollbar-width:thin}
+.filter{white-space:nowrap;border:1px solid transparent;background:transparent;border-radius:6px;padding:8px 11px;font-size:11px;color:var(--muted)}
+.filter.active{background:var(--ink);color:#fff}.filter:hover:not(.active){background:var(--pink)}
+.results{display:flex;justify-content:space-between;align-items:center;font-size:10px;color:var(--muted);margin:3px 0 13px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.service-card{border:1px solid var(--line);border-radius:12px;background:#fff;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s}
+.service-card:hover{border-color:#bd8d9c;box-shadow:0 7px 18px #30282d08}
+.card-photo{height:140px;overflow:hidden;position:relative;background:#e7e6e2}
+.card-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
+.service-card:hover img{transform:scale(1.04)}
+.photo-tag{position:absolute;left:10px;bottom:9px;background:rgba(48,40,45,0.85);backdrop-filter:blur(4px);padding:4px 8px;border-radius:4px;font-size:8.5px;letter-spacing:.5px;text-transform:uppercase;color:#fff;font-weight:600}
+.card-body{padding:15px 14px 0;flex:1}.card-body h3{font-size:15px;letter-spacing:-.3px;margin-bottom:7px}.card-body p{font-size:11px;line-height:1.65;color:var(--muted)}
+.card-foot{margin:14px 14px 0;padding:11px 0;border-top:1px solid #eee8ea;display:flex;justify-content:space-between;align-items:center;gap:5px}
+.record-label{font-size:9px;color:var(--muted)}
+.card-open{border:0;background:none;font-size:11px;color:var(--red);font-weight:700;padding:6px 0;white-space:nowrap}
+.card-open span{margin-left:5px}
+
+.sidebar{position:sticky;top:100px;align-self:start}
+.basket{border:1px solid var(--line);border-radius:13px;background:white;overflow:hidden}
+.basket-title{display:flex;align-items:center;justify-content:space-between;padding:19px 18px 14px;border-bottom:1px solid var(--line)}
+.basket-title h2{font-size:15px;letter-spacing:0}
+.basket-sub{font-size:10px;color:var(--muted);padding:12px 18px 0}
+.basket-content{padding:16px 18px}
+.empty-basket{padding:17px 0 21px}.empty-basket h3{font-size:13px;margin-bottom:6px}.empty-basket p{font-size:11px;color:var(--muted)}
+.basket-item{padding:12px 0;border-bottom:1px solid var(--line)}
+.basket-item h4{font-size:12px;margin-bottom:4px}.basket-item p{font-size:10px;color:var(--muted)}
+.basket-item .actions{display:flex;gap:14px;margin-top:5px}.basket-item .text-btn{font-size:10px;padding:2px 0}
+.basket-bottom{padding:15px 18px;background:#faf7f6;border-top:1px solid var(--line)}.basket-bottom .btn{width:100%}
+.basket-bottom p{font-size:9px;text-align:center;margin-top:9px;color:var(--muted)}
+
+.assistant-card{background:var(--sage);border:1px solid #d7e0d9;border-radius:12px;padding:17px 18px;margin-top:14px}
+.assistant-card .eyebrow{font-size:8px;color:var(--green)}
+.assistant-card h3{font-size:16px;margin:8px 0}.assistant-card p{font-size:11px;color:#536059;margin-bottom:14px}
+.assistant-card .btn{width:100%;background:transparent;border-color:#adbbb1}
+.side-note{font-size:9px;color:var(--muted);padding:15px 5px;line-height:1.7}
+
+.how{background:var(--red);color:white;border-radius:13px;padding:27px 30px;margin-top:30px}
+.how-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:23px}
+.how h2{font-size:21px;max-width:330px}.how-top p{font-size:10px;color:#f8dbe4;max-width:240px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.step{border-top:1px solid #d2547c;padding-top:13px}
+.step small{color:#f5d0dc;font-size:9px}.step h3{font-size:13px;margin:7px 0}.step p{font-size:10px;color:#fbe5ed;line-height:1.7}
+
+.footer{max-width:1470px;border-top:1px solid var(--line);margin:0 auto;padding:28px 40px 40px;font-size:10px;color:var(--muted)}
+.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer strong{font-size:12px;color:var(--ink)}.footer details{margin-top:18px;background:#fcf9f9;padding:14px 18px;border-radius:8px;border:1px solid var(--line)}
+.footer summary{cursor:pointer;color:var(--ink);font-weight:600}.credits{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:14px}
+.footer p{margin-top:10px;max-width:950px;line-height:1.6}.footer a{text-underline-offset:3px}
+
+.mobile-basket{display:none}
+.no-results{grid-column:1/-1;border:1px dashed #cdbac1;padding:35px;text-align:center;border-radius:12px}.no-results p{margin:9px}
+
+.overlay{position:fixed;inset:0;z-index:100;background:rgba(36,22,30,0.75);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;padding:25px}
+.overlay[hidden]{display:none}
+.dialog{width:min(850px,100%);max-height:90dvh;overflow:auto;background:var(--paper);border-radius:18px;box-shadow:0 25px 100px rgba(22,6,13,0.35);animation:modal-in .2s ease-out}
+.dialog-head{position:sticky;top:0;z-index:2;background:var(--paper);padding:23px 27px 17px;border-bottom:1px solid var(--line);display:flex;align-items:start;justify-content:space-between;gap:14px}
+.dialog-head .eyebrow{color:var(--red);margin-bottom:7px;font-size:9px}.dialog-head h2{font-size:25px}
+.close{width:34px;height:34px;border:1px solid var(--line);border-radius:50%;background:white;font-size:22px;flex-shrink:0;line-height:1}
+.dialog-body{padding:23px 27px 27px}
+
+.tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin-bottom:21px}
+.tabs button{border:0;background:none;padding:10px 14px;color:var(--muted);font-size:12px;border-bottom:2px solid transparent}
+.tabs button.active{border-bottom-color:var(--red);color:var(--red);font-weight:700}
+
+.notice{background:var(--pink);border-radius:8px;padding:12px 14px;font-size:11px;margin:15px 0;color:#70233b}
+.notice.green{background:var(--sage);color:#28503d}
+
+.detail-hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;margin-bottom:15px}
+.detail-hero-img-wrap{position:relative;height:200px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.detail-hero-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.detail-hero-img-wrap .overlay-label{position:absolute;bottom:0;inset-x:0;background:linear-gradient(0deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);color:#fff;padding:12px;font-size:10px}
+.detail-hero h3{font-size:22px;margin-bottom:10px}.detail-hero p{font-size:12px;color:var(--muted)}.detail-hero .btn{margin-top:16px}
+
+.data-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:9px;margin:15px 0}
+.data-table{border-collapse:collapse;width:100%;font-size:11px;white-space:nowrap}
+.data-table th{text-align:left;font-size:9px;font-weight:600;color:var(--muted);background:#f5f0ef}
+.data-table td,.data-table th{padding:12px;border-bottom:1px solid var(--line)}
+.data-table tr:last-child td{border-bottom:0}
+.data-table tr.matched{background:var(--sage)}.data-table td button{font-size:10px}
+
+.toolbar{display:flex;gap:9px;align-items:center;justify-content:space-between;flex-wrap:wrap;margin-bottom:12px}
+.toolbar select{padding:8px;border:1px solid var(--line);border-radius:6px;background:white;font-size:11px}
+.pill{display:inline-block;font-size:9px;padding:3px 7px;border-radius:5px;background:var(--pink);color:#8c2044}
+.pill.green{background:var(--sage);color:var(--green)}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}
+.field label{font-size:11px;font-weight:600}
+.field input,.field select,.field textarea{width:100%;padding:11px;border:1px solid #cfc3c8;border-radius:7px;background:white;color:var(--ink);min-width:0}
+.field small{font-size:10px;color:var(--muted)}
+.form-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:22px;flex-wrap:wrap}
+
+.review-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0}
+.review-list div{background:#f5efef;padding:11px;border-radius:7px;font-size:12px;overflow-wrap:anywhere}
+.review-list span{display:block;font-size:9px;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.7px}
+
+.approval{border:1px solid var(--line);border-radius:10px;padding:17px;margin-bottom:13px}
+.approval-top{display:flex;justify-content:space-between;gap:10px;align-items:start}
+.approval h3{font-size:15px}.approval p{font-size:11px;color:var(--muted);margin:7px 0}
+.approval .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+
+.trail{border-left:2px solid #ddc2cc;padding-left:15px;margin-top:20px}
+.trail p{font-size:11px;margin-bottom:12px}.trail small{display:block;font-size:9px;color:var(--muted)}
+
+.chat-log{max-height:330px;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:6px 0 18px}
+.message{max-width:90%;background:var(--sage);border-radius:10px 10px 10px 0;padding:13px 15px;font-size:12px;white-space:pre-line}
+.message.user{align-self:flex-end;background:var(--pink);border-radius:10px 10px 0 10px}
+.suggestions{display:flex;gap:6px;flex-wrap:wrap;margin:13px 0}
+.suggestions button{font-size:10px;background:white;border:1px solid var(--line);padding:8px 10px;border-radius:20px}
+.chat-form{display:flex;gap:8px}.chat-form input{min-width:0;flex:1;padding:12px;border:1px solid #cfc3c8;border-radius:8px}
+
+.menu-links{display:flex;flex-direction:column}
+.menu-links a,.menu-links button{font:500 18px Archivo,sans-serif;text-align:left;text-decoration:none;background:none;border:0;border-bottom:1px solid var(--line);padding:19px 0}
+
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:200;background:var(--ink);color:white;border-radius:9px;padding:13px 21px;box-shadow:0 5px 20px rgba(0,0,0,0.2);font-size:12px;width:max-content;max-width:90vw}
+.toast[hidden]{display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+@keyframes modal-in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes basket-pulse{50%{background:#f5d4df}}.pulse{animation:basket-pulse .5s}
+.scenario{background:var(--sage);border-radius:9px;padding:16px;margin-top:15px}.scenario .number{font-size:28px;display:block}
+.split-stat{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+
+@media(max-width:1100px){
+  .header-inner{padding:13px 25px;gap:20px}.nav{gap:17px}.workspace-name{display:none}
+  .shell{padding:23px 25px 45px}.main-grid{grid-template-columns:minmax(0,1fr) 240px;gap:20px}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}.metrics{gap:9px}.metric{padding:14px}.metric .number{font-size:21px}
+  .banner{grid-template-columns:1fr}.spotlight-grid{grid-template-columns:repeat(2,1fr)}
+  .how{padding:24px}.footer{padding:24px}
+}
+@media(max-width:760px){
+  .header-inner{padding:10px 18px;gap:12px}.logo{width:88px;height:34px}.divider,.workspace-name,.nav{display:none}
+  .header-actions{margin-left:auto;gap:8px}.header-actions>.btn{font-size:10px;padding:8px 11px}.menu-toggle{display:block;width:34px;height:34px}
+  .shell{padding:18px 18px 40px}.breadcrumbs{font-size:8px;margin-bottom:11px}
+  .banner{padding:21px;border-radius:12px;grid-template-columns:1fr}.banner h1{font-size:30px;letter-spacing:-1.2px}
+  .banner-visual{height:180px}
+  .spotlight-grid{grid-template-columns:1fr;gap:10px}
+  .metrics{grid-template-columns:repeat(3,1fr);gap:7px}
+  .metric{padding:11px 9px;border-radius:9px}.metric-top{font-size:8px;display:block}.currency{display:inline-block;margin-top:5px;font-size:8px}
+  .metric .number{font-size:17px;letter-spacing:-.5px;margin-top:7px}.metric-foot{font-size:8px}
+  .metric.tasks{grid-column:1/-1;padding:10px 14px;gap:14px}.tasks .number{font-size:21px}
+  .main-grid{display:block;margin-top:27px}.sidebar{display:none}
+  .section-top{margin-bottom:14px}.section-top h2{font-size:20px}.section-top p{font-size:10px;max-width:240px}.section-top .eyebrow{display:none}
+  .search-wrap input{font-size:11px;padding-top:12px;padding-bottom:12px;padding-right:15px}.shortcut{display:none}
+  .filters{margin-right:-18px;padding-right:18px;gap:3px}.filter{font-size:10px;padding:8px 10px}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.card-photo{height:115px}
+  .card-body{padding:12px 11px 0}.card-body h3{font-size:13px;line-height:1.3;min-height:34px}.card-body p{font-size:10px;line-height:1.6}
+  .card-foot{margin:12px 11px 0;display:block;padding:8px 0}.record-label{display:block;font-size:8px}.card-open{font-size:10px;padding:6px 0 2px}
+  .how{padding:22px 20px;margin-top:24px}.how-top{display:block;margin-bottom:20px}.how h2{font-size:23px}.steps{grid-template-columns:1fr;gap:15px}
+  .footer{padding:22px 18px 100px}.credits{grid-template-columns:1fr;font-size:9px}
+  .mobile-basket{display:flex;align-items:center;justify-content:space-between;position:fixed;bottom:0;left:0;right:0;z-index:30;background:var(--ink);color:white;padding:12px 18px max(12px,env(safe-area-inset-bottom));box-shadow:0 -3px 20px rgba(0,0,0,0.2)}
+  .mobile-basket strong{display:block;font-size:12px}.mobile-basket small{font-size:9px;color:#e0cdd5}.mobile-basket .btn{background:#fff;color:var(--ink);font-size:10px;padding:10px 14px}
+  .overlay{padding:12px}.dialog{max-height:92dvh;border-radius:13px}.dialog-head{padding:18px}.dialog-head h2{font-size:21px}.dialog-body{padding:18px}
+  .detail-hero{grid-template-columns:1fr;gap:16px}.detail-hero-img-wrap{height:160px}.form-grid{grid-template-columns:1fr}.review-list{grid-template-columns:1fr}
+}
+@media(max-width:360px){.cards{grid-template-columns:1fr}.card-photo{height:145px}.card-body h3{min-height:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.service-card:hover img,.spotlight-card:hover img{transform:none}}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Independent website concept by LeadSky for Absa. Not their official website.</div>
+
+<header class="header">
+  <div class="header-inner">
+    <a href="#top" aria-label="Absa Corporate and Investment Banking Home"><img class="logo" src="img/business-logo-1.svg" alt="Absa Corporate and Investment Banking logo" loading="eager"></a>
+    <div class="divider"></div>
+    <div class="workspace-name">Corporate Command Centre<span>Independent product concept</span></div>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#catalogue">Catalogue</a>
+      <a href="#overview">Overview</a>
+      <a href="#spotlight">Pillars</a>
+      <a href="#" data-action="approvals">Approvals <span class="count approval-count">0</span></a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn" data-action="basket">Review basket <span class="count basket-count">0</span></button>
+      <button class="menu-toggle" data-action="menu" aria-label="Open full menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main class="shell" id="top">
+  <div class="breadcrumbs">
+    <span>Corporate &amp; Investment Banking <span aria-hidden="true"> / </span> Unified Workspace Concept</span>
+    <span><i class="live-dot"></i>Local simulation · No live connections</span>
+  </div>
+
+  <section class="banner" aria-labelledby="page-title">
+    <div class="banner-info">
+      <div class="eyebrow">One workspace. Connected possibilities.</div>
+      <h1 id="page-title">Absa Corporate<br>Command Centre</h1>
+      <p>Explore cash management, trade finance, and foreign exchange in one unified proposed workspace. Inspect real service structures, test reconciliation workflows, and configure custom treasury requests.</p>
+      <div class="banner-actions">
+        <a class="btn primary" href="#catalogue">Explore sample workspace <span aria-hidden="true">↗</span></a>
+        <button class="btn" data-action="assistant">Ask Assistant <span aria-hidden="true">💬</span></button>
+      </div>
+    </div>
+    <div class="banner-visual">
+      <img src="img/business-featured-2.png" alt="Absa Johannesburg Corporate Headquarters" loading="eager">
+      <div class="banner-visual-overlay">
+        <span class="eyebrow" style="color:#f7e5eb">Absa Regional Hub</span>
+        <div>
+          <strong style="font-size:15px;display:block">Pan-African Gateway</strong>
+          <small style="color:#e8ede9">Johannesburg Corporate Architecture</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real Photo Spotlight Pillars Section -->
+  <section id="spotlight" class="spotlight-section" aria-labelledby="spotlight-title">
+    <div class="section-top">
+      <div>
+        <h2 id="spotlight-title"><span class="index">00 /</span>Key Strategic Pillars</h2>
+        <p>Connecting regional banking infrastructure with international commerce.</p>
+      </div>
+      <span class="eyebrow muted">Infrastructure &amp; Capabilities</span>
+    </div>
+    <div class="spotlight-grid">
+      <article class="spotlight-card">
+        <img src="img/business-featured-2.png" alt="Absa Johannesburg Corporate Headquarters" loading="lazy">
+        <div class="spotlight-overlay">
+          <h4>Regional Command</h4>
+          <p>Johannesburg Hub &amp; Capital Markets</p>
+        </div>
+      </article>
+      <article class="spotlight-card">
+        <img src="img/stock-1.jpg" alt="Commercial container port cranes and freighter vessel at night" loading="lazy">
+        <div class="spotlight-overlay">
+          <h4>Maritime Trade</h4>
+          <p>Documentary &amp; Supply Chain</p>
+        </div>
+      </article>
+      <article class="spotlight-card">
+        <img src="img/stock-7.jpg" alt="Photovoltaic solar energy farm in daylight" loading="lazy">
+        <div class="spotlight-overlay">
+          <h4>Sustainable Energy</h4>
+          <p>Green &amp; Renewable Infrastructure</p>
+        </div>
+      </article>
+      <article class="spotlight-card">
+        <img src="img/stock-10.jpg" alt="Modern commercial office tower window architecture" loading="lazy">
+        <div class="spotlight-overlay">
+          <h4>Global Liquidity</h4>
+          <p>Multi-Currency Custody &amp; FX</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="overview" aria-labelledby="overview-title">
+    <div class="overview-heading">
+      <h2 id="overview-title">Your connected sample overview</h2>
+      <button class="text-btn" data-action="accounts">View sample accounts ↗</button>
+    </div>
+    <div class="metrics">
+      <div class="metric">
+        <div class="metric-top">Available balance <span class="currency">ZAR</span></div>
+        <span class="number">12,480,000<span style="font-size:.55em">.00</span></span>
+        <div class="metric-foot">2 sample accounts · Excludes pending</div>
+      </div>
+      <div class="metric">
+        <div class="metric-top">Available balance <span class="currency">USD</span></div>
+        <span class="number">845,200<span style="font-size:.55em">.00</span></span>
+        <div class="metric-foot">1 sample account · Excludes pending</div>
+      </div>
+      <div class="metric">
+        <div class="metric-top">Available balance <span class="currency">EUR</span></div>
+        <span class="number">326,400<span style="font-size:.55em">.00</span></span>
+        <div class="metric-foot">1 sample account · Excludes pending</div>
+      </div>
+      <div class="metric tasks">
+        <div class="task-item">
+          <span class="number approval-count">0</span>
+          <button data-action="approvals">Pending<br>sample approvals ↗</button>
+        </div>
+        <div class="task-item">
+          <span class="number exception-count">1</span>
+          <button data-action="reconcile">Reconciliation<br>exception ↗</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="main-grid">
+    <div>
+      <section id="catalogue" aria-labelledby="catalogue-title">
+        <div class="section-top">
+          <div>
+            <h2 id="catalogue-title"><span class="index">01 /</span>Your Service Catalogue</h2>
+            <p>Explore Absa Corporate and Investment Banking services through a connected demo workspace.</p>
+          </div>
+          <span class="eyebrow muted">Explore · Configure · Review</span>
+        </div>
+        
+        <div class="search-wrap">
+          <span aria-hidden="true">⌕</span>
+          <label class="sr-only" for="search">Search services or sample references</label>
+          <input id="search" type="search" placeholder="Search services or sample references…" autocomplete="off">
+          <kbd class="shortcut">/ to search</kbd>
+        </div>
+        
+        <div class="filters" role="group" aria-label="Filter services by category"></div>
+        
+        <div class="results">
+          <span id="results-count" role="status">10 services in your workspace</span>
+          <button class="text-btn" id="clear-filters" style="font-size:10px;padding:0">Clear filters</button>
+        </div>
+        
+        <div class="cards" id="cards"></div>
+      </section>
+
+      <section class="how" aria-labelledby="how-title">
+        <div class="how-top">
+          <h2 id="how-title">Less switching.<br>More connected decisions.</h2>
+          <p>A proposed unified corporate workflow that keeps accounts, trade requests, and approvals together. Explore it with live sample records.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <small>01</small>
+            <h3>See the connected picture</h3>
+            <p>Inspect multi-currency cash balances, payment records, and international trade lines in one dashboard.</p>
+          </div>
+          <div class="step">
+            <small>02</small>
+            <h3>Connect missing details</h3>
+            <p>Match unmatched payments directly to outstanding invoices to resolve reconciliation exceptions.</p>
+          </div>
+          <div class="step">
+            <small>03</small>
+            <h3>Keep requests moving</h3>
+            <p>Build draft instructions, review your treasury basket, and simulate internal manager approval flows.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <aside class="sidebar" aria-label="Request basket and assistant">
+      <div class="basket" id="desktop-basket">
+        <div class="basket-title">
+          <h2>Request basket</h2>
+          <span class="count basket-count">0</span>
+        </div>
+        <div class="basket-sub">Draft instructions · Sample workspace</div>
+        <div class="basket-content" id="basket-preview"></div>
+        <div class="basket-bottom">
+          <button class="btn dark" data-action="basket">Review sample requests <span aria-hidden="true">→</span></button>
+          <p>No payments. No purchases. No bank submission.</p>
+        </div>
+      </div>
+
+      <div class="assistant-card">
+        <span class="eyebrow">Scripted workspace assistant</span>
+        <h3>Contextual Treasury Guidance</h3>
+        <p>Ask about unmatched reconciliation items, benchmark FX conversions, or draft approvals.</p>
+        <button class="btn" data-action="assistant">Ask the assistant <span aria-hidden="true">↗</span></button>
+      </div>
+
+      <div class="side-note">
+        <strong>Built for exploration, not execution.</strong><br>
+        Balances, beneficiaries, conversion rates, and approvals are sample records. No bank login required.
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-row">
+    <strong>Concept by LeadSky <span style="color:var(--red)">↗</span></strong>
+    <span>Made for a more connected corporate banking experience.<br><a href="https://cib.absa.africa/" target="_blank" rel="noopener">Visit the official Absa CIB website ↗</a></span>
+  </div>
+  <p>Independent private evaluation concept. Not endorsed by Absa. This interface is an illustrative prototype for proposed integration improvements. Live banking connectivity, payment execution, and production AI are not included. All state is maintained locally in memory.</p>
+  
+  <details>
+    <summary>Concept sources, photography &amp; permissions</summary>
+    <p>Service structures are modeled after public Absa CIB offerings. Logo: <a href="https://cib.absa.africa/wp-content/uploads/2024/02/n-absa-logo-cib.svg" target="_blank" rel="noopener">Absa CIB</a>. Business asset permission unconfirmed for production; permission required before public commercial use. Stock photography below is licensed commercial photography from Pixabay Content License (free for commercial use, no attribution required).</p>
+    <div class="credits">
+      <div><strong>Absa Brand &amp; Featured:</strong> Absa CIB Public Media Assets</div>
+      <div><strong>Balance Reporting:</strong> <a href="https://pixabay.com/photos/city-buildings-architecture-182223/" target="_blank" rel="noopener">12019 / Pixabay</a></div>
+      <div><strong>Electronic Payments:</strong> <a href="https://pixabay.com/photos/port-pier-cargo-containers-crate-1845350/" target="_blank" rel="noopener">Pexels / Pixabay</a></div>
+      <div><strong>Reconciliation:</strong> <a href="https://pixabay.com/photos/factory-building-industry-1140760/" target="_blank" rel="noopener">652234 / Pixabay</a></div>
+      <div><strong>Liquidity:</strong> <a href="https://pixabay.com/photos/photovoltaic-system-solar-2742302/" target="_blank" rel="noopener">mrganso / Pixabay</a></div>
+      <div><strong>Documentary Trade:</strong> <a href="https://pixabay.com/photos/port-container-ship-night-7418239/" target="_blank" rel="noopener">LoboStudioHamburg / Pixabay</a></div>
+      <div><strong>Open Account Finance:</strong> <a href="https://pixabay.com/photos/worker-woman-mask-face-mask-6322085/" target="_blank" rel="noopener">Quanlecntt2004 / Pixabay</a></div>
+      <div><strong>Foreign Exchange:</strong> <a href="https://pixabay.com/photos/container-ship-container-transport-6631117/" target="_blank" rel="noopener">dendoktoor / Pixabay</a></div>
+      <div><strong>International Payments:</strong> <a href="https://pixabay.com/photos/ship-container-ship-tractor-6794508/" target="_blank" rel="noopener">Peter_Lindenau / Pixabay</a></div>
+      <div><strong>Custody Portal:</strong> <a href="https://pixabay.com/photos/building-office-business-work-9682225/" target="_blank" rel="noopener">terufilm_japan / Pixabay</a></div>
+      <div><strong>Digital Asset Custody:</strong> <a href="https://pixabay.com/photos/solar-panels-solar-energy-8244680/" target="_blank" rel="noopener">Michael_Pointner / Pixabay</a></div>
+    </div>
+  </details>
+  <button class="text-btn" data-action="reset" style="font-size:10px;margin-top:12px">Reset sample workspace</button>
+</footer>
+
+<div class="mobile-basket">
+  <div>
+    <strong>Request basket <span class="basket-count">0</span></strong>
+    <small>Sample requests · Nothing is sent</small>
+  </div>
+  <button class="btn" data-action="basket">Review basket →</button>
+</div>
+
+<div class="overlay" id="overlay" hidden>
+  <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" tabindex="-1">
+    <div class="dialog-head">
+      <div>
+        <div class="eyebrow" id="dialog-label">Sample workspace</div>
+        <h2 id="dialog-title"></h2>
+      </div>
+      <button class="close" id="close-dialog" aria-label="Close dialog">×</button>
+    </div>
+    <div class="dialog-body" id="dialog-body"></div>
+  </section>
+</div>
+
+<div class="toast" id="toast" role="status" hidden></div>
+<div class="sr-only" id="announcer" aria-live="polite"></div>
+
+<script>
+'use strict';
+
+const services = [
+  {id:'balance',name:'Balance Reporting',cat:'Cash management',image:'img/stock-9.jpg',alt:'Modern commercial skyline and office buildings in daylight',description:'A clearer view of available operating cash across multi-currency accounts.',records:'4 sample accounts',refs:'ACC-ZAR-01 ACC-ZAR-02 ACC-USD-01 ACC-EUR-01',purpose:'Inspect cash balances without losing underlying statement details.',detail:'View available balances and pending holds separately. Filter accounts by currency, sort by liquid value, and drill into specific transaction lines.'},
+  {id:'payments',name:'Electronic Payments',cat:'Cash management',image:'img/stock-2.jpg',alt:'Shipping container yard and commercial port freight infrastructure',description:'Prepare batch or single electronic payments with integrated beneficiary validation.',records:'3 sample payments',refs:'PAY-1042 PAY-1043 PAY-1044',purpose:'From payment configuration to multi-level basket review.',detail:'Select verified beneficiaries, validate account currency alignment, and route proposed instructions to your internal treasury basket.'},
+  {id:'reconciliation',name:'Information & Reconciliation Services',cat:'Cash management',image:'img/stock-3.jpg',alt:'Industrial steel manufacturing facility building structure',description:'Automatically connect payment movements with open supplier invoices.',records:'1 sample exception',refs:'PAY-1042 INV-2081',purpose:'Resolve unmatched treasury line items with clear matching context.',detail:'Investigate sample exception PAY-1042. Connect the matching supplier invoice INV-2081, monitor exception counter updates, or test reversing matches.'},
+  {id:'liquidity',name:'Liquidity Optimisation',cat:'Cash management',image:'img/stock-7.jpg',alt:'Photovoltaic solar energy farm in daylight',description:'Explore yield allocation scenarios while preserving daily operating cash buffers.',records:'1 sample scenario',refs:'LIQ-001',purpose:'Model cash deployment strategies with transparent yield calculations.',detail:'Compare retained operating reserves against term deployment options. Includes real-time simple interest modeling for internal evaluation.'},
+  {id:'trade',name:'Documentary Trade Finance',cat:'Trade finance',image:'img/stock-1.jpg',alt:'Container vessel docked at commercial cargo port in evening',description:'Consolidate letters of credit, trade references, and issuance dates into single draft requests.',records:'2 sample trade records',refs:'TRD-3101 TRD-3102',purpose:'Keep trade finance requests directly connected to commercial contracts.',detail:'Draft documentary trade requests using structured reference formats. No physical documentation is transmitted in this simulation.'},
+  {id:'open',name:'Open Account Finance',cat:'Trade finance',image:'img/stock-4.jpg',alt:'Factory technician wearing industrial protective face mask',description:'Request working capital financing against verified supplier and buyer invoices.',records:'2 sample invoices',refs:'OAF-201 OAF-202',purpose:'Bridge supply chain payment terms with tailored invoice financing.',detail:'Select sample trade invoices to calculate eligible advance amounts and build financing requests for treasury sign-off.'},
+  {id:'fx',name:'Foreign Exchange',cat:'FX & international',image:'img/stock-5.jpg',alt:'Large container transport freighter ship navigating open sea',description:'Calculate multi-currency conversions using fixed benchmark market parameters.',records:'3 benchmark pairs',refs:'FX-USD-ZAR FX-EUR-ZAR FX-EUR-USD',purpose:'Understand cross-currency requirements before creating payment drafts.',detail:'Select currency pairs to calculate indicative conversions. Rates are fixed sample benchmarks for workflow demonstration.'},
+  {id:'international',name:'International Payments',cat:'FX & international',image:'img/stock-6.jpg',alt:'Tractor trailer towing shipping container at ocean port',description:'Route cross-border funds transfers with pre-filled regulatory payment purpose codes.',records:'2 sample beneficiaries',refs:'INT-501 INT-502',purpose:'Prepare international settlement instructions in a single step.',detail:'Review settlement currencies, intermediary banking parameters, and compliance details prior to routing for internal approval.'},
+  {id:'custody',name:'Custody Online Portal',cat:'Investor services',image:'img/stock-10.jpg',alt:'Glass architectural facade of modern financial tower',description:'Monitor corporate investment holdings, equity positions, and corporate actions.',records:'2 sample positions',refs:'CUS-401 CUS-402',purpose:'Maintain visibility over safekept corporate assets and valuation reports.',detail:'Explore sample bond and equity holdings with clear unit breakdowns and valuation breakdowns.'},
+  {id:'digital',name:'Digital Asset Custody',cat:'Investor services',image:'img/stock-8.jpg',alt:'Solar panels array generating clean renewable power',description:'Explore institutional digital asset safekeeping capabilities and governance framework.',records:'Information request',refs:'DAC-001',purpose:'Request formal institutional specifications for digital asset infrastructure.',detail:'Configure information requests regarding key management, regulatory controls, and vault architecture.'}
+];
+
+const categories = ['All','Cash management','Trade finance','FX & international','Investor services'];
+
+const accounts = [
+  {id:'ACC-ZAR-01',name:'Main Operating Account',currency:'ZAR',balance:8480000,pending:-125000},
+  {id:'ACC-ZAR-02',name:'Reserve Operations Account',currency:'ZAR',balance:4000000,pending:0},
+  {id:'ACC-USD-01',name:'US Dollar Operating Account',currency:'USD',balance:845200,pending:-42000},
+  {id:'ACC-EUR-01',name:'Euro Treasury Settlement',currency:'EUR',balance:326400,pending:18500}
+];
+
+const transactions = [
+  {ref:'PAY-1042',account:'ACC-ZAR-01',desc:'Supplier Payment · Industrial Supplies',currency:'ZAR',amount:-125000,status:'Pending'},
+  {ref:'PAY-1043',account:'ACC-ZAR-01',desc:'Customer Collection · Retail Partner',currency:'ZAR',amount:320000,status:'Posted'},
+  {ref:'PAY-1044',account:'ACC-USD-01',desc:'Equipment Purchase · Global Machinery',currency:'USD',amount:-42000,status:'Pending'},
+  {ref:'INT-502',account:'ACC-EUR-01',desc:'Logistics Settlement · European Port',currency:'EUR',amount:18500,status:'Pending'}
+];
+
+const beneficiaries = [
+  {name:'Sample Industrial Supplies Ltd',currency:'ZAR',ref:'BEN-001'},
+  {name:'Sample Global Equipment Corp',currency:'USD',ref:'BEN-002'},
+  {name:'Sample European Logistics BV',currency:'EUR',ref:'BEN-003'}
+];
+
+const state = {
+  category: 'All',
+  query: '',
+  basket: [],
+  approvals: [],
+  matched: false,
+  trail: [],
+  next: 1,
+  chats: [],
+  accountCurrency: 'All',
+  accountSort: 'desc',
+  accountDrill: null
+};
+
+let activeService = null, currentTab = 'overview', editId = null, formDraft = {}, returnFocus = null, toastTimer = null;
+
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => [...document.querySelectorAll(s)];
+const esc = (v) => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money = (n) => Number(n).toLocaleString('en-ZA', {minimumFractionDigits:2, maximumFractionDigits:2});
+const service = (id) => services.find(s => s.id === id);
+
+function makeImgHtml(src, alt, width, height, className) {
+  const safeAlt = esc(alt ?? '');
+  let attrs = 'src="' + src + '" alt="' + safeAlt + '" loading="lazy" decoding="async"';
+  if (width) attrs += ' width="' + width + '"';
+  if (height) attrs += ' height="' + height + '"';
+  if (className) attrs += ' class="' + className + '"';
+  return '<img ' + attrs + '>';
+}
+
+function announce(t) { $('#announcer').textContent = t; }
+function toast(t) {
+  clearTimeout(toastTimer);
+  $('#toast').textContent = t;
+  $('#toast').hidden = false;
+  announce(t);
+  toastTimer = setTimeout(() => $('#toast').hidden = true, 4500);
+}
+
+function log(text) {
+  state.trail.unshift({
+    text,
+    time: new Date().toLocaleTimeString('en-GB', {hour:'2-digit', minute:'2-digit', second:'2-digit'})
+  });
+}
+
+function renderFilters() {
+  $('.filters').innerHTML = categories.map(c => 
+    `<button class="filter ${state.category===c?'active':''}" data-category="${esc(c)}" aria-pressed="${state.category===c}">${esc(c)}</button>`
+  ).join('');
+}
+
+function renderCards() {
+  const q = state.query.trim().toLowerCase();
+  const list = services.filter(s => (state.category === 'All' || s.cat === state.category) && [s.name, s.description, s.refs, s.cat].join(' ').toLowerCase().includes(q));
+  
+  $('#cards').innerHTML = list.length ? list.map(s => `
+    <article class="service-card">
+      <div class="card-photo">
+        ${makeImgHtml(s.image, s.alt, 600, 350)}
+        <span class="photo-tag">${esc(s.cat)}</span>
+      </div>
+      <div class="card-body">
+        <h3>${esc(s.name)}</h3>
+        <p>${esc(s.description)}</p>
+      </div>
+      <div class="card-foot">
+        <span class="record-label">${s.id==='reconciliation'?(state.matched?'0 sample exceptions':'1 sample exception'):s.records}</span>
+        <button class="card-open" data-service="${s.id}" aria-label="Explore ${esc(s.name)}">Explore service <span aria-hidden="true">↗</span></button>
+      </div>
+    </article>
+  `).join('') : `
+    <div class="no-results">
+      <h3>No matching services</h3>
+      <p>Try searching for "trade", "payments", or a sample reference like PAY-1042.</p>
+      <button class="btn" data-action="clear">Clear search &amp; filters</button>
+    </div>
+  `;
+  
+  $('#results-count').textContent = `${list.length} ${list.length === 1 ? 'service' : 'services'} ${state.category === 'All' ? 'in your workspace' : 'in ' + state.category.toLowerCase()}`;
+}
+
+function renderGlobal() {
+  $$('.basket-count').forEach(n => n.textContent = state.basket.length);
+  $$('.approval-count').forEach(n => n.textContent = state.approvals.filter(a => a.status === 'Awaiting approval').length);
+  $$('.exception-count').forEach(n => n.textContent = state.matched ? 0 : 1);
+  
+  $('#basket-preview').innerHTML = state.basket.length ? state.basket.map(r => `
+    <div class="basket-item">
+      <h4>${esc(service(r.service).name)}</h4>
+      <p>${esc(requestSummary(r))}</p>
+      <div class="actions">
+        <button class="text-btn" data-edit="${r.id}">Edit</button>
+        <button class="text-btn" data-remove="${r.id}">Remove</button>
+      </div>
+    </div>
+  `).join('') : `
+    <div class="empty-basket">
+      <h3>A connected request starts here.</h3>
+      <p>Explore a service, configure a sample request and add it to your draft review basket.</p>
+    </div>
+  `;
+}
+
+function openDialog(title, label, html) {
+  if ($('#overlay').hidden) {
+    returnFocus = document.activeElement;
+    document.body.style.overflow = 'hidden';
+  }
+  $('#dialog-title').textContent = title;
+  $('#dialog-label').textContent = label;
+  $('#dialog-body').innerHTML = html;
+  $('#overlay').hidden = false;
+  $('.dialog').scrollTop = 0;
+  $('#close-dialog').focus();
+}
+
+function closeDialog() {
+  $('#overlay').hidden = true;
+  document.body.style.overflow = '';
+  if (returnFocus && document.contains(returnFocus)) returnFocus.focus();
+}
+
+function openService(id, tab = 'overview', draft = null, editing = null) {
+  activeService = id;
+  currentTab = tab;
+  formDraft = draft || {};
+  editId = editing;
+  renderService();
+}
+
+function renderService() {
+  const s = service(activeService);
+  const tabs = `
+    <div class="tabs" role="tablist" aria-label="Service detail">
+      <button role="tab" aria-selected="${currentTab==='overview'}" class="${currentTab==='overview'?'active':''}" data-tab="overview">Overview</button>
+      <button role="tab" aria-selected="${currentTab==='records'}" class="${currentTab==='records'?'active':''}" data-tab="records">Sample Records</button>
+      <button role="tab" aria-selected="${currentTab==='request'}" class="${currentTab==='request'?'active':''}" data-tab="request">Configure Request</button>
+    </div>
+  `;
+  
+  let content = '';
+  if (currentTab === 'overview') {
+    content = `
+      <div class="detail-hero">
+        <div class="detail-hero-img-wrap">
+          ${makeImgHtml(s.image, s.alt, 800, 450)}
+          <div class="overlay-label">Absa Service Concept · ${esc(s.cat)}</div>
+        </div>
+        <div>
+          <h3>${esc(s.purpose)}</h3>
+          <p>${esc(s.detail)}</p>
+          <button class="btn primary" data-tab="records">Inspect sample records →</button>
+        </div>
+      </div>
+      <div class="notice">Independent concept · Licensed commercial photography · All records are local demonstration data.</div>
+    `;
+  }
+  if (currentTab === 'records') content = recordsHTML(s.id);
+  if (currentTab === 'request') content = requestForm(s.id);
+  
+  openDialog(s.name, 'Service Quick View · Interactive Concept', tabs + `<div role="tabpanel">${content}</div>`);
+  if (currentTab === 'request') {
+    bindRequest();
+    if (activeService === 'fx') updateFX();
+    if (activeService === 'liquidity') updateLiquidity();
+  }
+}
+
+function table(headers, rows) {
+  return `<div class="data-table-wrap"><table class="data-table"><thead><tr>${headers.map(h => `<th scope="col">${h}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
+}
+
+function recordsHTML(id) {
+  if (id === 'balance') return accountsHTML();
+  if (id === 'payments' || id === 'international') return `
+    <h3>Sample Payment Activity</h3>
+    <p class="small muted">Pending movements are tracked separately from gross available balances.</p>
+    ${transactionTable(id === 'payments' ? transactions.filter(t => t.ref.startsWith('PAY')) : transactions.filter(t => t.ref.startsWith('INT')))}
+    <button class="btn primary" data-tab="request">Prepare a sample payment →</button>
+  `;
+  if (id === 'reconciliation') return `
+    <h3>One Pending Payment. One Missing Invoice Link.</h3>
+    <p class="small muted">Match amounts and references to resolve reconciliation exceptions.</p>
+    ${table(['Record Type','Reference','Currency','Amount','Status'], [
+      `<tr class="${state.matched?'matched':''}"><td>Supplier Payment</td><td>PAY-1042</td><td>ZAR</td><td>125,000.00</td><td>${state.matched?'Matched':'Unmatched Exception'}</td></tr>`,
+      `<tr class="${state.matched?'matched':''}"><td>Supplier Invoice</td><td>INV-2081</td><td>ZAR</td><td>125,000.00</td><td>${state.matched?'Linked to PAY-1042':'Open for matching'}</td></tr>`
+    ])}
+    <div class="notice ${state.matched?'green':''}">${state.matched?'Sample exception resolved. Records are linked; no real funds moved.':'Sample exception: PAY-1042 has no invoice link. Both belong to Sample Industrial Supplies.'}</div>
+    <button class="btn primary" data-action="match">${state.matched ? 'Reverse sample match' : 'Match payment to invoice'}</button>
+  `;
+  if (id === 'trade') return `
+    <h3>Sample Documentary Trade Records</h3>
+    ${table(['Reference','Purpose','Amount','Status'], [
+      '<tr><td>TRD-3101</td><td>Sample Equipment Import LC</td><td>USD 240,000.00</td><td>Draft</td></tr>',
+      '<tr><td>TRD-3102</td><td>Sample Materials Import Guarantee</td><td>EUR 85,000.00</td><td>Under Review</td></tr>'
+    ])}
+    <div class="notice">No live trade documentation is uploaded or transmitted in this concept demo.</div>
+    <button class="btn primary" data-tab="request">Prepare a trade enquiry →</button>
+  `;
+  if (id === 'open') return `
+    <h3>Sample Open Account Invoices</h3>
+    ${table(['Invoice Ref','Counterparty','Amount','Payment Terms'], [
+      '<tr><td>OAF-201</td><td>Sample Global Equipment Ltd</td><td>USD 75,000.00</td><td>60 Days Net</td></tr>',
+      '<tr><td>OAF-202</td><td>Sample European Logistics BV</td><td>EUR 48,000.00</td><td>30 Days Net</td></tr>'
+    ])}
+    <button class="btn primary" data-tab="request">Prepare financing enquiry →</button>
+  `;
+  if (id === 'fx') return `
+    <h3>Benchmark Foreign Exchange Rates</h3>
+    ${table(['Currency Pair','Benchmark Rate','Interpretation'], [
+      '<tr><td>USD → ZAR</td><td>18.50</td><td>1 USD = 18.50 ZAR</td></tr>',
+      '<tr><td>EUR → ZAR</td><td>20.00</td><td>1 EUR = 20.00 ZAR</td></tr>',
+      '<tr><td>EUR → USD</td><td>1.08</td><td>1 EUR = 1.08 USD</td></tr>'
+    ])}
+    <div class="notice">Fixed benchmark rates. Not executable live market prices. Spreads and fees excluded.</div>
+    <button class="btn primary" data-tab="request">Calculate sample exchange →</button>
+  `;
+  if (id === 'liquidity') return `
+    <h3>Sample Cash Deployment Parameters</h3>
+    ${table(['Parameter','Sample Value'], [
+      '<tr><td>Available ZAR Cash</td><td>ZAR 12,480,000.00</td></tr>',
+      '<tr><td>Default Operating Reserve</td><td>ZAR 6,000,000.00</td></tr>',
+      '<tr><td>Benchmark Simple Rate</td><td>6.00% Annual</td></tr>'
+    ])}
+    <button class="btn primary" data-tab="request">Compare allocation scenarios →</button>
+  `;
+  if (id === 'custody') return `
+    <h3>Sample Custody Holdings</h3>
+    ${table(['Position Ref','Instrument Name','Units','Sample Value'], [
+      '<tr><td>CUS-401</td><td>Sample Treasury Bond Series A</td><td>1,000</td><td>ZAR 1,025,000.00</td></tr>',
+      '<tr><td>CUS-402</td><td>Sample Corporate Equity Class B</td><td>2,500</td><td>ZAR 375,000.00</td></tr>'
+    ])}
+    <div class="notice">Demonstration instrument details. Not real financial assets or advice.</div>
+    <button class="btn primary" data-tab="request">Request custody report →</button>
+  `;
+  return `
+    <h3>Digital Asset Custody Information</h3>
+    <p class="muted">Explore proposed institutional governance protocols. Does not connect active wallets or execute digital asset transfers.</p>
+    <div class="notice">Sample specification reference: DAC-001</div>
+    <button class="btn primary" data-tab="request">Prepare information request →</button>
+  `;
+}
+
+function transactionTable(rows) {
+  return table(['Reference','Account','Description','Currency','Amount','Status'], rows.map(t => `
+    <tr>
+      <td>${t.ref}</td>
+      <td>${t.account}</td>
+      <td>${t.desc}</td>
+      <td>${t.currency}</td>
+      <td>${money(t.amount)}</td>
+      <td><span class="pill ${t.status==='Posted'?'green':''}">${t.status}</span></td>
+    </tr>
+  `));
+}
+
+function accountsHTML() {
+  let list = accounts.filter(a => state.accountCurrency === 'All' || a.currency === state.accountCurrency)
+    .sort((a,b) => state.accountSort === 'desc' ? b.balance - a.balance : a.balance - b.balance);
+  let tx = transactions.filter(t => (state.accountCurrency === 'All' || t.currency === state.accountCurrency) && (!state.accountDrill || t.account === state.accountDrill));
+  
+  return `
+    <div class="toolbar">
+      <h3>Sample Accounts &amp; Holdings</h3>
+      <button class="btn small" data-action="export-transactions">Export CSV</button>
+    </div>
+    <div class="toolbar">
+      <label class="small">Filter Currency: 
+        <select id="account-currency" aria-label="Filter accounts by currency">
+          ${['All','ZAR','USD','EUR'].map(c => `<option ${state.accountCurrency===c?'selected':''}>${c}</option>`).join('')}
+        </select>
+      </label>
+      <label class="small">Sort Balance: 
+        <select id="account-sort" aria-label="Sort balances">
+          <option value="desc" ${state.accountSort==='desc'?'selected':''}>High to Low</option>
+          <option value="asc" ${state.accountSort==='asc'?'selected':''}>Low to High</option>
+        </select>
+      </label>
+    </div>
+    ${table(['Account Ref','Currency','Available Balance','Pending Movement','Action'], list.map(a => `
+      <tr>
+        <td>${a.id}<br><small>${a.name}</small></td>
+        <td>${a.currency}</td>
+        <td>${money(a.balance)}</td>
+        <td>${money(a.pending)}</td>
+        <td><button class="text-btn" data-account="${a.id}">Transactions</button></td>
+      </tr>
+    `))}
+    <div class="toolbar">
+      <h3>${state.accountDrill ? esc(state.accountDrill) + ' Transactions' : 'Sample Transactions Log'}</h3>
+      ${state.accountDrill ? '<button class="text-btn" data-action="all-transactions">Show All Accounts</button>' : ''}
+    </div>
+    ${tx.length ? transactionTable(tx) : '<div class="notice">No transactions for selected criteria.</div>'}
+  `;
+}
+
+function input(name, label, type = 'text', value = '', attrs = '') {
+  return `<div class="field"><label for="f-${name}">${label}</label><input id="f-${name}" name="${name}" type="${type}" value="${esc(formDraft[name]??value)}" ${attrs} required></div>`;
+}
+
+function select(name, label, options, value = '') {
+  let v = formDraft[name] ?? value;
+  return `<div class="field"><label for="f-${name}">${label}</label><select id="f-${name}" name="${name}" required>${options.map(o => {
+    const val = typeof o === 'string' ? o : o.value;
+    const text = typeof o === 'string' ? o : o.text;
+    return `<option value="${esc(val)}" ${v===val?'selected':''}>${esc(text)}</option>`;
+  }).join('')}</select></div>`;
+}
+
+function requestForm(id) {
+  let fields = '';
+  if (['payments','international'].includes(id)) {
+    fields = select('beneficiary','Sample Beneficiary', beneficiaries.map(b => ({value:b.ref, text:b.name}))) +
+             select('account','Source Account', accounts.map(a => ({value:a.id, text:a.id+' · '+a.currency}))) +
+             select('currency','Payment Currency', ['ZAR','USD','EUR']) +
+             input('amount','Payment Amount','number','125000','min="0.01" max="1000000000" step="0.01"') +
+             input('reference','Payment Reference','text', id==='payments'?'Supplier Invoice PAY-1042':'Cross-Border Equipment Settlement','maxlength="80"') +
+             (id==='international' ? input('purpose','Regulatory Purpose Code','text','Capital Goods Import','maxlength="120"') : '');
+  } else if (id === 'trade') {
+    fields = select('reference','Sample Trade Ref', ['TRD-3101','TRD-3102']) +
+             select('currency','LC Currency', ['USD','EUR','ZAR']) +
+             input('amount','Requested Amount','number','240000','min="0.01" max="1000000000" step="0.01"') +
+             input('date','Target Issuance Date','date', futureDate(7), `min="${futureDate(0)}"`);
+  } else if (id === 'fx') {
+    fields = select('pair','Currency Pair', ['USD → ZAR','EUR → ZAR','EUR → USD']) +
+             input('amount','Source Amount','number','10000','min="0.01" max="1000000000" step="0.01"') +
+             '<div class="field full"><div id="fx-result" class="scenario" aria-live="polite"></div></div>';
+  } else if (id === 'liquidity') {
+    fields = input('buffer','Retained Operating Reserve (ZAR)','number','6000000','min="0" max="12480000" step="0.01"') +
+             input('days','Deployment Term (Days)','number','30','min="1" max="365" step="1"') +
+             '<div class="field full"><div id="liquidity-result" class="scenario" aria-live="polite"></div></div>';
+  } else if (id === 'open') {
+    fields = select('invoice','Select Sample Invoice', ['OAF-201 · USD 75,000','OAF-202 · EUR 48,000']) +
+             input('amount','Financing Requested','number','50000','min="0.01" max="75000" step="0.01"') +
+             input('reference','Working Capital Ref','text','Supplier Advance Request','maxlength="100"');
+  } else if (id === 'custody') {
+    fields = select('scope','Holding Scope', ['All Sample Holdings','CUS-401 · Treasury Bond A','CUS-402 · Corporate Equity B']) +
+             select('format','Report Format', ['Position Summary','Full Valuation Breakdown']) +
+             input('reference','Report Reference','text','Quarterly Custody Statement','maxlength="100"');
+  } else if (id === 'digital') {
+    fields = select('topic','Topic Focus', ['Custody Vault Architecture','Governance & Control Specs','Integration APIs']) +
+             `<div class="field full"><label for="f-notes">Specification Details</label><textarea id="f-notes" name="notes" rows="3" maxlength="500" required>${esc(formDraft.notes??'Requesting technical documentation on institutional key custody and multi-signature controls.')}</textarea></div>`;
+  } else if (id === 'balance') {
+    fields = select('scope','Reporting Scope', ['All Accounts','ZAR Accounts Only','USD Account Only','EUR Account Only']) +
+             select('frequency','Delivery Schedule', ['Daily Automated','Weekly Summary','Ad-Hoc Realtime']);
+  } else {
+    fields = select('scope','Reconciliation Scope', ['Link PAY-1042 to INV-2081','Custom Exception Support']) +
+             input('reference','Enquiry Reference','text','Reconciliation Exception Escalation','maxlength="100"');
+  }
+  
+  return `
+    <h3>${editId ? 'Edit Draft Instruction' : 'Configure Sample Request'}</h3>
+    <div class="notice">This is a demo form, nothing was sent. Use fictional inputs only. No live bank submission.</div>
+    <form id="request-form">
+      <div class="form-grid">${fields}</div>
+      <p id="form-error" role="alert" style="color:var(--red);font-size:12px;margin-top:12px"></p>
+      <div class="form-actions">
+        <button type="submit" class="btn primary">Review Draft Instruction →</button>
+      </div>
+    </form>
+  `;
+}
+
+function futureDate(days) {
+  let d = new Date();
+  d.setDate(d.getDate() + days);
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+}
+
+function bindRequest() {
+  $('#request-form').addEventListener('submit', e => {
+    e.preventDefault();
+    let data = Object.fromEntries(new FormData(e.target));
+    Object.keys(data).forEach(k => data[k] = data[k].trim());
+    let error = '';
+    
+    if (Object.values(data).some(v => !v)) error = 'Please fill out all fields.';
+    if (['payments','international'].includes(activeService)) {
+      let b = beneficiaries.find(x => x.ref === data.beneficiary);
+      let a = accounts.find(x => x.id === data.account);
+      if (b.currency !== data.currency || a.currency !== data.currency) error = 'Beneficiary, source account, and currency must match.';
+      else if (+data.amount > a.balance) error = 'Payment amount exceeds selected account available balance.';
+    }
+    if (activeService === 'trade' && data.date < futureDate(0)) error = 'Target date must be today or in the future.';
+    if (activeService === 'open') {
+      let max = data.invoice.startsWith('OAF-201') ? 75000 : 48000;
+      if (+data.amount > max) error = 'Requested financing cannot exceed total invoice value.';
+    }
+    
+    if (error) { $('#form-error').textContent = error; return; }
+    formDraft = data;
+    showRequestReview();
+  });
+  
+  if (activeService === 'fx') $('#request-form').addEventListener('input', updateFX);
+  if (activeService === 'liquidity') $('#request-form').addEventListener('input', updateLiquidity);
+  
+  if (['payments','international'].includes(activeService)) {
+    $('#f-beneficiary').addEventListener('change', e => {
+      let b = beneficiaries.find(x => x.ref === e.target.value);
+      $('#f-currency').value = b.currency;
+      $('#f-account').value = accounts.find(a => a.currency === b.currency).id;
+    });
+  }
+}
+
+function fxDetails(d) {
+  const rates = {'USD → ZAR':18.5, 'EUR → ZAR':20.0, 'EUR → USD':1.08};
+  return { rate: rates[d.pair], target: d.pair.split(' → ')[1], result: +d.amount * rates[d.pair] };
+}
+
+function updateFX() {
+  const d = Object.fromEntries(new FormData($('#request-form')));
+  const f = fxDetails(d);
+  $('#fx-result').innerHTML = `
+    <small>Benchmark Converted Amount (${esc(f.target)})</small>
+    <strong class="number">${money(f.result || 0)}</strong>
+    <small>Fixed benchmark rate ${f.rate}. Excludes spreads and bank fees.</small>
+  `;
+}
+
+function liquidityDetails(d) {
+  let retained = Math.min(12480000, Math.max(0, +d.buffer || 0));
+  let allocation = 12480000 - retained;
+  return { retained, allocation, interest: allocation * 0.06 * (+d.days || 0) / 365 };
+}
+
+function updateLiquidity() {
+  const d = Object.fromEntries(new FormData($('#request-form')));
+  const l = liquidityDetails(d);
+  $('#liquidity-result').innerHTML = `
+    <div class="split-stat">
+      <div>
+        <small>Benchmark Deployment (ZAR)</small>
+        <strong class="number">${money(l.allocation)}</strong>
+      </div>
+      <div>
+        <small>Retained Reserve (ZAR)</small>
+        <strong class="number">${money(l.retained)}</strong>
+      </div>
+    </div>
+    <p class="small" style="margin-top:12px">Estimated simple yield: ZAR ${money(l.interest)} over ${esc(d.days)} days at 6% per annum. Formula: Allocation × 0.06 × (Days/365). Benchmark calculation only.</p>
+  `;
+}
+
+function readable(key, value) {
+  if (key === 'beneficiary') return beneficiaries.find(b => b.ref === value)?.name || value;
+  return value;
+}
+
+const labels = {
+  beneficiary:'Beneficiary', account:'Source Account', currency:'Currency', amount:'Amount', reference:'Reference',
+  purpose:'Purpose', date:'Issuance Date', pair:'Currency Pair', buffer:'Retained Buffer', days:'Term (Days)',
+  invoice:'Invoice', scope:'Scope', format:'Format', topic:'Topic', notes:'Details', frequency:'Frequency'
+};
+
+function reviewHTML(data) {
+  return `<div class="review-list">${Object.entries(data).map(([k,v]) => `<div><span>${esc(labels[k]||k)}</span>${esc(readable(k,v))}</div>`).join('')}</div>`;
+}
+
+function showRequestReview() {
+  let extra = '';
+  if (activeService === 'fx') {
+    let f = fxDetails(formDraft);
+    extra = `<div class="notice">Calculated output: ${f.target} ${money(f.result)} at ${f.rate} rate. Benchmark demo calculation.</div>`;
+  }
+  if (activeService === 'liquidity') {
+    let l = liquidityDetails(formDraft);
+    extra = `<div class="notice">Allocation: ZAR ${money(l.allocation)}. Estimated simple yield: ZAR ${money(l.interest)}.</div>`;
+  }
+  
+  openDialog('Review Draft Instruction', service(activeService).name, reviewHTML(formDraft) + extra + `
+    <div class="notice">This is a demo form, nothing was sent. Saving adds this item to your session request basket.</div>
+    <div class="form-actions">
+      <button class="btn" data-action="back-request">Edit Details</button>
+      <button class="btn primary" data-action="save-draft">${editId ? 'Save Changes' : 'Add to Request Basket'} →</button>
+    </div>
+  `);
+}
+
+function signature(r) { return JSON.stringify([r.service, r.data]); }
+
+function saveDraft() {
+  const candidate = { id: editId || 'REQ-' + String(state.next).padStart(3,'0'), service: activeService, data: {...formDraft} };
+  if (state.basket.some(r => r.id !== editId && signature(r) === signature(candidate))) {
+    toast('An identical draft is already in your basket.');
+    return;
+  }
+  if (editId) {
+    const i = state.basket.findIndex(r => r.id === editId);
+    if (i >= 0) state.basket[i] = candidate;
+  } else {
+    state.basket.push(candidate);
+    state.next++;
+  }
+  log(`${candidate.id}: draft ${editId?'updated':'added'} for ${service(activeService).name}.`);
+  renderGlobal();
+  closeDialog();
+  toast('Sample draft saved. Nothing was sent.');
+  
+  $('#desktop-basket').classList.remove('pulse');
+  void $('#desktop-basket').offsetWidth;
+  $('#desktop-basket').classList.add('pulse');
+}
+
+function requestSummary(r) {
+  const d = r.data;
+  if (d.amount) return `${d.currency || d.pair?.split(' → ')[0] || (d.invoice?.startsWith('OAF-201')?'USD':'EUR')} ${money(d.amount)}`;
+  if (d.buffer) return 'ZAR ' + money(liquidityDetails(d).allocation) + ' deployment scenario';
+  return d.topic || d.scope || 'Information Enquiry';
+}
+
+function openBasket() {
+  const html = state.basket.length ? state.basket.map(r => `
+    <article class="approval">
+      <div class="approval-top">
+        <div>
+          <div class="eyebrow muted">${r.id} · Draft Instruction</div>
+          <h3>${esc(service(r.service).name)}</h3>
+          <p>${esc(requestSummary(r))}</p>
+        </div>
+        <span class="pill green">Validated Draft</span>
+      </div>
+      <details style="margin-top:10px">
+        <summary class="small" style="cursor:pointer;color:var(--red)">Inspect parameters</summary>
+        ${reviewHTML(r.data)}
+      </details>
+      <div class="actions">
+        <button class="btn small" data-edit="${r.id}">Edit</button>
+        <button class="text-btn" data-remove="${r.id}">Remove</button>
+      </div>
+    </article>
+  `).join('') : `
+    <div class="empty-basket">
+      <h3>Your basket is empty.</h3>
+      <p>Configure instructions from the service catalogue to build your review batch.</p>
+    </div>
+  `;
+  
+  openDialog('Request Basket Summary', 'Local Treasury Batch', html + `
+    <div class="notice">This is a demo form, nothing was sent. Routing simulates internal corporate approval workflow.</div>
+    <div class="form-actions">
+      <button class="btn" data-action="export-requests" ${state.basket.length?'':'disabled'}>Export Batch CSV</button>
+      <button class="btn primary" data-action="route" ${state.basket.length?'':'disabled'}>Route to Approver →</button>
+    </div>
+  `);
+}
+
+function routeRequests() {
+  state.basket.forEach(r => {
+    state.approvals.push({ ...r, status: 'Awaiting approval', comment: '' });
+    log(`${r.id}: routed from Treasury Operator to Treasury Approver.`);
+  });
+  state.basket = [];
+  renderGlobal();
+  openApprovals();
+  toast('Routed within demo workspace. Nothing was sent.');
+}
+
+function openApprovals() {
+  const html = state.approvals.length ? state.approvals.map(r => `
+    <article class="approval">
+      <div class="approval-top">
+        <div>
+          <div class="eyebrow muted">${r.id} · Treasury Approver Queue</div>
+          <h3>${esc(service(r.service).name)}</h3>
+          <p>${esc(requestSummary(r))}</p>
+        </div>
+        <span class="pill ${r.status==='Approved in demo'?'green':''}">${esc(r.status)}</span>
+      </div>
+      <details style="margin-top:10px">
+        <summary class="small" style="cursor:pointer;color:var(--red)">Review parameters</summary>
+        ${reviewHTML(r.data)}
+      </details>
+      ${r.comment ? `<div class="notice">Return Note: ${esc(r.comment)}</div>` : ''}
+      <div class="actions">
+        ${r.status === 'Awaiting approval' ? `
+          <button class="btn primary small" data-approve="${r.id}">Approve in Demo</button>
+          <button class="btn small" data-return="${r.id}">Return for Revision</button>
+        ` : r.status === 'Returned for changes' ? `
+          <button class="btn primary small" data-revise="${r.id}">Revise &amp; Resubmit</button>
+        ` : '<span class="small muted">Approved in demo simulation. No bank submission executed.</span>'}
+      </div>
+    </article>
+  `).join('') : '<div class="notice">No routed items in approver queue.</div>';
+  
+  openDialog('Internal Approvals Simulation', 'Corporate Authorization', html + `
+    <h3 style="margin-top:24px">Session Audit Trail</h3>
+    <div class="trail">
+      ${state.trail.length ? state.trail.map(t => `<p>${esc(t.text)}<small>${esc(t.time)} · Local Memory</small></p>`).join('') : '<p>No session activity recorded.</p>'}
+    </div>
+  `);
+}
+
+function returnRequest(id) {
+  const r = state.approvals.find(a => a.id === id);
+  openDialog('Return Instruction for Changes', id, `
+    <h3>${esc(service(r.service).name)}</h3>
+    <form id="return-form">
+      <div class="field" style="margin-top:18px">
+        <label for="return-note">Reason for returning instruction</label>
+        <textarea id="return-note" rows="3" required maxlength="300"></textarea>
+      </div>
+      <div class="notice">This is a demo form, nothing was sent.</div>
+      <div class="form-actions">
+        <button class="btn primary" type="submit">Return to Operator</button>
+      </div>
+    </form>
+  `);
+  
+  $('#return-form').onsubmit = e => {
+    e.preventDefault();
+    const note = $('#return-note').value.trim();
+    if (!note) return;
+    r.status = 'Returned for changes';
+    r.comment = note;
+    log(`${id}: returned by Treasury Approver. Reason: ${note}`);
+    renderGlobal();
+    openApprovals();
+  };
+}
+
+function reviseRequest(id) {
+  const r = state.approvals.find(a => a.id === id);
+  openDialog('Revise & Resubmit', id, `
+    <h3>${esc(service(r.service).name)}</h3>
+    <div class="notice">Approver Note: ${esc(r.comment)}</div>
+    <form id="revise-form">
+      <div class="form-grid">
+        ${Object.entries(r.data).map(([k,v]) => `
+          <div class="field">
+            <label for="rev-${esc(k)}">${esc(labels[k]||k)}</label>
+            <input id="rev-${esc(k)}" name="${esc(k)}" value="${esc(v)}" ${['amount','buffer','days'].includes(k)?'type="number" step="0.01"':k==='date'?'type="date"':'type="text"'} required ${['currency','account','beneficiary','pair','invoice'].includes(k)?'readonly':''}>
+          </div>
+        `).join('')}
+      </div>
+      <p id="rev-error" role="alert" style="color:var(--red);font-size:12px;margin-top:12px"></p>
+      <div class="notice">This is a demo form, nothing was sent.</div>
+      <div class="form-actions">
+        <button type="submit" class="btn primary">Resubmit to Approver</button>
+      </div>
+    </form>
+  `);
+  
+  $('#revise-form').onsubmit = e => {
+    e.preventDefault();
+    let d = Object.fromEntries(new FormData(e.target));
+    for (const k in d) d[k] = d[k].trim();
+    r.data = d;
+    r.status = 'Awaiting approval';
+    r.comment = '';
+    log(`${id}: revised and resubmitted by Operator.`);
+    renderGlobal();
+    openApprovals();
+  };
+}
+
+function openAssistant() {
+  if (!state.chats.length) {
+    state.chats.push({
+      role: 'assistant',
+      text: 'Hello. I am a scripted demonstration guide for the Absa Corporate Command Centre concept workspace. I can explain the reconciliation exception, calculate FX scenarios, or guide you through draft approvals.'
+    });
+  }
+  
+  openDialog('Scripted Treasury Assistant', 'Deterministic Guidance · No Live AI', `
+    <div class="chat-log" id="chat-log" role="log" aria-label="Assistant history"></div>
+    <div class="suggestions">
+      <button data-question="Explain exception">Explain exception</button>
+      <button data-question="Show approvals">Pending approvals</button>
+      <button data-question="Prepare USD payment">Prepare USD payment</button>
+      <button data-question="What are FX rates?">Benchmark FX rates</button>
+    </div>
+    <div id="assistant-action"></div>
+    <form class="chat-form" id="chat-form">
+      <label class="sr-only" for="chat-input">Ask a question</label>
+      <input id="chat-input" required maxlength="300" placeholder="Ask about this sample workspace…">
+      <button class="btn primary" type="submit">Ask →</button>
+    </form>
+  `);
+  
+  renderChat();
+  $('#chat-form').onsubmit = e => {
+    e.preventDefault();
+    let q = $('#chat-input').value.trim();
+    if (q) answerQuestion(q);
+    $('#chat-input').value = '';
+  };
+}
+
+function renderChat() {
+  $('#chat-log').innerHTML = state.chats.map(m => `
+    <div class="message ${m.role==='user'?'user':''}">
+      <strong class="small">${m.role==='user'?'You':'Scripted Assistant'}</strong><br>${esc(m.text)}
+    </div>
+  `).join('');
+  $('#chat-log').scrollTop = $('#chat-log').scrollHeight;
+}
+
+function answerQuestion(q) {
+  state.chats.push({role:'user', text:q});
+  let answer = '', action = '';
+  let l = q.toLowerCase();
+  
+  if (/exception|reconcil|invoice|match/.test(l)) {
+    answer = state.matched 
+      ? 'PAY-1042 is linked to invoice INV-2081. Outstanding exception count is 0. Both records show ZAR 125,000.00.' 
+      : 'There is 1 open exception: PAY-1042 has no invoice link. INV-2081 matches its ZAR 125,000.00 value. Inspect records to connect them.';
+    action = '<button class="btn small" data-action="reconcile">Inspect exception →</button>';
+  } else if (/approv|pending/.test(l)) {
+    let n = state.approvals.filter(a => a.status === 'Awaiting approval').length;
+    answer = `There are currently ${n} items awaiting manager approval and ${state.basket.length} items in your draft basket.`;
+    action = '<button class="btn small" data-action="approvals">Open approvals queue →</button>';
+  } else if (/payment|prefill/.test(l)) {
+    answer = 'I can open a USD 10,000 sample payment draft to Sample Global Equipment Corp from account ACC-USD-01.';
+    action = '<button class="btn small" data-action="prefill-payment">Review pre-filled payment draft →</button>';
+  } else if (/fx|rate|exchange/.test(l)) {
+    answer = 'Benchmark FX rates: USD → ZAR 18.50, EUR → ZAR 20.00, EUR → USD 1.08. These are fixed demonstration values.';
+    action = '<button class="btn small" data-service="fx" data-start="request">Open FX calculator →</button>';
+  } else {
+    answer = 'I am a deterministic demo assistant. You can ask about cash balances, reconciliation matching, FX benchmarks, or draft approval routing.';
+  }
+  
+  state.chats.push({role:'assistant', text:answer});
+  renderChat();
+  $('#assistant-action').innerHTML = action ? `<div style="margin-bottom:14px">${action}</div>` : '';
+}
+
+function exportCSV(filename, headers, rows) {
+  let csv = '\uFEFF' + [headers, ...rows].map(r => r.map(v => '"' + String(v??'').replace(/"/g,'""') + '"').join(',')).join('\r\n');
+  let url = URL.createObjectURL(new Blob([csv], {type:'text/csv;charset=utf-8;'}));
+  let a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.append(a);
+  a.click();
+  a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+  toast('Sample CSV exported. No server data sent.');
+}
+
+function exportTransactions() {
+  const rows = transactions.filter(t => (state.accountCurrency === 'All' || t.currency === state.accountCurrency) && (!state.accountDrill || t.account === state.accountDrill));
+  exportCSV('absa-sample-transactions.csv', ['Type','Ref','Account','Description','Currency','Amount','Status'], rows.map(t => ['SAMPLE', t.ref, t.account, t.desc, t.currency, t.amount, t.status]));
+}
+
+function openMenu() {
+  openDialog('Workspace Navigation', 'Full Concept Links', `
+    <nav class="menu-links" aria-label="Mobile navigation">
+      <a href="#catalogue" data-close-link>Service Catalogue ↗</a>
+      <a href="#spotlight" data-close-link>Strategic Pillars ↗</a>
+      <a href="#overview" data-close-link>Balances &amp; Metrics ↗</a>
+      <button data-action="accounts">Sample Accounts Log ↗</button>
+      <button data-action="approvals">Manager Approvals ↗</button>
+      <button data-action="assistant">Workspace Assistant ↗</button>
+      <button data-action="basket">Request Basket ↗</button>
+      <button data-action="reset">Reset Workspace State</button>
+    </nav>
+  `);
+}
+
+function resetConfirm() {
+  openDialog('Reset Workspace Session?', 'Clear Local Memory', `
+    <p>This will reset all local draft items, approval statuses, reconciliation matches, and chat history. No real bank data is impacted.</p>
+    <div class="form-actions">
+      <button class="btn" data-action="close">Cancel</button>
+      <button class="btn primary" data-action="confirm-reset">Confirm Reset</button>
+    </div>
+  `);
+}
+
+/* Event Handling Delegation */
+document.addEventListener('click', e => {
+  const category = e.target.closest('[data-category]');
+  if (category) { state.category = category.dataset.category; renderFilters(); renderCards(); return; }
+  
+  const link = e.target.closest('[data-close-link]');
+  if (link) { closeDialog(); return; }
+  
+  const sv = e.target.closest('[data-service]');
+  if (sv) { openService(sv.dataset.service, sv.dataset.start || 'overview'); return; }
+  
+  const tab = e.target.closest('[data-tab]');
+  if (tab) {
+    if (currentTab === 'request' && $('#request-form')) formDraft = Object.fromEntries(new FormData($('#request-form')));
+    currentTab = tab.dataset.tab;
+    renderService();
+    return;
+  }
+  
+  const edit = e.target.closest('[data-edit]');
+  if (edit) {
+    let r = state.basket.find(r => r.id === edit.dataset.edit);
+    openService(r.service, 'request', {...r.data}, r.id);
+    return;
+  }
+  
+  const remove = e.target.closest('[data-remove]');
+  if (remove) {
+    state.basket = state.basket.filter(r => r.id !== remove.dataset.remove);
+    log(`${remove.dataset.remove}: draft removed.`);
+    renderGlobal();
+    if (!$('#overlay').hidden) openBasket();
+    toast('Draft instruction removed.');
+    return;
+  }
+  
+  const account = e.target.closest('[data-account]');
+  if (account) { state.accountDrill = account.dataset.account; renderService(); return; }
+  
+  const approve = e.target.closest('[data-approve]');
+  if (approve) {
+    let r = state.approvals.find(a => a.id === approve.dataset.approve);
+    r.status = 'Approved in demo';
+    log(`${r.id}: approved by Treasury Approver in demo.`);
+    renderGlobal();
+    openApprovals();
+    toast('Approved in demo simulation.');
+    return;
+  }
+  
+  const ret = e.target.closest('[data-return]');
+  if (ret) { returnRequest(ret.dataset.return); return; }
+  
+  const rev = e.target.closest('[data-revise]');
+  if (rev) { reviseRequest(rev.dataset.revise); return; }
+  
+  const q = e.target.closest('[data-question]');
+  if (q) { answerQuestion(q.dataset.question); return; }
+  
+  const ac = e.target.closest('[data-action]');
+  if (!ac) return;
+  if (ac.tagName === 'A' && ac.getAttribute('href')?.startsWith('#')) e.preventDefault();
+  
+  switch(ac.dataset.action) {
+    case 'close': closeDialog(); break;
+    case 'menu': openMenu(); break;
+    case 'accounts': state.accountDrill = null; openService('balance','records'); break;
+    case 'reconcile': openService('reconciliation','records'); break;
+    case 'basket': openBasket(); break;
+    case 'assistant': openAssistant(); break;
+    case 'approvals': openApprovals(); break;
+    case 'clear': state.query = ''; state.category = 'All'; $('#search').value = ''; renderFilters(); renderCards(); break;
+    case 'match':
+      state.matched = !state.matched;
+      log(state.matched ? 'Linked PAY-1042 to invoice INV-2081.' : 'Reversed match between PAY-1042 and INV-2081.');
+      renderGlobal(); renderCards(); renderService();
+      toast(state.matched ? 'Records matched. Exception resolved.' : 'Match reversed.');
+      break;
+    case 'back-request': currentTab = 'request'; renderService(); break;
+    case 'save-draft': saveDraft(); break;
+    case 'route': routeRequests(); break;
+    case 'export-transactions': exportTransactions(); break;
+    case 'export-requests':
+      exportCSV('absa-sample-basket.csv', ['Ref','Service','Summary','Details'], state.basket.map(r => [r.id, service(r.service).name, requestSummary(r), JSON.stringify(r.data)]));
+      break;
+    case 'all-transactions': state.accountDrill = null; renderService(); break;
+    case 'prefill-payment':
+      openService('payments','request',{beneficiary:'BEN-002', account:'ACC-USD-01', currency:'USD', amount:'10000', reference:'Global Equipment Advance'});
+      break;
+    case 'reset': resetConfirm(); break;
+    case 'confirm-reset':
+      Object.assign(state, {category:'All', query:'', basket:[], approvals:[], matched:false, trail:[], next:1, chats:[], accountCurrency:'All', accountSort:'desc', accountDrill:null});
+      $('#search').value = ''; renderFilters(); renderCards(); renderGlobal(); closeDialog();
+      toast('Workspace reset.');
+      break;
+  }
+});
+
+document.addEventListener('change', e => {
+  if (e.target.id === 'account-currency') { state.accountCurrency = e.target.value; state.accountDrill = null; renderService(); }
+  if (e.target.id === 'account-sort') { state.accountSort = e.target.value; renderService(); }
+});
+
+$('#search').addEventListener('input', e => { state.query = e.target.value; renderCards(); });
+$('#clear-filters').addEventListener('click', () => { state.query = ''; state.category = 'All'; $('#search').value = ''; renderFilters(); renderCards(); });
+$('#close-dialog').onclick = closeDialog;
+$('#overlay').addEventListener('click', e => { if (e.target === $('#overlay')) closeDialog(); });
+
+document.addEventListener('keydown', e => {
+  if (e.key === '/' && $('#overlay').hidden && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) {
+    e.preventDefault(); $('#search').focus();
+  }
+  if ($('#overlay').hidden) return;
+  if (e.key === 'Escape') { e.preventDefault(); closeDialog(); }
+});
+
+// Initial Render Call
+renderFilters();
+renderCards();
+renderGlobal();
+</script>
+</body>
+</html>

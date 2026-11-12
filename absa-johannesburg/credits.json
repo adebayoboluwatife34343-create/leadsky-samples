@@ -1,0 +1,116 @@
+[
+  {
+    "file": "img/business-logo-1.svg",
+    "kind": "business logo",
+    "source": "https://cib.absa.africa/wp-content/uploads/2024/02/n-absa-logo-cib.svg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.png",
+    "kind": "business featured image",
+    "source": "https://cib.absa.africa/wp-content/uploads/2020/07/Johannesburg-c1910-1.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels commercial container port cargo cranes daylight",
+    "description": "port, container ship, night, cargo ship, freighter ship, ship, evening, hamburg, waltershofer hafen, germany, evening atmosphere, port, port, container ship, container ship, container ship, cargo ship, cargo ship, cargo ship, cargo ship, ship, ship, ship, ship, ship",
+    "source": "https://pixabay.com/photos/port-container-ship-night-7418239/",
+    "photographer": "LoboStudioHamburg",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels commercial container port cargo cranes daylight",
+    "description": "port, pier, cargo containers, crate, export, freight, import, shipping industry, industry, outdoors, shipping containers, storage, warehouse, port, port, port, port, port, export, freight, import, industry, industry, warehouse, warehouse, warehouse",
+    "source": "https://pixabay.com/photos/port-pier-cargo-containers-crate-1845350/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pexels industrial manufacturing production line machinery",
+    "description": "factory, building, industry, industrial plant, manufacturing plant, structure, metal, steel, neuss, germany, factory, factory, factory, factory, factory, industry, industry",
+    "source": "https://pixabay.com/photos/factory-building-industry-1140760/",
+    "photographer": "652234",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pexels industrial manufacturing production line machinery",
+    "description": "worker, woman, mask, face mask, medical mask, portrait, factory, factory worker, occupation, asian, asian woman, worker, factory, factory, factory, factory, factory, factory worker",
+    "source": "https://pixabay.com/photos/worker-woman-mask-face-mask-6322085/",
+    "photographer": "Quanlecntt2004",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay international freight logistics shipping containers",
+    "description": "container ship, container transport, seagoing vessel, boat, vessel, freighter, means of transport sea containers, transport, container ship, container ship, container ship, container ship, container ship, boat, vessel, transport, transport",
+    "source": "https://pixabay.com/photos/container-ship-container-transport-6631117/",
+    "photographer": "dendoktoor",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay international freight logistics shipping containers",
+    "description": "ship, container ship, tractor, seafaring, shipping, container, logistics, freight",
+    "source": "https://pixabay.com/photos/ship-container-ship-tractor-6794508/",
+    "photographer": "Peter_Lindenau",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels commercial solar energy infrastructure daylight",
+    "description": "photovoltaic system, solar, solar energy, solar panel, photovoltaic, renewable, energy revolution, power generation, solar field, solar cells, voltage, current, sun, electricity, energy, solar power, environment, renewable energy, technology, power supply, clouds, nature, sky, atmospheric, turn, earth day",
+    "source": "https://pixabay.com/photos/photovoltaic-system-solar-2742302/",
+    "photographer": "mrganso",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels commercial solar energy infrastructure daylight",
+    "description": "solar, panels, solar energy, solar panels, energy, power, generation, device, solar, solar, solar energy, solar panels, solar panels, solar panels, solar panels, solar panels",
+    "source": "https://pixabay.com/photos/solar-panels-solar-energy-8244680/",
+    "photographer": "Michael_Pointner",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pexels modern office buildings Johannesburg skyline",
+    "description": "city, buildings, architecture, skyscrapers, urban, modern buildings, office buildings, residential buildings, street, skyline, city, city, city, city, city, buildings, buildings, architecture, architecture",
+    "source": "https://pixabay.com/photos/city-buildings-architecture-182223/",
+    "photographer": "12019",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pexels modern office buildings Johannesburg skyline",
+    "description": "building, office, business, work, technology, workplace, architecture, designer, nature, tower, japan, tokyo, city, urban, window, sky",
+    "source": "https://pixabay.com/photos/building-office-business-work-9682225/",
+    "photographer": "terufilm_japan",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
