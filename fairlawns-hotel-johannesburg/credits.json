@@ -1,0 +1,142 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://fairlawns.co.za/wp-content/uploads/2025/05/Fairlawns-Boutique-Hotel-and-Spa-Logo-all.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.jpg",
+    "kind": "business featured image",
+    "source": "https://fairlawns.co.za/wp-content/uploads/2025/03/Fairlawns-Villa-Moji-1024x683.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/fairlawns.spa"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels luxury boutique hotel suite elegant neutral interior",
+    "description": "bed, hotel, luxurious, bedroom, hotel room, relax, vacation, hotel, hotel, hotel, hotel, hotel, bedroom, hotel room",
+    "source": "https://pixabay.com/photos/bed-hotel-luxurious-bedroom-4416515/",
+    "photographer": "Engin_Akyurt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels luxury boutique hotel suite elegant neutral interior",
+    "description": "apparel, boutique, bags, shoes, shop, store, shopping, retail, fashion, luxury, shelves, showcase, shop, shop, store, store, shopping, shopping, shopping, shopping, shopping, retail, fashion, fashion, fashion",
+    "source": "https://pixabay.com/photos/apparel-boutique-bags-shoes-shop-1850804/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay tranquil landscaped hotel garden swimming pool",
+    "description": "water, nature, outdoors, sky, travel, panoramic, architecture, tourism, pool, swimming, vacation, hotel, scenic, relax, sunset, trip",
+    "source": "https://pixabay.com/photos/water-outdoors-sky-travel-3292794/",
+    "photographer": "tianya1223",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay tranquil landscaped hotel garden swimming pool",
+    "description": "swimming pool, nature, water, vacation, summertime, underwater",
+    "source": "https://pixabay.com/photos/swimming-pool-water-vacation-3488634/",
+    "photographer": "anncapictures",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pexels spa treatment room garden wellness",
+    "description": "hands, massage, treatment, fingers, palm, hand massage, massaging, hand, wrist, masseuse, physiotherapy, therapy, relax, relaxation, recovery, wellness, health, skin, spa, massage therapy, hands, hand, health, health, health, health, health, skin, skin, spa",
+    "source": "https://pixabay.com/photos/hands-massage-treatment-fingers-1327811/",
+    "photographer": "andreas160578",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pexels spa treatment room garden wellness",
+    "description": "woman, hands, massage, massaging, physiotherapy, back, relax, skin, spa, wellness, masseuse, relaxation, physiotherapy, relax, skin, spa, spa, spa, spa, spa",
+    "source": "https://pixabay.com/photos/woman-hands-massage-massaging-567021/",
+    "photographer": "Mariolh",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels fine dining restaurant elegant table setting",
+    "description": "restaurant, table setting, table, glassware, stemware, wine glasses, glasses, plates, napkin, set-up, dinner, dining, service, lunch, restaurant, restaurant, restaurant, restaurant, restaurant",
+    "source": "https://pixabay.com/photos/restaurant-table-setting-table-449952/",
+    "photographer": "neshom",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels fine dining restaurant elegant table setting",
+    "description": "table, glassware, cutlery, silverware, stemware, dining table, dinner table, table setting, table set-up, nature, dinner, luxury, restaurant, sunset",
+    "source": "https://pixabay.com/photos/table-glassware-cutlery-silverware-5356682/",
+    "photographer": "JoelFazhari",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pexels afternoon tea tiered stand garden",
+    "description": "tea, cup, drink, table, traditional, tea cup, nature, outdoors",
+    "source": "https://pixabay.com/photos/tea-cup-drink-table-traditional-3190241/",
+    "photographer": "StarFlames",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pexels afternoon tea tiered stand garden",
+    "description": "tea cup, vintage tea cup, tea, cup, vintage, drink, teacup, hot, english, afternoon, spoon, table, home, cozy, morning, breakfast, lifestyle, beverage, mug, ritual, tea, tea, tea, tea, tea",
+    "source": "https://pixabay.com/photos/tea-cup-vintage-tea-cup-tea-cup-2107599/",
+    "photographer": "TerriC",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-11.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay luxury picnic garden table setting",
+    "description": "wedding photography, wedding details, wedding preparations, beautiful flowers, wedding, table set-up, flower arrangement, flowers, table, flower wallpaper, glassware, candles, dining table, flower background, nature, decoration, decorative, floral",
+    "source": "https://pixabay.com/photos/wedding-photography-wedding-details-5582980/",
+    "photographer": "lubovlisitsa",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-12.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay luxury picnic garden table setting",
+    "description": "summer, still-life, garden, flower wallpaper, outdoors, beautiful flowers, flowers, flower background, dish, green flower, nature, green life, green summer, green garden, green gardening",
+    "source": "https://pixabay.com/photos/summer-still-life-garden-outdoors-783347/",
+    "photographer": "JillWellington",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]

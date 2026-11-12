@@ -1,0 +1,1075 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Fairlawns Boutique Hotel & Spa — Coordinated Stay Experience</title>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{--paper:#FBF8F1;--ink:#1E2B37;--blue:#EAF1F5;--bronze:#966C38;--bronze-dark:#72502B;--muted:#59656D;--line:#DCE2E6;--white:#FFFFFF;--green:#2E5A44;--card-bg:#FFFFFF}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.6 Manrope,sans-serif;-webkit-font-smoothing:antialiased}
+button,input,select,textarea{font:inherit}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+button{cursor:pointer;color:inherit;border:0;background:transparent}
+button:disabled{opacity:.5;cursor:not-allowed}
+a{color:inherit;text-decoration:none}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--bronze);outline-offset:3px}
+
+.disclosure{background:var(--ink);color:#E2E8ED;text-align:center;font-size:11px;letter-spacing:.03em;padding:8px 16px;font-weight:500}
+header{height:80px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:10px 4%;gap:20px;background:var(--paper);position:sticky;top:0;z-index:40}
+.identity{display:flex;align-items:center;gap:14px}
+.logo-img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--bronze)}
+.brand-title{font-family:"Libre Caslon Display",serif;font-size:20px;letter-spacing:-.01em;color:var(--ink);line-height:1.1}
+.brand-sub{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700}
+.identity-divider{border-left:1px solid var(--line);height:32px;margin:0 4px}
+.demo-tag{font-size:10px;letter-spacing:.09em;text-transform:uppercase;font-weight:800;border-radius:4px;padding:4px 8px;background:#F0E7D8;color:var(--bronze-dark)}
+
+nav{display:flex;align-items:center;gap:6px}
+nav button{padding:9px 14px;border-radius:6px;font-size:12px;font-weight:700;color:var(--muted);transition:all .2s}
+nav button:hover{color:var(--ink);background:rgba(0,0,0,.04)}
+nav button.active{background:var(--ink);color:var(--white)}
+.menu-toggle{display:none;border:1px solid var(--line);border-radius:6px;padding:8px 12px;font-size:12px;font-weight:700}
+
+.workspace{max-width:1520px;margin:auto;padding:32px 4% 48px}
+.topline{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:28px;gap:20px}
+.eyebrow{text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.16em;color:var(--bronze);margin:0 0 6px}
+h1,h2,h3{font-family:"Libre Caslon Display",Georgia,serif;font-weight:400;margin:0}
+h1{font-size:42px;line-height:1.08;letter-spacing:-.02em;color:var(--ink)}
+.subtitle{color:var(--muted);font-size:13px;margin:4px 0 0}
+
+.top-actions{display:flex;gap:10px;align-items:center}
+.button{border:1px solid var(--ink);background:var(--ink);color:var(--white);padding:11px 20px;border-radius:6px;font-size:12px;font-weight:700;display:inline-flex;justify-content:center;align-items:center;gap:8px;transition:background .2s,transform .2s}
+.button:hover{background:#324454;transform:translateY(-1px)}
+.button.secondary{background:transparent;color:var(--ink);border-color:#BDC7CD}
+.button.secondary:hover{background:var(--blue)}
+.button.small{padding:8px 14px;font-size:11px}
+
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start}
+.panel{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.03)}
+
+.dates-bar{display:grid;grid-template-columns:1fr 1fr .8fr;gap:16px;padding:20px;background:var(--white);border:1px solid var(--line);border-radius:10px;margin-bottom:28px}
+.field label{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;margin-bottom:6px;color:var(--ink)}
+.field input,.field select,.field textarea{width:100%;min-width:0;border:1px solid #CBD4D9;background:var(--white);border-radius:6px;color:var(--ink);padding:10px 12px;font-size:13px}
+.field textarea{resize:vertical}
+
+.section-heading{display:flex;align-items:baseline;justify-content:space-between;gap:15px;margin-bottom:16px}
+.section-heading h2{font-size:28px;line-height:1.15}
+.step{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700}
+
+.suite-card{display:grid;grid-template-columns:48% 1fr;background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;min-height:240px;margin-bottom:32px}
+.suite-image{position:relative;min-height:240px;background:#20364b}
+.suite-image img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+.image-overlay-caption{position:absolute;bottom:0;inset-x:0;padding:30px 14px 10px;color:var(--white);font-size:10px;background:linear-gradient(transparent,rgba(0,0,0,.85));font-weight:500}
+.suite-info{padding:24px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.suite-info h3{font-size:28px;margin:4px 0 8px}
+.suite-info p{font-size:12px;color:var(--muted);margin:0 0 16px}
+
+.category-tabs{display:flex;gap:8px;margin:20px 0;flex-wrap:wrap}
+.category-tabs button{border:1px solid var(--line);background:var(--white);border-radius:30px;padding:8px 16px;font-size:12px;font-weight:600;color:var(--muted)}
+.category-tabs button.active{background:var(--ink);color:var(--white);border-color:var(--ink)}
+
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+.service-card{border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--white);text-align:left;display:flex;flex-direction:column;transition:box-shadow .2s,transform .2s}
+.service-card:hover{box-shadow:0 8px 24px rgba(30,43,55,.1);transform:translateY(-2px)}
+.service-photo{height:160px;overflow:hidden;position:relative;background:#20364B}
+.service-photo img{height:100%;width:100%;object-fit:cover;transition:transform .4s}
+.service-card:hover img{transform:scale(1.04)}
+.photo-badge{position:absolute;bottom:8px;left:8px;background:rgba(18,28,36,.88);color:var(--white);border-radius:4px;font-size:9px;padding:3px 7px;font-weight:600}
+.service-body{padding:16px;flex:1;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+.service-body h3{font-size:22px;line-height:1.15;margin:4px 24px 6px 0}
+.service-body p{font-size:11px;color:var(--muted);margin:0 0 12px;line-height:1.5}
+.card-arrow{position:absolute;right:16px;top:20px;font-size:18px;color:var(--bronze)}
+
+/* 3D Canvas Sanctuary Element */
+.sanctuary-3d-box{margin:36px 0 24px;border:1px solid var(--line);border-radius:10px;background:linear-gradient(135deg,#1E2B37,#111A22);color:var(--white);padding:24px;position:relative;overflow:hidden;display:grid;grid-template-columns:1fr 280px;gap:20px;align-items:center}
+.sanctuary-text h3{font-size:26px;color:var(--white);margin-bottom:6px}
+.sanctuary-text p{font-size:12px;color:#C2CFD6;margin:0 0 14px}
+#canvas3d{width:100%;height:180px;border-radius:8px;background:rgba(0,0,0,.2)}
+
+.itinerary-sidebar{position:sticky;top:100px}
+.itinerary-top{padding:22px;border-bottom:1px solid var(--line)}
+.itinerary-top h2{font-size:26px;line-height:1.1;margin:6px 0}
+.badge-count{float:right;background:var(--bronze);color:var(--white);border-radius:50%;width:26px;height:26px;text-align:center;font:700 12px/26px Manrope}
+.itinerary-content{padding:12px 22px;max-height:460px;overflow-y:auto}
+.empty-state{padding:32px 10px;text-align:center}
+.empty-icon{width:44px;height:44px;border:1px dashed var(--bronze);border-radius:50%;font-size:20px;line-height:42px;margin:0 auto 12px;color:var(--bronze)}
+.empty-state h3{font-size:22px;margin-bottom:6px}
+.empty-state p{font-size:11px;color:var(--muted)}
+.it-item{position:relative;padding:16px 0 14px 16px;border-bottom:1px solid var(--line)}
+.it-item::before{content:"";position:absolute;width:6px;height:6px;border-radius:50%;left:0;top:22px;background:var(--bronze)}
+.it-item h3{font-size:20px;margin:2px 0}
+.it-item p{font-size:11px;color:var(--muted);margin:0 0 6px}
+.item-controls{display:flex;gap:12px;margin-top:6px}
+.text-button{background:none;border:0;border-bottom:1px solid #A0ACB3;padding:0;font-size:11px;color:var(--ink);cursor:pointer}
+.text-button:hover{color:var(--bronze)}
+
+.itinerary-bottom{padding:20px;background:#F4F6F7}
+.itinerary-bottom .button{width:100%}
+.fine{font-size:11px;color:var(--muted);line-height:1.5}
+
+.concierge-card{margin-top:20px;padding:20px;background:var(--blue);border-radius:10px;border:1px solid #D2DFE6}
+.concierge-card h3{font-size:22px;margin:4px 0 8px}
+.concierge-card p{font-size:12px;color:var(--muted);margin:0 0 14px}
+
+.view[hidden]{display:none}
+.wide-view{max-width:1080px;margin:0 auto}
+.view-title{margin-bottom:28px}
+.view-title h2{font-size:38px;margin-bottom:6px}
+
+.chat-layout{display:grid;grid-template-columns:1fr 280px;gap:24px}
+.chat-window{padding:20px;min-height:360px;max-height:540px;overflow-y:auto;background:var(--white)}
+.bubble{max-width:85%;background:var(--blue);border-radius:10px 10px 10px 0;padding:12px 16px;font-size:13px;margin-bottom:14px;color:var(--ink)}
+.bubble.user{background:var(--ink);color:var(--white);margin-left:auto;border-radius:10px 10px 0 10px}
+.bubble .button{margin-top:10px;display:inline-flex}
+.chat-compose{display:flex;padding:16px;gap:10px;border-top:1px solid var(--line)}
+.chat-compose input{width:100%;border:1px solid var(--line);padding:10px 14px;border-radius:6px;min-width:0}
+
+.quick-replies{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.quick-replies button{background:var(--white);border:1px solid #C4D0D6;border-radius:20px;padding:6px 12px;font-size:11px}
+.quick-replies button:hover{background:var(--blue)}
+
+.summary-card{padding:28px;margin-bottom:24px}
+.status-tag{display:inline-block;background:var(--blue);color:var(--ink);border-radius:4px;padding:3px 8px;font-size:10px;font-weight:800}
+.status-tag.confirmed{background:#E2F0E6;color:var(--green)}
+.status-tag.cancelled{background:#F8EBE8;color:#8C302C}
+
+.staff-record{display:grid;grid-template-columns:1.5fr 1fr 1fr auto;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.staff-record h3{font-size:20px;margin:0}
+
+.overlay{position:fixed;inset:0;background:rgba(18,28,36,.65);z-index:100;display:flex;justify-content:flex-end;backdrop-filter:blur(3px)}
+.overlay[hidden]{display:none}
+.sheet{height:100%;width:min(520px,100%);background:var(--paper);overflow-y:auto;box-shadow:-10px 0 40px rgba(0,0,0,.2)}
+.sheet-head{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:var(--paper);position:sticky;top:0;z-index:2;border-bottom:1px solid var(--line)}
+.close-btn{background:var(--white);border:1px solid var(--line);width:36px;height:36px;border-radius:50%;font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center}
+.sheet-content{padding:24px}
+.sheet-content h2{font-size:32px;line-height:1.1;margin-bottom:12px}
+.sheet-photo{height:220px;position:relative;margin:-24px -24px 20px;background:#20364b}
+.sheet-photo img{height:100%;width:100%;object-fit:cover}
+
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0}
+.form-grid .full{grid-column:1/-1}
+.notice{padding:14px;background:var(--blue);font-size:11px;border-radius:6px;margin:14px 0;border-left:3px solid var(--bronze)}
+.error{color:#9E2A2B;font-size:12px;margin:10px 0;font-weight:600}
+.success-note{background:#E2F0E6;padding:16px;border-radius:6px;font-size:12px;color:var(--green);margin:14px 0}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--white);padding:12px 24px;border-radius:8px;box-shadow:0 6px 24px rgba(0,0,0,.2);z-index:120;font-size:12px;font-weight:600}
+.toast:empty{display:none}
+.mobile-call{display:none}
+
+footer{padding:32px 4% 36px;background:#EEF2F5;border-top:1px solid var(--line);color:var(--muted);font-size:11px;display:flex;justify-content:space-between;gap:30px;margin-top:60px}
+footer p{margin:0 0 8px;max-width:820px}
+footer a{color:var(--ink);text-decoration:underline}
+
+@media(max-width:1100px){
+  .layout{grid-template-columns:1fr}
+  .itinerary-sidebar{position:static}
+  .sanctuary-3d-box{grid-template-columns:1fr}
+  #canvas3d{height:140px}
+}
+@media(max-width:768px){
+  header{padding:10px 5%}
+  .identity-divider,.brand-sub{display:none}
+  .menu-toggle{display:block}
+  nav{display:none;position:absolute;top:80px;left:0;right:0;background:var(--paper);padding:16px 5%;box-shadow:0 10px 20px rgba(0,0,0,.1);flex-direction:column;align-items:stretch;border-bottom:1px solid var(--line)}
+  nav.open{display:flex}
+  nav button{text-align:left;padding:12px}
+  .workspace{padding:20px 5% 30px}
+  h1{font-size:32px}
+  .topline{flex-direction:column;align-items:flex-start}
+  .dates-bar{grid-template-columns:1fr;padding:14px}
+  .suite-card{grid-template-columns:1fr}
+  .suite-image{height:200px}
+  .chat-layout{grid-template-columns:1fr}
+  .staff-record{grid-template-columns:1fr;gap:8px}
+  .mobile-call{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:90;background:var(--paper);border-top:1px solid var(--line);padding:10px 5%;gap:10px}
+  .mobile-call a,.mobile-call button{flex:1}
+  footer{padding-bottom:80px;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  *,::before,::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="disclosure">Independent website concept by LeadSky for Fairlawns Hotel. Not their official website.</div>
+
+<header>
+  <div class="identity">
+    <img class="logo-img" src="img/profile.jpg" alt="Fairlawns Boutique Hotel & Spa Profile Logo">
+    <div>
+      <div class="brand-title">Fairlawns</div>
+      <div class="brand-sub">Boutique Hotel & Spa · Johannesburg</div>
+    </div>
+    <span class="identity-divider"></span>
+    <span class="demo-tag">Private Concept</span>
+  </div>
+  <button class="menu-toggle" id="menuButton" aria-expanded="false" aria-controls="navigation">Menu ☰</button>
+  <nav id="navigation" aria-label="Guest navigation">
+    <button class="active" data-view="plan">Plan Your Stay</button>
+    <button data-view="summary">Your Itinerary (<span class="nav-count">0</span>)</button>
+    <button data-view="concierge">Concierge</button>
+    <button data-view="staff">Staff Workspace</button>
+  </nav>
+</header>
+
+<main class="workspace">
+  <div class="view" id="view-plan">
+    <div class="topline">
+      <div>
+        <p class="eyebrow">Morningside, Sandton · Sanctuary Stay</p>
+        <h1>Your Fairlawns Itinerary</h1>
+        <p class="subtitle">Suites, wellness spa, fine dining, and garden tea. Seamlessly arranged together.</p>
+      </div>
+      <div class="top-actions">
+        <button class="button secondary" data-action="reset">Reset Demo ↺</button>
+        <button class="button" id="startPlan">Begin Sample Request ↗</button>
+      </div>
+    </div>
+
+    <div class="layout">
+      <section aria-label="Stay planner">
+        <div class="dates-bar">
+          <div class="field">
+            <label for="arrival">Arrival Date</label>
+            <input type="date" id="arrival" required>
+          </div>
+          <div class="field">
+            <label for="departure">Departure Date</label>
+            <input type="date" id="departure" required>
+          </div>
+          <div class="field">
+            <label for="guests">Guests</label>
+            <select id="guests">
+              <option value="1">1 Guest</option>
+              <option value="2" selected>2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+            </select>
+          </div>
+        </div>
+        <p id="dateError" class="error" role="alert"></p>
+
+        <div class="section-heading">
+          <h2>Select Accommodation</h2>
+          <span class="step">Step 01 / Suite Selection</span>
+        </div>
+
+        <article class="suite-card">
+          <div class="suite-image">
+            <img id="suitePhoto" src="img/business-featured-2.jpg" alt="Villa Moji photograph published by Fairlawns">
+            <div class="image-overlay-caption" id="suiteCaption">Villa Moji · Official Fairlawns Portfolio Photograph</div>
+          </div>
+          <div class="suite-info">
+            <span class="eyebrow">Boutique Luxury Suites</span>
+            <h3>Villa Moji</h3>
+            <p>Exclusive villa experience nestled in lush Morningside gardens. Explore alternative suites below.</p>
+            <div class="field" style="width:100%;margin-bottom:14px">
+              <label for="suiteSelect">Switch Suite</label>
+              <select id="suiteSelect">
+                <option value="Villa Moji">Villa Moji (Featured)</option>
+                <option value="Grand Chateau Suite">Grand Chateau Suite</option>
+                <option value="Courtyard Suite">Courtyard Suite</option>
+                <option value="Villa Suite">Villa Suite</option>
+                <option value="Tree House Studio">Tree House Studio</option>
+                <option value="Maison Spa Suite">Maison Spa Suite</option>
+              </select>
+            </div>
+            <button class="button small" id="suiteButton">Add Suite to Itinerary →</button>
+          </div>
+        </article>
+
+        <!-- Interactive 3D Canvas Section -->
+        <div class="sanctuary-3d-box">
+          <div class="sanctuary-text">
+            <span class="eyebrow" style="color:#D7B884">Interactive Sanctuary View</span>
+            <h3>Explore Our Garden Haven</h3>
+            <p>Drag or move your pointer over the dimensional emblem to experience our tranquil ambient garden concept.</p>
+            <span class="fine" style="color:#9EABAF">Interactive WebGL element · Rendered in real-time</span>
+          </div>
+          <div id="canvas3d"></div>
+        </div>
+
+        <div class="section-heading">
+          <h2>Curated Experiences & Dining</h2>
+          <span class="step">Step 02 / Spa, Culinary & Outdoor</span>
+        </div>
+
+        <div class="category-tabs" role="group" aria-label="Filter experiences">
+          <button class="active" data-category="All" aria-pressed="true">All Offerings</button>
+          <button data-category="Spa" aria-pressed="false">Spa & Wellness</button>
+          <button data-category="Dining" aria-pressed="false">Dining & Tea</button>
+          <button data-category="Experience" aria-pressed="false">Gardens & Outdoor</button>
+        </div>
+
+        <div class="services-grid" id="servicesGrid"></div>
+      </section>
+
+      <!-- Sidebar Itinerary -->
+      <aside class="itinerary-sidebar" aria-label="Your itinerary sidebar">
+        <div class="panel">
+          <div class="itinerary-top">
+            <span class="badge-count" id="itemCount">0</span>
+            <p class="eyebrow">Coordinated Stay</p>
+            <h2>Your Selection</h2>
+            <p class="fine" id="itineraryDates">Sample dates · No payment required</p>
+          </div>
+          <div class="itinerary-content" id="itineraryList"></div>
+          <div class="itinerary-bottom">
+            <button class="button" id="reviewButton" disabled>Review & Simulate Request →</button>
+            <p class="fine" style="margin-top:10px;text-align:center">A single request for suites, spa & dining. No live booking.</p>
+          </div>
+        </div>
+
+        <div class="concierge-card">
+          <span class="eyebrow">Personal Assistant</span>
+          <h3>Need Guidance?</h3>
+          <p>Ask our simulated concierge for recommendations on dining, tea times, or spa treatments.</p>
+          <button class="button secondary small" data-view="concierge">Open Demo Concierge ↗</button>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Summary View -->
+  <section class="view wide-view" id="view-summary" hidden>
+    <div class="view-title">
+      <p class="eyebrow">Single Coordinated Summary</p>
+      <h2>Your Itinerary Overview</h2>
+      <p class="subtitle">Review your stay details before sending a simulated request to our team.</p>
+    </div>
+    <div class="panel summary-card" id="summaryContent"></div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap">
+      <button class="button secondary" data-view="plan">← Back to Planning</button>
+      <button class="button" id="summaryReview" disabled>Submit Sample Request →</button>
+      <button class="button secondary" id="emailPreview" disabled>Preview Guest Email</button>
+    </div>
+  </section>
+
+  <!-- Concierge View -->
+  <section class="view wide-view" id="view-concierge" hidden>
+    <div class="view-title">
+      <p class="eyebrow">Fairlawns Digital Assistant</p>
+      <h2>Concierge Recommendations</h2>
+      <p class="subtitle">Scripted guidance for spa treatments, afternoon tea, and dining options.</p>
+    </div>
+    <div class="chat-layout">
+      <div class="panel">
+        <div class="chat-window" id="messages" role="log" aria-live="polite"></div>
+        <form class="chat-compose" id="chatForm">
+          <input id="chatInput" placeholder="Try 'recommend afternoon tea' or 'spa session'" required maxlength="300">
+          <button class="button" type="submit">Send ↗</button>
+        </form>
+      </div>
+      <aside>
+        <div class="concierge-card" style="margin:0">
+          <p class="eyebrow">Quick Topics</p>
+          <div class="quick-replies">
+            <button data-chat="Tell me about spa treatments">Spa & Massage</button>
+            <button data-chat="Dinner at Amuse-Bouche">Fine Dining</button>
+            <button data-chat="Afternoon tea details">Tea in the Woods</button>
+            <button data-chat="Luxury Garden Picnic">Luxury Picnic</button>
+            <button data-chat="What is in my itinerary?">My Itinerary</button>
+          </div>
+        </div>
+        <p class="fine" style="margin-top:16px">This concierge provides automated guidance based on verified hotel facts. No live AI connection.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Staff View -->
+  <section class="view wide-view" id="view-staff" hidden>
+    <div class="view-title">
+      <p class="eyebrow">Operations Concept</p>
+      <h2>Staff Coordination Hub</h2>
+      <p class="subtitle">Simulate real-time status updates across housekeeping, spa, and culinary teams.</p>
+    </div>
+    <div class="notice">Internal demonstration dashboard. Status updates made here synchronize immediately with the guest itinerary view.</div>
+    <div class="panel" id="staffRecords"></div>
+  </section>
+</main>
+
+<!-- Bottom Call Bar for Mobile -->
+<div class="mobile-call">
+  <a href="tel:+27118087300" class="button secondary">Call Hotel</a>
+  <button class="button" data-view="summary">View Itinerary (<span class="nav-count">0</span>)</button>
+</div>
+
+<!-- Modal Overlay -->
+<div class="overlay" id="overlay" hidden>
+  <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="dialogTitle" tabindex="-1">
+    <div class="sheet-head">
+      <span class="eyebrow" style="margin:0">Fairlawns · Guest Service</span>
+      <button class="close-btn" id="closeSheet" aria-label="Close dialog">×</button>
+    </div>
+    <div class="sheet-content" id="sheetContent"></div>
+  </section>
+</div>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<footer>
+  <div>
+    <p><strong>Concept by LeadSky</strong> · Independent, unendorsed website proposal for Fairlawns Boutique Hotel & Spa, Sandton, Johannesburg.</p>
+    <p>Fairlawns profile photo & Villa Moji photo: published by the business on public platforms. Stock photography credits (Pixabay Content License):</p>
+    <p>
+      <a href="https://pixabay.com/photos/bed-hotel-luxurious-bedroom-4416515/" target="_blank" rel="noopener">Engin_Akyurt</a> ·
+      <a href="https://pixabay.com/photos/apparel-boutique-bags-shoes-shop-1850804/" target="_blank" rel="noopener">Pexels</a> ·
+      <a href="https://pixabay.com/photos/water-outdoors-sky-travel-3292794/" target="_blank" rel="noopener">tianya1223</a> ·
+      <a href="https://pixabay.com/photos/swimming-pool-water-vacation-3488634/" target="_blank" rel="noopener">anncapictures</a> ·
+      <a href="https://pixabay.com/photos/hands-massage-treatment-fingers-1327811/" target="_blank" rel="noopener">andreas160578</a> ·
+      <a href="https://pixabay.com/photos/woman-hands-massage-massaging-567021/" target="_blank" rel="noopener">Mariolh</a> ·
+      <a href="https://pixabay.com/photos/restaurant-table-setting-table-449952/" target="_blank" rel="noopener">neshom</a> ·
+      <a href="https://pixabay.com/photos/table-glassware-cutlery-silverware-5356682/" target="_blank" rel="noopener">JoelFazhari</a> ·
+      <a href="https://pixabay.com/photos/tea-cup-drink-table-traditional-3190241/" target="_blank" rel="noopener">StarFlames</a> ·
+      <a href="https://pixabay.com/photos/tea-cup-vintage-tea-cup-tea-cup-2107599/" target="_blank" rel="noopener">TerriC</a> ·
+      <a href="https://pixabay.com/photos/wedding-photography-wedding-details-5582980/" target="_blank" rel="noopener">lubovlisitsa</a> ·
+      <a href="https://pixabay.com/photos/summer-still-life-garden-outdoors-783347/" target="_blank" rel="noopener">JillWellington</a>
+    </p>
+  </div>
+  <div>
+    <a href="https://fairlawns.co.za/" target="_blank" rel="noopener">Official Fairlawns Website ↗</a><br>
+    <a href="tel:+27118087300">Tel: +27 11 808 7300</a><br>
+    <button class="text-button" id="projectNotes" style="margin-top:8px">Concept & Design Notes</button>
+  </div>
+</footer>
+
+<script>
+(()=>{
+'use strict';
+
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+// Complete catalog of offerings using verified allowed photo paths
+const offerings = [
+  {
+    id: 'spa-massage',
+    name: 'Fairlawns Spa Sanctuary',
+    dept: 'Spa',
+    image: 'img/stock-5.jpg',
+    alt: 'Therapeutic hand massage session in spa',
+    description: 'Balinese-inspired spa rituals, massages, and outdoor hydrotherapy.',
+    details: 'Customized wellness treatments in tranquil garden pavilions. Rates and exact slot availability require confirmation with Fairlawns.',
+    duration: 60,
+    slots: ['09:30', '11:00', '14:00', '16:00']
+  },
+  {
+    id: 'spa-hydro',
+    name: 'Hydrotherapy & Body Wrap',
+    dept: 'Spa',
+    image: 'img/stock-6.jpg',
+    alt: 'Relaxing back massage treatment',
+    description: 'Revitalizing skin conditioning and full body recovery.',
+    details: 'Combine steam rooms, plunge pool relaxation, and essential oil treatments.',
+    duration: 90,
+    slots: ['10:00', '13:00', '15:30']
+  },
+  {
+    id: 'amuse-dining',
+    name: 'Amuse-Bouche Fine Dining',
+    dept: 'Dining',
+    image: 'img/stock-7.jpg',
+    alt: 'Elegant fine dining table setting with stemware',
+    description: 'French-influenced gourmet cuisine with a modern African touch.',
+    details: 'Fairlawns signature restaurant offering dynamic seasonal menus and boutique wine pairings.',
+    duration: 90,
+    slots: ['12:30', '18:30', '20:00']
+  },
+  {
+    id: 'muse-bar',
+    name: 'Muse Bar & Sunset Terrace',
+    dept: 'Dining',
+    image: 'img/stock-8.jpg',
+    alt: 'Outdoor sunset dining glassware and cocktails',
+    description: 'Artisan cocktails and aperitifs overlooking the garden estate.',
+    details: 'An unhurried space for late afternoon drinks, premium spirits, and light dining bites.',
+    duration: 60,
+    slots: ['16:00', '17:30', '19:00']
+  },
+  {
+    id: 'tea-woods',
+    name: 'Tea in the Woods',
+    dept: 'Dining',
+    image: 'img/stock-10.jpg',
+    alt: 'Vintage porcelain tea cup and afternoon tea arrangement',
+    description: 'Traditional English high tea served under verdant garden trees.',
+    details: 'Freshly baked scones, savory sandwiches, and premium leaf teas served in a serene setting.',
+    duration: 90,
+    slots: ['11:30', '14:00', '15:30']
+  },
+  {
+    id: 'garden-picnic',
+    name: 'Luxury Garden Picnic',
+    dept: 'Experience',
+    image: 'img/stock-11.jpg',
+    alt: 'Luxury garden picnic table setup with fresh flowers',
+    description: 'Private gourmet picnic set amidst landscaped hotel lawns.',
+    details: 'Includes plush cushions, artisan cheese boards, champagne, and dedicated service.',
+    duration: 120,
+    slots: ['11:00', '13:30', '16:00']
+  },
+  {
+    id: 'pool-sanctuary',
+    name: 'Pool Sanctuary Lounging',
+    dept: 'Experience',
+    image: 'img/stock-3.jpg',
+    alt: 'Tranquil hotel swimming pool and garden sunset view',
+    description: 'Reserved day bed by the garden swimming pool.',
+    details: 'Enjoy sun loungers, towel service, and light refreshments poolside.',
+    duration: 180,
+    slots: ['10:00', '14:00']
+  },
+  {
+    id: 'boutique-retail',
+    name: 'Boutique & Gift Collection',
+    dept: 'Experience',
+    image: 'img/stock-2.jpg',
+    alt: 'Luxury retail boutique store showcase',
+    description: 'Exclusive fragrance, leather goods, and local South African craft.',
+    details: 'Browse curated lifestyle gifts and spa skincare products in our boutique shop.',
+    duration: 45,
+    slots: ['10:30', '15:00', '17:00']
+  }
+];
+
+let items = [];
+let reference = null;
+let serial = 0;
+let currentView = 'plan';
+let activeCategory = 'All';
+let lastFocus = null;
+let toastTimer;
+
+// Date helpers
+const localDate = d => {
+  const v = new Date(d);
+  v.setMinutes(v.getMinutes() - v.getTimezoneOffset());
+  return v.toISOString().slice(0, 10);
+};
+
+const today = new Date();
+const tomorrow = new Date();
+tomorrow.setDate(today.getDate() + 1);
+const dayAfter = new Date();
+dayAfter.setDate(today.getDate() + 3);
+
+$('arrival').value = localDate(tomorrow);
+$('departure').value = localDate(dayAfter);
+$('arrival').min = localDate(today);
+$('departure').min = $('arrival').value;
+
+function formatDate(v){
+  if (!v) return '';
+  return new Date(v + 'T12:00:00').toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
+}
+
+function notify(text){
+  $('toast').textContent = text;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => $('toast').textContent = '', 4500);
+}
+
+function validDates(){
+  const ok = $('arrival').value && $('departure').value && $('departure').value > $('arrival').value && $('arrival').value >= $('arrival').min;
+  $('dateError').textContent = ok ? '' : 'Please select a valid arrival date and a departure date after arrival.';
+  return ok;
+}
+
+function showView(view){
+  currentView = view;
+  document.querySelectorAll('.view').forEach(el => el.hidden = (el.id !== 'view-' + view));
+  document.querySelectorAll('nav [data-view]').forEach(b => b.classList.toggle('active', b.dataset.view === view));
+  $('navigation').classList.remove('open');
+  $('menuButton').setAttribute('aria-expanded', 'false');
+  render();
+  window.scrollTo({ top: 0, behavior: 'instant' });
+}
+
+function openSheet(html){
+  lastFocus = document.activeElement;
+  $('sheetContent').innerHTML = html;
+  $('overlay').hidden = false;
+  document.body.style.overflow = 'hidden';
+  $('closeSheet').focus();
+}
+
+function closeSheet(){
+  $('overlay').hidden = true;
+  document.body.style.overflow = '';
+  if (lastFocus && lastFocus.isConnected) lastFocus.focus();
+}
+
+$('closeSheet').onclick = closeSheet;
+$('overlay').onclick = e => { if (e.target === $('overlay')) closeSheet(); };
+document.addEventListener('keydown', e => {
+  if ($('overlay').hidden) return;
+  if (e.key === 'Escape') closeSheet();
+});
+
+$('menuButton').onclick = () => {
+  const open = $('navigation').classList.toggle('open');
+  $('menuButton').setAttribute('aria-expanded', String(open));
+};
+
+document.addEventListener('click', e => {
+  const v = e.target.closest('[data-view]');
+  if (v) showView(v.dataset.view);
+  const r = e.target.closest('[data-action="reset"]');
+  if (r) resetDemo();
+});
+
+function renderServices(){
+  const filtered = offerings.filter(o => activeCategory === 'All' || o.dept === activeCategory);
+  $('servicesGrid').innerHTML = filtered.map(o => `
+    <button class="service-card" data-service="${o.id}">
+      <div class="service-photo">
+        <img src="${o.image}" alt="${esc(o.alt)}" width="400" height="200" loading="lazy">
+        <span class="photo-badge">Reference Visual</span>
+      </div>
+      <div class="service-body">
+        <span class="eyebrow">${o.dept}</span>
+        <h3>${esc(o.name)}</h3>
+        <p>${esc(o.description)}</p>
+        <span class="fine" style="color:var(--bronze);font-weight:700">Explore Availability ↗</span>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </div>
+    </button>
+  `).join('');
+}
+
+$('servicesGrid').onclick = e => {
+  const b = e.target.closest('[data-service]');
+  if (b) serviceSheet(b.dataset.service);
+};
+
+document.querySelectorAll('[data-category]').forEach(b => {
+  b.onclick = () => {
+    activeCategory = b.dataset.category;
+    document.querySelectorAll('[data-category]').forEach(x => {
+      x.classList.toggle('active', x === b);
+      x.setAttribute('aria-pressed', String(x === b));
+    });
+    renderServices();
+  };
+});
+
+$('suiteSelect').onchange = () => {
+  const isMoji = $('suiteSelect').value === 'Villa Moji';
+  $('suitePhoto').src = isMoji ? 'img/business-featured-2.jpg' : 'img/stock-1.jpg';
+  $('suitePhoto').alt = isMoji ? 'Villa Moji, official Fairlawns photograph' : 'Luxurious boutique hotel suite';
+  $('suiteCaption').textContent = isMoji ? 'Villa Moji · Official Fairlawns Portfolio Photograph' : 'Reference Suite Interior · Illustrative';
+};
+
+$('suiteButton').onclick = () => serviceSheet('suite');
+$('startPlan').onclick = () => {
+  if (validDates()) serviceSheet('suite');
+};
+
+function serviceSheet(id, editId){
+  if (!validDates()){
+    showView('plan');
+    $('arrival').focus();
+    return;
+  }
+  const old = items.find(x => x.id === editId);
+  let o;
+  if (id === 'suite') {
+    const suiteName = old ? old.name : $('suiteSelect').value;
+    o = {
+      id: 'suite',
+      name: suiteName,
+      dept: 'Suites',
+      image: suiteName === 'Villa Moji' ? 'img/business-featured-2.jpg' : 'img/stock-1.jpg',
+      details: 'Individually styled luxury suite at Fairlawns Boutique Hotel & Spa, Sandton. Rates and availability require confirmation.'
+    };
+  } else {
+    o = offerings.find(x => x.id === id);
+  }
+
+  if (!o) return;
+
+  const start = old ? old.date : $('arrival').value;
+  openSheet(`
+    <div class="sheet-photo">
+      <img src="${o.image}" alt="${esc(o.name)}">
+      <div class="image-overlay-caption">${o.image.includes('business-') ? 'Official Fairlawns Portfolio Image' : 'Illustrative Reference Photograph'}</div>
+    </div>
+    <p class="eyebrow">${o.dept} · Request Details</p>
+    <h2 id="dialogTitle">${esc(o.name)}</h2>
+    <p class="fine">${esc(o.details)}</p>
+    <form id="serviceForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="slotDate">${id === 'suite' ? 'Check-in' : 'Date'}</label>
+          <input id="slotDate" type="date" required min="${$('arrival').value}" max="${$('departure').value}" value="${start}">
+        </div>
+        ${id === 'suite' ? `
+          <div class="field">
+            <label for="slotEnd">Check-out</label>
+            <input id="slotEnd" type="date" required min="${$('arrival').value}" value="${old ? old.end : $('departure').value}">
+          </div>
+        ` : `
+          <div class="field">
+            <label for="slotTime">Preferred Time</label>
+            <select id="slotTime">
+              ${(o.slots || ['12:00','15:00']).map(t => `<option ${old && old.time === t ? 'selected' : ''}>${t}</option>`).join('')}
+            </select>
+          </div>
+        `}
+        <div class="field full">
+          <label for="slotGuests">Number of Guests</label>
+          <select id="slotGuests">
+            ${[1,2,3,4].map(n => `<option value="${n}" ${String(old ? old.guests : $('guests').value) === String(n) ? 'selected' : ''}>${n} ${n === 1 ? 'Guest' : 'Guests'}</option>`).join('')}
+          </select>
+        </div>
+      </div>
+      <div class="notice">
+        ${id === 'suite' ? 'Suite availability is subject to hotel confirmation.' : `Planning duration: approximately ${o.duration || 60} minutes.`}<br>
+        This is a demo simulation. No payment or live booking is made.
+      </div>
+      <p class="error" id="slotError" role="alert"></p>
+      <button class="button" type="submit">${old ? 'Save Changes' : 'Add to Itinerary'} →</button>
+    </form>
+  `);
+
+  $('serviceForm').onsubmit = e => {
+    e.preventDefault();
+    const date = $('slotDate').value;
+    const end = id === 'suite' ? $('slotEnd').value : null;
+    const time = id === 'suite' ? '15:00' : $('slotTime').value;
+
+    if (id === 'suite' && end <= date){
+      $('slotError').textContent = 'Check-out date must be after check-in date.';
+      return;
+    }
+    if (date < $('arrival').value || date > $('departure').value){
+      $('slotError').textContent = 'Please choose a date within your selected arrival and departure dates.';
+      return;
+    }
+
+    const item = {
+      id: editId || ++serial,
+      service: id,
+      name: o.name,
+      dept: o.dept,
+      date,
+      end,
+      time,
+      duration: o.duration || 0,
+      guests: $('slotGuests').value,
+      status: reference ? 'Requested' : 'Draft'
+    };
+
+    if (old) {
+      items = items.map(x => x.id === old.id ? item : x);
+    } else {
+      items.push(item);
+    }
+
+    closeSheet();
+    render();
+    notify(old ? 'Itinerary updated locally.' : 'Added to your sample itinerary.');
+  };
+}
+
+function sortedItems(){
+  return [...items].sort((a,b) => (a.date + a.time).localeCompare(b.date + b.time));
+}
+
+function itemHTML(x){
+  return `
+    <div class="it-item">
+      <span class="eyebrow" style="font-size:9px">${x.dept} · ${formatDate(x.date)}${x.end ? ' – ' + formatDate(x.end) : ' at ' + x.time}</span>
+      <h3>${esc(x.name)}</h3>
+      <p>${x.guests} ${x.guests === '1' ? 'Guest' : 'Guests'}</p>
+      <span class="status-tag ${x.status.toLowerCase()}">${x.status}</span>
+      <div class="item-controls">
+        <button class="text-button" data-edit="${x.id}">Edit</button>
+        <button class="text-button" data-remove="${x.id}">Remove</button>
+      </div>
+    </div>
+  `;
+}
+
+function render(){
+  const active = items.filter(x => x.status !== 'Cancelled');
+  $('itemCount').textContent = active.length;
+  document.querySelectorAll('.nav-count').forEach(x => x.textContent = active.length);
+
+  $('itineraryDates').textContent = `${formatDate($('arrival').value)} – ${formatDate($('departure').value)}`;
+  
+  $('itineraryList').innerHTML = items.length ? sortedItems().map(itemHTML).join('') : `
+    <div class="empty-state">
+      <div class="empty-icon">+</div>
+      <h3>Your Itinerary is Empty</h3>
+      <p>Select a suite, spa treatment, or dining experience to begin constructing your custom stay.</p>
+    </div>
+  `;
+
+  $('reviewButton').disabled = !active.length;
+  $('summaryReview').disabled = !active.length;
+  $('emailPreview').disabled = !reference;
+
+  $('summaryContent').innerHTML = `
+    <p class="eyebrow">${reference ? 'Reference #' + reference : 'Draft Summary'}</p>
+    <h3 style="font-size:28px;margin-bottom:12px">${reference ? 'Sample Request Prepared' : 'Your Selected Experiences'}</h3>
+    ${reference ? '<div class="success-note">This is a demo form, nothing was sent to the hotel. Nothing has been charged. You can test staff status changes below.</div>' : ''}
+    ${items.length ? sortedItems().map(itemHTML).join('') : '<p class="fine">No items added yet.</p>'}
+  `;
+
+  renderStaff();
+}
+
+document.addEventListener('click', e => {
+  const edit = e.target.closest('[data-edit]');
+  if (edit){
+    const x = items.find(i => i.id === +edit.dataset.edit);
+    if (x) serviceSheet(x.service, x.id);
+  }
+  const rm = e.target.closest('[data-remove]');
+  if (rm){
+    items = items.filter(x => x.id !== +rm.dataset.remove);
+    render();
+    notify('Item removed from itinerary.');
+  }
+});
+
+['arrival','departure'].forEach(id => {
+  $(id).onchange = () => {
+    $('departure').min = $('arrival').value;
+    if (validDates()) render();
+  };
+});
+
+function review(){
+  const live = items.filter(x => x.status !== 'Cancelled');
+  if (!live.length) return;
+
+  openSheet(`
+    <p class="eyebrow">Simulated Hand-off</p>
+    <h2 id="dialogTitle">Review Your Request</h2>
+    <div class="notice">
+      ${live.length} selected items for ${formatDate($('arrival').value)} – ${formatDate($('departure').value)}.<br>
+      No actual reservation or payment will be processed.
+    </div>
+    ${live.map(x => `<p style="font-size:12px;border-bottom:1px solid var(--line);padding:8px 0;margin:0"><strong>${esc(x.name)}</strong> · ${formatDate(x.date)} (${x.dept})</p>`).join('')}
+    <form id="requestForm">
+      <div class="form-grid">
+        <div class="field full">
+          <label for="guestName">Sample Guest Name</label>
+          <input id="guestName" required value="Alex Morgan">
+        </div>
+        <div class="field full">
+          <label for="guestEmail">Sample Email</label>
+          <input id="guestEmail" required type="email" value="alex@example.com">
+        </div>
+      </div>
+      <label style="font-size:12px;display:flex;gap:8px;align-items:flex-start;margin-bottom:16px">
+        <input type="checkbox" required style="margin-top:2px"> I understand this is a conceptual demo and no booking is transmitted.
+      </label>
+      <button class="button" style="width:100%" type="submit">Submit Demo Request →</button>
+    </form>
+  `);
+
+  $('requestForm').onsubmit = e => {
+    e.preventDefault();
+    reference = 'FL-' + Math.floor(100000 + Math.random() * 900000);
+    items.forEach(x => { if (x.status === 'Draft') x.status = 'Requested'; });
+    closeSheet();
+    showView('summary');
+    notify('This is a demo form, nothing was sent.');
+  };
+}
+
+$('reviewButton').onclick = review;
+$('summaryReview').onclick = review;
+
+$('emailPreview').onclick = () => openSheet(`
+  <p class="eyebrow">Simulated Guest Confirmation Email</p>
+  <h2 id="dialogTitle">Fairlawns Itinerary Summary</h2>
+  <div class="notice">To: alex@example.com<br>Subject: Your Fairlawns Plan (${reference})</div>
+  <p>Dear Guest,</p>
+  <p>Thank you for submitting your requested experience plan:</p>
+  ${sortedItems().map(x => `<p class="fine"><strong>${esc(x.name)}</strong><br>${formatDate(x.date)} · Status: ${x.status}</p>`).join('')}
+  <div class="success-note">This is a demo preview of an automated itinerary email.</div>
+`);
+
+function renderStaff(){
+  $('staffRecords').innerHTML = items.length ? sortedItems().map(x => `
+    <div class="staff-record">
+      <div>
+        <p class="eyebrow" style="font-size:9px;margin:0">${reference || 'DRAFT'} · ${x.dept}</p>
+        <h3>${esc(x.name)}</h3>
+      </div>
+      <div>
+        <p class="fine">${formatDate(x.date)} · ${x.guests} Guests</p>
+      </div>
+      <span class="status-tag ${x.status.toLowerCase()}">${x.status}</span>
+      <select data-status="${x.id}" aria-label="Update status for ${esc(x.name)}">
+        ${['Draft','Requested','Confirmed','Cancelled'].map(s => `<option ${s === x.status ? 'selected' : ''}>${s}</option>`).join('')}
+      </select>
+    </div>
+  `).join('') : '<div style="padding:24px;text-align:center"><p class="fine">No guest items available. Add items in Plan Your Stay view.</p></div>';
+}
+
+$('staffRecords').onchange = e => {
+  if (e.target.dataset.status){
+    const item = items.find(x => x.id === +e.target.dataset.status);
+    if (item){
+      item.status = e.target.value;
+      render();
+      notify('Staff status updated.');
+    }
+  }
+};
+
+function appendBubble(text, isUser = false, actionId = null){
+  const b = document.createElement('div');
+  b.className = 'bubble' + (isUser ? ' user' : '');
+  b.textContent = text;
+  if (actionId){
+    const btn = document.createElement('button');
+    btn.className = 'button secondary small';
+    btn.textContent = 'Explore Service →';
+    btn.onclick = () => serviceSheet(actionId);
+    b.appendChild(document.createElement('br'));
+    b.appendChild(btn);
+  }
+  $('messages').appendChild(b);
+  $('messages').scrollTop = $('messages').scrollHeight;
+}
+
+function initConcierge(){
+  $('messages').innerHTML = '';
+  appendBubble('Welcome to Fairlawns Concierge. I can recommend spa treatments, fine dining, or afternoon garden tea. How may I assist your stay?');
+}
+
+function answerConcierge(query){
+  appendBubble(query, true);
+  const q = query.toLowerCase();
+  if (q.includes('spa') || q.includes('massage')){
+    appendBubble('Our Balinese-style spa offers restorative massages and garden hydrotherapy treatments.', false, 'spa-massage');
+  } else if (q.includes('dining') || q.includes('dinner') || q.includes('amuse')){
+    appendBubble('Amuse-Bouche provides French-influenced fine dining crafted with local South African flavors.', false, 'amuse-dining');
+  } else if (q.includes('tea') || q.includes('afternoon')){
+    appendBubble('Tea in the Woods is served under leafy garden trees with traditional high tea pastries and leaf tea.', false, 'tea-woods');
+  } else if (q.includes('picnic') || q.includes('lawn')){
+    appendBubble('Private Luxury Picnics feature champagne and gourmet grazing boards on the manicured lawns.', false, 'garden-picnic');
+  } else if (q.includes('itinerary') || q.includes('my plan')){
+    appendBubble(items.length ? `You have ${items.length} item(s) in your selection. Check the Itinerary view to review timings.` : 'Your itinerary is empty right now. Start by adding a suite or spa session!');
+  } else {
+    appendBubble('We offer bespoke accommodations, spa sanctuary rituals, and gourmet dining. Select one of our featured options or call our team at +27 11 808 7300.');
+  }
+}
+
+$('chatForm').onsubmit = e => {
+  e.preventDefault();
+  const t = $('chatInput').value.trim();
+  if (t){
+    answerConcierge(t);
+    $('chatInput').value = '';
+  }
+};
+
+document.querySelectorAll('[data-chat]').forEach(b => {
+  b.onclick = () => answerConcierge(b.dataset.chat);
+});
+
+function resetDemo(){
+  items = [];
+  reference = null;
+  serial = 0;
+  initConcierge();
+  showView('plan');
+  notify('Demo workspace reset.');
+}
+
+$('projectNotes').onclick = () => openSheet(`
+  <p class="eyebrow">Design & Source Statement</p>
+  <h2 id="dialogTitle">Fairlawns Concept Architecture</h2>
+  <h3 style="font-size:20px;margin-top:14px">Visual Identity & Colors</h3>
+  <p class="fine">Champagne paper (#FBF8F1), deep navy ink (#1E2B37), and warm bronze accents (#966C38). Typography pairs Libre Caslon Display for headlines with Manrope for UI controls.</p>
+  <h3 style="font-size:20px;margin-top:14px">Visual Assets</h3>
+  <p class="fine">Includes official profile photo and Villa Moji featured photo published by the business, alongside high-resolution illustrative stock photos under the Pixabay Content License.</p>
+  <h3 style="font-size:20px;margin-top:14px">Technical Implementation</h3>
+  <p class="fine">Vanilla JS SPA layout, WCAG AA contrast compliance, responsive 390px phone target, client-side date collision detection, interactive Three.js r128 ambient canvas, and simulated staff workspace.</p>
+`);
+
+// Setup 3D Canvas element
+function init3D(){
+  const container = $('canvas3d');
+  if (!container || typeof THREE === 'undefined') return;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 100);
+  camera.position.z = 4;
+
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  container.appendChild(renderer.domElement);
+
+  // Geometric crystal emblem representing luxury sanctuary
+  const geometry = new THREE.IcosahedronGeometry(1.2, 0);
+  const material = new THREE.MeshStandardMaterial({
+    color: 0x966C38,
+    roughness: 0.3,
+    metalness: 0.8,
+    wireframe: true
+  });
+  const emblem = new THREE.Mesh(geometry, material);
+  scene.add(emblem);
+
+  const light1 = new THREE.PointLight(0xffffff, 1.2);
+  light1.position.set(5, 5, 5);
+  scene.add(light1);
+
+  const light2 = new THREE.AmbientLight(0xd7b884, 0.8);
+  scene.add(light2);
+
+  let mouseX = 0, mouseY = 0;
+  const onMove = e => {
+    const rect = container.getBoundingClientRect();
+    mouseX = ((e.clientX - rect.left) / container.clientWidth) * 2 - 1;
+    mouseY = -((e.clientY - rect.top) / container.clientHeight) * 2 + 1;
+  };
+  container.addEventListener('mousemove', onMove);
+
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function animate(){
+    requestAnimationFrame(animate);
+    if (!prefersReduced){
+      emblem.rotation.y += 0.006;
+      emblem.rotation.x += (mouseY * 0.5 - emblem.rotation.x) * 0.05;
+      emblem.rotation.z += (mouseX * 0.5 - emblem.rotation.z) * 0.05;
+    }
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    if (!container.clientWidth) return;
+    camera.aspect = container.clientWidth / container.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(container.clientWidth, container.clientHeight);
+  });
+}
+
+// Initialize components
+renderServices();
+initConcierge();
+render();
+init3D();
+
+})();
+</script>
+</body>
+</html>
