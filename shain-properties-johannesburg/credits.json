@@ -1,0 +1,122 @@
+[
+  {
+    "file": "img/business-logo-1.jpg",
+    "kind": "business logo",
+    "source": "https://drive.propcon.co.za/agency/71cc4ae014e8455da3e70e270e772b1a/branch/9c09c3cc953a0a36273aebb34cc49c54/logo.jpg",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.png",
+    "kind": "business featured image",
+    "source": "https://drive.propcon.co.za/agency/71cc4ae014e8455da3e70e270e772b1a/branch/9c09c3cc953a0a36273aebb34cc49c54/icon.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/shainproperties"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels South Africa residential house exterior garden",
+    "description": "house, homeland, architecture, property, woodhouse, sweden house, scandinavia, norway, country house, house, house, house, property, property, property, property, property, norway",
+    "source": "https://pixabay.com/photos/house-homeland-architecture-7313645/",
+    "photographer": "H031175",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels South Africa residential house exterior garden",
+    "description": "house, architecture, front yard, garage, home, house lights, illuminated, exterior, house exterior, home exterior, facade, real estate, windows, house, house, house, house, house, home, home, real estate",
+    "source": "https://pixabay.com/photos/house-architecture-front-yard-1836070/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay Johannesburg suburban residential home exterior",
+    "description": "house, garage, driveway, architecture, building, property, home, residential, suburb, real estate, exterior, facade, house exterior, home exterior, street, neighborhood street, residential area, house, house, house, house, house, home, home, real estate",
+    "source": "https://pixabay.com/photos/house-garage-driveway-architecture-1867187/",
+    "photographer": "Pexels",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay Johannesburg suburban residential home exterior",
+    "description": "architect, building, joy, planning, plans, professional, employee, builder, worker, repair, contractor, man, people, male, work, development, housing, home, build, architect, builder, builder, worker, worker, worker, contractor, contractor, contractor, contractor, home, home, home, home, home, build",
+    "source": "https://pixabay.com/photos/architect-building-joy-planning-1080589/",
+    "photographer": "jarmoluk",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bright modern residential living room natural light",
+    "description": "home, sofa, living room, decoration, room, indoors, house, furniture, luxury home, home furniture, interiors, home interiors, interior design, interior decoration, couch, home, home, home, living room, living room, living room, living room, living room, room, house, house, house, house, furniture, interior design, interior design",
+    "source": "https://pixabay.com/photos/home-sofa-living-room-decoration-1622401/",
+    "photographer": "leemelina08",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pexels bright modern residential living room natural light",
+    "description": "interior, living room, furniture, neoclassical, design, luxury, room, home, architecture, interior design, interior decoration, home furniture, render, 3d, interior, living room, living room, living room, living room, furniture, luxury, room, home, home, home, home, home, interior design, interior design, interior design",
+    "source": "https://pixabay.com/photos/interior-living-room-furniture-2685521/",
+    "photographer": "4787421",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels residential kitchen interior neutral finishes",
+    "description": "kitchen, home, interior, modern, room, floor, furniture, counter, wood, living, kitchen interior, residential, table, brown home, brown kitchen, brown wood, brown room, brown table, brown interior, kitchen, kitchen, kitchen, kitchen, kitchen, home",
+    "source": "https://pixabay.com/photos/kitchen-home-interior-modern-room-2165756/",
+    "photographer": "ClickerHappy",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels residential kitchen interior neutral finishes",
+    "description": "architecture, interior, furniture, kitchen, graphics, house, chairs, stool, tumblr wallpaper, kitchen, kitchen, kitchen, kitchen, kitchen",
+    "source": "https://pixabay.com/photos/architecture-interior-furniture-1171462/",
+    "photographer": "Giovanni_cg",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pexels house entrance garden pathway real estate",
+    "description": "residence, property, house, real estate, residential, architecture, building, villa, protaras, cyprus, modern, white, property, house, house, house, house, house, real estate, real estate, real estate, villa",
+    "source": "https://pixabay.com/photos/residence-property-house-2219972/",
+    "photographer": "dimitrisvetsikas1969",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pexels house entrance garden pathway real estate",
+    "description": "money, finance, mortgage, loan, real-estate, business, success, exchange, financial, cash, currency, bank, investment, banking, wealth, coin, economy, profit, salary, rich, credit, payment, savings, deposit, growth, income, accounting, money, money, money, money, money, finance, business",
+    "source": "https://pixabay.com/photos/money-finance-mortgage-loan-2696229/",
+    "photographer": "nattanan23",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
