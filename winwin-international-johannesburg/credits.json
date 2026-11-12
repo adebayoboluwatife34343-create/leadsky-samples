@@ -1,0 +1,142 @@
+[
+  {
+    "file": "img/business-logo-1.png",
+    "kind": "business logo",
+    "source": "https://static.wixstatic.com/media/260f98_a42eba13836c4a34b11184e5d436e3dc~mv2.png/v1/crop/x_0,y_14,w_2084,h_2057/fill/w_76,h_75,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/SAB_Updated_TestimonialLogo.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real logo"
+  },
+  {
+    "file": "img/business-featured-2.png",
+    "kind": "business featured image",
+    "source": "https://static.wixstatic.com/media/260f98_8826d3b33e2c49789b0423d94c9bfa06%7Emv2.png/v1/fit/w_2500,h_1330,al_c/260f98_8826d3b33e2c49789b0423d94c9bfa06%7Emv2.png",
+    "license": "Published by the business on its own website. Reuse permission NOT confirmed: fine for a private concept; ask the owner before going live.",
+    "use_as": "their real featured image"
+  },
+  {
+    "file": "img/profile.jpg",
+    "kind": "their own photo (from their Instagram)",
+    "use_as": "logo / profile picture",
+    "source": "https://www.instagram.com/winwininternational"
+  },
+  {
+    "file": "img/stock-1.jpg",
+    "kind": "stock photo",
+    "query": "Pexels diverse adult colleagues facilitated workplace learning workshop",
+    "description": "meeting, adults, business, people, team, men, work, communication, learning, teamwork, office, worker, businessman, professional, woman, meeting, meeting, meeting, meeting, meeting, team",
+    "source": "https://pixabay.com/photos/meeting-adults-business-people-4784909/",
+    "photographer": "14995841",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-2.jpg",
+    "kind": "stock photo",
+    "query": "Pexels diverse adult colleagues facilitated workplace learning workshop",
+    "description": "people, business, meeting, business meeting, coworkers, agreement, men, women, professionals, office, employees, suit, work, greeting, boss, computer, group, handshake, desk, team, colleagues, arrangement, people, business, business, business, business, business, meeting, meeting, business meeting, office, office, work, team",
+    "source": "https://pixabay.com/photos/people-business-meeting-1979261/",
+    "photographer": "089photoshootings",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-3.jpg",
+    "kind": "stock photo",
+    "query": "Pexels manufacturing employees practical workplace training safety",
+    "description": "worker, woman, mask, face mask, medical mask, portrait, factory, factory worker, occupation, asian, asian woman, worker, factory, factory, factory, factory, factory, factory worker",
+    "source": "https://pixabay.com/photos/worker-woman-mask-face-mask-6322029/",
+    "photographer": "Quanlecntt2004",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-4.jpg",
+    "kind": "stock photo",
+    "query": "Pexels manufacturing employees practical workplace training safety",
+    "description": "woman, work, office, whiteboard, meeting, girl, female, employee, planning, business, smile, happy, work, work, office, office, office, meeting, meeting, meeting, meeting, meeting, employee, employee, business, business, business, business, smile, happy",
+    "source": "https://pixabay.com/photos/woman-work-office-whiteboard-4702060/",
+    "photographer": "This_is_Engineering",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-5.jpg",
+    "kind": "stock photo",
+    "query": "Pexels business facilitator presenting team communication workshop",
+    "description": "call center, headset, woman, service, consulting, information, conversation, continents, global, international, headphones, phone, help, call, corporate, booking, make a phone call, pc, call center, call center, call center, call center, call center, service, service, service, call",
+    "source": "https://pixabay.com/photos/call-center-headset-woman-service-2275745/",
+    "photographer": "geralt",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-6.jpg",
+    "kind": "stock photo",
+    "query": "Pexels business facilitator presenting team communication workshop",
+    "description": "teamwork, management, office, presentation, strategy, whiteboard, collaboration, innovation, discussion, people, meeting, idea, motivation, professional, cooperation, information, problem solving, profession",
+    "source": "https://pixabay.com/photos/teamwork-management-office-10503582/",
+    "photographer": "sakibmia24",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-7.jpg",
+    "kind": "stock photo",
+    "query": "Pexels adult professional online learning laptop headphones",
+    "description": "child, girl, young, caucasian, childhood, daughter, computer, learning, parent, mother, family, computer, computer, computer, learning, learning, learning, parent, mother, mother, family, family, family, family, family",
+    "source": "https://pixabay.com/photos/child-girl-young-caucasian-1073638/",
+    "photographer": "finelightarts",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-8.jpg",
+    "kind": "stock photo",
+    "query": "Pexels adult professional online learning laptop headphones",
+    "description": "students, computers, laptops, smiling, park, study, studying, group work, classmates, friends, asian, asia, computer, friendship, girls, happy, people, technology, thailand, young, teamwork, friendship day, study, study, study, study, study, studying",
+    "source": "https://pixabay.com/photos/students-computers-laptops-smiling-1807505/",
+    "photographer": "sasint",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-9.jpg",
+    "kind": "stock photo",
+    "query": "Pexels virtual reality headset professional training",
+    "description": "xr, mr, mixed reality, virtual reality, augmented reality, african american, female, woman, metaverse, lady, girl, black, america, pink, purple, blue, neon, lighting",
+    "source": "https://pixabay.com/photos/xr-mr-mixed-reality-virtual-reality-7499160/",
+    "photographer": "BrianPenny",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-10.jpg",
+    "kind": "stock photo",
+    "query": "Pexels virtual reality headset professional training",
+    "description": "virtual, virtual reality, technology, reality, digital, 3d, headset, device, entertainment, modern, metaverse, goggles, glasses, tech, simulation, game, gadget, person, man, vision, futuristic, cyber, simulator, video",
+    "source": "https://pixabay.com/photos/virtual-virtual-reality-technology-3460451/",
+    "photographer": "JESHOOTS-com",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-11.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay collaborative planning workshop notebooks meeting",
+    "description": "job, office, team, business, internet, technology, design, draft, portable, meeting, job, office, office, office, office, team, team, business, business, business, business, business, technology, meeting, meeting, meeting",
+    "source": "https://pixabay.com/photos/job-office-team-business-internet-5382501/",
+    "photographer": "RonaldCandonga",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  },
+  {
+    "file": "img/stock-12.jpg",
+    "kind": "stock photo",
+    "query": "Pixabay collaborative planning workshop notebooks meeting",
+    "description": "meeting, brainstorming, business, teamwork, team, people, office, group, corporate, conference, colleagues, company, partnership, project, table, partners, plan, sketch, notepad, coworkers, writing, drinks, laptop, computer, notes, working, meeting, meeting, meeting, meeting, business, business, business, business, business, teamwork, team, team, team, people, office, office, office, company",
+    "source": "https://pixabay.com/photos/meeting-brainstorming-business-594091/",
+    "photographer": "StartupStockPhotos",
+    "license": "Pixabay Content License: free for commercial use, no attribution required (credit given in footer)",
+    "use_as": "illustrative stock photo: never present as the business's own work, staff or premises"
+  }
+]
