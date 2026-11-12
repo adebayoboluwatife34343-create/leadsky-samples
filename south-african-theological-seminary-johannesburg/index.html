@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#FBFAF5">
+<title>SATS Study Journey — Independent LeadSky Concept</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;450;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FBFAF5;--navy:#183B56;--blue:#E5EFF5;--amber:#AD650F;--ink:#263441;--line:#d6dfe1;--muted:#536572;--white:#fff;--green:#27654b}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 "IBM Plex Sans",sans-serif}button,input,select,textarea{font:inherit}button,a,input,select,textarea{ -webkit-tap-highlight-color:transparent}a{color:var(--navy);text-underline-offset:4px}button,a{touch-action:manipulation}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.5}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid var(--amber);outline-offset:4px}button{border:0}img{display:block;max-width:100%;object-fit:cover}h1,h2,h3,p{margin-top:0}h1,h2{font-family:"Libre Baskerville",serif;font-weight:400;line-height:1.22;letter-spacing:-.045em}h1{font-size:clamp(36px,3.8vw,64px);margin-bottom:22px}h2{font-size:clamp(29px,3vw,43px);margin-bottom:16px}h3{font-size:20px;line-height:1.3;letter-spacing:-.02em}p{margin-bottom:18px}small,.small{font-size:13px;line-height:1.5}.muted{color:var(--muted)}.banner{background:var(--navy);color:white;font-size:11px;text-align:center;padding:8px 16px;line-height:1.5;position:relative;z-index:20}.header{height:76px;display:flex;align-items:center;justify-content:space-between;padding:0 4%;background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:15;gap:12px}.brand{display:flex;align-items:center;gap:15px;text-decoration:none;min-width:0}.brand img{width:112px;height:43px;object-fit:contain}.brand span{border-left:1px solid var(--line);padding-left:15px;font-size:12px;line-height:1.3;color:var(--muted)}.header-actions{display:flex;align-items:center;gap:20px}.header-actions>a{font-size:13px;font-weight:600;text-decoration:none}.menu-button{display:flex;align-items:center;gap:10px;background:transparent;color:var(--navy);padding:10px 0;font-size:13px}.menu-icon{width:22px;display:grid;gap:5px}.menu-icon i{height:1px;background:currentColor;width:22px}.nav-panel{position:fixed;right:3%;top:105px;background:white;box-shadow:0 16px 60px #183b5626;border:1px solid var(--line);padding:24px;width:min(410px,94%);z-index:25}.nav-panel a{display:block;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none;font-size:17px}.nav-panel a span{font-size:12px;color:var(--amber);margin-right:15px}.nav-panel button{margin-top:20px}.split{display:grid;grid-template-columns:46% 54%;align-items:start}.visual{height:calc(100vh - 76px);position:sticky;top:76px;background:var(--navy);overflow:hidden}.visual>img{height:100%;width:100%;object-position:49% center}.visual:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.12) 20%,rgba(0,0,0,.66) 70%,rgba(0,0,0,.83))}.visual-content{position:absolute;z-index:1;bottom:70px;left:10%;right:10%;color:white}.visual-top{position:absolute;z-index:1;top:32px;left:10%;background:#183b56ed;color:white;padding:8px 13px;font-size:11px;letter-spacing:.1em;text-transform:uppercase}.visual-content .serif{font-family:"Libre Baskerville",serif;font-size:clamp(28px,3.1vw,46px);line-height:1.35;letter-spacing:-.035em;max-width:440px}.visual-content p{font-size:14px;max-width:330px;color:#f0f1ed}.visual-rule{width:48px;height:2px;background:#e7bc7d;margin-bottom:24px}.photo-caption{position:absolute;z-index:2;bottom:18px;left:10%;color:white;font-size:10px}.content{min-width:0}.chapter{padding:64px clamp(25px,4.4vw,76px);border-bottom:1px solid var(--line);scroll-margin-top:75px}.chapter:first-child{padding-top:43px}.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:10px;font-weight:600;color:var(--muted);margin-bottom:22px;display:flex;gap:14px;align-items:center}.eyebrow .num{color:var(--amber);font-size:13px;letter-spacing:0}.eyebrow:after{content:"";height:1px;background:var(--line);flex:1;max-width:85px}.business-name{font-size:13px;color:var(--navy);font-weight:600;margin-bottom:4px}.location{font-size:12px;color:var(--muted);margin-bottom:25px}.lead{font-size:17px;color:var(--muted);max-width:530px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:20px;min-height:47px;padding:12px 20px;background:var(--navy);color:white;border:1px solid var(--navy);border-radius:3px;font-weight:500;text-decoration:none;font-size:14px;transition:background .2s,transform .2s}.btn:hover{background:#245575}.btn .arrow{font-size:20px;line-height:1}.btn.secondary{background:transparent;color:var(--navy);border-color:#b5c6cf}.btn.secondary:hover{background:var(--blue)}.btn.smallbtn{min-height:39px;padding:8px 13px;font-size:12px;gap:10px}.text-btn{background:transparent;text-decoration:underline;text-underline-offset:4px;color:var(--navy);padding:7px 0;font-size:13px}.actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}.concept-note{font-size:11px;color:var(--muted);margin:13px 0 27px}.quiz{border:1px solid var(--line);background:white;border-radius:6px;padding:25px;margin-top:27px;box-shadow:0 10px 32px #183b5606}.quiz-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted)}.dots{display:flex;gap:6px}.dots i{width:22px;height:3px;background:var(--line);transition:background .25s}.dots i.active{background:var(--amber)}.quiz h3{font-family:"Libre Baskerville",serif;font-weight:400;font-size:21px;line-height:1.5;margin-bottom:16px}.options{display:grid;gap:9px;margin-bottom:20px}.option{position:relative;display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:3px;padding:11px 12px;cursor:pointer;font-size:14px;transition:background .15s,border-color .15s}.option:has(input:checked){background:var(--blue);border-color:var(--navy)}input[type=radio],input[type=checkbox]{accent-color:var(--navy);width:17px;height:17px;flex-shrink:0}.quiz-footer{display:flex;align-items:center;justify-content:space-between;gap:15px}.error{color:#9b342c;font-size:13px;margin:8px 0}.result-tag,.tag{display:inline-block;background:var(--blue);color:var(--navy);border-radius:3px;font-size:10px;font-weight:600;letter-spacing:.06em;padding:4px 8px;text-transform:uppercase}.result-title{font-family:"Libre Baskerville",serif!important;font-size:25px!important;margin-top:15px}.how{display:grid;grid-template-columns:30px 1fr;gap:10px;margin-top:26px;padding-top:23px;border-top:1px solid var(--line);font-size:13px;color:var(--muted)}.how strong{color:var(--navy);font-weight:500}.how-icon{font-size:23px;color:var(--amber)}.section-photo{height:175px;width:100%;border-radius:4px;margin:25px 0 8px}.image-note{font-size:10px;color:var(--muted);margin-bottom:25px}.panel{background:white;border:1px solid var(--line);border-radius:5px;padding:23px;margin-top:22px}.panel-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:16px}.panel-head h3{margin:0}.programme-title{font-size:17px;font-weight:500;color:var(--navy);margin:12px 0 20px}.status{font-size:11px;color:var(--green);background:#e8f2ea;padding:4px 8px;border-radius:20px;white-space:nowrap}.field{display:grid;gap:5px;margin-bottom:15px}.field label{font-size:12px;font-weight:500}.field input,.field select,.field textarea,.search{width:100%;min-width:0;background:var(--paper);color:var(--ink);border:1px solid #bdcbd2;border-radius:3px;padding:10px 11px;min-height:43px}.field textarea{resize:vertical}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}.checklist{display:grid;gap:10px;margin:18px 0 22px}.checkline{display:flex;gap:10px;align-items:flex-start;font-size:13px;cursor:pointer}.checkline input{margin-top:3px}.timeline{padding:0;list-style:none;margin:25px 0 0}.timeline li{position:relative;padding:0 0 23px 27px;font-size:12px;color:var(--muted);border-left:1px solid var(--line);margin-left:5px}.timeline li:last-child{border-left-color:transparent;padding-bottom:0}.timeline li:before{content:"";position:absolute;width:9px;height:9px;background:white;border:2px solid #a8bbc5;left:-6px;top:3px;border-radius:50%}.timeline li.done:before{background:var(--navy);border-color:var(--navy)}.timeline strong{display:block;font-size:13px;color:var(--ink)}.notice{font-size:12px;padding:12px 14px;background:var(--blue);border-left:2px solid var(--navy);margin-top:17px}.notice.success{background:#eaf2ed;border-color:var(--green)}.soft{background:#f0f4f4}.subheading{margin-top:27px;margin-bottom:10px;font-size:16px}.ledger{width:100%;border-collapse:collapse;font-size:12px}.ledger td,.ledger th{padding:12px 0;border-bottom:1px solid var(--line);text-align:left}.ledger th{font-weight:500;color:var(--muted)}.ledger td:last-child,.ledger th:last-child{text-align:right}.empty{font-size:13px;color:var(--muted);padding:14px 0}.scholar{margin-top:22px;border-top:1px solid var(--line);padding-top:22px}details{border-bottom:1px solid var(--line)}summary{cursor:pointer;padding:15px 26px 15px 0;font-size:14px;list-style:none;position:relative;font-weight:500}summary:after{content:"+";position:absolute;right:0;font-size:19px;top:10px}details[open]>summary:after{content:"−"}details>div{font-size:13px;color:var(--muted);padding-bottom:16px}progress{appearance:none;width:100%;height:7px;border:0;border-radius:5px;overflow:hidden;background:var(--line)}progress::-webkit-progress-bar{background:var(--line)}progress::-webkit-progress-value{background:var(--amber);transition:width .3s}progress::-moz-progress-bar{background:var(--amber)}.progress-label{display:flex;justify-content:space-between;font-size:12px;margin:14px 0 8px}.tabs{display:flex;gap:7px;margin:20px 0;flex-wrap:wrap}.tab{background:transparent;color:var(--muted);padding:7px 11px;border:1px solid var(--line);border-radius:20px;font-size:12px}.tab[aria-pressed=true]{background:var(--navy);color:white;border-color:var(--navy)}.activity{border-top:1px solid var(--line);padding:15px 0;display:flex;align-items:center;justify-content:space-between;gap:10px}.activity strong{display:block;font-size:14px}.activity span{font-size:11px;color:var(--muted)}.activity button{background:none;color:var(--navy);padding:7px;text-decoration:underline;font-size:12px}.support{background:var(--navy);color:white}.support h2{color:white}.support .eyebrow{color:#d3e0e8}.support .eyebrow .num{color:#f0c17f}.support .eyebrow:after{background:#567085}.support>.lead{color:#d6e2e9}.support .panel{color:var(--ink);border:0}.chat-log{height:270px;overflow:auto;display:flex;flex-direction:column;gap:12px;padding:6px 2px 16px;scroll-behavior:smooth}.bubble{font-size:13px;background:var(--blue);padding:12px 14px;border-radius:3px 12px 12px 12px;max-width:94%;align-self:flex-start}.bubble.user{background:var(--navy);color:white;align-self:flex-end;border-radius:12px 3px 12px 12px}.bubble small{display:block;margin-top:7px;font-size:10px;color:var(--muted)}.prompts{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0}.prompt{font-size:11px;background:var(--paper);border:1px solid var(--line);border-radius:20px;color:var(--navy);padding:7px 10px}.chat-form{display:flex;gap:8px}.chat-form input{flex:1;min-width:0;border:1px solid #bdcbd2;padding:10px;background:var(--paper);border-radius:3px;font-size:13px}.support .faq-search{margin:15px 0}.calendar-label{display:flex;justify-content:space-between;align-items:center;margin:17px 0;font-size:13px}.calendar-label button{background:var(--blue);color:var(--navy);width:34px;height:34px;border-radius:3px}.week{display:grid;grid-template-columns:repeat(5,1fr);gap:7px}.day{background:var(--paper);border:1px solid var(--line);border-radius:3px;padding:10px 2px;color:var(--navy);font-size:11px}.day strong{display:block;font-size:19px}.day[aria-pressed=true],.slot[aria-pressed=true]{background:var(--navy);color:white;border-color:var(--navy)}.slots{display:flex;gap:7px;flex-wrap:wrap;margin:15px 0}.slot{background:white;color:var(--navy);border:1px solid var(--line);padding:8px 12px;border-radius:3px;font-size:12px}.footer{padding:35px clamp(25px,4.4vw,76px) 45px;background:#edf1f1;font-size:11px;color:var(--muted)}.footer-top{display:flex;justify-content:space-between;gap:20px;margin-bottom:20px;align-items:center}.footer strong{color:var(--navy)}.credits{display:flex;gap:7px 14px;flex-wrap:wrap;margin:13px 0}.credits a{font-size:10px}.mobile-call{display:none}.toast{position:fixed;bottom:25px;right:25px;z-index:50;background:var(--navy);color:white;border:1px solid #8ca7b9;max-width:370px;padding:14px 20px;box-shadow:0 5px 30px #183b5630;font-size:13px;border-radius:4px}.dialog{border:1px solid var(--line);padding:30px;background:var(--paper);color:var(--ink);max-width:490px;width:calc(100% - 32px);border-radius:6px;box-shadow:0 20px 100px #0003}.dialog::backdrop{background:#122f43ad}.dialog h2{font-size:28px}.dialog dl{font-size:14px}.dialog dt{font-size:11px;text-transform:uppercase;color:var(--muted);margin-top:12px}.dialog dd{margin:0;overflow-wrap:anywhere}.dialog .actions{margin-top:24px}.fade-panel{animation:stepIn .22s ease-out}@keyframes stepIn{from{transform:translateX(8px);opacity:.55}to{transform:translateX(0);opacity:1}}[hidden]{display:none!important}.skip{position:fixed;top:-100px;left:10px;z-index:100;padding:12px;background:white}.skip:focus{top:10px}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(min-width:1600px){.chapter{padding-left:90px;padding-right:90px}}
+@media(max-width:1050px){.split{grid-template-columns:40% 60%}.chapter{padding-left:30px;padding-right:30px}.visual-content{left:9%;right:9%}.visual-content .serif{font-size:32px}.fields{grid-template-columns:1fr;gap:0}}
+@media(max-width:720px){html{scroll-padding-top:78px}.banner{font-size:9px;padding:6px 16px}.header{height:60px;padding:0 20px}.brand img{width:87px;height:35px}.brand span{display:none}.header-actions{gap:18px}.header-actions>a,.menu-button{font-size:11px}.menu-button{gap:7px}.split{display:flex;flex-direction:column}.visual{position:relative;top:auto;height:194px;width:100%;order:0}.visual>img{object-position:50% 43%}.visual-content{left:23px;bottom:35px;right:20px}.visual-content .serif{font-size:22px;max-width:260px;margin:0}.visual-content p,.visual-rule,.visual-top{display:none}.photo-caption{left:23px;bottom:10px;font-size:9px}.visual:after{background:linear-gradient(90deg,rgba(0,0,0,.75),rgba(0,0,0,.2))}.content{width:100%;display:contents}.chapter{padding:38px 23px;scroll-margin-top:60px;width:100%}.chapter:first-child{order:-1;padding-top:25px;padding-bottom:25px}.chapter:first-child .quiz,.chapter:first-child .how{display:none}.chapter:first-child.quiz-open .quiz,.chapter:first-child.quiz-open .how{display:grid}.chapter:first-child.quiz-open .quiz{display:block}.chapter:first-child .eyebrow{margin-bottom:12px}.chapter:first-child .concept-note{margin-bottom:0}h1{font-size:35px;line-height:1.19;margin-bottom:15px;letter-spacing:-.045em}h2{font-size:30px}.location{font-size:11px;margin-bottom:17px}.business-name{font-size:12px}.lead{font-size:15px;line-height:1.55}.eyebrow{font-size:9px}.chapter:first-child .lead{margin-bottom:18px}.quiz{padding:18px;margin-top:24px}.quiz h3{font-size:20px}.panel{padding:19px}.section-photo{height:160px}.footer{padding:28px 23px 110px;width:100%}.mobile-call{display:flex;position:fixed;bottom:0;left:0;right:0;background:var(--paper);border-top:1px solid var(--line);padding:9px 19px calc(9px + env(safe-area-inset-bottom));z-index:20;align-items:center;justify-content:space-between;gap:10px;box-shadow:0 -5px 20px #183b5608}.mobile-call span{font-size:10px;color:var(--muted);line-height:1.35}.mobile-call strong{display:block;color:var(--navy);font-size:12px}.mobile-call a{min-height:40px;padding:8px 18px;font-size:12px}.toast{bottom:80px;left:15px;right:15px;max-width:none}.nav-panel{top:87px;right:3%;max-height:75vh;overflow:auto}.fields{grid-template-columns:1fr}.chapter.soft{order:1}#payments{order:2}#learning{order:3}#support{order:4}.footer{order:5}.visual{order:0}.quiz-footer .btn{padding:10px 15px}.chat-log{height:260px}}
+@media(prefers-reduced-motion:reduce){html,.chat-log{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to study journey</a>
+<div class="banner">Independent website concept by LeadSky for South African Theological Seminary. Not their official website.</div>
+<header class="header">
+<a class="brand" href="#main" aria-label="SATS Study Journey, back to start"><img src="img/business-logo-1.webp" alt="South African Theological Seminary" width="112" height="43"><span>Study<br>Journey</span></a>
+<div class="header-actions"><a href="#application">Try portal ↗</a><button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="navPanel">Menu <span class="menu-icon" aria-hidden="true"><i></i><i></i></span></button></div>
+</header>
+<nav class="nav-panel" id="navPanel" aria-label="Study journey chapters" hidden>
+<a href="#main"><span>01</span>Find your study path</a>
+<a href="#application"><span>02</span>Track your application</a>
+<a href="#payments"><span>03</span>Payments & scholarship steps</a>
+<a href="#learning"><span>04</span>Continue your learning</a>
+<a href="#support"><span>05</span>Get support</a>
+<a href="https://sats.ac.za/" target="_blank" rel="noopener">Official SATS website ↗</a>
+<button class="text-btn reset-button">Reset sample journey</button>
+</nav>
+<div class="split">
+<aside class="visual" aria-label="Study reference photography">
+<img src="img/stock-1.jpg" alt="Illustrative stock photograph of an adult reading a book beside a brick wall" width="1200" height="1800" fetchpriority="high">
+<div class="visual-top">Bible-based. Christ-centred. Spirit-led.</div>
+<div class="visual-content"><div class="visual-rule"></div><p class="serif">Your calling.<br>Your place to begin.</p><p>An online study journey, with the next step always in view.</p></div>
+<span class="photo-caption">Reference photography · Pexels / Pixabay · Not a SATS student</span>
+</aside>
+<main class="content">
+<section class="chapter" id="main">
+<div class="eyebrow"><span class="num">01</span> A clearer study journey</div>
+<p class="business-name">South African Theological Seminary</p>
+<p class="location">Online theological study · Johannesburg</p>
+<h1>See your next step while your enrolment is processed.</h1>
+<p class="lead">Find a study path. Follow your application. Keep payments and support together in one proposed student workspace.</p>
+<a class="btn" href="#quiz" id="startQuiz">Find my study path <span class="arrow" aria-hidden="true">↗</span></a>
+<p class="concept-note">Independent demo · Sample records only · Nothing is sent, booked or charged.</p>
+<div class="quiz" id="quiz" tabindex="-1">
+<div class="quiz-header"><span id="quizCount">Your study match · 1 of 3</span><div class="dots" aria-hidden="true"><i class="active"></i><i></i><i></i></div></div>
+<div id="quizBody"></div>
+</div>
+<div class="how"><span class="how-icon" aria-hidden="true">↳</span><div><strong>One journey, fewer loose ends.</strong><br>Choose a path → prepare an application → see the next action. This concept could reduce repeated status enquiries, without promising a faster admissions decision.</div></div>
+</section>
+<section class="chapter soft" id="application">
+<div class="eyebrow"><span class="num">02</span> From interest to application</div>
+<h2>Know what’s ready.<br>See what’s next.</h2>
+<p class="lead">SATS states that enrolment processing takes one week from application. This proposed tracker makes the waiting period easier to follow.</p>
+<div class="panel">
+<div class="panel-head"><h3>Your application</h3><span class="tag">Sample record</span></div>
+<p class="small muted">A fictional applicant, a real SATS programme. Use fictional details only; this page does not connect to admissions.</p>
+<div class="programme-title" data-programme>Bachelor of Theology</div>
+<form id="applicationForm">
+<div class="fields">
+<div class="field"><label for="appName">Fictional applicant name</label><input id="appName" value="Alex Example" required minlength="2" maxlength="70" autocomplete="off"></div>
+<div class="field"><label for="appEmail">Fictional email</label><input id="appEmail" type="email" value="alex@example.com" required autocomplete="off"></div>
+</div>
+<p class="small muted">Proposed preparation checklist — not an official SATS document list.</p>
+<div class="checklist">
+<label class="checkline"><input type="checkbox" class="doc" checked> I have reviewed the programme entrance requirements.</label>
+<label class="checkline"><input type="checkbox" class="doc"> My sample academic-record checklist is prepared.</label>
+<label class="checkline"><input type="checkbox" class="doc"> My sample identity-document checklist is prepared.</label>
+</div>
+<button class="btn" type="submit" id="reviewApplication">Review sample application <span aria-hidden="true">→</span></button>
+<p class="small muted" id="checklistHint" style="margin:10px 0 0">Prepare all three items to continue. No uploads are collected.</p>
+</form>
+<div id="applicationResult" class="notice success" role="status" hidden></div>
+<ol class="timeline" aria-label="Proposed application timeline">
+<li class="done"><strong>Study path selected</strong><span id="pathTimeline">Bachelor of Theology · sample journey</span></li>
+<li id="preparedStage"><strong>Preparation checklist</strong><span id="preparedText">1 of 3 items ready</span></li>
+<li id="submittedStage"><strong>Proposed submission checkpoint</strong><span id="submittedText">Not simulated yet</span></li>
+<li><strong>Admissions review</strong>Official decisions and updates would require a SATS integration.</li>
+</ol>
+</div>
+<div class="notice" id="notification" aria-live="polite">Notification preview: your next action is to finish the sample preparation checklist.</div>
+</section>
+<section class="chapter" id="payments">
+<div class="eyebrow"><span class="num">03</span> Keep the practical things together</div>
+<h2>Plan your next course.<br>Not every payment at once.</h2>
+<p class="lead">SATS lets students pay for courses or research phases as they are ready to take them. Explore how that could look in a connected workspace.</p>
+<img class="section-photo" src="img/stock-3.jpg" alt="Illustrative stock photograph of an adult writing notes beside a laptop" width="1000" height="500" loading="lazy">
+<p class="image-note">Reference photography · StockSnap / Pixabay · Not SATS premises</p>
+<div class="panel">
+<div class="panel-head"><h3>Payment workspace</h3><span class="tag">Simulation</span></div>
+<p class="small muted">Enter your own illustrative rand amount. No official fees, outstanding balances or payment details are represented here.</p>
+<form id="paymentForm">
+<div class="fields">
+<div class="field"><label for="paymentFor">Illustrative payment purpose</label><select id="paymentFor"><option>Course preparation</option><option>Research phase preparation</option></select></div>
+<div class="field"><label for="amount">Illustrative amount (ZAR)</label><input id="amount" type="number" min="1" max="1000000" step="0.01" inputmode="decimal" placeholder="Enter amount" required></div>
+</div>
+<button type="submit" class="btn secondary">Review simulation <span aria-hidden="true">→</span></button>
+</form>
+<h4 class="subheading">Sample ledger</h4>
+<div id="ledgerEmpty" class="empty">No simulated payments yet. Try a payment above.</div>
+<table class="ledger" id="ledgerTable" hidden><caption class="sr">Simulated payment records, not actual payments</caption><thead><tr><th>Reference / purpose</th><th>Illustrative ZAR</th></tr></thead><tbody id="ledgerBody"></tbody></table>
+<div id="paymentResult" role="status" class="notice success" hidden></div>
+<div class="scholar">
+<details id="scholarDetails"><summary>Explore scholarship enquiry steps</summary><div>
+<p>The supplied SATS newsletter mentions a 2027 PhD scholarship and internship. Current availability, terms and eligibility are not verified in this concept.</p>
+<p>This is an interest-preparation workflow, not a scholarship application.</p>
+<form id="scholarForm">
+<div class="checklist">
+<label class="checkline"><input type="checkbox" required> I understand that availability must be checked with SATS.</label>
+<label class="checkline"><input type="checkbox" required> I will review official requirements before applying.</label>
+</div>
+<div class="field"><label for="scholarQuestion">Fictional enquiry note</label><textarea id="scholarQuestion" rows="2" maxlength="500" required placeholder="What would you like to clarify?"></textarea></div>
+<button class="btn smallbtn" type="submit">Save sample enquiry</button>
+</form>
+<div id="scholarResult" class="notice" role="status" hidden></div>
+<a href="https://sats.ac.za/" target="_blank" rel="noopener">Check the official SATS website ↗</a>
+</div></details>
+</div>
+</div>
+</section>
+<section class="chapter soft" id="learning">
+<div class="eyebrow"><span class="num">04</span> A place to keep going</div>
+<h2>Keep your learning<br>in view.</h2>
+<p class="lead">MySats is SATS’s online learning environment. This proposed companion view illustrates progress without replacing or connecting to MySats.</p>
+<img class="section-photo" src="img/stock-5.jpg" alt="Illustrative stock photograph of an open book in a library" width="1000" height="500" loading="lazy">
+<p class="image-note">Reference photography · lil_foot_ / Pixabay · Not a SATS library</p>
+<div class="panel">
+<div class="panel-head"><h3>Learning overview</h3><span class="tag">Sample activities</span></div>
+<p class="programme-title" data-programme>Bachelor of Theology</p>
+<p class="small muted">Fictional learning activities, not official SATS module names or academic results.</p>
+<div class="progress-label"><span id="progressLabel">1 of 4 activities complete</span><strong id="progressPercent">25%</strong></div>
+<progress id="learningProgress" value="1" max="4" aria-label="Sample learning activity completion"></progress>
+<div class="tabs" role="group" aria-label="Filter sample learning activities">
+<button class="tab" data-filter="all" aria-pressed="true">All</button>
+<button class="tab" data-filter="open" aria-pressed="false">To do</button>
+<button class="tab" data-filter="done" aria-pressed="false">Complete</button>
+</div>
+<div id="activities"></div>
+<p class="small muted" style="margin:16px 0 0">No grades, enrolment or course records are retrieved.</p>
+<a href="https://sats.ac.za/" target="_blank" rel="noopener" class="text-btn" style="display:inline-block">Visit SATS for official MySats access ↗</a>
+</div>
+</section>
+<section class="chapter support" id="support">
+<div class="eyebrow"><span class="num">05</span> One place for your questions</div>
+<h2>Less searching.<br>A clearer next step.</h2>
+<p class="lead">Try source-based answers, a sample support handoff and an illustrative office-hours reservation.</p>
+<div class="panel">
+<div class="panel-head"><h3>Study support assistant</h3><span class="tag">Scripted demo</span></div>
+<p class="small muted">Scripted replies, not live AI or SATS staff. Please do not enter personal information.</p>
+<div class="chat-log" id="chatLog" role="log" aria-label="Sample support conversation" aria-live="polite">
+<div class="bubble">Hello. I can help you explore enrolment timing, online study, payments and programme options.<small>Source: SATS website text supplied for this concept.</small></div>
+</div>
+<div class="prompts"><button class="prompt" data-ask="How long does enrolment take?">Enrolment timing</button><button class="prompt" data-ask="How does online study work?">Online study</button><button class="prompt" data-ask="How do payments work?">Payments</button><button class="prompt" data-ask="What programmes are offered?">Programmes</button></div>
+<form class="chat-form" id="chatForm"><label class="sr" for="chatInput">Ask a study question</label><input id="chatInput" placeholder="Ask a study question…" required maxlength="500" autocomplete="off"><button class="btn smallbtn" type="submit" aria-label="Send question to scripted demo">Send</button></form>
+<button class="text-btn" id="ticketButton">Create a sample staff handoff</button>
+<div id="ticketResult" class="notice" role="status" hidden></div>
+</div>
+<div class="panel">
+<h3>Find a quick answer</h3>
+<label class="sr" for="faqSearch">Search frequently asked questions</label><input class="search faq-search" id="faqSearch" type="search" placeholder="Search enrolment, fees, programmes…">
+<div id="faqs">
+<details data-faq="enrolment application processing timing week"><summary>When can I enrol, and how long does it take?</summary><div>You can enrol at SATS at any time of the year. The supplied website text states that processing takes one week from application. This concept cannot check an actual application or predict a decision. Contact SATS for the status of a real application.</div></details>
+<details data-faq="online study mysats classroom location"><summary>Do I need to attend a classroom?</summary><div>SATS states that all its programmes are offered online. MySats is its online learning environment, described as the virtual classroom and central hub for study. This demo is a proposed companion workspace and has no live connection to MySats.</div></details>
+<details data-faq="fees pricing payment courses research"><summary>How are programme payments structured?</summary><div>The supplied SATS website describes paying for courses or research phases as you are ready to take them, spreading the cost over your studies. The amounts you enter in this demo are illustrative and are not SATS fees. Check current pricing directly with SATS.</div></details>
+<details data-faq="programmes undergraduate postgraduate admission eligibility"><summary>Which programmes can I explore?</summary><div>Undergraduate options are the Bachelor of Theology, Higher Certificate in Christian Life and Higher Certificate in Christian Counselling. The BTh has an option to specialise in Counselling. Postgraduate options are BTh Honours, MDiv, MTh and PhD in Theology. The quiz suggests an option based on your interests; it does not assess admission eligibility. Review official entrance requirements with SATS.</div></details>
+</div>
+<p id="faqEmpty" class="small muted" hidden>No matching answer. Try another search or use the support assistant.</p>
+</div>
+<div class="panel">
+<div class="panel-head"><h3>Virtual office hours</h3><span class="tag">Proposed feature</span></div>
+<p class="small muted">Illustrative availability only. Times shown in South African Standard Time (UTC+2). No real SATS schedule or staff availability is represented.</p>
+<div class="calendar-label"><button id="previousWeek" aria-label="Previous sample week">←</button><strong id="calendarLabel"></strong><button id="nextWeek" aria-label="Next sample week">→</button></div>
+<div class="week" id="calendarDays" role="group" aria-label="Choose illustrative date"></div>
+<div id="calendarSlots" class="slots" role="group" aria-label="Choose illustrative time"></div>
+<button class="btn secondary" id="reviewBooking" disabled>Review sample reservation</button>
+<div class="notice success" id="bookingResult" role="status" hidden></div>
+<button class="text-btn" id="cancelBooking" hidden>Cancel sample reservation</button>
+</div>
+<div style="margin-top:28px;font-size:13px;color:#e1e9ee">
+<p style="margin-bottom:8px">Need a real answer? Contact SATS directly.</p>
+<a style="color:white" href="tel:+27112344440">+27 11 234 4440</a><span aria-hidden="true"> · </span><a style="color:white" href="mailto:info@sats.ac.za">info@sats.ac.za</a>
+<p class="small" style="margin-top:15px;color:#d6e2e9">These links leave the sample journey. The demo itself never contacts SATS.</p>
+</div>
+</section>
+<footer class="footer">
+<div class="footer-top"><strong>Concept by LeadSky</strong><button class="text-btn reset-button">Reset demo ↺</button></div>
+<p>An independent, unendorsed product concept for South African Theological Seminary. All portal records are fictional. Changes stay in this page’s memory and disappear on reload.</p>
+<details><summary style="font-size:12px">Production scope & asset notes</summary><div>
+<p>Authentication, admissions rules, document handling, MySats integration, verified fees, scholarship eligibility, payment processing, notifications, live support and staff calendars require agreed requirements and backend integrations. No real data is submitted, uploaded, sent, booked or charged.</p>
+<p>Programme names and study information come from the supplied SATS website text. This concept does not claim current verification of contact details, fees, scholarship availability or website destinations beyond the supplied homepage. The palette is a proposed interface direction, not a claim about official SATS brand guidelines.</p>
+<p>The SATS logo is business-published. Reuse permission is not confirmed; obtain permission before public release. Keep this concept private. Stock photographs are illustrative and do not depict SATS people or facilities.</p>
+<p>Photo credits — supplied assets under the Pixabay Content License:</p>
+<div class="credits"><a href="https://pixabay.com/photos/alone-book-brick-wall-man-person-1869997/" target="_blank" rel="noopener">Pexels / Pixabay</a><a href="https://pixabay.com/photos/man-writing-laptop-computer-write-2562325/" target="_blank" rel="noopener">StockSnap / Pixabay</a><a href="https://pixabay.com/photos/open-book-library-education-read-1428428/" target="_blank" rel="noopener">lil_foot_ / Pixabay</a></div>
+<p>Responsive layouts, keyboard focus and reduced-motion behavior are implemented. Browser, device, asset-loading and accessibility testing must be completed in the deployment environment before presentation.</p>
+</div></details>
+</footer>
+</main>
+</div>
+<div class="mobile-call"><span><strong>SATS Study Journey</strong>Independent sample workspace</span><a href="tel:+27112344440" class="btn">Call SATS ↗</a></div>
+<div class="toast" id="toast" role="status" hidden></div>
+<dialog class="dialog" id="reviewDialog" aria-labelledby="dialogTitle">
+<h2 id="dialogTitle"></h2><div id="dialogBody"></div><div class="actions"><button class="btn" id="dialogConfirm">Confirm simulation</button><button class="btn secondary" id="dialogCancel">Go back</button></div>
+</dialog>
+<script>
+"use strict";
+const $=s=>document.querySelector(s), $$=s=>Array.from(document.querySelectorAll(s));
+const state={step:0,answers:[null,null,null],programme:"Bachelor of Theology",submitted:false,payments:[],filter:"all",activities:[true,false,false,false],booking:null,week:0,date:null,time:null,tickets:0};
+const questions=[
+{title:"Where are you in your study journey?",options:["Exploring undergraduate study","Building on a theology qualification","Exploring doctoral research"]},
+{title:"What would you like to focus on?",options:["Christian life and ministry","Christian counselling","Theological study and research"]},
+{title:"What would help you move forward?",options:["Explore a focused certificate","Compare degree-level study","Discuss postgraduate study"]}
+];
+let quizComplete=false, toastTimer, pendingAction=null, lastFocus=null;
+function notify(text){$("#toast").textContent=text;$("#toast").hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$("#toast").hidden=true,5000)}
+function formatMoney(n){return new Intl.NumberFormat("en-ZA",{style:"currency",currency:"ZAR"}).format(n)}
+function today(){return new Date().toLocaleDateString("en-ZA",{day:"numeric",month:"short",year:"numeric"})}
+function safeElement(tag,text,cls){let el=document.createElement(tag);el.textContent=text;if(cls)el.className=cls;return el}
+function openDialog(title,content,action,label="Confirm simulation"){lastFocus=document.activeElement;$("#dialogTitle").textContent=title;$("#dialogBody").replaceChildren();if(typeof content==="string")$("#dialogBody").append(safeElement("p",content));else $("#dialogBody").append(content);$("#dialogConfirm").textContent=label;$("#dialogConfirm").hidden=!action;$("#dialogCancel").textContent=action?"Go back":"Close";pendingAction=action;$("#reviewDialog").showModal()}
+function closeDialog(){$("#reviewDialog").close();pendingAction=null;if(lastFocus&&lastFocus.isConnected)lastFocus.focus()}
+$("#dialogCancel").onclick=closeDialog;
+$("#dialogConfirm").onclick=()=>{const action=pendingAction;closeDialog();if(action)action()};
+$("#reviewDialog").addEventListener("click",e=>{if(e.target===$("#reviewDialog")){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)closeDialog()}});
+$("#menuButton").onclick=()=>{const open=$("#navPanel").hidden;$("#navPanel").hidden=!open;$("#menuButton").setAttribute("aria-expanded",String(open));if(open)$("#navPanel a").focus()};
+function closeMenu(){$("#navPanel").hidden=true;$("#menuButton").setAttribute("aria-expanded","false")}
+$$('#navPanel a').forEach(a=>a.onclick=closeMenu);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!$("#navPanel").hidden){closeMenu();$("#menuButton").focus()}});
+document.addEventListener("click",e=>{if(!$("#navPanel").hidden&&!e.target.closest("#navPanel")&&!e.target.closest("#menuButton"))closeMenu()});
+$("#startQuiz").onclick=()=>{$("#main").classList.add("quiz-open");setTimeout(()=>$("#quiz").focus({preventScroll:true}),50)};
+function renderQuiz(focus=false){
+$("#quizCount").textContent=quizComplete?"Your provisional study match":`Your study match · ${state.step+1} of 3`;
+$$(".dots i").forEach((x,i)=>x.classList.toggle("active",quizComplete||i<=state.step));
+const body=$("#quizBody");body.replaceChildren();body.className="fade-panel";
+if(quizComplete){
+body.append(safeElement("span","A direction to explore","result-tag"),safeElement("h3",state.programme,"result-title"));
+let why=state.answers[0]===2?"You selected doctoral research. Explore the PhD in Theology and discuss its entrance requirements with SATS.":state.answers[0]===1?"You selected study beyond an existing theology qualification. This is a starting point for a conversation about postgraduate requirements.":"This option reflects your interests and preferred study format. SATS must confirm admission requirements and suitability.";
+if(state.answers[0]===0&&state.answers[1]===1&&state.programme==="Bachelor of Theology")why+=" The BTh also has an option to specialise in Counselling.";
+body.append(safeElement("p",why,"small muted"),safeElement("p","Guidance only — not an admission assessment. Prior qualifications and eligibility have not been evaluated.","small"));
+const official=safeElement("a","Review requirements on the official SATS site ↗");official.href="https://sats.ac.za/";official.target="_blank";official.rel="noopener";official.className="small";body.append(official);
+const actions=document.createElement("div");actions.className="actions";actions.style.marginTop="20px";
+const explore=safeElement("a","Explore sample application →","btn");explore.href="#application";explore.onclick=()=>notify("Your study match is connected to the sample workspace.");
+const call=safeElement("a","Call SATS ↗","btn secondary");call.href="tel:+27112344440";actions.append(explore,call);body.append(actions);
+const restart=safeElement("button","Restart quiz","text-btn");restart.style.marginTop="12px";restart.onclick=()=>{state.step=0;quizComplete=false;renderQuiz(true)};body.append(restart);
+}else{
+const q=questions[state.step];const heading=safeElement("h3",q.title);heading.id="questionTitle";heading.tabIndex=-1;body.append(heading);
+const form=document.createElement("form");form.setAttribute("aria-labelledby","questionTitle");
+const opts=document.createElement("div");opts.className="options";
+q.options.forEach((text,i)=>{const label=document.createElement("label");label.className="option";const radio=document.createElement("input");radio.type="radio";radio.name="quizAnswer";radio.value=i;radio.required=true;radio.checked=state.answers[state.step]===i;radio.onchange=()=>{state.answers[state.step]=i};label.append(radio,safeElement("span",text));opts.append(label)});
+form.append(opts);const footer=document.createElement("div");footer.className="quiz-footer";
+const back=safeElement("button",state.step?"← Back":"About 30 seconds",state.step?"text-btn":"small muted");back.type="button";if(state.step)back.onclick=()=>{state.step--;renderQuiz(true)};else {back.disabled=true;back.style.opacity="1";back.style.cursor="default";back.style.textDecoration="none"}
+const next=safeElement("button",state.step===2?"See my match ↗":"Next question →","btn smallbtn");next.type="submit";footer.append(back,next);form.append(footer);
+form.onsubmit=e=>{e.preventDefault();const answer=form.querySelector("input:checked");if(!answer)return;state.answers[state.step]=Number(answer.value);if(state.step<2){state.step++;renderQuiz(true)}else {chooseProgramme();quizComplete=true;renderQuiz(true)}};body.append(form);
+}
+if(focus){const target=body.querySelector("h3");target.tabIndex=-1;target.focus({preventScroll:true})}
+}
+function chooseProgramme(){
+const [level,interest,next]=state.answers;
+if(level===2)state.programme="PhD in Theology";
+else if(level===1)state.programme=interest===2?"MTh":next===2?"MDiv":"BTh Honours";
+else if(next===0)state.programme=interest===1?"Higher Certificate in Christian Counselling":"Higher Certificate in Christian Life";
+else state.programme="Bachelor of Theology";
+state.submitted=false;$("#applicationResult").hidden=true;$("#submittedStage").classList.remove("done");$("#submittedText").textContent="Not simulated yet";$("#reviewApplication").disabled=false;$("#reviewApplication").textContent="Review sample application →";
+$$("[data-programme]").forEach(el=>el.textContent=state.programme);$("#pathTimeline").textContent=state.programme+" · sample journey";$("#notification").textContent="Notification preview: your study path is now "+state.programme+". Review your preparation checklist.";
+}
+function updateChecklist(){const n=$$(".doc:checked").length;$("#preparedText").textContent=`${n} of 3 items ready`;$("#preparedStage").classList.toggle("done",n===3);$("#checklistHint").textContent=n===3?"Ready for a sample review. No uploads are collected.":"Prepare all three items to continue. No uploads are collected."}
+$$(".doc").forEach(x=>x.onchange=updateChecklist);
+$("#applicationForm").onsubmit=e=>{
+e.preventDefault();if(state.submitted)return;
+if($$(".doc:checked").length!==3){notify("Complete all three preparation items before reviewing.");$(".doc:not(:checked)").focus();return}
+const name=$("#appName").value.trim();if(name.length<2){$("#appName").setCustomValidity("Enter a fictional name with at least two characters.");$("#appName").reportValidity();return}
+const content=document.createElement("div");content.append(safeElement("p","Check this fictional record. The next step only updates the sample workspace."));
+const dl=document.createElement("dl");[["Applicant",name],["Email",$("#appEmail").value],["Study path",state.programme],["Prepared items","3 of 3 proposed checklist items"]].forEach(([k,v])=>dl.append(safeElement("dt",k),safeElement("dd",v)));content.append(dl,safeElement("p","This is a demo form, nothing was sent.","notice"));
+openDialog("Review your sample application",content,()=>{state.submitted=true;$("#submittedStage").classList.add("done");$("#submittedText").textContent=today()+" · locally simulated";$("#applicationResult").hidden=false;$("#applicationResult").textContent="Sample application marked as submitted. This is a demo form, nothing was sent.";$("#reviewApplication").disabled=true;$("#reviewApplication").textContent="Sample submission recorded";$("#notification").textContent="Notification preview: sample submission recorded on "+today()+". A real status update would require admissions integration.";notify("Sample application updated. Nothing was sent.")},"Simulate submission");
+};
+$("#appName").oninput=()=>$("#appName").setCustomValidity("");
+$("#paymentForm").onsubmit=e=>{
+e.preventDefault();const amount=Number($("#amount").value),purpose=$("#paymentFor").value;if(!Number.isFinite(amount)||amount<=0)return;
+const content=document.createElement("div");content.append(safeElement("p",purpose,"small muted"),safeElement("h3",formatMoney(amount)),safeElement("p","This amount is illustrative. No SATS fee or balance is implied. No card details are collected."),safeElement("p","This is a demo form, nothing was sent. No payment will be charged.","notice"));
+openDialog("Review payment simulation",content,()=>{const payment={amount,purpose,ref:"DEMO-"+String(state.payments.length+1).padStart(3,"0")};state.payments.push(payment);renderLedger();$("#paymentResult").hidden=false;$("#paymentResult").textContent="Simulation receipt "+payment.ref+": "+formatMoney(amount)+". Nothing was charged or sent.";$("#amount").value="";notify("Illustrative payment added to the sample ledger.")},"Simulate payment");
+};
+function renderLedger(){const body=$("#ledgerBody");body.replaceChildren();$("#ledgerEmpty").hidden=state.payments.length>0;$("#ledgerTable").hidden=!state.payments.length;state.payments.forEach(p=>{let tr=document.createElement("tr");const td=document.createElement("td");td.append(safeElement("strong",p.ref),document.createElement("br"),safeElement("span",p.purpose));const amount=safeElement("td",formatMoney(p.amount));tr.append(td,amount);tr.tabIndex=0;tr.setAttribute("aria-label",p.ref+", "+p.purpose+", "+formatMoney(p.amount)+", simulated");body.append(tr)})}
+$("#scholarForm").onsubmit=e=>{e.preventDefault();$("#scholarResult").hidden=false;$("#scholarResult").textContent="Sample enquiry saved in this page only: "+$("#scholarQuestion").value.trim()+". This is a demo form, nothing was sent.";notify("Scholarship-interest preparation recorded locally.")};
+const activityNames=["Review your study plan","Read and annotate a passage","Prepare a reflection","Review your next learning goal"];
+function renderLearning(){
+const done=state.activities.filter(Boolean).length;$("#progressLabel").textContent=`${done} of 4 activities complete`;$("#progressPercent").textContent=done*25+"%";$("#learningProgress").value=done;const list=$("#activities");list.replaceChildren();
+state.activities.forEach((completed,i)=>{if(state.filter==="open"&&completed||state.filter==="done"&&!completed)return;const row=document.createElement("div");row.className="activity";const text=document.createElement("div");text.append(safeElement("strong",activityNames[i]),safeElement("span",(completed?"Complete":"To do")+" · fictional learning activity"));const open=safeElement("button","Open ↗");open.onclick=()=>openActivity(i);row.append(text,open);list.append(row)});
+if(!list.children.length)list.append(safeElement("p","No activities in this view. Choose another filter.","empty"));
+}
+function openActivity(i){
+const content=document.createElement("div");content.append(safeElement("p","Sample activity for "+state.programme,"small muted"),safeElement("p",["Review the suggested study path and note which official entrance requirements you need to check.","In this fictional exercise, read a passage of your choice and make a few private notes. No work is uploaded.","Draft a short reflection in your own notes. This demo does not collect assignments or assess academic work.","Choose one manageable next step for your study plan. Official learning tasks remain in MySats."][i]),safeElement("p","Fictional activity only. Completion changes this demo’s progress indicator, not an academic record.","notice"));
+openDialog(activityNames[i],content,()=>{state.activities[i]=!state.activities[i];renderLearning();notify("Sample learning progress updated.")},state.activities[i]?"Mark as to do":"Mark sample activity complete");
+}
+$$("[data-filter]").forEach(b=>b.onclick=()=>{state.filter=b.dataset.filter;$$("[data-filter]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));renderLearning()});
+function addBubble(text,user=false,source=false){const b=safeElement("div",text,"bubble"+(user?" user":""));if(source)b.append(safeElement("small","Source: SATS website text supplied for this concept."));$("#chatLog").append(b);$("#chatLog").scrollTop=$("#chatLog").scrollHeight}
+function ask(text){addBubble(text,true);const t=text.toLowerCase();let reply,source=true;
+if(/enrol|enroll|week|long|status|application/.test(t))reply="SATS states that enrolments can be made at any time of the year and processing takes one week from application. I cannot check a real application. The sample tracker above shows how clearer next-step updates could work.";
+else if(/pay|fee|cost|price/.test(t))reply="SATS describes paying for courses or research phases as you are ready to take them. No current fees are verified in this demo. Use the payment workspace to simulate an illustrative amount, or contact SATS for actual pricing.";
+else if(/online|mysats|class|distance/.test(t))reply="All SATS programmes are offered online. MySats is the virtual classroom and central online learning environment. This independent workspace is a proposed companion, with no live MySats integration.";
+else if(/programme|program|degree|course|bth|theology/.test(t))reply="Undergraduate options: Bachelor of Theology, Higher Certificate in Christian Life, and Higher Certificate in Christian Counselling. Postgraduate options: BTh Honours, MDiv, MTh and PhD in Theology. Use the three-question quiz for provisional guidance; SATS must confirm eligibility.";
+else if(/scholar/.test(t)){reply="The supplied newsletter mentions a 2027 PhD scholarship and internship. Current terms and availability have not been verified. You can prepare a sample enquiry above, then check directly with SATS.";source=false}
+else if(/hello|^hi\b|help/.test(t)){reply="You can ask about enrolment timing, online study, payments or programmes. For anything else, create a sample staff handoff below or contact SATS directly.";source=false}
+else {reply="I do not have a verified answer to that question. Create a sample staff handoff below, or use the published SATS phone or email. This is a scripted demonstration, not a live adviser.";source=false}
+addBubble(reply,false,source);
+}
+$("#chatForm").onsubmit=e=>{e.preventDefault();const text=$("#chatInput").value.trim();if(!text)return;ask(text);$("#chatInput").value=""};
+$$("[data-ask]").forEach(b=>b.onclick=()=>ask(b.dataset.ask));
+$("#ticketButton").onclick=()=>{const messages=$$("#chatLog .bubble.user");if(!messages.length){notify("Ask a question first so the sample handoff has context.");$("#chatInput").focus();return}state.tickets++;$("#ticketResult").hidden=false;$("#ticketResult").textContent="Sample handoff DEMO-SUPPORT-"+String(state.tickets).padStart(3,"0")+" created with the question: “"+messages[messages.length-1].textContent+"”. This is a demo form, nothing was sent. No staff member is notified.";notify("Sample support handoff created locally.")};
+$("#faqSearch").oninput=e=>{const q=e.target.value.trim().toLowerCase();let n=0;$$('#faqs details').forEach(d=>{const match=(d.dataset.faq+" "+d.textContent).toLowerCase().includes(q);d.hidden=!match;if(match)n++});$("#faqEmpty").hidden=n>0};
+function sampleDates(){const start=new Date(Date.UTC(2026,10,16+state.week*7));return Array.from({length:5},(_,i)=>{let d=new Date(start);d.setUTCDate(d.getUTCDate()+i);return d})}
+function dateText(iso){return new Date(iso).toLocaleDateString("en-ZA",{weekday:"short",day:"numeric",month:"short",year:"numeric",timeZone:"UTC"})}
+function renderCalendar(){
+const dates=sampleDates();$("#calendarLabel").textContent=dates[0].toLocaleDateString("en-ZA",{day:"numeric",month:"short",timeZone:"UTC"})+" – "+dates[4].toLocaleDateString("en-ZA",{day:"numeric",month:"short",year:"numeric",timeZone:"UTC"});$("#previousWeek").disabled=state.week===0;$("#nextWeek").disabled=state.week===3;
+$("#calendarDays").replaceChildren();dates.forEach(d=>{let b=document.createElement("button");b.className="day";b.setAttribute("aria-pressed",String(state.date===d.toISOString()));b.setAttribute("aria-label",dateText(d.toISOString())+", illustrative availability");b.append(safeElement("span",d.toLocaleDateString("en-ZA",{weekday:"short",timeZone:"UTC"})),safeElement("strong",d.getUTCDate()));b.onclick=()=>{state.date=d.toISOString();state.time=null;renderCalendar()};$("#calendarDays").append(b)});
+$("#calendarSlots").replaceChildren();
+if(state.date){["09:00","11:30","14:00"].forEach(t=>{const b=safeElement("button",t,"slot");b.setAttribute("aria-pressed",String(state.time===t));b.onclick=()=>{state.time=t;renderCalendar()};$("#calendarSlots").append(b)})}else $("#calendarSlots").append(safeElement("span","Choose an illustrative date to see times.","small muted"));
+$("#reviewBooking").disabled=!state.date||!state.time||!!state.booking;
+}
+$("#previousWeek").onclick=()=>{if(state.week>0){state.week--;state.date=null;state.time=null;renderCalendar()}};
+$("#nextWeek").onclick=()=>{if(state.week<3){state.week++;state.date=null;state.time=null;renderCalendar()}};
+$("#reviewBooking").onclick=()=>{
+if(!state.date||!state.time)return;
+openDialog("Review sample office hours",dateText(state.date)+" at "+state.time+" SAST (UTC+2). This is illustrative availability. No staff member will be notified and no real appointment will exist.",()=>{state.booking={date:state.date,time:state.time};$("#bookingResult").hidden=false;$("#bookingResult").textContent="Local sample reservation: "+dateText(state.booking.date)+" at "+state.booking.time+" SAST. This is a demo form, nothing was sent. No real booking exists.";$("#cancelBooking").hidden=false;renderCalendar();notify("Sample reservation recorded in this page only.")},"Create local demo reservation");
+};
+$("#cancelBooking").onclick=()=>{state.booking=null;$("#bookingResult").textContent="Sample reservation cancelled locally. No real appointment was created or cancelled.";$("#cancelBooking").hidden=true;renderCalendar();notify("Sample reservation cleared.")};
+$$(".reset-button").forEach(b=>b.onclick=()=>openDialog("Reset the sample journey?","This clears your quiz answers, fictional application, simulated payments, learning changes and support activity from this page.",()=>location.reload(),"Reset demo"));
+renderQuiz();updateChecklist();renderLearning();renderCalendar();
+</script>
+</body>
+</html>
